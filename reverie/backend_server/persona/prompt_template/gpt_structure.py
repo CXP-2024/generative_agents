@@ -12,6 +12,7 @@ import time
 from utils import *
 
 openai.api_key = openai_api_key
+openai.api_base = openai_base_url
 
 def temp_sleep(seconds=0.1):
   time.sleep(seconds)
@@ -20,7 +21,7 @@ def ChatGPT_single_request(prompt):
   temp_sleep()
 
   completion = openai.ChatCompletion.create(
-    model="gpt-3.5-turbo", 
+    model="deepseek-v3", 
     messages=[{"role": "user", "content": prompt}]
   )
   return completion["choices"][0]["message"]["content"]
@@ -40,20 +41,20 @@ def GPT4_request(prompt):
                    the parameter and the values indicating the parameter 
                    values.   
   RETURNS: 
-    a str of GPT-3's response. 
+    a str of GPT-3's response. here we use deepseek-v3
   """
   temp_sleep()
 
   try: 
     completion = openai.ChatCompletion.create(
-    model="gpt-4", 
+    model="deepseek-v3", 
     messages=[{"role": "user", "content": prompt}]
     )
     return completion["choices"][0]["message"]["content"]
   
   except: 
-    print ("ChatGPT ERROR")
-    return "ChatGPT ERROR"
+    print ("deepseek-v3 ERROR")
+    return "deepseek-v3 ERROR"
 
 
 def ChatGPT_request(prompt): 
@@ -66,19 +67,19 @@ def ChatGPT_request(prompt):
                    the parameter and the values indicating the parameter 
                    values.   
   RETURNS: 
-    a str of GPT-3's response. 
+    a str of GPT-3's response. here we use deepseek-v3
   """
   # temp_sleep()
   try: 
     completion = openai.ChatCompletion.create(
-    model="gpt-3.5-turbo", 
+    model="deepseek-v3", 
     messages=[{"role": "user", "content": prompt}]
     )
     return completion["choices"][0]["message"]["content"]
   
   except: 
-    print ("ChatGPT ERROR")
-    return "ChatGPT ERROR"
+    print ("deepseek-v3 ERROR")
+    return "deepseek-v3 ERROR"
 
 
 def GPT4_safe_generate_response(prompt, 
@@ -89,13 +90,13 @@ def GPT4_safe_generate_response(prompt,
                                    func_validate=None,
                                    func_clean_up=None,
                                    verbose=False): 
-  prompt = 'GPT-3 Prompt:\n"""\n' + prompt + '\n"""\n'
+  prompt = 'deepseek-v3 Prompt:\n"""\n' + prompt + '\n"""\n'
   prompt += f"Output the response to the prompt above in json. {special_instruction}\n"
   prompt += "Example output json:\n"
   prompt += '{"output": "' + str(example_output) + '"}'
 
   if verbose: 
-    print ("CHAT GPT PROMPT")
+    print ("deepseek-v3 CHAT PROMPT")
     print (prompt)
 
   for i in range(repeat): 
@@ -208,9 +209,12 @@ def GPT_request(prompt, gpt_parameter):
   """
   temp_sleep()
   try: 
-    response = openai.Completion.create(
-                model=gpt_parameter["engine"],
-                prompt=prompt,
+    response = openai.ChatCompletion.create(
+                model="deepseek-v3",
+                messages=[
+                  {"role": "system", "content": "If you see daily scedules, you will be an assistant that fills in daily schedules based on character information. And in that case, you should only respond with finishing schedule entries, nothing else."},
+                    {"role": "user", "content": prompt},
+                ],
                 temperature=gpt_parameter["temperature"],
                 max_tokens=gpt_parameter["max_tokens"],
                 top_p=gpt_parameter["top_p"],
@@ -218,9 +222,9 @@ def GPT_request(prompt, gpt_parameter):
                 presence_penalty=gpt_parameter["presence_penalty"],
                 stream=gpt_parameter["stream"],
                 stop=gpt_parameter["stop"],)
-    return response.choices[0].text
-  except: 
-    print ("TOKEN LIMIT EXCEEDED")
+    return response.choices[0].message.content
+  except Exception as e: 
+    print(f"TOKEN LIMIT EXCEEDED: {e}")
     return "TOKEN LIMIT EXCEEDED"
 
 
@@ -273,12 +277,23 @@ def safe_generate_response(prompt,
   return fail_safe_response
 
 
-def get_embedding(text, model="text-embedding-ada-002"):
+def get_embedding(text, model="bge-m3"): # original is text-embedding-ada-002, here we use deepseek-v3
   text = text.replace("\n", " ")
   if not text: 
     text = "this is blank"
-  return openai.Embedding.create(
-          input=[text], model=model)['data'][0]['embedding']
+  try:
+    # First try with the specified model
+    return openai.Embedding.create(
+            input=[text], model=model)['data'][0]['embedding']
+  except Exception as e:
+    # If that fails, use a simpler fallback approach
+    import numpy as np
+    print(f"Warning: Could not get embedding from API. Using fallback method. Error: {e}")
+    # Create a simple deterministic hash-based embedding as fallback
+    hash_val = hash(text)
+    np.random.seed(hash_val)
+    # Create a 1536-dimensional embedding (same as Ada)
+    return list(np.random.uniform(-1, 1, 1536))
 
 
 if __name__ == '__main__':

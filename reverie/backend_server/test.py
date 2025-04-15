@@ -8,14 +8,17 @@ import json
 import random
 import openai
 import time 
+from dotenv import load_dotenv
+load_dotenv()
 
 from utils import *
 openai.api_key = openai_api_key
+openai.api_base = openai_base_url
 
 def ChatGPT_request(prompt): 
   """
   Given a prompt and a dictionary of GPT parameters, make a request to OpenAI
-  server and returns the response. 
+  server and returns the response. here I change to use deepseek-v3 model.
   ARGS:
     prompt: a str prompt
     gpt_parameter: a python dictionary with the keys indicating the names of  
@@ -27,7 +30,7 @@ def ChatGPT_request(prompt):
   # temp_sleep()
   try: 
     completion = openai.ChatCompletion.create(
-    model="gpt-3.5-turbo", 
+    model="deepseek-v3", 
     messages=[{"role": "user", "content": prompt}]
     )
     return completion["choices"][0]["message"]["content"]
