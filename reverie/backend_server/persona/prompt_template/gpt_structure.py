@@ -73,12 +73,13 @@ def ChatGPT_request(prompt):
   try: 
     completion = openai.ChatCompletion.create(
     model="deepseek-v3", 
-    messages=[{"role": "user", "content": prompt}]
+    messages=[{"role": "system", "content": """If you are asked to output a json, your json form should not begin with ``` json { } ```, you should just directly output a json begin with {"output": sth... }. if necessery, start a new line for each item for better view."""}, {"role": "user", "content": prompt+"""
+If you are asked to output a json, your json form should not begin with ``` json { } ```, you should just directly output a json begin with {"output": sth... }. if necessery, start a new line for each item for better view."""}]
     )
     return completion["choices"][0]["message"]["content"]
   
-  except: 
-    print ("deepseek-v3 ERROR")
+  except Exception as e:  
+    print ("deepseek-v3 ERROR:", e)
     return "deepseek-v3 ERROR"
 
 
@@ -135,6 +136,7 @@ def ChatGPT_safe_generate_response(prompt,
   prompt += "Example output json:\n"
   prompt += '{"output": "' + str(example_output) + '"}'
 
+  #print("\033[0;31mprompt!\033[0m")
   if verbose: 
     print ("CHAT GPT PROMPT")
     print (prompt)
@@ -142,9 +144,21 @@ def ChatGPT_safe_generate_response(prompt,
   for i in range(repeat): 
 
     try: 
+      #print("\033[0;31mtrying ChatGPT_request\033[0m")
       curr_gpt_response = ChatGPT_request(prompt).strip()
+      #print("\033[0;31mtried ChatGPT_request\033[0m")
+      #print("\033[0;31mcurr_gpt_response\033[0m")
+      #print(curr_gpt_response)
       end_index = curr_gpt_response.rfind('}') + 1
+      #print("\033[0;31mend_index\033[0m")
+      #print(end_index)
       curr_gpt_response = curr_gpt_response[:end_index]
+      #print("\033[0;31mcurr_gpt_response[:end_index]\033[0m")
+      #print(curr_gpt_response)
+      
+      # make sure the response is a valid JSON string
+      
+      # Parse the string as JSON before accessing the output key
       curr_gpt_response = json.loads(curr_gpt_response)["output"]
 
       # print ("---ashdfaf")
