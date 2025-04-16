@@ -608,8 +608,14 @@ if __name__ == '__main__':
   # rs = ReverieServer("July1_the_ville_isabella_maria_klaus-step-3-20", 
   #                    "July1_the_ville_isabella_maria_klaus-step-3-21")
   # rs.open_server()
-
-  origin = input("Enter the name of the forked simulation: ").strip()
+  while(True):
+    num = int(input("""Choose the forked simulation: \n1. base_the_ville_isabella_maria_klaus\n"""))
+    if num == 1: 
+      origin = "base_the_ville_isabella_maria_klaus"
+      break
+    else:
+      print("Invalid choice. Please try again.")
+      
   target = input("Enter the name of the new simulation: ").strip()
 
   rs = ReverieServer(origin, target)
