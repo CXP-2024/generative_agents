@@ -266,7 +266,10 @@ def generate_action_event_triple(act_desp, persona):
 
 def generate_act_obj_desc(act_game_object, act_desp, persona): 
   if debug: print ("GNS FUNCTION: <generate_act_obj_desc>")
-  return run_gpt_prompt_act_obj_desc(act_game_object, act_desp, persona)[0]
+  result = run_gpt_prompt_act_obj_desc(act_game_object, act_desp, persona)
+  if result is None:
+    return f"\033[0;31m warning!!!!! the result of gpt is none{act_game_object} is idle \033[0m"  # Default value when result is None
+  return result[0]
 
 
 def generate_act_obj_event_triple(act_game_object, act_obj_desc, persona): 
@@ -631,8 +634,10 @@ def _determine_action(persona, maze):
   new_address = f"{act_world}:{act_sector}:{act_arena}:{act_game_object}"
   act_pron = generate_action_pronunciatio(act_desp, persona)
   act_event = generate_action_event_triple(act_desp, persona)
+  print("\033[0;33mfinished act_event: \033[0m", act_event)
   # Persona's actions also influence the object states. We set those up here. 
   act_obj_desp = generate_act_obj_desc(act_game_object, act_desp, persona)
+  print("\033[0;33mfinished act_obj_desp: \033[0m", act_obj_desp)
   act_obj_pron = generate_action_pronunciatio(act_obj_desp, persona)
   act_obj_event = generate_act_obj_event_triple(act_game_object, 
                                                 act_obj_desp, persona)
