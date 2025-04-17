@@ -74,7 +74,7 @@ def ChatGPT_request(prompt):
     completion = openai.ChatCompletion.create(
     model="deepseek-v3", 
     messages=[{"role": "system", "content": """If you are asked to output a json, your json form should not begin with ``` json { } ```, you should just directly output a json begin with {"output": sth... }. if necessery, start a new line for each item for better view."""}, {"role": "user", "content": prompt+"""
-If you are asked to output a json, your json form should not begin with ``` json { } ```, you should just directly output a json begin with {"output": sth... }. if necessery, start a new line for each item for better view."""}]
+If you are asked to output a json, your json form should not begin with ``` json { } ```, you should just directly output a string begin with {"output": sth... }. """}]
     )
     return completion["choices"][0]["message"]["content"]
   
@@ -141,7 +141,7 @@ def ChatGPT_safe_generate_response(prompt,
     print ("CHAT GPT PROMPT")
     print (prompt)
 
-  for i in range(repeat): 
+  for i in range(repeat+3): 
 
     try: 
       #print("\033[0;31mtrying ChatGPT_request\033[0m")
@@ -281,9 +281,14 @@ def safe_generate_response(prompt,
     print (prompt)
 
   for i in range(repeat): 
+    #print("\033[0;31mtrying GPT_request in safe gen res\033[0m")
     curr_gpt_response = GPT_request(prompt, gpt_parameter)
+    #print ("---- repeat count: ", i, curr_gpt_response)
+    #print (curr_gpt_response)
+    #print ("~~~~")
     if func_validate(curr_gpt_response, prompt=prompt): 
       return func_clean_up(curr_gpt_response, prompt=prompt)
+      #return curr_gpt_response
     if verbose: 
       print ("---- repeat count: ", i, curr_gpt_response)
       print (curr_gpt_response)

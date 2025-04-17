@@ -63,11 +63,17 @@ Maria Lopez: "
 Output the response to the prompt above in json. The output should be a list of list where the inner lists are in the form of ["<Name>", "<Utterance>"]. Output multiple utterances in ther conversation until the conversation comes to a natural conclusion.
 Example output json:
 {"output": "[["Jane Doe", "Hi!"], ["John Doe", "Hello there!"] ... ]"}
+If you are asked to output a json, your json form should not begin with ``` json { } ```, you should just directly output a json begin with {"output": sth... }. if necessery, start a new line for each item for better view.
 """
 
-print (ChatGPT_request(prompt))
+reponse = ChatGPT_request(prompt)
+print(reponse)
 
+curr_gpt_response = json.loads(reponse)["output"]
+print(curr_gpt_response)
 
+prompt = "who are you?"
+print(ChatGPT_request(prompt))
 
 
 

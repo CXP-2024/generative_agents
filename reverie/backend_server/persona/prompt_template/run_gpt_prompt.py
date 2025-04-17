@@ -683,6 +683,9 @@ def run_gpt_prompt_action_arena(action_description,
     return prompt_input
 
   def __func_clean_up(gpt_response, prompt=""):
+    # if has {, then remove {, and get the left
+    if "{" in gpt_response: 
+      gpt_response = gpt_response.split("{")[-1]
     cleaned_response = gpt_response.split("}")[0]
     return cleaned_response
 
@@ -709,7 +712,9 @@ def run_gpt_prompt_action_arena(action_description,
   fail_safe = get_fail_safe()
   output = safe_generate_response(prompt, gpt_param, 5, fail_safe,
                                    __func_validate, __func_clean_up)
+  #print("\033[1;31mDebug\033[0m")
   print (output)
+  #print("\033[0;31mDebug output complete\033[0m")
   # y = f"{act_world}:{act_sector}"
   # x = [i.strip() for i in persona.s_mem.get_str_accessible_sector_arenas(y).split(",")]
   # if output not in x: 
