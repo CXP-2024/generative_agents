@@ -1,0 +1,595 @@
+{
+  "vision_r": 8,
+  "att_bandwidth": 8,
+  "retention": 8,
+  "curr_time": "February 14, 2023, 15:05:00",
+  "curr_tile": [
+    124,
+    50
+  ],
+  "daily_plan_req": "Here\u2019s Maria Lopez\u2019s broad-stroke plan for Tuesday, February 14:    1. **Wake up and complete the morning routine at 8:00 AM** (outfit selection, pack physics materials).   2. **Lunch and study session at Hobbs Caf\u00e9 from 12:30 PM to 3:55 PM** (review lecture slides, take notes).   3. **Dinner at 6:00 PM** (quick meal before streaming prep).   4. **Twitch stream from 8:00 PM to 10:00 PM** (indie/RPG games with physics insights, chat engagement).   5. **Wind down and bedtime around 2:00 AM** (relax, check next day\u2019s schedule).    *[Key themes maintained: disciplined routine, productive studying, interactive streaming, and balance.]*",
+  "name": "Maria Lopez",
+  "first_name": "Maria",
+  "last_name": "Lopez",
+  "age": 21,
+  "innate": "energetic, enthusiastic, inquisitive",
+  "learned": "Maria Lopez is a student at Oak Hill College studying physics and a part time Twitch game streamer who loves to connect with people and explore new ideas.",
+  "currently": "**Status:** On Tuesday, February 14, Maria Lopez wakes up at 8:00 AM, following her structured morning routine\u2014selecting her outfit and packing her backpack with her physics study materials. She heads to **Hobbs Caf\u00e9** around 12:30 PM for lunch and a focused study session, reviewing lecture slides and taking notes until 3:55 PM. In the evening, she plans to stream indie/RPG games on Twitch from 8:00 PM to 10:00 PM, incorporating educational physics tidbits about game mechanics to engage her audience. She ensures her streaming setup is optimized, with her mic, software, and chat analytics ready. Maria feels confident about replicating Monday\u2019s successful balance of academics and streaming, ending the day with the same sense of accomplishment and energy.  \n\n*[Key themes: disciplined routine, productive studying at Hobbs Caf\u00e9, interactive streaming, and seamless balance between physics and content creation.]*",
+  "lifestyle": "Maria Lopez goes to bed around 2am, awakes up around 9am, eats dinner around 6pm. She likes to hang out at Hobbs Cafe if it's before 6pm.",
+  "living_area": "the Ville:Dorm for Oak Hill College:Maria Lopez's room",
+  "concept_forget": 100,
+  "daily_reflection_time": 180,
+  "daily_reflection_size": 5,
+  "overlap_reflect_th": 4,
+  "kw_strg_event_reflect_th": 10,
+  "kw_strg_thought_reflect_th": 9,
+  "recency_w": 1,
+  "relevance_w": 1,
+  "importance_w": 1,
+  "recency_decay": 0.99,
+  "importance_trigger_max": 150,
+  "importance_trigger_curr": 80,
+  "importance_ele_n": 23,
+  "thought_count": 5,
+  "daily_req": [
+    "wake up and complete the morning routine at 8:00 am"
+  ],
+  "f_daily_schedule": [
+    [
+      "sleeping",
+      480
+    ],
+    [
+      "[(ID:B7QbhD) Tuesday February 14 -- 08:00 AM] Activity: Maria is waking up and starting her morning routine (selecting outfit, packing physics materials) (1) Maria is stretching and getting out of bed)",
+      5
+    ],
+    [
+      "[(ID:B7QbhD) Tuesday February 14 -- 08:00 AM] Activity: Maria is waking up and starting her morning routine (selecting outfit, packing physics materials) (brushing her teeth and washing her face)",
+      10
+    ],
+    [
+      "[(ID:B7QbhD) Tuesday February 14 -- 08:00 AM] Activity: Maria is waking up and starting her morning routine (selecting outfit, packing physics materials) (selecting her outfit for the day)",
+      10
+    ],
+    [
+      "[(ID:B7QbhD) Tuesday February 14 -- 08:00 AM] Activity: Maria is waking up and starting her morning routine (selecting outfit, packing physics materials) (getting dressed)",
+      5
+    ],
+    [
+      "[(ID:B7QbhD) Tuesday February 14 -- 08:00 AM] Activity: Maria is waking up and starting her morning routine (selecting outfit, packing physics materials) (checking her physics study schedule)",
+      5
+    ],
+    [
+      "[(ID:B7QbhD) Tuesday February 14 -- 08:00 AM] Activity: Maria is waking up and starting her morning routine (selecting outfit, packing physics materials) (gathering her physics textbooks and notes)",
+      10
+    ],
+    [
+      "[(ID:B7QbhD) Tuesday February 14 -- 08:00 AM] Activity: Maria is waking up and starting her morning routine (selecting outfit, packing physics materials) (organizing her backpack with study materials)",
+      10
+    ],
+    [
+      "[(ID:B7QbhD) Tuesday February 14 -- 08:00 AM] Activity: Maria is waking up and starting her morning routine (selecting outfit, packing physics materials) (doing a final check to ensure she has everything)",
+      5
+    ],
+    [
+      "[(ID:igAXU5) Tuesday February 14 -- 09:00 AM] Activity: Maria is having breakfast and reviewing physics notes (1) Maria is preparing breakfast (toast and coffee))",
+      10
+    ],
+    [
+      "[(ID:igAXU5) Tuesday February 14 -- 09:00 AM] Activity: Maria is having breakfast and reviewing physics notes (eating breakfast while checking her phone for messages)",
+      15
+    ],
+    [
+      "[(ID:igAXU5) Tuesday February 14 -- 09:00 AM] Activity: Maria is having breakfast and reviewing physics notes (clearing the table and washing her dishes)",
+      5
+    ],
+    [
+      "[(ID:igAXU5) Tuesday February 14 -- 09:00 AM] Activity: Maria is having breakfast and reviewing physics notes (gathering her physics notes and textbooks)",
+      5
+    ],
+    [
+      "[(ID:igAXU5) Tuesday February 14 -- 09:00 AM] Activity: Maria is having breakfast and reviewing physics notes (reviewing lecture slides from the previous class)",
+      15
+    ],
+    [
+      "[(ID:igAXU5) Tuesday February 14 -- 09:00 AM] Activity: Maria is having breakfast and reviewing physics notes (jotting down key points and questions for clarification)",
+      10
+    ],
+    [
+      "[(ID:H3j1BR) Tuesday February 14 -- 10:00 AM] Activity: Maria is working on physics problem sets at home (1) Maria is organizing her physics notes and problem sets)",
+      5
+    ],
+    [
+      "[(ID:H3j1BR) Tuesday February 14 -- 10:00 AM] Activity: Maria is working on physics problem sets at home (reviewing the problem set instructions)",
+      10
+    ],
+    [
+      "[(ID:H3j1BR) Tuesday February 14 -- 10:00 AM] Activity: Maria is working on physics problem sets at home (solving the first physics problem)",
+      15
+    ],
+    [
+      "[(ID:H3j1BR) Tuesday February 14 -- 10:00 AM] Activity: Maria is working on physics problem sets at home (checking her calculations for accuracy)",
+      5
+    ],
+    [
+      "[(ID:H3j1BR) Tuesday February 14 -- 10:00 AM] Activity: Maria is working on physics problem sets at home (taking a short stretch break)",
+      5
+    ],
+    [
+      "[(ID:H3j1BR) Tuesday February 14 -- 10:00 AM] Activity: Maria is working on physics problem sets at home (solving the second physics problem)",
+      15
+    ],
+    [
+      "[(ID:H3j1BR) Tuesday February 14 -- 10:00 AM] Activity: Maria is working on physics problem sets at home (summarizing key takeaways from the problem set)",
+      5
+    ],
+    [
+      "[(ID:xJ15Tz) Tuesday February 14 -- 11:00 AM] Activity: Maria is continuing to work on physics problem sets at home (reviewing the physics problem set instructions)",
+      5
+    ],
+    [
+      "[(ID:xJ15Tz) Tuesday February 14 -- 11:00 AM] Activity: Maria is continuing to work on physics problem sets at home (solving the first problem)",
+      10
+    ],
+    [
+      "[(ID:xJ15Tz) Tuesday February 14 -- 11:00 AM] Activity: Maria is continuing to work on physics problem sets at home (checking her calculations)",
+      5
+    ],
+    [
+      "[(ID:xJ15Tz) Tuesday February 14 -- 11:00 AM] Activity: Maria is continuing to work on physics problem sets at home (solving the second problem)",
+      10
+    ],
+    [
+      "[(ID:xJ15Tz) Tuesday February 14 -- 11:00 AM] Activity: Maria is continuing to work on physics problem sets at home (taking a quick stretch break)",
+      5
+    ],
+    [
+      "[(ID:xJ15Tz) Tuesday February 14 -- 11:00 AM] Activity: Maria is continuing to work on physics problem sets at home (solving the third problem)",
+      10
+    ],
+    [
+      "[(ID:xJ15Tz) Tuesday February 14 -- 11:00 AM] Activity: Maria is continuing to work on physics problem sets at home (verifying her answers with lecture notes)",
+      5
+    ],
+    [
+      "[(ID:xJ15Tz) Tuesday February 14 -- 11:00 AM] Activity: Maria is continuing to work on physics problem sets at home (organizing her completed work)",
+      5
+    ],
+    [
+      "[(ID:xJ15Tz) Tuesday February 14 -- 11:00 AM] Activity: Maria is continuing to work on physics problem sets at home (packing her materials for Hobbs Caf\u00e9)",
+      5
+    ],
+    [
+      "[(ID:Wh6BDi) Tuesday February 14 -- 12:00 PM] Activity: Maria is preparing to head to Hobbs Caf\u00e9 for lunch and study session (1) Maria is gathering her physics study materials)",
+      10
+    ],
+    [
+      "[(ID:Wh6BDi) Tuesday February 14 -- 12:00 PM] Activity: Maria is preparing to head to Hobbs Caf\u00e9 for lunch and study session (checking her notes and problem sets)",
+      10
+    ],
+    [
+      "[(ID:Wh6BDi) Tuesday February 14 -- 12:00 PM] Activity: Maria is preparing to head to Hobbs Caf\u00e9 for lunch and study session (packing her backpack with textbooks and laptop)",
+      10
+    ],
+    [
+      "[(ID:Wh6BDi) Tuesday February 14 -- 12:00 PM] Activity: Maria is preparing to head to Hobbs Caf\u00e9 for lunch and study session (grabbing her wallet, keys, and phone)",
+      5
+    ],
+    [
+      "[(ID:Wh6BDi) Tuesday February 14 -- 12:00 PM] Activity: Maria is preparing to head to Hobbs Caf\u00e9 for lunch and study session (putting on her jacket and shoes)",
+      5
+    ],
+    [
+      "[(ID:Wh6BDi) Tuesday February 14 -- 12:00 PM] Activity: Maria is preparing to head to Hobbs Caf\u00e9 for lunch and study session (checking the bus/train schedule)",
+      5
+    ],
+    [
+      "[(ID:Wh6BDi) Tuesday February 14 -- 12:00 PM] Activity: Maria is preparing to head to Hobbs Caf\u00e9 for lunch and study session (walking to the bus/train stop)",
+      15
+    ],
+    [
+      "[(ID:9n8lYS) Tuesday February 14 -- 01:00 PM] Activity: Maria is having lunch and reviewing lecture slides at Hobbs Caf\u00e9 (ordering her lunch at the counter)",
+      5
+    ],
+    [
+      "[(ID:9n8lYS) Tuesday February 14 -- 01:00 PM] Activity: Maria is having lunch and reviewing lecture slides at Hobbs Caf\u00e9 (finding a quiet table near an outlet)",
+      5
+    ],
+    [
+      "[(ID:9n8lYS) Tuesday February 14 -- 01:00 PM] Activity: Maria is having lunch and reviewing lecture slides at Hobbs Caf\u00e9 (eating her lunch while checking her phone for messages)",
+      15
+    ],
+    [
+      "[(ID:9n8lYS) Tuesday February 14 -- 01:00 PM] Activity: Maria is having lunch and reviewing lecture slides at Hobbs Caf\u00e9 (opening her laptop and pulling up the lecture slides)",
+      5
+    ],
+    [
+      "[(ID:9n8lYS) Tuesday February 14 -- 01:00 PM] Activity: Maria is having lunch and reviewing lecture slides at Hobbs Caf\u00e9 (skimming through the slides to refresh her memory)",
+      10
+    ],
+    [
+      "[(ID:9n8lYS) Tuesday February 14 -- 01:00 PM] Activity: Maria is having lunch and reviewing lecture slides at Hobbs Caf\u00e9 (taking notes on key concepts from the slides)",
+      15
+    ],
+    [
+      "[ (on the way to organizing her notes and saving them to her study folder)",
+      0
+    ],
+    [
+      "[ (conversing about Maria Lopez and Klaus Mueller discussing their respective research interests in quantum mechanics and urban studies, discovering interdisciplinary connections between physics and urban design, and planning to meet for coffee to further explore these ideas.)",
+      12
+    ],
+    [
+      "[(ID:jQrWmh) Tuesday February 14 -- 02:00 PM] Activity: Maria is continuing her study session at Hobbs Caf\u00e9, taking detailed physics notes (organizing her physics notes and lecture slides)",
+      10
+    ],
+    [
+      "[(ID:jQrWmh) Tuesday February 14 -- 02:00 PM] Activity: Maria is continuing her study session at Hobbs Caf\u00e9, taking detailed physics notes (reading through the current lecture material)",
+      15
+    ],
+    [
+      "[(ID:jQrWmh) Tuesday February 14 -- 02:00 PM] Activity: Maria is continuing her study session at Hobbs Caf\u00e9, taking detailed physics notes (highlighting key physics concepts)",
+      10
+    ],
+    [
+      "[(ID:jQrWmh) Tuesday February 14 -- 02:00 PM] Activity: Maria is continuing her study session at Hobbs Caf\u00e9, taking detailed physics notes (writing summaries of the lecture topics)",
+      15
+    ],
+    [
+      "[(ID:jQrWmh) Tuesday February 14 -- 02:00 PM] Activity: Maria is continuing her study session at Hobbs Caf\u00e9, taking detailed physics notes (reviewing her notes for clarity)",
+      3
+    ],
+    [
+      "[(ID:VSdojN) Tuesday February 14 -- 03:00 PM] Activity: Maria is wrapping up her study session at Hobbs Caf\u00e9, finalizing physics notes",
+      60
+    ],
+    [
+      "[(ID:SQvxee) Tuesday February 14 -- 04:00 PM] Activity: Maria is relaxing at home, taking a short break after her study session",
+      60
+    ],
+    [
+      "[(ID:Q5B62l) Tuesday February 14 -- 05:00 PM] Activity: Maria is working on physics problem sets at home",
+      60
+    ],
+    [
+      "[(ID:26OZbc) Tuesday February 14 -- 06:00 PM] Activity: Maria is having dinner at home",
+      60
+    ],
+    [
+      "[(ID:pf9zVs) Tuesday February 14 -- 07:00 PM] Activity: Maria is preparing her streaming setup (mic check, software setup, chat analytics)",
+      60
+    ],
+    [
+      "[(ID:AhVTPS) Tuesday February 14 -- 08:00 PM] Activity: Maria is streaming indie/RPG games on Twitch with physics insights and engaging with her audience",
+      60
+    ],
+    [
+      "[(ID:THcZzB) Tuesday February 14 -- 09:00 PM] Activity: Maria is continuing her Twitch stream, engaging with viewers and sharing physics insights about game mechanics",
+      60
+    ],
+    [
+      "[(ID:4xErv6) Tuesday February 14 -- 10:00 PM] Activity: Maria is wrapping up her Twitch stream and saying goodbye to viewers",
+      60
+    ],
+    [
+      "[(ID:AbewSu) Tuesday February 14 -- 11:00 PM] Activity: Maria is winding down, checking tomorrow's schedule, and preparing for bed",
+      60
+    ],
+    [
+      "sleeping",
+      0
+    ],
+    [
+      "sleeping",
+      0
+    ],
+    [
+      "sleeping",
+      0
+    ],
+    [
+      "sleeping",
+      0
+    ],
+    [
+      "sleeping",
+      0
+    ],
+    [
+      "sleeping",
+      0
+    ],
+    [
+      "sleeping",
+      0
+    ],
+    [
+      "sleeping",
+      0
+    ],
+    [
+      "sleeping",
+      0
+    ],
+    [
+      "sleeping",
+      0
+    ],
+    [
+      "sleeping",
+      0
+    ],
+    [
+      "sleeping",
+      0
+    ],
+    [
+      "sleeping",
+      0
+    ],
+    [
+      "sleeping",
+      0
+    ],
+    [
+      "sleeping",
+      0
+    ],
+    [
+      "sleeping",
+      0
+    ],
+    [
+      "sleeping",
+      0
+    ],
+    [
+      "sleeping",
+      0
+    ],
+    [
+      "sleeping",
+      0
+    ],
+    [
+      "sleeping",
+      0
+    ],
+    [
+      "sleeping",
+      0
+    ],
+    [
+      "sleeping",
+      0
+    ],
+    [
+      "sleeping",
+      0
+    ],
+    [
+      "sleeping",
+      0
+    ],
+    [
+      "sleeping",
+      0
+    ],
+    [
+      "sleeping",
+      0
+    ],
+    [
+      "sleeping",
+      0
+    ],
+    [
+      "sleeping",
+      0
+    ],
+    [
+      "sleeping",
+      0
+    ],
+    [
+      "sleeping",
+      0
+    ],
+    [
+      "sleeping",
+      0
+    ],
+    [
+      "sleeping",
+      0
+    ],
+    [
+      "sleeping",
+      0
+    ],
+    [
+      "sleeping",
+      0
+    ],
+    [
+      "sleeping",
+      0
+    ],
+    [
+      "sleeping",
+      0
+    ],
+    [
+      "sleeping",
+      0
+    ],
+    [
+      "sleeping",
+      0
+    ],
+    [
+      "sleeping",
+      0
+    ],
+    [
+      "sleeping",
+      0
+    ],
+    [
+      "sleeping",
+      0
+    ],
+    [
+      "sleeping",
+      0
+    ],
+    [
+      "sleeping",
+      0
+    ],
+    [
+      "sleeping",
+      0
+    ]
+  ],
+  "f_daily_schedule_hourly_org": [
+    [
+      "sleeping",
+      480
+    ],
+    [
+      "[(ID:B7QbhD) Tuesday February 14 -- 08:00 AM] Activity: Maria is waking up and starting her morning routine (selecting outfit, packing physics materials)",
+      60
+    ],
+    [
+      "[(ID:igAXU5) Tuesday February 14 -- 09:00 AM] Activity: Maria is having breakfast and reviewing physics notes",
+      60
+    ],
+    [
+      "[(ID:H3j1BR) Tuesday February 14 -- 10:00 AM] Activity: Maria is working on physics problem sets at home",
+      60
+    ],
+    [
+      "[(ID:xJ15Tz) Tuesday February 14 -- 11:00 AM] Activity: Maria is continuing to work on physics problem sets at home",
+      60
+    ],
+    [
+      "[(ID:Wh6BDi) Tuesday February 14 -- 12:00 PM] Activity: Maria is preparing to head to Hobbs Caf\u00e9 for lunch and study session",
+      60
+    ],
+    [
+      "[(ID:9n8lYS) Tuesday February 14 -- 01:00 PM] Activity: Maria is having lunch and reviewing lecture slides at Hobbs Caf\u00e9",
+      60
+    ],
+    [
+      "[(ID:jQrWmh) Tuesday February 14 -- 02:00 PM] Activity: Maria is continuing her study session at Hobbs Caf\u00e9, taking detailed physics notes",
+      60
+    ],
+    [
+      "[(ID:VSdojN) Tuesday February 14 -- 03:00 PM] Activity: Maria is wrapping up her study session at Hobbs Caf\u00e9, finalizing physics notes",
+      60
+    ],
+    [
+      "[(ID:SQvxee) Tuesday February 14 -- 04:00 PM] Activity: Maria is relaxing at home, taking a short break after her study session",
+      60
+    ],
+    [
+      "[(ID:Q5B62l) Tuesday February 14 -- 05:00 PM] Activity: Maria is working on physics problem sets at home",
+      60
+    ],
+    [
+      "[(ID:26OZbc) Tuesday February 14 -- 06:00 PM] Activity: Maria is having dinner at home",
+      60
+    ],
+    [
+      "[(ID:pf9zVs) Tuesday February 14 -- 07:00 PM] Activity: Maria is preparing her streaming setup (mic check, software setup, chat analytics)",
+      60
+    ],
+    [
+      "[(ID:AhVTPS) Tuesday February 14 -- 08:00 PM] Activity: Maria is streaming indie/RPG games on Twitch with physics insights and engaging with her audience",
+      60
+    ],
+    [
+      "[(ID:THcZzB) Tuesday February 14 -- 09:00 PM] Activity: Maria is continuing her Twitch stream, engaging with viewers and sharing physics insights about game mechanics",
+      60
+    ],
+    [
+      "[(ID:4xErv6) Tuesday February 14 -- 10:00 PM] Activity: Maria is wrapping up her Twitch stream and saying goodbye to viewers",
+      60
+    ],
+    [
+      "[(ID:AbewSu) Tuesday February 14 -- 11:00 PM] Activity: Maria is winding down, checking tomorrow's schedule, and preparing for bed",
+      60
+    ]
+  ],
+  "act_address": "<persona> Klaus Mueller",
+  "act_start_time": "February 14, 2023, 13:50:00",
+  "act_duration": 12,
+  "act_description": "conversing about Maria Lopez and Klaus Mueller discussing their respective research interests in quantum mechanics and urban studies, discovering interdisciplinary connections between physics and urban design, and planning to meet for coffee to further explore these ideas.",
+  "act_pronunciatio": "\ud83d\udcac",
+  "act_event": [
+    "Maria Lopez",
+    "chat with",
+    "Klaus Mueller"
+  ],
+  "act_obj_description": null,
+  "act_obj_pronunciatio": null,
+  "act_obj_event": [
+    null,
+    null,
+    null
+  ],
+  "chatting_with": "Klaus Mueller",
+  "chat": [
+    [
+      "Maria Lopez",
+      "Hey Klaus! Taking a break with a good book? What are you reading?"
+    ],
+    [
+      "Klaus Mueller",
+      "Hey Maria! Yeah, just taking a quick break with 'The Color of Law'\u2014it's about housing segregation and ties into my gentrification research. How about you? Those lecture slides look intense!"
+    ],
+    [
+      "Maria Lopez",
+      "Oh, that sounds fascinating! I love how you connect your leisure reading to your research. And yeah, these slides are for my quantum mechanics class\u2014trying to wrap my head around some tricky concepts before my next lecture. Do you ever find physics popping up in your urban studies work?"
+    ],
+    [
+      "Klaus Mueller",
+      "Haha, not usually quantum mechanics, but I do see parallels in systems theory\u2014how small changes in policy can ripple through communities like wave functions! Though I\u2019ll admit, your field\u2019s math is way beyond my comfort zone. How\u2019s the caf\u00e9 treating you for study sessions?"
+    ],
+    [
+      "Maria Lopez",
+      "The caf\u00e9\u2019s actually perfect for studying\u2014good coffee and just enough background noise to keep me focused. Plus, I love how the vibe here sparks creativity. Speaking of ripples, have you ever thought about how urban design could borrow from fluid dynamics? Like optimizing pedestrian flow using principles from physics?"
+    ],
+    [
+      "Klaus Mueller",
+      "That\u2019s a really interesting idea! I\u2019ve never thought about fluid dynamics applied to urban design, but now I\u2019m curious\u2014maybe there\u2019s a way to model displacement patterns in gentrification similarly. Do you have any papers or resources on that? I\u2019d love to explore the crossover more."
+    ],
+    [
+      "Maria Lopez",
+      "Oh, I can definitely recommend some interdisciplinary papers on fluid dynamics and urban planning! There's a great one by Dr. Chen that bridges traffic flow and laminar flow principles. I can send you the link later if you'd like\u2014it might give you a fresh perspective for your research!"
+    ],
+    [
+      "Klaus Mueller",
+      "That would be amazing, Maria! I\u2019d really appreciate the link\u2014always looking for new angles to approach my research. Maybe we could even grab coffee sometime and brainstorm more crossover ideas between our fields?"
+    ],
+    [
+      "Maria Lopez",
+      "That sounds like a fantastic idea, Klaus! I'd love to chat more about this\u2014how about next Tuesday afternoon at Hobbs Caf\u00e9? We could make it a working coffee session and dive deeper into these interdisciplinary connections!"
+    ],
+    [
+      "Klaus Mueller",
+      "Next Tuesday afternoon sounds perfect! Let\u2019s say around 2:00 PM? That way, I can wrap up my morning research block and be fully present for our brainstorming session. I\u2019m really excited to explore these interdisciplinary ideas with you!"
+    ],
+    [
+      "Maria Lopez",
+      "2:00 PM next Tuesday works great for me too! I'll bring those papers and some physics-inspired urban design ideas to the table. Looking forward to it, Klaus!"
+    ]
+  ],
+  "chatting_with_buffer": {
+    "Klaus Mueller": 800
+  },
+  "chatting_end_time": "February 14, 2023, 13:57:00",
+  "act_path_set": true,
+  "planned_path": []
+}
