@@ -1,0 +1,34 @@
+{
+  "persona": {
+    "Isabella Rodriguez": {
+      "movement": [
+        76,
+        14
+      ],
+      "pronunciatio": "\u2615\ud83d\ude0a",
+      "description": "[(ID:0JKvPU) Monday February 13 -- 09:00 AM] Activity: Isabella is working at the counter, greeting customers with a warm smile and preparing coffee orders (serving the coffee with a friendly comment) @ the Ville:Isabella Rodriguez's apartment:main room:shelf",
+      "chat": null
+    },
+    "Maria Lopez": {
+      "movement": [
+        124,
+        53
+      ],
+      "pronunciatio": "\u2615\ud83c\udf73",
+      "description": "eating breakfast and preparing for her day (making coffee and a quick breakfast) @ the Ville:Dorm for Oak Hill College:kitchen:cooking area",
+      "chat": null
+    },
+    "Klaus Mueller": {
+      "movement": [
+        130,
+        50
+      ],
+      "pronunciatio": "\ud83d\udeb6\u200d\u2642",
+      "description": "walking to the library at Oak Hill College (walking past the student center and observing campus activity) @ the Ville:Dorm for Oak Hill College:common room:common room sofa",
+      "chat": null
+    }
+  },
+  "meta": {
+    "curr_time": "February 13, 2023, 09:25:00"
+  }
+}

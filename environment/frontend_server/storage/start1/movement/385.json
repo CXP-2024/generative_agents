@@ -1,0 +1,34 @@
+{
+  "persona": {
+    "Isabella Rodriguez": {
+      "movement": [
+        73,
+        14
+      ],
+      "pronunciatio": "\ud83d\udeb0\ud83d\udca7",
+      "description": "[(ID:QlS3O2) Tuesday February 14 -- 08:00 AM] Activity: Isabella is waking up, completing her morning routine with a quick workout, showering, and putting on her festive Valentine\u2019s Day outfit (drinking a glass of water) @ the Ville:Isabella Rodriguez's apartment:main room:refrigerator",
+      "chat": null
+    },
+    "Maria Lopez": {
+      "movement": [
+        123,
+        56
+      ],
+      "pronunciatio": "\ud83e\udea5\ud83e\uddfc",
+      "description": "[(ID:B7QbhD) Tuesday February 14 -- 08:00 AM] Activity: Maria is waking up and starting her morning routine (selecting outfit, packing physics materials) (brushing her teeth and washing her face) @ the Ville:Dorm for Oak Hill College:woman's bathroom:bathroom sink",
+      "chat": null
+    },
+    "Klaus Mueller": {
+      "movement": [
+        127,
+        46
+      ],
+      "pronunciatio": "\ud83e\udea5\ud83e\uddfc",
+      "description": "waking up and completing his morning routine, including reviewing Monday's research notes at his desk (brushing his teeth and washing his face) @ the Ville:Dorm for Oak Hill College:man's bathroom:bathroom sink",
+      "chat": null
+    }
+  },
+  "meta": {
+    "curr_time": "February 14, 2023, 08:05:00"
+  }
+}

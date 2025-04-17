@@ -1,0 +1,34 @@
+{
+  "persona": {
+    "Isabella Rodriguez": {
+      "movement": [
+        77,
+        19
+      ],
+      "pronunciatio": "\ud83c\udf7d\ufe0f\ud83d\ude0c",
+      "description": "[(ID:VHHIh3) Monday February 13 -- 12:00 PM] Activity: Isabella is taking a short lunch break while keeping an eye on the cafe (sitting at a quiet corner table to eat) @ the Ville:Hobbs Cafe:cafe:cafe customer seating",
+      "chat": null
+    },
+    "Maria Lopez": {
+      "movement": [
+        124,
+        53
+      ],
+      "pronunciatio": "\u23f3\ud83c\udf7d\ufe0f",
+      "description": "having lunch at Hobbs Cafe while reviewing physics notes (waiting for her food to be prepared) @ the Ville:Hobbs Cafe:cafe:cafe customer seating",
+      "chat": null
+    },
+    "Klaus Mueller": {
+      "movement": [
+        131,
+        48
+      ],
+      "pronunciatio": "\ud83c\udf54\ud83d\udcf1",
+      "description": "[(ID:Hqo36u) Monday February 13 -- 12:00 PM] Activity: Klaus is taking a short lunch break at Hobbs Cafe while reviewing his research notes (ordering his lunch) @ the Ville:Hobbs Cafe:cafe:behind the cafe counter",
+      "chat": null
+    }
+  },
+  "meta": {
+    "curr_time": "February 13, 2023, 12:10:00"
+  }
+}

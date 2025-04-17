@@ -1,0 +1,34 @@
+{
+  "persona": {
+    "Isabella Rodriguez": {
+      "movement": [
+        77,
+        14
+      ],
+      "pronunciatio": "\ud83d\udc5a\ud83d\udc56",
+      "description": "[(ID:zM3Gec) Monday February 13 -- 09:00 PM] Activity: Isabella is at home, relaxing after a long day at the cafe while making final notes for tomorrow's Valentine's party (setting out her outfit for tomorrow) @ the Ville:Isabella Rodriguez's apartment:main room:closet",
+      "chat": null
+    },
+    "Maria Lopez": {
+      "movement": [
+        127,
+        54
+      ],
+      "pronunciatio": "\ud83d\ude4f\ud83c\udfac",
+      "description": "[(ID:Fqp6Xc) Monday February 13 -- 09:00 PM] Activity: Maria is streaming a late-night gaming session on Twitch, interacting with her audience (wrapping up the session and thanking viewers) @ the Ville:Dorm for Oak Hill College:Maria Lopez's room:computer",
+      "chat": null
+    },
+    "Klaus Mueller": {
+      "movement": [
+        131,
+        46
+      ],
+      "pronunciatio": "\ud83d\udcd6\ud83e\udd14",
+      "description": "[(ID:mv7JWr) Monday February 13 -- 09:00 PM] Activity: Klaus is relaxing at home, reading sociology articles and preparing for bed (reviewing his notes and reflecting on connections to his research) @ the Ville:Dorm for Oak Hill College:Klaus Mueller's room:desk",
+      "chat": null
+    }
+  },
+  "meta": {
+    "curr_time": "February 13, 2023, 21:50:00"
+  }
+}

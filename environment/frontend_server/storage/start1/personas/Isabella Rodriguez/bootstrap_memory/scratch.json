@@ -1,0 +1,739 @@
+{
+  "vision_r": 8,
+  "att_bandwidth": 8,
+  "retention": 8,
+  "curr_time": "February 14, 2023, 15:05:00",
+  "curr_tile": [
+    77,
+    14
+  ],
+  "daily_plan_req": "Here\u2019s Isabella Rodriguez\u2019s broad-stroke plan for **Tuesday, February 14, 2023 (Valentine\u2019s Day)**:    1. **Wake up and complete the morning routine at 6:00 AM** \u2013 Fresh start with a quick workout, shower, and putting on her festive Valentine\u2019s Day outfit.   2. **Arrive at Hobbs Caf\u00e9 by 7:00 AM** \u2013 Final pre-opening checks, ensuring decorations are perfect and the special menu is ready.   3. **Open the caf\u00e9 and manage daily operations from 8:00 AM\u20134:30 PM** \u2013 Greet customers, serve coffee, and hype up the evening party while keeping the caf\u00e9 running smoothly.   4. **Final party preparations at 4:30 PM** \u2013 Light refresh of decorations, last-minute staff pep talk, and set up the special menu station.   5. **Host the Valentine\u2019s Day party from 5:00 PM\u20137:00 PM** \u2013 Welcome guests, mingle, and ensure the event feels magical (with photo ops and heart-themed treats!).   6. **Close the caf\u00e9 by 8:00 PM and wind down by 11:00 PM** \u2013 Post-party cleanup, reflect on the day\u2019s success, and head home to rest.    *\"What a day!\"* she sighs happily, already brainstorming next year\u2019s ideas. \ud83d\udc96\u2615",
+  "name": "Isabella Rodriguez",
+  "first_name": "Isabella",
+  "last_name": "Rodriguez",
+  "age": 34,
+  "innate": "friendly, outgoing, hospitable",
+  "learned": "Isabella Rodriguez is a cafe owner of Hobbs Cafe who loves to make people feel welcome. She is always looking for ways to make the cafe a place where people can come to relax and enjoy themselves.",
+  "currently": "**Status:** *Isabella Rodriguez is buzzing with excitement as she kicks off Valentine\u2019s Day at Hobbs Caf\u00e9 on **Tuesday, February 14, 2023**. The caf\u00e9 is adorned with festive decorations she finalized the night before (Monday, February 13, at 8:00 PM), and she\u2019s wearing her carefully selected outfit, ready to match the celebratory vibe. From the moment the doors open, she\u2019s engaging customers with enthusiasm, reminding them of the **Valentine\u2019s Day party from 5:00 PM to 7:00 PM** at Hobbs Caf\u00e9 and highlighting the special menu. Despite the event focus, she\u2019s seamlessly balancing daily operations\u2014serving coffee, taking orders, and maintaining the caf\u00e9\u2019s signature clean and organized workspace. Her energy is contagious, and her dedication to making the day unforgettable shines through every interaction. By afternoon, anticipation builds as final touches are added for the party. Isabella\u2019s heart is full; today is the culmination of her hard work, and she\u2019s determined to create a magical experience for everyone who walks through the door.*  \n\n**Specific Scheduling Notes:**  \n- **Tuesday, February 14, 5:00 PM\u20137:00 PM**: Valentine\u2019s Day party at Hobbs Caf\u00e9 (decorations ready, special menu live).  \n- **All day**: Outfit on point, customer engagement high, and daily operations running smoothly.  \n\n*\"This is it\u2014the day we\u2019ve all been waiting for!\"* Isabella thinks, grinning as she ties a heart-shaped balloon to the counter. *\"Let the love (and coffee) flow!\"* \ud83d\udc98\u2615",
+  "lifestyle": "Isabella Rodriguez goes to bed around 11pm, awakes up around 6am.",
+  "living_area": "the Ville:Isabella Rodriguez's apartment:main room",
+  "concept_forget": 100,
+  "daily_reflection_time": 180,
+  "daily_reflection_size": 5,
+  "overlap_reflect_th": 4,
+  "kw_strg_event_reflect_th": 10,
+  "kw_strg_thought_reflect_th": 9,
+  "recency_w": 1,
+  "relevance_w": 1,
+  "importance_w": 1,
+  "recency_decay": 0.995,
+  "importance_trigger_max": 150,
+  "importance_trigger_curr": 150,
+  "importance_ele_n": 0,
+  "thought_count": 5,
+  "daily_req": [
+    "wake up and complete the morning routine at 8:00 am",
+    "open the cafe and prepare for the day at 8:00 am",
+    "work at the counter serving customers with a cheerful demeanor throughout the day",
+    "take a short break for lunch around 12:30 pm",
+    "continue working and interact with customers, sharing the Valentine's Day party details excitedly",
+    "tidy up and prepare the cafe for tomorrow's event from 5:00 pm to 7:00 pm",
+    "finalize decorations and last-minute party preparations after closing at 8:00 pm"
+  ],
+  "f_daily_schedule": [
+    [
+      "sleeping",
+      480
+    ],
+    [
+      "[(ID:QlS3O2) Tuesday February 14 -- 08:00 AM] Activity: Isabella is waking up, completing her morning routine with a quick workout, showering, and putting on her festive Valentine\u2019s Day outfit (1) Isabella is waking up and stretching)",
+      5
+    ],
+    [
+      "[(ID:QlS3O2) Tuesday February 14 -- 08:00 AM] Activity: Isabella is waking up, completing her morning routine with a quick workout, showering, and putting on her festive Valentine\u2019s Day outfit (drinking a glass of water)",
+      5
+    ],
+    [
+      "[(ID:QlS3O2) Tuesday February 14 -- 08:00 AM] Activity: Isabella is waking up, completing her morning routine with a quick workout, showering, and putting on her festive Valentine\u2019s Day outfit (doing a quick workout (yoga or light cardio))",
+      15
+    ],
+    [
+      "[(ID:QlS3O2) Tuesday February 14 -- 08:00 AM] Activity: Isabella is waking up, completing her morning routine with a quick workout, showering, and putting on her festive Valentine\u2019s Day outfit (showering and freshening up)",
+      15
+    ],
+    [
+      "[(ID:QlS3O2) Tuesday February 14 -- 08:00 AM] Activity: Isabella is waking up, completing her morning routine with a quick workout, showering, and putting on her festive Valentine\u2019s Day outfit (applying light makeup)",
+      10
+    ],
+    [
+      "[(ID:QlS3O2) Tuesday February 14 -- 08:00 AM] Activity: Isabella is waking up, completing her morning routine with a quick workout, showering, and putting on her festive Valentine\u2019s Day outfit (putting on her festive Valentine\u2019s Day outfit)",
+      5
+    ],
+    [
+      "[(ID:QlS3O2) Tuesday February 14 -- 08:00 AM] Activity: Isabella is waking up, completing her morning routine with a quick workout, showering, and putting on her festive Valentine\u2019s Day outfit (grabbing her bag and keys before leaving)",
+      5
+    ],
+    [
+      "[(ID:23pYju) Tuesday February 14 -- 09:00 AM] Activity: Isabella is at Hobbs Caf\u00e9, greeting customers with enthusiasm and serving coffee while promoting the evening Valentine's Day party (1) Isabella is unlocking the caf\u00e9 doors and turning on the lights)",
+      5
+    ],
+    [
+      "[(ID:23pYju) Tuesday February 14 -- 09:00 AM] Activity: Isabella is at Hobbs Caf\u00e9, greeting customers with enthusiasm and serving coffee while promoting the evening Valentine's Day party (checking the coffee machines and ensuring they are ready for service)",
+      5
+    ],
+    [
+      "[(ID:23pYju) Tuesday February 14 -- 09:00 AM] Activity: Isabella is at Hobbs Caf\u00e9, greeting customers with enthusiasm and serving coffee while promoting the evening Valentine's Day party (arranging the counter with Valentine\u2019s Day-themed napkins and coasters)",
+      5
+    ],
+    [
+      "[(ID:23pYju) Tuesday February 14 -- 09:00 AM] Activity: Isabella is at Hobbs Caf\u00e9, greeting customers with enthusiasm and serving coffee while promoting the evening Valentine's Day party (greeting the first customers with a warm smile and taking their orders)",
+      10
+    ],
+    [
+      "[(ID:23pYju) Tuesday February 14 -- 09:00 AM] Activity: Isabella is at Hobbs Caf\u00e9, greeting customers with enthusiasm and serving coffee while promoting the evening Valentine's Day party (preparing and serving coffee while chatting about the evening party)",
+      10
+    ],
+    [
+      "[(ID:23pYju) Tuesday February 14 -- 09:00 AM] Activity: Isabella is at Hobbs Caf\u00e9, greeting customers with enthusiasm and serving coffee while promoting the evening Valentine's Day party (restocking pastries and checking inventory for the party)",
+      5
+    ],
+    [
+      "[(ID:23pYju) Tuesday February 14 -- 09:00 AM] Activity: Isabella is at Hobbs Caf\u00e9, greeting customers with enthusiasm and serving coffee while promoting the evening Valentine's Day party (engaging with a regular customer, sharing excitement about the event)",
+      5
+    ],
+    [
+      "[(ID:23pYju) Tuesday February 14 -- 09:00 AM] Activity: Isabella is at Hobbs Caf\u00e9, greeting customers with enthusiasm and serving coffee while promoting the evening Valentine's Day party (wiping down tables and ensuring the caf\u00e9 stays tidy)",
+      5
+    ],
+    [
+      "[(ID:23pYju) Tuesday February 14 -- 09:00 AM] Activity: Isabella is at Hobbs Caf\u00e9, greeting customers with enthusiasm and serving coffee while promoting the evening Valentine's Day party (handing out small Valentine\u2019s Day flyers to customers)",
+      5
+    ],
+    [
+      "[(ID:23pYju) Tuesday February 14 -- 09:00 AM] Activity: Isabella is at Hobbs Caf\u00e9, greeting customers with enthusiasm and serving coffee while promoting the evening Valentine's Day party (taking a quick sip of water and adjusting her festive outfit)",
+      5
+    ],
+    [
+      "[(ID:C3YMHH) Tuesday February 14 -- 10:00 AM] Activity: Isabella is working at the counter, serving customers with a cheerful demeanor and occasionally reminding them about the evening Valentine's Day party (1) Isabella is greeting customers with a warm smile as they enter)",
+      5
+    ],
+    [
+      "[(ID:C3YMHH) Tuesday February 14 -- 10:00 AM] Activity: Isabella is working at the counter, serving customers with a cheerful demeanor and occasionally reminding them about the evening Valentine's Day party (taking drink and food orders from customers)",
+      10
+    ],
+    [
+      "[(ID:C3YMHH) Tuesday February 14 -- 10:00 AM] Activity: Isabella is working at the counter, serving customers with a cheerful demeanor and occasionally reminding them about the evening Valentine's Day party (preparing coffee and handing it to customers)",
+      10
+    ],
+    [
+      "[(ID:C3YMHH) Tuesday February 14 -- 10:00 AM] Activity: Isabella is working at the counter, serving customers with a cheerful demeanor and occasionally reminding them about the evening Valentine's Day party (reminding a customer about the Valentine\u2019s Day party while handing them their order)",
+      5
+    ],
+    [
+      "[(ID:C3YMHH) Tuesday February 14 -- 10:00 AM] Activity: Isabella is working at the counter, serving customers with a cheerful demeanor and occasionally reminding them about the evening Valentine's Day party (restocking napkins and sugar packets at the counter)",
+      5
+    ],
+    [
+      "[(ID:C3YMHH) Tuesday February 14 -- 10:00 AM] Activity: Isabella is working at the counter, serving customers with a cheerful demeanor and occasionally reminding them about the evening Valentine's Day party (chatting with a regular customer about their plans for Valentine\u2019s Day)",
+      5
+    ],
+    [
+      "[(ID:C3YMHH) Tuesday February 14 -- 10:00 AM] Activity: Isabella is working at the counter, serving customers with a cheerful demeanor and occasionally reminding them about the evening Valentine's Day party (processing a payment at the register)",
+      5
+    ],
+    [
+      "[(ID:C3YMHH) Tuesday February 14 -- 10:00 AM] Activity: Isabella is working at the counter, serving customers with a cheerful demeanor and occasionally reminding them about the evening Valentine's Day party (wiping down the counter to keep it clean)",
+      5
+    ],
+    [
+      "[(ID:C3YMHH) Tuesday February 14 -- 10:00 AM] Activity: Isabella is working at the counter, serving customers with a cheerful demeanor and occasionally reminding them about the evening Valentine's Day party (handing out a small heart-shaped cookie as a free treat with an order)",
+      5
+    ],
+    [
+      "[(ID:C3YMHH) Tuesday February 14 -- 10:00 AM] Activity: Isabella is working at the counter, serving customers with a cheerful demeanor and occasionally reminding them about the evening Valentine's Day party (waving goodbye to a departing customer and inviting them to the party)",
+      5
+    ],
+    [
+      "[(ID:c74odc) Tuesday February 14 -- 11:00 AM] Activity: Isabella is enthusiastically engaging with customers at Hobbs Caf\u00e9, serving drinks and snacks while playfully teasing them about the upcoming Valentine's Day party (1) Isabella is greeting customers with a warm smile as they enter)",
+      5
+    ],
+    [
+      "[(ID:c74odc) Tuesday February 14 -- 11:00 AM] Activity: Isabella is enthusiastically engaging with customers at Hobbs Caf\u00e9, serving drinks and snacks while playfully teasing them about the upcoming Valentine's Day party (taking drink and snack orders from customers)",
+      10
+    ],
+    [
+      "[(ID:c74odc) Tuesday February 14 -- 11:00 AM] Activity: Isabella is enthusiastically engaging with customers at Hobbs Caf\u00e9, serving drinks and snacks while playfully teasing them about the upcoming Valentine's Day party (preparing and serving coffee with heart-themed latte art)",
+      10
+    ],
+    [
+      "[(ID:c74odc) Tuesday February 14 -- 11:00 AM] Activity: Isabella is enthusiastically engaging with customers at Hobbs Caf\u00e9, serving drinks and snacks while playfully teasing them about the upcoming Valentine's Day party (playfully reminding customers about the Valentine\u2019s Day party)",
+      5
+    ],
+    [
+      "[(ID:c74odc) Tuesday February 14 -- 11:00 AM] Activity: Isabella is enthusiastically engaging with customers at Hobbs Caf\u00e9, serving drinks and snacks while playfully teasing them about the upcoming Valentine's Day party (restocking pastries and napkins at the counter)",
+      5
+    ],
+    [
+      "[(ID:c74odc) Tuesday February 14 -- 11:00 AM] Activity: Isabella is enthusiastically engaging with customers at Hobbs Caf\u00e9, serving drinks and snacks while playfully teasing them about the upcoming Valentine's Day party (chatting with regulars about their Valentine\u2019s Day plans)",
+      10
+    ],
+    [
+      "[(ID:c74odc) Tuesday February 14 -- 11:00 AM] Activity: Isabella is enthusiastically engaging with customers at Hobbs Caf\u00e9, serving drinks and snacks while playfully teasing them about the upcoming Valentine's Day party (handing out small heart-shaped cookies as a party preview)",
+      5
+    ],
+    [
+      "[(ID:c74odc) Tuesday February 14 -- 11:00 AM] Activity: Isabella is enthusiastically engaging with customers at Hobbs Caf\u00e9, serving drinks and snacks while playfully teasing them about the upcoming Valentine's Day party (tidying the counter area between orders)",
+      5
+    ],
+    [
+      "[(ID:c74odc) Tuesday February 14 -- 11:00 AM] Activity: Isabella is enthusiastically engaging with customers at Hobbs Caf\u00e9, serving drinks and snacks while playfully teasing them about the upcoming Valentine's Day party (waving goodbye to departing customers with a cheerful \"See you tonight!\")",
+      5
+    ],
+    [
+      "[(ID:lpanzC) Tuesday February 14 -- 12:00 PM] Activity: Isabella is taking a short lunch break while keeping an eye on the caf\u00e9, chatting with regulars about the Valentine's Day party later (1) Isabella is stepping away from the counter to grab her lunch)",
+      5
+    ],
+    [
+      "[(ID:lpanzC) Tuesday February 14 -- 12:00 PM] Activity: Isabella is taking a short lunch break while keeping an eye on the caf\u00e9, chatting with regulars about the Valentine's Day party later (sitting at a cozy corner table to eat)",
+      10
+    ],
+    [
+      "[(ID:lpanzC) Tuesday February 14 -- 12:00 PM] Activity: Isabella is taking a short lunch break while keeping an eye on the caf\u00e9, chatting with regulars about the Valentine's Day party later (greeting a regular customer and inviting them to join her)",
+      5
+    ],
+    [
+      "[(ID:lpanzC) Tuesday February 14 -- 12:00 PM] Activity: Isabella is taking a short lunch break while keeping an eye on the caf\u00e9, chatting with regulars about the Valentine's Day party later (chatting with the customer about the Valentine\u2019s Day party)",
+      15
+    ],
+    [
+      "[(ID:lpanzC) Tuesday February 14 -- 12:00 PM] Activity: Isabella is taking a short lunch break while keeping an eye on the caf\u00e9, chatting with regulars about the Valentine's Day party later (checking on the caf\u00e9 staff and giving a quick smile)",
+      5
+    ],
+    [
+      "[(ID:lpanzC) Tuesday February 14 -- 12:00 PM] Activity: Isabella is taking a short lunch break while keeping an eye on the caf\u00e9, chatting with regulars about the Valentine's Day party later (finishing her lunch while glancing at the party setup)",
+      10
+    ],
+    [
+      "[(ID:lpanzC) Tuesday February 14 -- 12:00 PM] Activity: Isabella is taking a short lunch break while keeping an eye on the caf\u00e9, chatting with regulars about the Valentine's Day party later (tossing her trash and washing her hands)",
+      5
+    ],
+    [
+      "[(ID:lpanzC) Tuesday February 14 -- 12:00 PM] Activity: Isabella is taking a short lunch break while keeping an eye on the caf\u00e9, chatting with regulars about the Valentine's Day party later (returning to the counter, refreshed and ready)",
+      5
+    ],
+    [
+      "[(ID:2qvHRr) Tuesday February 14 -- 01:00 PM] Activity: Isabella is back behind the counter, serving customers with extra enthusiasm as she shares details about the Valentine's Day party and ensures the caf\u00e9 stays lively (1) Isabella is greeting customers with a warm smile as they enter)",
+      5
+    ],
+    [
+      "[(ID:2qvHRr) Tuesday February 14 -- 01:00 PM] Activity: Isabella is back behind the counter, serving customers with extra enthusiasm as she shares details about the Valentine's Day party and ensures the caf\u00e9 stays lively (taking drink and food orders while chatting about the Valentine\u2019s Day party)",
+      10
+    ],
+    [
+      "[(ID:2qvHRr) Tuesday February 14 -- 01:00 PM] Activity: Isabella is back behind the counter, serving customers with extra enthusiasm as she shares details about the Valentine's Day party and ensures the caf\u00e9 stays lively (preparing coffee and handing off orders to baristas)",
+      10
+    ],
+    [
+      "[(ID:2qvHRr) Tuesday February 14 -- 01:00 PM] Activity: Isabella is back behind the counter, serving customers with extra enthusiasm as she shares details about the Valentine's Day party and ensures the caf\u00e9 stays lively (checking in with seated customers, ensuring satisfaction)",
+      5
+    ],
+    [
+      "[(ID:2qvHRr) Tuesday February 14 -- 01:00 PM] Activity: Isabella is back behind the counter, serving customers with extra enthusiasm as she shares details about the Valentine's Day party and ensures the caf\u00e9 stays lively (restocking napkins and condiments at the service counter)",
+      5
+    ],
+    [
+      "[(ID:2qvHRr) Tuesday February 14 -- 01:00 PM] Activity: Isabella is back behind the counter, serving customers with extra enthusiasm as she shares details about the Valentine's Day party and ensures the caf\u00e9 stays lively (engaging a group of regulars, sharing party details enthusiastically)",
+      10
+    ],
+    [
+      "[(ID:2qvHRr) Tuesday February 14 -- 01:00 PM] Activity: Isabella is back behind the counter, serving customers with extra enthusiasm as she shares details about the Valentine's Day party and ensures the caf\u00e9 stays lively (tidying the pastry display and adding fresh treats)",
+      5
+    ],
+    [
+      "[(ID:2qvHRr) Tuesday February 14 -- 01:00 PM] Activity: Isabella is back behind the counter, serving customers with extra enthusiasm as she shares details about the Valentine's Day party and ensures the caf\u00e9 stays lively (ringing up a customer\u2019s order and slipping in a party reminder)",
+      5
+    ],
+    [
+      "[(ID:2qvHRr) Tuesday February 14 -- 01:00 PM] Activity: Isabella is back behind the counter, serving customers with extra enthusiasm as she shares details about the Valentine's Day party and ensures the caf\u00e9 stays lively (wiping down the counter and straightening the menu board)",
+      5
+    ],
+    [
+      "[(ID:Cp1ps8) Tuesday February 14 -- 02:00 PM] Activity: Isabella is energetically serving customers at Hobbs Caf\u00e9, making sure everyone feels the Valentine's Day spirit while subtly promoting the evening party (greeting customers with a warm smile and Valentine's Day cheer)",
+      5
+    ],
+    [
+      "[(ID:Cp1ps8) Tuesday February 14 -- 02:00 PM] Activity: Isabella is energetically serving customers at Hobbs Caf\u00e9, making sure everyone feels the Valentine's Day spirit while subtly promoting the evening party (taking drink and food orders while mentioning the special Valentine's Day menu)",
+      10
+    ],
+    [
+      "[(ID:Cp1ps8) Tuesday February 14 -- 02:00 PM] Activity: Isabella is energetically serving customers at Hobbs Caf\u00e9, making sure everyone feels the Valentine's Day spirit while subtly promoting the evening party (preparing coffee and snacks with festive touches (heart-shaped latte art, etc.))",
+      15
+    ],
+    [
+      "[(ID:Cp1ps8) Tuesday February 14 -- 02:00 PM] Activity: Isabella is energetically serving customers at Hobbs Caf\u00e9, making sure everyone feels the Valentine's Day spirit while subtly promoting the evening party (delivering orders and casually reminding customers about the evening party)",
+      10
+    ],
+    [
+      "[(ID:Cp1ps8) Tuesday February 14 -- 02:00 PM] Activity: Isabella is energetically serving customers at Hobbs Caf\u00e9, making sure everyone feels the Valentine's Day spirit while subtly promoting the evening party (tidying the counter and restocking supplies)",
+      5
+    ],
+    [
+      "[(ID:Cp1ps8) Tuesday February 14 -- 02:00 PM] Activity: Isabella is energetically serving customers at Hobbs Caf\u00e9, making sure everyone feels the Valentine's Day spirit while subtly promoting the evening party (engaging in light conversation with seated customers, hyping the party)",
+      10
+    ],
+    [
+      "[(ID:Cp1ps8) Tuesday February 14 -- 02:00 PM] Activity: Isabella is energetically serving customers at Hobbs Caf\u00e9, making sure everyone feels the Valentine's Day spirit while subtly promoting the evening party (checking the party supplies and adjusting decorations if needed)",
+      5
+    ],
+    [
+      "[(ID:Fb8acN) Tuesday February 14 -- 03:00 PM] Activity: Isabella is engaging with customers at the caf\u00e9, enthusiastically talking about the upcoming Valentine's Day party while serving drinks and snacks (greeting customers as they enter the caf\u00e9)",
+      5
+    ],
+    [
+      "[(ID:Fb8acN) Tuesday February 14 -- 03:00 PM] Activity: Isabella is engaging with customers at the caf\u00e9, enthusiastically talking about the upcoming Valentine's Day party while serving drinks and snacks (taking drink and snack orders)",
+      10
+    ],
+    [
+      "[(ID:Fb8acN) Tuesday February 14 -- 03:00 PM] Activity: Isabella is engaging with customers at the caf\u00e9, enthusiastically talking about the upcoming Valentine's Day party while serving drinks and snacks (preparing and serving coffee)",
+      10
+    ],
+    [
+      "[(ID:Fb8acN) Tuesday February 14 -- 03:00 PM] Activity: Isabella is engaging with customers at the caf\u00e9, enthusiastically talking about the upcoming Valentine's Day party while serving drinks and snacks (chatting with customers about the Valentine\u2019s Day party)",
+      10
+    ],
+    [
+      "[(ID:Fb8acN) Tuesday February 14 -- 03:00 PM] Activity: Isabella is engaging with customers at the caf\u00e9, enthusiastically talking about the upcoming Valentine's Day party while serving drinks and snacks (restocking pastries and snacks)",
+      5
+    ],
+    [
+      "[(ID:Fb8acN) Tuesday February 14 -- 03:00 PM] Activity: Isabella is engaging with customers at the caf\u00e9, enthusiastically talking about the upcoming Valentine's Day party while serving drinks and snacks (checking in with regulars and making them feel special)",
+      10
+    ],
+    [
+      "[(ID:Fb8acN) Tuesday February 14 -- 03:00 PM] Activity: Isabella is engaging with customers at the caf\u00e9, enthusiastically talking about the upcoming Valentine's Day party while serving drinks and snacks (handing out small Valentine\u2019s-themed treats to customers)",
+      5
+    ],
+    [
+      "[(ID:Fb8acN) Tuesday February 14 -- 03:00 PM] Activity: Isabella is engaging with customers at the caf\u00e9, enthusiastically talking about the upcoming Valentine's Day party while serving drinks and snacks (tidying up the counter area)",
+      5
+    ],
+    [
+      "[(ID:5wj5sm) Tuesday February 14 -- 04:00 PM] Activity: Isabella is making final preparations for the Valentine's Day party, refreshing decorations and ensuring the special menu station is perfect while still serving customers with excitement (checking the Valentine\u2019s Day decorations for any adjustments needed)",
+      10
+    ],
+    [
+      "[(ID:5wj5sm) Tuesday February 14 -- 04:00 PM] Activity: Isabella is making final preparations for the Valentine's Day party, refreshing decorations and ensuring the special menu station is perfect while still serving customers with excitement (fluffing heart-shaped balloons and repositioning them near the entrance)",
+      5
+    ],
+    [
+      "[(ID:5wj5sm) Tuesday February 14 -- 04:00 PM] Activity: Isabella is making final preparations for the Valentine's Day party, refreshing decorations and ensuring the special menu station is perfect while still serving customers with excitement (wiping down the special menu board and rewriting the Valentine\u2019s Day specials neatly)",
+      10
+    ],
+    [
+      "[(ID:5wj5sm) Tuesday February 14 -- 04:00 PM] Activity: Isabella is making final preparations for the Valentine's Day party, refreshing decorations and ensuring the special menu station is perfect while still serving customers with excitement (restocking the pastry display with heart-themed treats)",
+      5
+    ],
+    [
+      "[(ID:5wj5sm) Tuesday February 14 -- 04:00 PM] Activity: Isabella is making final preparations for the Valentine's Day party, refreshing decorations and ensuring the special menu station is perfect while still serving customers with excitement (greeting a customer and taking their order with enthusiasm)",
+      5
+    ],
+    [
+      "[(ID:5wj5sm) Tuesday February 14 -- 04:00 PM] Activity: Isabella is making final preparations for the Valentine's Day party, refreshing decorations and ensuring the special menu station is perfect while still serving customers with excitement (preparing a coffee order while chatting about the party)",
+      5
+    ],
+    [
+      "[(ID:5wj5sm) Tuesday February 14 -- 04:00 PM] Activity: Isabella is making final preparations for the Valentine's Day party, refreshing decorations and ensuring the special menu station is perfect while still serving customers with excitement (adjusting the lighting to create a warm, romantic ambiance)",
+      5
+    ],
+    [
+      "[(ID:5wj5sm) Tuesday February 14 -- 04:00 PM] Activity: Isabella is making final preparations for the Valentine's Day party, refreshing decorations and ensuring the special menu station is perfect while still serving customers with excitement (setting up the photo-op corner with fresh props)",
+      5
+    ],
+    [
+      "[(ID:5wj5sm) Tuesday February 14 -- 04:00 PM] Activity: Isabella is making final preparations for the Valentine's Day party, refreshing decorations and ensuring the special menu station is perfect while still serving customers with excitement (giving a quick pep talk to the staff about the party flow)",
+      5
+    ],
+    [
+      "[(ID:5wj5sm) Tuesday February 14 -- 04:00 PM] Activity: Isabella is making final preparations for the Valentine's Day party, refreshing decorations and ensuring the special menu station is perfect while still serving customers with excitement (doing a final walkthrough to ensure everything is perfect)",
+      5
+    ],
+    [
+      "[(ID:PUlV37) Tuesday February 14 -- 05:00 PM] Activity: Isabella is hosting the Valentine's Day party at Hobbs Caf\u00e9, welcoming guests with enthusiasm and ensuring the event runs smoothly with heart-themed treats and photo ops",
+      60
+    ],
+    [
+      "[(ID:lLww8n) Tuesday February 14 -- 06:00 PM] Activity: Isabella is continuing to host the Valentine's Day party at Hobbs Caf\u00e9, mingling with guests, ensuring everyone is enjoying the heart-themed treats",
+      60
+    ],
+    [
+      "[(ID:aXrR0V) Tuesday February 14 -- 07:00 PM] Activity: Isabella is wrapping up the Valentine's Day party at Hobbs Caf\u00e9, thanking guests for coming and starting to clean up while still radiating excitement from",
+      60
+    ],
+    [
+      "[(ID:V5cbIu) Tuesday February 14 -- 08:00 PM] Activity: Isabella is finalizing decorations and last-minute party preparations after closing Hobbs Caf\u00e9, still buzzing with excitement from the successful Valentine's Day event",
+      60
+    ],
+    [
+      "[(ID:86eBAP) Tuesday February 14 -- 09:00 PM] Activity: Isabella is at home, relaxing after the long Valentine's Day event, sipping tea while reflecting on the successful party and making notes for next year",
+      60
+    ],
+    [
+      "[(ID:0myety) Tuesday February 14 -- 10:00 PM] Activity: Isabella is winding down for the night, getting ready for bed after her long but fulfilling Valentine's Day at Hobbs Caf\u00e9",
+      60
+    ],
+    [
+      "[(ID:nk059e) Tuesday February 14 -- 11:00 PM] Activity: Isabella is asleep, resting after the long but joyful Valentine's Day celebrations at Hobbs Caf\u00e9",
+      60
+    ],
+    [
+      "sleeping",
+      0
+    ],
+    [
+      "sleeping",
+      0
+    ],
+    [
+      "sleeping",
+      0
+    ],
+    [
+      "sleeping",
+      0
+    ],
+    [
+      "sleeping",
+      0
+    ],
+    [
+      "sleeping",
+      0
+    ],
+    [
+      "sleeping",
+      0
+    ],
+    [
+      "sleeping",
+      0
+    ],
+    [
+      "sleeping",
+      0
+    ],
+    [
+      "sleeping",
+      0
+    ],
+    [
+      "sleeping",
+      0
+    ],
+    [
+      "sleeping",
+      0
+    ],
+    [
+      "sleeping",
+      0
+    ],
+    [
+      "sleeping",
+      0
+    ],
+    [
+      "sleeping",
+      0
+    ],
+    [
+      "sleeping",
+      0
+    ],
+    [
+      "sleeping",
+      0
+    ],
+    [
+      "sleeping",
+      0
+    ],
+    [
+      "sleeping",
+      0
+    ],
+    [
+      "sleeping",
+      0
+    ],
+    [
+      "sleeping",
+      0
+    ],
+    [
+      "sleeping",
+      0
+    ],
+    [
+      "sleeping",
+      0
+    ],
+    [
+      "sleeping",
+      0
+    ],
+    [
+      "sleeping",
+      0
+    ],
+    [
+      "sleeping",
+      0
+    ],
+    [
+      "sleeping",
+      0
+    ],
+    [
+      "sleeping",
+      0
+    ],
+    [
+      "sleeping",
+      0
+    ],
+    [
+      "sleeping",
+      0
+    ],
+    [
+      "sleeping",
+      0
+    ],
+    [
+      "sleeping",
+      0
+    ],
+    [
+      "sleeping",
+      0
+    ],
+    [
+      "sleeping",
+      0
+    ],
+    [
+      "sleeping",
+      0
+    ],
+    [
+      "sleeping",
+      0
+    ],
+    [
+      "sleeping",
+      0
+    ],
+    [
+      "sleeping",
+      0
+    ],
+    [
+      "sleeping",
+      0
+    ],
+    [
+      "sleeping",
+      0
+    ],
+    [
+      "sleeping",
+      0
+    ],
+    [
+      "sleeping",
+      0
+    ],
+    [
+      "sleeping",
+      0
+    ],
+    [
+      "sleeping",
+      0
+    ],
+    [
+      "sleeping",
+      0
+    ],
+    [
+      "sleeping",
+      0
+    ],
+    [
+      "sleeping",
+      0
+    ],
+    [
+      "sleeping",
+      0
+    ],
+    [
+      "sleeping",
+      0
+    ],
+    [
+      "sleeping",
+      0
+    ],
+    [
+      "sleeping",
+      0
+    ],
+    [
+      "sleeping",
+      0
+    ],
+    [
+      "sleeping",
+      0
+    ],
+    [
+      "sleeping",
+      0
+    ],
+    [
+      "sleeping",
+      0
+    ],
+    [
+      "sleeping",
+      0
+    ],
+    [
+      "sleeping",
+      0
+    ],
+    [
+      "sleeping",
+      0
+    ],
+    [
+      "sleeping",
+      0
+    ],
+    [
+      "sleeping",
+      0
+    ],
+    [
+      "sleeping",
+      0
+    ],
+    [
+      "sleeping",
+      0
+    ],
+    [
+      "sleeping",
+      0
+    ]
+  ],
+  "f_daily_schedule_hourly_org": [
+    [
+      "sleeping",
+      480
+    ],
+    [
+      "[(ID:QlS3O2) Tuesday February 14 -- 08:00 AM] Activity: Isabella is waking up, completing her morning routine with a quick workout, showering, and putting on her festive Valentine\u2019s Day outfit",
+      60
+    ],
+    [
+      "[(ID:23pYju) Tuesday February 14 -- 09:00 AM] Activity: Isabella is at Hobbs Caf\u00e9, greeting customers with enthusiasm and serving coffee while promoting the evening Valentine's Day party",
+      60
+    ],
+    [
+      "[(ID:C3YMHH) Tuesday February 14 -- 10:00 AM] Activity: Isabella is working at the counter, serving customers with a cheerful demeanor and occasionally reminding them about the evening Valentine's Day party",
+      60
+    ],
+    [
+      "[(ID:c74odc) Tuesday February 14 -- 11:00 AM] Activity: Isabella is enthusiastically engaging with customers at Hobbs Caf\u00e9, serving drinks and snacks while playfully teasing them about the upcoming Valentine's Day party",
+      60
+    ],
+    [
+      "[(ID:lpanzC) Tuesday February 14 -- 12:00 PM] Activity: Isabella is taking a short lunch break while keeping an eye on the caf\u00e9, chatting with regulars about the Valentine's Day party later",
+      60
+    ],
+    [
+      "[(ID:2qvHRr) Tuesday February 14 -- 01:00 PM] Activity: Isabella is back behind the counter, serving customers with extra enthusiasm as she shares details about the Valentine's Day party and ensures the caf\u00e9 stays lively",
+      60
+    ],
+    [
+      "[(ID:Cp1ps8) Tuesday February 14 -- 02:00 PM] Activity: Isabella is energetically serving customers at Hobbs Caf\u00e9, making sure everyone feels the Valentine's Day spirit while subtly promoting the evening party",
+      60
+    ],
+    [
+      "[(ID:Fb8acN) Tuesday February 14 -- 03:00 PM] Activity: Isabella is engaging with customers at the caf\u00e9, enthusiastically talking about the upcoming Valentine's Day party while serving drinks and snacks",
+      60
+    ],
+    [
+      "[(ID:5wj5sm) Tuesday February 14 -- 04:00 PM] Activity: Isabella is making final preparations for the Valentine's Day party, refreshing decorations and ensuring the special menu station is perfect while still serving customers with excitement",
+      60
+    ],
+    [
+      "[(ID:PUlV37) Tuesday February 14 -- 05:00 PM] Activity: Isabella is hosting the Valentine's Day party at Hobbs Caf\u00e9, welcoming guests with enthusiasm and ensuring the event runs smoothly with heart-themed treats and photo ops",
+      60
+    ],
+    [
+      "[(ID:lLww8n) Tuesday February 14 -- 06:00 PM] Activity: Isabella is continuing to host the Valentine's Day party at Hobbs Caf\u00e9, mingling with guests, ensuring everyone is enjoying the heart-themed treats",
+      60
+    ],
+    [
+      "[(ID:aXrR0V) Tuesday February 14 -- 07:00 PM] Activity: Isabella is wrapping up the Valentine's Day party at Hobbs Caf\u00e9, thanking guests for coming and starting to clean up while still radiating excitement from",
+      60
+    ],
+    [
+      "[(ID:V5cbIu) Tuesday February 14 -- 08:00 PM] Activity: Isabella is finalizing decorations and last-minute party preparations after closing Hobbs Caf\u00e9, still buzzing with excitement from the successful Valentine's Day event",
+      60
+    ],
+    [
+      "[(ID:86eBAP) Tuesday February 14 -- 09:00 PM] Activity: Isabella is at home, relaxing after the long Valentine's Day event, sipping tea while reflecting on the successful party and making notes for next year",
+      60
+    ],
+    [
+      "[(ID:0myety) Tuesday February 14 -- 10:00 PM] Activity: Isabella is winding down for the night, getting ready for bed after her long but fulfilling Valentine's Day at Hobbs Caf\u00e9",
+      60
+    ],
+    [
+      "[(ID:nk059e) Tuesday February 14 -- 11:00 PM] Activity: Isabella is asleep, resting after the long but joyful Valentine's Day celebrations at Hobbs Caf\u00e9",
+      60
+    ]
+  ],
+  "act_address": "the Ville:Isabella Rodriguez's apartment:main room:refrigerator",
+  "act_start_time": "February 14, 2023, 15:05:00",
+  "act_duration": 10,
+  "act_description": "[(ID:Fb8acN) Tuesday February 14 -- 03:00 PM] Activity: Isabella is engaging with customers at the caf\u00e9, enthusiastically talking about the upcoming Valentine's Day party while serving drinks and snacks (taking drink and snack orders)",
+  "act_pronunciatio": "\u2615\ud83c\udf6a",
+  "act_event": [
+    "Isabella Rodriguez",
+    "take",
+    "drink and snack orders"
+  ],
+  "act_obj_description": "being used to store and retrieve drinks and snacks for customer orders",
+  "act_obj_pronunciatio": "\ud83e\udd64\ud83c\udf6b",
+  "act_obj_event": [
+    "refrigerator",
+    "(store and retrieve",
+    "drinks and snacks"
+  ],
+  "chatting_with": null,
+  "chat": null,
+  "chatting_with_buffer": {},
+  "chatting_end_time": null,
+  "act_path_set": true,
+  "planned_path": [
+    [
+      75,
+      14
+    ]
+  ]
+}

@@ -1,0 +1,34 @@
+{
+  "persona": {
+    "Isabella Rodriguez": {
+      "movement": [
+        78,
+        15
+      ],
+      "pronunciatio": "\u2615\ud83c\udf79",
+      "description": "working at the counter, preparing drinks and pastries while inviting regulars to tomorrow's Valentine's party (preparing coffee and drinks) @ the Ville:Hobbs Cafe:cafe:behind the cafe counter",
+      "chat": null
+    },
+    "Maria Lopez": {
+      "movement": [
+        124,
+        54
+      ],
+      "pronunciatio": "\ud83d\udcd6\ud83d\udd2c",
+      "description": "studying physics at Hobbs Cafe (reading the next chapter in her physics textbook) @ the Ville:Dorm for Oak Hill College:Maria Lopez's room:desk",
+      "chat": null
+    },
+    "Klaus Mueller": {
+      "movement": [
+        131,
+        48
+      ],
+      "pronunciatio": "\ud83d\udcdd\ud83d\udd11",
+      "description": "[(ID:002tDH) Monday February 13 -- 02:00 PM] Activity: Klaus is working on drafting the methodology section of his gentrification research paper at the library (outlining the key points for the methodology section) @ the Ville:Dorm for Oak Hill College:Klaus Mueller's room:desk",
+      "chat": null
+    }
+  },
+  "meta": {
+    "curr_time": "February 13, 2023, 14:10:00"
+  }
+}

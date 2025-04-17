@@ -1,0 +1,34 @@
+{
+  "persona": {
+    "Isabella Rodriguez": {
+      "movement": [
+        76,
+        14
+      ],
+      "pronunciatio": "\ud83c\udf89\u2705",
+      "description": "[(ID:jMsmz1) Monday February 13 -- 10:00 PM] Activity: Isabella is winding down for the night, checking her to-do list for tomorrow's Valentine's party one last time before bed (confirming the inventory of party decorations) @ the Ville:Harvey Oak Supply Store:supply store:supply store product shelf",
+      "chat": null
+    },
+    "Maria Lopez": {
+      "movement": [
+        126,
+        54
+      ],
+      "pronunciatio": "\ud83c\udfae\u2699\ufe0f",
+      "description": "[(ID:29oZ7w) Monday February 13 -- 10:00 PM] Activity: Maria is winding down by playing a relaxing single-player game offline (launching the game and adjusting settings for comfort) @ the Ville:Dorm for Oak Hill College:Maria Lopez's room:computer",
+      "chat": null
+    },
+    "Klaus Mueller": {
+      "movement": [
+        131,
+        45
+      ],
+      "pronunciatio": "\ud83d\udc5a\ud83d\udc56",
+      "description": "[(ID:Uuc0E4) Monday February 13 -- 10:00 PM] Activity: Klaus is getting ready for bed, brushing teeth and setting out clothes for tomorrow (setting out clothes for tomorrow) @ the Ville:Dorm for Oak Hill College:Klaus Mueller's room:closet",
+      "chat": null
+    }
+  },
+  "meta": {
+    "curr_time": "February 13, 2023, 22:15:00"
+  }
+}

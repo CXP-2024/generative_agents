@@ -1,0 +1,34 @@
+{
+  "persona": {
+    "Isabella Rodriguez": {
+      "movement": [
+        74,
+        14
+      ],
+      "pronunciatio": "\ud83e\udea5\ud83e\uddfc",
+      "description": "[(ID:nDazgB) Monday February 13 -- 08:00 AM] Activity: Isabella wakes up, completes her morning routine, and opens Hobbs Cafe for the day (brushing her teeth and washing her face) @ the Ville:Isabella Rodriguez's apartment:bathroom:shower",
+      "chat": null
+    },
+    "Maria Lopez": {
+      "movement": [
+        123,
+        56
+      ],
+      "pronunciatio": "\ud83d\udca6\ud83e\uddfc",
+      "description": "waking up and getting ready for the day (washing her face) @ the Ville:Dorm for Oak Hill College:woman's bathroom:bathroom sink",
+      "chat": null
+    },
+    "Klaus Mueller": {
+      "movement": [
+        126,
+        46
+      ],
+      "pronunciatio": "\u23f0\ud83d\udcf1",
+      "description": "waking up, showering, and getting ready for the day (turning off his alarm and checking his phone for notifications) @ the Ville:Dorm for Oak Hill College:Klaus Mueller's room:bed",
+      "chat": null
+    }
+  },
+  "meta": {
+    "curr_time": "February 13, 2023, 08:05:00"
+  }
+}
