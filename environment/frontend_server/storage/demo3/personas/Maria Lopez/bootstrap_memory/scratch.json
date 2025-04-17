@@ -1,0 +1,293 @@
+{
+  "vision_r": 8,
+  "att_bandwidth": 8,
+  "retention": 8,
+  "curr_time": "February 14, 2023, 08:50:00",
+  "curr_tile": [
+    124,
+    51
+  ],
+  "daily_plan_req": "Here\u2019s Maria Lopez\u2019s broad-stroke plan for **Tuesday, February 14, 2024**:    1. **Wake up and complete the morning routine at 9:00 AM**, including breakfast and a quick review of her physics study notes.   2. **Study for her physics degree at Hobbs Caf\u00e9 from 10:00 AM to 2:00 PM**, with breaks for lunch and socializing.   3. **Twitch streaming session from 3:30 PM to 6:30 PM**, engaging with viewers while gaming and chatting.   4. **Dinner at 6:30 PM**, likely at Hobbs Caf\u00e9 if she stays there post-stream or at home.   5. **Relax and prepare for the next day at 8:30 PM**, setting out clothes and reviewing Wednesday\u2019s schedule.   6. **Wind down and go to bed around 2:00 AM**, possibly gaming or chatting with friends online before sleep.    This keeps her balanced between academics, streaming, and personal time while adhering to her routine.",
+  "name": "Maria Lopez",
+  "first_name": "Maria",
+  "last_name": "Lopez",
+  "age": 21,
+  "innate": "energetic, enthusiastic, inquisitive",
+  "learned": "Maria Lopez is a student at Oak Hill College studying physics and a part time Twitch game streamer who loves to connect with people and explore new ideas.",
+  "currently": "**Status: Tuesday, February 14, 2024**  \nMaria Lopez woke up at 8:00 AM and completed her structured morning routine, just as she planned. She spent the morning studying for her physics degree, likely at Hobbs Cafe, her usual spot for both eating and academic work.  \n\nIn the afternoon, Maria prepared for her streaming session, double-checking her optimized setup (mic, camera, and software) to ensure everything ran smoothly. True to her schedule, she went live on Twitch from **3:30 PM to 6:30 PM**, engaging with her viewers through lively chat interactions and gameplay. As always, she made sure to thank her audience before ending the stream, appreciating their support.  \n\nLater in the evening, Maria set out her clothes for Wednesday at **8:30 PM**, maintaining her habit of staying organized. Before bed, at **11:30 PM**, she reviewed her schedule for the next day, ensuring another structured and productive Wednesday.  \n\nMaria ended the day feeling satisfied\u2014another successful balance of academics, streaming, and viewer engagement. She looks forward to continuing her routine tomorrow.",
+  "lifestyle": "Maria Lopez goes to bed around 2am, awakes up around 9am, eats dinner around 6pm. She likes to hang out at Hobbs Cafe if it's before 6pm.",
+  "living_area": "the Ville:Dorm for Oak Hill College:Maria Lopez's room",
+  "concept_forget": 100,
+  "daily_reflection_time": 180,
+  "daily_reflection_size": 5,
+  "overlap_reflect_th": 4,
+  "kw_strg_event_reflect_th": 10,
+  "kw_strg_thought_reflect_th": 9,
+  "recency_w": 1,
+  "relevance_w": 1,
+  "importance_w": 1,
+  "recency_decay": 0.99,
+  "importance_trigger_max": 150,
+  "importance_trigger_curr": 81,
+  "importance_ele_n": 43,
+  "thought_count": 5,
+  "daily_req": [
+    "wake up and complete the morning routine at 8:00 am"
+  ],
+  "f_daily_schedule": [
+    [
+      "sleeping",
+      480
+    ],
+    [
+      "waking up and starting her morning routine, including breakfast and reviewing physics notes (1) Maria is waking up and stretching in bed)",
+      5
+    ],
+    [
+      "waking up and starting her morning routine, including breakfast and reviewing physics notes (getting out of bed and heading to the bathroom)",
+      5
+    ],
+    [
+      "waking up and starting her morning routine, including breakfast and reviewing physics notes (brushing her teeth and washing her face)",
+      10
+    ],
+    [
+      "waking up and starting her morning routine, including breakfast and reviewing physics notes (changing into fresh clothes)",
+      5
+    ],
+    [
+      "waking up and starting her morning routine, including breakfast and reviewing physics notes (preparing breakfast (toast and coffee))",
+      10
+    ],
+    [
+      "waking up and starting her morning routine, including breakfast and reviewing physics notes (eating breakfast while checking her phone for messages)",
+      15
+    ],
+    [
+      "waking up and starting her morning routine, including breakfast and reviewing physics notes (reviewing her physics notes from the previous study session)",
+      10
+    ],
+    [
+      "studying physics at Hobbs Caf\u00e9 (1) Maria is setting up her study materials at Hobbs Caf\u00e9)",
+      10
+    ],
+    [
+      "studying physics at Hobbs Caf\u00e9 (reviewing her physics lecture notes)",
+      30
+    ],
+    [
+      "studying physics at Hobbs Caf\u00e9 (working on practice problems)",
+      45
+    ],
+    [
+      "studying physics at Hobbs Caf\u00e9 (taking a short break to stretch and grab a coffee)",
+      15
+    ],
+    [
+      "studying physics at Hobbs Caf\u00e9 (reading the assigned textbook chapter)",
+      40
+    ],
+    [
+      "studying physics at Hobbs Caf\u00e9 (summarizing key concepts in her notebook)",
+      20
+    ],
+    [
+      "studying physics at Hobbs Caf\u00e9 (discussing a difficult topic with a study partner)",
+      30
+    ],
+    [
+      "studying physics at Hobbs Caf\u00e9 (solving additional practice problems)",
+      30
+    ],
+    [
+      "studying physics at Hobbs Caf\u00e9 (taking another short break to check her phone)",
+      10
+    ],
+    [
+      "studying physics at Hobbs Caf\u00e9 (reviewing flashcards for memorization)",
+      20
+    ],
+    [
+      "studying physics at Hobbs Caf\u00e9 (organizing her notes for future reference)",
+      20
+    ],
+    [
+      "studying physics at Hobbs Caf\u00e9 (wrapping up her study session and packing her bag)",
+      10
+    ],
+    [
+      "studying physics at Hobbs Caf\u00e9 (chatting briefly with friends at the caf\u00e9)",
+      10
+    ],
+    [
+      "studying physics at Hobbs Caf\u00e9 (finalizing her to-do list for the rest of the day)",
+      10
+    ],
+    [
+      "[(ID:TrzkIt) Tuesday February 14 -- 02:00 PM] Activity: Maria is finishing up her physics study session at Hobbs Caf\u00e9",
+      60
+    ],
+    [
+      "[(ID:oYw2OT) Tuesday February 14 -- 03:00 PM] Activity: Maria is starting her Twitch streaming session",
+      60
+    ],
+    [
+      "[(ID:U7YyxS) Tuesday February 14 -- 04:00 PM] Activity: Maria is streaming on Twitch, engaging with viewers",
+      60
+    ],
+    [
+      "[(ID:Jz9W2z) Tuesday February 14 -- 05:00 PM] Activity: Maria is streaming on Twitch, engaging with viewers",
+      60
+    ],
+    [
+      "[(ID:qGbJ20) Tuesday February 14 -- 06:00 PM] Activity: Maria is finishing her Twitch stream and preparing for dinner",
+      60
+    ],
+    [
+      "[(ID:wYCSgF) Tuesday February 14 -- 07:00 PM] Activity: Maria is having dinner at Hobbs Caf\u00e9 or at home",
+      60
+    ],
+    [
+      "[(ID:IbLv23) Tuesday February 14 -- 08:00 PM] Activity: Maria is setting out clothes for Wednesday and reviewing her schedule for the next day",
+      60
+    ],
+    [
+      "[(ID:6QyzT7) Tuesday February 14 -- 09:00 PM] Activity: Maria is relaxing, possibly gaming or chatting with friends online",
+      60
+    ],
+    [
+      "[(ID:Sz5GYm) Tuesday February 14 -- 10:00 PM] Activity: Maria is relaxing, possibly gaming or chatting with friends online",
+      60
+    ],
+    [
+      "[(ID:yZ5jav) Tuesday February 14 -- 11:00 PM] Activity: Maria is relaxing, possibly gaming or chatting with friends online before bed",
+      60
+    ],
+    [
+      "sleeping",
+      0
+    ],
+    [
+      "sleeping",
+      0
+    ],
+    [
+      "sleeping",
+      0
+    ],
+    [
+      "sleeping",
+      0
+    ],
+    [
+      "sleeping",
+      0
+    ],
+    [
+      "sleeping",
+      0
+    ],
+    [
+      "sleeping",
+      0
+    ],
+    [
+      "sleeping",
+      0
+    ]
+  ],
+  "f_daily_schedule_hourly_org": [
+    [
+      "sleeping",
+      480
+    ],
+    [
+      "waking up and starting her morning routine, including breakfast and reviewing physics notes",
+      60
+    ],
+    [
+      "studying physics at Hobbs Caf\u00e9",
+      300
+    ],
+    [
+      "[(ID:TrzkIt) Tuesday February 14 -- 02:00 PM] Activity: Maria is finishing up her physics study session at Hobbs Caf\u00e9",
+      60
+    ],
+    [
+      "[(ID:oYw2OT) Tuesday February 14 -- 03:00 PM] Activity: Maria is starting her Twitch streaming session",
+      60
+    ],
+    [
+      "[(ID:U7YyxS) Tuesday February 14 -- 04:00 PM] Activity: Maria is streaming on Twitch, engaging with viewers",
+      60
+    ],
+    [
+      "[(ID:Jz9W2z) Tuesday February 14 -- 05:00 PM] Activity: Maria is streaming on Twitch, engaging with viewers",
+      60
+    ],
+    [
+      "[(ID:qGbJ20) Tuesday February 14 -- 06:00 PM] Activity: Maria is finishing her Twitch stream and preparing for dinner",
+      60
+    ],
+    [
+      "[(ID:wYCSgF) Tuesday February 14 -- 07:00 PM] Activity: Maria is having dinner at Hobbs Caf\u00e9 or at home",
+      60
+    ],
+    [
+      "[(ID:IbLv23) Tuesday February 14 -- 08:00 PM] Activity: Maria is setting out clothes for Wednesday and reviewing her schedule for the next day",
+      60
+    ],
+    [
+      "[(ID:6QyzT7) Tuesday February 14 -- 09:00 PM] Activity: Maria is relaxing, possibly gaming or chatting with friends online",
+      60
+    ],
+    [
+      "[(ID:Sz5GYm) Tuesday February 14 -- 10:00 PM] Activity: Maria is relaxing, possibly gaming or chatting with friends online",
+      60
+    ],
+    [
+      "[(ID:yZ5jav) Tuesday February 14 -- 11:00 PM] Activity: Maria is relaxing, possibly gaming or chatting with friends online before bed",
+      60
+    ]
+  ],
+  "act_address": "the Ville:Dorm for Oak Hill College:Maria Lopez's room:desk",
+  "act_start_time": "February 14, 2023, 08:50:00",
+  "act_duration": 10,
+  "act_description": "waking up and starting her morning routine, including breakfast and reviewing physics notes (reviewing her physics notes from the previous study session)",
+  "act_pronunciatio": "\ud83d\udcd6\ud83d\udd0d",
+  "act_event": [
+    "Maria Lopez",
+    "review",
+    "physics notes"
+  ],
+  "act_obj_description": "cluttered with physics notes, breakfast items, and possibly other morning routine materials",
+  "act_obj_pronunciatio": "\ud83d\udcda\ud83c\udf73",
+  "act_obj_event": [
+    "desk",
+    "desk",
+    "is"
+  ],
+  "chatting_with": null,
+  "chat": null,
+  "chatting_with_buffer": {},
+  "chatting_end_time": null,
+  "act_path_set": true,
+  "planned_path": [
+    [
+      124,
+      53
+    ],
+    [
+      124,
+      54
+    ],
+    [
+      123,
+      54
+    ],
+    [
+      123,
+      55
+    ]
+  ]
+}

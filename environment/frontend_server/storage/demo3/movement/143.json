@@ -1,0 +1,34 @@
+{
+  "persona": {
+    "Isabella Rodriguez": {
+      "movement": [
+        76,
+        14
+      ],
+      "pronunciatio": "\ud83e\uddfd\u2615",
+      "description": "[(ID:6raH3S) Monday February 13 -- 06:00 PM] Activity: Isabella is serving customers at Hobbs Cafe while preparing some last-minute Valentine's Day decorations (wiping down counters and tidying the cafe) @ the Ville:Hobbs Cafe:cafe:kitchen sink",
+      "chat": null
+    },
+    "Maria Lopez": {
+      "movement": [
+        123,
+        50
+      ],
+      "pronunciatio": "\ud83c\udf7d\ufe0f\ud83d\udc69",
+      "description": "[(ID:nS0fYa) Monday February 13 -- 06:00 PM] Activity: Maria is having dinner at Hobbs Cafe (eating her dinner) @ the Ville:Dorm for Oak Hill College:kitchen:cooking area",
+      "chat": null
+    },
+    "Klaus Mueller": {
+      "movement": [
+        131,
+        46
+      ],
+      "pronunciatio": "\ud83d\udcda\u270d\ufe0f",
+      "description": "[(ID:sGo3HT) Monday February 13 -- 06:00 PM] Activity: Klaus is returning to the library for final research and writing session (organizing his sources for citations) @ the Ville:Dorm for Oak Hill College:Klaus Mueller's room:desk",
+      "chat": null
+    }
+  },
+  "meta": {
+    "curr_time": "February 13, 2023, 18:55:00"
+  }
+}
