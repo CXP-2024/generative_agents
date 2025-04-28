@@ -150,6 +150,8 @@
 	  //       Also IMPORTANT: when you create a tileset in Tiled, always be  
 	  //       sure to check the "embedded" option. 
 	  this.load.image("blocks_1", "{% static 'assets/the_ville/visuals/map_assets/blocks/blocks_1.png' %}");
+	  this.load.image("blocks_2", "{% static 'assets/the_ville/visuals/map_assets/blocks/blocks_2.png' %}");
+	  this.load.image("blocks_3", "{% static 'assets/the_ville/visuals/map_assets/blocks/blocks_3.png' %}");
 	  this.load.image("walls", "{% static 'assets/the_ville/visuals/map_assets/v1/Room_Builder_32x32.png' %}");
 	  this.load.image("interiors_pt1", "{% static 'assets/the_ville/visuals/map_assets/v1/interiors_pt1.png' %}");
 	  this.load.image("interiors_pt2", "{% static 'assets/the_ville/visuals/map_assets/v1/interiors_pt2.png' %}");
@@ -194,6 +196,8 @@
 	  //       console.log(map) output. You need to make sure that the name 
 	  //       matches.
 	  const collisions = map.addTilesetImage("blocks", "blocks_1");
+	  const playground = map.addTilesetImage("blocks_2", "blocks_2");
+	  const playground2 = map.addTilesetImage("blocks_3","block_3");
 	  const walls = map.addTilesetImage("Room_Builder_32x32", "walls");
 	  const interiors_pt1 = map.addTilesetImage("interiors_pt1", "interiors_pt1");
 	  const interiors_pt2 = map.addTilesetImage("interiors_pt2", "interiors_pt2");
@@ -218,9 +222,9 @@
 	  //       they are; you actually need to open up tiled and see how you 
 	  //       named things there. 
 	  let tileset_group_1 = [CuteRPG_Field_B, CuteRPG_Field_C, CuteRPG_Harbor_C, CuteRPG_Village_B, 
-	  											 CuteRPG_Forest_B, CuteRPG_Desert_C, CuteRPG_Mountains_B, CuteRPG_Desert_B, CuteRPG_Forest_C,
+	  											 CuteRPG_Forest_B, CuteRPG_Desert_C, CuteRPG_Mountains_B, CuteRPG_Desert_B, CuteRPG_Forest_C,playground,collisions,
 	  											 interiors_pt1, interiors_pt2, interiors_pt3, interiors_pt4, interiors_pt5, walls];
-	  const bottomGroundLayer = map.createLayer("Bottom Ground", tileset_group_1, 0, 0);
+	  const bottomGroundLayer = map.createLayer("Bottom Ground",tileset_group_1, 0, 0);
 	  const exteriorGroundLayer = map.createLayer("Exterior Ground", tileset_group_1, 0, 0);
 	  const exteriorDecorationL1Layer = map.createLayer("Exterior Decoration L1", tileset_group_1, 0, 0);
 	  const exteriorDecorationL2Layer = map.createLayer("Exterior Decoration L2", tileset_group_1, 0, 0);
