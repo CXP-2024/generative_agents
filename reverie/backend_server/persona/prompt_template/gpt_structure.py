@@ -281,14 +281,16 @@ def safe_generate_response(prompt,
     print (prompt)
 
   for i in range(repeat): 
-    #print("\033[0;31mtrying GPT_request in safe gen res\033[0m")
+    print("\033[1;32mtrying GPT_request in safe gen res\033[0m")
+    print(prompt)
     curr_gpt_response = GPT_request(prompt, gpt_parameter)
-    #print ("---- repeat count: ", i, curr_gpt_response)
-    #print (curr_gpt_response)
-    #print ("~~~~")
+    print ("\033[1;32m---- repeat count: \033", i)
+    print (curr_gpt_response)
+    print ("~~~~\033[0m")
     if func_validate(curr_gpt_response, prompt=prompt): 
       return func_clean_up(curr_gpt_response, prompt=prompt)
       #return curr_gpt_response
+    print("\033[1;31mfailed safe gen res in repeat ", i, "\033[0m")
     if verbose: 
       print ("---- repeat count: ", i, curr_gpt_response)
       print (curr_gpt_response)
