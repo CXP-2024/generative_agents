@@ -45,8 +45,8 @@
 	// Configuration meant to be passed to the main Phaser game instance. 
 	const config = {
 	  type: Phaser.AUTO,
-	  width: 1500,
-	  height: 800,
+	  width: 2200,
+	  height: 1100,
 	  parent: "game-container",
 	  pixelArt: true,
 	  physics: {
@@ -56,7 +56,8 @@
 	  scene: {
 	    preload: preload,
 	    create: create,
-	    update: update } };
+	    update: update 
+	} };
 
 	// const config = {
 	//   type: Phaser.AUTO,
@@ -353,7 +354,7 @@
 	  // This is where we finish up the camera setting we started in the create() 
 	  // function. We set the movement speed of the camera and wire up the keys to
 	  // map to the actual movement.
-	  const camera_speed = 400;
+	  const camera_speed = 600;
 	  // Stop any previous movement from the last frame
 	  player.body.setVelocity(0);
 	  if (cursors.left.isDown) {
