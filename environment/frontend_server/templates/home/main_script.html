@@ -45,8 +45,8 @@
 	// Configuration meant to be passed to the main Phaser game instance. 
 	const config = {
 	  type: Phaser.AUTO,
-	  width: 2200,
-	  height: 1100,
+	  width: 3200,
+	  height: 2000,
 	  parent: "game-container",
 	  pixelArt: true,
 	  physics: {
@@ -56,8 +56,8 @@
 	  scene: {
 	    preload: preload,
 	    create: create,
-	    update: update 
-	} };
+	    update: update},
+		scale: { zoom: 0.5 } };
 
 	// const config = {
 	//   type: Phaser.AUTO,
@@ -279,7 +279,55 @@
 	  const camera = this.cameras.main;
 	  camera.startFollow(player);
 	  camera.setBounds(0, 0, map.widthInPixels, map.heightInPixels);
-	  cursors = this.input.keyboard.createCursorKeys();
+	  
+	  // 添加缩放功能 - 设置缩放限制
+	  camera.setZoom(0.8); // 初始缩放值与config中保持一致
+	  
+	  // 添加鼠标滚轮缩放，也是触控板双指缩放的的映射
+	  this.input.on('wheel', function (pointer, gameObjects, deltaX, deltaY, deltaZ) {
+	    // deltaY是滚轮方向，向上滚动为负，向下滚动为正
+	    if (deltaY > 0) {
+	      // 缩小，降低缩放值
+	      camera.zoom = Math.max(0.75, camera.zoom - 0.01);
+	    } else {
+	      // 放大，增加缩放值
+	      camera.zoom = Math.min(2.0, camera.zoom + 0.01);
+	    }
+	  });
+
+		cursors = this.input.keyboard.createCursorKeys();
+
+		// 添加鼠标拖动控制相机功能
+		let isDragging = false;
+		let lastPointerPosition = { x: 0, y: 0 };
+
+		this.input.on('pointerdown', function (pointer) {
+			if (pointer.leftButtonDown()) {
+				isDragging = true;
+				lastPointerPosition = { x: pointer.x, y: pointer.y };
+			}
+		});
+
+		this.input.on('pointermove', function (pointer) {
+			if (isDragging) {
+				// 计算鼠标移动距离
+				const deltaX = pointer.x - lastPointerPosition.x;
+				const deltaY = pointer.y - lastPointerPosition.y;
+
+				// 更新相机位置（反向移动，因为我们要拖动地图）
+				player.x -= deltaX / camera.zoom;
+				player.y -= deltaY / camera.zoom;
+
+				// 更新上一次位置
+				lastPointerPosition = { x: pointer.x, y: pointer.y };
+			}
+		});
+
+		this.input.on('pointerup', function (pointer) {
+			isDragging = false;
+		});
+	  
+	  
 
 	  // *** SET UP PERSONAS *** 
 	  // We start by creating the game sprite objects. 
@@ -354,21 +402,39 @@
 	  // This is where we finish up the camera setting we started in the create() 
 	  // function. We set the movement speed of the camera and wire up the keys to
 	  // map to the actual movement.
-	  const camera_speed = 600;
+		const camera_speed = 800;
+		// 添加WASD键控制
+		wasdKeys = this.input.keyboard.addKeys({
+			up: Phaser.Input.Keyboard.KeyCodes.W,
+			down: Phaser.Input.Keyboard.KeyCodes.S,
+			left: Phaser.Input.Keyboard.KeyCodes.A,
+			right: Phaser.Input.Keyboard.KeyCodes.D
+		});
 	  // Stop any previous movement from the last frame
 	  player.body.setVelocity(0);
-	  if (cursors.left.isDown) {
-	    player.body.setVelocityX(-camera_speed);
-	  } 
-	  if (cursors.right.isDown) {
-	    player.body.setVelocityX(camera_speed);
-	  } 
-	  if (cursors.up.isDown) {
-	    player.body.setVelocityY(-camera_speed);
-	  } 
-	  if (cursors.down.isDown) {
-	    player.body.setVelocityY(camera_speed);
-	  }
+	  // 检测方向键或WASD键
+		if (cursors.left.isDown || wasdKeys.left.isDown) {
+			player.body.setVelocityX(-camera_speed);
+		}
+		if (cursors.right.isDown || wasdKeys.right.isDown) {
+			player.body.setVelocityX(camera_speed);
+		}
+		if (cursors.up.isDown || wasdKeys.up.isDown) {
+			player.body.setVelocityY(-camera_speed);
+		}
+		if (cursors.down.isDown || wasdKeys.down.isDown) {
+			player.body.setVelocityY(camera_speed);
+		}
+		// 添加空格键放大和Shift键缩小功能
+		const camera = this.cameras.main;
+		if (cursors.space.isDown) {
+			// 空格键放大
+			camera.zoom = Math.min(2.0, camera.zoom + 0.01);
+		}
+		if (cursors.shift.isDown) {
+			// Shift键缩小
+			camera.zoom = Math.max(0.75, camera.zoom - 0.01);
+		}
 
 	  // console.log("phase: " + phase + ", step: " + step);
 	  // *** MOVE PERSONAS ***
