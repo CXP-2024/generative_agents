@@ -9,4 +9,4 @@ Variables:
 !<INPUT 0>!
 
 In general, !<INPUT 1>!
-!<INPUT 2>!'s wake up hour: (only answer a number)
+!<INPUT 2>!'s sleep hour and wake up hour: (only answer two numbers separated by a white space, like 23 7)

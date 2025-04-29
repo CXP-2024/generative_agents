@@ -55,8 +55,10 @@ def run_gpt_prompt_wake_up_hour(persona, test_input=None, verbose=False):
     return prompt_input
 
   def __func_clean_up(gpt_response, prompt=""):
-    cr = int(gpt_response.strip().lower().split("am")[0])
-    return cr
+    match = re.search(r'{(\d+),\s*(\d+)}', gpt_response)
+    x = int(match.group(1))
+    y = int(match.group(2))
+    return x, y
   
   def __func_validate(gpt_response, prompt=""): 
     try: __func_clean_up(gpt_response, prompt="")

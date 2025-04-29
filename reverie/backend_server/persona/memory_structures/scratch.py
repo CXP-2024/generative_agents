@@ -450,7 +450,7 @@ class Scratch:
     return self.daily_plan_req
 
 
-  def get_str_curr_date_str(self): 
+  def get_str_curr_date_str(self):
     return self.curr_time.strftime("%A %B %d")
 
 

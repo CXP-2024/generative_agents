@@ -54,8 +54,10 @@ def run_gpt_prompt_wake_up_hour(persona, test_input=None, verbose=False):
     return prompt_input
 
   def __func_clean_up(gpt_response, prompt=""):
-    cr = int(gpt_response.strip().lower().split("am")[0])
-    return cr
+    match = re.search(r'(\d+)\s*(\d+)', gpt_response)
+    x = int(match.group(1))
+    y = int(match.group(2))
+    return x, y
   
   def __func_validate(gpt_response, prompt=""): 
     try: __func_clean_up(gpt_response, prompt="")
@@ -63,7 +65,7 @@ def run_gpt_prompt_wake_up_hour(persona, test_input=None, verbose=False):
     return True
 
   def get_fail_safe(): 
-    fs = 8
+    fs = [23, 7]
     return fs
 
   gpt_param = {"engine": "text-davinci-002", "max_tokens": 5, 
@@ -87,7 +89,8 @@ def run_gpt_prompt_wake_up_hour(persona, test_input=None, verbose=False):
 def run_gpt_prompt_daily_plan(persona, 
                               wake_up_hour, 
                               test_input=None, 
-                              verbose=False):
+                              verbose=False
+                              ):
   """
   Basically the long term planning that spans a day. Returns a list of actions
   that the persona will take today. Usually comes in the following form: 
@@ -142,7 +145,7 @@ def run_gpt_prompt_daily_plan(persona,
                "temperature": 1, "top_p": 1, "stream": False,
                "frequency_penalty": 0, "presence_penalty": 0, "stop": None}
   prompt_template = "persona/prompt_template/v2/daily_planning_v6.txt"
-  prompt_input = create_prompt_input(persona, wake_up_hour, test_input)
+  prompt_input = create_prompt_input(persona, wake_up_hour, test_input, )
   prompt = generate_prompt(prompt_input, prompt_template)
   fail_safe = get_fail_safe()
 
@@ -164,13 +167,15 @@ def run_gpt_prompt_generate_hourly_schedule(persona,
                                             hour_str,
                                             intermission2=None,
                                             test_input=None, 
-                                            verbose=False): 
+                                            verbose=False
+                                            ): 
   def create_prompt_input(persona, 
                           curr_hour_str, 
                           p_f_ds_hourly_org,
                           hour_str,
                           intermission2=None,
-                          test_input=None): 
+                          test_input=None
+                          ): 
     if test_input: return test_input
     schedule_format = ""
     for i in hour_str: 
@@ -274,7 +279,8 @@ def run_gpt_prompt_generate_hourly_schedule(persona,
                                      p_f_ds_hourly_org,
                                      hour_str, 
                                      intermission2,
-                                     test_input)
+                                     test_input
+                                     )
   prompt = generate_prompt(prompt_input, prompt_template)
   fail_safe = get_fail_safe()
   

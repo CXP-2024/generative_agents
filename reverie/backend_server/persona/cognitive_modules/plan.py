@@ -35,7 +35,7 @@ def generate_wake_up_hour(persona):
     8
   """
   if debug: print ("GNS FUNCTION: <generate_wake_up_hour>")
-  return int(run_gpt_prompt_wake_up_hour(persona)[0])
+  return run_gpt_prompt_wake_up_hour(persona)
 
 
 def generate_first_daily_plan(persona, wake_up_hour): 
@@ -68,7 +68,7 @@ def generate_first_daily_plan(persona, wake_up_hour):
   return run_gpt_prompt_daily_plan(persona, wake_up_hour)[0]
 
 
-def generate_hourly_schedule(persona, wake_up_hour): 
+def generate_hourly_schedule(persona, wake_up_hour, sleep_hour): 
   """
   Based on the daily req, creates an hourly schedule -- one hour at a time. 
   The form of the action for each of the hour is something like below: 
@@ -88,24 +88,24 @@ def generate_hourly_schedule(persona, wake_up_hour):
      ['eating breakfast', 60],..
   """
   if debug: print ("GNS FUNCTION: <generate_hourly_schedule>")
-
-  hour_str = ["07:00 AM", "08:00 AM", "09:00 AM", 
+  if sleep_hour > wake_up_hour:
+    sleep_hour -= 24
+  hour_str = ["00:00 AM", "01:00 AM", "02:00 AM", "03:00 AM", "04:00 AM", 
+              "05:00 AM", "06:00 AM", "07:00 AM", "08:00 AM", "09:00 AM", 
               "10:00 AM", "11:00 AM", "12:00 PM", "01:00 PM", "02:00 PM", 
               "03:00 PM", "04:00 PM", "05:00 PM", "06:00 PM", "07:00 PM",
-              "08:00 PM", "09:00 PM", "10:00 PM", "11:00 PM","00:00 AM", "01:00 AM", "02:00 AM", "03:00 AM", "04:00 AM", 
-              "05:00 AM", "06:00 AM"]
+              "08:00 PM", "09:00 PM", "10:00 PM", "11:00 PM"]
   n_m1_activity = []
   diversity_repeat_count = 3
   for i in range(diversity_repeat_count): 
     n_m1_activity_set = set(n_m1_activity)
     if len(n_m1_activity_set) < 5: 
       n_m1_activity = []
-      for count, curr_hour_str in enumerate(hour_str): 
-        # if wake_up_hour > 0: 
-        #   n_m1_activity += ["sleeping"]
-        #   wake_up_hour -= 1
-        # else: 
-        n_m1_activity += [run_gpt_prompt_generate_hourly_schedule(
+      for count, curr_hour_str in enumerate(hour_str):
+        if sleep_hour <= count < wake_up_hour: 
+          n_m1_activity += ["sleeping"]
+        else: 
+          n_m1_activity += [run_gpt_prompt_generate_hourly_schedule(
                           persona, curr_hour_str, n_m1_activity, hour_str)[0]]
   
   # Step 1. Compressing the hourly schedule to the following format: 
@@ -472,7 +472,7 @@ def _long_term_planning(persona, new_day):
              create the personas' long term planning on the new day. 
   """
   # We start by creating the wake up hour for the persona. 
-  wake_up_hour = generate_wake_up_hour(persona)
+  sleep_hour, wake_up_hour = generate_wake_up_hour(persona)[0]
 
   # When it is a new day, we start by creating the daily_req of the persona.
   # Note that the daily_req is a list of strings that describe the persona's
@@ -495,7 +495,7 @@ def _long_term_planning(persona, new_day):
   # which is a list of todo items with a time duration (in minutes) that 
   # add up to 24 hours.
   persona.scratch.f_daily_schedule = generate_hourly_schedule(persona, 
-                                                              wake_up_hour)
+                                                              wake_up_hour, sleep_hour)
   persona.scratch.f_daily_schedule_hourly_org = (persona.scratch
                                                    .f_daily_schedule[:])
 
