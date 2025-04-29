@@ -144,11 +144,11 @@ def ChatGPT_safe_generate_response(prompt,
   for i in range(repeat+3): 
 
     try: 
-      #print("\033[0;31mtrying ChatGPT_request\033[0m")
+      print("\033[1;32mtrying ChatGPT_request to get json\033[0m")
       curr_gpt_response = ChatGPT_request(prompt).strip()
-      #print("\033[0;31mtried ChatGPT_request\033[0m")
-      #print("\033[0;31mcurr_gpt_response\033[0m")
-      #print(curr_gpt_response)
+      print("\033[1;32m---curr_gpt_response in repeat ", i, " /total:", repeat+3, "\033[0m")
+      print("\033[1;32m", curr_gpt_response, "\033[0m")
+      print ("~~~~\033[0m")
       end_index = curr_gpt_response.rfind('}') + 1
       #print("\033[0;31mend_index\033[0m")
       #print(end_index)
@@ -159,13 +159,18 @@ def ChatGPT_safe_generate_response(prompt,
       # make sure the response is a valid JSON string
       
       # Parse the string as JSON before accessing the output key
-      curr_gpt_response = json.loads(curr_gpt_response)["output"]
+      try:
+        curr_gpt_response = json.loads(curr_gpt_response)["output"]
+      except Exception as e:
+        print(f"\033[1;31mJSON parsing error: {e}\033[0m")
+        continue
 
       # print ("---ashdfaf")
       # print (curr_gpt_response)
       # print ("000asdfhia")
       
       if func_validate(curr_gpt_response, prompt=prompt): 
+        print("\033[1;32msucceed get curr_gpt_reponse and validate in safe_generate_response and get json\033[0m")
         return func_clean_up(curr_gpt_response, prompt=prompt)
       
       if verbose: 
@@ -173,9 +178,10 @@ def ChatGPT_safe_generate_response(prompt,
         print (curr_gpt_response)
         print ("~~~~")
 
-    except: 
+    except Exception as e: 
+      print(f"\033[1;31mError occurred: {e}\033[0m")
       pass
-
+  print("\033[1;31mwarning! failed safe_generate_response and return false\033[0m")
   return False
 
 
@@ -191,17 +197,26 @@ def ChatGPT_safe_generate_response_OLD(prompt,
 
   for i in range(repeat): 
     try: 
+      print("\033[1;32mtrying GPT_request in safe_generate_response_OLD\033[0m")
+      print("\033[1;32mprompt:\n\033[0m", prompt)
       curr_gpt_response = ChatGPT_request(prompt).strip()
+      print("\033[1;32m----- repeat in ", i, " /total: ", repeat, "and output:\033[0m")
+      print("\033[1;32m", curr_gpt_response, "\033[0m")
+      print("\033[1;32m~~~~\033[0m")
       if func_validate(curr_gpt_response, prompt=prompt): 
+        print("\033[1;32msucceed get curr_gpt_reponse and validate in safe_generate_response_OLD\033[0m")
         return func_clean_up(curr_gpt_response, prompt=prompt)
       if verbose: 
         print (f"---- repeat count: {i}")
         print (curr_gpt_response)
         print ("~~~~")
+      print("\033[1;31mfailed safe_generate_response_OLD in repeat ", i, "\033[0m")
 
-    except: 
+    except Exception as e: 
+      print(f"\033[1;31mError occurred: {e}\033[0m")
       pass
   print ("FAIL SAFE TRIGGERED") 
+  print("\033[1;31mwarning! failed safe_generate_response_OLD and return a default response: \n", fail_safe_response, " \033[0m")
   return fail_safe_response
 
 
@@ -281,13 +296,14 @@ def safe_generate_response(prompt,
     print (prompt)
 
   for i in range(repeat): 
-    print("\033[1;32mtrying GPT_request in safe gen res\033[0m")
+    print("\033[1;32mtrying GPT_request in safe_generate_response\033[0m")
     print(prompt)
     curr_gpt_response = GPT_request(prompt, gpt_parameter)
-    print ("\033[1;32m---- repeat count: \033", i)
-    print (curr_gpt_response)
-    print ("~~~~\033[0m")
+    print("\033[1;32m----- repeat in ", i, " /total: ", repeat, " and output:\033[0m")
+    print("\033[1;32m", curr_gpt_response, "\033[0m")
+    print("\033[1;32m~~~~\033[0m")
     if func_validate(curr_gpt_response, prompt=prompt): 
+      print("\033[1;32msucceed get curr_gpt_reponse and validate in safe_generate_response\033[0m")
       return func_clean_up(curr_gpt_response, prompt=prompt)
       #return curr_gpt_response
     print("\033[1;31mfailed safe gen res in repeat ", i, "\033[0m")
@@ -295,6 +311,7 @@ def safe_generate_response(prompt,
       print ("---- repeat count: ", i, curr_gpt_response)
       print (curr_gpt_response)
       print ("~~~~")
+  print("\033[1;31mwarning! failed safe_generate_response and return a default failed value: ", fail_safe_response, "\033[0m")
   return fail_safe_response
 
 

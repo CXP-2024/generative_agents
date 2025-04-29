@@ -1056,8 +1056,14 @@ def run_gpt_prompt_act_obj_event_triple(act_game_object, act_obj_desc, persona, 
     return prompt_input
   
   def __func_clean_up(gpt_response, prompt=""):
+		# if is a (a, b, c), then remove a, get b and c; else if is a b, c) then also get b and c to form a list
+    if "(" in gpt_response: 
+      gpt_response = gpt_response.split("(")[-1]
     cr = gpt_response.strip()
     cr = [i.strip() for i in cr.split(")")[0].split(",")]
+    # if has 3 elements, then remove the first one
+    if len(cr) == 3: 
+      cr = cr[1:]
     return cr
 
   def __func_validate(gpt_response, prompt=""): 
