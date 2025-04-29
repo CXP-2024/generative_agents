@@ -13,6 +13,11 @@
         "classroom student seating"
       ]
     },
+    "The playground": {
+      "playground": [
+        "long jump pit"
+      ]
+    },
     "Dorm for Oak Hill College": {
       "garden": [
         "dorm garden"
@@ -38,23 +43,6 @@
         "shower",
         "bathroom sink",
         "toilet"
-      ]
-    },
-    "The Willows Market and Pharmacy": {
-      "store": [
-        "grocery store shelf",
-        "behind the grocery counter",
-        "grocery store counter",
-        "pharmacy store shelf",
-        "pharmacy store counter",
-        "behind the pharmacy counter"
-      ]
-    },
-    "Harvey Oak Supply Store": {
-      "supply store": [
-        "supply store product shelf",
-        "behind the supply store counter",
-        "supply store counter"
       ]
     },
     "Johnson Park": {
