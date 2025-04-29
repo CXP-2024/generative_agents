@@ -45,8 +45,8 @@
 	// Configuration meant to be passed to the main Phaser game instance. 
 	const config = {
 	  type: Phaser.AUTO,
-	  width: 1500,
-	  height: 800,
+	  width: 2000,
+	  height: 1600,
 	  parent: "game-container",
 	  pixelArt: true,
 	  physics: {
@@ -56,11 +56,12 @@
 	  scene: {
 	    preload: preload,
 	    create: create,
-	    update: update } };
+	    update: update,
+		scale: {zoom: 0.5}} };
 
 	// const config = {
 	//   type: Phaser.AUTO,
-	//   width: 4480,
+	//   width: 4480,`
 	//   height: 3200,
 	//   parent: "game-container",
 	//   pixelArt: true,
@@ -278,6 +279,66 @@
 	  const camera = this.cameras.main;
 	  camera.startFollow(player);
 	  camera.setBounds(0, 0, map.widthInPixels, map.heightInPixels);
+	  
+	  // 添加缩放功能 - 设置缩放限制
+	  camera.setZoom(0.5); // 初始缩放值与config中保持一致
+	  
+	  // 添加鼠标滚轮缩放
+	  this.input.on('wheel', function (pointer, gameObjects, deltaX, deltaY, deltaZ) {
+	    // deltaY是滚轮方向，向上滚动为负，向下滚动为正
+	    if (deltaY > 0) {
+	      // 缩小，降低缩放值
+	      camera.zoom = Math.max(0.1, camera.zoom - 0.05);
+	    } else {
+	      // 放大，增加缩放值
+	      camera.zoom = Math.min(2.0, camera.zoom + 0.05);
+	    }
+	  });
+	  
+	  // 添加触控板双指缩放
+	  this.input.on('pointermove', function (pointer) {
+	    if (this.input.manager.pointersTotal === 2) {
+	      // 获取两个触摸点
+	      const pointers = this.input.manager.pointers;
+	      
+	      // 计算当前两点之间的距离
+	      const currentDistance = Phaser.Math.Distance.Between(
+	        pointers[0].position.x, pointers[0].position.y,
+	        pointers[1].position.x, pointers[1].position.y
+	      );
+	      
+	      // 如果有上一次的距离记录
+	      if (this.previousPinchDistance) {
+	        // 计算距离变化
+	        const distanceChange = currentDistance - this.previousPinchDistance;
+	        
+	        // 根据距离变化调整缩放
+	        if (Math.abs(distanceChange) > 1) { // 添加阈值避免微小变动
+	          const zoomChange = distanceChange * 0.001; // 调整系数控制灵敏度
+	          camera.zoom = Phaser.Math.Clamp(camera.zoom + zoomChange, 0.1, 2.0);
+	        }
+	      }
+	      
+	      // 保存当前距离用于下次比较
+	      this.previousPinchDistance = currentDistance;
+	    } else {
+	      // 如果不是两指操作，清除上一次的距离记录
+	      this.previousPinchDistance = null;
+	    }
+	  }, this);
+	  
+	  // 触摸点变化时重置记录
+	  this.input.on('pointerup', function () {
+	    this.previousPinchDistance = null;
+	  }, this);
+	  
+	  this.input.on('pointerdown', function (pointer) {
+	    // 开始新的触摸事件时重置
+	    if (this.input.manager.pointersTotal === 2) {
+	      this.previousPinchDistance = null;
+	    }
+	  }, this);
+	  
 	  cursors = this.input.keyboard.createCursorKeys();
 
 	  // *** SET UP PERSONAS *** 
@@ -353,7 +414,7 @@
 	  // This is where we finish up the camera setting we started in the create() 
 	  // function. We set the movement speed of the camera and wire up the keys to
 	  // map to the actual movement.
-	  const camera_speed = 400;
+	  const camera_speed = 800;
 	  // Stop any previous movement from the last frame
 	  player.body.setVelocity(0);
 	  if (cursors.left.isDown) {
