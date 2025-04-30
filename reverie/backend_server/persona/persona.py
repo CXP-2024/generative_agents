@@ -217,10 +217,15 @@ class Persona:
     self.scratch.curr_time = curr_time
 
     # Main cognitive sequence begins here. 
+    print(f"\033[1;35m--- {self.name} start perceive, retrieve, plan and reflect --\033[0m")
     perceived = self.perceive(maze)
+    print(f"\033[0;35m--- {self.name} finished perceiving and start retrieving --\033[0m")
     retrieved = self.retrieve(perceived)
+    print(f"\033[0;35m--- {self.name} finished retrieving and start planning --\033[0m")
     plan = self.plan(maze, personas, new_day, retrieved)
+    print(f"\033[0;35m--- {self.name} finished planning and start reflecting --\033[0m")
     self.reflect()
+    print(f"\033[0;35m--- {self.name} finished reflecting and start executing --\033[0m")
 
     # <execution> is a triple set that contains the following components: 
     # <next_tile> is a x,y coordinate. e.g., (58, 9)

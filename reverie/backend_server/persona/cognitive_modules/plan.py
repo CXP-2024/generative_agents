@@ -626,25 +626,28 @@ def _determine_action(persona, maze):
   # variables.
   act_world = maze.access_tile(persona.scratch.curr_tile)["world"]
   # act_sector = maze.access_tile(persona.scratch.curr_tile)["sector"]
-  print("\033[0;33mstart one determine action: \033[0m")
+  print("\033[1;33m", persona.name , " start one determine action: \033[0m")
+  print("\033[0;33m", persona.name , " start get a new address: \033[0m")
   act_sector = generate_action_sector(act_desp, persona, maze)
   act_arena = generate_action_arena(act_desp, persona, maze, act_world, act_sector)
   act_address = f"{act_world}:{act_sector}:{act_arena}"
   act_game_object = generate_action_game_object(act_desp, act_address,
                                                 persona, maze)
   new_address = f"{act_world}:{act_sector}:{act_arena}:{act_game_object}"
-  print("\033[0;33mfinished get a new address: \033[0m", new_address)
+  print("\033[0;33m", persona.name , " finished get a new address: \033[0m", new_address)
   act_pron = generate_action_pronunciatio(act_desp, persona)
+  print("\033[0;33m", persona.name , " finished act_pron: \033[0m", act_pron)
   act_event = generate_action_event_triple(act_desp, persona)
-  print("\033[0;33mfinished act_event_triple: \033[0m", act_event)
+  print("\033[0;33m", persona.name , " finished act_event_triple: \033[0m", act_event)
   # Persona's actions also influence the object states. We set those up here. 
   act_obj_desp = generate_act_obj_desc(act_game_object, act_desp, persona)
-  print("\033[0;33mfinished act_obj_desp: \033[0m", act_obj_desp)
+  print("\033[0;33m", persona.name , " finished act_obj_desp: \033[0m", act_obj_desp)
   act_obj_pron = generate_action_pronunciatio(act_obj_desp, persona)
+  print("\033[0;33m", persona.name , " finished act_obj_pron: \033[0m", act_obj_pron)
   act_obj_event = generate_act_obj_event_triple(act_game_object, 
                                                 act_obj_desp, persona)
-  print("\033[0;33mfinished act_obj_event: \033[0m", act_obj_event)
-  print("\033[0;33mfinished one determine action: \033[0m")
+  print("\033[0;33m", persona.name , " finished act_obj_event: \033[0m", act_obj_event)
+  print("\033[1;33m", persona.name , " finished one determine action: \033[0m")
 
   # Adding the action to persona's queue. 
   persona.scratch.add_new_action(new_address, 
