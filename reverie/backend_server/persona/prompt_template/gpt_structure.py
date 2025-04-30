@@ -14,7 +14,7 @@ from utils import *
 openai.api_key = openai_api_key
 openai.api_base = openai_base_url
 
-def temp_sleep(seconds=0.1):
+def temp_sleep(seconds=0.03):
   time.sleep(seconds)
 
 def ChatGPT_single_request(prompt): 
@@ -136,19 +136,19 @@ def ChatGPT_safe_generate_response(prompt,
   prompt += "Example output json:\n"
   prompt += '{"output": "' + str(example_output) + '"}'
 
-  #print("\033[0;31mprompt!\033[0m")
+  #print("\033[0;31mprompt!\033[0m") 
+  print("\033[1;32mtrying ChatGPT_request to get json\033[0m")
   if verbose: 
     print ("CHAT GPT PROMPT")
     print (prompt)
 
   for i in range(repeat+3): 
 
-    try: 
-      print("\033[1;32mtrying ChatGPT_request to get json\033[0m")
+    try:
       curr_gpt_response = ChatGPT_request(prompt).strip()
       print("\033[1;32m---curr_gpt_response in repeat ", i, " /total:", repeat+3, "\033[0m")
       print("\033[1;32m", curr_gpt_response, "\033[0m")
-      print ("~~~~\033[0m")
+      print ("\033[1;32m~~~~\033[0m")
       end_index = curr_gpt_response.rfind('}') + 1
       #print("\033[0;31mend_index\033[0m")
       #print(end_index)
@@ -171,7 +171,15 @@ def ChatGPT_safe_generate_response(prompt,
       
       if func_validate(curr_gpt_response, prompt=prompt): 
         print("\033[1;32msucceed get curr_gpt_reponse and validate in safe_generate_response and get json\033[0m")
-        return func_clean_up(curr_gpt_response, prompt=prompt)
+        cleaned_response = func_clean_up(curr_gpt_response, prompt=prompt)
+        print("\033[1;32mafter cleanup: ", cleaned_response, "\033[0m")
+        return cleaned_response
+      else:
+        print("\033[1;31mfailed the validate in GPT request to get json in repeat ", i, "\033[0m")
+        print("\033[1;31mcurrent response type: ", type(curr_gpt_response), "\033[0m")
+        print("\033[1;31mcurrent response: ", curr_gpt_response, "\033[0m")
+        print("\033[1;31m~~~~\033[0m")
+        
       
       if verbose: 
         print ("---- repeat count: \n", i, curr_gpt_response)
@@ -191,21 +199,24 @@ def ChatGPT_safe_generate_response_OLD(prompt,
                                    func_validate=None,
                                    func_clean_up=None,
                                    verbose=False): 
-  if verbose: 
-    print ("CHAT GPT PROMPT")
-    print (prompt)
+  # if verbose: 
+  #   print ("CHAT GPT PROMPT")
+  #   print (prompt)
+    
+  print("\033[1;32mtrying GPT_request in safe_generate_response_OLD\033[0m")
+  print("\033[1;32mprompt:\n\033[0m", prompt)
 
   for i in range(repeat): 
     try: 
-      print("\033[1;32mtrying GPT_request in safe_generate_response_OLD\033[0m")
-      print("\033[1;32mprompt:\n\033[0m", prompt)
       curr_gpt_response = ChatGPT_request(prompt).strip()
       print("\033[1;32m----- repeat in ", i, " /total: ", repeat, "and output:\033[0m")
       print("\033[1;32m", curr_gpt_response, "\033[0m")
       print("\033[1;32m~~~~\033[0m")
       if func_validate(curr_gpt_response, prompt=prompt): 
         print("\033[1;32msucceed get curr_gpt_reponse and validate in safe_generate_response_OLD\033[0m")
-        return func_clean_up(curr_gpt_response, prompt=prompt)
+        cleaned_response = func_clean_up(curr_gpt_response, prompt=prompt)
+        print("\033[1;32mafter cleanup:", cleaned_response, "\033[0m")
+        return cleaned_response
       if verbose: 
         print (f"---- repeat count: {i}")
         print (curr_gpt_response)
@@ -292,19 +303,22 @@ def safe_generate_response(prompt,
                            func_validate=None,
                            func_clean_up=None,
                            verbose=False): 
-  if verbose: 
-    print (prompt)
-
-  for i in range(repeat): 
-    print("\033[1;32mtrying GPT_request in safe_generate_response\033[0m")
-    print(prompt)
+  #if verbose: 
+  #  print (prompt)
+ 
+  print("\033[1;32mtrying GPT_request in safe_generate_response\033[0m")
+  print(prompt)
+  
+  for i in range(repeat):
     curr_gpt_response = GPT_request(prompt, gpt_parameter)
     print("\033[1;32m----- repeat in ", i, " /total: ", repeat, " and output:\033[0m")
     print("\033[1;32m", curr_gpt_response, "\033[0m")
     print("\033[1;32m~~~~\033[0m")
     if func_validate(curr_gpt_response, prompt=prompt): 
       print("\033[1;32msucceed get curr_gpt_reponse and validate in safe_generate_response\033[0m")
-      return func_clean_up(curr_gpt_response, prompt=prompt)
+      cleaned_response = func_clean_up(curr_gpt_response, prompt=prompt)
+      print("\033[1;32mafter cleanup:", cleaned_response, "\033[0m")
+      return cleaned_response
       #return curr_gpt_response
     print("\033[1;31mfailed safe gen res in repeat ", i, "\033[0m")
     if verbose: 

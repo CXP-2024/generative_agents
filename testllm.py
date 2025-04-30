@@ -43,22 +43,26 @@ print(response.choices[0].message.content)
 '''
 
 model="deepseek-v3"
-response = openai.ChatCompletion.create(
+try:
+  response = openai.ChatCompletion.create(
   model=model,
   messages=[
     {"role": "system", "content": "you are just a table filler and do not output anything else"},
     {"role": "user", "content": "Fuck me"},
   ]
 )
-print("\n \033[0;32mHere are the responses of deepseek-v3\033[0m")
-print(response.choices[0].message.content)
+  print("\n \033[0;32mHere are the responses of deepseek-v3\033[0m")
+  print(response.choices[0].message.content)
+except Exception as e:
+  print(e)
 
 
-gpt_parameter = {"engine": "deepseek-v3", "max_tokens": 100, 
+gpt_parameter = {"engine": "deepseek-v3", "max_tokens": 150, 
              "temperature": 0.8, "top_p": 1, "stream": False,
-             "frequency_penalty": 0, "presence_penalty": 0, "stop": ["\n"]}
+             "frequency_penalty": 0, "presence_penalty": 0}
 
-response = openai.ChatCompletion.create(
+try:
+  response = openai.ChatCompletion.create(
 	model=model,
 	messages=[
 		{"role": "system", "content": "If you see daily scedules, you will be an assistant that fills in daily schedules based on character information. And in that case, you should only respond with finishing schedule entries, nothing else."},
@@ -89,9 +93,68 @@ Partial schedule (continue from here):
 	frequency_penalty=gpt_parameter["frequency_penalty"],
 	presence_penalty=gpt_parameter["presence_penalty"],
 	stream=gpt_parameter["stream"],
-	stop=gpt_parameter["stop"],
+)
+except Exception as e:
+    print(f"API embedding failed: {e}")
+print(response.choices[0].message.content)
+
+
+
+
+response = openai.ChatCompletion.create(
+	model=model,
+	messages=[
+		{"role": "system", "content": "If you see daily scedules, you will be an assistant that fills in daily schedules based on character information. And in that case, you should only respond with finishing schedule entries, nothing else."},
+    {"role": "user", "content": """Input:
+		 0. This is Isabella Rodriguez's plan for Monday February 13: wake up and complete the morning routine at 6:00 am.
+1. closet is being used by Isabella Rodriguez to select clothes for her morning routine
+2. bed is in use by Isabella Rodriguez for sleeping
+3. bed is currently being used by Isabella Rodriguez, who is waking up and stretching in it
+4. behind the cafe counter is in use by Isabella Rodriguez, actively serving customers and maintaining a welcoming atmosphere
+5. Isabella Rodriguez is sleeping
+6. gathering party decorations for tomorrowâ€™s Valentineâ€™s Day event
+7. closet is being used to gather party decorations for the Valentine's Day event
+8. getting dressed in her work clothes
+9. reviewing her to-do list for the day
+10. changing into comfortable work clothes
+11. applying her skincare routine
+12. refrigerator is being used to store and access ingredients for breakfast preparation
+13. gathering her keys and bag before heading out
+14. brewing a fresh cup of coffee
+15. sipping her coffee while checking her phone for messages
+16. preparing a fresh batch of coffee
+17. making a quick breakfast
+18. closet is being opened and items are being taken out
+19. closet is being accessed and clothing items are being selected or removed
+20. greeting customers as they enter the cafe
+21. setting up the register and ensuring the POS system is working
+22. taking customer orders with a warm smile
+23. checking the cafeâ€™s inventory list
+24. setting up the espresso machine and grinders
+25. unlocking the cafe doors and turning on the lights
+26. grabbing her keys and heading to the cafe
+27. brushing her teeth
+28. checking the inventory of coffee beans and pastries
+29. arranging fresh pastries in the display case
+		 What 5 high-level insights can you infer from the above statements? (example format: insight (because of 1, 5, 3)) Remember you should end up with ")" """}
+	],
+	temperature=gpt_parameter["temperature"],
+	max_tokens=gpt_parameter["max_tokens"],
+	top_p=gpt_parameter["top_p"],
+	frequency_penalty=gpt_parameter["frequency_penalty"],
+	presence_penalty=gpt_parameter["presence_penalty"],
+	stream=gpt_parameter["stream"],
 )
 print(response.choices[0].message.content)
+
+
+
+
+
+
+
+
+
 
 
 

@@ -626,21 +626,26 @@ def _determine_action(persona, maze):
   # variables.
   act_world = maze.access_tile(persona.scratch.curr_tile)["world"]
   # act_sector = maze.access_tile(persona.scratch.curr_tile)["sector"]
+  print("\033[0;33m", persona.name , " start get a new address: \033[0m")
   act_sector = generate_action_sector(act_desp, persona, maze)
   act_arena = generate_action_arena(act_desp, persona, maze, act_world, act_sector)
   act_address = f"{act_world}:{act_sector}:{act_arena}"
   act_game_object = generate_action_game_object(act_desp, act_address,
                                                 persona, maze)
   new_address = f"{act_world}:{act_sector}:{act_arena}:{act_game_object}"
+  print("\033[0;33m", persona.name , " finished get a new address: \033[0m", new_address)
   act_pron = generate_action_pronunciatio(act_desp, persona)
+  print("\033[0;33m", persona.name , " finished act_pron: \033[0m", act_pron)
   act_event = generate_action_event_triple(act_desp, persona)
-  print("\033[0;33mfinished act_event: \033[0m", act_event)
+  print("\033[0;33m", persona.name , " finished act_event_triple: \033[0m", act_event)
   # Persona's actions also influence the object states. We set those up here. 
   act_obj_desp = generate_act_obj_desc(act_game_object, act_desp, persona)
-  print("\033[0;33mfinished act_obj_desp: \033[0m", act_obj_desp)
+  print("\033[0;33m", persona.name , " finished act_obj_desp: \033[0m", act_obj_desp)
   act_obj_pron = generate_action_pronunciatio(act_obj_desp, persona)
+  print("\033[0;33m", persona.name , " finished act_obj_pron: \033[0m", act_obj_pron)
   act_obj_event = generate_act_obj_event_triple(act_game_object, 
                                                 act_obj_desp, persona)
+  print("\033[0;33m", persona.name , " finished act_obj_event: \033[0m", act_obj_event)
 
   # Adding the action to persona's queue. 
   persona.scratch.add_new_action(new_address, 
@@ -800,10 +805,16 @@ def _should_react(persona, retrieved, personas):
 
   if ":" not in curr_event.subject: 
     # this is a persona event. 
+    print("\033[0;33mcurrent event: ", curr_event, "\033[0m")
+    print("\033[0;33m", persona.name, " try to find whether to talk\033[0m")
     if lets_talk(persona, personas[curr_event.subject], retrieved):
+      print("\033[0;33m", persona.name, " decide to talk with", curr_event.subject, "\033[0m")
       return f"chat with {curr_event.subject}"
+    print("\033[0;33m", persona.name, " decide not to talk with", curr_event.subject, "\033[0m")
+    print("\033[0;33m", persona.name, " try to find react mode\033[0m")
     react_mode = lets_react(persona, personas[curr_event.subject], 
                             retrieved)
+    print("\033[0;33m", persona.name, " get react mode:", react_mode, "\033[0m")
     return react_mode
   return False
 
@@ -957,11 +968,15 @@ def plan(persona, maze, personas, new_day, retrieved):
   """ 
   # PART 1: Generate the hourly schedule. 
   if new_day: 
+    print("\033[1;33m", persona.name , " start a long term planning: \033[0m")
     _long_term_planning(persona, new_day)
+    print("\033[1;33m", persona.name , " finished long term planning: \033[0m")
 
   # PART 2: If the current action has expired, we want to create a new plan.
   if persona.scratch.act_check_finished(): 
+    print("\033[1;33m", persona.name , " start a determine action: \033[0m")
     _determine_action(persona, maze)
+    print("\033[1;33m", persona.name , " finished determining action: \033[0m")
 
   # PART 3: If you perceived an event that needs to be responded to (saw 
   # another persona), and retrieved relevant information. 
@@ -974,7 +989,9 @@ def plan(persona, maze, personas, new_day, retrieved):
   #                     ["thoughts"] = [<ConceptNode>, ...]}
   focused_event = False
   if retrieved.keys(): 
+    print("\033[1;33m", persona.name , " start a choose_retrieved: \033[0m")
     focused_event = _choose_retrieved(persona, retrieved)
+    print("\033[1;33m", persona.name , " finished choose_retrieved and get the focused_event ", focused_event, "\033[0m")
   
   # Step 2: Once we choose an event, we need to determine whether the
   #         persona will take any actions for the perceived event. There are
@@ -983,13 +1000,19 @@ def plan(persona, maze, personas, new_day, retrieved):
   #         b) "react"
   #         c) False
   if focused_event: 
+    print("\033[1;33m", persona.name , " start a should_react: \033[0m")
     reaction_mode = _should_react(persona, focused_event, personas)
+    print("\033[1;33m", persona.name , " finished should_react and get the reaction_mode: ", reaction_mode, "\033[0m")
     if reaction_mode: 
       # If we do want to chat, then we generate conversation 
       if reaction_mode[:9] == "chat with":
+        print("\033[1;33m", persona.name , " start a chat react: \033[0m")
         _chat_react(maze, persona, focused_event, reaction_mode, personas)
+        print("\033[1;33m", persona.name , " finished chat react: \033[0m")
       elif reaction_mode[:4] == "wait": 
+        print("\033[1;33m", persona.name , " start a wait react: \033[0m")
         _wait_react(persona, reaction_mode)
+        print("\033[1;33m", persona.name , " finished wait react: \033[0m")
       # elif reaction_mode == "do other things": 
       #   _chat_react(persona, focused_event, reaction_mode, personas)
 

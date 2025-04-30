@@ -1,0 +1,2128 @@
+Choose the forked simulation: 
+1. base_the_ville_isabella_maria_klaus
+2. 90
+3. custom
+Enter the name of the new simulation: Note: The agents in this simulation package are computational
+constructs powered by generative agents architecture and LLM. We
+clarify that these agents lack human-like agency, consciousness,
+and independent decision-making.
+---
+Enter option: 
+
+
+[1;3;34mStart Step:  90 [0m
+[1;3;34mCurrent Time:  2023-02-13 07:30:00 [0m
+
+[1;3;35mIsabella Rodriguez start a move --[0m
+[1;35m--- Isabella Rodriguez start perceive, retrieve, plan and reflect --[0m
+[0;35m--- Isabella Rodriguez finished perceiving and start retrieving --[0m
+[0;35m--- Isabella Rodriguez finished retrieving and start planning --[0m
+[0;35m--- Isabella Rodriguez finished planning and start reflecting --[0m
+Isabella Rodriguez persona.scratch.importance_trigger_curr:: 86
+150
+[0;35m--- Isabella Rodriguez finished reflecting and start executing --[0m
+[1;3;35mIsabella Rodriguez finished a move --[0m
+
+[1;3;35mMaria Lopez start a move --[0m
+[1;35m--- Maria Lopez start perceive, retrieve, plan and reflect --[0m
+[0;35m--- Maria Lopez finished perceiving and start retrieving --[0m
+[0;35m--- Maria Lopez finished retrieving and start planning --[0m
+[0;35m--- Maria Lopez finished planning and start reflecting --[0m
+Maria Lopez persona.scratch.importance_trigger_curr:: 142
+150
+[0;35m--- Maria Lopez finished reflecting and start executing --[0m
+[1;3;35mMaria Lopez finished a move --[0m
+
+[1;3;35mKlaus Mueller start a move --[0m
+[1;35m--- Klaus Mueller start perceive, retrieve, plan and reflect --[0m
+[0;35m--- Klaus Mueller finished perceiving and start retrieving --[0m
+[0;35m--- Klaus Mueller finished retrieving and start planning --[0m
+DEBUG LJSDLFSKJF
+['sleeping', 420]
+['waking up and getting ready for the day (getting dressed)', 5]
+['waking up and getting ready for the day (preparing breakfast)', 10]
+['waking up and getting ready for the day (eating breakfast)', 15]
+['waking up and getting ready for the day (cleaning up breakfast dishes)', 5]
+['waking up and getting ready for the day (packing his bag for the library)', 25]
+['walking to the library at Oak Hill College (putting on his jacket and gathering his research materials)', 5]
+['walking to the library at Oak Hill College (locking his apartment door and walking to the elevator)', 5]
+['walking to the library at Oak Hill College (exiting his apartment building and walking toward campus)', 10]
+['walking to the library at Oak Hill College (stopping at a crosswalk and waiting for the light)', 5]
+['walking to the library at Oak Hill College (walking past the student center and observing campus activity)', 10]
+['walking to the library at Oak Hill College (taking a shortcut through the quad to reach the library)', 10]
+['walking to the library at Oak Hill College (checking his phone for any messages or reminders)', 5]
+['walking to the library at Oak Hill College (climbing the library steps and entering the building)', 5]
+['walking to the library at Oak Hill College (finding a quiet study spot and setting up his workspace)', 5]
+['[(ID:xANnIv) Monday February 13 -- 09:00 AM] Activity: Klaus is at the library, researching and writing his paper on gentrification', 60]
+['[(ID:wikmDI) Monday February 13 -- 10:00 AM] Activity: Klaus is continuing his research and writing at the library', 60]
+['[(ID:OeEKIH) Monday February 13 -- 11:00 AM] Activity: Klaus is taking a short break from writing to review his notes and organize his research materials', 60]
+['[(ID:LwatsH) Monday February 13 -- 12:00 PM] Activity: Klaus is having lunch at Hobbs Cafe while reading sociology articles', 60]
+['[(ID:XUg8rt) Monday February 13 -- 01:00 PM] Activity: Klaus is back at the library, focusing on writing the methodology section of his paper', 60]
+['[(ID:pK5vUr) Monday February 13 -- 02:00 PM] Activity: Klaus is continuing to work on his research paper at the library, analyzing data on gentrification trends', 60]
+['[(ID:pT7wpa) Monday February 13 -- 03:00 PM] Activity: Klaus is taking a short break to stretch and get some fresh air outside the library', 60]
+['[(ID:OyQbBC) Monday February 13 -- 04:00 PM] Activity: Klaus is back at the library, finalizing the analysis section of his gentrification research paper', 60]
+['[(ID:nCGczn) Monday February 13 -- 05:00 PM] Activity: Klaus is having dinner at Hobbs Cafe while reviewing his research notes', 60]
+['[(ID:aWmnQN) Monday February 13 -- 06:00 PM] Activity: Klaus is returning to his dorm to relax after dinner, possibly listening to music or reading a sociology book', 60]
+['[(ID:9WDEfi) Monday February 13 -- 07:00 PM] Activity: Klaus is reviewing his research notes in his dorm room while listening to background music', 60]
+['[(ID:LtmVDv) Monday February 13 -- 08:00 PM] Activity: Klaus is finishing up his research review and starting to wind down for the evening', 60]
+['[(ID:Jd3BfC) Monday February 13 -- 09:00 PM] Activity: Klaus is reading a sociology book in bed, preparing to sleep', 60]
+['[(ID:4OrYgv) Monday February 13 -- 10:00 PM] Activity: Klaus is getting ready for bed, brushing teeth and preparing for tomorrow', 60]
+['[(ID:tQgEAT) Monday February 13 -- 11:00 PM] Activity: Klaus is sleeping', 60]
+['sleeping', 0]
+['sleeping', 0]
+['sleeping', 0]
+['sleeping', 0]
+4
+34
+Klaus Mueller
+------
+[1;33m Klaus Mueller  start one determine action: [0m
+[0;33m Klaus Mueller  start get a new address: [0m
+GNS FUNCTION: <generate_action_sector>
+[1;32mtrying GPT_request in safe_generate_response[0m
+Task -- choose an appropriate area  from the area options for a task at hand. 
+
+Sam Kim lives in {Sam Kim's house} that has Sam Kim's room, bathroom, kitchen.
+Sam Kim is currently in {Sam Kim's house} that has Sam Kim's room, bathroom, kitchen. 
+Area options: {Sam Kim's house, The Rose and Crown Pub, Hobbs Cafe, Oak Hill College, Johnson Park, Harvey Oak Supply Store, The Willows Market and Pharmacy}.
+* Stay in the current area if the activity can be done there. Only go out if the activity needs to take place in another place.
+* Must be one of the "Area options," verbatim.
+For taking a walk, Sam Kim should go to the following area: {Johnson Park}
+---
+Jane Anderson lives in {Oak Hill College Student Dormatory} that has Jane Anderson's room.
+Jane Anderson is currently in {Oak Hill College} that has a classroom, library
+Area options: {Oak Hill College Student Dormatory, The Rose and Crown Pub, Hobbs Cafe, Oak Hill College, Johnson Park, Harvey Oak Supply Store, The Willows Market and Pharmacy}. 
+* Stay in the current area if the activity can be done there. Only go out if the activity needs to take place in another place.
+* Must be one of the "Area options," verbatim.
+For eating dinner, Jane Anderson should go to the following area: {Hobbs Cafe}
+---
+Klaus Mueller lives in {Dorm for Oak Hill College} that has garden, Klaus Mueller's room, woman's bathroom, common room, man's bathroom, kitchen, Maria Lopez's room.
+Klaus Mueller is currently in {Dorm for Oak Hill College} that has garden, Klaus Mueller's room, woman's bathroom, common room, man's bathroom, kitchen, Maria Lopez's room. 
+Klaus Mueller goes to the library at Oak Hill College early in the morning, spends his days writing, and eats at Hobbs Cafe.
+Area options: {Oak Hill College, Dorm for Oak Hill College, The Willows Market and Pharmacy, Harvey Oak Supply Store, Johnson Park, The Rose and Crown Pub, Hobbs Cafe}. 
+* Stay in the current area if the activity can be done there. Only go out if the activity needs to take place in another place.
+* Must be one of the "Area options," verbatim.
+Klaus Mueller is waking up and getting ready for the day. For cleaning up breakfast dishes, Klaus Mueller should go to the following area: {
+[1;32m----- repeat in  0  /total:  5  and output:[0m
+[1;32m kitchen} [0m
+[1;32m~~~~[0m
+[1;32msucceed get curr_gpt_reponse and validate in safe_generate_response[0m
+[1;32mafter cleanup: kitchen [0m
+DEBUG Johnson Park ------ Dorm for Oak Hill College
+=== persona/prompt_template/v1/action_location_sector_v1.txt
+~~~ persona    ---------------------------------------------------
+Klaus Mueller 
+
+~~~ gpt_param ----------------------------------------------------
+{'engine': 'text-davinci-002', 'max_tokens': 15, 'temperature': 0, 'top_p': 1, 'stream': False, 'frequency_penalty': 0, 'presence_penalty': 0, 'stop': None} 
+
+~~~ prompt_input    ----------------------------------------------
+['Klaus Mueller', 'Dorm for Oak Hill College', "garden, Klaus Mueller's room, woman's bathroom, common room, man's bathroom, kitchen, Maria Lopez's room", 'Klaus Mueller', 'Dorm for Oak Hill College', "garden, Klaus Mueller's room, woman's bathroom, common room, man's bathroom, kitchen, Maria Lopez's room", '\nKlaus Mueller goes to the library at Oak Hill College early in the morning, spends his days writing, and eats at Hobbs Cafe.', 'Oak Hill College, Dorm for Oak Hill College, The Willows Market and Pharmacy, Harvey Oak Supply Store, Johnson Park, The Rose and Crown Pub, Hobbs Cafe', 'Klaus Mueller', 'waking up and getting ready for the day', 'cleaning up breakfast dishes', 'Klaus Mueller'] 
+
+~~~ prompt    ----------------------------------------------------
+Task -- choose an appropriate area  from the area options for a task at hand. 
+
+Sam Kim lives in {Sam Kim's house} that has Sam Kim's room, bathroom, kitchen.
+Sam Kim is currently in {Sam Kim's house} that has Sam Kim's room, bathroom, kitchen. 
+Area options: {Sam Kim's house, The Rose and Crown Pub, Hobbs Cafe, Oak Hill College, Johnson Park, Harvey Oak Supply Store, The Willows Market and Pharmacy}.
+* Stay in the current area if the activity can be done there. Only go out if the activity needs to take place in another place.
+* Must be one of the "Area options," verbatim.
+For taking a walk, Sam Kim should go to the following area: {Johnson Park}
+---
+Jane Anderson lives in {Oak Hill College Student Dormatory} that has Jane Anderson's room.
+Jane Anderson is currently in {Oak Hill College} that has a classroom, library
+Area options: {Oak Hill College Student Dormatory, The Rose and Crown Pub, Hobbs Cafe, Oak Hill College, Johnson Park, Harvey Oak Supply Store, The Willows Market and Pharmacy}. 
+* Stay in the current area if the activity can be done there. Only go out if the activity needs to take place in another place.
+* Must be one of the "Area options," verbatim.
+For eating dinner, Jane Anderson should go to the following area: {Hobbs Cafe}
+---
+Klaus Mueller lives in {Dorm for Oak Hill College} that has garden, Klaus Mueller's room, woman's bathroom, common room, man's bathroom, kitchen, Maria Lopez's room.
+Klaus Mueller is currently in {Dorm for Oak Hill College} that has garden, Klaus Mueller's room, woman's bathroom, common room, man's bathroom, kitchen, Maria Lopez's room. 
+Klaus Mueller goes to the library at Oak Hill College early in the morning, spends his days writing, and eats at Hobbs Cafe.
+Area options: {Oak Hill College, Dorm for Oak Hill College, The Willows Market and Pharmacy, Harvey Oak Supply Store, Johnson Park, The Rose and Crown Pub, Hobbs Cafe}. 
+* Stay in the current area if the activity can be done there. Only go out if the activity needs to take place in another place.
+* Must be one of the "Area options," verbatim.
+Klaus Mueller is waking up and getting ready for the day. For cleaning up breakfast dishes, Klaus Mueller should go to the following area: { 
+
+~~~ output    ----------------------------------------------------
+Dorm for Oak Hill College 
+
+=== END ==========================================================
+
+
+
+
+GNS FUNCTION: <generate_action_arena>
+[1;32mtrying GPT_request in safe_generate_response[0m
+Jane Anderson is in kitchen in Jane Anderson's house.
+Jane Anderson is going to Jane Anderson's house that has the following areas: {kitchen,  bedroom, bathroom}
+Stay in the current area if the activity can be done there. Never go into other people's rooms unless necessary.
+For cooking, Jane Anderson should go to the following area in Jane Anderson's house:
+Answer: {kitchen}
+---
+Tom Watson is in common room in Tom Watson's apartment. 
+Tom Watson is going to Hobbs Cafe that has the following areas: {cafe}
+Stay in the current area if the activity can be done there. Never go into other people's rooms unless necessary.
+For getting coffee, Tom Watson should go to the following area in Hobbs Cafe:
+Answer: {cafe}
+---
+
+Klaus Mueller is going to Dorm for Oak Hill College that has the following areas: {garden, Klaus Mueller's room, woman's bathroom, common room, man's bathroom, kitchen}
+* Stay in the current area if the activity can be done there. 
+* NEVER go into other people's rooms unless necessary.
+Klaus Mueller is waking up and getting ready for the day. For cleaning up breakfast dishes, Klaus Mueller should go to the following area in Dorm for Oak Hill College (MUST pick one of {garden, Klaus Mueller's room, woman's bathroom, common room, man's bathroom, kitchen}):
+Answer: {
+[1;32m----- repeat in  0  /total:  5  and output:[0m
+[1;32m kitchen} [0m
+[1;32m~~~~[0m
+[1;32msucceed get curr_gpt_reponse and validate in safe_generate_response[0m
+[1;32mafter cleanup: kitchen [0m
+kitchen
+=== persona/prompt_template/v1/action_location_object_vMar11.txt
+~~~ persona    ---------------------------------------------------
+Klaus Mueller 
+
+~~~ gpt_param ----------------------------------------------------
+{'engine': 'text-davinci-003', 'max_tokens': 15, 'temperature': 0, 'top_p': 1, 'stream': False, 'frequency_penalty': 0, 'presence_penalty': 0, 'stop': None} 
+
+~~~ prompt_input    ----------------------------------------------
+['Klaus Mueller', 'Dorm for Oak Hill College', "garden, Klaus Mueller's room, woman's bathroom, common room, man's bathroom, kitchen", 'Klaus Mueller', 'waking up and getting ready for the day', 'cleaning up breakfast dishes', 'Klaus Mueller', 'Dorm for Oak Hill College', "garden, Klaus Mueller's room, woman's bathroom, common room, man's bathroom, kitchen"] 
+
+~~~ prompt    ----------------------------------------------------
+Jane Anderson is in kitchen in Jane Anderson's house.
+Jane Anderson is going to Jane Anderson's house that has the following areas: {kitchen,  bedroom, bathroom}
+Stay in the current area if the activity can be done there. Never go into other people's rooms unless necessary.
+For cooking, Jane Anderson should go to the following area in Jane Anderson's house:
+Answer: {kitchen}
+---
+Tom Watson is in common room in Tom Watson's apartment. 
+Tom Watson is going to Hobbs Cafe that has the following areas: {cafe}
+Stay in the current area if the activity can be done there. Never go into other people's rooms unless necessary.
+For getting coffee, Tom Watson should go to the following area in Hobbs Cafe:
+Answer: {cafe}
+---
+
+Klaus Mueller is going to Dorm for Oak Hill College that has the following areas: {garden, Klaus Mueller's room, woman's bathroom, common room, man's bathroom, kitchen}
+* Stay in the current area if the activity can be done there. 
+* NEVER go into other people's rooms unless necessary.
+Klaus Mueller is waking up and getting ready for the day. For cleaning up breakfast dishes, Klaus Mueller should go to the following area in Dorm for Oak Hill College (MUST pick one of {garden, Klaus Mueller's room, woman's bathroom, common room, man's bathroom, kitchen}):
+Answer: { 
+
+~~~ output    ----------------------------------------------------
+kitchen 
+
+=== END ==========================================================
+
+
+
+
+GNS FUNCTION: <generate_action_game_object>
+[1;32mtrying GPT_request in safe_generate_response[0m
+Current activity: sleep in bed
+Objects available: {bed, easel, closet, painting}
+Pick ONE most relevant object from the objects available: bed
+---
+Current activity: painting
+Objects available: {easel, closet, sink, microwave}
+Pick ONE most relevant object from the objects available: easel
+---
+Current activity: cooking
+Objects available: {stove, sink, fridge, counter}
+Pick ONE most relevant object from the objects available: stove
+---
+Current activity: watch TV
+Objects available: {couch, TV, remote, coffee table}
+Pick ONE most relevant object from the objects available: TV
+---
+Current activity: study
+Objects available: {desk, computer, chair, bookshelf}
+Pick ONE most relevant object from the objects available: desk
+---
+Current activity: talk on the phone
+Objects available: {phone, charger, bed, nightstand}
+Pick ONE most relevant object from the objects available: phone
+---
+Current activity: cleaning up breakfast dishes
+Objects available: {toaster, kitchen sink, refrigerator, cooking area}
+Pick ONE most relevant object from the objects available:
+[1;32m----- repeat in  0  /total:  5  and output:[0m
+[1;32m kitchen sink [0m
+[1;32m~~~~[0m
+[1;32msucceed get curr_gpt_reponse and validate in safe_generate_response[0m
+[1;32mafter cleanup: kitchen sink [0m
+=== persona/prompt_template/v1/action_object_v2.txt
+~~~ persona    ---------------------------------------------------
+Klaus Mueller 
+
+~~~ gpt_param ----------------------------------------------------
+{'engine': 'text-davinci-003', 'max_tokens': 15, 'temperature': 0, 'top_p': 1, 'stream': False, 'frequency_penalty': 0, 'presence_penalty': 0, 'stop': None} 
+
+~~~ prompt_input    ----------------------------------------------
+['cleaning up breakfast dishes', 'toaster, kitchen sink, refrigerator, cooking area'] 
+
+~~~ prompt    ----------------------------------------------------
+Current activity: sleep in bed
+Objects available: {bed, easel, closet, painting}
+Pick ONE most relevant object from the objects available: bed
+---
+Current activity: painting
+Objects available: {easel, closet, sink, microwave}
+Pick ONE most relevant object from the objects available: easel
+---
+Current activity: cooking
+Objects available: {stove, sink, fridge, counter}
+Pick ONE most relevant object from the objects available: stove
+---
+Current activity: watch TV
+Objects available: {couch, TV, remote, coffee table}
+Pick ONE most relevant object from the objects available: TV
+---
+Current activity: study
+Objects available: {desk, computer, chair, bookshelf}
+Pick ONE most relevant object from the objects available: desk
+---
+Current activity: talk on the phone
+Objects available: {phone, charger, bed, nightstand}
+Pick ONE most relevant object from the objects available: phone
+---
+Current activity: cleaning up breakfast dishes
+Objects available: {toaster, kitchen sink, refrigerator, cooking area}
+Pick ONE most relevant object from the objects available: 
+
+~~~ output    ----------------------------------------------------
+kitchen sink 
+
+=== END ==========================================================
+
+
+
+
+[0;33m Klaus Mueller  finished get a new address: [0m the Ville:Dorm for Oak Hill College:kitchen:kitchen sink
+GNS FUNCTION: <generate_action_pronunciatio>
+asdhfapsh8p9hfaiafdsi;ldfj as DEBUG 4
+[1;32mtrying ChatGPT_request to get json[0m
+CHAT GPT PROMPT
+"""
+Convert an action description to an emoji (important: use two or less emojis).
+
+Action description: cleaning up breakfast dishes
+Emoji:
+"""
+Output the response to the prompt above in json. The value for the output must ONLY contain the emojis.
+Example output json:
+{"output": "🛁🧖‍♀️"}
+[1;32m---curr_gpt_response in repeat  0  /total: 6 [0m
+[1;32m {"output": "🍽️🧽"} [0m
+[1;32m~~~~[0m
+[1;32msucceed get curr_gpt_reponse and validate in safe_generate_response and get json[0m
+[1;32mafter cleanup:  🍽️🧽 [0m
+[0;33m Klaus Mueller  finished act_pron: [0m 🍽️🧽
+GNS FUNCTION: <generate_action_event_triple>
+[1;32mtrying GPT_request in safe_generate_response[0m
+Task: Turn the input into (subject, predicate, object). You should only output 2 parts, namely "predicate, object)". If you the subject part is not in use now, please output "is, idle)" or "is, unused)". You shouldn't start with "(". If the input has multiple actions, please summarize it into one action.
+
+Input: Sam Johnson is eating breakfast. 
+Output: (Dolores Murphy, eat, breakfast) 
+--- 
+Input: Joon Park is brewing coffee.
+Output: (Joon Park, brew, coffee)
+---
+Input: Jane Cook is sleeping. 
+Output: (Jane Cook, is, sleep)
+---
+Input: Michael Bernstein is writing email on a computer. 
+Output: (Michael Bernstein, write, email)
+---
+Input: Percy Liang is teaching students in a classroom. 
+Output: (Percy Liang, teach, students)
+---
+Input: Merrie Morris is running on a treadmill. 
+Output: (Merrie Morris, run, treadmill)
+---
+Input: Klaus Mueller is cleaning up breakfast dishes. 
+Output: (Klaus Mueller,
+[1;32m----- repeat in  0  /total:  5  and output:[0m
+[1;32m clean, breakfast dishes) [0m
+[1;32m~~~~[0m
+[1;32msucceed get curr_gpt_reponse and validate in safe_generate_response[0m
+[1;32mafter cleanup: ['clean', 'breakfast dishes'] [0m
+=== persona/prompt_template/v2/generate_event_triple_v1.txt
+~~~ persona    ---------------------------------------------------
+Klaus Mueller 
+
+~~~ gpt_param ----------------------------------------------------
+{'engine': 'text-davinci-003', 'max_tokens': 30, 'temperature': 0, 'top_p': 1, 'stream': False, 'frequency_penalty': 0, 'presence_penalty': 0, 'stop': ['\n']} 
+
+~~~ prompt_input    ----------------------------------------------
+['Klaus Mueller', 'cleaning up breakfast dishes', 'Klaus Mueller'] 
+
+~~~ prompt    ----------------------------------------------------
+Task: Turn the input into (subject, predicate, object). You should only output 2 parts, namely "predicate, object)". If you the subject part is not in use now, please output "is, idle)" or "is, unused)". You shouldn't start with "(". If the input has multiple actions, please summarize it into one action.
+
+Input: Sam Johnson is eating breakfast. 
+Output: (Dolores Murphy, eat, breakfast) 
+--- 
+Input: Joon Park is brewing coffee.
+Output: (Joon Park, brew, coffee)
+---
+Input: Jane Cook is sleeping. 
+Output: (Jane Cook, is, sleep)
+---
+Input: Michael Bernstein is writing email on a computer. 
+Output: (Michael Bernstein, write, email)
+---
+Input: Percy Liang is teaching students in a classroom. 
+Output: (Percy Liang, teach, students)
+---
+Input: Merrie Morris is running on a treadmill. 
+Output: (Merrie Morris, run, treadmill)
+---
+Input: Klaus Mueller is cleaning up breakfast dishes. 
+Output: (Klaus Mueller, 
+
+~~~ output    ----------------------------------------------------
+('Klaus Mueller', 'clean', 'breakfast dishes') 
+
+=== END ==========================================================
+
+
+
+
+[0;33m Klaus Mueller  finished act_event_triple: [0m ('Klaus Mueller', 'clean', 'breakfast dishes')
+GNS FUNCTION: <generate_act_obj_desc>
+asdhfapsh8p9hfaiafdsi;ldfj as DEBUG 6
+[1;32mtrying ChatGPT_request to get json[0m
+CHAT GPT PROMPT
+"""
+Task: We want to understand the state of an object that is being used by someone. 
+
+Let's think step by step. 
+We want to know about kitchen sink's state. 
+Step 1. Klaus Mueller is at/using the waking up and getting ready for the day (cleaning up breakfast dishes).
+Step 2. Describe the kitchen sink's state: kitchen sink is
+"""
+Output the response to the prompt above in json. The output should ONLY contain the phrase that should go in <fill in>.
+Example output json:
+{"output": "being fixed"}
+[1;32m---curr_gpt_response in repeat  0  /total: 6 [0m
+[1;32m {
+"output": "filled with breakfast dishes and being used for cleaning"
+} [0m
+[1;32m~~~~[0m
+[1;32msucceed get curr_gpt_reponse and validate in safe_generate_response and get json[0m
+[1;32mafter cleanup:  filled with breakfast dishes and being used for cleaning [0m
+[0;33m Klaus Mueller  finished act_obj_desp: [0m filled with breakfast dishes and being used for cleaning
+GNS FUNCTION: <generate_action_pronunciatio>
+asdhfapsh8p9hfaiafdsi;ldfj as DEBUG 4
+[1;32mtrying ChatGPT_request to get json[0m
+CHAT GPT PROMPT
+"""
+Convert an action description to an emoji (important: use two or less emojis).
+
+Action description: filled with breakfast dishes and being used for cleaning
+Emoji:
+"""
+Output the response to the prompt above in json. The value for the output must ONLY contain the emojis.
+Example output json:
+{"output": "🛁🧖‍♀️"}
+[1;32m---curr_gpt_response in repeat  0  /total: 6 [0m
+[1;32m {"output": "🍽️🧽"} [0m
+[1;32m~~~~[0m
+[1;32msucceed get curr_gpt_reponse and validate in safe_generate_response and get json[0m
+[1;32mafter cleanup:  🍽️🧽 [0m
+[0;33m Klaus Mueller  finished act_obj_pron: [0m 🍽️🧽
+GNS FUNCTION: <generate_act_obj_event_triple>
+[1;32mtrying GPT_request in safe_generate_response[0m
+Task: Turn the input into (subject, predicate, object). You should only output 2 parts, namely "predicate, object)". If you the subject part is not in use now, please output "is, idle)" or "is, unused)". You shouldn't start with "(". If the input has multiple actions, please summarize it into one action.
+
+Input: Sam Johnson is eating breakfast. 
+Output: (Dolores Murphy, eat, breakfast) 
+--- 
+Input: Joon Park is brewing coffee.
+Output: (Joon Park, brew, coffee)
+---
+Input: Jane Cook is sleeping. 
+Output: (Jane Cook, is, sleep)
+---
+Input: Michael Bernstein is writing email on a computer. 
+Output: (Michael Bernstein, write, email)
+---
+Input: Percy Liang is teaching students in a classroom. 
+Output: (Percy Liang, teach, students)
+---
+Input: Merrie Morris is running on a treadmill. 
+Output: (Merrie Morris, run, treadmill)
+---
+Input: kitchen sink is filled with breakfast dishes and being used for cleaning. 
+Output: (kitchen sink,
+[1;32m----- repeat in  0  /total:  5  and output:[0m
+[1;32m is, used for cleaning) [0m
+[1;32m~~~~[0m
+[1;32msucceed get curr_gpt_reponse and validate in safe_generate_response[0m
+[1;32mafter cleanup: ['is', 'used for cleaning'] [0m
+=== persona/prompt_template/v2/generate_event_triple_v1.txt
+~~~ persona    ---------------------------------------------------
+Klaus Mueller 
+
+~~~ gpt_param ----------------------------------------------------
+{'engine': 'text-davinci-003', 'max_tokens': 30, 'temperature': 0, 'top_p': 1, 'stream': False, 'frequency_penalty': 0, 'presence_penalty': 0, 'stop': ['\n']} 
+
+~~~ prompt_input    ----------------------------------------------
+['kitchen sink', 'filled with breakfast dishes and being used for cleaning', 'kitchen sink'] 
+
+~~~ prompt    ----------------------------------------------------
+Task: Turn the input into (subject, predicate, object). You should only output 2 parts, namely "predicate, object)". If you the subject part is not in use now, please output "is, idle)" or "is, unused)". You shouldn't start with "(". If the input has multiple actions, please summarize it into one action.
+
+Input: Sam Johnson is eating breakfast. 
+Output: (Dolores Murphy, eat, breakfast) 
+--- 
+Input: Joon Park is brewing coffee.
+Output: (Joon Park, brew, coffee)
+---
+Input: Jane Cook is sleeping. 
+Output: (Jane Cook, is, sleep)
+---
+Input: Michael Bernstein is writing email on a computer. 
+Output: (Michael Bernstein, write, email)
+---
+Input: Percy Liang is teaching students in a classroom. 
+Output: (Percy Liang, teach, students)
+---
+Input: Merrie Morris is running on a treadmill. 
+Output: (Merrie Morris, run, treadmill)
+---
+Input: kitchen sink is filled with breakfast dishes and being used for cleaning. 
+Output: (kitchen sink, 
+
+~~~ output    ----------------------------------------------------
+('kitchen sink', 'is', 'used for cleaning') 
+
+=== END ==========================================================
+
+
+
+
+[0;33m Klaus Mueller  finished act_obj_event: [0m ('kitchen sink', 'is', 'used for cleaning')
+[1;33m Klaus Mueller  finished one determine action: [0m
+[0;35m--- Klaus Mueller finished planning and start reflecting --[0m
+Klaus Mueller persona.scratch.importance_trigger_curr:: 131
+150
+[0;35m--- Klaus Mueller finished reflecting and start executing --[0m
+aldhfoaf/????
+the Ville:Dorm for Oak Hill College:kitchen:kitchen sink
+[1;3;35mKlaus Mueller finished a move --[0m
+
+
+
+[1;3;34mStart Step:  91 [0m
+[1;3;34mCurrent Time:  2023-02-13 07:35:00 [0m
+
+[1;3;35mIsabella Rodriguez start a move --[0m
+[1;35m--- Isabella Rodriguez start perceive, retrieve, plan and reflect --[0m
+[0;35m--- Isabella Rodriguez finished perceiving and start retrieving --[0m
+[0;35m--- Isabella Rodriguez finished retrieving and start planning --[0m
+DEBUG LJSDLFSKJF
+['sleeping', 360]
+['waking up and starting her morning routine (1) Isabella is turning off her alarm and stretching in bed)', 5]
+['waking up and starting her morning routine (brushing her teeth)', 5]
+['waking up and starting her morning routine (applying her skincare routine)', 10]
+['waking up and starting her morning routine (changing into comfortable work clothes)', 5]
+['waking up and starting her morning routine (brewing a fresh cup of coffee)', 5]
+['waking up and starting her morning routine (sipping her coffee while checking her phone for messages)', 10]
+['waking up and starting her morning routine (reviewing her to-do list for the day)', 5]
+['waking up and starting her morning routine (gathering her keys and bag before heading out)', 15]
+['preparing for the day and getting ready to open Hobbs Cafe (brushing her teeth and washing her face)', 10]
+['preparing for the day and getting ready to open Hobbs Cafe (getting dressed in her work clothes)', 10]
+['preparing for the day and getting ready to open Hobbs Cafe (making a quick breakfast)', 15]
+['preparing for the day and getting ready to open Hobbs Cafe (checking the cafe’s inventory list)', 10]
+['preparing for the day and getting ready to open Hobbs Cafe (gathering party decorations for tomorrow’s Valentine’s Day event)', 10]
+['preparing for the day and getting ready to open Hobbs Cafe (grabbing her keys and heading to the cafe)', 5]
+["opening Hobbs Cafe and preparing for the day's customers (unlocking the cafe doors and turning on the lights)", 5]
+["opening Hobbs Cafe and preparing for the day's customers (checking the inventory of coffee beans and pastries)", 10]
+["opening Hobbs Cafe and preparing for the day's customers (setting up the espresso machine and grinders)", 10]
+["opening Hobbs Cafe and preparing for the day's customers (arranging fresh pastries in the display case)", 10]
+["opening Hobbs Cafe and preparing for the day's customers (wiping down tables and countertops)", 10]
+["opening Hobbs Cafe and preparing for the day's customers (preparing a fresh batch of coffee)", 5]
+["opening Hobbs Cafe and preparing for the day's customers (setting up the register and ensuring the POS system is working)", 5]
+['opening Hobbs Cafe and preparing for the day\'s customers (putting out a "We\'re Open" sign and greeting the first customers)', 5]
+['working behind the counter, serving customers and ensuring everyone feels welcome', 60]
+['working behind the counter, serving customers and chatting with regulars', 60]
+["working behind the counter, serving customers and preparing for the Valentine's Day party", 60]
+['taking a quick lunch break while keeping an eye on the cafe', 60]
+["back behind the counter, serving customers and decorating the cafe for Valentine's Day", 60]
+["working behind the counter, serving customers and finalizing Valentine's Day decorations", 60]
+["working behind the counter, serving customers and promoting the Valentine's Day party to guests", 60]
+["working behind the counter, serving customers and restocking supplies for the Valentine's Day party", 60]
+["working behind the counter, serving customers and setting up for the Valentine's Day party", 60]
+["working behind the counter, serving customers and putting final touches on the Valentine's Day decorations", 60]
+["working behind the counter, serving customers and ensuring the Valentine's Day preparations are complete", 60]
+['closing up Hobbs Cafe and cleaning the space after a busy day', 60]
+["[(ID:RSUner) Monday February 13 -- 09:00 PM] Activity: Isabella is relaxing at home, reviewing Valentine's Day party plans and making any last-minute adjustments", 60]
+["[(ID:bOTnIz) Monday February 13 -- 10:00 PM] Activity: Isabella is winding down for the evening, finalizing Valentine's Day party details before bed", 60]
+['[(ID:XhoVZy) Monday February 13 -- 11:00 PM] Activity: Isabella is sleeping', 60]
+['sleeping', 0]
+['sleeping', 0]
+['sleeping', 0]
+['sleeping', 0]
+['sleeping', 0]
+['sleeping', 0]
+['sleeping', 0]
+['sleeping', 0]
+['sleeping', 0]
+['sleeping', 0]
+['sleeping', 0]
+['sleeping', 0]
+12
+50
+Isabella Rodriguez
+------
+[1;33m Isabella Rodriguez  start one determine action: [0m
+[0;33m Isabella Rodriguez  start get a new address: [0m
+GNS FUNCTION: <generate_action_sector>
+[1;32mtrying GPT_request in safe_generate_response[0m
+Task -- choose an appropriate area  from the area options for a task at hand. 
+
+Sam Kim lives in {Sam Kim's house} that has Sam Kim's room, bathroom, kitchen.
+Sam Kim is currently in {Sam Kim's house} that has Sam Kim's room, bathroom, kitchen. 
+Area options: {Sam Kim's house, The Rose and Crown Pub, Hobbs Cafe, Oak Hill College, Johnson Park, Harvey Oak Supply Store, The Willows Market and Pharmacy}.
+* Stay in the current area if the activity can be done there. Only go out if the activity needs to take place in another place.
+* Must be one of the "Area options," verbatim.
+For taking a walk, Sam Kim should go to the following area: {Johnson Park}
+---
+Jane Anderson lives in {Oak Hill College Student Dormatory} that has Jane Anderson's room.
+Jane Anderson is currently in {Oak Hill College} that has a classroom, library
+Area options: {Oak Hill College Student Dormatory, The Rose and Crown Pub, Hobbs Cafe, Oak Hill College, Johnson Park, Harvey Oak Supply Store, The Willows Market and Pharmacy}. 
+* Stay in the current area if the activity can be done there. Only go out if the activity needs to take place in another place.
+* Must be one of the "Area options," verbatim.
+For eating dinner, Jane Anderson should go to the following area: {Hobbs Cafe}
+---
+Isabella Rodriguez lives in {Isabella Rodriguez's apartment} that has main room, bathroom.
+Isabella Rodriguez is currently in {Isabella Rodriguez's apartment} that has main room, bathroom. 
+Isabella Rodriguez opens Hobbs Cafe at 8am everyday, and works at the counter until 8pm, at which point she closes the cafe.
+Area options: {Hobbs Cafe, Isabella Rodriguez's apartment, The Rose and Crown Pub, Harvey Oak Supply Store, The Willows Market and Pharmacy, Dorm for Oak Hill College, Johnson Park, Ryan Park's apartment, Giorgio Rossi's apartment}. 
+* Stay in the current area if the activity can be done there. Only go out if the activity needs to take place in another place.
+* Must be one of the "Area options," verbatim.
+Isabella Rodriguez is preparing for the day and getting ready to open Hobbs Cafe. For checking the cafe’s inventory list, Isabella Rodriguez should go to the following area: {
+[1;32m----- repeat in  0  /total:  5  and output:[0m
+[1;32m {Hobbs Cafe} [0m
+[1;32m~~~~[0m
+[1;32msucceed get curr_gpt_reponse and validate in safe_generate_response[0m
+[1;32mafter cleanup: Hobbs Cafe [0m
+DEBUG The Rose and Crown Pub ------ Hobbs Cafe
+=== persona/prompt_template/v1/action_location_sector_v1.txt
+~~~ persona    ---------------------------------------------------
+Isabella Rodriguez 
+
+~~~ gpt_param ----------------------------------------------------
+{'engine': 'text-davinci-002', 'max_tokens': 15, 'temperature': 0, 'top_p': 1, 'stream': False, 'frequency_penalty': 0, 'presence_penalty': 0, 'stop': None} 
+
+~~~ prompt_input    ----------------------------------------------
+['Isabella Rodriguez', "Isabella Rodriguez's apartment", 'main room, bathroom', 'Isabella Rodriguez', "Isabella Rodriguez's apartment", 'main room, bathroom', '\nIsabella Rodriguez opens Hobbs Cafe at 8am everyday, and works at the counter until 8pm, at which point she closes the cafe.', "Hobbs Cafe, Isabella Rodriguez's apartment, The Rose and Crown Pub, Harvey Oak Supply Store, The Willows Market and Pharmacy, Dorm for Oak Hill College, Johnson Park, Ryan Park's apartment, Giorgio Rossi's apartment", 'Isabella Rodriguez', 'preparing for the day and getting ready to open Hobbs Cafe', 'checking the cafe’s inventory list', 'Isabella Rodriguez'] 
+
+~~~ prompt    ----------------------------------------------------
+Task -- choose an appropriate area  from the area options for a task at hand. 
+
+Sam Kim lives in {Sam Kim's house} that has Sam Kim's room, bathroom, kitchen.
+Sam Kim is currently in {Sam Kim's house} that has Sam Kim's room, bathroom, kitchen. 
+Area options: {Sam Kim's house, The Rose and Crown Pub, Hobbs Cafe, Oak Hill College, Johnson Park, Harvey Oak Supply Store, The Willows Market and Pharmacy}.
+* Stay in the current area if the activity can be done there. Only go out if the activity needs to take place in another place.
+* Must be one of the "Area options," verbatim.
+For taking a walk, Sam Kim should go to the following area: {Johnson Park}
+---
+Jane Anderson lives in {Oak Hill College Student Dormatory} that has Jane Anderson's room.
+Jane Anderson is currently in {Oak Hill College} that has a classroom, library
+Area options: {Oak Hill College Student Dormatory, The Rose and Crown Pub, Hobbs Cafe, Oak Hill College, Johnson Park, Harvey Oak Supply Store, The Willows Market and Pharmacy}. 
+* Stay in the current area if the activity can be done there. Only go out if the activity needs to take place in another place.
+* Must be one of the "Area options," verbatim.
+For eating dinner, Jane Anderson should go to the following area: {Hobbs Cafe}
+---
+Isabella Rodriguez lives in {Isabella Rodriguez's apartment} that has main room, bathroom.
+Isabella Rodriguez is currently in {Isabella Rodriguez's apartment} that has main room, bathroom. 
+Isabella Rodriguez opens Hobbs Cafe at 8am everyday, and works at the counter until 8pm, at which point she closes the cafe.
+Area options: {Hobbs Cafe, Isabella Rodriguez's apartment, The Rose and Crown Pub, Harvey Oak Supply Store, The Willows Market and Pharmacy, Dorm for Oak Hill College, Johnson Park, Ryan Park's apartment, Giorgio Rossi's apartment}. 
+* Stay in the current area if the activity can be done there. Only go out if the activity needs to take place in another place.
+* Must be one of the "Area options," verbatim.
+Isabella Rodriguez is preparing for the day and getting ready to open Hobbs Cafe. For checking the cafe’s inventory list, Isabella Rodriguez should go to the following area: { 
+
+~~~ output    ----------------------------------------------------
+Hobbs Cafe 
+
+=== END ==========================================================
+
+
+
+
+GNS FUNCTION: <generate_action_arena>
+[1;32mtrying GPT_request in safe_generate_response[0m
+Jane Anderson is in kitchen in Jane Anderson's house.
+Jane Anderson is going to Jane Anderson's house that has the following areas: {kitchen,  bedroom, bathroom}
+Stay in the current area if the activity can be done there. Never go into other people's rooms unless necessary.
+For cooking, Jane Anderson should go to the following area in Jane Anderson's house:
+Answer: {kitchen}
+---
+Tom Watson is in common room in Tom Watson's apartment. 
+Tom Watson is going to Hobbs Cafe that has the following areas: {cafe}
+Stay in the current area if the activity can be done there. Never go into other people's rooms unless necessary.
+For getting coffee, Tom Watson should go to the following area in Hobbs Cafe:
+Answer: {cafe}
+---
+
+Isabella Rodriguez is going to Hobbs Cafe that has the following areas: {cafe}
+* Stay in the current area if the activity can be done there. 
+* NEVER go into other people's rooms unless necessary.
+Isabella Rodriguez is preparing for the day and getting ready to open Hobbs Cafe. For checking the cafe’s inventory list, Isabella Rodriguez should go to the following area in Hobbs Cafe (MUST pick one of {cafe}):
+Answer: {
+[1;32m----- repeat in  0  /total:  5  and output:[0m
+[1;32m cafe} [0m
+[1;32m~~~~[0m
+[1;32msucceed get curr_gpt_reponse and validate in safe_generate_response[0m
+[1;32mafter cleanup: cafe [0m
+cafe
+=== persona/prompt_template/v1/action_location_object_vMar11.txt
+~~~ persona    ---------------------------------------------------
+Isabella Rodriguez 
+
+~~~ gpt_param ----------------------------------------------------
+{'engine': 'text-davinci-003', 'max_tokens': 15, 'temperature': 0, 'top_p': 1, 'stream': False, 'frequency_penalty': 0, 'presence_penalty': 0, 'stop': None} 
+
+~~~ prompt_input    ----------------------------------------------
+['Isabella Rodriguez', 'Hobbs Cafe', 'cafe', 'Isabella Rodriguez', 'preparing for the day and getting ready to open Hobbs Cafe', 'checking the cafe’s inventory list', 'Isabella Rodriguez', 'Hobbs Cafe', 'cafe'] 
+
+~~~ prompt    ----------------------------------------------------
+Jane Anderson is in kitchen in Jane Anderson's house.
+Jane Anderson is going to Jane Anderson's house that has the following areas: {kitchen,  bedroom, bathroom}
+Stay in the current area if the activity can be done there. Never go into other people's rooms unless necessary.
+For cooking, Jane Anderson should go to the following area in Jane Anderson's house:
+Answer: {kitchen}
+---
+Tom Watson is in common room in Tom Watson's apartment. 
+Tom Watson is going to Hobbs Cafe that has the following areas: {cafe}
+Stay in the current area if the activity can be done there. Never go into other people's rooms unless necessary.
+For getting coffee, Tom Watson should go to the following area in Hobbs Cafe:
+Answer: {cafe}
+---
+
+Isabella Rodriguez is going to Hobbs Cafe that has the following areas: {cafe}
+* Stay in the current area if the activity can be done there. 
+* NEVER go into other people's rooms unless necessary.
+Isabella Rodriguez is preparing for the day and getting ready to open Hobbs Cafe. For checking the cafe’s inventory list, Isabella Rodriguez should go to the following area in Hobbs Cafe (MUST pick one of {cafe}):
+Answer: { 
+
+~~~ output    ----------------------------------------------------
+cafe 
+
+=== END ==========================================================
+
+
+
+
+GNS FUNCTION: <generate_action_game_object>
+[1;32mtrying GPT_request in safe_generate_response[0m
+Current activity: sleep in bed
+Objects available: {bed, easel, closet, painting}
+Pick ONE most relevant object from the objects available: bed
+---
+Current activity: painting
+Objects available: {easel, closet, sink, microwave}
+Pick ONE most relevant object from the objects available: easel
+---
+Current activity: cooking
+Objects available: {stove, sink, fridge, counter}
+Pick ONE most relevant object from the objects available: stove
+---
+Current activity: watch TV
+Objects available: {couch, TV, remote, coffee table}
+Pick ONE most relevant object from the objects available: TV
+---
+Current activity: study
+Objects available: {desk, computer, chair, bookshelf}
+Pick ONE most relevant object from the objects available: desk
+---
+Current activity: talk on the phone
+Objects available: {phone, charger, bed, nightstand}
+Pick ONE most relevant object from the objects available: phone
+---
+Current activity: checking the cafe’s inventory list
+Objects available: {refrigerator, cafe customer seating, cooking area, kitchen sink, behind the cafe counter, piano}
+Pick ONE most relevant object from the objects available:
+[1;32m----- repeat in  0  /total:  5  and output:[0m
+[1;32m refrigerator [0m
+[1;32m~~~~[0m
+[1;32msucceed get curr_gpt_reponse and validate in safe_generate_response[0m
+[1;32mafter cleanup: refrigerator [0m
+=== persona/prompt_template/v1/action_object_v2.txt
+~~~ persona    ---------------------------------------------------
+Isabella Rodriguez 
+
+~~~ gpt_param ----------------------------------------------------
+{'engine': 'text-davinci-003', 'max_tokens': 15, 'temperature': 0, 'top_p': 1, 'stream': False, 'frequency_penalty': 0, 'presence_penalty': 0, 'stop': None} 
+
+~~~ prompt_input    ----------------------------------------------
+['checking the cafe’s inventory list', 'refrigerator, cafe customer seating, cooking area, kitchen sink, behind the cafe counter, piano'] 
+
+~~~ prompt    ----------------------------------------------------
+Current activity: sleep in bed
+Objects available: {bed, easel, closet, painting}
+Pick ONE most relevant object from the objects available: bed
+---
+Current activity: painting
+Objects available: {easel, closet, sink, microwave}
+Pick ONE most relevant object from the objects available: easel
+---
+Current activity: cooking
+Objects available: {stove, sink, fridge, counter}
+Pick ONE most relevant object from the objects available: stove
+---
+Current activity: watch TV
+Objects available: {couch, TV, remote, coffee table}
+Pick ONE most relevant object from the objects available: TV
+---
+Current activity: study
+Objects available: {desk, computer, chair, bookshelf}
+Pick ONE most relevant object from the objects available: desk
+---
+Current activity: talk on the phone
+Objects available: {phone, charger, bed, nightstand}
+Pick ONE most relevant object from the objects available: phone
+---
+Current activity: checking the cafe’s inventory list
+Objects available: {refrigerator, cafe customer seating, cooking area, kitchen sink, behind the cafe counter, piano}
+Pick ONE most relevant object from the objects available: 
+
+~~~ output    ----------------------------------------------------
+refrigerator 
+
+=== END ==========================================================
+
+
+
+
+[0;33m Isabella Rodriguez  finished get a new address: [0m the Ville:Hobbs Cafe:cafe:refrigerator
+GNS FUNCTION: <generate_action_pronunciatio>
+asdhfapsh8p9hfaiafdsi;ldfj as DEBUG 4
+[1;32mtrying ChatGPT_request to get json[0m
+CHAT GPT PROMPT
+"""
+Convert an action description to an emoji (important: use two or less emojis).
+
+Action description: checking the cafe’s inventory list
+Emoji:
+"""
+Output the response to the prompt above in json. The value for the output must ONLY contain the emojis.
+Example output json:
+{"output": "🛁🧖‍♀️"}
+[1;32m---curr_gpt_response in repeat  0  /total: 6 [0m
+[1;32m {"output": "📋🔍"} [0m
+[1;32m~~~~[0m
+[1;32msucceed get curr_gpt_reponse and validate in safe_generate_response and get json[0m
+[1;32mafter cleanup:  📋🔍 [0m
+[0;33m Isabella Rodriguez  finished act_pron: [0m 📋🔍
+GNS FUNCTION: <generate_action_event_triple>
+[1;32mtrying GPT_request in safe_generate_response[0m
+Task: Turn the input into (subject, predicate, object). You should only output 2 parts, namely "predicate, object)". If you the subject part is not in use now, please output "is, idle)" or "is, unused)". You shouldn't start with "(". If the input has multiple actions, please summarize it into one action.
+
+Input: Sam Johnson is eating breakfast. 
+Output: (Dolores Murphy, eat, breakfast) 
+--- 
+Input: Joon Park is brewing coffee.
+Output: (Joon Park, brew, coffee)
+---
+Input: Jane Cook is sleeping. 
+Output: (Jane Cook, is, sleep)
+---
+Input: Michael Bernstein is writing email on a computer. 
+Output: (Michael Bernstein, write, email)
+---
+Input: Percy Liang is teaching students in a classroom. 
+Output: (Percy Liang, teach, students)
+---
+Input: Merrie Morris is running on a treadmill. 
+Output: (Merrie Morris, run, treadmill)
+---
+Input: Isabella Rodriguez is checking the cafe’s inventory list. 
+Output: (Isabella Rodriguez,
+[1;32m----- repeat in  0  /total:  5  and output:[0m
+[1;32m check, inventory list) [0m
+[1;32m~~~~[0m
+[1;32msucceed get curr_gpt_reponse and validate in safe_generate_response[0m
+[1;32mafter cleanup: ['check', 'inventory list'] [0m
+=== persona/prompt_template/v2/generate_event_triple_v1.txt
+~~~ persona    ---------------------------------------------------
+Isabella Rodriguez 
+
+~~~ gpt_param ----------------------------------------------------
+{'engine': 'text-davinci-003', 'max_tokens': 30, 'temperature': 0, 'top_p': 1, 'stream': False, 'frequency_penalty': 0, 'presence_penalty': 0, 'stop': ['\n']} 
+
+~~~ prompt_input    ----------------------------------------------
+['Isabella Rodriguez', 'checking the cafe’s inventory list', 'Isabella Rodriguez'] 
+
+~~~ prompt    ----------------------------------------------------
+Task: Turn the input into (subject, predicate, object). You should only output 2 parts, namely "predicate, object)". If you the subject part is not in use now, please output "is, idle)" or "is, unused)". You shouldn't start with "(". If the input has multiple actions, please summarize it into one action.
+
+Input: Sam Johnson is eating breakfast. 
+Output: (Dolores Murphy, eat, breakfast) 
+--- 
+Input: Joon Park is brewing coffee.
+Output: (Joon Park, brew, coffee)
+---
+Input: Jane Cook is sleeping. 
+Output: (Jane Cook, is, sleep)
+---
+Input: Michael Bernstein is writing email on a computer. 
+Output: (Michael Bernstein, write, email)
+---
+Input: Percy Liang is teaching students in a classroom. 
+Output: (Percy Liang, teach, students)
+---
+Input: Merrie Morris is running on a treadmill. 
+Output: (Merrie Morris, run, treadmill)
+---
+Input: Isabella Rodriguez is checking the cafe’s inventory list. 
+Output: (Isabella Rodriguez, 
+
+~~~ output    ----------------------------------------------------
+('Isabella Rodriguez', 'check', 'inventory list') 
+
+=== END ==========================================================
+
+
+
+
+[0;33m Isabella Rodriguez  finished act_event_triple: [0m ('Isabella Rodriguez', 'check', 'inventory list')
+GNS FUNCTION: <generate_act_obj_desc>
+asdhfapsh8p9hfaiafdsi;ldfj as DEBUG 6
+[1;32mtrying ChatGPT_request to get json[0m
+CHAT GPT PROMPT
+"""
+Task: We want to understand the state of an object that is being used by someone. 
+
+Let's think step by step. 
+We want to know about refrigerator's state. 
+Step 1. Isabella Rodriguez is at/using the preparing for the day and getting ready to open Hobbs Cafe (checking the cafe’s inventory list).
+Step 2. Describe the refrigerator's state: refrigerator is
+"""
+Output the response to the prompt above in json. The output should ONLY contain the phrase that should go in <fill in>.
+Example output json:
+{"output": "being fixed"}
+[1;32m---curr_gpt_response in repeat  0  /total: 6 [0m
+[1;32m {
+  "output": "being checked for inventory"
+} [0m
+[1;32m~~~~[0m
+[1;32msucceed get curr_gpt_reponse and validate in safe_generate_response and get json[0m
+[1;32mafter cleanup:  being checked for inventory [0m
+[0;33m Isabella Rodriguez  finished act_obj_desp: [0m being checked for inventory
+GNS FUNCTION: <generate_action_pronunciatio>
+asdhfapsh8p9hfaiafdsi;ldfj as DEBUG 4
+[1;32mtrying ChatGPT_request to get json[0m
+CHAT GPT PROMPT
+"""
+Convert an action description to an emoji (important: use two or less emojis).
+
+Action description: being checked for inventory
+Emoji:
+"""
+Output the response to the prompt above in json. The value for the output must ONLY contain the emojis.
+Example output json:
+{"output": "🛁🧖‍♀️"}
+[1;32m---curr_gpt_response in repeat  0  /total: 6 [0m
+[1;32m {"output": "📋✅"} [0m
+[1;32m~~~~[0m
+[1;32msucceed get curr_gpt_reponse and validate in safe_generate_response and get json[0m
+[1;32mafter cleanup:  📋✅ [0m
+[0;33m Isabella Rodriguez  finished act_obj_pron: [0m 📋✅
+GNS FUNCTION: <generate_act_obj_event_triple>
+[1;32mtrying GPT_request in safe_generate_response[0m
+Task: Turn the input into (subject, predicate, object). You should only output 2 parts, namely "predicate, object)". If you the subject part is not in use now, please output "is, idle)" or "is, unused)". You shouldn't start with "(". If the input has multiple actions, please summarize it into one action.
+
+Input: Sam Johnson is eating breakfast. 
+Output: (Dolores Murphy, eat, breakfast) 
+--- 
+Input: Joon Park is brewing coffee.
+Output: (Joon Park, brew, coffee)
+---
+Input: Jane Cook is sleeping. 
+Output: (Jane Cook, is, sleep)
+---
+Input: Michael Bernstein is writing email on a computer. 
+Output: (Michael Bernstein, write, email)
+---
+Input: Percy Liang is teaching students in a classroom. 
+Output: (Percy Liang, teach, students)
+---
+Input: Merrie Morris is running on a treadmill. 
+Output: (Merrie Morris, run, treadmill)
+---
+Input: refrigerator is being checked for inventory. 
+Output: (refrigerator,
+[1;32m----- repeat in  0  /total:  5  and output:[0m
+[1;32m is, checked for inventory) [0m
+[1;32m~~~~[0m
+[1;32msucceed get curr_gpt_reponse and validate in safe_generate_response[0m
+[1;32mafter cleanup: ['is', 'checked for inventory'] [0m
+=== persona/prompt_template/v2/generate_event_triple_v1.txt
+~~~ persona    ---------------------------------------------------
+Isabella Rodriguez 
+
+~~~ gpt_param ----------------------------------------------------
+{'engine': 'text-davinci-003', 'max_tokens': 30, 'temperature': 0, 'top_p': 1, 'stream': False, 'frequency_penalty': 0, 'presence_penalty': 0, 'stop': ['\n']} 
+
+~~~ prompt_input    ----------------------------------------------
+['refrigerator', 'being checked for inventory', 'refrigerator'] 
+
+~~~ prompt    ----------------------------------------------------
+Task: Turn the input into (subject, predicate, object). You should only output 2 parts, namely "predicate, object)". If you the subject part is not in use now, please output "is, idle)" or "is, unused)". You shouldn't start with "(". If the input has multiple actions, please summarize it into one action.
+
+Input: Sam Johnson is eating breakfast. 
+Output: (Dolores Murphy, eat, breakfast) 
+--- 
+Input: Joon Park is brewing coffee.
+Output: (Joon Park, brew, coffee)
+---
+Input: Jane Cook is sleeping. 
+Output: (Jane Cook, is, sleep)
+---
+Input: Michael Bernstein is writing email on a computer. 
+Output: (Michael Bernstein, write, email)
+---
+Input: Percy Liang is teaching students in a classroom. 
+Output: (Percy Liang, teach, students)
+---
+Input: Merrie Morris is running on a treadmill. 
+Output: (Merrie Morris, run, treadmill)
+---
+Input: refrigerator is being checked for inventory. 
+Output: (refrigerator, 
+
+~~~ output    ----------------------------------------------------
+('refrigerator', 'is', 'checked for inventory') 
+
+=== END ==========================================================
+
+
+
+
+[0;33m Isabella Rodriguez  finished act_obj_event: [0m ('refrigerator', 'is', 'checked for inventory')
+[1;33m Isabella Rodriguez  finished one determine action: [0m
+[0;35m--- Isabella Rodriguez finished planning and start reflecting --[0m
+Isabella Rodriguez persona.scratch.importance_trigger_curr:: 86
+150
+[0;35m--- Isabella Rodriguez finished reflecting and start executing --[0m
+aldhfoaf/????
+the Ville:Hobbs Cafe:cafe:refrigerator
+[1;3;35mIsabella Rodriguez finished a move --[0m
+
+[1;3;35mMaria Lopez start a move --[0m
+[1;35m--- Maria Lopez start perceive, retrieve, plan and reflect --[0m
+[0;35m--- Maria Lopez finished perceiving and start retrieving --[0m
+[0;35m--- Maria Lopez finished retrieving and start planning --[0m
+[0;35m--- Maria Lopez finished planning and start reflecting --[0m
+Maria Lopez persona.scratch.importance_trigger_curr:: 142
+150
+[0;35m--- Maria Lopez finished reflecting and start executing --[0m
+[1;3;35mMaria Lopez finished a move --[0m
+
+[1;3;35mKlaus Mueller start a move --[0m
+[1;35m--- Klaus Mueller start perceive, retrieve, plan and reflect --[0m
+asdhfapsh8p9hfaiafdsi;ldfj as DEBUG 7
+[1;32mtrying ChatGPT_request to get json[0m
+CHAT GPT PROMPT
+"""
+Here is a brief description of Klaus Mueller. 
+Name: Klaus Mueller
+Age: 20
+Innate traits: kind, inquisitive, passionate
+Learned traits: Klaus Mueller is a student at Oak Hill College studying sociology. He is passionate about social justice and loves to explore different perspectives.
+Currently: Klaus Mueller is writing a research paper on the effects of gentrification in low-income communities.
+Lifestyle: Klaus Mueller goes to bed around 11pm, awakes up around 7am, eats dinner around 5pm.
+Daily plan requirement: Klaus Mueller goes to the library at Oak Hill College early in the morning, spends his days writing, and eats at Hobbs Cafe.
+Current Date: Monday February 13
+
+
+On the scale of 1 to 10, where 1 is purely mundane (e.g., brushing teeth, making bed) and 10 is extremely poignant (e.g., a break up, college acceptance), rate the likely poignancy of the following event for Klaus Mueller.
+
+Event: cleaning up breakfast dishes
+Rate (return a number between 1 to 10):
+"""
+Output the response to the prompt above in json. The output should ONLY contain ONE integer value on the scale of 1 to 10.
+Example output json:
+{"output": "5"}
+[1;32m---curr_gpt_response in repeat  0  /total: 6 [0m
+[1;32m {"output": "2"} [0m
+[1;32m~~~~[0m
+[1;32msucceed get curr_gpt_reponse and validate in safe_generate_response and get json[0m
+[1;32mafter cleanup:  2 [0m
+[0;35m--- Klaus Mueller finished perceiving and start retrieving --[0m
+[0;35m--- Klaus Mueller finished retrieving and start planning --[0m
+DEBUG LJSDLFSKJF
+['sleeping', 420]
+['waking up and getting ready for the day (getting dressed)', 5]
+['waking up and getting ready for the day (preparing breakfast)', 10]
+['waking up and getting ready for the day (eating breakfast)', 15]
+['waking up and getting ready for the day (cleaning up breakfast dishes)', 5]
+['waking up and getting ready for the day (packing his bag for the library)', 25]
+['walking to the library at Oak Hill College (putting on his jacket and gathering his research materials)', 5]
+['walking to the library at Oak Hill College (locking his apartment door and walking to the elevator)', 5]
+['walking to the library at Oak Hill College (exiting his apartment building and walking toward campus)', 10]
+['walking to the library at Oak Hill College (stopping at a crosswalk and waiting for the light)', 5]
+['walking to the library at Oak Hill College (walking past the student center and observing campus activity)', 10]
+['walking to the library at Oak Hill College (taking a shortcut through the quad to reach the library)', 10]
+['walking to the library at Oak Hill College (checking his phone for any messages or reminders)', 5]
+['walking to the library at Oak Hill College (climbing the library steps and entering the building)', 5]
+['walking to the library at Oak Hill College (finding a quiet study spot and setting up his workspace)', 5]
+['[(ID:xANnIv) Monday February 13 -- 09:00 AM] Activity: Klaus is at the library, researching and writing his paper on gentrification', 60]
+['[(ID:wikmDI) Monday February 13 -- 10:00 AM] Activity: Klaus is continuing his research and writing at the library', 60]
+['[(ID:OeEKIH) Monday February 13 -- 11:00 AM] Activity: Klaus is taking a short break from writing to review his notes and organize his research materials', 60]
+['[(ID:LwatsH) Monday February 13 -- 12:00 PM] Activity: Klaus is having lunch at Hobbs Cafe while reading sociology articles', 60]
+['[(ID:XUg8rt) Monday February 13 -- 01:00 PM] Activity: Klaus is back at the library, focusing on writing the methodology section of his paper', 60]
+['[(ID:pK5vUr) Monday February 13 -- 02:00 PM] Activity: Klaus is continuing to work on his research paper at the library, analyzing data on gentrification trends', 60]
+['[(ID:pT7wpa) Monday February 13 -- 03:00 PM] Activity: Klaus is taking a short break to stretch and get some fresh air outside the library', 60]
+['[(ID:OyQbBC) Monday February 13 -- 04:00 PM] Activity: Klaus is back at the library, finalizing the analysis section of his gentrification research paper', 60]
+['[(ID:nCGczn) Monday February 13 -- 05:00 PM] Activity: Klaus is having dinner at Hobbs Cafe while reviewing his research notes', 60]
+['[(ID:aWmnQN) Monday February 13 -- 06:00 PM] Activity: Klaus is returning to his dorm to relax after dinner, possibly listening to music or reading a sociology book', 60]
+['[(ID:9WDEfi) Monday February 13 -- 07:00 PM] Activity: Klaus is reviewing his research notes in his dorm room while listening to background music', 60]
+['[(ID:LtmVDv) Monday February 13 -- 08:00 PM] Activity: Klaus is finishing up his research review and starting to wind down for the evening', 60]
+['[(ID:Jd3BfC) Monday February 13 -- 09:00 PM] Activity: Klaus is reading a sociology book in bed, preparing to sleep', 60]
+['[(ID:4OrYgv) Monday February 13 -- 10:00 PM] Activity: Klaus is getting ready for bed, brushing teeth and preparing for tomorrow', 60]
+['[(ID:tQgEAT) Monday February 13 -- 11:00 PM] Activity: Klaus is sleeping', 60]
+['sleeping', 0]
+['sleeping', 0]
+['sleeping', 0]
+['sleeping', 0]
+['sleeping', 0]
+5
+35
+Klaus Mueller
+------
+[1;33m Klaus Mueller  start one determine action: [0m
+[0;33m Klaus Mueller  start get a new address: [0m
+GNS FUNCTION: <generate_action_sector>
+[1;32mtrying GPT_request in safe_generate_response[0m
+Task -- choose an appropriate area  from the area options for a task at hand. 
+
+Sam Kim lives in {Sam Kim's house} that has Sam Kim's room, bathroom, kitchen.
+Sam Kim is currently in {Sam Kim's house} that has Sam Kim's room, bathroom, kitchen. 
+Area options: {Sam Kim's house, The Rose and Crown Pub, Hobbs Cafe, Oak Hill College, Johnson Park, Harvey Oak Supply Store, The Willows Market and Pharmacy}.
+* Stay in the current area if the activity can be done there. Only go out if the activity needs to take place in another place.
+* Must be one of the "Area options," verbatim.
+For taking a walk, Sam Kim should go to the following area: {Johnson Park}
+---
+Jane Anderson lives in {Oak Hill College Student Dormatory} that has Jane Anderson's room.
+Jane Anderson is currently in {Oak Hill College} that has a classroom, library
+Area options: {Oak Hill College Student Dormatory, The Rose and Crown Pub, Hobbs Cafe, Oak Hill College, Johnson Park, Harvey Oak Supply Store, The Willows Market and Pharmacy}. 
+* Stay in the current area if the activity can be done there. Only go out if the activity needs to take place in another place.
+* Must be one of the "Area options," verbatim.
+For eating dinner, Jane Anderson should go to the following area: {Hobbs Cafe}
+---
+Klaus Mueller lives in {Dorm for Oak Hill College} that has garden, Klaus Mueller's room, woman's bathroom, common room, man's bathroom, kitchen, Maria Lopez's room.
+Klaus Mueller is currently in {Dorm for Oak Hill College} that has garden, Klaus Mueller's room, woman's bathroom, common room, man's bathroom, kitchen, Maria Lopez's room. 
+Klaus Mueller goes to the library at Oak Hill College early in the morning, spends his days writing, and eats at Hobbs Cafe.
+Area options: {Oak Hill College, Dorm for Oak Hill College, The Willows Market and Pharmacy, Harvey Oak Supply Store, Johnson Park, The Rose and Crown Pub, Hobbs Cafe}. 
+* Stay in the current area if the activity can be done there. Only go out if the activity needs to take place in another place.
+* Must be one of the "Area options," verbatim.
+Klaus Mueller is waking up and getting ready for the day. For packing his bag for the library, Klaus Mueller should go to the following area: {
+[1;32m----- repeat in  0  /total:  5  and output:[0m
+[1;32m {Dorm for Oak Hill College} [0m
+[1;32m~~~~[0m
+[1;32msucceed get curr_gpt_reponse and validate in safe_generate_response[0m
+[1;32mafter cleanup: Dorm for Oak Hill College [0m
+DEBUG The Willows Market and Pharmacy ------ Dorm for Oak Hill College
+=== persona/prompt_template/v1/action_location_sector_v1.txt
+~~~ persona    ---------------------------------------------------
+Klaus Mueller 
+
+~~~ gpt_param ----------------------------------------------------
+{'engine': 'text-davinci-002', 'max_tokens': 15, 'temperature': 0, 'top_p': 1, 'stream': False, 'frequency_penalty': 0, 'presence_penalty': 0, 'stop': None} 
+
+~~~ prompt_input    ----------------------------------------------
+['Klaus Mueller', 'Dorm for Oak Hill College', "garden, Klaus Mueller's room, woman's bathroom, common room, man's bathroom, kitchen, Maria Lopez's room", 'Klaus Mueller', 'Dorm for Oak Hill College', "garden, Klaus Mueller's room, woman's bathroom, common room, man's bathroom, kitchen, Maria Lopez's room", '\nKlaus Mueller goes to the library at Oak Hill College early in the morning, spends his days writing, and eats at Hobbs Cafe.', 'Oak Hill College, Dorm for Oak Hill College, The Willows Market and Pharmacy, Harvey Oak Supply Store, Johnson Park, The Rose and Crown Pub, Hobbs Cafe', 'Klaus Mueller', 'waking up and getting ready for the day', 'packing his bag for the library', 'Klaus Mueller'] 
+
+~~~ prompt    ----------------------------------------------------
+Task -- choose an appropriate area  from the area options for a task at hand. 
+
+Sam Kim lives in {Sam Kim's house} that has Sam Kim's room, bathroom, kitchen.
+Sam Kim is currently in {Sam Kim's house} that has Sam Kim's room, bathroom, kitchen. 
+Area options: {Sam Kim's house, The Rose and Crown Pub, Hobbs Cafe, Oak Hill College, Johnson Park, Harvey Oak Supply Store, The Willows Market and Pharmacy}.
+* Stay in the current area if the activity can be done there. Only go out if the activity needs to take place in another place.
+* Must be one of the "Area options," verbatim.
+For taking a walk, Sam Kim should go to the following area: {Johnson Park}
+---
+Jane Anderson lives in {Oak Hill College Student Dormatory} that has Jane Anderson's room.
+Jane Anderson is currently in {Oak Hill College} that has a classroom, library
+Area options: {Oak Hill College Student Dormatory, The Rose and Crown Pub, Hobbs Cafe, Oak Hill College, Johnson Park, Harvey Oak Supply Store, The Willows Market and Pharmacy}. 
+* Stay in the current area if the activity can be done there. Only go out if the activity needs to take place in another place.
+* Must be one of the "Area options," verbatim.
+For eating dinner, Jane Anderson should go to the following area: {Hobbs Cafe}
+---
+Klaus Mueller lives in {Dorm for Oak Hill College} that has garden, Klaus Mueller's room, woman's bathroom, common room, man's bathroom, kitchen, Maria Lopez's room.
+Klaus Mueller is currently in {Dorm for Oak Hill College} that has garden, Klaus Mueller's room, woman's bathroom, common room, man's bathroom, kitchen, Maria Lopez's room. 
+Klaus Mueller goes to the library at Oak Hill College early in the morning, spends his days writing, and eats at Hobbs Cafe.
+Area options: {Oak Hill College, Dorm for Oak Hill College, The Willows Market and Pharmacy, Harvey Oak Supply Store, Johnson Park, The Rose and Crown Pub, Hobbs Cafe}. 
+* Stay in the current area if the activity can be done there. Only go out if the activity needs to take place in another place.
+* Must be one of the "Area options," verbatim.
+Klaus Mueller is waking up and getting ready for the day. For packing his bag for the library, Klaus Mueller should go to the following area: { 
+
+~~~ output    ----------------------------------------------------
+Dorm for Oak Hill College 
+
+=== END ==========================================================
+
+
+
+
+GNS FUNCTION: <generate_action_arena>
+[1;32mtrying GPT_request in safe_generate_response[0m
+Jane Anderson is in kitchen in Jane Anderson's house.
+Jane Anderson is going to Jane Anderson's house that has the following areas: {kitchen,  bedroom, bathroom}
+Stay in the current area if the activity can be done there. Never go into other people's rooms unless necessary.
+For cooking, Jane Anderson should go to the following area in Jane Anderson's house:
+Answer: {kitchen}
+---
+Tom Watson is in common room in Tom Watson's apartment. 
+Tom Watson is going to Hobbs Cafe that has the following areas: {cafe}
+Stay in the current area if the activity can be done there. Never go into other people's rooms unless necessary.
+For getting coffee, Tom Watson should go to the following area in Hobbs Cafe:
+Answer: {cafe}
+---
+
+Klaus Mueller is going to Dorm for Oak Hill College that has the following areas: {garden, Klaus Mueller's room, woman's bathroom, common room, man's bathroom, kitchen}
+* Stay in the current area if the activity can be done there. 
+* NEVER go into other people's rooms unless necessary.
+Klaus Mueller is waking up and getting ready for the day. For packing his bag for the library, Klaus Mueller should go to the following area in Dorm for Oak Hill College (MUST pick one of {garden, Klaus Mueller's room, woman's bathroom, common room, man's bathroom, kitchen}):
+Answer: {
+[1;32m----- repeat in  0  /total:  5  and output:[0m
+[1;32m Klaus Mueller's room} [0m
+[1;32m~~~~[0m
+[1;32msucceed get curr_gpt_reponse and validate in safe_generate_response[0m
+[1;32mafter cleanup: Klaus Mueller's room [0m
+Klaus Mueller's room
+=== persona/prompt_template/v1/action_location_object_vMar11.txt
+~~~ persona    ---------------------------------------------------
+Klaus Mueller 
+
+~~~ gpt_param ----------------------------------------------------
+{'engine': 'text-davinci-003', 'max_tokens': 15, 'temperature': 0, 'top_p': 1, 'stream': False, 'frequency_penalty': 0, 'presence_penalty': 0, 'stop': None} 
+
+~~~ prompt_input    ----------------------------------------------
+['Klaus Mueller', 'Dorm for Oak Hill College', "garden, Klaus Mueller's room, woman's bathroom, common room, man's bathroom, kitchen", 'Klaus Mueller', 'waking up and getting ready for the day', 'packing his bag for the library', 'Klaus Mueller', 'Dorm for Oak Hill College', "garden, Klaus Mueller's room, woman's bathroom, common room, man's bathroom, kitchen"] 
+
+~~~ prompt    ----------------------------------------------------
+Jane Anderson is in kitchen in Jane Anderson's house.
+Jane Anderson is going to Jane Anderson's house that has the following areas: {kitchen,  bedroom, bathroom}
+Stay in the current area if the activity can be done there. Never go into other people's rooms unless necessary.
+For cooking, Jane Anderson should go to the following area in Jane Anderson's house:
+Answer: {kitchen}
+---
+Tom Watson is in common room in Tom Watson's apartment. 
+Tom Watson is going to Hobbs Cafe that has the following areas: {cafe}
+Stay in the current area if the activity can be done there. Never go into other people's rooms unless necessary.
+For getting coffee, Tom Watson should go to the following area in Hobbs Cafe:
+Answer: {cafe}
+---
+
+Klaus Mueller is going to Dorm for Oak Hill College that has the following areas: {garden, Klaus Mueller's room, woman's bathroom, common room, man's bathroom, kitchen}
+* Stay in the current area if the activity can be done there. 
+* NEVER go into other people's rooms unless necessary.
+Klaus Mueller is waking up and getting ready for the day. For packing his bag for the library, Klaus Mueller should go to the following area in Dorm for Oak Hill College (MUST pick one of {garden, Klaus Mueller's room, woman's bathroom, common room, man's bathroom, kitchen}):
+Answer: { 
+
+~~~ output    ----------------------------------------------------
+Klaus Mueller's room 
+
+=== END ==========================================================
+
+
+
+
+GNS FUNCTION: <generate_action_game_object>
+[1;32mtrying GPT_request in safe_generate_response[0m
+Current activity: sleep in bed
+Objects available: {bed, easel, closet, painting}
+Pick ONE most relevant object from the objects available: bed
+---
+Current activity: painting
+Objects available: {easel, closet, sink, microwave}
+Pick ONE most relevant object from the objects available: easel
+---
+Current activity: cooking
+Objects available: {stove, sink, fridge, counter}
+Pick ONE most relevant object from the objects available: stove
+---
+Current activity: watch TV
+Objects available: {couch, TV, remote, coffee table}
+Pick ONE most relevant object from the objects available: TV
+---
+Current activity: study
+Objects available: {desk, computer, chair, bookshelf}
+Pick ONE most relevant object from the objects available: desk
+---
+Current activity: talk on the phone
+Objects available: {phone, charger, bed, nightstand}
+Pick ONE most relevant object from the objects available: phone
+---
+Current activity: packing his bag for the library
+Objects available: {bed, game console, closet, desk}
+Pick ONE most relevant object from the objects available:
+[1;32m----- repeat in  0  /total:  5  and output:[0m
+[1;32m closet [0m
+[1;32m~~~~[0m
+[1;32msucceed get curr_gpt_reponse and validate in safe_generate_response[0m
+[1;32mafter cleanup: closet [0m
+=== persona/prompt_template/v1/action_object_v2.txt
+~~~ persona    ---------------------------------------------------
+Klaus Mueller 
+
+~~~ gpt_param ----------------------------------------------------
+{'engine': 'text-davinci-003', 'max_tokens': 15, 'temperature': 0, 'top_p': 1, 'stream': False, 'frequency_penalty': 0, 'presence_penalty': 0, 'stop': None} 
+
+~~~ prompt_input    ----------------------------------------------
+['packing his bag for the library', 'bed, game console, closet, desk'] 
+
+~~~ prompt    ----------------------------------------------------
+Current activity: sleep in bed
+Objects available: {bed, easel, closet, painting}
+Pick ONE most relevant object from the objects available: bed
+---
+Current activity: painting
+Objects available: {easel, closet, sink, microwave}
+Pick ONE most relevant object from the objects available: easel
+---
+Current activity: cooking
+Objects available: {stove, sink, fridge, counter}
+Pick ONE most relevant object from the objects available: stove
+---
+Current activity: watch TV
+Objects available: {couch, TV, remote, coffee table}
+Pick ONE most relevant object from the objects available: TV
+---
+Current activity: study
+Objects available: {desk, computer, chair, bookshelf}
+Pick ONE most relevant object from the objects available: desk
+---
+Current activity: talk on the phone
+Objects available: {phone, charger, bed, nightstand}
+Pick ONE most relevant object from the objects available: phone
+---
+Current activity: packing his bag for the library
+Objects available: {bed, game console, closet, desk}
+Pick ONE most relevant object from the objects available: 
+
+~~~ output    ----------------------------------------------------
+closet 
+
+=== END ==========================================================
+
+
+
+
+[0;33m Klaus Mueller  finished get a new address: [0m the Ville:Dorm for Oak Hill College:Klaus Mueller's room:closet
+GNS FUNCTION: <generate_action_pronunciatio>
+asdhfapsh8p9hfaiafdsi;ldfj as DEBUG 4
+[1;32mtrying ChatGPT_request to get json[0m
+CHAT GPT PROMPT
+"""
+Convert an action description to an emoji (important: use two or less emojis).
+
+Action description: packing his bag for the library
+Emoji:
+"""
+Output the response to the prompt above in json. The value for the output must ONLY contain the emojis.
+Example output json:
+{"output": "🛁🧖‍♀️"}
+[1;32m---curr_gpt_response in repeat  0  /total: 6 [0m
+[1;32m {"output": "🎒📚"} [0m
+[1;32m~~~~[0m
+[1;32msucceed get curr_gpt_reponse and validate in safe_generate_response and get json[0m
+[1;32mafter cleanup:  🎒📚 [0m
+[0;33m Klaus Mueller  finished act_pron: [0m 🎒📚
+GNS FUNCTION: <generate_action_event_triple>
+[1;32mtrying GPT_request in safe_generate_response[0m
+Task: Turn the input into (subject, predicate, object). You should only output 2 parts, namely "predicate, object)". If you the subject part is not in use now, please output "is, idle)" or "is, unused)". You shouldn't start with "(". If the input has multiple actions, please summarize it into one action.
+
+Input: Sam Johnson is eating breakfast. 
+Output: (Dolores Murphy, eat, breakfast) 
+--- 
+Input: Joon Park is brewing coffee.
+Output: (Joon Park, brew, coffee)
+---
+Input: Jane Cook is sleeping. 
+Output: (Jane Cook, is, sleep)
+---
+Input: Michael Bernstein is writing email on a computer. 
+Output: (Michael Bernstein, write, email)
+---
+Input: Percy Liang is teaching students in a classroom. 
+Output: (Percy Liang, teach, students)
+---
+Input: Merrie Morris is running on a treadmill. 
+Output: (Merrie Morris, run, treadmill)
+---
+Input: Klaus Mueller is packing his bag for the library. 
+Output: (Klaus Mueller,
+[1;32m----- repeat in  0  /total:  5  and output:[0m
+[1;32m pack, bag) [0m
+[1;32m~~~~[0m
+[1;32msucceed get curr_gpt_reponse and validate in safe_generate_response[0m
+[1;32mafter cleanup: ['pack', 'bag'] [0m
+=== persona/prompt_template/v2/generate_event_triple_v1.txt
+~~~ persona    ---------------------------------------------------
+Klaus Mueller 
+
+~~~ gpt_param ----------------------------------------------------
+{'engine': 'text-davinci-003', 'max_tokens': 30, 'temperature': 0, 'top_p': 1, 'stream': False, 'frequency_penalty': 0, 'presence_penalty': 0, 'stop': ['\n']} 
+
+~~~ prompt_input    ----------------------------------------------
+['Klaus Mueller', 'packing his bag for the library', 'Klaus Mueller'] 
+
+~~~ prompt    ----------------------------------------------------
+Task: Turn the input into (subject, predicate, object). You should only output 2 parts, namely "predicate, object)". If you the subject part is not in use now, please output "is, idle)" or "is, unused)". You shouldn't start with "(". If the input has multiple actions, please summarize it into one action.
+
+Input: Sam Johnson is eating breakfast. 
+Output: (Dolores Murphy, eat, breakfast) 
+--- 
+Input: Joon Park is brewing coffee.
+Output: (Joon Park, brew, coffee)
+---
+Input: Jane Cook is sleeping. 
+Output: (Jane Cook, is, sleep)
+---
+Input: Michael Bernstein is writing email on a computer. 
+Output: (Michael Bernstein, write, email)
+---
+Input: Percy Liang is teaching students in a classroom. 
+Output: (Percy Liang, teach, students)
+---
+Input: Merrie Morris is running on a treadmill. 
+Output: (Merrie Morris, run, treadmill)
+---
+Input: Klaus Mueller is packing his bag for the library. 
+Output: (Klaus Mueller, 
+
+~~~ output    ----------------------------------------------------
+('Klaus Mueller', 'pack', 'bag') 
+
+=== END ==========================================================
+
+
+
+
+[0;33m Klaus Mueller  finished act_event_triple: [0m ('Klaus Mueller', 'pack', 'bag')
+GNS FUNCTION: <generate_act_obj_desc>
+asdhfapsh8p9hfaiafdsi;ldfj as DEBUG 6
+[1;32mtrying ChatGPT_request to get json[0m
+CHAT GPT PROMPT
+"""
+Task: We want to understand the state of an object that is being used by someone. 
+
+Let's think step by step. 
+We want to know about closet's state. 
+Step 1. Klaus Mueller is at/using the waking up and getting ready for the day (packing his bag for the library).
+Step 2. Describe the closet's state: closet is
+"""
+Output the response to the prompt above in json. The output should ONLY contain the phrase that should go in <fill in>.
+Example output json:
+{"output": "being fixed"}
+[1;32m---curr_gpt_response in repeat  0  /total: 6 [0m
+[1;32m {
+"output": "being used by Klaus Mueller to pack his bag for the library"
+} [0m
+[1;32m~~~~[0m
+[1;32msucceed get curr_gpt_reponse and validate in safe_generate_response and get json[0m
+[1;32mafter cleanup:  being used by Klaus Mueller to pack his bag for the library [0m
+[0;33m Klaus Mueller  finished act_obj_desp: [0m being used by Klaus Mueller to pack his bag for the library
+GNS FUNCTION: <generate_action_pronunciatio>
+asdhfapsh8p9hfaiafdsi;ldfj as DEBUG 4
+[1;32mtrying ChatGPT_request to get json[0m
+CHAT GPT PROMPT
+"""
+Convert an action description to an emoji (important: use two or less emojis).
+
+Action description: being used by Klaus Mueller to pack his bag for the library
+Emoji:
+"""
+Output the response to the prompt above in json. The value for the output must ONLY contain the emojis.
+Example output json:
+{"output": "🛁🧖‍♀️"}
+[1;32m---curr_gpt_response in repeat  0  /total: 6 [0m
+[1;32m {"output": "🎒📚"} [0m
+[1;32m~~~~[0m
+[1;32msucceed get curr_gpt_reponse and validate in safe_generate_response and get json[0m
+[1;32mafter cleanup:  🎒📚 [0m
+[0;33m Klaus Mueller  finished act_obj_pron: [0m 🎒📚
+GNS FUNCTION: <generate_act_obj_event_triple>
+[1;32mtrying GPT_request in safe_generate_response[0m
+Task: Turn the input into (subject, predicate, object). You should only output 2 parts, namely "predicate, object)". If you the subject part is not in use now, please output "is, idle)" or "is, unused)". You shouldn't start with "(". If the input has multiple actions, please summarize it into one action.
+
+Input: Sam Johnson is eating breakfast. 
+Output: (Dolores Murphy, eat, breakfast) 
+--- 
+Input: Joon Park is brewing coffee.
+Output: (Joon Park, brew, coffee)
+---
+Input: Jane Cook is sleeping. 
+Output: (Jane Cook, is, sleep)
+---
+Input: Michael Bernstein is writing email on a computer. 
+Output: (Michael Bernstein, write, email)
+---
+Input: Percy Liang is teaching students in a classroom. 
+Output: (Percy Liang, teach, students)
+---
+Input: Merrie Morris is running on a treadmill. 
+Output: (Merrie Morris, run, treadmill)
+---
+Input: closet is being used by Klaus Mueller to pack his bag for the library. 
+Output: (closet,
+[1;32m----- repeat in  0  /total:  5  and output:[0m
+[1;32m is, used) [0m
+[1;32m~~~~[0m
+[1;32msucceed get curr_gpt_reponse and validate in safe_generate_response[0m
+[1;32mafter cleanup: ['is', 'used'] [0m
+=== persona/prompt_template/v2/generate_event_triple_v1.txt
+~~~ persona    ---------------------------------------------------
+Klaus Mueller 
+
+~~~ gpt_param ----------------------------------------------------
+{'engine': 'text-davinci-003', 'max_tokens': 30, 'temperature': 0, 'top_p': 1, 'stream': False, 'frequency_penalty': 0, 'presence_penalty': 0, 'stop': ['\n']} 
+
+~~~ prompt_input    ----------------------------------------------
+['closet', 'being used by Klaus Mueller to pack his bag for the library', 'closet'] 
+
+~~~ prompt    ----------------------------------------------------
+Task: Turn the input into (subject, predicate, object). You should only output 2 parts, namely "predicate, object)". If you the subject part is not in use now, please output "is, idle)" or "is, unused)". You shouldn't start with "(". If the input has multiple actions, please summarize it into one action.
+
+Input: Sam Johnson is eating breakfast. 
+Output: (Dolores Murphy, eat, breakfast) 
+--- 
+Input: Joon Park is brewing coffee.
+Output: (Joon Park, brew, coffee)
+---
+Input: Jane Cook is sleeping. 
+Output: (Jane Cook, is, sleep)
+---
+Input: Michael Bernstein is writing email on a computer. 
+Output: (Michael Bernstein, write, email)
+---
+Input: Percy Liang is teaching students in a classroom. 
+Output: (Percy Liang, teach, students)
+---
+Input: Merrie Morris is running on a treadmill. 
+Output: (Merrie Morris, run, treadmill)
+---
+Input: closet is being used by Klaus Mueller to pack his bag for the library. 
+Output: (closet, 
+
+~~~ output    ----------------------------------------------------
+('closet', 'is', 'used') 
+
+=== END ==========================================================
+
+
+
+
+[0;33m Klaus Mueller  finished act_obj_event: [0m ('closet', 'is', 'used')
+[1;33m Klaus Mueller  finished one determine action: [0m
+[0;35m--- Klaus Mueller finished planning and start reflecting --[0m
+Klaus Mueller persona.scratch.importance_trigger_curr:: 129
+150
+[0;35m--- Klaus Mueller finished reflecting and start executing --[0m
+aldhfoaf/????
+the Ville:Dorm for Oak Hill College:Klaus Mueller's room:closet
+[1;3;35mKlaus Mueller finished a move --[0m
+
+
+
+[1;3;34mStart Step:  92 [0m
+[1;3;34mCurrent Time:  2023-02-13 07:40:00 [0m
+
+[1;3;35mIsabella Rodriguez start a move --[0m
+[1;35m--- Isabella Rodriguez start perceive, retrieve, plan and reflect --[0m
+asdhfapsh8p9hfaiafdsi;ldfj as DEBUG 7
+[1;32mtrying ChatGPT_request to get json[0m
+CHAT GPT PROMPT
+"""
+Here is a brief description of Isabella Rodriguez. 
+Name: Isabella Rodriguez
+Age: 34
+Innate traits: friendly, outgoing, hospitable
+Learned traits: Isabella Rodriguez is a cafe owner of Hobbs Cafe who loves to make people feel welcome. She is always looking for ways to make the cafe a place where people can come to relax and enjoy themselves.
+Currently: Isabella Rodriguez is planning on having a Valentine's Day party at Hobbs Cafe with her customers on February 14th, 2023 at 5pm. She is gathering party material, and is telling everyone to join the party at Hobbs Cafe on February 14th, 2023, from 5pm to 7pm.
+Lifestyle: Isabella Rodriguez goes to bed around 11pm, awakes up around 6am.
+Daily plan requirement: Isabella Rodriguez opens Hobbs Cafe at 8am everyday, and works at the counter until 8pm, at which point she closes the cafe.
+Current Date: Monday February 13
+
+
+On the scale of 1 to 10, where 1 is purely mundane (e.g., brushing teeth, making bed) and 10 is extremely poignant (e.g., a break up, college acceptance), rate the likely poignancy of the following event for Isabella Rodriguez.
+
+Event: checking the cafe’s inventory list
+Rate (return a number between 1 to 10):
+"""
+Output the response to the prompt above in json. The output should ONLY contain ONE integer value on the scale of 1 to 10.
+Example output json:
+{"output": "5"}
+[1;32m---curr_gpt_response in repeat  0  /total: 6 [0m
+[1;32m {"output": "4"} [0m
+[1;32m~~~~[0m
+[1;32msucceed get curr_gpt_reponse and validate in safe_generate_response and get json[0m
+[1;32mafter cleanup:  4 [0m
+[0;35m--- Isabella Rodriguez finished perceiving and start retrieving --[0m
+[0;35m--- Isabella Rodriguez finished retrieving and start planning --[0m
+[0;35m--- Isabella Rodriguez finished planning and start reflecting --[0m
+Isabella Rodriguez persona.scratch.importance_trigger_curr:: 79
+150
+[0;35m--- Isabella Rodriguez finished reflecting and start executing --[0m
+[1;3;35mIsabella Rodriguez finished a move --[0m
+
+[1;3;35mMaria Lopez start a move --[0m
+[1;35m--- Maria Lopez start perceive, retrieve, plan and reflect --[0m
+[0;35m--- Maria Lopez finished perceiving and start retrieving --[0m
+[0;35m--- Maria Lopez finished retrieving and start planning --[0m
+[0;35m--- Maria Lopez finished planning and start reflecting --[0m
+Maria Lopez persona.scratch.importance_trigger_curr:: 142
+150
+[0;35m--- Maria Lopez finished reflecting and start executing --[0m
+[1;3;35mMaria Lopez finished a move --[0m
+
+[1;3;35mKlaus Mueller start a move --[0m
+[1;35m--- Klaus Mueller start perceive, retrieve, plan and reflect --[0m
+asdhfapsh8p9hfaiafdsi;ldfj as DEBUG 7
+[1;32mtrying ChatGPT_request to get json[0m
+CHAT GPT PROMPT
+"""
+Here is a brief description of Klaus Mueller. 
+Name: Klaus Mueller
+Age: 20
+Innate traits: kind, inquisitive, passionate
+Learned traits: Klaus Mueller is a student at Oak Hill College studying sociology. He is passionate about social justice and loves to explore different perspectives.
+Currently: Klaus Mueller is writing a research paper on the effects of gentrification in low-income communities.
+Lifestyle: Klaus Mueller goes to bed around 11pm, awakes up around 7am, eats dinner around 5pm.
+Daily plan requirement: Klaus Mueller goes to the library at Oak Hill College early in the morning, spends his days writing, and eats at Hobbs Cafe.
+Current Date: Monday February 13
+
+
+On the scale of 1 to 10, where 1 is purely mundane (e.g., brushing teeth, making bed) and 10 is extremely poignant (e.g., a break up, college acceptance), rate the likely poignancy of the following event for Klaus Mueller.
+
+Event: packing his bag for the library
+Rate (return a number between 1 to 10):
+"""
+Output the response to the prompt above in json. The output should ONLY contain ONE integer value on the scale of 1 to 10.
+Example output json:
+{"output": "5"}
+[1;32m---curr_gpt_response in repeat  0  /total: 6 [0m
+[1;32m {"output": "3"} [0m
+[1;32m~~~~[0m
+[1;32msucceed get curr_gpt_reponse and validate in safe_generate_response and get json[0m
+[1;32mafter cleanup:  3 [0m
+[0;35m--- Klaus Mueller finished perceiving and start retrieving --[0m
+[0;35m--- Klaus Mueller finished retrieving and start planning --[0m
+[0;35m--- Klaus Mueller finished planning and start reflecting --[0m
+Klaus Mueller persona.scratch.importance_trigger_curr:: 126
+150
+[0;35m--- Klaus Mueller finished reflecting and start executing --[0m
+[1;3;35mKlaus Mueller finished a move --[0m
+
+
+
+[1;3;34mStart Step:  93 [0m
+[1;3;34mCurrent Time:  2023-02-13 07:45:00 [0m
+
+[1;3;35mIsabella Rodriguez start a move --[0m
+[1;35m--- Isabella Rodriguez start perceive, retrieve, plan and reflect --[0m
+[0;35m--- Isabella Rodriguez finished perceiving and start retrieving --[0m
+[0;35m--- Isabella Rodriguez finished retrieving and start planning --[0m
+DEBUG LJSDLFSKJF
+['sleeping', 360]
+['waking up and starting her morning routine (1) Isabella is turning off her alarm and stretching in bed)', 5]
+['waking up and starting her morning routine (brushing her teeth)', 5]
+['waking up and starting her morning routine (applying her skincare routine)', 10]
+['waking up and starting her morning routine (changing into comfortable work clothes)', 5]
+['waking up and starting her morning routine (brewing a fresh cup of coffee)', 5]
+['waking up and starting her morning routine (sipping her coffee while checking her phone for messages)', 10]
+['waking up and starting her morning routine (reviewing her to-do list for the day)', 5]
+['waking up and starting her morning routine (gathering her keys and bag before heading out)', 15]
+['preparing for the day and getting ready to open Hobbs Cafe (brushing her teeth and washing her face)', 10]
+['preparing for the day and getting ready to open Hobbs Cafe (getting dressed in her work clothes)', 10]
+['preparing for the day and getting ready to open Hobbs Cafe (making a quick breakfast)', 15]
+['preparing for the day and getting ready to open Hobbs Cafe (checking the cafe’s inventory list)', 10]
+['preparing for the day and getting ready to open Hobbs Cafe (gathering party decorations for tomorrow’s Valentine’s Day event)', 10]
+['preparing for the day and getting ready to open Hobbs Cafe (grabbing her keys and heading to the cafe)', 5]
+["opening Hobbs Cafe and preparing for the day's customers (unlocking the cafe doors and turning on the lights)", 5]
+["opening Hobbs Cafe and preparing for the day's customers (checking the inventory of coffee beans and pastries)", 10]
+["opening Hobbs Cafe and preparing for the day's customers (setting up the espresso machine and grinders)", 10]
+["opening Hobbs Cafe and preparing for the day's customers (arranging fresh pastries in the display case)", 10]
+["opening Hobbs Cafe and preparing for the day's customers (wiping down tables and countertops)", 10]
+["opening Hobbs Cafe and preparing for the day's customers (preparing a fresh batch of coffee)", 5]
+["opening Hobbs Cafe and preparing for the day's customers (setting up the register and ensuring the POS system is working)", 5]
+['opening Hobbs Cafe and preparing for the day\'s customers (putting out a "We\'re Open" sign and greeting the first customers)', 5]
+['working behind the counter, serving customers and ensuring everyone feels welcome', 60]
+['working behind the counter, serving customers and chatting with regulars', 60]
+["working behind the counter, serving customers and preparing for the Valentine's Day party", 60]
+['taking a quick lunch break while keeping an eye on the cafe', 60]
+["back behind the counter, serving customers and decorating the cafe for Valentine's Day", 60]
+["working behind the counter, serving customers and finalizing Valentine's Day decorations", 60]
+["working behind the counter, serving customers and promoting the Valentine's Day party to guests", 60]
+["working behind the counter, serving customers and restocking supplies for the Valentine's Day party", 60]
+["working behind the counter, serving customers and setting up for the Valentine's Day party", 60]
+["working behind the counter, serving customers and putting final touches on the Valentine's Day decorations", 60]
+["working behind the counter, serving customers and ensuring the Valentine's Day preparations are complete", 60]
+['closing up Hobbs Cafe and cleaning the space after a busy day', 60]
+["[(ID:RSUner) Monday February 13 -- 09:00 PM] Activity: Isabella is relaxing at home, reviewing Valentine's Day party plans and making any last-minute adjustments", 60]
+["[(ID:bOTnIz) Monday February 13 -- 10:00 PM] Activity: Isabella is winding down for the evening, finalizing Valentine's Day party details before bed", 60]
+['[(ID:XhoVZy) Monday February 13 -- 11:00 PM] Activity: Isabella is sleeping', 60]
+['sleeping', 0]
+['sleeping', 0]
+['sleeping', 0]
+['sleeping', 0]
+['sleeping', 0]
+['sleeping', 0]
+['sleeping', 0]
+['sleeping', 0]
+['sleeping', 0]
+['sleeping', 0]
+['sleeping', 0]
+['sleeping', 0]
+['sleeping', 0]
+13
+51
+Isabella Rodriguez
+------
+[1;33m Isabella Rodriguez  start one determine action: [0m
+[0;33m Isabella Rodriguez  start get a new address: [0m
+GNS FUNCTION: <generate_action_sector>
+[1;32mtrying GPT_request in safe_generate_response[0m
+Task -- choose an appropriate area  from the area options for a task at hand. 
+
+Sam Kim lives in {Sam Kim's house} that has Sam Kim's room, bathroom, kitchen.
+Sam Kim is currently in {Sam Kim's house} that has Sam Kim's room, bathroom, kitchen. 
+Area options: {Sam Kim's house, The Rose and Crown Pub, Hobbs Cafe, Oak Hill College, Johnson Park, Harvey Oak Supply Store, The Willows Market and Pharmacy}.
+* Stay in the current area if the activity can be done there. Only go out if the activity needs to take place in another place.
+* Must be one of the "Area options," verbatim.
+For taking a walk, Sam Kim should go to the following area: {Johnson Park}
+---
+Jane Anderson lives in {Oak Hill College Student Dormatory} that has Jane Anderson's room.
+Jane Anderson is currently in {Oak Hill College} that has a classroom, library
+Area options: {Oak Hill College Student Dormatory, The Rose and Crown Pub, Hobbs Cafe, Oak Hill College, Johnson Park, Harvey Oak Supply Store, The Willows Market and Pharmacy}. 
+* Stay in the current area if the activity can be done there. Only go out if the activity needs to take place in another place.
+* Must be one of the "Area options," verbatim.
+For eating dinner, Jane Anderson should go to the following area: {Hobbs Cafe}
+---
+Isabella Rodriguez lives in {Isabella Rodriguez's apartment} that has main room, bathroom.
+Isabella Rodriguez is currently in {Isabella Rodriguez's apartment} that has main room, bathroom. 
+Isabella Rodriguez opens Hobbs Cafe at 8am everyday, and works at the counter until 8pm, at which point she closes the cafe.
+Area options: {Hobbs Cafe, Isabella Rodriguez's apartment, The Rose and Crown Pub, Harvey Oak Supply Store, The Willows Market and Pharmacy, Dorm for Oak Hill College, Johnson Park, Ryan Park's apartment, Giorgio Rossi's apartment}. 
+* Stay in the current area if the activity can be done there. Only go out if the activity needs to take place in another place.
+* Must be one of the "Area options," verbatim.
+Isabella Rodriguez is preparing for the day and getting ready to open Hobbs Cafe. For gathering party decorations for tomorrow’s Valentine’s Day event, Isabella Rodriguez should go to the following area: {
+[1;32m----- repeat in  0  /total:  5  and output:[0m
+[1;32m Harvey Oak Supply Store} [0m
+[1;32m~~~~[0m
+[1;32msucceed get curr_gpt_reponse and validate in safe_generate_response[0m
+[1;32mafter cleanup: Harvey Oak Supply Store [0m
+DEBUG Isabella Rodriguez's apartment ------ Harvey Oak Supply Store
+=== persona/prompt_template/v1/action_location_sector_v1.txt
+~~~ persona    ---------------------------------------------------
+Isabella Rodriguez 
+
+~~~ gpt_param ----------------------------------------------------
+{'engine': 'text-davinci-002', 'max_tokens': 15, 'temperature': 0, 'top_p': 1, 'stream': False, 'frequency_penalty': 0, 'presence_penalty': 0, 'stop': None} 
+
+~~~ prompt_input    ----------------------------------------------
+['Isabella Rodriguez', "Isabella Rodriguez's apartment", 'main room, bathroom', 'Isabella Rodriguez', "Isabella Rodriguez's apartment", 'main room, bathroom', '\nIsabella Rodriguez opens Hobbs Cafe at 8am everyday, and works at the counter until 8pm, at which point she closes the cafe.', "Hobbs Cafe, Isabella Rodriguez's apartment, The Rose and Crown Pub, Harvey Oak Supply Store, The Willows Market and Pharmacy, Dorm for Oak Hill College, Johnson Park, Ryan Park's apartment, Giorgio Rossi's apartment", 'Isabella Rodriguez', 'preparing for the day and getting ready to open Hobbs Cafe', 'gathering party decorations for tomorrow’s Valentine’s Day event', 'Isabella Rodriguez'] 
+
+~~~ prompt    ----------------------------------------------------
+Task -- choose an appropriate area  from the area options for a task at hand. 
+
+Sam Kim lives in {Sam Kim's house} that has Sam Kim's room, bathroom, kitchen.
+Sam Kim is currently in {Sam Kim's house} that has Sam Kim's room, bathroom, kitchen. 
+Area options: {Sam Kim's house, The Rose and Crown Pub, Hobbs Cafe, Oak Hill College, Johnson Park, Harvey Oak Supply Store, The Willows Market and Pharmacy}.
+* Stay in the current area if the activity can be done there. Only go out if the activity needs to take place in another place.
+* Must be one of the "Area options," verbatim.
+For taking a walk, Sam Kim should go to the following area: {Johnson Park}
+---
+Jane Anderson lives in {Oak Hill College Student Dormatory} that has Jane Anderson's room.
+Jane Anderson is currently in {Oak Hill College} that has a classroom, library
+Area options: {Oak Hill College Student Dormatory, The Rose and Crown Pub, Hobbs Cafe, Oak Hill College, Johnson Park, Harvey Oak Supply Store, The Willows Market and Pharmacy}. 
+* Stay in the current area if the activity can be done there. Only go out if the activity needs to take place in another place.
+* Must be one of the "Area options," verbatim.
+For eating dinner, Jane Anderson should go to the following area: {Hobbs Cafe}
+---
+Isabella Rodriguez lives in {Isabella Rodriguez's apartment} that has main room, bathroom.
+Isabella Rodriguez is currently in {Isabella Rodriguez's apartment} that has main room, bathroom. 
+Isabella Rodriguez opens Hobbs Cafe at 8am everyday, and works at the counter until 8pm, at which point she closes the cafe.
+Area options: {Hobbs Cafe, Isabella Rodriguez's apartment, The Rose and Crown Pub, Harvey Oak Supply Store, The Willows Market and Pharmacy, Dorm for Oak Hill College, Johnson Park, Ryan Park's apartment, Giorgio Rossi's apartment}. 
+* Stay in the current area if the activity can be done there. Only go out if the activity needs to take place in another place.
+* Must be one of the "Area options," verbatim.
+Isabella Rodriguez is preparing for the day and getting ready to open Hobbs Cafe. For gathering party decorations for tomorrow’s Valentine’s Day event, Isabella Rodriguez should go to the following area: { 
+
+~~~ output    ----------------------------------------------------
+Harvey Oak Supply Store 
+
+=== END ==========================================================
+
+
+
+
+GNS FUNCTION: <generate_action_arena>
+[1;32mtrying GPT_request in safe_generate_response[0m
+Jane Anderson is in kitchen in Jane Anderson's house.
+Jane Anderson is going to Jane Anderson's house that has the following areas: {kitchen,  bedroom, bathroom}
+Stay in the current area if the activity can be done there. Never go into other people's rooms unless necessary.
+For cooking, Jane Anderson should go to the following area in Jane Anderson's house:
+Answer: {kitchen}
+---
+Tom Watson is in common room in Tom Watson's apartment. 
+Tom Watson is going to Hobbs Cafe that has the following areas: {cafe}
+Stay in the current area if the activity can be done there. Never go into other people's rooms unless necessary.
+For getting coffee, Tom Watson should go to the following area in Hobbs Cafe:
+Answer: {cafe}
+---
+
+Isabella Rodriguez is going to Harvey Oak Supply Store that has the following areas: {supply store}
+* Stay in the current area if the activity can be done there. 
+* NEVER go into other people's rooms unless necessary.
+Isabella Rodriguez is preparing for the day and getting ready to open Hobbs Cafe. For gathering party decorations for tomorrow’s Valentine’s Day event, Isabella Rodriguez should go to the following area in Harvey Oak Supply Store (MUST pick one of {supply store}):
+Answer: {
+[1;32m----- repeat in  0  /total:  5  and output:[0m
+[1;32m supply store} [0m
+[1;32m~~~~[0m
+[1;32msucceed get curr_gpt_reponse and validate in safe_generate_response[0m
+[1;32mafter cleanup: supply store [0m
+supply store
+=== persona/prompt_template/v1/action_location_object_vMar11.txt
+~~~ persona    ---------------------------------------------------
+Isabella Rodriguez 
+
+~~~ gpt_param ----------------------------------------------------
+{'engine': 'text-davinci-003', 'max_tokens': 15, 'temperature': 0, 'top_p': 1, 'stream': False, 'frequency_penalty': 0, 'presence_penalty': 0, 'stop': None} 
+
+~~~ prompt_input    ----------------------------------------------
+['Isabella Rodriguez', 'Harvey Oak Supply Store', 'supply store', 'Isabella Rodriguez', 'preparing for the day and getting ready to open Hobbs Cafe', 'gathering party decorations for tomorrow’s Valentine’s Day event', 'Isabella Rodriguez', 'Harvey Oak Supply Store', 'supply store'] 
+
+~~~ prompt    ----------------------------------------------------
+Jane Anderson is in kitchen in Jane Anderson's house.
+Jane Anderson is going to Jane Anderson's house that has the following areas: {kitchen,  bedroom, bathroom}
+Stay in the current area if the activity can be done there. Never go into other people's rooms unless necessary.
+For cooking, Jane Anderson should go to the following area in Jane Anderson's house:
+Answer: {kitchen}
+---
+Tom Watson is in common room in Tom Watson's apartment. 
+Tom Watson is going to Hobbs Cafe that has the following areas: {cafe}
+Stay in the current area if the activity can be done there. Never go into other people's rooms unless necessary.
+For getting coffee, Tom Watson should go to the following area in Hobbs Cafe:
+Answer: {cafe}
+---
+
+Isabella Rodriguez is going to Harvey Oak Supply Store that has the following areas: {supply store}
+* Stay in the current area if the activity can be done there. 
+* NEVER go into other people's rooms unless necessary.
+Isabella Rodriguez is preparing for the day and getting ready to open Hobbs Cafe. For gathering party decorations for tomorrow’s Valentine’s Day event, Isabella Rodriguez should go to the following area in Harvey Oak Supply Store (MUST pick one of {supply store}):
+Answer: { 
+
+~~~ output    ----------------------------------------------------
+supply store 
+
+=== END ==========================================================
+
+
+
+
+GNS FUNCTION: <generate_action_game_object>
+[1;32mtrying GPT_request in safe_generate_response[0m
+Current activity: sleep in bed
+Objects available: {bed, easel, closet, painting}
+Pick ONE most relevant object from the objects available: bed
+---
+Current activity: painting
+Objects available: {easel, closet, sink, microwave}
+Pick ONE most relevant object from the objects available: easel
+---
+Current activity: cooking
+Objects available: {stove, sink, fridge, counter}
+Pick ONE most relevant object from the objects available: stove
+---
+Current activity: watch TV
+Objects available: {couch, TV, remote, coffee table}
+Pick ONE most relevant object from the objects available: TV
+---
+Current activity: study
+Objects available: {desk, computer, chair, bookshelf}
+Pick ONE most relevant object from the objects available: desk
+---
+Current activity: talk on the phone
+Objects available: {phone, charger, bed, nightstand}
+Pick ONE most relevant object from the objects available: phone
+---
+Current activity: gathering party decorations for tomorrow’s Valentine’s Day event
+Objects available: {supply store product shelf, behind the supply store counter, supply store counter}
+Pick ONE most relevant object from the objects available:
+[1;32m----- repeat in  0  /total:  5  and output:[0m
+[1;32m supply store product shelf [0m
+[1;32m~~~~[0m
+[1;32msucceed get curr_gpt_reponse and validate in safe_generate_response[0m
+[1;32mafter cleanup: supply store product shelf [0m
+=== persona/prompt_template/v1/action_object_v2.txt
+~~~ persona    ---------------------------------------------------
+Isabella Rodriguez 
+
+~~~ gpt_param ----------------------------------------------------
+{'engine': 'text-davinci-003', 'max_tokens': 15, 'temperature': 0, 'top_p': 1, 'stream': False, 'frequency_penalty': 0, 'presence_penalty': 0, 'stop': None} 
+
+~~~ prompt_input    ----------------------------------------------
+['gathering party decorations for tomorrow’s Valentine’s Day event', 'supply store product shelf, behind the supply store counter, supply store counter'] 
+
+~~~ prompt    ----------------------------------------------------
+Current activity: sleep in bed
+Objects available: {bed, easel, closet, painting}
+Pick ONE most relevant object from the objects available: bed
+---
+Current activity: painting
+Objects available: {easel, closet, sink, microwave}
+Pick ONE most relevant object from the objects available: easel
+---
+Current activity: cooking
+Objects available: {stove, sink, fridge, counter}
+Pick ONE most relevant object from the objects available: stove
+---
+Current activity: watch TV
+Objects available: {couch, TV, remote, coffee table}
+Pick ONE most relevant object from the objects available: TV
+---
+Current activity: study
+Objects available: {desk, computer, chair, bookshelf}
+Pick ONE most relevant object from the objects available: desk
+---
+Current activity: talk on the phone
+Objects available: {phone, charger, bed, nightstand}
+Pick ONE most relevant object from the objects available: phone
+---
+Current activity: gathering party decorations for tomorrow’s Valentine’s Day event
+Objects available: {supply store product shelf, behind the supply store counter, supply store counter}
+Pick ONE most relevant object from the objects available: 
+
+~~~ output    ----------------------------------------------------
+supply store product shelf 
+
+=== END ==========================================================
+
+
+
+
+[0;33m Isabella Rodriguez  finished get a new address: [0m the Ville:Harvey Oak Supply Store:supply store:supply store product shelf
+GNS FUNCTION: <generate_action_pronunciatio>
+asdhfapsh8p9hfaiafdsi;ldfj as DEBUG 4
+[1;32mtrying ChatGPT_request to get json[0m
+CHAT GPT PROMPT
+"""
+Convert an action description to an emoji (important: use two or less emojis).
+
+Action description: gathering party decorations for tomorrow’s Valentine’s Day event
+Emoji:
+"""
+Output the response to the prompt above in json. The value for the output must ONLY contain the emojis.
+Example output json:
+{"output": "🛁🧖‍♀️"}
+[1;32m---curr_gpt_response in repeat  0  /total: 6 [0m
+[1;32m {"output": "🎈💖"} [0m
+[1;32m~~~~[0m
+[1;32msucceed get curr_gpt_reponse and validate in safe_generate_response and get json[0m
+[1;32mafter cleanup:  🎈💖 [0m
+[0;33m Isabella Rodriguez  finished act_pron: [0m 🎈💖
+GNS FUNCTION: <generate_action_event_triple>
+[1;32mtrying GPT_request in safe_generate_response[0m
+Task: Turn the input into (subject, predicate, object). You should only output 2 parts, namely "predicate, object)". If you the subject part is not in use now, please output "is, idle)" or "is, unused)". You shouldn't start with "(". If the input has multiple actions, please summarize it into one action.
+
+Input: Sam Johnson is eating breakfast. 
+Output: (Dolores Murphy, eat, breakfast) 
+--- 
+Input: Joon Park is brewing coffee.
+Output: (Joon Park, brew, coffee)
+---
+Input: Jane Cook is sleeping. 
+Output: (Jane Cook, is, sleep)
+---
+Input: Michael Bernstein is writing email on a computer. 
+Output: (Michael Bernstein, write, email)
+---
+Input: Percy Liang is teaching students in a classroom. 
+Output: (Percy Liang, teach, students)
+---
+Input: Merrie Morris is running on a treadmill. 
+Output: (Merrie Morris, run, treadmill)
+---
+Input: Isabella Rodriguez is gathering party decorations for tomorrow’s Valentine’s Day event. 
+Output: (Isabella Rodriguez,
+[1;32m----- repeat in  0  /total:  5  and output:[0m
+[1;32m gather, party decorations) [0m
+[1;32m~~~~[0m
+[1;32msucceed get curr_gpt_reponse and validate in safe_generate_response[0m
+[1;32mafter cleanup: ['gather', 'party decorations'] [0m
+=== persona/prompt_template/v2/generate_event_triple_v1.txt
+~~~ persona    ---------------------------------------------------
+Isabella Rodriguez 
+
+~~~ gpt_param ----------------------------------------------------
+{'engine': 'text-davinci-003', 'max_tokens': 30, 'temperature': 0, 'top_p': 1, 'stream': False, 'frequency_penalty': 0, 'presence_penalty': 0, 'stop': ['\n']} 
+
+~~~ prompt_input    ----------------------------------------------
+['Isabella Rodriguez', 'gathering party decorations for tomorrow’s Valentine’s Day event', 'Isabella Rodriguez'] 
+
+~~~ prompt    ----------------------------------------------------
+Task: Turn the input into (subject, predicate, object). You should only output 2 parts, namely "predicate, object)". If you the subject part is not in use now, please output "is, idle)" or "is, unused)". You shouldn't start with "(". If the input has multiple actions, please summarize it into one action.
+
+Input: Sam Johnson is eating breakfast. 
+Output: (Dolores Murphy, eat, breakfast) 
+--- 
+Input: Joon Park is brewing coffee.
+Output: (Joon Park, brew, coffee)
+---
+Input: Jane Cook is sleeping. 
+Output: (Jane Cook, is, sleep)
+---
+Input: Michael Bernstein is writing email on a computer. 
+Output: (Michael Bernstein, write, email)
+---
+Input: Percy Liang is teaching students in a classroom. 
+Output: (Percy Liang, teach, students)
+---
+Input: Merrie Morris is running on a treadmill. 
+Output: (Merrie Morris, run, treadmill)
+---
+Input: Isabella Rodriguez is gathering party decorations for tomorrow’s Valentine’s Day event. 
+Output: (Isabella Rodriguez, 
+
+~~~ output    ----------------------------------------------------
+('Isabella Rodriguez', 'gather', 'party decorations') 
+
+=== END ==========================================================
+
+
+
+
+[0;33m Isabella Rodriguez  finished act_event_triple: [0m ('Isabella Rodriguez', 'gather', 'party decorations')
+GNS FUNCTION: <generate_act_obj_desc>
+asdhfapsh8p9hfaiafdsi;ldfj as DEBUG 6
+[1;32mtrying ChatGPT_request to get json[0m
+CHAT GPT PROMPT
+"""
+Task: We want to understand the state of an object that is being used by someone. 
+
+Let's think step by step. 
+We want to know about supply store product shelf's state. 
+Step 1. Isabella Rodriguez is at/using the preparing for the day and getting ready to open Hobbs Cafe (gathering party decorations for tomorrow’s Valentine’s Day event).
+Step 2. Describe the supply store product shelf's state: supply store product shelf is
+"""
+Output the response to the prompt above in json. The output should ONLY contain the phrase that should go in <fill in>.
+Example output json:
+{"output": "being fixed"}
+[1;32m---curr_gpt_response in repeat  0  /total: 6 [0m
+[1;32m ```json
+{"output": "being used to gather party decorations"}
+``` [0m
+[1;32m~~~~[0m
+[1;31mJSON parsing error: Expecting value: line 1 column 1 (char 0)[0m
+[1;32m---curr_gpt_response in repeat  1  /total: 6 [0m
+[1;32m {"output": "being used for gathering party decorations"} [0m
+[1;32m~~~~[0m
+[1;32msucceed get curr_gpt_reponse and validate in safe_generate_response and get json[0m
+[1;32mafter cleanup:  being used for gathering party decorations [0m
+[0;33m Isabella Rodriguez  finished act_obj_desp: [0m being used for gathering party decorations
+GNS FUNCTION: <generate_action_pronunciatio>
+asdhfapsh8p9hfaiafdsi;ldfj as DEBUG 4
+[1;32mtrying ChatGPT_request to get json[0m
+CHAT GPT PROMPT
+"""
+Convert an action description to an emoji (important: use two or less emojis).
+
+Action description: being used for gathering party decorations
+Emoji:
+"""
+Output the response to the prompt above in json. The value for the output must ONLY contain the emojis.
+Example output json:
+{"output": "🛁🧖‍♀️"}
+[1;32m---curr_gpt_response in repeat  0  /total: 6 [0m
+[1;32m {"output": "🎉🎈"} [0m
+[1;32m~~~~[0m
+[1;32msucceed get curr_gpt_reponse and validate in safe_generate_response and get json[0m
+[1;32mafter cleanup:  🎉🎈 [0m
+[0;33m Isabella Rodriguez  finished act_obj_pron: [0m 🎉🎈
+GNS FUNCTION: <generate_act_obj_event_triple>
+[1;32mtrying GPT_request in safe_generate_response[0m
+Task: Turn the input into (subject, predicate, object). You should only output 2 parts, namely "predicate, object)". If you the subject part is not in use now, please output "is, idle)" or "is, unused)". You shouldn't start with "(". If the input has multiple actions, please summarize it into one action.
+
+Input: Sam Johnson is eating breakfast. 
+Output: (Dolores Murphy, eat, breakfast) 
+--- 
+Input: Joon Park is brewing coffee.
+Output: (Joon Park, brew, coffee)
+---
+Input: Jane Cook is sleeping. 
+Output: (Jane Cook, is, sleep)
+---
+Input: Michael Bernstein is writing email on a computer. 
+Output: (Michael Bernstein, write, email)
+---
+Input: Percy Liang is teaching students in a classroom. 
+Output: (Percy Liang, teach, students)
+---
+Input: Merrie Morris is running on a treadmill. 
+Output: (Merrie Morris, run, treadmill)
+---
+Input: supply store product shelf is being used for gathering party decorations. 
+Output: (supply store product shelf,
+[1;32m----- repeat in  0  /total:  5  and output:[0m
+[1;32m is, used for gathering party decorations) [0m
+[1;32m~~~~[0m
+[1;32msucceed get curr_gpt_reponse and validate in safe_generate_response[0m
+[1;32mafter cleanup: ['is', 'used for gathering party decorations'] [0m
+=== persona/prompt_template/v2/generate_event_triple_v1.txt
+~~~ persona    ---------------------------------------------------
+Isabella Rodriguez 
+
+~~~ gpt_param ----------------------------------------------------
+{'engine': 'text-davinci-003', 'max_tokens': 30, 'temperature': 0, 'top_p': 1, 'stream': False, 'frequency_penalty': 0, 'presence_penalty': 0, 'stop': ['\n']} 
+
+~~~ prompt_input    ----------------------------------------------
+['supply store product shelf', 'being used for gathering party decorations', 'supply store product shelf'] 
+
+~~~ prompt    ----------------------------------------------------
+Task: Turn the input into (subject, predicate, object). You should only output 2 parts, namely "predicate, object)". If you the subject part is not in use now, please output "is, idle)" or "is, unused)". You shouldn't start with "(". If the input has multiple actions, please summarize it into one action.
+
+Input: Sam Johnson is eating breakfast. 
+Output: (Dolores Murphy, eat, breakfast) 
+--- 
+Input: Joon Park is brewing coffee.
+Output: (Joon Park, brew, coffee)
+---
+Input: Jane Cook is sleeping. 
+Output: (Jane Cook, is, sleep)
+---
+Input: Michael Bernstein is writing email on a computer. 
+Output: (Michael Bernstein, write, email)
+---
+Input: Percy Liang is teaching students in a classroom. 
+Output: (Percy Liang, teach, students)
+---
+Input: Merrie Morris is running on a treadmill. 
+Output: (Merrie Morris, run, treadmill)
+---
+Input: supply store product shelf is being used for gathering party decorations. 
+Output: (supply store product shelf, 
+
+~~~ output    ----------------------------------------------------
+('supply store product shelf', 'is', 'used for gathering party decorations') 
+
+=== END ==========================================================
+
+
+
+
+[0;33m Isabella Rodriguez  finished act_obj_event: [0m ('supply store product shelf', 'is', 'used for gathering party decorations')
+[1;33m Isabella Rodriguez  finished one determine action: [0m
+[0;35m--- Isabella Rodriguez finished planning and start reflecting --[0m
+Isabella Rodriguez persona.scratch.importance_trigger_curr:: 79
+150
+[0;35m--- Isabella Rodriguez finished reflecting and start executing --[0m
+aldhfoaf/????
+the Ville:Harvey Oak Supply Store:supply store:supply store product shelf
+Error.
+Enter option: 
