@@ -609,12 +609,16 @@ if __name__ == '__main__':
   #                    "July1_the_ville_isabella_maria_klaus-step-3-21")
   # rs.open_server()
   while(True):
-    num = int(input("""Choose the forked simulation: \n1. base_the_ville_isabella_maria_klaus\n"""))
+    num = int(input("""Choose the forked simulation: \n1. base_the_ville_isabella_maria_klaus\n2. 110\n3. custom\n"""))
     if num == 1: 
       origin = "base_the_ville_isabella_maria_klaus"
       break
+    if num == 2:
+      origin = "110"
+      break
     else:
-      print("Invalid choice. Please try again.")
+      origin = input("Enter the name of the simulation to fork from: ").strip()
+      break
       
   target = input("Enter the name of the new simulation: ").strip()
 

@@ -559,6 +559,8 @@ def run_gpt_prompt_action_sector(action_description,
 
 
   def __func_clean_up(gpt_response, prompt=""):
+    if "{" in gpt_response:
+      gpt_response = gpt_response.split("{")[-1]
     cleaned_response = gpt_response.split("}")[0]
     return cleaned_response
 
@@ -895,6 +897,8 @@ def run_gpt_prompt_event_triple(action_description, persona, verbose=False):
   
   def __func_clean_up(gpt_response, prompt=""):
     cr = gpt_response.strip()
+    if "(" in cr: 
+      cr = cr.split("(")[-1]
     cr = [i.strip() for i in cr.split(")")[0].split(",")]
     return cr
 
@@ -902,8 +906,11 @@ def run_gpt_prompt_event_triple(action_description, persona, verbose=False):
     try: 
       gpt_response = __func_clean_up(gpt_response, prompt="")
       if len(gpt_response) != 2: 
+        print("\033[1;31mError: in run gpt_prompt_event_triple's validate: the len(gpt_response) != 2)\033[0m")
         return False
-    except: return False
+    except: 
+      print("\033[1;31mError: in run gpt_prompt_event_triple's validate\033[0m")
+      return False
     return True 
 
   def get_fail_safe(persona): 
@@ -1886,12 +1893,16 @@ def run_gpt_prompt_event_poignancy(persona, event_description, test_input=None, 
 
   # ChatGPT Plugin ===========================================================
   def __chat_func_clean_up(gpt_response, prompt=""): ############
-    gpt_response = int(gpt_response)
+    # if is a int already, return it
+    if isinstance(gpt_response, int):
+      return gpt_response
+    # if is a str, try to convert it to int
+    gpt_response = int(gpt_response.strip())
     return gpt_response
 
   def __chat_func_validate(gpt_response, prompt=""): ############
     try: 
-      __func_clean_up(gpt_response, prompt)
+      __chat_func_clean_up(gpt_response, prompt)
       return True
     except:
       return False 
@@ -2104,12 +2115,15 @@ def run_gpt_prompt_focal_pt(persona, statements, n, test_input=None, verbose=Fal
 
   # ChatGPT Plugin ===========================================================
   def __chat_func_clean_up(gpt_response, prompt=""): ############
-    ret = ast.literal_eval(gpt_response)
-    return ret
+    # if the type is a list, then just return it
+    if isinstance(gpt_response, list): 
+      return gpt_response
+    else:
+      raise ValueError("\033[1;31mOutput is not a list\033[0m")
 
   def __chat_func_validate(gpt_response, prompt=""): ############
     try: 
-      __func_clean_up(gpt_response, prompt)
+      __chat_func_clean_up(gpt_response, prompt)
       return True
     except:
       return False 
@@ -2163,10 +2177,10 @@ def run_gpt_prompt_insight_and_guidance(persona, statements, n, test_input=None,
     return prompt_input
   
   def __func_clean_up(gpt_response, prompt=""):
-    gpt_response = "1. " + gpt_response.strip()
+    gpt_response = gpt_response.strip()
     ret = dict()
     for i in gpt_response.split("\n"): 
-      row = i.split(". ")[-1]
+      row = i.split(". ")[1]
       thought = row.split("(because of ")[0].strip()
       evi_raw = row.split("(because of ")[1].split(")")[0].strip()
       evi_raw = re.findall(r'\d+', evi_raw)
@@ -2187,7 +2201,7 @@ def run_gpt_prompt_insight_and_guidance(persona, statements, n, test_input=None,
 
 
 
-  gpt_param = {"engine": "text-davinci-003", "max_tokens": 150, 
+  gpt_param = {"engine": "text-davinci-003", "max_tokens": 250, 
                "temperature": 0.5, "top_p": 1, "stream": False,
                "frequency_penalty": 0, "presence_penalty": 0, "stop": None}
   prompt_template = "persona/prompt_template/v2/insight_and_evidence_v1.txt"

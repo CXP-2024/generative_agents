@@ -52,6 +52,7 @@ def generate_insights_and_evidence(persona, nodes, n=5):
       ret[thought] = evidence_node_id
     return ret
   except: 
+    print("\033[1;31mError in generate_insights_and_evidence: ", ret, "\033[0m")
     return {"this is blank": "node_1"} 
 
 
