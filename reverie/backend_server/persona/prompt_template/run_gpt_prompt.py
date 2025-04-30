@@ -1199,9 +1199,12 @@ def run_gpt_prompt_new_decomp_schedule(persona,
       delta_min = int((x[1] - x[0]).total_seconds()/60)
 
       if int(dur_sum) != int(delta_min): 
+        print("\033[1;31mError: in run gpt_prompt_new_decomp_schedule's validate: the sum of the durations is not equal to the time range\033[0m")
         return False
 
-    except: 
+    except Exception as e:
+      print("\033[1;31mError: in run gpt_prompt_new_decomp_schedule's validate\033[0m")
+      print(e)
       return False
     return True 
 
@@ -1330,14 +1333,24 @@ def run_gpt_prompt_decide_to_talk(persona, target_persona, retrieved,test_input=
   
   def __func_validate(gpt_response, prompt=""): 
     try: 
-      if gpt_response.split("Answer in yes or no:")[-1].strip().lower() in ["yes", "no"]: 
+      if __func_clean_up(gpt_response, prompt="") == "yes" or "no":
         return True
+      print("\033[1;31mError: in run gpt_prompt_decide_to_talk's validate: the cleaned gpt_response: ", __func_clean_up(gpt_response, prompt), "\033[0m")
       return False     
-    except:
+    except Exception as e:
+      print("\033[1;31mError: in run gpt_prompt_decide_to_talk's validate\033[0m")
+      print(e)
       return False 
 
   def __func_clean_up(gpt_response, prompt=""):
-    return gpt_response.split("Answer in yes or no:")[-1].strip().lower()
+      if "[" in gpt_response:
+            cr = gpt_response.split("[")[-1].strip()
+      if "]" in cr:
+            cr = cr.split("]")[0].strip()
+      if cr == "yes" or cr == "no":
+            return cr
+      print("\033[1;31mError: in run gpt_prompt_decide_to_talk's clean_up: the cleaned gpt:", cr, "\033[0m")
+      return False
 
   def get_fail_safe(): 
     fs = "yes"
@@ -1345,7 +1358,7 @@ def run_gpt_prompt_decide_to_talk(persona, target_persona, retrieved,test_input=
 
 
 
-  gpt_param = {"engine": "text-davinci-003", "max_tokens": 20, 
+  gpt_param = {"engine": "text-davinci-003", "max_tokens": 1000, 
                "temperature": 0, "top_p": 1, "stream": False,
                "frequency_penalty": 0, "presence_penalty": 0, "stop": None}
   prompt_template = "persona/prompt_template/v2/decide_to_talk_v2.txt"

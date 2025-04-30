@@ -14,7 +14,7 @@ from utils import *
 openai.api_key = openai_api_key
 openai.api_base = openai_base_url
 
-def temp_sleep(seconds=0.1):
+def temp_sleep(seconds=0.03):
   time.sleep(seconds)
 
 def ChatGPT_single_request(prompt): 
@@ -199,14 +199,15 @@ def ChatGPT_safe_generate_response_OLD(prompt,
                                    func_validate=None,
                                    func_clean_up=None,
                                    verbose=False): 
-  if verbose: 
-    print ("CHAT GPT PROMPT")
-    print (prompt)
+  # if verbose: 
+  #   print ("CHAT GPT PROMPT")
+  #   print (prompt)
+    
+  print("\033[1;32mtrying GPT_request in safe_generate_response_OLD\033[0m")
+  print("\033[1;32mprompt:\n\033[0m", prompt)
 
   for i in range(repeat): 
     try: 
-      print("\033[1;32mtrying GPT_request in safe_generate_response_OLD\033[0m")
-      print("\033[1;32mprompt:\n\033[0m", prompt)
       curr_gpt_response = ChatGPT_request(prompt).strip()
       print("\033[1;32m----- repeat in ", i, " /total: ", repeat, "and output:\033[0m")
       print("\033[1;32m", curr_gpt_response, "\033[0m")
@@ -302,12 +303,13 @@ def safe_generate_response(prompt,
                            func_validate=None,
                            func_clean_up=None,
                            verbose=False): 
-  if verbose: 
-    print (prompt)
-
-  for i in range(repeat): 
-    print("\033[1;32mtrying GPT_request in safe_generate_response\033[0m")
-    print(prompt)
+  #if verbose: 
+  #  print (prompt)
+ 
+  print("\033[1;32mtrying GPT_request in safe_generate_response\033[0m")
+  print(prompt)
+  
+  for i in range(repeat):
     curr_gpt_response = GPT_request(prompt, gpt_parameter)
     print("\033[1;32m----- repeat in ", i, " /total: ", repeat, " and output:\033[0m")
     print("\033[1;32m", curr_gpt_response, "\033[0m")
