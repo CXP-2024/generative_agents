@@ -664,7 +664,7 @@
          "name":"Wall",
          "opacity":1,
          "type":"tilelayer",
-         "visible":false,
+         "visible":true,
          "width":140,
          "x":0,
          "y":0
@@ -1885,7 +1885,7 @@
          "name":"Special Blocks Registry",
          "opacity":1,
          "type":"tilelayer",
-         "visible":true,
+         "visible":false,
          "width":140,
          "x":0,
          "y":0
@@ -1996,7 +1996,7 @@
          "name":"Free Blocks",
          "opacity":0.47,
          "type":"tilelayer",
-         "visible":true,
+         "visible":false,
          "width":140,
          "x":0,
          "y":0

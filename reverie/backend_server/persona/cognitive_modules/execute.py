@@ -149,8 +149,8 @@ def execute(persona, maze, personas, plan):
   # no <planned_path> left, but otherwise, we go to the next tile in the path.
   ret = persona.scratch.curr_tile
   if persona.scratch.planned_path: 
-    ret = persona.scratch.planned_path[0]
-    persona.scratch.planned_path = persona.scratch.planned_path[1:]
+    ret = persona.scratch.planned_path[-1]
+    persona.scratch.planned_path = []
 
   description = f"{persona.scratch.act_description}"
   description += f" @ {persona.scratch.act_address}"
