@@ -1,0 +1,231 @@
+{
+  "vision_r": 8,
+  "att_bandwidth": 8,
+  "retention": 8,
+  "curr_time": "February 14, 2023, 03:05:00",
+  "curr_tile": [
+    127,
+    46
+  ],
+  "daily_plan_req": "Here\u2019s Klaus Mueller\u2019s schedule for **Tuesday, February 14**, with clear time blocks:  1. **Wake up and complete morning routine at 7:00 AM**      - Shower, breakfast (likely a quick meal), and review notes for his gentrification paper before heading to the library.    2. **Research and edit paper at Oak Hill College Library (8:00 AM \u2013 12:00 PM)**      - Focused writing session to finalize sections and meet deadlines, maintaining Monday\u2019s disciplined momentum.    3. **Lunch break at Hobbs Caf\u00e9 (12:00 PM \u2013 1:00 PM)**      - A quick meal, possibly chatting with staff (like Isabella) and preparing for his afternoon training.    4. **Long jump training at the playground (3:00 PM \u2013 4:00 PM)**      - His usual hour of athletic practice, keeping his body sharp while balancing academics.    5. **Valentine\u2019s party at Hobbs Caf\u00e9 (6:00 PM \u2013 9:00 PM, estimated)**      - Evening socializing with Arthur, enjoying almond croissants, and fulfilling his promise to meet Isabella afterward.    6. **Wind down and sleep by 11:00 PM**      - Reflect on the day\u2019s balance of work, training, and connection before resting.    **Key Notes:**   - Dinner (~5:00 PM) likely fits between training and the party.   - Adaptability remains\u2014he may confirm party timing with friends if needed.    **Themes:** Discipline (academics/athletics), joy in small moments (croissants, friends), and structured flexibility.",
+  "name": "Klaus Mueller",
+  "first_name": "Klaus",
+  "last_name": "Mueller",
+  "age": 20,
+  "innate": "kind, inquisitive, passionate",
+  "learned": "Klaus Mueller is a student at Oak Hill College studying sociology. He is passionate about social justice and loves to explore different perspectives.",
+  "currently": "**Status:** On Tuesday, February 14, Klaus Mueller begins his day with a clear plan, balancing academic deadlines, physical training, and social commitments.  \n\n- **Morning (Oak Hill College Library):** He dedicates the early hours to finalizing edits and reviewing sections of his gentrification research paper, determined to meet any looming deadlines. The library remains his preferred workspace, where he can maintain the same focused energy he had on Monday.  \n\n- **Afternoon (Playground or Competition Venue):** Around midday, Klaus shifts gears to train for or compete in the long jump event. Though the exact time and location aren\u2019t specified, he likely prioritizes this as a midday break, just as he did the day before, to stay sharp physically.  \n\n- **Evening (Hobbs Caf\u00e9, Valentine\u2019s Party):** As the day winds down, Klaus prepares to attend the Valentine\u2019s party at *Hobbs Caf\u00e9* (likely in the evening, though the exact time remains unconfirmed). He looks forward to reconnecting with Arthur and savoring Isabella\u2019s almond croissants, while also fulfilling his promise to meet her afterward\u2014whether at the party or a separate arrangement.  \n\n**Reflection:** Klaus approaches Tuesday with the same disciplined yet balanced mindset he exhibited on Monday\u2014pride in his academic progress, enthusiasm for his athletic pursuits, and appreciation for social moments. Though the day\u2019s exact timeline isn\u2019t fixed, he remains adaptable, ensuring he doesn\u2019t sacrifice productivity for enjoyment or vice versa. If gaps arise, he\u2019ll likely clarify details (e.g., competition timing, party start) with Arthur or Isabella as needed.  \n\n**\u2014Key Themes:** Discipline, adaptability, and the satisfaction of a well-rounded day.",
+  "lifestyle": "Klaus Mueller goes to bed around 11pm, awakes up around 7am, eats dinner around 5pm.",
+  "living_area": "the Ville:Dorm for Oak Hill College:Klaus Mueller's room",
+  "concept_forget": 100,
+  "daily_reflection_time": 180,
+  "daily_reflection_size": 5,
+  "overlap_reflect_th": 4,
+  "kw_strg_event_reflect_th": 10,
+  "kw_strg_thought_reflect_th": 9,
+  "recency_w": 1,
+  "relevance_w": 1,
+  "importance_w": 1,
+  "recency_decay": 0.99,
+  "importance_trigger_max": 150,
+  "importance_trigger_curr": 33,
+  "importance_ele_n": 79,
+  "thought_count": 5,
+  "daily_req": [
+    "wake up and complete the morning routine at 7:00 am",
+    "Wake up and complete morning routine from 7:00 am to 7:30 am",
+    "Go to the library at Oak Hill College from 7:45 am to 10:00 am",
+    "Write research paper at the library from 10:00 am to 12:00 pm",
+    "Have lunch at Hobbs Cafe from 12:00 pm to 1:00 pm",
+    "Continue writing research paper at the library from 1:00 pm to 3:00 pm",
+    "Long jumping at the playground from 3:00 pm to 4:00 pm",
+    "Return to the library and write research paper from 4:00 pm to 5:00 pm",
+    "Have dinner at Hobbs Cafe from 5:00 pm to 6:00 pm",
+    "Review and edit research paper at home from 6:30 pm to 8:30 pm",
+    "Relax and unwind from 8:30 pm to 10:30 pm",
+    "Prepare for bed at 10:30 pm",
+    "Sleep at 11:00 pm"
+  ],
+  "f_daily_schedule": [
+    [
+      "sleeping",
+      420
+    ],
+    [
+      "waking up and stretching",
+      5
+    ],
+    [
+      "getting out of bed and heading to the bathroom",
+      5
+    ],
+    [
+      "showering and freshening up",
+      15
+    ],
+    [
+      "drying off and getting dressed",
+      10
+    ],
+    [
+      "preparing breakfast (toast and coffee)",
+      10
+    ],
+    [
+      "eating breakfast while reviewing notes for his gentrification paper",
+      15
+    ],
+    [
+      "at the Oak Hill College Library, beginning his research and editing work on the gentrification paper",
+      60
+    ],
+    [
+      "at the Oak Hill College Library, continuing his research and editing work on the gentrification paper",
+      60
+    ],
+    [
+      "at the Oak Hill College Library, writing his research paper on gentrification with focused determination",
+      60
+    ],
+    [
+      "writing his research paper on gentrification at the Oak Hill College Library, maintaining focus before his lunch break",
+      60
+    ],
+    [
+      "having lunch at Hobbs Caf\u00e9, possibly chatting with staff like Isabella and preparing for his afternoon training",
+      60
+    ],
+    [
+      "continuing his research paper at the Oak Hill College Library, maintaining focus on his gentrification study",
+      60
+    ],
+    [
+      "continuing his research paper at the Oak Hill College Library, working diligently on his gentrification study",
+      60
+    ],
+    [
+      "training for long jump at the playground",
+      60
+    ],
+    [
+      "returning to the Oak Hill College Library to continue writing his research paper on gentrification",
+      60
+    ],
+    [
+      "having dinner at Hobbs Caf\u00e9, enjoying a meal before the Valentine's party later in the evening",
+      60
+    ],
+    [
+      "reviewing and editing his research paper at home",
+      60
+    ],
+    [
+      "relaxing and unwinding at home after reviewing his research paper",
+      180
+    ],
+    [
+      "preparing for bed, getting ready to sleep by 11:00 PM",
+      60
+    ],
+    [
+      "sleeping",
+      60
+    ],
+    [
+      "sleeping",
+      0
+    ]
+  ],
+  "f_daily_schedule_hourly_org": [
+    [
+      "sleeping",
+      420
+    ],
+    [
+      "waking up and starting his morning routine, including showering and having breakfast while reviewing notes for his gentrification paper",
+      60
+    ],
+    [
+      "at the Oak Hill College Library, beginning his research and editing work on the gentrification paper",
+      60
+    ],
+    [
+      "at the Oak Hill College Library, continuing his research and editing work on the gentrification paper",
+      60
+    ],
+    [
+      "at the Oak Hill College Library, writing his research paper on gentrification with focused determination",
+      60
+    ],
+    [
+      "writing his research paper on gentrification at the Oak Hill College Library, maintaining focus before his lunch break",
+      60
+    ],
+    [
+      "having lunch at Hobbs Caf\u00e9, possibly chatting with staff like Isabella and preparing for his afternoon training",
+      60
+    ],
+    [
+      "continuing his research paper at the Oak Hill College Library, maintaining focus on his gentrification study",
+      60
+    ],
+    [
+      "continuing his research paper at the Oak Hill College Library, working diligently on his gentrification study",
+      60
+    ],
+    [
+      "training for long jump at the playground",
+      60
+    ],
+    [
+      "returning to the Oak Hill College Library to continue writing his research paper on gentrification",
+      60
+    ],
+    [
+      "having dinner at Hobbs Caf\u00e9, enjoying a meal before the Valentine's party later in the evening",
+      60
+    ],
+    [
+      "reviewing and editing his research paper at home",
+      60
+    ],
+    [
+      "relaxing and unwinding at home after reviewing his research paper",
+      180
+    ],
+    [
+      "preparing for bed, getting ready to sleep by 11:00 PM",
+      60
+    ],
+    [
+      "sleeping",
+      60
+    ]
+  ],
+  "act_address": "the Ville:Dorm for Oak Hill College:Klaus Mueller's room:bed",
+  "act_start_time": "February 14, 2023, 00:55:00",
+  "act_duration": 420,
+  "act_description": "sleeping",
+  "act_pronunciatio": "\ud83d\ude34",
+  "act_event": [
+    "Klaus Mueller",
+    "is",
+    "sleep"
+  ],
+  "act_obj_description": "being used by Klaus Mueller for sleeping",
+  "act_obj_pronunciatio": "\ud83d\udecc\ud83d\ude34",
+  "act_obj_event": [
+    "bed",
+    "is",
+    "used"
+  ],
+  "chatting_with": null,
+  "chat": null,
+  "chatting_with_buffer": {
+    "Arthur Burton": 626,
+    "Maria Lopez": 640
+  },
+  "chatting_end_time": null,
+  "act_path_set": true,
+  "planned_path": []
+}
