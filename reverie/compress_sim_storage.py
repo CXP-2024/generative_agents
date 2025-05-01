@@ -60,7 +60,7 @@ def compress(sim_code):
 
 
 if __name__ == '__main__':
-  compress("demo3")
+  compress("326_4ps")
 
 
 

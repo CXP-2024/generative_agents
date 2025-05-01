@@ -2,11 +2,10 @@ reverie/backend_server/utils.py
 frontend_server/settings/local.py
 storage/*
 environment/frontend_server/storage/*
-<<<<<<< HEAD
+
 environment/frontend_server/storage/demo3/*
 =======
 environment/frontend_server/static_dirs/assets/the_ville/matrix/maze_o/*
->>>>>>> de50cac1f43ba87e1efc7e1c075cab0d4081faad
 
 !storage/base_the_ville_isabella_maria_klaus/*
 !storage/base_the_ville_n25/*
@@ -16,6 +15,7 @@ include/
 pip-selfcheck.json
 .DS_Store
 
+environment/frontend_server/compressed_storage/
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
