@@ -633,19 +633,19 @@ def _determine_action(persona, maze):
   act_game_object = generate_action_game_object(act_desp, act_address,
                                                 persona, maze)
   new_address = f"{act_world}:{act_sector}:{act_arena}:{act_game_object}"
-  print("\033[0;33m", persona.name , " finished get a new address: \033[0m", new_address)
+  print("\033[0;33m", persona.name , " finished get a new address:", new_address, "\033[0m")
   act_pron = generate_action_pronunciatio(act_desp, persona)
-  print("\033[0;33m", persona.name , " finished act_pron: \033[0m", act_pron)
+  print("\033[0;33m", persona.name , " finished act_pron:", act_pron, "\033[0m")
   act_event = generate_action_event_triple(act_desp, persona)
-  print("\033[0;33m", persona.name , " finished act_event_triple: \033[0m", act_event)
+  print("\033[0;33m", persona.name , " finished act_event_triple:", act_event ,"\033[0m")
   # Persona's actions also influence the object states. We set those up here. 
   act_obj_desp = generate_act_obj_desc(act_game_object, act_desp, persona)
-  print("\033[0;33m", persona.name , " finished act_obj_desp: \033[0m", act_obj_desp)
+  print("\033[0;33m", persona.name , " finished act_obj_desp:", act_obj_desp, " \033[0m")
   act_obj_pron = generate_action_pronunciatio(act_obj_desp, persona)
-  print("\033[0;33m", persona.name , " finished act_obj_pron: \033[0m", act_obj_pron)
+  print("\033[0;33m", persona.name , " finished act_obj_pron:", act_obj_pron, " \033[0m")
   act_obj_event = generate_act_obj_event_triple(act_game_object, 
                                                 act_obj_desp, persona)
-  print("\033[0;33m", persona.name , " finished act_obj_event: \033[0m", act_obj_event)
+  print("\033[0;33m", persona.name , " finished act_obj_event:", act_obj_event, "\033[0m")
 
   # Adding the action to persona's queue. 
   persona.scratch.add_new_action(new_address, 
@@ -881,8 +881,12 @@ def _chat_react(maze, persona, focused_event, reaction_mode, personas):
   curr_personas = [init_persona, target_persona]
 
   # Actually creating the conversation here. 
+  print("\033[0;33m-----chat react----", init_persona.name , " start a chat with", target_persona.name, "\033[0m")
   convo, duration_min = generate_convo(maze, init_persona, target_persona)
+  print("\033[0;33m-----chat react----", init_persona.name , " finished a chat with", target_persona.name, "\033[0m")
+  print("\033[0;33m-----chat react----", init_persona.name , " start a conversation summary", target_persona.name, "\033[0m")
   convo_summary = generate_convo_summary(init_persona, convo)
+  print("\033[0;33m-----chat react----", init_persona.name , " finish a conversation summary", target_persona.name, "\033[0m")
   inserted_act = convo_summary
   inserted_act_dur = duration_min
 
@@ -914,10 +918,12 @@ def _chat_react(maze, persona, focused_event, reaction_mode, personas):
     act_obj_pronunciatio = None
     act_obj_event = (None, None, None)
 
+    print("\033[0;33m-----chat react----", p.name , " start a create_react and decomp plan", target_persona.name, "\033[0m")
     _create_react(p, inserted_act, inserted_act_dur,
       act_address, act_event, chatting_with, convo, chatting_with_buffer, chatting_end_time,
       act_pronunciatio, act_obj_description, act_obj_pronunciatio, 
       act_obj_event, act_start_time)
+    print("\033[0;33m-----chat react----", p.name , " finish a create_react and decom plan", target_persona.name, "\033[0m")
 
 
 def _wait_react(persona, reaction_mode): 
@@ -1006,13 +1012,13 @@ def plan(persona, maze, personas, new_day, retrieved):
     if reaction_mode: 
       # If we do want to chat, then we generate conversation 
       if reaction_mode[:9] == "chat with":
-        print("\033[1;33m", persona.name , " start a chat react: \033[0m")
+        print("\033[1;33m", persona.name , " start a chat_react: \033[0m")
         _chat_react(maze, persona, focused_event, reaction_mode, personas)
-        print("\033[1;33m", persona.name , " finished chat react: \033[0m")
+        print("\033[1;33m", persona.name , " finished chat_react: \033[0m")
       elif reaction_mode[:4] == "wait": 
-        print("\033[1;33m", persona.name , " start a wait react: \033[0m")
+        print("\033[1;33m", persona.name , " start a wait_react: \033[0m")
         _wait_react(persona, reaction_mode)
-        print("\033[1;33m", persona.name , " finished wait react: \033[0m")
+        print("\033[1;33m", persona.name , " finished wait_react: \033[0m")
       # elif reaction_mode == "do other things": 
       #   _chat_react(persona, focused_event, reaction_mode, personas)
 

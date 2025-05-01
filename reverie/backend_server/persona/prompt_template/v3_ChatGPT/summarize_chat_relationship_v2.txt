@@ -10,6 +10,17 @@ Variables:
 !<INPUT 0>!
 
 Based on the statements above, summarize !<INPUT 1>! and !<INPUT 2>!'s relationship. What do they feel or know about each other?
+IMPORTANT:
+Output must be in JSON format, without code blocks or markdown formatting.
 
+Format your response as follows:
+{
+	"output": "summary of their relationship goes here"
+}
+
+For example:
+{
+	"output": "Alice and Bob have a friendly professional relationship. Alice respects Bob's technical expertise and often seeks his advice on work projects. Bob appreciates Alice's organizational skills and creative thinking. They occasionally have lunch together but don't appear to socialize outside of work. Their interactions are characterized by mutual respect and collaborative problem-solving."
+}
 
 "

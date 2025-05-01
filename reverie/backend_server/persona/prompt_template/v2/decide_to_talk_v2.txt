@@ -8,6 +8,15 @@ Question: []
 Reasoning: []
 Answer in "yes" or "no": []
 ---
+
+IMPORTANT: Always enclose your responses after each ":" with square brackets "[]" to maintain proper formatting
+
+Example:
+Context: [Mary is at the park. She sees John sitting on a bench. They haven't spoken in a while.]
+Question: [Will Mary initiate a conversation with John?]
+Reasoning: [Mary is outgoing and enjoys talking to her friends. She hasn't seen John in a while, so she might be curious about how he's doing. Therefore, it's likely that she will initiate a conversation with him.]
+Answer in "yes" or "no": [yes]
+
 Context: !<INPUT 0>! 
 Right now, it is !<INPUT 1>!. !<INPUT 2>! and !<INPUT 3>! last chatted at !<INPUT 4>! about !<INPUT 5>!. 
 !<INPUT 6>! 
@@ -15,4 +24,8 @@ Right now, it is !<INPUT 1>!. !<INPUT 2>! and !<INPUT 3>! last chatted at !<INPU
 
 Question: Would !<INPUT 8>! initiate a conversation with !<INPUT 9>!? 
 
-Reasoning: Let's think step by step.
+Reasoning: Let's think step by step. (You should consider somebody's personality, the context, and the relationship between the two people. For example, if somebody is curious, they might initiate a conversation. If they are introverted, they might not or debate whether to initiate a conversation.)
+Some personality you should know:
+Arthur Burton is extremely outgoing and loves to talk to people. 
+Marina Lopez is also energetic, enthusiastic and she is inquisitive, she also wants to know more about others.
+Arthur Burton and Marina Lopez are close friends.

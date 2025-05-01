@@ -248,8 +248,9 @@ def GPT_request(prompt, gpt_parameter):
     a str of GPT-3's response. 
   """
   temp_sleep()
-  try: 
-    response = openai.ChatCompletion.create(
+  while True:
+    try: 
+      response = openai.ChatCompletion.create(
                 model="deepseek-v3",
                 messages=[
                   {"role": "system", "content": "If you see daily scedules, you will be an assistant that fills in daily schedules based on character information. And in that case, you should only respond with finishing schedule entries, nothing else."},
@@ -262,10 +263,11 @@ def GPT_request(prompt, gpt_parameter):
                 presence_penalty=gpt_parameter["presence_penalty"],
                 stream=gpt_parameter["stream"],
                 stop=gpt_parameter["stop"],)
-    return response.choices[0].message.content
-  except Exception as e: 
-    print(f"TOKEN LIMIT EXCEEDED: {e}")
-    return "TOKEN LIMIT EXCEEDED"
+      return response.choices[0].message.content
+    except Exception as e: 
+      print(f"\033[1;31mTOKEN LIMIT EXCEEDED: {e}\033[0m")
+      time.sleep(0.1)
+      print("\033[1;31mWaiting 0.1 seconds. Trying again...\033[0m")
 
 
 def generate_prompt(curr_input, prompt_lib_file): 
@@ -298,7 +300,7 @@ def generate_prompt(curr_input, prompt_lib_file):
 
 def safe_generate_response(prompt, 
                            gpt_parameter,
-                           repeat=5,
+                           repeat=8,
                            fail_safe_response="error",
                            func_validate=None,
                            func_clean_up=None,

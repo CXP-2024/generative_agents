@@ -6,7 +6,9 @@ Variables:
 !<INPUT 2>! -- Persona's full name. 
 
 <commentblockmarker>###</commentblockmarker>
-Task: Turn the input into (subject, predicate, object). You should only output 2 parts, namely "predicate, object)". If you the subject part is not in use now, please output "is, idle)" or "is, unused)". You shouldn't start with "(". If the input has multiple actions, please summarize it into one action.
+Task: Convert the input action description into a structured event triple in the format (subject, predicate, object). Extract the main action (predicate) and its target (object) from the description. If multiple actions exist in the input, summarize them into one primary action. For inactive subjects, use "is, idle)" or "is, unused)" as appropriate. Use only one comma to separate the predicate and object in your output.
+
+Example format: Predicate, Object)
 
 Input: Sam Johnson is eating breakfast. 
 Output: (Dolores Murphy, eat, breakfast) 
