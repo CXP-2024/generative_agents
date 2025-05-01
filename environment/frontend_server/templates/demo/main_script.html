@@ -27,20 +27,24 @@
 	// Phaser 3.0 global settings. 
 	// Configuration meant to be passed to the main Phaser game instance. 
 	const config = {
-	  type: Phaser.AUTO,
-	  width: 1500,
-	  height: 800,
-	  parent: "game-container",
-	  pixelArt: true,
-	  physics: {
-	    default: "arcade",
-	    arcade: {
-	      gravity: { y: 0 } } },
-	  scene: {
-	    preload: preload,
-	    create: create,
-	    update: update },
-	  scale: {zoom: 0.8} };
+			type: Phaser.AUTO,
+			width: 3200,  // 从1500改为3200
+			height: 2000, // 从800改为2000
+			parent: "game-container",
+			pixelArt: true,
+			physics: {
+				default: "arcade",
+				arcade: {
+					gravity: { y: 0 }
+				}
+			},
+			scene: {
+				preload: preload,
+				create: create,
+				update: update
+			},
+			scale: { zoom: 0.5 }
+		}; // 从0.8改为0.5
 
 	// const config = {
 	//   type: Phaser.AUTO,
@@ -128,6 +132,8 @@
 	  //       Also IMPORTANT: when you create a tileset in Tiled, always be  
 	  //       sure to check the "embedded" option. 
 	  this.load.image("blocks_1", "{% static 'assets/the_ville/visuals/map_assets/blocks/blocks_1.png' %}");
+		this.load.image("blocks_2", "{% static 'assets/the_ville/visuals/map_assets/blocks/blocks_2.png' %}");
+		this.load.image("blocks_3", "{% static 'assets/the_ville/visuals/map_assets/blocks/blocks_3.png' %}");
 	  this.load.image("walls", "{% static 'assets/the_ville/visuals/map_assets/v1/Room_Builder_32x32.png' %}");
 	  this.load.image("interiors_pt1", "{% static 'assets/the_ville/visuals/map_assets/v1/interiors_pt1.png' %}");
 	  this.load.image("interiors_pt2", "{% static 'assets/the_ville/visuals/map_assets/v1/interiors_pt2.png' %}");
@@ -145,7 +151,7 @@
 	  this.load.image("CuteRPG_Forest_C", "{% static 'assets/the_ville/visuals/map_assets/cute_rpg_word_VXAce/tilesets/CuteRPG_Forest_C.png' %}");
 
 	  // Joon: This is the export json file you get from Tiled. 
-	  this.load.tilemapTiledJSON("map", "{% static 'assets/the_ville/visuals/the_ville_jan7.json' %}");
+		this.load.tilemapTiledJSON("map", "{% static 'assets/the_ville/visuals/the_ville_jan7-2.json' %}");
 
 	  // An atlas is a way to pack multiple images together into one texture. I'm 
 	  // using it to load all the player animations (walking left, walking right, 
@@ -180,6 +186,8 @@
 	  //       console.log(map) output. You need to make sure that the name 
 	  //       matches.
 	  const collisions = map.addTilesetImage("blocks", "blocks_1");
+	  const playground = map.addTilesetImage("blocks_2", "blocks_2");
+	  const playground2 = map.addTilesetImage("blocks_3","block_3");
 	  const walls = map.addTilesetImage("Room_Builder_32x32", "walls");
 	  const interiors_pt1 = map.addTilesetImage("interiors_pt1", "interiors_pt1");
 	  const interiors_pt2 = map.addTilesetImage("interiors_pt2", "interiors_pt2");
@@ -203,21 +211,23 @@
 	  //       literally is taken from our Tiled layer name. So to find out what
 	  //       they are; you actually need to open up tiled and see how you 
 	  //       named things there. 
-	  let tileset_group_1 = [CuteRPG_Field_B, CuteRPG_Field_C, CuteRPG_Harbor_C, CuteRPG_Village_B, 
-	  											 CuteRPG_Forest_B, CuteRPG_Desert_C, CuteRPG_Mountains_B, CuteRPG_Desert_B, CuteRPG_Forest_C,
-	  											 interiors_pt1, interiors_pt2, interiors_pt3, interiors_pt4, interiors_pt5, walls];
-	  const bottomGroundLayer = map.createLayer("Bottom Ground", tileset_group_1, 0, 0);
-	  const exteriorGroundLayer = map.createLayer("Exterior Ground", tileset_group_1, 0, 0);
-	  const exteriorDecorationL1Layer = map.createLayer("Exterior Decoration L1", tileset_group_1, 0, 0);
-	  const exteriorDecorationL2Layer = map.createLayer("Exterior Decoration L2", tileset_group_1, 0, 0);
-	  const interiorGroundLayer = map.createLayer("Interior Ground", tileset_group_1, 0, 0);
-	  const wallLayer = map.createLayer("Wall", [CuteRPG_Field_C, walls], 0, 0);
-	  const interiorFurnitureL1Layer = map.createLayer("Interior Furniture L1", tileset_group_1, 0, 0);
-	  const interiorFurnitureL2Layer = map.createLayer("Interior Furniture L2 ", tileset_group_1, 0, 0);
-	  const foregroundL1Layer = map.createLayer("Foreground L1", tileset_group_1, 0, 0);
-	  const foregroundL2Layer = map.createLayer("Foreground L2", tileset_group_1, 0, 0);
+	  let tileset_group_1 = [CuteRPG_Field_B, CuteRPG_Field_C, CuteRPG_Harbor_C, CuteRPG_Village_B,
+			CuteRPG_Forest_B, CuteRPG_Desert_C, CuteRPG_Mountains_B, CuteRPG_Desert_B, CuteRPG_Forest_C, playground, collisions,
+			interiors_pt1, interiors_pt2, interiors_pt3, interiors_pt4, interiors_pt5, walls];
+		const bottomGroundLayer = map.createLayer("Bottom Ground", tileset_group_1, 0, 0);
+		const exteriorGroundLayer = map.createLayer("Exterior Ground", tileset_group_1, 0, 0);
+		const exteriorDecorationL1Layer = map.createLayer("Exterior Decoration L1", tileset_group_1, 0, 0);
+		const exteriorDecorationL2Layer = map.createLayer("Exterior Decoration L2", tileset_group_1, 0, 0);
+		const interiorGroundLayer = map.createLayer("Interior Ground", tileset_group_1, 0, 0);
+		const wallLayer = map.createLayer("Wall", [CuteRPG_Field_C, walls], 0, 0);
+		const interiorFurnitureL1Layer = map.createLayer("Interior Furniture L1", tileset_group_1, 0, 0);
+		const interiorFurnitureL2Layer = map.createLayer("Interior Furniture L2 ", tileset_group_1, 0, 0);
+		const foregroundL1Layer = map.createLayer("Foreground L1", tileset_group_1, 0, 0);
+		const foregroundL2Layer = map.createLayer("Foreground L2", tileset_group_1, 0, 0);
+		foregroundL1Layer.setDepth(2);
+		foregroundL2Layer.setDepth(2);
 
-	  const collisionsLayer = map.createLayer("Collisions", collisions, 0, 0);
+		const collisionsLayer = map.createLayer("Collisions", collisions, 0, 0);
 	  // const groundLayer = map.createLayer("Ground", walls, 0, 0);
 	  // const indoorGroundLayer = map.createLayer("Indoor Ground", walls, 0, 0);
 	  // const wallsLayer = map.createLayer("Walls", walls, 0, 0);
@@ -258,6 +268,54 @@
 	  const camera = this.cameras.main;
 	  camera.startFollow(player);
 	  camera.setBounds(0, 0, map.widthInPixels, map.heightInPixels);
+
+		// 添加缩放功能 - 设置缩放限制
+		camera.setZoom(0.8); // 初始缩放值与config中保持一致
+
+		// 添加鼠标滚轮缩放，也是触控板双指缩放的的映射
+		this.input.on('wheel', function (pointer, gameObjects, deltaX, deltaY, deltaZ) {
+			// deltaY是滚轮方向，向上滚动为负，向下滚动为正
+			if (deltaY > 0) {
+				// 缩小，降低缩放值
+				camera.zoom = Math.max(0.75, camera.zoom - 0.01);
+			} else {
+				// 放大，增加缩放值
+				camera.zoom = Math.min(2.0, camera.zoom + 0.01);
+			}
+		});
+
+		cursors = this.input.keyboard.createCursorKeys();
+
+		// 添加鼠标拖动控制相机功能
+		let isDragging = false;
+		let lastPointerPosition = { x: 0, y: 0 };
+
+		this.input.on('pointerdown', function (pointer) {
+			if (pointer.leftButtonDown()) {
+				isDragging = true;
+				lastPointerPosition = { x: pointer.x, y: pointer.y };
+			}
+		});
+
+		this.input.on('pointermove', function (pointer) {
+			if (isDragging) {
+				// 计算鼠标移动距离
+				const deltaX = pointer.x - lastPointerPosition.x;
+				const deltaY = pointer.y - lastPointerPosition.y;
+
+				// 更新相机位置（反向移动，因为我们要拖动地图）
+				player.x -= deltaX / camera.zoom;
+				player.y -= deltaY / camera.zoom;
+
+				// 更新上一次位置
+				lastPointerPosition = { x: pointer.x, y: pointer.y };
+			}
+		});
+
+		this.input.on('pointerup', function (pointer) {
+			isDragging = false;
+		});
+		
 	  cursors = this.input.keyboard.createCursorKeys();
 
 	  // *** SET UP PERSONAS *** 
@@ -351,21 +409,39 @@
 	  // This is where we finish up the camera setting we started in the create() 
 	  // function. We set the movement speed of the camera and wire up the keys to
 	  // map to the actual movement.
-	  const camera_speed = 400;
-	  // Stop any previous movement from the last frame
-	  player.body.setVelocity(0);
-	  if (cursors.left.isDown) {
-	    player.body.setVelocityX(-camera_speed);
-	  } 
-	  if (cursors.right.isDown) {
-	    player.body.setVelocityX(camera_speed);
-	  } 
-	  if (cursors.up.isDown) {
-	    player.body.setVelocityY(-camera_speed);
-	  } 
-	  if (cursors.down.isDown) {
-	    player.body.setVelocityY(camera_speed);
-	  }
+	  const camera_speed = 800;
+		// 添加WASD键控制
+		wasdKeys = this.input.keyboard.addKeys({
+			up: Phaser.Input.Keyboard.KeyCodes.W,
+			down: Phaser.Input.Keyboard.KeyCodes.S,
+			left: Phaser.Input.Keyboard.KeyCodes.A,
+			right: Phaser.Input.Keyboard.KeyCodes.D
+		});
+		// Stop any previous movement from the last frame
+		player.body.setVelocity(0);
+		// 检测方向键或WASD键
+		if (cursors.left.isDown || wasdKeys.left.isDown) {
+			player.body.setVelocityX(-camera_speed);
+		}
+		if (cursors.right.isDown || wasdKeys.right.isDown) {
+			player.body.setVelocityX(camera_speed);
+		}
+		if (cursors.up.isDown || wasdKeys.up.isDown) {
+			player.body.setVelocityY(-camera_speed);
+		}
+		if (cursors.down.isDown || wasdKeys.down.isDown) {
+			player.body.setVelocityY(camera_speed);
+		}
+		// 添加空格键放大和Shift键缩小功能
+		const camera = this.cameras.main;
+		if (cursors.space.isDown) {
+			// 空格键放大
+			camera.zoom = Math.min(2.0, camera.zoom + 0.01);
+		}
+		if (cursors.shift.isDown) {
+			// Shift键缩小
+			camera.zoom = Math.max(0.75, camera.zoom - 0.01);
+		}
 
 	  
 	  let curr_focused_persona = document.getElementById("temp_focus").textContent;
@@ -494,6 +570,35 @@
 	// Control button binders
 	var play_button=document.getElementById("play_button");
 	var pause_button=document.getElementById("pause_button");
+
+	// 添加速度控制逻辑
+	let speedSlider = document.getElementById('speed-slider');
+	let speedValue = document.getElementById('speed-value');
+
+	// 速度值映射表（与后端保持一致）
+	const speedMapping = {
+	    "1": 0.1,   // 非常慢
+	    "2": 0.2,   // 慢
+	    "3": 0.5,     // 正常速度
+	    "4": 1,     // 稍快 
+	    "5": 2,     // 中速
+	    "6": 4,     // 较快
+	    "7": 10,    // 快
+	    "8": 18,    // 很快
+	    "9": 24,    // 非常快
+	    "10": 32    // 最快
+	};
+
+	if (speedSlider) {
+	    // 更新显示值
+	    speedSlider.oninput = function() {
+	        speedValue.textContent = this.value;
+	        // 更新移动速度
+	        movement_speed = speedMapping[this.value];
+	        // 重新计算执行计数
+	        execute_count_max = tile_width / movement_speed;
+	    }
+	}
 </script>
 
 
