@@ -122,13 +122,19 @@ def run_reflect(persona):
     xx = [i.embedding_key for i in nodes]
     for xxx in xx: print (xxx)
 
+    print("\033[0;33m---in run_reflect---", persona.scratch.name, "start generate insights and evidence --\033[0m")
     thoughts = generate_insights_and_evidence(persona, nodes, 5)
+    print("\033[0;33m---in run_reflect---", persona.scratch.name, "finish generate insights and evidence and get ", thoughts, "--\033[0m")
     for thought, evidence in thoughts.items(): 
       created = persona.scratch.curr_time
       expiration = persona.scratch.curr_time + datetime.timedelta(days=30)
+      print("\033[0;33m---in run_reflect---", persona.scratch.name, "start get action event triple --\033[0m")
       s, p, o = generate_action_event_triple(thought, persona)
+      print("\033[0;33m---in run_reflect---", persona.scratch.name, "finish get action event triple and get", s, p, o, "--\033[0m")
       keywords = set([s, p, o])
+      print("\033[0;33m---in run_reflect---", persona.scratch.name, "start generate poig score --\033[0m")
       thought_poignancy = generate_poig_score(persona, "thought", thought)
+      print("\033[0;33m---in run_reflect---", persona.scratch.name, "finish generate poig score and get", thought_poignancy, "--\033[0m")
       thought_embedding_pair = (thought, get_embedding(thought))
 
       persona.a_mem.add_thought(created, expiration, s, p, o, 
@@ -185,7 +191,9 @@ def reflect(persona):
     None
   """
   if reflection_trigger(persona): 
+    print("\033[0;33m---in reflect---", persona.scratch.name, "start run_reflect--\033[0m")
     run_reflect(persona)
+    print("\033[0;33m---in reflect---", persona.scratch.name, "finish run_reflect --\033[0m")
     reset_reflection_counter(persona)
 
 

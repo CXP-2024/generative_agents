@@ -725,6 +725,9 @@ def run_gpt_prompt_action_arena(action_description,
       return False
     if "," in gpt_response: 
       return False
+    if __func_clean_up(gpt_response, prompt).strip() == "": 
+      print("\033[1;31mError: in run gpt_prompt_action_arena's validate, after clean up:", __func_clean_up(gpt_response, prompt), "\033[0m")
+      return False
     return True
   
   def get_fail_safe(): 

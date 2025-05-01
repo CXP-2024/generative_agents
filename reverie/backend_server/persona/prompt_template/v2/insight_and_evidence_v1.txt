@@ -8,5 +8,16 @@ Variables:
 Input:
 !<INPUT 0>!
 
+INSTRUCTIONS:
+Based on the statements above, provide key insights about !<INPUT 1>! in the exact format shown below:
+1. <Insight statement> (because of <reference numbers>)
+2. <Insight statement> (because of <reference numbers>)
+3. <Insight statement> (because of <reference numbers>)
+
+Example:
+1. John is deeply engaged in academic research (because of 1, 2, 4, 5, 6, 7, 10, 12, 13, 24, 25, 28)
+2. John maintains a structured daily routine (because of 0, 15, 18, 19, 20, 21, 22, 23, 11)
+
+Question:
 What !<INPUT 1>! high-level insights can you infer from the above statements? (example format: insight (because of 1, 5, 3)) Remember you should end up with ")"
 1.

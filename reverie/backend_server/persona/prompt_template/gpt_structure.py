@@ -133,6 +133,7 @@ def ChatGPT_safe_generate_response(prompt,
   # prompt = 'GPT-3 Prompt:\n"""\n' + prompt + '\n"""\n'
   prompt = '"""\n' + prompt + '\n"""\n'
   prompt += f"Output the response to the prompt above in json. {special_instruction}\n"
+  prompt += "Your response must be valid JSON without markdown formatting or code blocks. Do not wrap the JSON in ```json or ``` tags.\n"
   prompt += "Example output json:\n"
   prompt += '{"output": "' + str(example_output) + '"}'
 
