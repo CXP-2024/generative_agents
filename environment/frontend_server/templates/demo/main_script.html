@@ -390,20 +390,22 @@
 
 
 	function update(time, delta) {
-		// *** SETUP PLAY AND PAUSE BUTTON *** 
-		let play_context = this;
-		function game_resume() {  
-			play_context.scene.resume();
-		}  
-		play_button.onclick = function(){
-			game_resume();
-		};
-		function game_pause() {  
-			play_context.scene.pause();
-		}  
-		pause_button.onclick = function(){
-			game_pause();
-		};
+		// Set play_context for the global functions to use
+    play_context = this;
+    
+    // Delete these duplicate function definitions
+    // function game_resume() {  
+    //     play_context.scene.resume();
+    // }  
+    // play_button.onclick = function(){
+    //     game_resume();
+    // };
+    // function game_pause() {  
+    //     play_context.scene.pause();
+    // }  
+    // pause_button.onclick = function(){
+    //     game_pause();
+    // };
 
 	  // *** MOVE CAMERA *** 
 	  // This is where we finish up the camera setting we started in the create() 
@@ -568,8 +570,76 @@
 	}
 
 	// Control button binders
-	var play_button=document.getElementById("play_button");
-	var pause_button=document.getElementById("pause_button");
+	var play_button = document.getElementById("play_button");
+	var pause_button = document.getElementById("pause_button");
+	var prev_frame_button = document.getElementById("prev_frame_button");
+	var next_frame_button = document.getElementById("next_frame_button");
+
+	// Add frame-by-frame navigation function
+	function enableFrameButtons() {
+	    prev_frame_button.disabled = false;
+	    next_frame_button.disabled = false;
+	}
+
+	function disableFrameButtons() {
+	    prev_frame_button.disabled = true;
+	    next_frame_button.disabled = true;
+	}
+
+	// Update existing game_resume function to disable frame buttons
+	function game_resume() {  
+	    play_context.scene.resume();
+	    disableFrameButtons();
+	}  
+
+	play_button.onclick = function(){
+		game_resume();
+	};
+
+	function game_pause() {  
+	    play_context.scene.pause();
+	    enableFrameButtons();
+	}  
+
+	pause_button.onclick = function(){
+		game_pause();
+	};
+
+	// Add handlers for the new buttons
+	prev_frame_button.onclick = function() {
+	    if (step > 0) {
+	        step = step - 1;
+	        // Reset execution counter to trigger movement updates
+	        execute_count = execute_count_max + 1;
+	        
+	        // Update the game time display
+	        start_datetime = new Date(start_datetime.getTime() - step_size);
+	        document.getElementById("game-time-content").innerHTML = start_datetime.toLocaleTimeString("en-US", datetime_options);
+	        
+	        // Force an update to show the new frame
+	        play_context.scene.resume();
+	        setTimeout(function() { play_context.scene.pause(); }, 50);
+	    }
+	};
+
+	next_frame_button.onclick = function() {
+	    if (step < Object.keys(all_movement).length - 1) {
+	        step = step + 1;
+	        // Reset execution counter to trigger movement updates
+	        execute_count = execute_count_max + 1;
+	        
+	        // Update the game time display
+	        start_datetime = new Date(start_datetime.getTime() + step_size);
+	        document.getElementById("game-time-content").innerHTML = start_datetime.toLocaleTimeString("en-US", datetime_options);
+	        
+	        // Force an update to show the new frame
+	        play_context.scene.resume();
+	        setTimeout(function() { play_context.scene.pause(); }, 50);
+	    }
+	};
+
+	// Initialize button states
+	disableFrameButtons();
 
 	// 添加速度控制逻辑
 	let speedSlider = document.getElementById('speed-slider');
