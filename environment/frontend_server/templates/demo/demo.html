@@ -43,10 +43,18 @@
 
 				<!-- 速度控制滑块行 -->
 				<div style="display: flex; justify-content: center; align-items: center; margin-bottom: 15px;">
-					<label for="speed-slider" style="margin-right: 10px; min-width: 80px;">
-						<strong>Speed: <span id="speed-value">3</span></strong>
+					<label for="speed-slider" style="margin-right: 10px; min-width: 140px;">
+						<strong>Simulation Speed: <span id="speed-value">3</span></strong>
 					</label>
-					<input type="range" id="speed-slider" min="1" max="10" step="1" value="3" style="width: 300px;">
+					<input type="range" id="speed-slider" min="1" max="6" step="1" value="3" style="width: 200px;">
+				</div>
+
+				<!-- 帧导航速度控制滑块 -->
+				<div style="display: flex; justify-content: center; align-items: center; margin-bottom: 15px;">
+					<label for="frame-speed-slider" style="margin-right: 10px; min-width: 140px;">
+						<strong>Frame Nav Speed: <span id="frame-speed-value">5</span></strong>
+					</label>
+					<input type="range" id="frame-speed-slider" min="1" max="10" step="1" value="5" style="width: 300px;">
 				</div>
 			</div>
 		</div>
@@ -60,7 +68,7 @@
 				<div class="row" style="">
 					{% for p in persona_names %}
 					<div class="col-md-2 col-sm-2" style="text-align:center; margin-bottom:0.8em;">
-						<a href="#" id="on_screen_det_trigger-{{p.underscore}}">
+						<div id="on_screen_det_trigger-{{p.underscore}}" style="cursor: pointer;">
 							<div class="row" style="padding:0">
 								<div class="col-md-4" id="on_screen_det_trigger_container-{{p.underscore}}"
 									style="text-align:center; padding:0; padding-top:0.3em">
@@ -74,7 +82,7 @@
 									<span style="font-size:1.5em" id="quick_emoji-{{p.underscore}}"></span>
 								</div>
 							</div>
-						</a>
+						</div>
 					</div>
 					{% endfor %}
 				</div>
