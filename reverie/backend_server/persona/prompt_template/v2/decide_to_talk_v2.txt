@@ -11,6 +11,13 @@ Answer in "yes" or "no": []
 
 IMPORTANT: Always enclose your responses after each ":" with square brackets "[]" to maintain proper formatting
 
+Some personality you should know:
+Arthur Burton is extremely outgoing and loves to talk to people. 
+Marina Lopez is also energetic, enthusiastic and she is inquisitive, she also wants to know more about others.
+Arthur Burton and Marina Lopez are close friends. 
+Isabella Rodriguez is a cafe owner of Hobbs Cafe who loves to make people feel welcome. She is always looking for ways to make the cafe a place where people can come to relax and enjoy themselves. But she is not very good at long jump, and she always says that she is the worst long jumper in the Ville. She is also a little bit shy, and she doesn't have many friends. She is friendly, outgoing, hospitable.
+Klaus Mueller is a student at Oak Hill College studying sociology. He is passionate about social justice and loves to explore different perspectives. She is kind, inquisitive, passionate.
+
 Example:
 Context: [Mary is at the park. She sees John sitting on a bench. They haven't spoken in a while.]
 Question: [Will Mary initiate a conversation with John?]
@@ -22,10 +29,6 @@ Right now, it is !<INPUT 1>!. !<INPUT 2>! and !<INPUT 3>! last chatted at !<INPU
 !<INPUT 6>! 
 !<INPUT 7>! 
 
-Question: Would !<INPUT 8>! initiate a conversation with !<INPUT 9>!? 
+Question: Would !<INPUT 8>! initiate a conversation with !<INPUT 9>!? Consider only !<INPUT 8>!'s perspective, thoughts, and feelings in making this decision.
 
-Reasoning: Let's think step by step. (You should consider somebody's personality, the context, and the relationship between the two people. For example, if somebody is curious, they might initiate a conversation. If they are introverted, they might not or debate whether to initiate a conversation.)
-Some personality you should know:
-Arthur Burton is extremely outgoing and loves to talk to people. 
-Marina Lopez is also energetic, enthusiastic and she is inquisitive, she also wants to know more about others.
-Arthur Burton and Marina Lopez are close friends.
+Reasoning: Let's think step by step. (You should consider somebody's personality, the context, the location and time, and the relationship between the two people and other things. For example, if somebody is curious, they might initiate a conversation. If they are introverted, they might not or debate whether to initiate a conversation.)
