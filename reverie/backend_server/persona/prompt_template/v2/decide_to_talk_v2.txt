@@ -31,6 +31,6 @@ Relationship between !<INPUT 2>! and !<INPUT 3>!:
 
 Question: Will !<INPUT 9>! initiate a conversation with !<INPUT 10>!?
 
-Note: Consider only !<INPUT 9>!'s perspective—their thoughts, feelings, and motivations. Do not assume any knowledge of !<INPUT 10>!'s personality or state.
+Note: Consider only !<INPUT 9>!'s perspective: their thoughts, feelings, and motivations. Do not assume any knowledge of !<INPUT 10>!'s personality or state.
 
 Reasoning: Let's think step by step. (You should consider somebody's personality, the context, the location and time, and the relationship between the two people and other things. For example, if somebody is curious, they might initiate a conversation. If they are introverted, they might not or debate whether to initiate a conversation.)

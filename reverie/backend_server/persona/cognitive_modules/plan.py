@@ -882,12 +882,12 @@ def _chat_react(maze, persona, focused_event, reaction_mode, personas):
   curr_personas = [init_persona, target_persona]
 
   # Actually creating the conversation here. 
-  print("\033[0;33m-----chat react----", init_persona.name , " start a chat with", target_persona.name, "\033[0m")
+  print("\033[0;33m-----in chat react----", init_persona.name , " start a chat with", target_persona.name, "\033[0m")
   convo, duration_min = generate_convo(maze, init_persona, target_persona)
-  print("\033[0;33m-----chat react----", init_persona.name , " finished a chat with", target_persona.name, "\033[0m")
-  print("\033[0;33m-----chat react----", init_persona.name , " start a conversation summary", target_persona.name, "\033[0m")
+  print("\033[0;33m-----in chat react----", init_persona.name , " finished a chat with", target_persona.name, "\033[0m")
+  print("\033[0;33m-----in chat react----", init_persona.name , " start a conversation summary with", target_persona.name, "\033[0m")
   convo_summary = generate_convo_summary(init_persona, convo)
-  print("\033[0;33m-----chat react----", init_persona.name , " finish a conversation summary", target_persona.name, "\033[0m")
+  print("\033[0;33m-----in chat react----", init_persona.name , " finish a conversation summary with", target_persona.name, "\033[0m")
   inserted_act = convo_summary
   inserted_act_dur = duration_min
 
@@ -919,15 +919,15 @@ def _chat_react(maze, persona, focused_event, reaction_mode, personas):
     act_obj_pronunciatio = None
     act_obj_event = (None, None, None)
 
-    print("\033[0;33m-----chat react----", p.name , " start a create_react and decomp plan", target_persona.name, "\033[0m")
+    print("\033[0;33m-----in chat react----", p.name , " start a create_react and decomp plan", target_persona.name, "\033[0m")
     _create_react(p, inserted_act, inserted_act_dur,
       act_address, act_event, chatting_with, convo, chatting_with_buffer, chatting_end_time,
       act_pronunciatio, act_obj_description, act_obj_pronunciatio, 
       act_obj_event, act_start_time)
-    print("\033[0;33m-----chat react----", p.name , " finish a create_react and decom plan", target_persona.name, "\033[0m")
+    print("\033[0;33m-----in chat react----", p.name , " finish a create_react and decom plan", target_persona.name, "\033[0m")
 
 
-def _wait_react(persona, reaction_mode): 
+def _wait_react(persona, reaction_mode):
   p = persona
 
   inserted_act = f'waiting to start {p.scratch.act_description.split("(")[-1][:-1]}'

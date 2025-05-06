@@ -123,14 +123,38 @@ def generate_one_utterance(maze, init_persona, target_persona, retrieved, curr_c
 
   return x["utterance"], x["end"]
 
+def print_retrieved_items(persona_name, focal_points, retrieved):
+    """格式化打印检索到的记忆项，提高可读性"""
+    print(f"\033[0;33m-------in agent_chat_v2------, {persona_name} finish retrieved.\033[0m")
+    
+    total_items = 0
+    for key, items in retrieved.items():
+        total_items += len(items)
+        print(f"\033[0;33m  >> Topic: '{key}' - Found {len(items)} memories\033[0m")
+        
+        # 只显示前3个项目的实际内容
+        for i, item in enumerate(items[:10]):
+            memory_content = item.embedding_key if hasattr(item, 'embedding_key') else str(item)
+            print(f"\033[0;36m    {i+1}. {memory_content[:100]}{'...' if len(memory_content) > 100 else ''}\033[0m")
+        
+        # 如果有更多项目，只显示数量
+        if len(items) > 10:
+            print(f"\033[0;36m    ... and {len(items) - 10} more items\033[0m")
+    
+    print(f"\033[0;33m  Total: {total_items} memories retrieved\033[0m")
+
 def agent_chat_v2(maze, init_persona, target_persona): 
   curr_chat = []
   print ("July 23")
 
   for i in range(8): 
     focal_points = [f"{target_persona.scratch.name}"]
+    print("\033[0;33m-------in agent_chat_v2------,", init_persona.scratch.name, "start a retrieve about", focal_points, "\033[0m")
     retrieved = new_retrieve(init_persona, focal_points, 50)
+    print_retrieved_items(init_persona.scratch.name, focal_points, retrieved)
+    print("\033[0;33m-------in agent_chat_v2------start a relationship summarize between ", init_persona.scratch.name, "and", target_persona.scratch.name, "\033[0m")
     relationship = generate_summarize_agent_relationship(init_persona, target_persona, retrieved)
+    print("\033[0;33m-------in agent_chat_v2------finish a relationship summarize between ", target_persona.scratch.name, "and", init_persona.scratch.name, "\033[0m")
     print ("-------- relationshopadsjfhkalsdjf", relationship)
     last_chat = ""
     for i in curr_chat[-4:]:
@@ -142,8 +166,12 @@ def agent_chat_v2(maze, init_persona, target_persona):
     else: 
       focal_points = [f"{relationship}", 
                       f"{target_persona.scratch.name} is {target_persona.scratch.act_description}"]
+    print("\033[0;33m-------in agent_chat_v2------,", init_persona.scratch.name, "start a retrieve about ", focal_points, "\033[0m")
     retrieved = new_retrieve(init_persona, focal_points, 15)
+    print_retrieved_items(init_persona.scratch.name, focal_points, retrieved)
+    print("\033[0;33m-------in agent_chat_v2------,", init_persona.scratch.name, "start a generate one utterance.\033[0m")
     utt, end = generate_one_utterance(maze, init_persona, target_persona, retrieved, curr_chat)
+    print("\033[0;33m-------in agent_chat_v2------,", init_persona.scratch.name, "finish a generate one utterance.\033[0m")
 
     curr_chat += [[init_persona.scratch.name, utt]]
     if end:
@@ -151,8 +179,12 @@ def agent_chat_v2(maze, init_persona, target_persona):
 
 
     focal_points = [f"{init_persona.scratch.name}"]
+    print("\033[0;33m-------in agent_chat_v2------,", target_persona.scratch.name, "start a retrieve about ", focal_points, "\033[0m")
     retrieved = new_retrieve(target_persona, focal_points, 50)
+    print_retrieved_items(target_persona.scratch.name, focal_points, retrieved)
+    print("\033[0;33m-------in agent_chat_v2------start a relationship summarize between ", target_persona.scratch.name, "and", init_persona.scratch.name, "\033[0m")
     relationship = generate_summarize_agent_relationship(target_persona, init_persona, retrieved)
+    print("\033[0;33m-------in agent_chat_v2------finish a relationship summarize between ", target_persona.scratch.name, "and", init_persona.scratch.name, "\033[0m")
     print ("-------- relationshopadsjfhkalsdjf", relationship)
     last_chat = ""
     for i in curr_chat[-4:]:
@@ -164,8 +196,12 @@ def agent_chat_v2(maze, init_persona, target_persona):
     else: 
       focal_points = [f"{relationship}", 
                       f"{init_persona.scratch.name} is {init_persona.scratch.act_description}"]
+    print("\033[0;33m-------in agent_chat_v2------,", target_persona.scratch.name, "start a retrieve about ", focal_points, "\033[0m")
     retrieved = new_retrieve(target_persona, focal_points, 15)
+    print_retrieved_items(target_persona.scratch.name, focal_points, retrieved)
+    print("\033[0;33m-------in agent_chat_v2------,", target_persona.scratch.name, "start a generate one utterance.\033[0m")
     utt, end = generate_one_utterance(maze, target_persona, init_persona, retrieved, curr_chat)
+    print("\033[0;33m-------in agent_chat_v2------,", target_persona.scratch.name, "finish a generate one utterance.\033[0m")
 
     curr_chat += [[target_persona.scratch.name, utt]]
     if end:
