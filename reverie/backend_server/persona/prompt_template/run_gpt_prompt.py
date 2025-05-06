@@ -1306,62 +1306,68 @@ def run_gpt_prompt_decide_to_talk(persona, target_persona, retrieved,test_input=
   def create_prompt_input(init_persona, target_persona, retrieved, 
                           test_input=None): 
     last_chat = init_persona.a_mem.get_last_chat(target_persona.name)
-    last_chatted_time = ""
-    last_chat_about = ""
-    if last_chat: 
-      last_chatted_time = last_chat.created.strftime("%B %d, %Y, %H:%M:%S")
-      last_chat_about = last_chat.description
+    if last_chat:
+      last_chat_time = last_chat.created.strftime("%A %B %d, %H:%M %p")
+      last_chat_summary = last_chat.description
+    else:
+      last_chat_time = "never"
+      last_chat_summary = "N/A"
 
-    context = ""
-    for c_node in retrieved["events"]: 
-      curr_desc = c_node.description.split(" ")
-      curr_desc[2:3] = ["was"]
-      curr_desc = " ".join(curr_desc)
-      context +=  f"{curr_desc}. "
-    context += "\n"
-    for c_node in retrieved["thoughts"]: 
-      context +=  f"{c_node.description}. "
-
-    curr_time = init_persona.scratch.curr_time.strftime("%B %d, %Y, %H:%M:%S %p")
-    init_act_desc = init_persona.scratch.act_description
-    if "(" in init_act_desc: 
-      init_act_desc = init_act_desc.split("(")[-1][:-1]
+		 # Build context from current situation
+    curr_loc = init_persona.scratch.act_address.split(":")
+    if len(curr_loc) >= 3:
+      loc_str = f"{init_persona.scratch.name} is at {curr_loc[2]}"
+    else:
+      loc_str = f"{init_persona.scratch.name} is at {init_persona.scratch.act_address}"
     
-    if len(init_persona.scratch.planned_path) == 0 and "waiting" not in init_act_desc: 
-      init_p_desc = f"{init_persona.name} is already {init_act_desc}"
-    elif "waiting" in init_act_desc:
-      init_p_desc = f"{init_persona.name} is {init_act_desc}"
-    else: 
-      init_p_desc = f"{init_persona.name} is on the way to {init_act_desc}"
-
-    target_act_desc = target_persona.scratch.act_description
-    if "(" in target_act_desc: 
-      target_act_desc = target_act_desc.split("(")[-1][:-1]
+		 # Dynamic agent information - initiating persona
+    init_persona_info = f"{init_persona.scratch.name}'s personality: {init_persona.scratch.innate}. "
+    init_persona_info += f"{init_persona.scratch.name} is {init_persona.scratch.learned} "
+    init_persona_info += f"Currently: {init_persona.scratch.currently} "
+    init_persona_info += f"Lifestyle: {init_persona.scratch.lifestyle}"
     
-    if len(target_persona.scratch.planned_path) == 0 and "waiting" not in init_act_desc: 
-      target_p_desc = f"{target_persona.name} is already {target_act_desc}"
-    elif "waiting" in init_act_desc:
-      target_p_desc = f"{init_persona.name} is {init_act_desc}"
-    else: 
-      target_p_desc = f"{target_persona.name} is on the way to {target_act_desc}"
-
-
-    prompt_input = []
-    prompt_input += [context]
-
-    prompt_input += [curr_time]
-
-    prompt_input += [init_persona.name]
-    prompt_input += [target_persona.name]
-    prompt_input += [last_chatted_time]
-    prompt_input += [last_chat_about]
-
-
-    prompt_input += [init_p_desc]
-    prompt_input += [target_p_desc]
-    prompt_input += [init_persona.name]
-    prompt_input += [target_persona.name]
-    return prompt_input
+    # Dynamic agent information - target persona
+    target_persona_info = f"{target_persona.scratch.name}'s personality: {target_persona.scratch.innate}. "
+    target_persona_info += f"{target_persona.scratch.name} is {target_persona.scratch.learned} "
+    target_persona_info += f"Currently: {target_persona.scratch.currently} "
+    target_persona_info += f"Lifestyle: {target_persona.scratch.lifestyle}"
+    
+		# Current activity context
+    init_activity = f"{init_persona.scratch.name} is currently {init_persona.scratch.act_description}"
+    target_activity = f"{target_persona.scratch.name} is currently {target_persona.scratch.act_description}"
+    
+    # FIX: Handle both list and single ConceptNode cases
+    relationship_context = ""
+    for key, memory_list in retrieved.items():
+      if isinstance(memory_list, list):  # If it's a list
+        for memory in memory_list:
+          if isinstance(memory, list) and len(memory) > 0:
+            for mem in memory:
+              if hasattr(mem, 'embedding_key') and target_persona.scratch.name in mem.embedding_key and "relationship" in mem.embedding_key.lower():
+                relationship_context += mem.embedding_key + ". "
+          elif hasattr(memory, 'embedding_key') and target_persona.scratch.name in memory.embedding_key and "relationship" in memory.embedding_key.lower():
+            relationship_context += memory.embedding_key + ". "
+      else:  # If it's a single ConceptNode
+        if hasattr(memory_list, 'embedding_key') and target_persona.scratch.name in memory_list.embedding_key and "relationship" in memory_list.embedding_key.lower():
+          relationship_context += memory_list.embedding_key + ". "
+    
+    if not relationship_context:
+      relationship_context = "They have no specific recorded relationship context."
+    
+		 # Combine all context
+    context = f"{loc_str}. {init_activity}. {target_activity}."
+    
+    return [context, 
+            init_persona.scratch.curr_time.strftime("%A %B %d, %H:%M %p"),
+            init_persona.scratch.name, 
+            target_persona.scratch.name,
+            last_chat_time,
+            last_chat_summary,
+            init_persona_info,
+            target_persona_info,
+            relationship_context,  # Add this line
+            init_persona.scratch.name,
+            target_persona.scratch.name]
   
   def __func_validate(gpt_response, prompt=""): 
     try: 
@@ -1394,9 +1400,15 @@ def run_gpt_prompt_decide_to_talk(persona, target_persona, retrieved,test_input=
                "temperature": 0, "top_p": 1, "stream": False,
                "frequency_penalty": 0, "presence_penalty": 0, "stop": None}
   prompt_template = "persona/prompt_template/v2/decide_to_talk_v2.txt"
-  prompt_input = create_prompt_input(persona, target_persona, retrieved,
+  
+  try:
+    prompt_input = create_prompt_input(persona, target_persona, retrieved,
                                      test_input)
-  prompt = generate_prompt(prompt_input, prompt_template)
+    prompt = generate_prompt(prompt_input, prompt_template)
+  except Exception as e:
+    print("\033[1;31mError: in run gpt_prompt_decide_to_talk's create_prompt_input\033[0m")
+    print(e)
+    return False, [False, prompt_template, gpt_param, prompt_input, "yes"]
 
   fail_safe = get_fail_safe()
   output = safe_generate_response(prompt, gpt_param, 5, fail_safe,

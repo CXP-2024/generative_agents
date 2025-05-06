@@ -276,7 +276,7 @@ class ReverieServer:
       time.sleep(self.server_sleep * 10)
 
 
-  def start_server(self, int_counter): 
+  def start_server(self, int_counter, debug_mode=False): 
     """
     The main backend server of Reverie. 
     This function retrieves the environment file from the frontend to 
@@ -286,6 +286,7 @@ class ReverieServer:
     INPUT
       int_counter: Integer value for the number of steps left for us to take
                    in this iteration. 
+      debug_mode: If True, runs without frontend interaction
     OUTPUT 
       None
     """
@@ -312,30 +313,57 @@ class ReverieServer:
       # frontend has done its job and moved the personas, then it will put a 
       # new environment file that matches our step count. That's when we run 
       # the content of this for loop. Otherwise, we just wait. 
-      curr_env_file = f"{sim_folder}/environment/{self.step}.json"
-      if check_if_file_exists(curr_env_file):
-        # If we have an environment file, it means we have a new perception
-        # input to our personas. So we first retrieve it.
-        try: 
-          # Try and save block for robustness of the while loop.
-          with open(curr_env_file) as json_file:
-            new_env = json.load(json_file)
-            env_retrieved = True
-        except: 
-          pass
+      # curr_env_file = f"{sim_folder}/environment/{self.step}.json"
+      # if check_if_file_exists(curr_env_file):
+      #   # If we have an environment file, it means we have a new perception
+      #   # input to our personas. So we first retrieve it.
+      #   try: 
+      #     # Try and save block for robustness of the while loop.
+      #     with open(curr_env_file) as json_file:
+      #       new_env = json.load(json_file)
+      #       env_retrieved = True
+      #   except: 
+      #     pass
+      # Skip file checking in debug mode# In debug mode, we don't need to wait for environment files
+      env_retrieved = debug_mode
+      new_env = {}
       
-        if env_retrieved: 
-          # This is where we go through <game_obj_cleanup> to clean up all 
-          # object actions that were used in this cylce. 
+      # In debug mode, generate our own environment data based on current state
+      if debug_mode:
+          # Create environment data based on current persona positions
+          for persona_name, position in self.personas_tile.items():
+              new_env[persona_name] = {"x": position[0], "y": position[1]}
+          
+          # Save environment file for this step (for record keeping)
+          env_path = f"{sim_folder}/environment"
+          if not os.path.exists(env_path):
+              os.makedirs(env_path)
+          env_file = f"{sim_folder}/environment/{self.step}.json"
+          with open(env_file, "w") as outfile:
+              outfile.write(json.dumps(new_env, indent=2))
+      # In normal mode, check for environment files from frontend
+      else:
+          curr_env_file = f"{sim_folder}/environment/{self.step}.json"
+          if check_if_file_exists(curr_env_file):
+              try: 
+                  with open(curr_env_file) as json_file:
+                      new_env = json.load(json_file)
+                      env_retrieved = True
+              except: 
+                  pass
+
+      if env_retrieved:
+          # This is where we go through <game_obj_cleanup> to clean up all
+          # object actions that were used in this cycle.
           for key, val in game_obj_cleanup.items(): 
             # We turn all object actions to their blank form (with None). 
             self.maze.turn_event_from_tile_idle(key, val)
           # Then we initialize game_obj_cleanup for this cycle. 
           game_obj_cleanup = dict()
 
-          # We first move our personas in the backend environment to match 
-          # the frontend environment. 
-          for persona_name, persona in self.personas.items(): 
+          # Only process frontend environment data if not in debug mode
+          if not debug_mode:
+           for persona_name, persona in self.personas.items(): 
             # <curr_tile> is the tile that the persona was at previously. 
             curr_tile = self.personas_tile[persona_name]
             # <new_tile> is the tile that the persona will move to right now,
@@ -372,6 +400,7 @@ class ReverieServer:
                        "meta": dict()}
           print("\n\n\n\033[1;3;34mStart Step: ", self.step, "\033[0m")
           print("\033[1;3;34mCurrent Time: ", self.curr_time, "\033[0m")
+          
           for persona_name, persona in self.personas.items(): 
             # <next_tile> is a x,y coordinate. e.g., (58, 9)
             # <pronunciatio> is an emoji. e.g., "\ud83d\udca4"
@@ -390,6 +419,13 @@ class ReverieServer:
             movements["persona"][persona_name]["description"] = description
             movements["persona"][persona_name]["chat"] = (persona
                                                           .scratch.chat)
+            
+						# in debug mode, update the persona's tile immediately
+            if debug_mode:
+                  curr_tile = self.personas_tile[persona_name]
+                  self.personas_tile[persona_name] = next_tile
+                  self.maze.remove_subject_events_from_tile(persona.name, curr_tile)
+                  self.maze.add_event_from_tile(persona.scratch.get_curr_event_and_desc(), next_tile)
 
           # Include the meta information about the current stage in the 
           # movements dictionary. 
@@ -397,13 +433,12 @@ class ReverieServer:
                                              .strftime("%B %d, %Y, %H:%M:%S"))
 
           # We then write the personas' movements to a file that will be sent 
-          # to the frontend server. 
+          # to the frontend server. always save the file in json format.
           # Example json output: 
           # {"persona": {"Maria Lopez": {"movement": [58, 9]}},
           #  "persona": {"Klaus Mueller": {"movement": [38, 12]}}, 
           #  "meta": {curr_time: <datetime>}}
           curr_move_path = f"{sim_folder}/movement"
-          # If the folder doesn't exist, we create it.
           if not os.path.exists(curr_move_path):
             os.makedirs(curr_move_path)
           curr_move_file = f"{sim_folder}/movement/{self.step}.json"
@@ -417,8 +452,9 @@ class ReverieServer:
 
           int_counter -= 1
           
-      # Sleep so we don't burn our machines. 
-      time.sleep(self.server_sleep)
+      # Only wait between steps in non-debug mode
+      if not debug_mode:
+          time.sleep(self.server_sleep)
 
 
   def open_server(self): 
@@ -475,6 +511,12 @@ class ReverieServer:
           # Example: run 1000
           int_count = int(sim_command.split()[-1])
           rs.start_server(int_count)
+        
+        elif sim_command[:9].lower() == "debug run":
+          # Runs the number of steps specified in the prompt.
+					# Example: debug run 1000
+          int_count = int(sim_command.split()[-1])
+          rs.start_server(int_count, debug_mode=True)
 
         elif ("print persona schedule" 
               in sim_command[:22].lower()): 

@@ -805,7 +805,8 @@ def _should_react(persona, retrieved, personas):
 
   if ":" not in curr_event.subject: 
     # this is a persona event. 
-    print("\033[0;33mcurrent event: ", curr_event, "\033[0m")
+    print("\033[0;33m-----in should_react-----", persona.name, 
+      f"Current Event: {curr_event.subject} {curr_event.predicate} {curr_event.object}" if curr_event else "None", "\033[0m")
     print("\033[0;33m", persona.name, " try to find whether to talk\033[0m")
     if lets_talk(persona, personas[curr_event.subject], retrieved):
       print("\033[0;33m", persona.name, " decide to talk with", curr_event.subject, "\033[0m")
@@ -997,7 +998,8 @@ def plan(persona, maze, personas, new_day, retrieved):
   if retrieved.keys(): 
     print("\033[1;33m", persona.name , " start a choose_retrieved: \033[0m")
     focused_event = _choose_retrieved(persona, retrieved)
-    print("\033[1;33m", persona.name , " finished choose_retrieved and get the focused_event ", focused_event, "\033[0m")
+    print("\033[1;33m", persona.name, " finished choose_retrieved and get the focused_event ", 
+      f"Event: {focused_event['curr_event'].subject} {focused_event['curr_event'].predicate} {focused_event['curr_event'].object}" if focused_event else "None", "\033[0m")
   
   # Step 2: Once we choose an event, we need to determine whether the
   #         persona will take any actions for the perceived event. There are

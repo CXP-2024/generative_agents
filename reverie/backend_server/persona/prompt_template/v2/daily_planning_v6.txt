@@ -15,8 +15,7 @@ Please create a detailed daily plan following this format:
 2) <task> at <specific time> or from <start time> to <end time>,
 3) <task> at <specific time> or from <start time> to <end time>
 
-Only use parentheses for the numbering (e.g., "1)"). Be specific with all times.
-You should start with "1) "
+Use parentheses for numbering (e.g., "1)"). Specify exact times for each task. Begin the list directly with "1) " rather than an introductory phrase.
 
 In general, !<INPUT 1>!
 Today is !<INPUT 2>!. Here is !<INPUT 3>!'s plan today in broad-strokes (with the time of the day. e.g., have a lunch at 12:00 pm, watch TV from 7 to 8 pm): 
