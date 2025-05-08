@@ -98,7 +98,25 @@ def generate_memo_on_convo(persona, all_utt):
   return run_gpt_prompt_memo_on_convo(persona, all_utt)[0]
 
 
-
+def print_retrieved_items(persona_name, focal_points, retrieved):
+    """格式化打印检索到的记忆项，提高可读性"""
+    print(f"\033[0;33m-------in agent_chat_v2------, {persona_name} finish retrieved.\033[0m")
+    
+    total_items = 0
+    for key, items in retrieved.items():
+        total_items += len(items)
+        print(f"\033[0;33m  >> Topic: '{key}' - Found {len(items)} memories\033[0m")
+        
+        # 只显示前3个项目的实际内容
+        for i, item in enumerate(items[:10]):
+            memory_content = item.embedding_key if hasattr(item, 'embedding_key') else str(item)
+            print(f"\033[0;36m    {i+1}. {memory_content[:100]}{'...' if len(memory_content) > 100 else ''}\033[0m")
+        
+        # 如果有更多项目，只显示数量
+        if len(items) > 10:
+            print(f"\033[0;36m    ... and {len(items) - 10} more items\033[0m")
+    
+    print(f"\033[0;33m  Total: {total_items} memories retrieved\033[0m")
 
 def run_reflect(persona):
   """
@@ -111,10 +129,18 @@ def run_reflect(persona):
     None
   """
   # Reflection requires certain focal points. Generate that first. 
+  print("\033[0;33m---in run_reflect---", persona.scratch.name, "start generate focal points --\033[0m")
   focal_points = generate_focal_points(persona, 3)
+  print("\033[0;33m---in run_reflect---", persona.scratch.name, "finish generate focal points and get: \n", focal_points, "--\033[0m")
   # Retrieve the relevant Nodes object for each of the focal points. 
   # <retrieved> has keys of focal points, and values of the associated Nodes. 
   retrieved = new_retrieve(persona, focal_points)
+  print_retrieved_items(persona.scratch.name, focal_points, retrieved)
+  statements = ""
+  for key, val in retrieved.items():
+    for i in val: 
+      statements += f"{i.created.strftime('%A %B %d -- %H:%M %p')}: {i.embedding_key}\n"
+  print("\033[0;33m---in run_reflect---", persona.scratch.name, "finish retrieve and get: ", statements, "--\033[0m")
 
   # For each of the focal points, generate thoughts and save it in the 
   # agent's memory. 
@@ -124,22 +150,23 @@ def run_reflect(persona):
 
     print("\033[0;33m---in run_reflect---", persona.scratch.name, "start generate insights and evidence --\033[0m")
     thoughts = generate_insights_and_evidence(persona, nodes, 5)
-    print("\033[0;33m---in run_reflect---", persona.scratch.name, "finish generate insights and evidence and get ", thoughts, "--\033[0m")
+    print("\033[0;33m---in run_reflect---", persona.scratch.name, "finish generate insights and evidence and get thoughts: ", thoughts, "--\033[0m")
     for thought, evidence in thoughts.items(): 
       created = persona.scratch.curr_time
       expiration = persona.scratch.curr_time + datetime.timedelta(days=30)
       print("\033[0;33m---in run_reflect---", persona.scratch.name, "start get action event triple --\033[0m")
       s, p, o = generate_action_event_triple(thought, persona)
-      print("\033[0;33m---in run_reflect---", persona.scratch.name, "finish get action event triple and get", s, p, o, "--\033[0m")
+      print("\033[0;33m---in run_reflect---", persona.scratch.name, "finish get action event triple and get:", s, p, o, "--\033[0m")
       keywords = set([s, p, o])
       print("\033[0;33m---in run_reflect---", persona.scratch.name, "start generate poig score --\033[0m")
       thought_poignancy = generate_poig_score(persona, "thought", thought)
-      print("\033[0;33m---in run_reflect---", persona.scratch.name, "finish generate poig score and get", thought_poignancy, "--\033[0m")
+      print("\033[0;33m---in run_reflect---", persona.scratch.name, "finish generate poig score and get:", thought_poignancy, "--\033[0m")
       thought_embedding_pair = (thought, get_embedding(thought))
 
       persona.a_mem.add_thought(created, expiration, s, p, o, 
                                 thought, keywords, thought_poignancy, 
                                 thought_embedding_pair, evidence)
+      print("\033[0;33m---in run_reflect---", persona.scratch.name, "finish add a thought and evidence:", thought, evidence, "--\033[0m")
 
 
 def reflection_trigger(persona): 
@@ -157,11 +184,12 @@ def reflection_trigger(persona):
     False otherwise. 
   """
   print (persona.scratch.name, "persona.scratch.importance_trigger_curr::", persona.scratch.importance_trigger_curr)
-  print (persona.scratch.importance_trigger_max)
+  print ("persona.scratch.importance_trigger_max::", persona.scratch.importance_trigger_max)
 
   if (persona.scratch.importance_trigger_curr <= 0 and 
       [] != persona.a_mem.seq_event + persona.a_mem.seq_thought): 
     return True 
+  print("\033[0;33m---in reflection_trigger---", persona.scratch.name, "decide not to run reflection --\033[0m")
   return False
 
 
@@ -200,13 +228,18 @@ def reflect(persona):
 
   # print (persona.scratch.name, "al;sdhfjlsad", persona.scratch.chatting_end_time)
   if persona.scratch.chatting_end_time: 
+    print("\033[0;33m---in reflect---", persona.scratch.name, "start check if we are in a chat --\033[0m")
+    print("current time + 5min:", persona.scratch.curr_time + datetime.timedelta(0,300))  ### IMPORTANT TIME
+    print("chatting end time:", persona.scratch.chatting_end_time)
     # print("DEBUG", persona.scratch.curr_time + datetime.timedelta(0,10))
-    if persona.scratch.curr_time + datetime.timedelta(0,10) == persona.scratch.chatting_end_time: 
+    if persona.scratch.curr_time + datetime.timedelta(0,300) >= persona.scratch.chatting_end_time: 
       # print ("KABOOOOOMMMMMMM")
+      print("\033[0;33m---in reflect---", persona.scratch.name, "start reflect after a chat! --\033[0m")
       all_utt = ""
       if persona.scratch.chat: 
         for row in persona.scratch.chat:  
           all_utt += f"{row[0]}: {row[1]}\n"
+      print("\033[0;33m---in reflect--- This is the conversation\n", all_utt, "--\033[0m")
 
       # planning_thought = generate_planning_thought_on_convo(persona, all_utt)
       # print ("init planning: aosdhfpaoisdh90m     ::", f"For {persona.scratch.name}'s planning: {planning_thought}")
@@ -223,7 +256,12 @@ def reflect(persona):
 
       # print (persona.a_mem.get_last_chat(persona.scratch.chatting_with).node_id)
 
-      evidence = [persona.a_mem.get_last_chat(persona.scratch.chatting_with).node_id]
+      last_chat = persona.a_mem.get_last_chat(persona.scratch.chatting_with)
+      try:
+        evidence = [last_chat.node_id]
+      except AttributeError:
+        print("\033[1;31m---in reflect---Error", persona.scratch.name, "no chat history --\033[0m")
+        evidence = []
 
       print("\033[0;33m---in reflect---", persona.scratch.name, "start planning thought on conversation --\033[0m")
       planning_thought = generate_planning_thought_on_convo(persona, all_utt)
@@ -241,6 +279,7 @@ def reflect(persona):
       print("\033[0;33m---in reflect---", persona.scratch.name, "finish generate poig score --\033[0m")
       thought_embedding_pair = (planning_thought, get_embedding(planning_thought))
 
+      print("\033[0;33m---in reflect--- >>>> ", planning_thought, thought_poignancy, "as score--\033[0m")
       persona.a_mem.add_thought(created, expiration, s, p, o, 
                                 planning_thought, keywords, thought_poignancy, 
                                 thought_embedding_pair, evidence)
@@ -260,6 +299,7 @@ def reflect(persona):
       thought_poignancy = generate_poig_score(persona, "thought", memo_thought)
       thought_embedding_pair = (memo_thought, get_embedding(memo_thought))
 
+      print("\033[0;33m---in reflect--- >>>> ", memo_thought, thought_poignancy, "as score--\033[0m")
       persona.a_mem.add_thought(created, expiration, s, p, o, 
                                 memo_thought, keywords, thought_poignancy, 
                                 thought_embedding_pair, evidence)

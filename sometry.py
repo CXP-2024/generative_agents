@@ -3,6 +3,8 @@ import datetime
 import re
 
 
+print(f"\033[9;35m--- perceive, retrieve, plan and reflect --\033[0m")
+
 def __func_clean_up(gpt_response, prompt=""):
     gpt_response = gpt_response.strip()
     ret = dict()

@@ -152,6 +152,7 @@ def perceive(persona, maze):
       # If we observe the persona's self chat, we include that in the memory
       # of the persona here. 
       chat_node_ids = []
+      ''' move this to chat_react function
       if p_event[0] == f"{persona.name}" and p_event[1] == "chat with": 
         curr_event = persona.scratch.act_event
         if persona.scratch.act_description in persona.a_mem.embeddings: 
@@ -164,12 +165,13 @@ def perceive(persona, maze):
                                chat_embedding)
         chat_poignancy = generate_poig_score(persona, "chat", 
                                              persona.scratch.act_description)
+        print("\033[0;33m-----in perceive------", persona.name, " save the chat node now. Current time:", persona.scratch.curr_time, "-----\033[0m")
         chat_node = persona.a_mem.add_chat(persona.scratch.curr_time, None,
                       curr_event[0], curr_event[1], curr_event[2], 
                       persona.scratch.act_description, keywords, 
                       chat_poignancy, chat_embedding_pair, 
                       persona.scratch.chat)
-        chat_node_ids = [chat_node.node_id]
+        chat_node_ids = [chat_node.node_id]'''
 
       # Finally, we add the current event to the agent's memory. 
       ret_events += [persona.a_mem.add_event(persona.scratch.curr_time, None,

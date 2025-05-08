@@ -398,21 +398,21 @@ class ReverieServer:
           # This is where the core brains of the personas are invoked. 
           movements = {"persona": dict(), 
                        "meta": dict()}
-          print("\n\n\n\033[1;3;34mStart Step: ", self.step, "\033[0m")
-          print("\033[1;3;34mCurrent Time: ", self.curr_time, "\033[0m")
-          
+          print("\n\n\n\033[3;7;36mStart Step: ", self.step, "\033[0m")
+          print("\033[3;7;36mCurrent Time: ", self.curr_time, "\033[0m")
+
           for persona_name, persona in self.personas.items(): 
             # <next_tile> is a x,y coordinate. e.g., (58, 9)
             # <pronunciatio> is an emoji. e.g., "\ud83d\udca4"
             # <description> is a string description of the movement. e.g., 
             #   writing her next novel (editing her novel) 
             #   @ double studio:double studio:common room:sofa
-            print(f"\n\033[1;3;35m{persona_name} start a move --\033[0m")
+            print(f"\n\033[1;7;35m>>>>>   In step {self.step}   >>>>> {persona_name} start a move --\033[0m")
             next_tile, pronunciatio, description = persona.move(
               self.maze, self.personas, self.personas_tile[persona_name], 
               self.curr_time)
-            print(f"\033[1;3;35m{persona_name} finished a move --\033[0m")
-            
+            print(f"\033[1;7;35m>>>>>   In step {self.step}   >>>>> {persona_name} finished a move --\033[0m")
+
             movements["persona"][persona_name] = {}
             movements["persona"][persona_name]["movement"] = next_tile
             movements["persona"][persona_name]["pronunciatio"] = pronunciatio
@@ -449,6 +449,11 @@ class ReverieServer:
           # current time moves by <sec_per_step> amount. 
           self.step += 1
           self.curr_time += datetime.timedelta(seconds=self.sec_per_step)
+          
+          # 自动保存机制 - 每10步保存一次
+          if self.step % 10 == 0:
+              print(f"\033[1;36m自动保存点 - 步数: {self.step}\033[0m")
+              self.save()
 
           int_counter -= 1
           

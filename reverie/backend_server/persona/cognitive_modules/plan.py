@@ -291,6 +291,9 @@ def generate_convo(maze, init_persona, target_persona):
     all_utt += f"{speaker}: {utt}\n"
 
   convo_length = math.ceil(int(len(all_utt)/8) / 30)
+  if convo_length <= 5:
+    print("\033[1;9;33m warning!!!!! the length of conversation is too short and change to 6min\033[0m")
+    convo_length = 6
 
   if debug: print ("GNS FUNCTION: <generate_convo>")
   return convo, convo_length
@@ -407,13 +410,34 @@ def generate_new_decomp_schedule(persona, inserted_act, inserted_act_dur,  start
 ##############################################################################
 # CHAPTER 3: Plan
 ##############################################################################
+def print_retrieved_items(persona_name, focal_points, retrieved):
+    """格式化打印检索到的记忆项，提高可读性"""
+    print(f"\033[0;33m-------in agent_chat_v2------, {persona_name} finish retrieved.\033[0m")
+    
+    total_items = 0
+    for key, items in retrieved.items():
+        total_items += len(items)
+        print(f"\033[0;33m  >> Topic: '{key}' - Found {len(items)} memories\033[0m")
+        
+        # 只显示前3个项目的实际内容
+        for i, item in enumerate(items[:10]):
+            memory_content = item.embedding_key if hasattr(item, 'embedding_key') else str(item)
+            print(f"\033[0;36m    {i+1}. {memory_content[:100]}{'...' if len(memory_content) > 100 else ''}\033[0m")
+        
+        # 如果有更多项目，只显示数量
+        if len(items) > 10:
+            print(f"\033[0;36m    ... and {len(items) - 10} more items\033[0m")
+    
+    print(f"\033[0;33m  Total: {total_items} memories retrieved\033[0m")
 
 def revise_identity(persona): 
   p_name = persona.scratch.name
 
   focal_points = [f"{p_name}'s plan for {persona.scratch.get_str_curr_date_str()}.",
                   f"Important recent events for {p_name}'s life."]
+  print("\033[0;33m-----in revise_identity-----", persona.name, "start retrieve\033[0m")
   retrieved = new_retrieve(persona, focal_points)
+  print_retrieved_items(p_name, focal_points, retrieved)
 
   statements = "[Statements]\n"
   for key, val in retrieved.items():
@@ -426,12 +450,14 @@ def revise_identity(persona):
   plan_prompt += f" *{persona.scratch.curr_time.strftime('%A %B %d')}*? "
   plan_prompt += f"If there is any scheduling information, be as specific as possible (include date, time, and location if stated in the statement)\n\n"
   plan_prompt += f"Write the response from {p_name}'s perspective."
+  print("\033[0;33m-----in revise_identity-----", persona.name, "ask gpt for plan_note\033[0m")
   plan_note = ChatGPT_single_request(plan_prompt)
   # print (plan_note)
 
   thought_prompt = statements + "\n"
   thought_prompt += f"Given the statements above, how might we summarize {p_name}'s feelings about their days up to now?\n\n"
   thought_prompt += f"Write the response from {p_name}'s perspective."
+  print("\033[0;33m-----in revise_identity-----", persona.name, "ask gpt for thought_note\033[0m")
   thought_note = ChatGPT_single_request(thought_prompt)
   # print (thought_note)
 
@@ -444,6 +470,7 @@ def revise_identity(persona):
   currently_prompt += "Follow this format below:\nStatus: <new status>"
   # print ("DEBUG ;adjhfno;asdjao;asdfsidfjo;af", p_name)
   # print (currently_prompt)
+  print("\033[0;33m-----in revise_identity-----", persona.name, "ask gpt for new_currently\033[0m")
   new_currently = ChatGPT_single_request(currently_prompt)
   # print (new_currently)
   # print (new_currently[10:])
@@ -455,6 +482,7 @@ def revise_identity(persona):
   daily_req_prompt += f"Follow this format (the list should have 4~6 items but no more):\n"
   daily_req_prompt += f"1. wake up and complete the morning routine at <time>, 2. ..."
 
+  print("\033[0;33m-----in revise_identity-----", persona.name, "ask gpt for new_daily_req\033[0m")
   new_daily_req = ChatGPT_single_request(daily_req_prompt)
   new_daily_req = new_daily_req.replace('\n', ' ')
   print ("WE ARE HERE!!!", new_daily_req)
@@ -485,11 +513,15 @@ def _long_term_planning(persona, new_day):
     persona.scratch.daily_req = generate_first_daily_plan(persona, 
                                                           wake_up_hour)
   elif new_day == "New day":
+    print("\033[1;36m-----It's a new day!!!!!!!!!!!!!------", persona.scratch.name, "-----\033[0m")
+    print("\033[1;36m-----start revise_identity to collect necessary for new plan-----\033[0m")
     revise_identity(persona)
 
     # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - TODO
-    # We need to create a new daily_req here...
-    persona.scratch.daily_req = persona.scratch.daily_req
+    # We need to create a new daily_req here... use the same function as above to solve the TODO
+    persona.scratch.daily_req = generate_first_daily_plan(persona, 
+                                                          wake_up_hour)
+    #persona.scratch.daily_req = persona.scratch.daily_req
 
   # Based on the daily_req, we create an hourly schedule for the persona, 
   # which is a list of todo items with a time duration (in minutes) that 
@@ -598,7 +630,7 @@ def _determine_action(persona, maze):
   # Generate an <Action> instance from the action description and duration. By
   # this point, we assume that all the relevant actions are decomposed and 
   # ready in f_daily_schedule. 
-  print ("DEBUG LJSDLFSKJF")
+  print ("\033[0;33mDEBUG LJSDLFSKJF\033[0m")
   for i in persona.scratch.f_daily_schedule: print (i)
   print (curr_index)
   print (len(persona.scratch.f_daily_schedule))
@@ -703,6 +735,7 @@ def _choose_retrieved(persona, retrieved):
       priority += [rel_ctx]
   if priority: 
     return random.choice(priority)
+  print("\033[0;33m-----in _choose_retrieved-----", persona.name, "after remove self events and skip idle: no event\033[0m")
   return None
 
 
@@ -727,27 +760,34 @@ def _should_react(persona, retrieved, personas):
         or not target_persona.scratch.act_description
         or not init_persona.scratch.act_address
         or not init_persona.scratch.act_description): 
+      print("\033[0;33m-----in should_react-----", init_persona.name, "or", target_persona.name, " no address or description\033[0m")
       return False
 
     if ("sleeping" in target_persona.scratch.act_description 
         or "sleeping" in init_persona.scratch.act_description): 
+      print("\033[0;33m-----in should_react-----", init_persona.name, "or", target_persona.name, " sleeping\033[0m")
       return False
 
     if init_persona.scratch.curr_time.hour == 23: 
+      print("\033[0;33m-----in should_react-----", init_persona.name, "or", target_persona.name, " curr_time is 23h\033[0m")
       return False
 
     if "<waiting>" in target_persona.scratch.act_address: 
+      print("\033[0;33m-----in should_react-----", init_persona.name, "or", target_persona.name, " waiting\033[0m")
       return False
 
     if (target_persona.scratch.chatting_with 
       or init_persona.scratch.chatting_with): 
+      print("\033[0;33m-----in should_react-----", init_persona.name, "or", target_persona.name, " chatting now\033[0m")
       return False
 
     if (target_persona.name in init_persona.scratch.chatting_with_buffer): 
       if init_persona.scratch.chatting_with_buffer[target_persona.name] > 0: 
+        print("\033[0;33m-----in should_react-----", init_persona.name, "or", target_persona.name, " chatting buffer more than 0, it's", init_persona.scratch.chatting_with_buffer[target_persona.name], " now\033[0m")
         return False
 
-    if generate_decide_to_talk(init_persona, target_persona, retrieved): 
+    print("\033[0;33m-----in should_react----- ", init_persona.name, "start ask gpt\033[0m")
+    if generate_decide_to_talk(init_persona, target_persona, retrieved):
 
       return True
 
@@ -758,25 +798,32 @@ def _should_react(persona, retrieved, personas):
         or not target_persona.scratch.act_description
         or not init_persona.scratch.act_address
         or not init_persona.scratch.act_description): 
+      print("\033[0;33m-----in should_react-----", init_persona.name, "or", target_persona.name, " no address or description\033[0m")
       return False
 
     if ("sleeping" in target_persona.scratch.act_description 
-        or "sleeping" in init_persona.scratch.act_description): 
+        or "sleeping" in init_persona.scratch.act_description):
+      print("\033[0;33m-----in should_react-----", init_persona.name, "or", target_persona.name, " sleeping\033[0m")
       return False
 
     # return False
     if init_persona.scratch.curr_time.hour == 23: 
+      print("\033[0;33m-----in should_react-----", init_persona.name, "or", target_persona.name, " curr_time is 23h\033[0m")
       return False
 
     if "waiting" in target_persona.scratch.act_description: 
+      print("\033[0;33m-----in should_react-----", init_persona.name, "or", target_persona.name, " waiting\033[0m")
       return False
     if init_persona.scratch.planned_path == []:
+      print("\033[0;33m-----in should_react-----", init_persona.name, "or", target_persona.name, " no planned path\033[0m")
       return False
 
     if (init_persona.scratch.act_address 
         != target_persona.scratch.act_address): 
+      print("\033[0;33m-----in should_react-----", init_persona.name, "or", target_persona.name, " not in the same address\033[0m")
       return False
 
+    print("\033[0;33m-----in should_react----- ", init_persona.name, "start ask gpt\033[0m")
     react_mode = generate_decide_to_react(init_persona, 
                                           target_persona, retrieved)
 
@@ -789,12 +836,15 @@ def _should_react(persona, retrieved, personas):
       return False
       return "do other things"
     else:
+      print("\033[0;33m-----in should_react-----gpt return no react mode, it's", react_mode, "\033[0m")
       return False #"keep" 
 
   # If the persona is chatting right now, default to no reaction 
   if persona.scratch.chatting_with: 
+    print("\033[0;33m-----in should_react-----", persona.name, " chatting now so return false\033[0m")
     return False
   if "<waiting>" in persona.scratch.act_address: 
+    print("\033[0;33m-----in should_react-----", persona.name, " waiting now so return false\033[0m")
     return False
 
   # Recall that retrieved takes the following form: 
@@ -807,15 +857,15 @@ def _should_react(persona, retrieved, personas):
     # this is a persona event. 
     print("\033[0;33m-----in should_react-----", persona.name, 
       f"Current Event: {curr_event.subject} {curr_event.predicate} {curr_event.object}" if curr_event else "None", "\033[0m")
-    print("\033[0;33m", persona.name, " try to find whether to talk\033[0m")
+    print("\033[0;33m-----in should_react-----", persona.name, " try to find whether to talk\033[0m")
     if lets_talk(persona, personas[curr_event.subject], retrieved):
-      print("\033[0;33m", persona.name, " decide to talk with", curr_event.subject, "\033[0m")
+      print("\033[0;33m-----in should_react-----", persona.name, " decide to talk with", curr_event.subject, "\033[0m")
       return f"chat with {curr_event.subject}"
-    print("\033[0;33m", persona.name, " decide not to talk with", curr_event.subject, "\033[0m")
-    print("\033[0;33m", persona.name, " try to find react mode\033[0m")
+    print("\033[0;33m-----in should_react-----", persona.name, " decide not to talk with", curr_event.subject, "\033[0m")
+    print("\033[0;33m-----in should_react-----", persona.name, " try to find react mode\033[0m")
     react_mode = lets_react(persona, personas[curr_event.subject], 
                             retrieved)
-    print("\033[0;33m", persona.name, " get react mode:", react_mode, "\033[0m")
+    print("\033[0;33m-----in should_react-----", persona.name, " get react mode:", react_mode, "\033[0m")
     return react_mode
   return False
 
@@ -919,12 +969,49 @@ def _chat_react(maze, persona, focused_event, reaction_mode, personas):
     act_obj_pronunciatio = None
     act_obj_event = (None, None, None)
 
-    print("\033[0;33m-----in chat react----", p.name , " start a create_react and decomp plan", target_persona.name, "\033[0m")
+    print("\033[0;33m-----in chat_react----", p.name , " start a create_react and decomp plan", target_persona.name, "\033[0m")
     _create_react(p, inserted_act, inserted_act_dur,
       act_address, act_event, chatting_with, convo, chatting_with_buffer, chatting_end_time,
       act_pronunciatio, act_obj_description, act_obj_pronunciatio, 
       act_obj_event, act_start_time)
-    print("\033[0;33m-----in chat react----", p.name , " finish a create_react and decom plan", target_persona.name, "\033[0m")
+    print("\033[0;33m-----in chat_react----", p.name , " finish a create_react and decom plan", target_persona.name, "\033[0m")
+    print("\033[0;33m-----in chat_react----", p.name , " current time:", curr_time, "chatting end time:", chatting_end_time, "\033[0m")
+    # 为每个角色创建聊天记忆节点
+    keywords = set()
+    # 使用当前角色的act_event，而不是外部的curr_event
+    sub = act_event[0]
+    obj = act_event[2]
+    if ":" in sub: 
+      sub = sub.split(":")[-1]
+    if ":" in obj: 
+      obj = obj.split(":")[-1]
+    keywords.update([sub, obj])
+    
+    # 获取或创建嵌入
+    if p.scratch.act_description in p.a_mem.embeddings: 
+        chat_embedding = p.a_mem.embeddings[p.scratch.act_description]
+    else: 
+        chat_embedding = get_embedding(p.scratch.act_description)
+    chat_embedding_pair = (p.scratch.act_description, chat_embedding)
+    
+    # 计算重要性分数
+    chat_poignancy = generate_poig_score(p, "chat", p.scratch.act_description)
+    
+    print(f"\033[0;33m-----in chat_react------ {p.name} saving chat node. Current time: {p.scratch.curr_time} -----\033[0m")
+    
+    # 创建聊天节点并保存到记忆中
+    chat_node = p.a_mem.add_chat(
+        p.scratch.curr_time,  # 创建时间
+        None,                 # 过期时间（无）
+        act_event[0],         # 主语
+        act_event[1],         # 谓语
+        act_event[2],         # 宾语
+        p.scratch.act_description,  # 描述
+        keywords,             # 关键词
+        chat_poignancy,       # 重要性
+        chat_embedding_pair,  # 嵌入向量对
+        convo                 # 实际对话内容
+    )
 
 
 def _wait_react(persona, reaction_mode):
@@ -946,9 +1033,11 @@ def _wait_react(persona, reaction_mode):
   act_obj_pronunciatio = None
   act_obj_event = (None, None, None)
 
+  print("\033[0;33m-----in wait_react----", p.name , " start a create_react and decomp plan", p.name, "\033[0m")
   _create_react(p, inserted_act, inserted_act_dur,
     act_address, act_event, chatting_with, chat, chatting_with_buffer, chatting_end_time,
     act_pronunciatio, act_obj_description, act_obj_pronunciatio, act_obj_event)
+  print("\033[0;33m-----in wait_react----", p.name , " finish a create_react and decom plan", p.name, "\033[0m")
 
 
 def plan(persona, maze, personas, new_day, retrieved): 
@@ -975,15 +1064,17 @@ def plan(persona, maze, personas, new_day, retrieved):
   """ 
   # PART 1: Generate the hourly schedule. 
   if new_day: 
-    print("\033[1;33m", persona.name , " start a long term planning: \033[0m")
+    print("\033[1;33m----in plan----", persona.name , " start a long term planning: \033[0m")
     _long_term_planning(persona, new_day)
-    print("\033[1;33m", persona.name , " finished long term planning: \033[0m")
+    print("\033[1;33m----in plan----", persona.name , " finished long term planning: \033[0m")
 
   # PART 2: If the current action has expired, we want to create a new plan.
   if persona.scratch.act_check_finished(): 
-    print("\033[1;33m", persona.name , " start a determine action: \033[0m")
+    print("\033[1;33m----in plan----", persona.name , " start a new determine action: \033[0m")
     _determine_action(persona, maze)
-    print("\033[1;33m", persona.name , " finished determining action: \033[0m")
+    print("\033[1;33m----in plan----", persona.name , " finished a new determining action: \033[0m")
+  else:
+    print("\033[1;33m----in plan----", persona.name , " skip a new determine action since the old one is still active: ", persona.scratch.act_event, "\033[0m")
 
   # PART 3: If you perceived an event that needs to be responded to (saw 
   # another persona), and retrieved relevant information. 
@@ -996,9 +1087,9 @@ def plan(persona, maze, personas, new_day, retrieved):
   #                     ["thoughts"] = [<ConceptNode>, ...]}
   focused_event = False
   if retrieved.keys(): 
-    print("\033[1;33m", persona.name , " start a choose_retrieved: \033[0m")
+    print("\033[1;33m----in plan----", persona.name , " start a choose_retrieved about the pretrieved things just now.\033[0m")
     focused_event = _choose_retrieved(persona, retrieved)
-    print("\033[1;33m", persona.name, " finished choose_retrieved and get the focused_event ", 
+    print("\033[1;33m----in plan----", persona.name, " finished choose_retrieved and get the focused_event ", 
       f"Event: {focused_event['curr_event'].subject} {focused_event['curr_event'].predicate} {focused_event['curr_event'].object}" if focused_event else "None", "\033[0m")
   
   # Step 2: Once we choose an event, we need to determine whether the
@@ -1008,19 +1099,19 @@ def plan(persona, maze, personas, new_day, retrieved):
   #         b) "react"
   #         c) False
   if focused_event: 
-    print("\033[1;33m", persona.name , " start a should_react: \033[0m")
+    print("\033[1;33m----in plan----", persona.name , " start a should_react: \033[0m")
     reaction_mode = _should_react(persona, focused_event, personas)
-    print("\033[1;33m", persona.name , " finished should_react and get the reaction_mode: ", reaction_mode, "\033[0m")
+    print("\033[1;33m----in plan----", persona.name , " finished should_react and get the reaction_mode: ", reaction_mode, "\033[0m")
     if reaction_mode: 
       # If we do want to chat, then we generate conversation 
       if reaction_mode[:9] == "chat with":
-        print("\033[1;33m", persona.name , " start a chat_react: \033[0m")
+        print("\033[1;33m----in plan----", persona.name , " start a chat_react: \033[0m")
         _chat_react(maze, persona, focused_event, reaction_mode, personas)
-        print("\033[1;33m", persona.name , " finished chat_react: \033[0m")
+        print("\033[1;33m----in plan----", persona.name , " finished chat_react: \033[0m")
       elif reaction_mode[:4] == "wait": 
-        print("\033[1;33m", persona.name , " start a wait_react: \033[0m")
+        print("\033[1;33m----in plan----", persona.name , " start a wait_react: \033[0m")
         _wait_react(persona, reaction_mode)
-        print("\033[1;33m", persona.name , " finished wait_react: \033[0m")
+        print("\033[1;33m----in plan----", persona.name , " finished wait_react: \033[0m")
       # elif reaction_mode == "do other things": 
       #   _chat_react(persona, focused_event, reaction_mode, personas)
 
@@ -1037,8 +1128,18 @@ def plan(persona, maze, personas, new_day, retrieved):
   # immediately after chatting once. We keep track of the buffer value here. 
   curr_persona_chat_buffer = persona.scratch.chatting_with_buffer
   for persona_name, buffer_count in curr_persona_chat_buffer.items():
-    if persona_name != persona.scratch.chatting_with: 
-      persona.scratch.chatting_with_buffer[persona_name] -= 1
+    for persona_name, buffer_count in list(curr_persona_chat_buffer.items()):
+			# skip decrementing whoever I'm chatting with right now
+      if persona_name == persona.scratch.chatting_with:
+        continue
+
+			# decrement and clamp at zero
+      new_count = max(buffer_count - 30, 0)
+      curr_persona_chat_buffer[persona_name] = new_count
+
+			# optionally clean up entries that have reached zero
+      # if new_count == 0:
+        # del persona.scratch.chatting_with_buffer[persona_name]
 
   return persona.scratch.act_address
 
