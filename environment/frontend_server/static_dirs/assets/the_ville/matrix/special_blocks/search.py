@@ -25,7 +25,7 @@ def find_missing_numbers(numbers):
     max_num = max(numbers)
     all_numbers = set(range(min_num - 1, max_num + 2))
     present_numbers = set(numbers)
-    missing_numbers = sorted(list(all_numbers - present_numbers))
+    missing_numbers = sorted(list(all_numbers - present_numbers), key=lambda x: [int(d) for d in str(x).zfill(5)][::-1])
     return missing_numbers
 
 if __name__ == '__main__':

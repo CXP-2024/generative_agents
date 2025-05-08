@@ -6,18 +6,18 @@
 32277, the Ville, <all>, bathroom sink
 32208, the Ville, <all>, shower
 32218, the Ville, <all>, toilet
-32228, the Ville, <all>, kitchen sink
+32228, the Ville, <all>, restaurant sink
 32238, the Ville, <all>, refrigerator
 32248, the Ville, <all>, toaster
-32258, the Ville, <all>, cooking area
-32268, the Ville, <all>, common room table
-32278, the Ville, <all>, common room sofa
+32258, the Ville, <all>, buffet table
+32268, the Ville, <all>, student restaurant table
+32278, the Ville, <all>, teacher restaurant table
 32209, the Ville, <all>, guitar
 32219, the Ville, <all>, microphone
-32229, the Ville, <all>, bar customer seating
-32239, the Ville, <all>, behind the bar counter
-32249, the Ville, <all>, behind the cafe counter
-32259, the Ville, <all>, cafe customer seating
+32229, the Ville, <all>, coffee machine
+32239, the Ville, <all>, tray rack
+32249, the Ville, <all>, sofa
+32259, the Ville, <all>, washing machine
 32269, the Ville, <all>, piano
 32279, the Ville, <all>, blackboard
 32210, the Ville, <all>, game console
@@ -28,11 +28,25 @@
 32260, the Ville, <all>, library table
 32270, the Ville, <all>, classroom student seating
 32280, the Ville, <all>, classroom podium
-32222, the Ville, <all>, dorm garden
-32232, the Ville, <all>, house garden
-32242, the Ville, <all>, garden chair
-32252, the Ville, <all>, park garden
+32211, the Ville, <all>, bench press station
+32221, the Ville, <all>, hand drum
+32231, the Ville, <all>, bass drum
+32241, the Ville, <all>, snare drum
+32251, the Ville, <all>, drum kit
+32261, the Ville, <all>, vending machine
+32271, the Ville, <all>, coffee vending machine
+32281, the Ville, <all>, cello
+32212, the Ville, <all>, speaker
+32222, the Ville, <all>, ping pong table
+32232, the Ville, <all>, vault base
+32242, the Ville, <all>, kettlebell
+32252, the Ville, <all>, dumbbell rack
 32262, the Ville, <all>, harp
 32272, the Ville, <all>, lifting weight
 32282, the Ville, <all>, pool table
-32284, the Ville, The playground, long jump pit
+32213, the Ville, <all>, hatsune miku figure
+32223, the Ville, <all>, soccer field
+32233, the Ville, <all>, running track
+32243, the Ville, <all>, potted plant
+32253, the Ville, <all>, island in the pond
+32284, the Ville, <all>, long jump pit
