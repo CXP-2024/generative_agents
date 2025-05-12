@@ -28,8 +28,8 @@
 	// Configuration meant to be passed to the main Phaser game instance. 
 	const config = {
 	  type: Phaser.CANVAS,
-	  width: 1500,
-	  height: 800,
+	  width: 3200,
+	  height: 2000,
 	  parent: "game-container",
 	  pixelArt: true,
 	  physics: {
@@ -40,7 +40,7 @@
 	    preload: preload,
 	    create: create,
 	    update: update },
-	  scale: {zoom: 0.8} };
+	  scale: {zoom: 0.5} };
 
 	// const config = {
 	//   type: Phaser.AUTO,
@@ -187,7 +187,7 @@
 	  //       matches.
 	  const collisions = map.addTilesetImage("blocks", "blocks_1");
 	  const playground = map.addTilesetImage("blocks_2", "blocks_2");
-	  const playground2 = map.addTilesetImage("blocks_3","block_3");
+	  const playground2 = map.addTilesetImage("blocks_3","blocks_3");
 	  const walls = map.addTilesetImage("Room_Builder_32x32", "walls");
 	  const interiors_full = map.addTilesetImage("Interiors_32x32_full", "interiors_full");
 	  const interiors_pt1 = map.addTilesetImage("interiors_pt1", "interiors_pt1");
@@ -262,6 +262,54 @@
 	  const camera = this.cameras.main;
 	  camera.startFollow(player);
 	  camera.setBounds(0, 0, map.widthInPixels, map.heightInPixels);
+
+		// 添加缩放功能 - 设置缩放限制
+		camera.setZoom(0.8); // 初始缩放值与config中保持一致
+
+		// 添加鼠标滚轮缩放，也是触控板双指缩放的的映射
+		this.input.on('wheel', function (pointer, gameObjects, deltaX, deltaY, deltaZ) {
+			// deltaY是滚轮方向，向上滚动为负，向下滚动为正
+			if (deltaY > 0) {
+				// 缩小，降低缩放值
+				camera.zoom = Math.max(0.75, camera.zoom - 0.01);
+			} else {
+				// 放大，增加缩放值
+				camera.zoom = Math.min(2.0, camera.zoom + 0.01);
+			}
+		});
+
+		cursors = this.input.keyboard.createCursorKeys();
+
+		// 添加鼠标拖动控制相机功能
+		let isDragging = false;
+		let lastPointerPosition = { x: 0, y: 0 };
+
+		this.input.on('pointerdown', function (pointer) {
+			if (pointer.leftButtonDown()) {
+				isDragging = true;
+				lastPointerPosition = { x: pointer.x, y: pointer.y };
+			}
+		});
+
+		this.input.on('pointermove', function (pointer) {
+			if (isDragging) {
+				// 计算鼠标移动距离
+				const deltaX = pointer.x - lastPointerPosition.x;
+				const deltaY = pointer.y - lastPointerPosition.y;
+
+				// 更新相机位置（反向移动，因为我们要拖动地图）
+				player.x -= deltaX / camera.zoom;
+				player.y -= deltaY / camera.zoom;
+
+				// 更新上一次位置
+				lastPointerPosition = { x: pointer.x, y: pointer.y };
+			}
+		});
+
+		this.input.on('pointerup', function (pointer) {
+			isDragging = false;
+		});
+		
 	  cursors = this.input.keyboard.createCursorKeys();
 
 	  // *** SET UP PERSONAS *** 
@@ -336,40 +384,60 @@
 
 
 	function update(time, delta) {
-		// *** SETUP PLAY AND PAUSE BUTTON *** 
-		let play_context = this;
-		function game_resume() {  
-			play_context.scene.resume();
-		}  
-		play_button.onclick = function(){
-			game_resume();
-		};
-		function game_pause() {  
-			play_context.scene.pause();
-		}  
-		pause_button.onclick = function(){
-			game_pause();
-		};
+		// Set play_context for the global functions to use
+    play_context = this;
+    
+    // Delete these duplicate function definitions
+    // function game_resume() {  
+    //     play_context.scene.resume();
+    // }  
+    // play_button.onclick = function(){
+    //     game_resume();
+    // };
+    // function game_pause() {  
+    //     play_context.scene.pause();
+    // }  
+    // pause_button.onclick = function(){
+    //     game_pause();
+    // };
 
 	  // *** MOVE CAMERA *** 
 	  // This is where we finish up the camera setting we started in the create() 
 	  // function. We set the movement speed of the camera and wire up the keys to
 	  // map to the actual movement.
-	  const camera_speed = 400;
-	  // Stop any previous movement from the last frame
-	  player.body.setVelocity(0);
-	  if (cursors.left.isDown) {
-	    player.body.setVelocityX(-camera_speed);
-	  } 
-	  if (cursors.right.isDown) {
-	    player.body.setVelocityX(camera_speed);
-	  } 
-	  if (cursors.up.isDown) {
-	    player.body.setVelocityY(-camera_speed);
-	  } 
-	  if (cursors.down.isDown) {
-	    player.body.setVelocityY(camera_speed);
-	  }
+	  const camera_speed = 800;
+		// 添加WASD键控制
+		wasdKeys = this.input.keyboard.addKeys({
+			up: Phaser.Input.Keyboard.KeyCodes.W,
+			down: Phaser.Input.Keyboard.KeyCodes.S,
+			left: Phaser.Input.Keyboard.KeyCodes.A,
+			right: Phaser.Input.Keyboard.KeyCodes.D
+		});
+		// Stop any previous movement from the last frame
+		player.body.setVelocity(0);
+		// 检测方向键或WASD键
+		if (cursors.left.isDown || wasdKeys.left.isDown) {
+			player.body.setVelocityX(-camera_speed);
+		}
+		if (cursors.right.isDown || wasdKeys.right.isDown) {
+			player.body.setVelocityX(camera_speed);
+		}
+		if (cursors.up.isDown || wasdKeys.up.isDown) {
+			player.body.setVelocityY(-camera_speed);
+		}
+		if (cursors.down.isDown || wasdKeys.down.isDown) {
+			player.body.setVelocityY(camera_speed);
+		}
+		// 添加空格键放大和Shift键缩小功能
+		const camera = this.cameras.main;
+		if (cursors.space.isDown) {
+			// 空格键放大
+			camera.zoom = Math.min(2.0, camera.zoom + 0.01);
+		}
+		if (cursors.shift.isDown) {
+			// Shift键缩小
+			camera.zoom = Math.max(0.75, camera.zoom - 0.01);
+		}
 
 	  
 	  let curr_focused_persona = document.getElementById("temp_focus").textContent;
@@ -496,8 +564,326 @@
 	}
 
 	// Control button binders
-	var play_button=document.getElementById("play_button");
-	var pause_button=document.getElementById("pause_button");
+	var play_button = document.getElementById("play_button");
+	var pause_button = document.getElementById("pause_button");
+	var prev_frame_button = document.getElementById("prev_frame_button");
+	var next_frame_button = document.getElementById("next_frame_button");
+
+	// Add frame-by-frame navigation function
+	function enableFrameButtons() {
+	    prev_frame_button.disabled = false;
+	    next_frame_button.disabled = false;
+	}
+
+	function disableFrameButtons() {
+	    prev_frame_button.disabled = true;
+	    next_frame_button.disabled = true;
+	}
+
+	// Update existing game_resume function to disable frame buttons
+	function game_resume() {  
+	    play_context.scene.resume();
+	    disableFrameButtons();
+	}  
+
+	play_button.onclick = function(){
+		game_resume();
+	};
+
+	function game_pause() {  
+	    play_context.scene.pause();
+	    enableFrameButtons();
+	}  
+
+	pause_button.onclick = function(){
+		game_pause();
+	};
+
+	// Add handlers for the new buttons
+	prev_frame_button.onclick = function() {
+	    if (step > 0) {
+	        step = step - 1;
+	        // Reset execution counter to trigger movement updates
+	        execute_count = execute_count_max + 1;
+	        
+	        // Update the game time display
+	        start_datetime = new Date(start_datetime.getTime() - step_size);
+	        document.getElementById("game-time-content").innerHTML = start_datetime.toLocaleTimeString("en-US", datetime_options);
+	        
+	        // Force an update to show the new frame
+	        play_context.scene.resume();
+	        setTimeout(function() { play_context.scene.pause(); }, 50);
+	    }
+	};
+
+	next_frame_button.onclick = function() {
+	    if (step < Object.keys(all_movement).length - 1) {
+	        step = step + 1;
+	        // Reset execution counter to trigger movement updates
+	        execute_count = execute_count_max + 1;
+	        
+	        // Update the game time display
+	        start_datetime = new Date(start_datetime.getTime() + step_size);
+	        document.getElementById("game-time-content").innerHTML = start_datetime.toLocaleTimeString("en-US", datetime_options);
+	        
+	        // Force an update to show the new frame
+	        play_context.scene.resume();
+	        setTimeout(function() { play_context.scene.pause(); }, 50);
+	    }
+	};
+
+	// Initialize button states
+	disableFrameButtons();
+
+    // Add frame navigation speed control
+    let frameSpeedSlider = document.getElementById('frame-speed-slider');
+    let frameSpeedValue = document.getElementById('frame-speed-value');
+    
+    // Frame navigation speed mapping (milliseconds between frames)
+    const frameSpeedMapping = {
+        "1": 1000,  // Very slow (1 second)
+        "2": 750,   // Slow
+        "3": 500,   // Moderate
+        "4": 350,   // Medium-slow
+        "5": 250,   // Medium
+        "6": 150,   // Medium-fast
+        "7": 100,   // Fast
+        "8": 70,    // Very fast
+        "9": 40,    // Extremely fast
+        "10": 20    // Maximum speed
+    };
+
+    // Default frame navigation speed
+    let frameNavigationSpeed = frameSpeedMapping["5"];
+
+    // Variables to track continuous frame navigation
+    let prevFrameInterval;
+    let nextFrameInterval;
+
+    // Update frame navigation speed when slider changes
+    if (frameSpeedSlider) {
+        frameSpeedSlider.oninput = function() {
+            frameSpeedValue.textContent = this.value;
+            frameNavigationSpeed = frameSpeedMapping[this.value];
+            
+            // Update active intervals if they exist
+            if (prevFrameInterval) {
+                clearInterval(prevFrameInterval);
+                startContinuousPrevFrames();
+            }
+            
+            if (nextFrameInterval) {
+                clearInterval(nextFrameInterval);
+                startContinuousNextFrames();
+            }
+        }
+    }
+
+    // Function to start continuous previous frame navigation
+    function startContinuousPrevFrames() {
+        // 添加锁定变量防止重叠执行
+        let frameUpdateInProgress = false;
+        
+        prevFrameInterval = setInterval(function() {
+            // 如果上一帧还在处理中，跳过这次更新
+            if (frameUpdateInProgress) return;
+            
+            if (step > 0) {
+                frameUpdateInProgress = true;
+                
+                step = step - 1;
+                // Reset execution counter to trigger movement updates
+                execute_count = execute_count_max + 1;
+                
+                // Update the game time display
+                start_datetime = new Date(start_datetime.getTime() - step_size);
+                document.getElementById("game-time-content").innerHTML = start_datetime.toLocaleTimeString("en-US", datetime_options);
+                
+                // Force an update to show the new frame
+                play_context.scene.resume();
+                
+                // 确保完全渲染后再暂停，使用更长的延迟
+                setTimeout(function() { 
+                    play_context.scene.pause(); 
+                    // 完成后解除锁定
+                    frameUpdateInProgress = false;
+                }, 60);  // 增加延迟时间确保完全渲染
+            } else {
+                clearInterval(prevFrameInterval);
+                prevFrameInterval = null;
+            }
+        }, Math.max(100, frameNavigationSpeed));  // 确保帧间隔足够长
+    }
+
+    // Function to start continuous next frame navigation - 同样修改
+    function startContinuousNextFrames() {
+        // 添加锁定变量防止重叠执行
+        let frameUpdateInProgress = false;
+        
+        nextFrameInterval = setInterval(function() {
+            // 如果上一帧还在处理中，跳过这次更新
+            if (frameUpdateInProgress) return;
+            
+            if (step < Object.keys(all_movement).length - 1) {
+                frameUpdateInProgress = true;
+                
+                step = step + 1;
+                // Reset execution counter
+                execute_count = execute_count_max + 1;
+                
+                // Update the game time display
+                start_datetime = new Date(start_datetime.getTime() + step_size);
+                document.getElementById("game-time-content").innerHTML = start_datetime.toLocaleTimeString("en-US", datetime_options);
+                
+                // Force an update to show the new frame
+                play_context.scene.resume();
+                
+                // 延长暂停时间，确保渲染完成
+                setTimeout(function() { 
+                    play_context.scene.pause(); 
+                    frameUpdateInProgress = false;
+                }, 60);
+            } else {
+                clearInterval(nextFrameInterval);
+                nextFrameInterval = null;
+            }
+        }, Math.max(100, frameNavigationSpeed));
+    }
+
+    // Add mousedown/mouseup events to the frame navigation buttons
+    let mouseDownTime = 0;
+    let isLongPress = false;
+    
+    prev_frame_button.addEventListener('mousedown', function() {
+        // 记录按下时间，用于区分点击和长按
+        mouseDownTime = new Date().getTime();
+        isLongPress = false;
+        
+        // 清除任何现有的间隔
+        clearInterval(nextFrameInterval);
+        clearInterval(prevFrameInterval);
+        nextFrameInterval = null;
+        prevFrameInterval = null;
+        
+        // 启动长按检测
+        setTimeout(function() {
+            // 如果按钮仍处于按下状态(还没触发mouseup)，认为是长按
+            if (mouseDownTime !== 0) {
+                isLongPress = true;
+                startContinuousPrevFrames();
+            }
+        }, 250); // 长按阈值，250毫秒
+    });
+
+    prev_frame_button.addEventListener('mouseup', function() {
+        // 如果不是长按，那么就是单击，只处理一帧
+        if (!isLongPress && mouseDownTime !== 0) {
+            // 单击逻辑，保证只移动一帧
+            if (step > 0) {
+                step = step - 1;
+                execute_count = execute_count_max + 1;
+                
+                start_datetime = new Date(start_datetime.getTime() - step_size);
+                document.getElementById("game-time-content").innerHTML = start_datetime.toLocaleTimeString("en-US", datetime_options);
+                
+                play_context.scene.resume();
+                setTimeout(function() { play_context.scene.pause(); }, 50);
+            }
+        }
+        
+        // 清理
+        mouseDownTime = 0;
+        clearInterval(prevFrameInterval);
+        prevFrameInterval = null;
+    });
+
+    prev_frame_button.addEventListener('mouseleave', function() {
+        mouseDownTime = 0;
+        clearInterval(prevFrameInterval);
+        prevFrameInterval = null;
+    });
+
+    next_frame_button.addEventListener('mousedown', function() {
+        // 记录按下时间，用于区分点击和长按
+        mouseDownTime = new Date().getTime();
+        isLongPress = false;
+        
+        // 清除任何现有的间隔
+        clearInterval(prevFrameInterval);
+        clearInterval(nextFrameInterval);
+        prevFrameInterval = null;
+        nextFrameInterval = null;
+        
+        // 启动长按检测
+        setTimeout(function() {
+            // 如果按钮仍处于按下状态，认为是长按
+            if (mouseDownTime !== 0) {
+                isLongPress = true;
+                startContinuousNextFrames();
+            }
+        }, 250); // 长按阈值，250毫秒
+    });
+
+    next_frame_button.addEventListener('mouseup', function() {
+        // 如果不是长按，那么就是单击，只处理一帧
+        if (!isLongPress && mouseDownTime !== 0) {
+            // 单击逻辑，保证只移动一帧
+            if (step < Object.keys(all_movement).length - 1) {
+                step = step + 1;
+                execute_count = execute_count_max + 1;
+                
+                start_datetime = new Date(start_datetime.getTime() + step_size);
+                document.getElementById("game-time-content").innerHTML = start_datetime.toLocaleTimeString("en-US", datetime_options);
+                
+                play_context.scene.resume();
+                setTimeout(function() { play_context.scene.pause(); }, 50);
+            }
+        }
+        
+        // 清理
+        mouseDownTime = 0;
+        clearInterval(nextFrameInterval);
+        nextFrameInterval = null;
+    });
+
+    next_frame_button.addEventListener('mouseleave', function() {
+        mouseDownTime = 0;
+        clearInterval(nextFrameInterval);
+        nextFrameInterval = null;
+    });
+
+    // 移除旧的onclick处理程序，因为现在我们在mouseup事件中处理单击
+    prev_frame_button.onclick = null;
+    next_frame_button.onclick = null;
+
+    // 添加速度控制逻辑 - 原始游戏速度滑块
+    let speedSlider = document.getElementById('speed-slider');
+    let speedValue = document.getElementById('speed-value');
+
+	// 速度值映射表（与后端保持一致）
+	const speedMapping = {
+	    "1": 0.1,   // 非常慢
+	    "2": 0.2,   // 慢
+	    "3": 0.5,     // 正常速度
+	    "4": 1,     // 稍快 
+	    "5": 2,     // 中速
+	    "6": 4,     // 较快
+	    "7": 10,    // 快
+	    "8": 18,    // 很快
+	    "9": 24,    // 非常快
+	    "10": 32    // 最快
+	};
+
+	if (speedSlider) {
+	    // 更新显示值
+	    speedSlider.oninput = function() {
+	        speedValue.textContent = this.value;
+	        // 更新移动速度
+	        movement_speed = speedMapping[this.value];
+	        // 重新计算执行计数
+	        execute_count_max = tile_width / movement_speed;
+	    }
+	}
 </script>
 
 

@@ -398,9 +398,9 @@ class ReverieServer:
           # This is where the core brains of the personas are invoked. 
           movements = {"persona": dict(), 
                        "meta": dict()}
-          print("\n\n\n\033[3;7;36mStart Step: ", self.step, "\033[0m")
-          print("\033[3;7;36mCurrent Time: ", self.curr_time, "\033[0m")
-
+          print("\n\n\n\033[1;3;34mStart Step: ", self.step, "\033[0m")
+          print("\033[1;3;34mCurrent Time: ", self.curr_time, "\033[0m")
+          
           for persona_name, persona in self.personas.items(): 
             # <next_tile> is a x,y coordinate. e.g., (58, 9)
             # <pronunciatio> is an emoji. e.g., "\ud83d\udca4"

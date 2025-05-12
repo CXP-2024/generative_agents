@@ -70,17 +70,19 @@ def ChatGPT_request(prompt):
     a str of GPT-3's response. here we use deepseek-v3
   """
   # temp_sleep()
-  try: 
-    completion = openai.ChatCompletion.create(
-    model="deepseek-v3", 
-    messages=[{"role": "system", "content": """If you are asked to output a json, your json form should not begin with ``` json { } ```, you should just directly output a json begin with {"output": sth... }. if necessery, start a new line for each item for better view."""}, {"role": "user", "content": prompt+"""
+  while True:
+    try: 
+      completion = openai.ChatCompletion.create(
+      model="deepseek-v3", 
+      messages=[{"role": "system", "content": """If you are asked to output a json, your json form should not begin with ``` json { } ```, you should just directly output a json begin with {"output": sth... }. if necessery, start a new line for each item for better view."""}, {"role": "user", "content": prompt+"""
 If you are asked to output a json, your json form should not begin with ``` json { } ```, you should just directly output a string begin with {"output": sth... }. """}]
-    )
-    return completion["choices"][0]["message"]["content"]
+      )
+      return completion["choices"][0]["message"]["content"]
   
-  except Exception as e:  
-    print ("deepseek-v3 ERROR:", e)
-    return "deepseek-v3 ERROR"
+    except Exception as e:  
+      print ("deepseek-v3 ERROR:", e)
+      time.sleep(0.5)
+      print("\033[1;31mWaiting 0.5 seconds. Trying again...\033[0m")
 
 
 def GPT4_safe_generate_response(prompt, 
@@ -133,6 +135,7 @@ def ChatGPT_safe_generate_response(prompt,
   # prompt = 'GPT-3 Prompt:\n"""\n' + prompt + '\n"""\n'
   prompt = '"""\n' + prompt + '\n"""\n'
   prompt += f"Output the response to the prompt above in json. {special_instruction}\n"
+  prompt += "Your response must be valid JSON without markdown formatting or code blocks. Do not wrap the JSON in ```json or ``` tags.\n"
   prompt += "Example output json:\n"
   prompt += '{"output": "' + str(example_output) + '"}'
 
@@ -248,8 +251,9 @@ def GPT_request(prompt, gpt_parameter):
     a str of GPT-3's response. 
   """
   temp_sleep()
-  try: 
-    response = openai.ChatCompletion.create(
+  while True:
+    try: 
+      response = openai.ChatCompletion.create(
                 model="deepseek-v3",
                 messages=[
                   {"role": "system", "content": "If you see daily scedules, you will be an assistant that fills in daily schedules based on character information. And in that case, you should only respond with finishing schedule entries, nothing else."},
@@ -262,10 +266,11 @@ def GPT_request(prompt, gpt_parameter):
                 presence_penalty=gpt_parameter["presence_penalty"],
                 stream=gpt_parameter["stream"],
                 stop=gpt_parameter["stop"],)
-    return response.choices[0].message.content
-  except Exception as e: 
-    print(f"TOKEN LIMIT EXCEEDED: {e}")
-    return "TOKEN LIMIT EXCEEDED"
+      return response.choices[0].message.content
+    except Exception as e: 
+      print(f"\033[1;31mTOKEN LIMIT EXCEEDED: {e}\033[0m")
+      time.sleep(0.5)
+      print("\033[1;31mWaiting 0.5 seconds. Trying again...\033[0m")
 
 
 def generate_prompt(curr_input, prompt_lib_file): 
@@ -298,7 +303,7 @@ def generate_prompt(curr_input, prompt_lib_file):
 
 def safe_generate_response(prompt, 
                            gpt_parameter,
-                           repeat=5,
+                           repeat=8,
                            fail_safe_response="error",
                            func_validate=None,
                            func_clean_up=None,

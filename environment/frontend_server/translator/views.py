@@ -27,8 +27,18 @@ def demo(request, sim_code, step, play_speed="2"):
   move_file = f"compressed_storage/{sim_code}/master_movement.json"
   meta_file = f"compressed_storage/{sim_code}/meta.json"
   step = int(step)
-  play_speed_opt = {"1": 1, "2": 2, "3": 4,
-                    "4": 8, "5": 16, "6": 32}
+  play_speed_opt = {
+      "1": 0.1,   # 非常慢
+      "2": 0.2,   # 慢
+      "3": 0.5,     # 正常速度
+      "4": 1,     # 稍快
+      "5": 2,     # 中速
+      "6": 4,     # 较快
+      "7": 10,    # 快
+      "8": 18,    # 很快
+      "9": 24,    # 非常快
+      "10": 32    # 最快
+  }
   if play_speed not in play_speed_opt: play_speed = 2
   else: play_speed = play_speed_opt[play_speed]
 

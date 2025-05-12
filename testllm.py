@@ -10,7 +10,7 @@ import openai # Changed import
 
 load_dotenv()
 openai_api_key = os.environ.get("INFINI_API_KEY")
-openai_base_url = os.environ.get("INFINI_BASE_URL")
+openai_base_url = "https://cloud.infini-ai.com/maas/v1"
 
 #https://cloud.infini-ai.com/maas/v1
 print(openai_api_key)

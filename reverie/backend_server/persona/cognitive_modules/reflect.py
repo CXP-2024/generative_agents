@@ -51,8 +51,11 @@ def generate_insights_and_evidence(persona, nodes, n=5):
       evidence_node_id = [nodes[i].node_id for i in evi_raw]
       ret[thought] = evidence_node_id
     return ret
-  except: 
+  except Exception as e:
+    print("\033[1;31mtype of ret: ", ret, "\033[0m")
     print("\033[1;31mError in generate_insights_and_evidence: ", ret, "\033[0m")
+    print("\033[1;31mError: ", e, "\033[0m")
+    print("""\033[1;31mWill use the default ret: {"this is blank": "node_1"} """, type(ret), "\033[0m")
     return {"this is blank": "node_1"} 
 
 
@@ -119,13 +122,19 @@ def run_reflect(persona):
     xx = [i.embedding_key for i in nodes]
     for xxx in xx: print (xxx)
 
+    print("\033[0;33m---in run_reflect---", persona.scratch.name, "start generate insights and evidence --\033[0m")
     thoughts = generate_insights_and_evidence(persona, nodes, 5)
+    print("\033[0;33m---in run_reflect---", persona.scratch.name, "finish generate insights and evidence and get ", thoughts, "--\033[0m")
     for thought, evidence in thoughts.items(): 
       created = persona.scratch.curr_time
       expiration = persona.scratch.curr_time + datetime.timedelta(days=30)
+      print("\033[0;33m---in run_reflect---", persona.scratch.name, "start get action event triple --\033[0m")
       s, p, o = generate_action_event_triple(thought, persona)
+      print("\033[0;33m---in run_reflect---", persona.scratch.name, "finish get action event triple and get", s, p, o, "--\033[0m")
       keywords = set([s, p, o])
+      print("\033[0;33m---in run_reflect---", persona.scratch.name, "start generate poig score --\033[0m")
       thought_poignancy = generate_poig_score(persona, "thought", thought)
+      print("\033[0;33m---in run_reflect---", persona.scratch.name, "finish generate poig score and get", thought_poignancy, "--\033[0m")
       thought_embedding_pair = (thought, get_embedding(thought))
 
       persona.a_mem.add_thought(created, expiration, s, p, o, 
@@ -182,7 +191,9 @@ def reflect(persona):
     None
   """
   if reflection_trigger(persona): 
+    print("\033[0;33m---in reflect---", persona.scratch.name, "start run_reflect--\033[0m")
     run_reflect(persona)
+    print("\033[0;33m---in reflect---", persona.scratch.name, "finish run_reflect --\033[0m")
     reset_reflection_counter(persona)
 
 
@@ -214,14 +225,20 @@ def reflect(persona):
 
       evidence = [persona.a_mem.get_last_chat(persona.scratch.chatting_with).node_id]
 
+      print("\033[0;33m---in reflect---", persona.scratch.name, "start planning thought on conversation --\033[0m")
       planning_thought = generate_planning_thought_on_convo(persona, all_utt)
+      print("\033[0;33m---in reflect---", persona.scratch.name, "finish planning thought on conversation --\033[0m")
       planning_thought = f"For {persona.scratch.name}'s planning: {planning_thought}"
 
       created = persona.scratch.curr_time
       expiration = persona.scratch.curr_time + datetime.timedelta(days=30)
+      print("\033[0;33m---in reflect---", persona.scratch.name, "start get action event triple --\033[0m")
       s, p, o = generate_action_event_triple(planning_thought, persona)
+      print("\033[0;33m---in reflect---", persona.scratch.name, "finish get action event triple --\033[0m")
       keywords = set([s, p, o])
+      print("\033[0;33m---in reflect---", persona.scratch.name, "start generate poig score --\033[0m")
       thought_poignancy = generate_poig_score(persona, "thought", planning_thought)
+      print("\033[0;33m---in reflect---", persona.scratch.name, "finish generate poig score --\033[0m")
       thought_embedding_pair = (planning_thought, get_embedding(planning_thought))
 
       persona.a_mem.add_thought(created, expiration, s, p, o, 
@@ -229,13 +246,16 @@ def reflect(persona):
                                 thought_embedding_pair, evidence)
 
 
-
+      print("\033[0;33m---in reflect---", persona.scratch.name, "start try to get memo on conversation --\033[0m")
       memo_thought = generate_memo_on_convo(persona, all_utt)
+      print("\033[0;33m---in reflect---", persona.scratch.name, "finish get memo on conversation --\033[0m")
       memo_thought = f"{persona.scratch.name} {memo_thought}"
 
       created = persona.scratch.curr_time
       expiration = persona.scratch.curr_time + datetime.timedelta(days=30)
+      print("\033[0;33m---in reflect---", persona.scratch.name, "start get action event triple --\033[0m")
       s, p, o = generate_action_event_triple(memo_thought, persona)
+      print("\033[0;33m---in reflect---", persona.scratch.name, "finish get action event triple --\033[0m")
       keywords = set([s, p, o])
       thought_poignancy = generate_poig_score(persona, "thought", memo_thought)
       thought_embedding_pair = (memo_thought, get_embedding(memo_thought))

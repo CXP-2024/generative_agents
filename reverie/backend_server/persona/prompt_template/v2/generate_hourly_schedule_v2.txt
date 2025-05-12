@@ -11,6 +11,21 @@ Variables:
 <commentblockmarker>###</commentblockmarker>
 Hourly schedule format: 
 !<INPUT 0>!
+
+IMPORTANT: Only output the Activity description, not the full schedule format.
+
+Example Format:
+If prompted with "[(ID:iD8rT4) Monday February 13 -- 02:00 AM] Activity: Mari is "
+Respond only with: "practicing long jump at the jumping pit"
+
+For timed activities within an hour:
+Use format "main activity, and at around XX:XX, will [specific activity]"
+Example: "reading a book, and at around 02:45, will prepare for bed"
+
+For sleep: Simply write "sleeping" with no additional details.
+
+Important: Do not include any timestamps, day information, or template elements in your response. Provide only the activity description.
+
 ===
 !<INPUT 1>!
 !<INPUT 2>!
