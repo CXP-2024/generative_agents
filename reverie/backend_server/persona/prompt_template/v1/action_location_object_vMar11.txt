@@ -10,11 +10,11 @@ Variables:
 !<INPUT 8>! -- Persona's current sector
 
 <commentblockmarker>###</commentblockmarker>
-Jane Anderson is in kitchen in Jane Anderson's house.
-Jane Anderson is going to Jane Anderson's house that has the following areas: {kitchen,  bedroom, bathroom}
+Jane Anderson is in living room in Jane Anderson's house.
+Jane Anderson is going to Jane Anderson's house that has the following areas: {living room,  bedroom, bathroom}
 Stay in the current area if the activity can be done there. Never go into other people's rooms unless necessary.
-For cooking, Jane Anderson should go to the following area in Jane Anderson's house:
-Answer: {kitchen}
+For simple drinking or eating, Jane Anderson should go to the following area in Jane Anderson's house:
+Answer: {living room}
 ---
 Tom Watson is in common room in Tom Watson's apartment. 
 Tom Watson is going to Hobbs Cafe that has the following areas: {cafe}

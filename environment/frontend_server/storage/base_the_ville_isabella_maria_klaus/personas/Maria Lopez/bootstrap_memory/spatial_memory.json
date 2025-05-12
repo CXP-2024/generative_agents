@@ -1,74 +1,96 @@
 {
-  "the Ville": {
-    "Oak Hill College": {
-      "hallway": [],
-      "library": [
+  "the School": {
+    "classroom building": {
+      "classroom 1": [
+        "blackboard",
+        "classroom student seating",
+        "classroom podium",
+        "potted plant"
+      ],
+      "library room": [
         "library sofa",
         "library table",
-        "bookshelf"
+        "bookshelf",
+        "potted plant"
       ],
-      "classroom": [
-        "blackboard",
-        "classroom podium",
-        "classroom student seating"
+      "music room": [
+        "piano",
+        "hand drum",
+        "guitar",
+        "bass drum",
+        "snare drum",
+        "drum kit",
+        "cello",
+        "speaker",
+        "harp",
+        "microphone"
+      ],
+      "art room": [
+        "easel"
+      ],
+      "sports room": [
+        "ping pong table",
+        "vault base",
+        "kettlebell",
+        "dumbbell rack",
+        "bench press station",
+        "pool table"
+      ],
+      "corridor": [
+        "vending machine",
+        "coffee vending machine"
       ]
     },
-    "The playground": {
+    "canteen": {
+      "student canteen": [
+        "teacher restaurant table",
+        "buffet table",
+        "tray rack",
+        "restaurant sink",
+        "coffee machine"
+      ]
+    },
+    "Isabella Rodriguez's office and dormitory": {
+      "office": [
+        "computer desk",
+        "bookshelf",
+        "blackboard"
+      ]
+    },
+    "pond": {
+      "island 1": [],
+      "island 2": []
+    },
+    "playground": {
       "playground": [
+        "soccer field",
+        "running track",
         "long jump pit"
       ]
     },
-    "Dorm for Oak Hill College": {
-      "garden": [
-        "dorm garden"
+    "laundry room": {
+      "laundry room 1": [
+        "washing machine"
       ],
-      "Maria Lopez's room": [
-        "closet",
-        "desk",
-        "bed",
-        "computer",
-        "blackboard"
-      ],
-      "woman's bathroom": [
-        "toilet",
-        "shower",
-        "bathroom sink"
-      ],
+      "laundry room 2": [
+        "washing machine"
+      ]
+    },
+    "student dormitory 3": {
       "common room": [
-        "common room sofa",
-        "pool table",
-        "common room table"
+        "bookshelf",
+        "bed",
+        "desk",
+        "hatsune miku figure"
       ],
-      "man's bathroom": [
-        "shower",
+      "bathroom": [
+        "toilet",
         "bathroom sink",
-        "toilet"
-      ]
-    },
-    "Johnson Park": {
-      "park": [
-        "park garden"
-      ]
-    },
-    "The Rose and Crown Pub": {
-      "pub": [
-        "shelf",
-        "refrigerator",
-        "bar customer seating",
-        "behind the bar counter",
-        "kitchen sink",
-        "cooking area",
-        "microphone"
-      ]
-    },
-    "Hobbs Cafe": {
-      "cafe": [
-        "refrigerator",
-        "cafe customer seating",
-        "cooking area",
-        "kitchen sink",
-        "behind the cafe counter",
-        "piano"
+        "shower"
+      ],
+      "balcony": [
+        "closet",
+        "potted plant"
       ]
     }
   }
