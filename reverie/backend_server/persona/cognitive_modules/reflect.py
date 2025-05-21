@@ -9,6 +9,7 @@ sys.path.append('../../')
 
 import datetime
 import random
+import re
 
 from numpy import dot
 from numpy.linalg import norm
@@ -209,14 +210,12 @@ def reset_reflection_counter(persona):
   
 def extract_schedule_changes_from_thought(persona, planning_thought):
     """
-    Analyzes a planning thought to extract ALL potential schedule changes.
-    
-    Returns a list of dicts with activities and durations if changes are identified,
-    otherwise returns an empty list.
+    分析规划思想，提取所有潜在的日程变更。
+    返回包含活动和持续时间的字典列表，如果没有变更则返回空列表。
     """
     print(f"\033[0;33m---in extract_schedule_changes---", persona.scratch.name, "analyzing thought for multiple schedule changes --\033[0m")
     
-    # Remove the prefix if it exists
+    # 如果存在前缀，则移除
     if planning_thought.startswith(f"For {persona.scratch.name}'s planning:"):
         planning_thought = planning_thought[len(f"For {persona.scratch.name}'s planning:"):]
     
@@ -226,22 +225,23 @@ def extract_schedule_changes_from_thought(persona, planning_thought):
     "{planning_thought}"
     
     Based on this reflection, identify ALL suggested changes to {persona.name}'s schedule.
-    Extract each activity that should be added or modified, and for approximately how many minutes.
-		If the activity is not relevant to the current day, please ignore it. (for example, if go out for date tomorrow, do not include here; however if prepare for important Date tomorrow, include it)
+    Extract each activity that should be added or modified, with detailed descriptions of the activity.
+    Include approximately how many minutes each activity should take.
+    If the activity is not relevant to the current day, please ignore it.
 
     Answer in JSON format, without any ``` or ``` json tags code blocks or markdown formatting.
     Format the response as a list of schedule changes:
     [
       {{
         "change_needed": true,
-        "activity": "first activity description",
+        "activity": "detailed activity description (can include sub-activities and transitions)",
         "duration": minutes_as_integer,
         "suggested_time": "morning/afternoon/evening/specific time",
         "priority": "high/medium/low"
       }},
       {{
         "change_needed": true,
-        "activity": "second activity description",
+        "activity": "detailed activity description (can include sub-activities and transitions)",
         "duration": minutes_as_integer,
         "suggested_time": "morning/afternoon/evening/specific time",
         "priority": "high/medium/low"
@@ -256,9 +256,9 @@ def extract_schedule_changes_from_thought(persona, planning_thought):
             response = ChatGPT_single_request(schedule_change_prompt)
             result = json.loads(response)
             
-            # Check if the result is a list
+            # 检查结果是否为列表
             if isinstance(result, list):
-                # Filter out any items where change_needed is False
+                # 过滤掉 change_needed 为 False 的项目
                 changes = [change for change in result if change.get("change_needed", True)]
                 if changes:
                     print(f"\033[0;33m---in extract_schedule_changes---", persona.scratch.name, f"found {len(changes)} schedule changes --\033[0m")
@@ -267,7 +267,7 @@ def extract_schedule_changes_from_thought(persona, planning_thought):
                     print(f"\033[0;33m---in extract_schedule_changes---", persona.scratch.name, "no schedule changes needed --\033[0m")
                     return []
             else:
-                # Try to handle the case where it returns a single object instead of a list
+                # 处理返回单个对象而非列表的情况
                 if result.get("change_needed", False):
                     print(f"\033[0;33m---in extract_schedule_changes---", persona.scratch.name, "found a single schedule change --\033[0m")
                     return [result]
@@ -277,142 +277,164 @@ def extract_schedule_changes_from_thought(persona, planning_thought):
     print(f"\033[1;31m---in extract_schedule_changes---Warning! failed to get response from GPT for", persona.scratch.name, "--\033[0m")
     return []
 
-def generate_future_schedule(persona, schedule_changes):
+def generate_future_hourly_schedule(persona, schedule_changes):
     """
-    Generates a completely new schedule for the rest of the day based on multiple requested changes.
-    All changes are incorporated at once to avoid conflicts.
+    基于多个请求的变更为一天的剩余时间生成一个全新的小时级别日程表。
+    保持原始时间条目不变，在活动描述中添加新活动。
     
     Args:
-        persona: The persona object
-        schedule_changes: List of schedule changes extracted from planning thoughts
+        persona: Persona 对象
+        schedule_changes: 从规划思想中提取的日程变更列表
         
     Returns:
-        A list of [activity, duration] pairs for the rest of the day
+        一个用于一天剩余时间的 [activity, duration_in_minutes] 对列表
     """
-    # Calculate current time in minutes from midnight
+    # 计算从午夜开始的当前时间（以分钟为单位）
     curr_time_mins = (int(persona.scratch.curr_time.hour) * 60 + 
                      int(persona.scratch.curr_time.minute))
     
-    # Round up to the nearest 5 minutes for clean scheduling
-    if curr_time_mins % 5 != 0:
-        curr_time_mins = curr_time_mins + (5 - (curr_time_mins % 5))
-    
-    # Find the starting index in the daily schedule for future activities
+    # 找到每日日程中未来活动的起始索引
     future_start_index = None
     dur_sum = 0
-    for i, (act, dur) in enumerate(persona.scratch.f_daily_schedule):
+    for i, (act, dur) in enumerate(persona.scratch.f_daily_schedule_hourly_org):
         if dur_sum <= curr_time_mins and dur_sum + dur > curr_time_mins:
             future_start_index = i
             break
         dur_sum += dur
     
     if future_start_index is None:
-        print(f"\033[1;31m---in generate_future_schedule---Could not find current position in schedule for {persona.scratch.name}--\033[0m")
+        print(f"\033[1;31m---in generate_future_hourly_schedule---Could not find current position in hourly schedule for {persona.scratch.name}--\033[0m")
         return False
         
-    # Extract the original future schedule
-    future_schedule = persona.scratch.f_daily_schedule[future_start_index:]
+    # 提取原始未来日程
+    future_schedule = persona.scratch.f_daily_schedule_hourly_org[future_start_index:]
     
-    # Calculate the start time of the first future activity
+    # 计算第一个未来活动的开始时间
     start_hour = int(dur_sum / 60)
     start_minute = dur_sum % 60
+    start_minutes_int = (start_hour * 60 + start_minute) % (24 * 60)
     start_time = f"{start_hour:02d}:{start_minute:02d}"
     
-    # Calculate the end of the day
-    end_hour = 24
-    
-    # Format the original schedule for the LLM
+    # 为 LLM 格式化原始日程，包含完整的时间范围
     original_schedule_formatted = []
     temp_dur_sum = dur_sum
+    
+    # 保存原始时间范围，以便后续匹配
+    original_time_ranges = []
+    
     for act, dur in future_schedule:
         start_h = int(temp_dur_sum / 60)
         start_m = temp_dur_sum % 60
-        end_h = int((temp_dur_sum + dur) / 60) 
-        end_m = (temp_dur_sum + dur) % 60
+        temp_dur_sum += dur
+        end_h = int(temp_dur_sum / 60) % 24
+        end_m = temp_dur_sum % 60
         if start_h >= 24:
            break
         
-        original_schedule_formatted.append(f"{start_h:02d}:{start_m:02d} ~ {end_h:02d}:{end_m:02d} -- {act}")
-        temp_dur_sum += dur
+        time_range = f"{start_h:02d}:{start_m:02d}-{end_h:02d}:{end_m:02d}"
+        original_time_ranges.append((time_range, dur))
+        original_schedule_formatted.append(f"{time_range} -- {act} -- {dur} minutes")
     
-    # Format the requested changes for the LLM
+    # 为 LLM 格式化请求的变更
     changes_formatted = []
     for change in schedule_changes:
         changes_formatted.append(f"- {change['activity']} for {change['duration']} minutes " +
                                f"(suggested time: {change['suggested_time']}, priority: {change['priority']})")
     
-    # Create the prompt for the LLM
+    # 为 LLM 创建提示，明确不要改变时间范围，而是在描述中添加活动
     schedule_prompt = f"""
-Revise {persona.scratch.name}'s schedule for the rest of today.
+		Revise {persona.scratch.name}'s schedule for the rest of today.
 
-Current time: {persona.scratch.curr_time.strftime('%H:%M')}
+		Current time: {persona.scratch.curr_time.strftime('%H:%M')}
 
-Original plan (remaining day):
-{chr(10).join(original_schedule_formatted)}
+		Original schedule (remaining day):
+		{chr(10).join(original_schedule_formatted)}
 
-Requested changes:
-{chr(10).join(changes_formatted)}
+		Requested changes:
+		{chr(10).join(changes_formatted)}
 
-Please produce a revised schedule that:
-- Your first entry must starts at {start_time}
-- Must ends by 24:00
-- Includes all high-priority changes
-- Tries to accommodate medium- and low-priority changes
-- Preserves as much of the original plan as possible
-- Lists each activity with its duration in minutes
+		Instructions:
+		1. KEEP ALL ORIGINAL TIME SLOTS EXACTLY AS THEY ARE - Do not modify any HH:MM-HH:MM time ranges
+		2. Incorporate all requested changes by EMBEDDING them into existing time slots
+		3. For activities within a time slot, use natural language like:
+			 - "at around 2:30 PM will [activity]"
+			 - "from approximately 3:00 to 4:30 will [activity]"
+		4. For activities spanning multiple time slots:
+			 - First slot: "original activity, and at [time] will begin [new activity]"
+			 - Middle slots: "continuing [new activity]"
+			 - Final slot: "finishing [new activity], then resume [original activity]"
+		5. ONLY modify activity descriptions - never change time ranges or durations
+		6. The first time slot is already in progress - make minimal changes to it if necessary (better not to change for this one!!!!)
 
-Return only a JSON array in this format, without any ``` or ``` json tags code blocks or markdown formatting.
-[
-  ["XX:XX-YY:YY", "Activity description 1", duration_in_minutes],
-  ["YY:YY-ZZ:ZZ", "Activity description 2", duration_in_minutes],
-  …
-]
+		Example:
+		Original: "09:00-11:00", "Working at cafe", "120"
+		Change needed: "Meet Sam for coffee"
+		Result: "09:00-11:00", "Working at cafe, and at around 10:30, meet with Sam for coffee", "120"
 
-Ensure the sum of all durations equals the remaining minutes in the day.
-    """
+    IMPORTANT: 
+    Your response must be valid JSON without markdown formatting or code blocks. Do not wrap the JSON in ```json or ``` tags.
+		Return a JSON array with this exact structure:
+		[
+			["HH:MM-HH:MM", "Updated activity description", duration_in_minutes],
+			["HH:MM-HH:MM", "Updated activity description", duration_in_minutes],
+			...
+		]
+		"""
 
-    
-    # Get the new schedule from the LLM
+    # 从 LLM 获取新日程
     for repeat in range(3):
-      try:
-        response = ChatGPT_single_request(schedule_prompt)
-        # Parse the JSON response
-        new_schedule = json.loads(response)
-        for i, item in enumerate(new_schedule):
-           new_schedule[i] = [item[1], item[2]]
-        print(f"\033[0;33m---in generate_future_schedule---", persona.scratch.name, f"new:\n{new_schedule} --\033[0m")
-        
-        # Validate the schedule
-        total_duration = sum(item[1] for item in new_schedule)
-        expected_duration = (24 * 60) - start_hour * 60 - start_minute
-        
-        if abs(total_duration - expected_duration) > 0:  # Allow small rounding errors
-            print(f"\033[1;31m---in generate_future_schedule---Invalid schedule duration: {total_duration} vs expected {expected_duration}--\033[0m")
-            # Adjust the last activity to make the total correct
-            raise ValueError("Invalid schedule duration")
-        
-
-        return new_schedule
-        
-      except Exception as e:
-        print(f"\033[1;31m---in generate_future_schedule---Error generating schedule: {e}, repeat: {repeat}--\033[0m")
-        
-    print(f"\033[1;31m---in generate_future_schedule---Failed to get a valid schedule for {persona.scratch.name}--\033[0m")
+        try:
+            response = ChatGPT_single_request(schedule_prompt)
+            # 解析 JSON 响应
+            full_schedule = json.loads(response)
+            
+            # 验证时间范围是否与原始时间范围匹配
+            if len(full_schedule) != len(original_time_ranges):
+                print(f"\033[1;31m---in generate_future_hourly_schedule---Mismatch in schedule length: {len(full_schedule)} vs expected {len(original_time_ranges)}--\033[0m")
+                continue
+                
+            mismatch = False
+            for i, (time_range, _, dur) in enumerate(full_schedule):
+                orig_time_range, orig_dur = original_time_ranges[i]
+                if time_range != orig_time_range or dur != orig_dur:
+                    print(f"\033[1;31m---in generate_future_hourly_schedule---Mismatch in time range or duration: {time_range}/{dur} vs expected {orig_time_range}/{orig_dur}--\033[0m")
+                    mismatch = True
+                    break
+                    
+            if mismatch:
+                continue
+                
+            # 从响应中提取活动描述和持续时间（保持原始时间范围和持续时间）
+            new_schedule = [[item[1], item[2]] for item in full_schedule]
+            
+            # 打印完整日程（包含时间范围）以便调试
+            # print(f"\033[0;33m---in generate_future_hourly_schedule---", persona.scratch.name, f"new detailed schedule with time ranges:\033[0m")
+            # for time_range, activity, duration in full_schedule:
+            #     print(f"\033[0;33m  [\"{time_range}\", \"{activity}\", {duration}],\033[0m")
+            
+            # 返回只包含活动描述和持续时间的日程
+            print(f"\033[0;33m---in generate_future_hourly_schedule---", persona.scratch.name, f"returning processed schedule (without time ranges)\033[0m")
+            return new_schedule
+            
+        except Exception as e:
+            print(f"\033[1;31m---in generate_future_hourly_schedule---Error generating schedule: {e}, repeat: {repeat}--\033[0m")
+    
+    print(f"\033[1;31m---in generate_future_hourly_schedule---Failed to get a valid schedule for {persona.scratch.name}--\033[0m")
     return False
 
 def modify_future_schedule(persona, planning_thought):
     """
-    Analyzes planning thoughts and modifies the entire future schedule at once
-    to incorporate all suggested changes, avoiding conflicts.
+    分析规划思想并一次性修改整个未来的小时级别日程，以结合所有建议的变更，避免冲突。
+    修改f_daily_schedule_hourly_org而不是f_daily_schedule，以便让decomposition机制正常运行。
     
     Args:
-        persona: The persona object
-        planning_thought: The planning thought to analyze
+        persona: Persona 对象
+        planning_thought: 要分析的规划思想
         
     Returns:
-        True if schedule was successfully modified, False otherwise
+        如果日程成功修改则返回True，否则返回False
     """
-    # Extract schedule changes from the planning thought
+    # 从规划思想中提取日程变更
     schedule_changes = extract_schedule_changes_from_thought(persona, planning_thought)
     
     if not schedule_changes:
@@ -421,48 +443,189 @@ def modify_future_schedule(persona, planning_thought):
     
     print(f"\033[0;33m---in modify_future_schedule---", persona.scratch.name, f"found {len(schedule_changes)} schedule changes to implement--\033[0m")
     
-    # Generate a new complete schedule for the future
-    new_schedule = generate_future_schedule(persona, schedule_changes)
+    # 为未来生成一个全新的完整日程
+    new_hourly_schedule = generate_future_hourly_schedule(persona, schedule_changes)
     
-    if not new_schedule:
-        print(f"\033[1;31m---in modify_future_schedule---Failed to generate new schedule for {persona.scratch.name}--\033[0m")
+    if not new_hourly_schedule:
+        print(f"\033[1;31m---in modify_future_schedule---Failed to generate new hourly schedule for {persona.scratch.name}--\033[0m")
         return False
     
-    # Calculate current time in minutes from midnight
+    # 计算从午夜开始的当前时间（以分钟为单位）
     curr_time_mins = (int(persona.scratch.curr_time.hour) * 60 + 
                      int(persona.scratch.curr_time.minute))
     
-    # Find the starting index in the daily schedule for future activities
+    # 找到小时日程中未来活动的起始索引
     future_start_index = None
     dur_sum = 0
-    for i, (act, dur) in enumerate(persona.scratch.f_daily_schedule):
+    for i, (act, dur) in enumerate(persona.scratch.f_daily_schedule_hourly_org):
         if dur_sum <= curr_time_mins and dur_sum + dur > curr_time_mins:
             future_start_index = i
             break
         dur_sum += dur
     
     if future_start_index is None:
-        print(f"\033[1;31m---in modify_future_schedule---Could not find current position in schedule for {persona.scratch.name}--\033[0m")
+        print(f"\033[1;31m---in modify_future_schedule---Could not find current position in hourly schedule for {persona.scratch.name}--\033[0m")
         return False
     
-    # Create a partial entry for the current activity that's being interrupted
-    remaining_mins = dur_sum + persona.scratch.f_daily_schedule[future_start_index][1] - curr_time_mins
+    # 为当前被中断的活动创建一个部分条目
+    remaining_mins = dur_sum + persona.scratch.f_daily_schedule_hourly_org[future_start_index][1] - curr_time_mins
     if remaining_mins > 0:
-        current_activity = persona.scratch.f_daily_schedule[future_start_index][0]
-        modified_schedule = [[current_activity, remaining_mins]] + new_schedule
+        current_activity = persona.scratch.f_daily_schedule_hourly_org[future_start_index][0]
+        modified_schedule = [[current_activity, remaining_mins]] + new_hourly_schedule
     else:
-        modified_schedule = new_schedule
+        modified_schedule = new_hourly_schedule
     
-    # Replace the future schedule with the new schedule
-    persona.scratch.f_daily_schedule = persona.scratch.f_daily_schedule[:future_start_index] + modified_schedule
+    # 在修改小时日程之前先保存原始详细日程到当前时间点
+    print(f"\033[0;33m---in modify_future_schedule---Preserving detailed schedule up to current time--\033[0m")
     
-    # Log the changes
-    print(f"\033[0;32m---in modify_future_schedule---Successfully updated {persona.scratch.name}'s schedule with {len(schedule_changes)} changes--\033[0m")
+    # 用新日程替换未来的小时日程
+    persona.scratch.f_daily_schedule_hourly_org = persona.scratch.f_daily_schedule_hourly_org[:future_start_index] + modified_schedule
+    
+    # 显示更新后的小时日程
+    print(f"\033[0;33m---in modify_future_schedule---Updated hourly schedule for {persona.scratch.name}:--\033[0m")
+    for i, (activity, duration) in enumerate(persona.scratch.f_daily_schedule_hourly_org):
+        print(f"\033[0;32m  {i}: [{activity}, {duration}]--\033[0m")
+    # 显示 f_daily_schedule
+    print(f"\033[0;33m---in modify_future_schedule---Show f_daily_schedule for {persona.scratch.name} (This should be updated after next decomp): --\033[0m")
+    for i, (activity, duration) in enumerate(persona.scratch.f_daily_schedule):
+        print(f"\033[0;32m  {i}: [{activity}, {duration}]--\033[0m")
+    
+    # 记录变更
+    print(f"\033[0;33m---in modify_future_schedule---Successfully updated {persona.scratch.name}'s hourly schedule with {len(schedule_changes)} changes--\033[0m")
+    
+    # 将重要的约定添加到commitments中
+    today_date = persona.scratch.curr_time.strftime('%Y-%m-%d')
+    if today_date not in persona.scratch.commitments:
+        persona.scratch.commitments[today_date] = []
+    
+    for change in schedule_changes:
+        if change.get('priority') == 'high':
+            # 计算近似时间
+            suggested_time = change.get('suggested_time', '')
+            time_estimate = _estimate_time_from_suggestion(suggested_time, persona.scratch.curr_time)
+            
+            commitment = {
+                "time": time_estimate,
+                "duration": change.get('duration', 30),  # 转换为分钟
+                "description": change['activity'],
+                "with": _extract_person_from_activity(change['activity']),
+                "location": _extract_location_from_activity(change['activity'])
+            }
+            
+            # 避免重复添加相同的承诺
+            if not any(c['description'] == commitment['description'] for c in persona.scratch.commitments[today_date]):
+                persona.scratch.commitments[today_date].append(commitment)
+                print(f"\033[0;33m---in modify_future_schedule---Added commitment: {commitment}--\033[0m")
     
     return True
 
+def _estimate_time_from_suggestion(suggested_time, current_time):
+    """辅助函数，从时间建议中估计具体时间"""
+    # 首先检查是否有"around XX:XX"或"at XX:XX"等模式
+    time_pattern = r'(?:around|at|about|approximately|by|near|close to)\s+(\d{1,2})[:\.]?(\d{2})?\s*(am|pm|AM|PM)?'
+    matches = re.findall(time_pattern, suggested_time)
+    
+    if matches:
+        hours, minutes, period = matches[0]
+        hours = int(hours)
+        minutes = int(minutes) if minutes else 0
+        
+        # 处理am/pm格式
+        if period and period.lower() == 'pm' and hours < 12:
+            hours += 12
+        elif period and period.lower() == 'am' and hours == 12:
+            hours = 0
+            
+        return f"{hours:02d}:{minutes:02d}"
+        
+    # 然后检查标准时间格式
+    if ":" in suggested_time:
+        return suggested_time
+    
+    # 检查时间段描述
+    if suggested_time.lower() == "morning":
+        if current_time.hour < 10:
+            return f"{current_time.hour + 1}:00"
+        else:
+            return "10:00"
+    elif suggested_time.lower() == "afternoon":
+        if current_time.hour < 14:
+            return "14:00"
+        else:
+            return f"{current_time.hour + 1}:00"
+    elif suggested_time.lower() == "evening":
+        if current_time.hour < 18:
+            return "18:00"
+        else:
+            return f"{current_time.hour + 1}:00"
+    elif suggested_time.lower() == "night":
+        return "20:00"
+    else:
+        # 尝试解析纯数字（小时）
+        try:
+            hour = int(suggested_time)
+            if 0 <= hour < 24:
+                return f"{hour}:00"
+        except:
+            pass
+
+    # 如果无法解析，则默认为当前时间后一小时
+    next_hour = (current_time.hour + 1) % 24
+    return f"{next_hour}:00"
+
+def _extract_person_from_activity(activity):
+    """从活动描述中提取可能的人名"""
+    # 扩展人名列表以覆盖更多角色
+    common_names = [
+        "Isabella", "Maria", "Arthur", "Klaus", "John", "Jane", "Sam", "Mei", 
+        "Rodriguez", "Lopez", "Burton", "Chen", "Smith", "Johnson", "Williams", 
+        "Brown", "Jones", "Miller", "Davis", "Garcia", "Wilson"
+    ]
+    
+    # 首先尝试找出"meet with X"或"talk to X"等模式
+    meet_pattern = r"(?:meet|talk|speak|chat|discuss|see|visit|hang out)(?:\s+\w+){0,3}\s+(?:with|to)\s+(\w+)(?:\s+\w+)?"
+    matches = re.findall(meet_pattern, activity, re.IGNORECASE)
+    
+    if matches:
+        for name in matches:
+            if name in common_names:
+                return name
+    
+    # 如果上面的模式没找到，检查常见名字
+    for name in common_names:
+        if re.search(r'\b' + name + r'\b', activity):
+            return name
+            
+    return ""
+
+def _extract_location_from_activity(activity):
+    """从活动描述中提取可能的位置"""
+    # 扩展位置列表以覆盖更多地点
+    common_locations = [
+        "Cafe", "Park", "Home", "College", "School", "Library", "Playground", 
+        "Studio", "Gym", "Restaurant", "Office", "Market", "Store", "Shop", 
+        "Mall", "Theater", "Cinema", "Museum", "Gallery", "Garden", "Hobbs", 
+        "Oak Hill", "jumping pit", "downtown"
+    ]
+    
+    # 首先尝试找出"at X"或"to X"等模式
+    location_pattern = r"(?:at|to|in|visit|go to|arrive at|be at|head to)\s+(?:the\s+)?([A-Z][a-z]+ ?(?:[A-Z][a-z]+)?)"
+    matches = re.findall(location_pattern, activity)
+    
+    if matches:
+        for loc in matches:
+            if any(l.lower() in loc.lower() for l in common_locations):
+                return loc
+    
+    # 如果上面的模式没找到，检查常见位置
+    for location in common_locations:
+        if re.search(r'\b' + location + r'\b', activity, re.IGNORECASE):
+            return location
+            
+    return ""
+
 def _matches_suggested_time(hour, suggested_time):
-    """Helper function to determine if an hour matches a suggested time period."""
+    """辅助函数，确定一个小时是否匹配建议的时间段。"""
     if suggested_time.lower() == "morning":
         return 5 <= hour <= 11
     elif suggested_time.lower() == "afternoon":
@@ -470,15 +633,15 @@ def _matches_suggested_time(hour, suggested_time):
     elif suggested_time.lower() == "evening":
         return 18 <= hour <= 22
     else:
-        # Try to parse a specific time
+        # 尝试解析具体时间
         try:
             if ":" in suggested_time:
                 suggested_hour = int(suggested_time.split(":")[0])
             else:
                 suggested_hour = int(suggested_time)
-            return abs(hour - suggested_hour) <= 2  # Within 2 hours
+            return abs(hour - suggested_hour) <= 2  # 在2小时内
         except:
-            return True  # If no clear preference, any time is fine
+            return True  # 如果没有明确的偏好，任何时间都可以
 
 def reflect(persona):
   """

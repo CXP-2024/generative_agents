@@ -563,7 +563,46 @@ def _long_term_planning(persona, new_day):
   # time.sleep(10)
   # print("Done sleeping!")
 
-
+## Utility function to show the daily schedule in a readable format
+def show_f_daily_schedule_better(persona):
+    """
+    Display a persona's daily schedule in a readable format showing time ranges,
+    activity descriptions, and durations.
+    
+    Format: ["HH:MM-HH:MM", "activity description", duration_in_minutes]
+    
+    Args:
+        persona: The persona whose schedule we want to display
+    """
+    if not persona.scratch.f_daily_schedule:
+        print("\033[1;33mNo daily schedule available.\033[0m")
+        return
+    
+    print(f"\033[1;36m{persona.scratch.name}'s Daily Schedule:\033[0m")
+    
+    # Calculate and format the schedule with time ranges
+    curr_min_sum = 0
+    formatted_schedule = []
+    
+    for activity, duration in persona.scratch.f_daily_schedule:
+        # Calculate start time
+        start_hour = int(curr_min_sum / 60) % 24
+        start_min = curr_min_sum % 60
+        
+        # Add duration to get end time
+        curr_min_sum += duration
+        end_hour = int(curr_min_sum / 60) % 24
+        end_min = curr_min_sum % 60
+        
+        # Format as HH:MM-HH:MM
+        time_range = f"{start_hour:02d}:{start_min:02d}-{end_hour:02d}:{end_min:02d}"
+        
+        # Add to formatted list
+        formatted_schedule.append([time_range, activity, duration])
+    
+    # Display the formatted schedule
+    for time_range, activity, duration in formatted_schedule:
+        print(f"\033[1;36m  [\"{time_range}\", \"{activity}\", {duration}], \033[0m")
 
 def _determine_action(persona, maze): 
   """
@@ -616,14 +655,22 @@ def _determine_action(persona, maze):
       # We decompose if the next action is longer than an hour, and fits the
       # criteria described in determine_decomp.
       if determine_decomp(act_desp, act_dura): 
+        print("\033[0;33m------in _determine_action------", persona.name , "original f_daily_schedule\033[0m")
+        show_f_daily_schedule_better(persona)
         persona.scratch.f_daily_schedule[curr_index:curr_index+1] = (
                             generate_task_decomp(persona, act_desp, act_dura))
+        print("\033[0;33m------in _determine_action------", persona.name , "after decomp f_daily_schedule\033[0m")
+        show_f_daily_schedule_better(persona)
     if curr_index_60 + 1 < len(persona.scratch.f_daily_schedule):
       act_desp, act_dura = persona.scratch.f_daily_schedule[curr_index_60+1]
       if act_dura >= 60: 
         if determine_decomp(act_desp, act_dura): 
+          print("\033[0;33m------in _determine_action------", persona.name , "original f_daily_schedule\033[0m")
+          show_f_daily_schedule_better(persona)
           persona.scratch.f_daily_schedule[curr_index_60+1:curr_index_60+2] = (
                             generate_task_decomp(persona, act_desp, act_dura))
+          print("\033[0;33m------in _determine_action------", persona.name , "after decomp f_daily_schedule\033[0m")
+          show_f_daily_schedule_better(persona)
 
   if curr_index_60 < len(persona.scratch.f_daily_schedule):
     # If it is not the first hour of the day, this is always invoked (it is
@@ -635,16 +682,20 @@ def _determine_action(persona, maze):
       act_desp, act_dura = persona.scratch.f_daily_schedule[curr_index_60]
       if act_dura >= 60: 
         if determine_decomp(act_desp, act_dura): 
+          print("\033[0;33m------in _determine_action------", persona.name , "original f_daily_schedule\033[0m")
+          show_f_daily_schedule_better(persona)
           persona.scratch.f_daily_schedule[curr_index_60:curr_index_60+1] = (
                               generate_task_decomp(persona, act_desp, act_dura))
+          print("\033[0;33m------in _determine_action------", persona.name , "after decomp f_daily_schedule\033[0m")
+          show_f_daily_schedule_better(persona)
   # * End of Decompose * 
 
   # Generate an <Action> instance from the action description and duration. By
   # this point, we assume that all the relevant actions are decomposed and 
   # ready in f_daily_schedule. 
   print ("\033[0;33mDEBUG LJSDLFSKJF\033[0m")
-  for i in persona.scratch.f_daily_schedule: print (i)
-  print (curr_index)
+  # for i in persona.scratch.f_daily_schedule: print (i)
+  print ("current f_daily_schedule_index: ", curr_index)
   print (len(persona.scratch.f_daily_schedule))
   print (persona.scratch.name)
   print ("------")
@@ -653,11 +704,11 @@ def _determine_action(persona, maze):
   x_emergency = 0
   for i in persona.scratch.f_daily_schedule: 
     x_emergency += i[1]
-  # print ("x_emergency", x_emergency)
+# print ("x_emergency", x_emergency)
 
   if 1440 - x_emergency > 0: 
-    print ("x_emergency__AAA", x_emergency)
-  persona.scratch.f_daily_schedule += [["sleeping", 1440 - x_emergency]]
+    print ("\033[1;31merror x_emergency__AAA", x_emergency, "\033[0m")
+    persona.scratch.f_daily_schedule += [["sleeping", 1440 - x_emergency]]  # Only add if there's time left
   
 
 
@@ -982,11 +1033,15 @@ def _chat_react(maze, persona, focused_event, reaction_mode, personas):
     act_obj_event = (None, None, None)
 
     print("\033[0;33m-----in chat_react----", p.name , " start a create_react and decomp plan", target_persona.name, "\033[0m")
+    # show original daily schedule
+    print("\033[0;33m-----in chat_react----", p.name , " original f_daily_schedule\033[0m")
+    show_f_daily_schedule_better(p)
     _create_react(p, inserted_act, inserted_act_dur,
       act_address, act_event, chatting_with, convo, chatting_with_buffer, chatting_end_time,
       act_pronunciatio, act_obj_description, act_obj_pronunciatio, 
       act_obj_event, act_start_time)
     print("\033[0;33m-----in chat_react----", p.name , " finish a create_react and decom plan", target_persona.name, "\033[0m")
+    show_f_daily_schedule_better(p)
     print("\033[0;33m-----in chat_react----", p.name , " current time:", curr_time, "chatting end time:", chatting_end_time, "\033[0m")
     # 为每个角色创建聊天记忆节点
     keywords = set()
@@ -1080,6 +1135,9 @@ def plan(persona, maze, personas, new_day, retrieved):
     _long_term_planning(persona, new_day)
     print("\033[1;33m----in plan----", persona.name , " finished long term planning: \033[0m")
 
+  # first show the original daily schedule
+  print("\033[0;33m------in plan------", persona.name , " original f_daily_schedule\033[0m")
+  show_f_daily_schedule_better(persona)
   # PART 2: If the current action has expired, we want to create a new plan.
   if persona.scratch.act_check_finished(): 
     print("\033[1;33m----in plan----", persona.name , " start a new determine action: \033[0m")
