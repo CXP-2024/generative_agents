@@ -285,6 +285,7 @@ def load_history_via_whisper(personas, whispers):
     keywords = set([s, p, o])
     thought_poignancy = generate_poig_score(persona, "event", whisper)
     thought_embedding_pair = (thought, get_embedding(thought))
+    print("\033[0;33m-----in load_history_via_whisper------", persona.scratch.name, " save the whisper node now. Current time:", persona.scratch.curr_time, "-----\033[0m")
     persona.a_mem.add_thought(created, expiration, s, p, o, 
                               thought, keywords, thought_poignancy, 
                               thought_embedding_pair, None)
@@ -322,6 +323,7 @@ def open_convo_session(persona, convo_mode):
     keywords = set([s, p, o])
     thought_poignancy = generate_poig_score(persona, "event", whisper)
     thought_embedding_pair = (thought, get_embedding(thought))
+    print("\033[0;33m-----in open_convo_session------", persona.scratch.name, " save the whisper node now. Current time:", persona.scratch.curr_time, "-----\033[0m")
     persona.a_mem.add_thought(created, expiration, s, p, o, 
                               thought, keywords, thought_poignancy, 
                               thought_embedding_pair, None)

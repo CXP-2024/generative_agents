@@ -257,11 +257,15 @@ def new_retrieve(persona, focal_points, n_count=30):
     if len(filtered_master_out) < 3:
             filtered_master_out = master_out
     master_nodes = filtered_master_out # after filtering
+    show_num = 10
+    print("\033[0;33mOnly show Top 10 nodes of total ", len(master_out), " \033[0m")
     for key, val in master_out.items(): 
       print (persona.a_mem.id_to_node[key].embedding_key, val)
       print (persona.scratch.recency_w*recency_out[key]*1, 
              persona.scratch.relevance_w*relevance_out[key]*1, 
              persona.scratch.importance_w*importance_out[key]*1)
+      show_num -= 1
+      if show_num <= 0: break
 
     # Extracting the highest x values.
     # <master_out> has the key of node.id and value of float. Once we get the 

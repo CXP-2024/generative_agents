@@ -30,7 +30,8 @@
   "importance_ele_n": 0, 
   "thought_count": 5, 
 
-  "daily_req": [], 
+  "commitments": {},
+	"daily_req": [], 
   "f_daily_schedule": [],
   "f_daily_schedule_hourly_org": [],
   "act_address": null, 

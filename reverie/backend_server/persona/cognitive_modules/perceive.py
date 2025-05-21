@@ -174,6 +174,7 @@ def perceive(persona, maze):
         chat_node_ids = [chat_node.node_id]'''
 
       # Finally, we add the current event to the agent's memory. 
+      print("\033[0;33m-----in perceive------", persona.name, " save the event now. Current time:", persona.scratch.curr_time, "-----\033[0m")
       ret_events += [persona.a_mem.add_event(persona.scratch.curr_time, None,
                            s, p, o, desc, keywords, event_poignancy, 
                            event_embedding_pair, chat_node_ids)]

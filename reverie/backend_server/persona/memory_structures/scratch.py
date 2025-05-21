@@ -103,6 +103,13 @@ class Scratch:
     #        ['working on her painting', 240], ... ['going to bed', 60]]
     self.f_daily_schedule_hourly_org = []
     
+		# # New structure for commitments
+    self.commitments = {
+        # Format: "YYYY-MM-DD": [{"time": "HH:MM", "duration": minutes, 
+        #                        "description": "activity description", 
+        #                        "with": "persona name", "location": "place"}]
+    }
+    
     # CURR ACTION 
     # <address> is literally the string address of where the action is taking 
     # place.  It comes in the form of 
@@ -211,6 +218,7 @@ class Scratch:
                                               "%B %d, %Y, %H:%M:%S")
       else: 
         self.curr_time = None
+      self.commitments = scratch_load["commitments"]
       self.act_duration = scratch_load["act_duration"]
       self.act_description = scratch_load["act_description"]
       self.act_pronunciatio = scratch_load["act_pronunciatio"]
@@ -278,6 +286,7 @@ class Scratch:
     scratch["importance_ele_n"] = self.importance_ele_n
     scratch["thought_count"] = self.thought_count
 
+    scratch["commitments"] = self.commitments
     scratch["daily_req"] = self.daily_req
     scratch["f_daily_schedule"] = self.f_daily_schedule
     scratch["f_daily_schedule_hourly_org"] = self.f_daily_schedule_hourly_org
@@ -344,7 +353,7 @@ class Scratch:
     curr_index = 0
     elapsed = 0
     for task, duration in self.f_daily_schedule: 
-      elapsed += duration
+      elapsed += duration # if duration = 0 , it will not work
       if elapsed > today_min_elapsed: 
         return curr_index
       curr_index += 1
@@ -553,7 +562,9 @@ class Scratch:
         x = (x + datetime.timedelta(minutes=1))
       end_time = (x + datetime.timedelta(minutes=self.act_duration))
 
+    print("\033[0;33mcurrent time: ", self.curr_time.strftime("%H:%M:%S"),"end time: ", end_time.strftime("%H:%M:%S"), "\033[0m")
     if end_time.strftime("%H:%M:%S") <= self.curr_time.strftime("%H:%M:%S"): 
+      print(f"Action finished: {self.name} is done with {self.act_description}")
       return True
     return False
 

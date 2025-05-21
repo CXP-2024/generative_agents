@@ -325,7 +325,7 @@ def generate_new_decomp_schedule(persona, inserted_act, inserted_act_dur,  start
   p = persona
   # <today_min_pass> indicates the number of minutes that have passed today. 
   today_min_pass = (int(p.scratch.curr_time.hour) * 60 
-                    + int(p.scratch.curr_time.minute) + 1)
+                    + int(p.scratch.curr_time.minute)) # remove + 1
   
   # Step 2: We need to create <main_act_dur> and <truncated_act_dur>. 
   # These are basically a sub-component of <f_daily_schedule> of the persona,
@@ -359,34 +359,45 @@ def generate_new_decomp_schedule(persona, inserted_act, inserted_act_dur,  start
   count = 0 # enumerate count
   truncated_fin = False 
 
-  print ("DEBUG::: ", persona.scratch.name)
+  print ("DEBUG::: ", persona.scratch.name, "Current time: ")
   for act, dur in p.scratch.f_daily_schedule: 
-    if (dur_sum >= start_hour * 60) and (dur_sum < end_hour * 60): 
+    dur_sum += dur
+    if (dur_sum >= start_hour * 60) and (dur_sum <= end_hour * 60): 
       main_act_dur += [[act, dur]]
       if dur_sum <= today_min_pass:
+        print("DEBUG::: dur_sum", dur_sum, "today_min_pass", today_min_pass, "currently", act, dur, "count:", count)
         truncated_act_dur += [[act, dur]]
       elif dur_sum > today_min_pass and not truncated_fin: 
         # We need to insert that last act, duration list like this one: 
         # e.g., ['wakes up and completes her morning routine (wakes up...)', 2]
-        truncated_act_dur += [[p.scratch.f_daily_schedule[count][0], 
-                               dur_sum - today_min_pass]] 
-        truncated_act_dur[-1][-1] -= (dur_sum - today_min_pass) ######## DEC 7 DEBUG;.. is the +1 the right thing to do??? 
+        print("DEBUG::: dur_sum", dur_sum, "today_min_pass", today_min_pass)
+        print("DEBUG::: currently", act, dur, "count:", count)
+        truncated_act_dur += [[act, 
+                               today_min_pass - (dur_sum - dur)]] 
+        #truncated_act_dur[-1][-1] -= (dur_sum - today_min_pass) ######## DEC 7 DEBUG;.. is the +1 the right thing to do??? 
         # truncated_act_dur[-1][-1] -= (dur_sum - today_min_pass + 1) ######## DEC 7 DEBUG;.. is the +1 the right thing to do??? 
         print ("DEBUG::: ", truncated_act_dur)
 
         # truncated_act_dur[-1][-1] -= (dur_sum - today_min_pass) ######## DEC 7 DEBUG;.. is the +1 the right thing to do??? 
         truncated_fin = True
-    dur_sum += dur
-    count += 1
+    #count += 1
 
   persona_name = persona.name 
   main_act_dur = main_act_dur
 
-  x = truncated_act_dur[-1][0].split("(")[0].strip() + " (on the way to " + truncated_act_dur[-1][0].split("(")[-1][:-1] + ")"
-  truncated_act_dur[-1][0] = x 
+  original_text = truncated_act_dur[-1][0]
+  if "(" in original_text:
+    base_part = original_text.split("(")[0].strip()
+    inside_part = original_text.split("(")[-1].rstrip(")")
+    truncated_act_dur[-1][0] = f"{base_part} (on the way to {inside_part})"
+  else:
+    # Handle case with no parentheses
+    truncated_act_dur[-1][0] = f"{original_text}"
 
   if "(" in truncated_act_dur[-1][0]: 
     inserted_act = truncated_act_dur[-1][0].split("(")[0].strip() + " (" + inserted_act + ")"
+  else:
+    inserted_act = truncated_act_dur[-1][0] + " (" + inserted_act + ")"
 
   # To do inserted_act_dur+1 below is an important decision but I'm not sure
   # if I understand the full extent of its implications. Might want to 
@@ -543,6 +554,7 @@ def _long_term_planning(persona, new_day):
   keywords = set(["plan"])
   thought_poignancy = 5
   thought_embedding_pair = (thought, get_embedding(thought))
+  print("\033[0;33m-----in _long_term_planning-----", persona.name, "add plan to memory. Current time:", persona.scratch.curr_time, "\033[0m")
   persona.a_mem.add_thought(created, expiration, s, p, o, 
                             thought, keywords, thought_poignancy, 
                             thought_embedding_pair, None)
@@ -579,7 +591,7 @@ def _determine_action(persona, maze):
     """
     if "sleep" not in act_desp and "bed" not in act_desp: 
       return True
-    elif "sleeping" in act_desp or "asleep" in act_desp or "in bed" in act_desp:
+    elif "sleeping" in act_desp: #or "asleep" in act_desp or "in bed" in act_desp:
       return False
     elif "sleep" in act_desp or "bed" in act_desp: 
       if act_dura > 60: 
