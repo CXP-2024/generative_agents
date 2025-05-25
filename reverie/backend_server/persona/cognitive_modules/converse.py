@@ -114,12 +114,12 @@ def generate_one_utterance(maze, init_persona, target_persona, retrieved, curr_c
               f"is initiating a conversation with " +
               f"{target_persona.scratch.name}.")
 
-  print ("July 23 5")
+  #print ("July 23 5")
   x = run_gpt_generate_iterative_chat_utt(maze, init_persona, target_persona, retrieved, curr_context, curr_chat)[0]
 
-  print ("July 23 6")
+  #print ("July 23 6")
 
-  print ("adshfoa;khdf;fajslkfjald;sdfa HERE", x)
+  #print ("adshfoa;khdf;fajslkfjald;sdfa HERE", x)
 
   return x["utterance"], x["end"]
 
@@ -285,6 +285,7 @@ def load_history_via_whisper(personas, whispers):
     keywords = set([s, p, o])
     thought_poignancy = generate_poig_score(persona, "event", whisper)
     thought_embedding_pair = (thought, get_embedding(thought))
+    print("\033[0;33m-----in load_history_via_whisper------", persona.scratch.name, " save the whisper node now. Current time:", persona.scratch.curr_time, "-----\033[0m")
     persona.a_mem.add_thought(created, expiration, s, p, o, 
                               thought, keywords, thought_poignancy, 
                               thought_embedding_pair, None)
@@ -322,6 +323,7 @@ def open_convo_session(persona, convo_mode):
     keywords = set([s, p, o])
     thought_poignancy = generate_poig_score(persona, "event", whisper)
     thought_embedding_pair = (thought, get_embedding(thought))
+    print("\033[0;33m-----in open_convo_session------", persona.scratch.name, " save the whisper node now. Current time:", persona.scratch.curr_time, "-----\033[0m")
     persona.a_mem.add_thought(created, expiration, s, p, o, 
                               thought, keywords, thought_poignancy, 
                               thought_embedding_pair, None)

@@ -7,5 +7,4 @@ Variables:
 Conversation: 
 !<INPUT 0>!
 
-Summarize the conversation above in one sentence:
-This is a conversation about
+Summarize the conversation above in one sentence. If there are important plans, commitments, or specific time arrangements mentioned, include them in the summary (e.g., "agreed to meet with Jane at 10:00 AM at the coffee shop").

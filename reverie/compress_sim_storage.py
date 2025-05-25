@@ -60,7 +60,11 @@ def compress(sim_code):
 
 
 if __name__ == '__main__':
+<<<<<<< HEAD
   compress("final")
+=======
+  compress("300")
+>>>>>>> fc630dd255efa7f31e6733dc7617eae6eaa82234
 
 
 

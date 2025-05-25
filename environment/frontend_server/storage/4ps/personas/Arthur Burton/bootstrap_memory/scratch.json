@@ -4,7 +4,7 @@
   "retention": 8, 
   "curr_time": null, 
   "curr_tile": null, 
-	"daily_plan_req": "Arthur Burton wakes up around 7am and runs on the playground until 8am. He then spends his day at Hobbs Cafe until approximately 4pm, having all three meals there. At midnight, he practices long jump at the jumping pit. By 3am, he returns to the playground where he sleeps.", 
+	"daily_plan_req": "Arthur Burton wakes up around 7am and runs on the playground until 8am. He then spends his day at Hobbs Cafe until approximately 4pm, having all three meals there. At around 10pm, he comes back to Cafe. At midnight, he practices long jump at the jumping pit. By 3am, he returns to the playground where he sleeps.", 
   "name": "Arthur Burton", 
   "first_name": "Arthur", 
   "last_name": "Burton", 
@@ -29,7 +29,7 @@
   "importance_trigger_curr": 250,
   "importance_ele_n": 0, 
   "thought_count": 5, 
-
+  "commitments": {},
   "daily_req": [], 
   "f_daily_schedule": [],
   "f_daily_schedule_hourly_org": [],

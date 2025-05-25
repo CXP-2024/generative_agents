@@ -17,14 +17,26 @@ openai.api_base = openai_base_url
 def temp_sleep(seconds=0.03):
   time.sleep(seconds)
 
+
 def ChatGPT_single_request(prompt): 
   temp_sleep()
 
-  completion = openai.ChatCompletion.create(
-    model="deepseek-v3", 
-    messages=[{"role": "user", "content": prompt}]
-  )
-  return completion["choices"][0]["message"]["content"]
+  while(True):
+    try: 
+      print("\033[1;32mIn gpt_single_request with prompt:\033[0m")
+      print(prompt)
+      completion = openai.ChatCompletion.create(
+				model="deepseek-v3", 
+				messages=[{"role": "user", "content": prompt}]
+			)
+      print("\033[1;32mIn gpt_single_request and output:\033[0m")
+      print("\033[1;32m", completion["choices"][0]["message"]["content"], "\033[0m")
+      return completion["choices"][0]["message"]["content"]
+    except Exception as e:
+      print("deepseek-v3 ERROR:", e)
+      time.sleep(3.0)
+      print("\033[1;31mWaiting 3 seconds. Trying again...\033[0m")
+
 
 
 # ============================================================================
@@ -81,10 +93,10 @@ If you are asked to output a json, your json form should not begin with ``` json
   
     except Exception as e:  
       print ("deepseek-v3 ERROR:", e)
-      time.sleep(0.5)
-      print("\033[1;31mWaiting 0.5 seconds. Trying again...\033[0m")
+      time.sleep(3.0)
+      print("\033[1;31mWaiting 3 seconds. Trying again...\033[0m")
 
-
+# no use anymore for this function
 def GPT4_safe_generate_response(prompt, 
                                    example_output,
                                    special_instruction,
@@ -269,8 +281,8 @@ def GPT_request(prompt, gpt_parameter):
       return response.choices[0].message.content
     except Exception as e: 
       print(f"\033[1;31mTOKEN LIMIT EXCEEDED: {e}\033[0m")
-      time.sleep(0.5)
-      print("\033[1;31mWaiting 0.5 seconds. Trying again...\033[0m")
+      time.sleep(3)
+      print("\033[1;31mWaiting 3 seconds. Trying again...\033[0m")
 
 
 def generate_prompt(curr_input, prompt_lib_file): 

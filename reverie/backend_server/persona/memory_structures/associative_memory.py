@@ -328,7 +328,7 @@ class AssociativeMemory:
 
   def get_last_chat(self, target_persona_name): 
     if target_persona_name.lower() in self.kw_to_chat: 
-      return self.kw_to_chat[target_persona_name.lower()][0]
+      return self.kw_to_chat[target_persona_name.lower()][0] # 0 here is the most recent chat
     else: 
       return False
 
