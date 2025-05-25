@@ -23,4 +23,5 @@ For getting coffee, Tom Watson should go to the following area in Hobbs Cafe: {c
 !<INPUT 3>! is going to !<INPUT 4>! that has the following areas: {!<INPUT 5>!}
 * Stay in the current area if the activity can be done there. 
 * NEVER go into other people's rooms unless necessary.
+* If only one area, then just pick that.
 !<INPUT 6>! is !<INPUT 7>!. For !<INPUT 8>!, !<INPUT 9>! should go to the following area in !<INPUT 10>!: {

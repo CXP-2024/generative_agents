@@ -488,6 +488,36 @@ class Scratch:
               self.act_obj_event[1], 
               self.act_obj_event[2],
               self.act_obj_description)
+    
+  def calculate_activity_start_time(self):
+    """
+    Calculates the actual start time of the current activity based on the daily schedule
+    and the current time.
+    
+    Returns:
+        datetime: The actual start time of the current activity
+    """
+    # Create a copy of current time to use as our reference point
+    reference_time = datetime.datetime.strptime(
+        self.curr_time.strftime("%B %d, %Y, 00:00:00"), 
+        "%B %d, %Y, %H:%M:%S"
+    )
+    
+    total_minutes = 0
+    current_minutes = self.curr_time.hour * 60 + self.curr_time.minute
+    
+    # Iterate through the daily schedule to find the activity that should be happening now
+    for i, (activity, duration) in enumerate(self.f_daily_schedule):
+        if total_minutes + duration > current_minutes:
+            # This is the current activity
+            activity_start_time = reference_time + datetime.timedelta(minutes=total_minutes)
+            return activity_start_time
+        
+        total_minutes += duration
+    
+    # If we've gone through all activities without finding a match,
+    # use the last activity's start time
+    return reference_time + datetime.timedelta(minutes=max(0, total_minutes - duration))
 
 
   def add_new_action(self, 
@@ -519,8 +549,11 @@ class Scratch:
     self.act_obj_description = act_obj_description
     self.act_obj_pronunciatio = act_obj_pronunciatio
     self.act_obj_event = act_obj_event
-    
-    self.act_start_time = self.curr_time
+
+    self.act_start_time = self.calculate_activity_start_time() if not act_start_time else act_start_time
+    if chatting_with:
+      self.act_start_time = self.curr_time
+    print("\033[0;33m-----in add_new_action------", self.name, " save the action now. Event:", action_event, " Current time:", self.curr_time, "This act start time: ", self.act_start_time, "-----\033[0m")
     
     self.act_path_set = False
 
@@ -562,10 +595,14 @@ class Scratch:
         x = (x + datetime.timedelta(minutes=1))
       end_time = (x + datetime.timedelta(minutes=self.act_duration))
 
-    print("\033[0;33mcurrent time: ", self.curr_time.strftime("%H:%M:%S"),"end time: ", end_time.strftime("%H:%M:%S"), "\033[0m")
-    if end_time.strftime("%H:%M:%S") <= self.curr_time.strftime("%H:%M:%S"): 
+    print("\033[0;33m ", self.name, " current time: ", self.curr_time.strftime("%H:%M:%S"),"end time: ", end_time.strftime("%H:%M:%S"), "\033[0m")
+    if end_time.strftime("%H:%M:%S") <= self.curr_time.strftime("%H:%M:%S"):
+      if end_time.strftime("%H:%M:%S") == "00:00:00" and self.curr_time.strftime("%H:%M:%S") >= "23:00:00":
+        print(f"Action not finished: {self.name} is still doing {self.act_description}")
+        return False
       print(f"Action finished: {self.name} is done with {self.act_description}")
       return True
+    print(f"Action not finished: {self.name} is still doing {self.act_description}")
     return False
 
 

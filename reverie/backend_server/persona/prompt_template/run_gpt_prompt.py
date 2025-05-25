@@ -1153,33 +1153,67 @@ def run_gpt_prompt_new_decomp_schedule(persona,
                                        test_input=None, 
                                        verbose=False): 
   def create_prompt_input(persona, 
-                           main_act_dur, 
-                           truncated_act_dur, 
-                           start_time_hour,
-                           end_time_hour, 
-                           inserted_act,
-                           inserted_act_dur,
-                           test_input=None): 
+                         main_act_dur, 
+                         truncated_act_dur, 
+                         start_time_hour,
+                         end_time_hour, 
+                         inserted_act,
+                         inserted_act_dur,
+                         test_input=None): 
     persona_name = persona.name
-    start_hour_str = start_time_hour.strftime("%H:%M %p")
-    end_hour_str = end_time_hour.strftime("%H:%M %p")
+    
+    # 使用24小时制格式
+    start_hour_str = start_time_hour.strftime("%H:%M")
+    end_hour_str = end_time_hour.strftime("%H:%M")
+    
+    # 处理24:00的情况
+    if end_time_hour.hour == 0 and end_time_hour.minute == 0:
+        end_hour_str = "24:00"
 
     original_plan = ""
     for_time = start_time_hour
     for i in main_act_dur: 
-      original_plan += f'{for_time.strftime("%H:%M")} ~ {(for_time + datetime.timedelta(minutes=int(i[1]))).strftime("%H:%M")} -- ' + i[0]
+      end_time = for_time + datetime.timedelta(minutes=int(i[1]))
+      
+      # 格式化开始时间
+      start_time_str = for_time.strftime("%H:%M")
+      
+      # 格式化结束时间，如果是午夜00:00则显示为24:00
+      if end_time.hour == 0 and end_time.minute == 0:
+        end_time_str = "24:00"
+      else:
+        end_time_str = end_time.strftime("%H:%M")
+      
+      original_plan += f'{start_time_str} ~ {end_time_str} -- ' + i[0]
       original_plan += "\n"
       for_time += datetime.timedelta(minutes=int(i[1]))
 
     new_plan_init = ""
     for_time = start_time_hour
     for count, i in enumerate(truncated_act_dur): 
-      new_plan_init += f'{for_time.strftime("%H:%M")} ~ {(for_time + datetime.timedelta(minutes=int(i[1]))).strftime("%H:%M")} -- ' + i[0]
+      end_time = for_time + datetime.timedelta(minutes=int(i[1]))
+      
+      # 格式化开始时间
+      start_time_str = for_time.strftime("%H:%M")
+      
+      # 格式化结束时间，处理24:00情况
+      if end_time.hour == 0 and end_time.minute == 0:
+        end_time_str = "24:00"
+      else:
+        end_time_str = end_time.strftime("%H:%M")
+      
+      new_plan_init += f'{start_time_str} ~ {end_time_str} -- ' + i[0]
       new_plan_init += "\n"
       if count < len(truncated_act_dur) - 1: 
         for_time += datetime.timedelta(minutes=int(i[1]))
 
-    new_plan_init += (for_time + datetime.timedelta(minutes=int(i[1]))).strftime("%H:%M") + " ~"
+    final_time = for_time + datetime.timedelta(minutes=int(i[1]))
+    if final_time.hour == 0 and final_time.minute == 0:
+      final_time_str = "24:00"
+    else:
+      final_time_str = final_time.strftime("%H:%M")
+    
+    new_plan_init += final_time_str + " ~"
 
     prompt_input = [persona_name, 
                     start_hour_str,
@@ -1194,11 +1228,11 @@ def run_gpt_prompt_new_decomp_schedule(persona,
                     end_hour_str,
                     new_plan_init]
     return prompt_input
-  
+
   def __func_clean_up(gpt_response, prompt=""):
     # if "~" in the 7th ot the 8th char, remove the first 7 chars
     gpt_response = gpt_response.strip()
-    if gpt_response[6] == "~" or gpt_response[7] == "~":
+    if len(gpt_response) > 7 and (gpt_response[6] == "~" or gpt_response[7] == "~"):
         gpt_response = gpt_response[8:]
     new_schedule = prompt + " " + gpt_response.strip()
     new_schedule = new_schedule.split("The revised schedule:")[-1].strip()
@@ -1206,22 +1240,43 @@ def run_gpt_prompt_new_decomp_schedule(persona,
 
     ret_temp = []
     for i in new_schedule: 
-      ret_temp += [i.split(" -- ")]
+      if " -- " in i:
+        ret_temp += [i.split(" -- ")]
 
     ret = []
     for time_str, action in ret_temp:
-      start_time = time_str.split(" ~ ")[0].strip()
-      end_time = time_str.split(" ~ ")[1].strip()
-      delta = datetime.datetime.strptime(end_time, "%H:%M") - datetime.datetime.strptime(start_time, "%H:%M")
-      delta_min = int(delta.total_seconds()/60)
-      if delta_min < 0: delta_min = 0
-      ret += [[action, delta_min]]
+      if " ~ " in time_str:
+        start_time = time_str.split(" ~ ")[0].strip()
+        end_time = time_str.split(" ~ ")[1].strip()
+        
+        # 处理24:00的特殊情况
+        def parse_time(time_str):
+          if time_str == "24:00":
+            # 24:00表示午夜，相当于第二天的00:00
+            return datetime.datetime.strptime("00:00", "%H:%M") + datetime.timedelta(days=1)
+          else:
+            return datetime.datetime.strptime(time_str, "%H:%M")
+        
+        start_datetime = parse_time(start_time)
+        end_datetime = parse_time(end_time)
+        
+        delta = end_datetime - start_datetime
+        delta_min = int(delta.total_seconds()/60)
+        if delta_min < 0: 
+          # 如果是负数，说明跨天了
+          delta_min = delta_min + 24 * 60
+          
+        # 跳过0分钟的活动（通常是格式错误导致的）
+        if delta_min > 0:
+          ret += [[action, delta_min]]
 
     return ret
 
   def __func_validate(gpt_response, prompt=""): 
     try: 
+      prompt = prompt.split("YOUR TASK:")[-1].strip()
       gpt_response = __func_clean_up(gpt_response, prompt)
+      
       dur_sum = 0
       for act, dur in gpt_response: 
         dur_sum += dur
@@ -1229,19 +1284,50 @@ def run_gpt_prompt_new_decomp_schedule(persona,
           return False 
         if str(type(dur)) != "<class 'int'>":
           return False
-      x = prompt.split("\n")[0].split("originally planned schedule from")[-1].strip()[:-1]
-      x = [datetime.datetime.strptime(i.strip(), "%H:%M %p") for i in x.split(" to ")]
-      delta_min = int((x[1] - x[0]).total_seconds()/60)
+          
+      # 解析时间范围 - 只处理24小时制
+      time_range_line = prompt.split("\n")[0]
+      x = time_range_line.split("originally planned schedule from")[-1].strip()
+      if x.endswith("."):
+        x = x[:-1]
+      
+      # 清理AM/PM字符，只保留时间部分
+      x = x.replace(" AM", "").replace(" PM", "")
+      
+      # 处理24:00特殊情况的函数
+      def parse_time_24h(time_str):
+        time_str = time_str.strip()
+        if time_str == "24:00":
+          return datetime.datetime.strptime("00:00", "%H:%M") + datetime.timedelta(days=1)
+        else:
+          return datetime.datetime.strptime(time_str, "%H:%M")
+      
+      time_parts = x.split(" to ")
+      if len(time_parts) != 2:
+        return False
+        
+      start_time = parse_time_24h(time_parts[0])
+      end_time = parse_time_24h(time_parts[1])
+      
+      delta = end_time - start_time
+      delta_min = int(delta.total_seconds()/60)
+      
+      # 如果是负数，说明跨天了
+      if delta_min < 0:
+        delta_min = delta_min + 24 * 60
 
       if int(dur_sum) != int(delta_min): 
         print("\033[1;31mError: in run gpt_prompt_new_decomp_schedule's validate: the sum of the durations is not equal to the time range\033[0m")
+        print("\033[1;31mError: dur_sum: ", dur_sum, "delta_min: ", delta_min, "\033[0m")
         return False
 
     except Exception as e:
       print("\033[1;31mError: in run gpt_prompt_new_decomp_schedule's validate\033[0m")
       print(e)
       return False
-    return True 
+    return True
+  
+
 
   def get_fail_safe(main_act_dur, truncated_act_dur): 
     dur_sum = 0
@@ -2261,7 +2347,7 @@ def run_gpt_prompt_insight_and_guidance(persona, statements, n, test_input=None,
 
 
 
-  gpt_param = {"engine": "text-davinci-003", "max_tokens": 250, 
+  gpt_param = {"engine": "text-davinci-003", "max_tokens": 500, 
                "temperature": 0.5, "top_p": 1, "stream": False,
                "frequency_penalty": 0, "presence_penalty": 0, "stop": None}
   prompt_template = "persona/prompt_template/v2/insight_and_evidence_v1.txt"

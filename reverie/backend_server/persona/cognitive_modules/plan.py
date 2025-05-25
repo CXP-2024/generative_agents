@@ -15,6 +15,7 @@ from global_methods import *
 from persona.prompt_template.run_gpt_prompt import *
 from persona.cognitive_modules.retrieve import *
 from persona.cognitive_modules.converse import *
+from persona.cognitive_modules.utils_func import *
 
 ##############################################################################
 # CHAPTER 2: Generate
@@ -137,8 +138,8 @@ def generate_hourly_schedule(persona, wake_up_hour, sleep_hour):
 
   return n_m1_hourly_compressed
 
-
 def generate_task_decomp(persona, task, duration): 
+
   """
   A few shot decomposition of a task given the task description 
 
@@ -278,6 +279,12 @@ def generate_act_obj_event_triple(act_game_object, act_obj_desc, persona):
 
 
 def generate_convo(maze, init_persona, target_persona): 
+  # Synchronize times by using the latest time between both agents
+  # This will happen since person are move sequentially, and the current time of persona is updated only when they move.
+  if init_persona.scratch.curr_time > target_persona.scratch.curr_time:
+        target_persona.scratch.curr_time = init_persona.scratch.curr_time.replace()
+  elif target_persona.scratch.curr_time > init_persona.scratch.curr_time:
+        init_persona.scratch.curr_time = target_persona.scratch.curr_time.replace()
   curr_loc = maze.access_tile(init_persona.scratch.curr_tile)
 
   # convo = run_gpt_prompt_create_conversation(init_persona, target_persona, curr_loc)[0]
@@ -290,10 +297,64 @@ def generate_convo(maze, init_persona, target_persona):
     utt = row[1]
     all_utt += f"{speaker}: {utt}\n"
 
-  convo_length = math.ceil(int(len(all_utt)/8) / 30)
+  convo_length = math.ceil(int(len(all_utt)/8) / 30) # this will be the time of the conversation
   if convo_length <= 5:
     print("\033[1;9;33m warning!!!!! the length of conversation is too short and change to 6min\033[0m")
     convo_length = 6
+
+  # show current time:
+  print("\033[0;33m-----in generate_convo----- init_persona", init_persona.name, "current time:", init_persona.scratch.curr_time.strftime('%A %B %d %H:%M'), "\033[0m")
+  print("\033[0;33m-----in generate_convo----- target_persona", target_persona.name, "current time:", target_persona.scratch.curr_time.strftime('%A %B %d %H:%M'), "\033[0m")
+	# If current time + convo_length 's corresponding plan event is "sleeping", change the convo_length to sleeping event start time - current time
+  # 计算当前时间（从午夜0:00开始的分钟数）
+  current_time_mins = int(init_persona.scratch.curr_time.hour * 60 + init_persona.scratch.curr_time.minute)
+
+  # 检查是否会延续到睡眠时间，并在需要时调整对话长度
+  if convo_length > 0:
+    elapsed_time = 0
+    for i, (act, dur) in enumerate(init_persona.scratch.f_daily_schedule):
+        if elapsed_time <= current_time_mins < elapsed_time + dur:
+            # 检查当前时间+对话长度是否会落在未来的"sleeping"事件中
+            remaining_time = elapsed_time + dur - current_time_mins
+            check_time = elapsed_time + dur
+            
+            # 如果对话会持续超过当前事件
+            if convo_length > remaining_time:
+                # 检查后续事件
+                for j in range(i+1, len(init_persona.scratch.f_daily_schedule)):
+                    next_act, next_dur = init_persona.scratch.f_daily_schedule[j]
+                    if "sleeping" in next_act.lower() and current_time_mins + convo_length >= check_time:
+                        # 调整对话长度到睡眠开始前
+                        convo_length = check_time - current_time_mins
+                        print(f"\033[0;33m---Adjusted conversation length to {convo_length} minutes to avoid extending into sleep time--\033[0m")
+                        break
+                    check_time += next_dur
+            break
+        elapsed_time += dur
+  # for target_persone, also check the schedule
+  # 检查是否会延续到睡眠时间，并在需要时调整对话长度
+  if convo_length > 0:
+    elapsed_time = 0
+    for i, (act, dur) in enumerate(target_persona.scratch.f_daily_schedule):
+        if elapsed_time <= current_time_mins < elapsed_time + dur:
+            # 检查当前时间+对话长度是否会落在未来的"sleeping"事件中
+            remaining_time = elapsed_time + dur - current_time_mins
+            check_time = elapsed_time + dur
+            
+            # 如果对话会持续超过当前事件
+            if convo_length > remaining_time:
+                # 检查后续事件
+                for j in range(i+1, len(target_persona.scratch.f_daily_schedule)):
+                    next_act, next_dur = target_persona.scratch.f_daily_schedule[j]
+                    if "sleeping" in next_act.lower() and current_time_mins + convo_length >= check_time:
+                        # 调整对话长度到睡眠开始前
+                        convo_length = check_time - current_time_mins
+                        print(f"\033[0;33m---Adjusted conversation length to {convo_length} minutes to avoid extending into sleep time--\033[0m")
+                        break
+                    check_time += next_dur
+            break
+        elapsed_time += dur
+  
 
   if debug: print ("GNS FUNCTION: <generate_convo>")
   return convo, convo_length
@@ -359,28 +420,38 @@ def generate_new_decomp_schedule(persona, inserted_act, inserted_act_dur,  start
   count = 0 # enumerate count
   truncated_fin = False 
 
-  print ("DEBUG::: ", persona.scratch.name, "Current time: ")
-  for act, dur in p.scratch.f_daily_schedule: 
-    dur_sum += dur
-    if (dur_sum >= start_hour * 60) and (dur_sum <= end_hour * 60): 
-      main_act_dur += [[act, dur]]
-      if dur_sum <= today_min_pass:
-        print("DEBUG::: dur_sum", dur_sum, "today_min_pass", today_min_pass, "currently", act, dur, "count:", count)
-        truncated_act_dur += [[act, dur]]
-      elif dur_sum > today_min_pass and not truncated_fin: 
-        # We need to insert that last act, duration list like this one: 
-        # e.g., ['wakes up and completes her morning routine (wakes up...)', 2]
-        print("DEBUG::: dur_sum", dur_sum, "today_min_pass", today_min_pass)
-        print("DEBUG::: currently", act, dur, "count:", count)
-        truncated_act_dur += [[act, 
-                               today_min_pass - (dur_sum - dur)]] 
-        #truncated_act_dur[-1][-1] -= (dur_sum - today_min_pass) ######## DEC 7 DEBUG;.. is the +1 the right thing to do??? 
-        # truncated_act_dur[-1][-1] -= (dur_sum - today_min_pass + 1) ######## DEC 7 DEBUG;.. is the +1 the right thing to do??? 
-        print ("DEBUG::: ", truncated_act_dur)
+  print(f"DEBUG::: {persona.scratch.name}, Current time: {persona.scratch.curr_time}")
 
-        # truncated_act_dur[-1][-1] -= (dur_sum - today_min_pass) ######## DEC 7 DEBUG;.. is the +1 the right thing to do??? 
-        truncated_fin = True
-    #count += 1
+  # Initialize tracking variables
+  current_activity_found = False
+  start_time = 0  # Start time of current activity
+
+  # First pass: find all activities in the specified time range
+  for act, dur in p.scratch.f_daily_schedule:
+    activity_start = dur_sum
+    activity_end = dur_sum + dur
+    dur_sum = activity_end
+    
+    # Check if activity falls within our target time window
+    if (activity_end > start_hour * 60) and (activity_start < end_hour * 60): # shouldn't have "="
+        main_act_dur.append([act, dur])
+        
+        # Case 1: Activity is completely in the past
+        if activity_end <= today_min_pass:
+            truncated_act_dur.append([act, dur])
+            print(f"DEBUG::: PAST ACTIVITY - start: {activity_start}, end: {activity_end}, " 
+                  f"today_min_pass: {today_min_pass}, activity: {act}, duration: {dur}")
+            
+        # Case 2: Current ongoing activity (spans the current time)
+        elif activity_start <= today_min_pass and activity_end > today_min_pass:
+            if not current_activity_found:  # Ensure we only add the current activity once
+                elapsed = today_min_pass - activity_start
+                truncated_act_dur.append([act, elapsed])
+                current_activity_found = True
+                print(f"DEBUG::: CURRENT ACTIVITY - start: {activity_start}, end: {activity_end}, "
+                      f"elapsed: {elapsed}, activity: {act}, original duration: {dur}")
+            
+        # For activities in the future, we don't include them in truncated_act_dur
 
   persona_name = persona.name 
   main_act_dur = main_act_dur
@@ -407,6 +478,11 @@ def generate_new_decomp_schedule(persona, inserted_act, inserted_act_dur,  start
                    + datetime.timedelta(hours=start_hour))
   end_time_hour = (datetime.datetime(2022, 10, 31, 0, 0) 
                    + datetime.timedelta(hours=end_hour))
+  print ("DEBUG:::--in generate_new_decom_schedule---- obtain start_time_hour and end_time_hour ", start_time_hour, end_time_hour)
+	# show main_act_dur and truncated_act_dur
+  print("\033[0;33m-----in generate_new_decomp_schedule-----", persona.name, "main_act_dur:\033[0m")
+  for i in main_act_dur:
+    print("\033[0;33m", i, "\033[0m")
 
   if debug: print ("GNS FUNCTION: <generate_new_decomp_schedule>")
   return run_gpt_prompt_new_decomp_schedule(persona, 
@@ -563,132 +639,89 @@ def _long_term_planning(persona, new_day):
   # time.sleep(10)
   # print("Done sleeping!")
 
-## Utility function to show the daily schedule in a readable format
-def show_f_daily_schedule_better(persona):
-    """
-    Display a persona's daily schedule in a readable format showing time ranges,
-    activity descriptions, and durations.
-    
-    Format: ["HH:MM-HH:MM", "activity description", duration_in_minutes]
-    
-    Args:
-        persona: The persona whose schedule we want to display
-    """
-    if not persona.scratch.f_daily_schedule:
-        print("\033[1;33mNo daily schedule available.\033[0m")
-        return
-    
-    print(f"\033[1;36m{persona.scratch.name}'s Daily Schedule:\033[0m")
-    
-    # Calculate and format the schedule with time ranges
-    curr_min_sum = 0
-    formatted_schedule = []
-    
-    for activity, duration in persona.scratch.f_daily_schedule:
-        # Calculate start time
-        start_hour = int(curr_min_sum / 60) % 24
-        start_min = curr_min_sum % 60
-        
-        # Add duration to get end time
-        curr_min_sum += duration
-        end_hour = int(curr_min_sum / 60) % 24
-        end_min = curr_min_sum % 60
-        
-        # Format as HH:MM-HH:MM
-        time_range = f"{start_hour:02d}:{start_min:02d}-{end_hour:02d}:{end_min:02d}"
-        
-        # Add to formatted list
-        formatted_schedule.append([time_range, activity, duration])
-    
-    # Display the formatted schedule
-    for time_range, activity, duration in formatted_schedule:
-        print(f"\033[1;36m  [\"{time_range}\", \"{activity}\", {duration}], \033[0m")
 
 def _determine_action(persona, maze): 
   """
   Creates the next action sequence for the persona. 
-  The main goal of this function is to run "add_new_action" on the persona's 
-  scratch space, which sets up all the action related variables for the next 
-  action. 
-  As a part of this, the persona may need to decompose its hourly schedule as 
-  needed.   
-  INPUT
-    persona: Current <Persona> instance whose action we are determining. 
-    maze: Current <Maze> instance. 
   """
   def determine_decomp(act_desp, act_dura):
     """
-    Given an action description and its duration, we determine whether we need
-    to decompose it. If the action is about the agent sleeping, we generally
-    do not want to decompose it, so that's what we catch here. 
-
-    INPUT: 
-      act_desp: the description of the action (e.g., "sleeping")
-      act_dura: the duration of the action in minutes. 
-    OUTPUT: 
-      a boolean. True if we need to decompose, False otherwise. 
+    Determines whether to decompose an action based on its description and duration.
     """
-    if "sleep" not in act_desp and "bed" not in act_desp: 
+    # List of terms that indicate pure sleeping activities
+    sleep_terms = ["sleeping", "asleep", "in bed sleeping", "taking a nap"]
+    # List of terms that indicate waking up or getting ready activities
+    wakeup_terms = ["waking up", "getting up", "out of bed", "morning routine"]
+    
+    # Check if this is a wake-up activity - these should be decomposed
+    if any(term in act_desp.lower() for term in wakeup_terms):
       return True
-    elif "sleeping" in act_desp: #or "asleep" in act_desp or "in bed" in act_desp:
+      
+    # Check if this is a pure sleeping activity - these should not be decomposed
+    if any(term in act_desp.lower() for term in sleep_terms):
       return False
-    elif "sleep" in act_desp or "bed" in act_desp: 
-      if act_dura > 60: 
+      
+    # Handle other sleep-related activities
+    if "sleep" in act_desp.lower() or "bed" in act_desp.lower():
+      # Only long sleep activities are not decomposed 
+      if act_dura > 60:
         return False
+    
+    # Default: decompose all other activities
     return True
 
   # The goal of this function is to get us the action associated with 
-  # <curr_index>. As a part of this, we may need to decompose some large 
-  # chunk actions. 
-  # Importantly, we try to decompose at least two hours worth of schedule at
-  # any given point. 
+  # <curr_index>.
   curr_index = persona.scratch.get_f_daily_schedule_index()
   curr_index_60 = persona.scratch.get_f_daily_schedule_index(advance=60)
 
-  # * Decompose * 
-  # During the first hour of the day, we need to decompose two hours 
-  # sequence. We do that here. 
+  # * Improved Decompose Logic * 
+  # Check if the current activity is sleeping
+  current_activity = persona.scratch.f_daily_schedule[curr_index][0].lower() if curr_index < len(persona.scratch.f_daily_schedule) else ""
+  sleep_terms = ["sleeping", "asleep", "taking a nap"]
+  is_sleeping = any(term in current_activity for term in sleep_terms)
+
+  # Case 1: First hour of the day
   if curr_index == 0:
-    # This portion is invoked if it is the first hour of the day. 
     act_desp, act_dura = persona.scratch.f_daily_schedule[curr_index]
-    if act_dura >= 60: 
-      # We decompose if the next action is longer than an hour, and fits the
-      # criteria described in determine_decomp.
-      if determine_decomp(act_desp, act_dura): 
-        print("\033[0;33m------in _determine_action------", persona.name , "original f_daily_schedule\033[0m")
-        show_f_daily_schedule_better(persona)
-        persona.scratch.f_daily_schedule[curr_index:curr_index+1] = (
-                            generate_task_decomp(persona, act_desp, act_dura))
-        print("\033[0;33m------in _determine_action------", persona.name , "after decomp f_daily_schedule\033[0m")
-        show_f_daily_schedule_better(persona)
+    if act_dura >= 60 and determine_decomp(act_desp, act_dura): 
+      print("\033[0;33m------in _determine_action------", persona.name, "original f_daily_schedule\033[0m")
+      show_f_daily_schedule_better(persona)
+      persona.scratch.f_daily_schedule[curr_index:curr_index+1] = generate_task_decomp(persona, act_desp, act_dura)
+      print("\033[0;33m------in _determine_action------", persona.name, "after decomp f_daily_schedule\033[0m")
+      show_f_daily_schedule_better(persona)
+    
     if curr_index_60 + 1 < len(persona.scratch.f_daily_schedule):
       act_desp, act_dura = persona.scratch.f_daily_schedule[curr_index_60+1]
-      if act_dura >= 60: 
-        if determine_decomp(act_desp, act_dura): 
-          print("\033[0;33m------in _determine_action------", persona.name , "original f_daily_schedule\033[0m")
-          show_f_daily_schedule_better(persona)
-          persona.scratch.f_daily_schedule[curr_index_60+1:curr_index_60+2] = (
-                            generate_task_decomp(persona, act_desp, act_dura))
-          print("\033[0;33m------in _determine_action------", persona.name , "after decomp f_daily_schedule\033[0m")
-          show_f_daily_schedule_better(persona)
+      if act_dura >= 60 and determine_decomp(act_desp, act_dura): 
+        print("\033[0;33m------in _determine_action------", persona.name, "original f_daily_schedule\033[0m")
+        show_f_daily_schedule_better(persona)
+        persona.scratch.f_daily_schedule[curr_index_60+1:curr_index_60+2] = generate_task_decomp(persona, act_desp, act_dura)
+        print("\033[0;33m------in _determine_action------", persona.name, "after decomp f_daily_schedule\033[0m")
+        show_f_daily_schedule_better(persona)
 
-  if curr_index_60 < len(persona.scratch.f_daily_schedule):
-    # If it is not the first hour of the day, this is always invoked (it is
-    # also invoked during the first hour of the day -- to double up so we can
-    # decompose two hours in one go). Of course, we need to have something to
-    # decompose as well, so we check for that too. 
-    if persona.scratch.curr_time.hour < 23:
-      # And we don't want to decompose after 11 pm. 
-      act_desp, act_dura = persona.scratch.f_daily_schedule[curr_index_60]
-      if act_dura >= 60: 
-        if determine_decomp(act_desp, act_dura): 
-          print("\033[0;33m------in _determine_action------", persona.name , "original f_daily_schedule\033[0m")
-          show_f_daily_schedule_better(persona)
-          persona.scratch.f_daily_schedule[curr_index_60:curr_index_60+1] = (
-                              generate_task_decomp(persona, act_desp, act_dura))
-          print("\033[0;33m------in _determine_action------", persona.name , "after decomp f_daily_schedule\033[0m")
-          show_f_daily_schedule_better(persona)
-  # * End of Decompose * 
+  # Case 2: Currently sleeping - check and decompose the next activity
+  elif is_sleeping and curr_index + 1 < len(persona.scratch.f_daily_schedule):
+    next_act_desp, next_act_dura = persona.scratch.f_daily_schedule[curr_index + 1]
+    # Force decomposition of the first post-sleep activity if long enough
+    if next_act_dura >= 60:
+      print("\033[0;33m------in _determine_action------", persona.name, "decomposing post-sleep activity\033[0m")
+      show_f_daily_schedule_better(persona)
+      persona.scratch.f_daily_schedule[curr_index+1:curr_index+2] = generate_task_decomp(persona, next_act_desp, next_act_dura)
+      print("\033[0;33m------in _determine_action------", persona.name, "after decomp f_daily_schedule\033[0m")
+      show_f_daily_schedule_better(persona)
+
+  # Case 3: Standard hour-ahead decomposition
+  if curr_index_60 < len(persona.scratch.f_daily_schedule) and persona.scratch.curr_time.hour < 23:
+    act_desp, act_dura = persona.scratch.f_daily_schedule[curr_index_60]
+    if act_dura >= 60 and determine_decomp(act_desp, act_dura): 
+      print("\033[0;33m------in _determine_action------", persona.name, "original f_daily_schedule\033[0m")
+      show_f_daily_schedule_better(persona)
+      persona.scratch.f_daily_schedule[curr_index_60:curr_index_60+1] = generate_task_decomp(persona, act_desp, act_dura)
+      print("\033[0;33m------in _determine_action------", persona.name, "after decomp f_daily_schedule\033[0m")
+      show_f_daily_schedule_better(persona)
+  # * End of Decompose *
+  
 
   # Generate an <Action> instance from the action description and duration. By
   # this point, we assume that all the relevant actions are decomposed and 
@@ -940,34 +973,91 @@ def _create_react(persona, inserted_act, inserted_act_dur,
                   act_obj_event, act_start_time=None): 
   p = persona 
 
-  min_sum = 0
-  for i in range (p.scratch.get_f_daily_schedule_hourly_org_index()): 
-    min_sum += p.scratch.f_daily_schedule_hourly_org[i][1]
-  start_hour = int (min_sum/60)
+  # 获取当前时间的分钟数（从午夜开始）
+  today_min_pass = (int(p.scratch.curr_time.hour) * 60 + int(p.scratch.curr_time.minute))
+  current_hour = int(p.scratch.curr_time.hour)
+  
+  # 使用f_daily_schedule来找到合适的开始时间
+  def find_valid_start_hour():
+    dur_sum = 0
+    
+    # 遍历f_daily_schedule找到当前时间对应的活动
+    current_activity_index = None
+    for i, (act, dur) in enumerate(p.scratch.f_daily_schedule):
+      if dur_sum <= today_min_pass < dur_sum + dur:
+        current_activity_index = i
+        break
+      dur_sum += dur
+    
+    if current_activity_index is None:
+      # 如果没找到，使用当前小时
+      return current_hour, 0
+    
+    # 从当前活动开始向前查找，寻找在整点开始的活动
+    for i in range(current_activity_index, -1, -1):
+      activity_start_time = 0
+      for j in range(i):
+        activity_start_time += p.scratch.f_daily_schedule[j][1]
+      
+      # 检查这个活动是否在整点开始
+      if activity_start_time % 60 == 0:
+        return int(activity_start_time / 60), i
+    
+    # 如果没找到在整点开始的活动，返回当前小时的开始
+    return current_hour, current_activity_index
 
-  if (p.scratch.f_daily_schedule_hourly_org[p.scratch.get_f_daily_schedule_hourly_org_index()][1] >= 120):
-    end_hour = start_hour + p.scratch.f_daily_schedule_hourly_org[p.scratch.get_f_daily_schedule_hourly_org_index()][1]/60
+  # 找到合适的结束时间（必须对应活动边界）
+  def find_valid_end_hour(min_end_hour):
+    dur_sum = 0
+    
+    # 遍历所有活动，找到在min_end_hour之后的第一个活动边界
+    for i, (act, dur) in enumerate(p.scratch.f_daily_schedule):
+      activity_start_time = dur_sum
+      activity_end_time = dur_sum + dur
+      
+      # 检查活动开始时间是否在整点且≥min_end_hour
+      if activity_start_time % 60 == 0 and activity_start_time >= min_end_hour * 60:
+        return int(activity_start_time / 60)
+      
+      # 检查活动结束时间是否在整点且≥min_end_hour
+      if activity_end_time % 60 == 0 and activity_end_time >= min_end_hour * 60:
+        return int(activity_end_time / 60)
+      
+      dur_sum += dur
+    
+    # 如果没找到合适的边界，返回一天结束或min_end_hour+1
+    return min(24, min_end_hour + 1)
 
-  elif (p.scratch.f_daily_schedule_hourly_org[p.scratch.get_f_daily_schedule_hourly_org_index()][1] + 
-      p.scratch.f_daily_schedule_hourly_org[p.scratch.get_f_daily_schedule_hourly_org_index()+1][1]): 
-    end_hour = start_hour + ((p.scratch.f_daily_schedule_hourly_org[p.scratch.get_f_daily_schedule_hourly_org_index()][1] + 
-              p.scratch.f_daily_schedule_hourly_org[p.scratch.get_f_daily_schedule_hourly_org_index()+1][1])/60)
+  start_hour, start_activity_index = find_valid_start_hour()
+  
+  # 确保从当前小时开始至少有2小时，然后找到对应的活动边界
+  min_end_hour = current_hour + 2
+  end_hour = find_valid_end_hour(min_end_hour)
 
-  else: 
-    end_hour = start_hour + 2
-  end_hour = int(end_hour)
-
+  # 使用f_daily_schedule找到对应的索引范围
   dur_sum = 0
-  count = 0 
   start_index = None
   end_index = None
-  for act, dur in p.scratch.f_daily_schedule: 
-    if dur_sum >= start_hour * 60 and start_index == None:
+  
+  for count, (act, dur) in enumerate(p.scratch.f_daily_schedule):
+    # 检查是否到达start_hour对应的时间点
+    if dur_sum >= start_hour * 60 and start_index is None:
       start_index = count
-    if dur_sum >= end_hour * 60 and end_index == None: 
+    
+    # 检查是否到达end_hour对应的时间点  
+    if dur_sum >= end_hour * 60 and end_index is None:
       end_index = count
+      break
+      
     dur_sum += dur
-    count += 1
+
+  # 如果没找到start_index，从0开始
+  if start_index is None:
+    start_index = 0
+    
+  # 如果没找到end_index，设置为列表长度
+  if end_index is None:
+    end_index = len(p.scratch.f_daily_schedule)
 
   ret = generate_new_decomp_schedule(p, inserted_act, inserted_act_dur, 
                                        start_hour, end_hour)

@@ -40,6 +40,10 @@ def perceive(persona, maze):
   OUTPUT: 
     ret_events: a list of <ConceptNode> that are perceived and new. 
   """
+  # If the persona is sleeping, then we do not perceive anything.
+  if persona.scratch.act_event[0] == persona.name and persona.scratch.act_event[2] in ["sleep", "sleeping"]:
+    print("\033[0;33m-----in perceive------", persona.name, " is sleeping. Skip the perceive. Current time:", persona.scratch.curr_time, "-----\033[0m")
+    return []
   # PERCEIVE SPACE
   # We get the nearby tiles given our current tile and the persona's vision
   # radius. 
