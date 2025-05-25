@@ -43,7 +43,7 @@
     },
     "canteen": {
       "student canteen": [
-        "teacher restaurant table",
+        "student restaurant table",
         "buffet table",
         "tray rack",
         "restaurant sink",
@@ -51,6 +51,13 @@
       ]
     },
     "Isabella Rodriguez's office and dormitory": {
+      "office": [
+        "computer desk",
+        "bookshelf",
+        "blackboard"
+      ]
+    },
+    "Ayesha Khan's office and dormitory": {
       "office": [
         "computer desk",
         "bookshelf",

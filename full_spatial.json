@@ -1,0 +1,94 @@
+{
+    "the School": {
+      "classroom building": {
+        "classroom 1": [],
+        "classroom 2": [],
+        "library room": [],
+        "music room": [],
+        "art room": [],
+        "sports room": [],
+        "corridor": []
+      },
+      "canteen": {
+        "student canteen": [],
+        "staff canteen": []
+      },
+      "headmasters' office and dormitory": {
+        "office": [],
+        "living room": [],
+        "bathroom": [],
+        "bedroom": []
+      },
+      "Isabella Rodriguez's office and dormitory": {
+        "office": [],
+        "living room": [],
+        "bathroom": [],
+        "bedroom": []
+      },
+      "pond": {
+        "island 1": [],
+        "island 2": []
+      },
+      "playground": {
+        "playground": []
+      },
+      "laundry room": {
+        "laundry room 1": [],
+        "laundry room 2": []
+      },
+      "Ayesha Khan's office and dormitory": {
+        "office": [],
+        "living room": [],
+        "bathroom": [],
+        "bedroom": []
+      },
+      "teacher3's office and dormitory": {
+        "office": [],
+        "living room": [],
+        "bathroom": [],
+        "bedroom": []
+      },
+      "teacher4's office and dormitory": {
+        "office": [],
+        "living room": [],
+        "bathroom": [],
+        "bedroom": []
+      },
+      "teacher5's office and dormitory": {
+        "office": [],
+        "living room": [],
+        "bathroom": [],
+        "bedroom": []
+      },
+      "student dormitory 1": {
+        "common room": [],
+        "bathroom": [],
+        "balcony": []
+      },
+      "student dormitory 2": {
+        "common room": [],
+        "bathroom": [],
+        "balcony": []
+      },
+      "student dormitory 3": {
+        "common room": [],
+        "bathroom": [],
+        "balcony": []
+      },
+      "student dormitory 4": {
+        "common room": [],
+        "bathroom": [],
+        "balcony": []
+      },
+      "student dormitory 5": {
+        "common room": [],
+        "bathroom": [],
+        "balcony": []
+      },
+      "student dormitory 6": {
+        "common room": [],
+        "bathroom": [],
+        "balcony": []
+      }
+    }
+  }

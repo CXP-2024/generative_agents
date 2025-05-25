@@ -109,7 +109,7 @@
          "name":"Bottom Ground",
          "opacity":1,
          "type":"tilelayer",
-         "visible":true,
+         "visible":false,
          "width":140,
          "x":0,
          "y":0
@@ -220,7 +220,7 @@
          "name":"Exterior Ground",
          "opacity":1,
          "type":"tilelayer",
-         "visible":true,
+         "visible":false,
          "width":140,
          "x":0,
          "y":0
@@ -331,7 +331,7 @@
          "name":"Exterior Decoration L1",
          "opacity":1,
          "type":"tilelayer",
-         "visible":true,
+         "visible":false,
          "width":140,
          "x":0,
          "y":0
@@ -442,7 +442,7 @@
          "name":"Exterior Decoration L2",
          "opacity":1,
          "type":"tilelayer",
-         "visible":true,
+         "visible":false,
          "width":140,
          "x":0,
          "y":0
@@ -553,7 +553,7 @@
          "name":"Interior Ground",
          "opacity":1,
          "type":"tilelayer",
-         "visible":true,
+         "visible":false,
          "width":140,
          "x":0,
          "y":0
@@ -664,7 +664,7 @@
          "name":"Wall",
          "opacity":1,
          "type":"tilelayer",
-         "visible":true,
+         "visible":false,
          "width":140,
          "x":0,
          "y":0
@@ -775,7 +775,7 @@
          "name":"Interior Furniture L1",
          "opacity":1,
          "type":"tilelayer",
-         "visible":true,
+         "visible":false,
          "width":140,
          "x":0,
          "y":0
@@ -886,7 +886,7 @@
          "name":"Interior Furniture L2 ",
          "opacity":1,
          "type":"tilelayer",
-         "visible":true,
+         "visible":false,
          "width":140,
          "x":0,
          "y":0
@@ -1219,7 +1219,7 @@
          "name":"Arena Blocks",
          "opacity":0.25,
          "type":"tilelayer",
-         "visible":false,
+         "visible":true,
          "width":140,
          "x":0,
          "y":0
