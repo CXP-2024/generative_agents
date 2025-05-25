@@ -8,5 +8,13 @@ Variables:
 <commentblockmarker>###</commentblockmarker>
 !<INPUT 0>!
 
-In general, !<INPUT 1>!
-!<INPUT 2>!'s sleep hour and wake up hour: (only answer two numbers separated by a white space, like 23 7)
+Given the lifestyle information: !<INPUT 1>!
+
+Determine !<INPUT 2>!'s typical sleep and wake up hours based on their lifestyle and personality.
+
+Instructions: Respond with exactly two numbers separated by a single space. The first number is the sleep hour (0-23), the second number is the wake up hour (0-23). Use 24-hour format.
+
+Format: [sleep_hour] [wake_hour] (only numbers, no other text)
+Example: 23 7
+
+Answer:
