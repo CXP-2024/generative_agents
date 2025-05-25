@@ -1,0 +1,70 @@
+{
+  "persona": {
+    "Isabella Rodriguez": {
+      "movement": [
+        107,
+        16
+      ],
+      "pronunciatio": "\ud83e\uddea\ud83d\udcda",
+      "description": "explaining the outdoor nature study activity for tomorrow (conversing about Arthur Burton and Isabella Rodriguez discussing the connection between math ratios and proportions to balancing chemical equations in science, with Ms. Rodriguez offering additional resources and practice problems for Arthur's upcoming chemistry competition.) @ the School:classroom building:classroom 1:blackboard",
+      "chat": null
+    },
+    "Maria Lopez": {
+      "movement": [
+        66,
+        76
+      ],
+      "pronunciatio": "\ud83d\udc5f\ud83e\udde5",
+      "description": "putting on her shoes and jacket   @ the School:student dormitory 3:common room:desk",
+      "chat": null
+    },
+    "Klaus Mueller": {
+      "movement": [
+        121,
+        23
+      ],
+      "pronunciatio": "\ud83d\udcd6\ud83d\udd0d",
+      "description": "reviewing assigned readings for the next topic   @ the School:classroom building:library room:library table",
+      "chat": null
+    },
+    "Adam Smith": {
+      "movement": [
+        113,
+        18
+      ],
+      "pronunciatio": "\ud83d\udc65\ud83c\udfa4",
+      "description": "listening to a group presentation   @ the School:classroom building:classroom 1:classroom student seating",
+      "chat": null
+    },
+    "Abigail Chen": {
+      "movement": [
+        83,
+        75
+      ],
+      "pronunciatio": "\ud83e\uddfc\ud83e\uddf4",
+      "description": "washing her face and applying moisturizer @ the School:student dormitory 4:bathroom:bathroom sink",
+      "chat": null
+    },
+    "Arthur Burton": {
+      "movement": [
+        8,
+        21
+      ],
+      "pronunciatio": "\ud83e\uddea\ud83d\udcda",
+      "description": "asking the teacher a question about the lesson (conversing about Arthur Burton and Isabella Rodriguez discussing the connection between math ratios and proportions to balancing chemical equations in science, with Ms. Rodriguez offering additional resources and practice problems for Arthur's upcoming chemistry competition.) @ the School:Isabella Rodriguez's office and dormitory:office:blackboard",
+      "chat": null
+    },
+    "Ayesha Khan": {
+      "movement": [
+        18,
+        14
+      ],
+      "pronunciatio": "\ud83d\udcd6\ud83c\udff0",
+      "description": "reading a chapter of a historical novel @ the School:Ayesha Khan's office and dormitory:living room:sofa",
+      "chat": null
+    }
+  },
+  "meta": {
+    "curr_time": "February 13, 2023, 09:15:00"
+  }
+}

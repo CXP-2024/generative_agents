@@ -1,0 +1,70 @@
+{
+  "persona": {
+    "Isabella Rodriguez": {
+      "movement": [
+        79,
+        13
+      ],
+      "pronunciatio": "\ud83c\udf7d\ufe0f\ud83d\udc69",
+      "description": "sitting down to eat her lunch @ the School:canteen:staff canteen:tray rack",
+      "chat": null
+    },
+    "Maria Lopez": {
+      "movement": [
+        61,
+        26
+      ],
+      "pronunciatio": "\ud83d\udcb3\ud83c\udf7d\ufe0f",
+      "description": "waiting in line to pay for her lunch   @ the School:canteen:student canteen:buffet table",
+      "chat": null
+    },
+    "Klaus Mueller": {
+      "movement": [
+        68,
+        23
+      ],
+      "pronunciatio": "\ud83c\udf7d\ufe0f\ud83c\udf71",
+      "description": "eating lunch @ the School:canteen:student canteen:student restaurant table",
+      "chat": null
+    },
+    "Adam Smith": {
+      "movement": [
+        77,
+        78
+      ],
+      "pronunciatio": "\ud83d\udcda\u270f\ufe0f",
+      "description": "organizing his study materials @ the School:student dormitory 4:common room:desk",
+      "chat": null
+    },
+    "Abigail Chen": {
+      "movement": [
+        58,
+        26
+      ],
+      "pronunciatio": "\ud83c\udf7d\ufe0f\ud83d\udeb6",
+      "description": "waiting in line to get her food @ the School:canteen:student canteen:buffet table",
+      "chat": null
+    },
+    "Arthur Burton": {
+      "movement": [
+        71,
+        21
+      ],
+      "pronunciatio": "\ud83d\udcb3\ud83c\udf7d\ufe0f",
+      "description": "waiting in line to pay for his meal @ the School:canteen:student canteen:student restaurant table",
+      "chat": null
+    },
+    "Ayesha Khan": {
+      "movement": [
+        17,
+        11
+      ],
+      "pronunciatio": "\ud83c\udf7d\ufe0f\ud83e\ude91",
+      "description": "setting the table @ the School:Ayesha Khan's office and dormitory:living room:toaster",
+      "chat": null
+    }
+  },
+  "meta": {
+    "curr_time": "February 13, 2023, 12:10:00"
+  }
+}

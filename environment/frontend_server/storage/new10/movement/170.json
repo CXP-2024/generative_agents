@@ -1,0 +1,70 @@
+{
+  "persona": {
+    "Isabella Rodriguez": {
+      "movement": [
+        126,
+        26
+      ],
+      "pronunciatio": "\ud83d\udcda\u270f\ufe0f",
+      "description": "gathering notebooks and pencils for students @ the School:classroom building:library room:bookshelf",
+      "chat": null
+    },
+    "Maria Lopez": {
+      "movement": [
+        107,
+        16
+      ],
+      "pronunciatio": "\ud83d\udcda\ud83d\udc42",
+      "description": "listening to the physics lecture @ the School:classroom building:classroom 1:blackboard",
+      "chat": null
+    },
+    "Klaus Mueller": {
+      "movement": [
+        107,
+        16
+      ],
+      "pronunciatio": "\ud83d\udc42\ud83d\udcda",
+      "description": "listening to the teacher's lecture @ the School:classroom building:classroom 1:blackboard",
+      "chat": null
+    },
+    "Adam Smith": {
+      "movement": [
+        77,
+        76
+      ],
+      "pronunciatio": "\ud83d\udcdd\ud83d\udd0d",
+      "description": "reviewing his notes   @ the School:student dormitory 4:common room:desk",
+      "chat": null
+    },
+    "Abigail Chen": {
+      "movement": [
+        124,
+        19
+      ],
+      "pronunciatio": "\ud83d\udcd6\ud83d\udd0d",
+      "description": "reviewing history notes   @ the School:classroom building:library room:library table",
+      "chat": null
+    },
+    "Arthur Burton": {
+      "movement": [
+        106,
+        16
+      ],
+      "pronunciatio": "\ud83d\udc42\ud83d\udcda",
+      "description": "listening to the teacher's lecture @ the School:classroom building:classroom 1:blackboard",
+      "chat": null
+    },
+    "Ayesha Khan": {
+      "movement": [
+        107,
+        16
+      ],
+      "pronunciatio": "\ud83d\udcda\ud83c\udfad",
+      "description": "introducing the day's literature topic @ the School:classroom building:classroom 1:blackboard",
+      "chat": null
+    }
+  },
+  "meta": {
+    "curr_time": "February 13, 2023, 14:10:00"
+  }
+}

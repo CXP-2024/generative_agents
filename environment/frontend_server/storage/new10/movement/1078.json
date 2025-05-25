@@ -1,0 +1,70 @@
+{
+  "persona": {
+    "Isabella Rodriguez": {
+      "movement": [
+        6,
+        20
+      ],
+      "pronunciatio": "\ud83d\udd04\ud83d\udcdd",
+      "description": "adjusting the lesson flow based on previous student feedback @ the School:Isabella Rodriguez's office and dormitory:office:computer desk",
+      "chat": null
+    },
+    "Maria Lopez": {
+      "movement": [
+        66,
+        78
+      ],
+      "pronunciatio": "\ud83c\udf92\ud83d\udce6",
+      "description": "unpacking her bag and organizing her desk @ the School:student dormitory 3:common room:desk",
+      "chat": null
+    },
+    "Klaus Mueller": {
+      "movement": [
+        107,
+        16
+      ],
+      "pronunciatio": "\ud83c\udfa7\ud83d\udcda",
+      "description": "listening to a new lecture   @ the School:classroom building:classroom 1:blackboard",
+      "chat": null
+    },
+    "Adam Smith": {
+      "movement": [
+        83,
+        81
+      ],
+      "pronunciatio": "\ud83d\ude34",
+      "description": "sleeping @ the School:student dormitory 4:common room:bed",
+      "chat": null
+    },
+    "Abigail Chen": {
+      "movement": [
+        121,
+        36
+      ],
+      "pronunciatio": "\ud83c\udfa8\ud83d\udd8c\ufe0f",
+      "description": "setting up her workspace in the art room @ the School:classroom building:art room:easel",
+      "chat": null
+    },
+    "Arthur Burton": {
+      "movement": [
+        77,
+        82
+      ],
+      "pronunciatio": "\ud83c\udfad\u2702\ufe0f",
+      "description": "making final adjustments based on rehearsal @ the School:student dormitory 4:common room:desk",
+      "chat": null
+    },
+    "Ayesha Khan": {
+      "movement": [
+        17,
+        11
+      ],
+      "pronunciatio": "\ud83c\udf7d\ufe0f\ud83e\uddfd",
+      "description": "cleaning up the dishes @ the School:Ayesha Khan's office and dormitory:living room:toaster",
+      "chat": null
+    }
+  },
+  "meta": {
+    "curr_time": "February 16, 2023, 17:50:00"
+  }
+}

@@ -1,0 +1,70 @@
+{
+  "persona": {
+    "Isabella Rodriguez": {
+      "movement": [
+        106,
+        21
+      ],
+      "pronunciatio": "\ud83d\udd27\ud83e\uddea",
+      "description": "setting up the hands-on experiment materials @ the School:classroom building:classroom 1:classroom podium",
+      "chat": null
+    },
+    "Maria Lopez": {
+      "movement": [
+        71,
+        72
+      ],
+      "pronunciatio": "\u2600\ufe0f\ud83e\uddf4",
+      "description": "waking up and completing her morning routine @ the School:student dormitory 3:bathroom:shower",
+      "chat": null
+    },
+    "Klaus Mueller": {
+      "movement": [
+        106,
+        16
+      ],
+      "pronunciatio": "\ud83d\udcac\ud83d\udc65",
+      "description": "participating in a class discussion   @ the School:classroom building:classroom 1:blackboard",
+      "chat": null
+    },
+    "Adam Smith": {
+      "movement": [
+        83,
+        81
+      ],
+      "pronunciatio": "\ud83d\ude34",
+      "description": "sleeping @ the School:student dormitory 4:common room:bed",
+      "chat": null
+    },
+    "Abigail Chen": {
+      "movement": [
+        6,
+        15
+      ],
+      "pronunciatio": "\ud83d\udcac\ud83d\udcda",
+      "description": "waking up and stretching (conversing about Arthur offering to help Abigail with her materials for class and discussing their upcoming project meeting where they plan to integrate physics and chemistry concepts into their art project, including arranging to meet at the library entrance at 2:15 for setup and planning.) @ the School:Isabella Rodriguez's office and dormitory:living room:sofa",
+      "chat": null
+    },
+    "Arthur Burton": {
+      "movement": [
+        107,
+        16
+      ],
+      "pronunciatio": "\ud83d\udcdd\u270f\ufe0f",
+      "description": "working on an in-class exercise @ the School:classroom building:classroom 1:blackboard",
+      "chat": null
+    },
+    "Ayesha Khan": {
+      "movement": [
+        23,
+        18
+      ],
+      "pronunciatio": "\ud83d\ude34",
+      "description": "sleeping @ the School:Ayesha Khan's office and dormitory:bedroom:bed",
+      "chat": null
+    }
+  },
+  "meta": {
+    "curr_time": "February 16, 2023, 09:05:00"
+  }
+}

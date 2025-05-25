@@ -1,0 +1,70 @@
+{
+  "persona": {
+    "Isabella Rodriguez": {
+      "movement": [
+        6,
+        20
+      ],
+      "pronunciatio": "\ud83d\udcdd\ud83d\udd1c",
+      "description": "summarizing the day\u2019s lessons and previewing next steps @ the School:Isabella Rodriguez's office and dormitory:office:computer desk",
+      "chat": null
+    },
+    "Maria Lopez": {
+      "movement": [
+        110,
+        20
+      ],
+      "pronunciatio": "\ud83d\udcac\ud83d\udc65",
+      "description": "chatting with classmates about the lesson @ the School:classroom building:classroom 1:classroom student seating",
+      "chat": null
+    },
+    "Klaus Mueller": {
+      "movement": [
+        121,
+        23
+      ],
+      "pronunciatio": "\ud83d\udcac\ud83d\udde3\ufe0f",
+      "description": "discussing debate points with a classmate @ the School:classroom building:library room:library table",
+      "chat": null
+    },
+    "Adam Smith": {
+      "movement": [
+        83,
+        82
+      ],
+      "pronunciatio": "\ud83d\ude34",
+      "description": "sleeping @ the School:student dormitory 4:common room:bed",
+      "chat": null
+    },
+    "Abigail Chen": {
+      "movement": [
+        124,
+        23
+      ],
+      "pronunciatio": "\ud83d\udcda\u270f\ufe0f",
+      "description": "organizing her class notes for both subjects @ the School:classroom building:library room:library table",
+      "chat": null
+    },
+    "Arthur Burton": {
+      "movement": [
+        77,
+        78
+      ],
+      "pronunciatio": "\ud83d\udcac\ud83d\udc4b",
+      "description": "chatting with classmates before leaving @ the School:student dormitory 4:common room:desk",
+      "chat": null
+    },
+    "Ayesha Khan": {
+      "movement": [
+        23,
+        18
+      ],
+      "pronunciatio": "\ud83d\ude34",
+      "description": "sleeping @ the School:Ayesha Khan's office and dormitory:bedroom:bed",
+      "chat": null
+    }
+  },
+  "meta": {
+    "curr_time": "February 17, 2023, 11:50:00"
+  }
+}

@@ -1,0 +1,70 @@
+{
+  "persona": {
+    "Isabella Rodriguez": {
+      "movement": [
+        121,
+        21
+      ],
+      "pronunciatio": "\ud83d\udcac\ud83d\udc69\u200d",
+      "description": "chatting with a colleague about lesson ideas @ the School:classroom building:library room:library table",
+      "chat": null
+    },
+    "Maria Lopez": {
+      "movement": [
+        8,
+        20
+      ],
+      "pronunciatio": "\ud83d\udca1\ud83e\udd14",
+      "description": "brainstorming new ideas for the project @ the School:Isabella Rodriguez's office and dormitory:office:blackboard",
+      "chat": null
+    },
+    "Klaus Mueller": {
+      "movement": [
+        121,
+        19
+      ],
+      "pronunciatio": "\ud83d\udcdd\ud83d\udd0d",
+      "description": "highlighting key takeaways relevant to his research paper @ the School:classroom building:library room:library table",
+      "chat": null
+    },
+    "Adam Smith": {
+      "movement": [
+        83,
+        82
+      ],
+      "pronunciatio": "\ud83d\ude34",
+      "description": "sleeping @ the School:student dormitory 4:common room:bed",
+      "chat": null
+    },
+    "Abigail Chen": {
+      "movement": [
+        73,
+        23
+      ],
+      "pronunciatio": "\ud83c\udf7d\ufe0f\ud83e\uddf9",
+      "description": "finishing her meal and clearing her tray @ the School:canteen:student canteen:tray rack",
+      "chat": null
+    },
+    "Arthur Burton": {
+      "movement": [
+        66,
+        23
+      ],
+      "pronunciatio": "\ud83d\udcac\ud83d\udcc5",
+      "description": "chatting with friends about classes and upcoming events @ the School:canteen:student canteen:student restaurant table",
+      "chat": null
+    },
+    "Ayesha Khan": {
+      "movement": [
+        18,
+        20
+      ],
+      "pronunciatio": "\ud83d\udcda\ud83d\udd0d",
+      "description": "continuing her personal study, refining discussion questions and exploring interdisciplinary links between literature, history, and physics concepts @ the School:Ayesha Khan's office and dormitory:office:computer desk",
+      "chat": null
+    }
+  },
+  "meta": {
+    "curr_time": "February 17, 2023, 12:30:00"
+  }
+}

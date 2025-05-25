@@ -1,0 +1,70 @@
+{
+  "persona": {
+    "Isabella Rodriguez": {
+      "movement": [
+        107,
+        16
+      ],
+      "pronunciatio": "\ud83c\udf0a\ud83d\udd2e",
+      "description": "guiding small groups through the experiment setup (conversing about Isabella Rodriguez and Maria Lopez discussing their excitement for an interdisciplinary session blending creative thinking techniques, historical movements, physics concepts (like wave-particle duality and momentum), kinetic art, and collaboration with Abigail and Adam, while also connecting these ideas to their current chemistry lesson through wave simulations.) @ the School:classroom building:classroom 1:blackboard",
+      "chat": null
+    },
+    "Maria Lopez": {
+      "movement": [
+        107,
+        16
+      ],
+      "pronunciatio": "\ud83c\udf0a\u269b\ufe0f",
+      "description": "listening to the teacher's introduction for the first lesson (conversing about Isabella Rodriguez and Maria Lopez discussing their excitement for an interdisciplinary session blending creative thinking techniques, historical movements, physics concepts (like wave-particle duality and momentum), kinetic art, and collaboration with Abigail and Adam, while also connecting these ideas to their current chemistry lesson through wave simulations.) @ the School:classroom building:classroom 1:blackboard",
+      "chat": null
+    },
+    "Klaus Mueller": {
+      "movement": [
+        127,
+        33
+      ],
+      "pronunciatio": "\ud83d\udc65\ud83c\udfeb",
+      "description": "engaging in a group activity for the third class   @ the School:classroom building:classroom 2:blackboard",
+      "chat": null
+    },
+    "Adam Smith": {
+      "movement": [
+        83,
+        81
+      ],
+      "pronunciatio": "\ud83d\ude34",
+      "description": "sleeping @ the School:student dormitory 4:common room:bed",
+      "chat": null
+    },
+    "Abigail Chen": {
+      "movement": [
+        107,
+        16
+      ],
+      "pronunciatio": "\ud83d\udc42\ud83d\udcdd",
+      "description": "actively listening and taking notes during the lecture @ the School:classroom building:classroom 1:blackboard",
+      "chat": null
+    },
+    "Arthur Burton": {
+      "movement": [
+        106,
+        16
+      ],
+      "pronunciatio": "\ud83e\uddea\ud83d\udd2c",
+      "description": "engaging in a lab demonstration (chemistry-related)   @ the School:classroom building:classroom 1:blackboard",
+      "chat": null
+    },
+    "Ayesha Khan": {
+      "movement": [
+        23,
+        18
+      ],
+      "pronunciatio": "\ud83d\ude34",
+      "description": "sleeping @ the School:Ayesha Khan's office and dormitory:bedroom:bed",
+      "chat": null
+    }
+  },
+  "meta": {
+    "curr_time": "February 16, 2023, 10:25:00"
+  }
+}

@@ -1,0 +1,70 @@
+{
+  "persona": {
+    "Isabella Rodriguez": {
+      "movement": [
+        5,
+        11
+      ],
+      "pronunciatio": "\ud83c\udf7d\ufe0f\ud83e\ude91",
+      "description": "setting the table @ the School:Isabella Rodriguez's office and dormitory:living room:toaster",
+      "chat": null
+    },
+    "Maria Lopez": {
+      "movement": [
+        71,
+        18
+      ],
+      "pronunciatio": "\ud83c\udf7d\ufe0f\ud83d\udcac",
+      "description": "eating her dinner while chatting @ the School:canteen:student canteen:student restaurant table",
+      "chat": null
+    },
+    "Klaus Mueller": {
+      "movement": [
+        121,
+        21
+      ],
+      "pronunciatio": "\ud83d\udcdd\ud83d\udd0d",
+      "description": "reviewing his drafted introduction and notes from previous sessions @ the School:classroom building:library room:library table",
+      "chat": null
+    },
+    "Adam Smith": {
+      "movement": [
+        83,
+        82
+      ],
+      "pronunciatio": "\ud83d\ude34",
+      "description": "sleeping @ the School:student dormitory 4:common room:bed",
+      "chat": null
+    },
+    "Abigail Chen": {
+      "movement": [
+        68,
+        21
+      ],
+      "pronunciatio": "\ud83c\udf7d\ufe0f\ud83e\ude91",
+      "description": "sitting down and starting to eat @ the School:canteen:student canteen:student restaurant table",
+      "chat": null
+    },
+    "Arthur Burton": {
+      "movement": [
+        121,
+        23
+      ],
+      "pronunciatio": "\ud83e\uddea\ud83d\udcca",
+      "description": "solving advanced stoichiometry problems @ the School:classroom building:library room:library table",
+      "chat": null
+    },
+    "Ayesha Khan": {
+      "movement": [
+        18,
+        20
+      ],
+      "pronunciatio": "\ud83d\udcdd\ud83d\udc68\u200d",
+      "description": "reviewing the first set of student responses @ the School:Ayesha Khan's office and dormitory:office:computer desk",
+      "chat": null
+    }
+  },
+  "meta": {
+    "curr_time": "February 17, 2023, 18:15:00"
+  }
+}

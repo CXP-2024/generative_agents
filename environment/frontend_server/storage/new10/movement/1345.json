@@ -1,0 +1,70 @@
+{
+  "persona": {
+    "Isabella Rodriguez": {
+      "movement": [
+        96,
+        39
+      ],
+      "pronunciatio": "\ud83e\uddd8\u200d\u2642",
+      "description": "warming up with light stretches @ the School:playground:playground:running track",
+      "chat": null
+    },
+    "Maria Lopez": {
+      "movement": [
+        131,
+        35
+      ],
+      "pronunciatio": "\ud83c\udfa7\ud83d\udcda",
+      "description": "listening to the second part of the lecture @ the School:classroom building:classroom 2:classroom student seating",
+      "chat": null
+    },
+    "Klaus Mueller": {
+      "movement": [
+        106,
+        22
+      ],
+      "pronunciatio": "\ud83d\udde3\ufe0f\ud83d\udc65",
+      "description": "engaging in a small-group debate on policy impacts @ the School:classroom building:classroom 1:classroom podium",
+      "chat": null
+    },
+    "Adam Smith": {
+      "movement": [
+        83,
+        82
+      ],
+      "pronunciatio": "\ud83d\ude34",
+      "description": "sleeping @ the School:student dormitory 4:common room:bed",
+      "chat": null
+    },
+    "Abigail Chen": {
+      "movement": [
+        77,
+        78
+      ],
+      "pronunciatio": "\u270f\ufe0f\ud83d\udc40",
+      "description": "reviewing her refined sketch from Thursday @ the School:student dormitory 4:common room:desk",
+      "chat": null
+    },
+    "Arthur Burton": {
+      "movement": [
+        134,
+        29
+      ],
+      "pronunciatio": "\ud83d\udcac\ud83d\udc4b",
+      "description": "chatting briefly with classmates before leaving   @ the School:classroom building:corridor:coffee vending machine",
+      "chat": null
+    },
+    "Ayesha Khan": {
+      "movement": [
+        106,
+        21
+      ],
+      "pronunciatio": "\ud83c\udfa4\ud83d\udce2",
+      "description": "introducing the debate topic to the class @ the School:classroom building:classroom 1:classroom podium",
+      "chat": null
+    }
+  },
+  "meta": {
+    "curr_time": "February 17, 2023, 16:05:00"
+  }
+}

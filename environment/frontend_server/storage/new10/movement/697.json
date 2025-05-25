@@ -1,0 +1,87 @@
+{
+  "persona": {
+    "Isabella Rodriguez": {
+      "movement": [
+        106,
+        21
+      ],
+      "pronunciatio": "\ud83d\udd2c\ud83d\udc69\u200d",
+      "description": "demonstrating a hands-on experiment   @ the School:classroom building:classroom 1:classroom podium",
+      "chat": null
+    },
+    "Maria Lopez": {
+      "movement": [
+        113,
+        22
+      ],
+      "pronunciatio": "\ud83d\udcdd\ud83e\ude91",
+      "description": "settling into her seat and organizing her notes @ the School:classroom building:classroom 1:classroom student seating",
+      "chat": null
+    },
+    "Klaus Mueller": {
+      "movement": [
+        107,
+        16
+      ],
+      "pronunciatio": "\ud83d\udc42\ud83d\udcd6",
+      "description": "listening to the teacher's lecture   @ the School:classroom building:classroom 1:blackboard",
+      "chat": null
+    },
+    "Adam Smith": {
+      "movement": [
+        83,
+        82
+      ],
+      "pronunciatio": "\ud83d\ude34",
+      "description": "sleeping @ the School:student dormitory 4:common room:bed",
+      "chat": null
+    },
+    "Abigail Chen": {
+      "movement": [
+        108,
+        18
+      ],
+      "pronunciatio": "\ud83d\udcac",
+      "description": "conversing about Abigail Chen and Klaus Mueller confirming their 2:30 meeting in the library for their environmental justice project, discussing their interdisciplinary approach involving chemistry, physics, and art, and planning to sync up with Arthur for his chemistry insights while Klaus shares notes from a guest speaker on labor rights. @ <persona> Klaus Mueller",
+      "chat": [
+        [
+          "Abigail Chen",
+          "Hey Klaus! I saw you were deep in the lecture earlier. Just wanted to check if you're still good for our 2:30 meeting in the library today for the environmental justice project?"
+        ],
+        [
+          "Klaus Mueller",
+          "Absolutely, Abigail! I\u2019m really looking forward to it\u2014I\u2019ve been reviewing my notes on historical social movements and how they connect to modern environmental justice. I think our interdisciplinary approach with chemistry, physics, and art will make this project stand out. See you at 2:30!"
+        ],
+        [
+          "Abigail Chen",
+          "That's great to hear, Klaus! I\u2019ve also been revisiting some physics-based art techniques we could incorporate. Let\u2019s make sure to sync up with the others too\u2014Arthur mentioned he had some chemistry insights to share. See you at 2:30!"
+        ],
+        [
+          "Klaus Mueller",
+          "Sounds perfect! I'll bring my notes from the guest speaker on labor rights too\u2014I think there are some parallels we can draw with environmental justice. And I\u2019m excited to hear Arthur\u2019s chemistry angle. See you then!"
+        ]
+      ]
+    },
+    "Arthur Burton": {
+      "movement": [
+        110,
+        18
+      ],
+      "pronunciatio": "\ud83d\udcdd\u2705",
+      "description": "completing a short quiz @ the School:classroom building:classroom 1:classroom student seating",
+      "chat": null
+    },
+    "Ayesha Khan": {
+      "movement": [
+        23,
+        18
+      ],
+      "pronunciatio": "\ud83d\ude34",
+      "description": "sleeping @ the School:Ayesha Khan's office and dormitory:bedroom:bed",
+      "chat": null
+    }
+  },
+  "meta": {
+    "curr_time": "February 15, 2023, 10:05:00"
+  }
+}

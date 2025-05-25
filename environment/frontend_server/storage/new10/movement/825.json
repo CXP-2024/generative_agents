@@ -1,0 +1,70 @@
+{
+  "persona": {
+    "Isabella Rodriguez": {
+      "movement": [
+        8,
+        20
+      ],
+      "pronunciatio": "\ud83d\udca1\ud83d\udc69\u200d",
+      "description": "brainstorming classroom applications for the material @ the School:Isabella Rodriguez's office and dormitory:office:blackboard",
+      "chat": null
+    },
+    "Maria Lopez": {
+      "movement": [
+        66,
+        76
+      ],
+      "pronunciatio": "\ud83d\udcac\u270d\ufe0f",
+      "description": "reading and responding to viewer comments @ the School:student dormitory 3:common room:desk",
+      "chat": null
+    },
+    "Klaus Mueller": {
+      "movement": [
+        6,
+        20
+      ],
+      "pronunciatio": "\ud83d\udca1\ud83d\udd04",
+      "description": "refining his arguments based on interdisciplinary discussions @ the School:Isabella Rodriguez's office and dormitory:office:computer desk",
+      "chat": null
+    },
+    "Adam Smith": {
+      "movement": [
+        83,
+        82
+      ],
+      "pronunciatio": "\ud83d\ude34",
+      "description": "sleeping @ the School:student dormitory 4:common room:bed",
+      "chat": null
+    },
+    "Abigail Chen": {
+      "movement": [
+        77,
+        80
+      ],
+      "pronunciatio": "\u270f\ufe0f\ud83d\udcd3",
+      "description": "sketching rough ideas in her notebook @ the School:student dormitory 4:common room:desk",
+      "chat": null
+    },
+    "Arthur Burton": {
+      "movement": [
+        76,
+        75
+      ],
+      "pronunciatio": "\ud83c\udfcb\ufe0f\u200d",
+      "description": "lifting light weights @ the School:student dormitory 4:common room:bookshelf",
+      "chat": null
+    },
+    "Ayesha Khan": {
+      "movement": [
+        23,
+        18
+      ],
+      "pronunciatio": "\ud83d\ude34",
+      "description": "sleeping @ the School:Ayesha Khan's office and dormitory:bedroom:bed",
+      "chat": null
+    }
+  },
+  "meta": {
+    "curr_time": "February 15, 2023, 20:45:00"
+  }
+}

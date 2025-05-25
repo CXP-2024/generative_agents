@@ -1,0 +1,112 @@
+{
+  "persona": {
+    "Isabella Rodriguez": {
+      "movement": [
+        6,
+        20
+      ],
+      "pronunciatio": "\ud83d\udcc4\ud83d\udda8\ufe0f",
+      "description": "printing observation worksheets @ the School:Isabella Rodriguez's office and dormitory:office:computer desk",
+      "chat": null
+    },
+    "Maria Lopez": {
+      "movement": [
+        107,
+        16
+      ],
+      "pronunciatio": "\u270d\ufe0f\ud83d\udcdd",
+      "description": "taking notes on the lecture @ the School:classroom building:classroom 1:blackboard",
+      "chat": null
+    },
+    "Klaus Mueller": {
+      "movement": [
+        108,
+        19
+      ],
+      "pronunciatio": "\ud83d\udcac",
+      "description": "conversing about Klaus Mueller and Ayesha Khan discussing the connection between historical social movements and modern environmental justice, agreeing to meet during the break in the library with Maria and Arthur to explore these ideas further. @ <persona> Ayesha Khan",
+      "chat": [
+        [
+          "Klaus Mueller",
+          "Hi Ayesha, I really appreciated your insights on the assigned reading. It got me thinking about how we could connect the historical social movements we're studying to modern issues like environmental justice. Would you be interested in discussing this further during the break?"
+        ],
+        [
+          "Ayesha Khan",
+          "That's a fascinating connection, Klaus! I'd love to hear more about your thoughts on this. Environmental justice is such an important topic, and linking it to historical social movements could make for a compelling discussion. Perhaps we could explore this further during the break?"
+        ],
+        [
+          "Klaus Mueller",
+          "That sounds great! I've actually been working on some ideas about how labor rights movements from the early 20th century parallel modern environmental activism structures. Maybe we could meet in the library during the break? I think Maria and Arthur might join us too - they're working on related interdisciplinary projects."
+        ],
+        [
+          "Ayesha Khan",
+          "That sounds like a wonderful opportunity for deeper exploration, Klaus. I'll be happy to join you in the library during the break. It's always rewarding to see students making these meaningful connections across disciplines. Let's make sure we leave enough time for everyone to share their perspectives."
+        ],
+        [
+          "Klaus Mueller",
+          "Perfect! I'll let Maria and Arthur know we're meeting in the library at noon. I think this could really enrich our understanding of both historical and current movements. Looking forward to continuing this conversation then!"
+        ]
+      ]
+    },
+    "Adam Smith": {
+      "movement": [
+        8,
+        21
+      ],
+      "pronunciatio": "\ud83d\ude4b\u200d\u2642",
+      "description": "asking the teacher for clarification on a concept   @ the School:Isabella Rodriguez's office and dormitory:office:blackboard",
+      "chat": null
+    },
+    "Abigail Chen": {
+      "movement": [
+        124,
+        21
+      ],
+      "pronunciatio": "\ud83d\udcdc\u270d\ufe0f",
+      "description": "writing a history essay   @ the School:classroom building:library room:library table",
+      "chat": null
+    },
+    "Arthur Burton": {
+      "movement": [
+        106,
+        16
+      ],
+      "pronunciatio": "\ud83d\udcac\ud83d\udc65",
+      "description": "participating in a class discussion @ the School:classroom building:classroom 1:blackboard",
+      "chat": null
+    },
+    "Ayesha Khan": {
+      "movement": [
+        108,
+        19
+      ],
+      "pronunciatio": "\ud83d\udcac",
+      "description": "conversing about Klaus Mueller and Ayesha Khan discussing the connection between historical social movements and modern environmental justice, agreeing to meet during the break in the library with Maria and Arthur to explore these ideas further. @ <persona> Klaus Mueller",
+      "chat": [
+        [
+          "Klaus Mueller",
+          "Hi Ayesha, I really appreciated your insights on the assigned reading. It got me thinking about how we could connect the historical social movements we're studying to modern issues like environmental justice. Would you be interested in discussing this further during the break?"
+        ],
+        [
+          "Ayesha Khan",
+          "That's a fascinating connection, Klaus! I'd love to hear more about your thoughts on this. Environmental justice is such an important topic, and linking it to historical social movements could make for a compelling discussion. Perhaps we could explore this further during the break?"
+        ],
+        [
+          "Klaus Mueller",
+          "That sounds great! I've actually been working on some ideas about how labor rights movements from the early 20th century parallel modern environmental activism structures. Maybe we could meet in the library during the break? I think Maria and Arthur might join us too - they're working on related interdisciplinary projects."
+        ],
+        [
+          "Ayesha Khan",
+          "That sounds like a wonderful opportunity for deeper exploration, Klaus. I'll be happy to join you in the library during the break. It's always rewarding to see students making these meaningful connections across disciplines. Let's make sure we leave enough time for everyone to share their perspectives."
+        ],
+        [
+          "Klaus Mueller",
+          "Perfect! I'll let Maria and Arthur know we're meeting in the library at noon. I think this could really enrich our understanding of both historical and current movements. Looking forward to continuing this conversation then!"
+        ]
+      ]
+    }
+  },
+  "meta": {
+    "curr_time": "February 13, 2023, 14:35:00"
+  }
+}

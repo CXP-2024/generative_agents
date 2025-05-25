@@ -1,0 +1,70 @@
+{
+  "persona": {
+    "Isabella Rodriguez": {
+      "movement": [
+        107,
+        16
+      ],
+      "pronunciatio": "\ud83e\uddea\ud83d\udd0d",
+      "description": "gathering necessary science experiment materials @ the School:classroom building:classroom 1:blackboard",
+      "chat": null
+    },
+    "Maria Lopez": {
+      "movement": [
+        121,
+        23
+      ],
+      "pronunciatio": "\ud83d\udcdd\ud83d\udd0d",
+      "description": "reviewing her notes and summarizing key points @ the School:classroom building:library room:library table",
+      "chat": null
+    },
+    "Klaus Mueller": {
+      "movement": [
+        106,
+        16
+      ],
+      "pronunciatio": "\ud83d\udcdd\u270f\ufe0f",
+      "description": "working on an in-class assignment   @ the School:classroom building:classroom 1:blackboard",
+      "chat": null
+    },
+    "Adam Smith": {
+      "movement": [
+        83,
+        81
+      ],
+      "pronunciatio": "\ud83d\ude34",
+      "description": "sleeping @ the School:student dormitory 4:common room:bed",
+      "chat": null
+    },
+    "Abigail Chen": {
+      "movement": [
+        124,
+        23
+      ],
+      "pronunciatio": "\ud83d\udde3\ufe0f\ud83d\udc65",
+      "description": "discussing project progress with Arthur, Maria, Isabella, Adam, and Klaus @ the School:classroom building:library room:library table",
+      "chat": null
+    },
+    "Arthur Burton": {
+      "movement": [
+        110,
+        20
+      ],
+      "pronunciatio": "\ud83d\udde3\ufe0f\ud83d\udc65",
+      "description": "participating in a small group discussion @ the School:classroom building:classroom 1:classroom student seating",
+      "chat": null
+    },
+    "Ayesha Khan": {
+      "movement": [
+        107,
+        16
+      ],
+      "pronunciatio": "\ud83d\udcda\ud83d\udd51",
+      "description": "teaching literature and history in Classroom 1, and at around 2:30, will attend the library session if confirmed   @ the School:classroom building:classroom 1:blackboard",
+      "chat": null
+    }
+  },
+  "meta": {
+    "curr_time": "February 16, 2023, 15:30:00"
+  }
+}

@@ -1,0 +1,95 @@
+{
+  "persona": {
+    "Isabella Rodriguez": {
+      "movement": [
+        116,
+        20
+      ],
+      "pronunciatio": "\ud83d\udeb6\u200d\u2642",
+      "description": "walking around the classroom, observing students and offering positive feedback   @ the School:classroom building:classroom 1:classroom student seating",
+      "chat": null
+    },
+    "Maria Lopez": {
+      "movement": [
+        66,
+        78
+      ],
+      "pronunciatio": "\ud83c\udf7d\ufe0f\u2615",
+      "description": "sitting down to eat breakfast   @ the School:student dormitory 3:common room:desk",
+      "chat": null
+    },
+    "Klaus Mueller": {
+      "movement": [
+        128,
+        33
+      ],
+      "pronunciatio": "\ud83d\udc42\ud83d\udcda",
+      "description": "listening to the second lecture   @ the School:classroom building:classroom 2:blackboard",
+      "chat": null
+    },
+    "Adam Smith": {
+      "movement": [
+        83,
+        81
+      ],
+      "pronunciatio": "\ud83d\ude34",
+      "description": "sleeping @ the School:student dormitory 4:common room:bed",
+      "chat": null
+    },
+    "Abigail Chen": {
+      "movement": [
+        77,
+        76
+      ],
+      "pronunciatio": "\ud83c\udf5e\u2615",
+      "description": "preparing breakfast (toast and tea)   @ the School:student dormitory 4:common room:desk",
+      "chat": null
+    },
+    "Arthur Burton": {
+      "movement": [
+        128,
+        29
+      ],
+      "pronunciatio": "\ud83d\udcac",
+      "description": "conversing about Arthur Burton and Klaus Mueller planning an interdisciplinary project meeting at 2:30 involving chemistry, social studies, environmental justice, labor rights, art, physics, and systems thinking, while coordinating with Abigail, Ayesha, Maria, Isabella, and Adam to combine their perspectives and strengthen the collaboration. @ <persona> Klaus Mueller",
+      "chat": [
+        [
+          "Arthur Burton",
+          "Hey Klaus! I was just thinking about our conversation earlier about combining chemistry and social studies for that environmental justice project. Do you have a minute to brainstorm some more ideas now?"
+        ],
+        [
+          "Klaus Mueller",
+          "Absolutely, Arthur! I was actually just reviewing my notes from yesterday's guest speaker on labor rights movements\u2014there might be some interesting parallels we can draw with environmental justice. Maybe we can sync up during our 2:30 library meeting and loop in Abigail and the others to explore the chemistry-art-social studies angle more deeply?"
+        ],
+        [
+          "Arthur Burton",
+          "That sounds like a great plan! I'll bring my chemistry notes on sustainable materials to the meeting\u2014maybe we can link them to the historical labor rights examples you mentioned. Do you think Ayesha and Maria might have additional insights from their perspectives too?"
+        ],
+        [
+          "Klaus Mueller",
+          "Definitely! Ayesha\u2019s been researching systems thinking, and Maria has that physics angle\u2014combining all our perspectives could really strengthen the project. Let\u2019s gather everyone at 2:30 and map out how these disciplines intersect. I\u2019ll also bring my guest speaker notes for reference."
+        ],
+        [
+          "Arthur Burton",
+          "Perfect! I\u2019ll also check in with Abigail and Maria beforehand to see if they have any preliminary ideas to bring to the table. Excited to see how this all comes together at 2:30!"
+        ],
+        [
+          "Klaus Mueller",
+          "Great! I'll also touch base with Isabella and Adam\u2014they\u2019ve been working on creative techniques and physics connections that could add another layer to our discussion. This interdisciplinary approach is exactly what I love about these collaborations! See you at 2:30, Arthur."
+        ]
+      ]
+    },
+    "Ayesha Khan": {
+      "movement": [
+        23,
+        18
+      ],
+      "pronunciatio": "\ud83d\ude34",
+      "description": "sleeping @ the School:Ayesha Khan's office and dormitory:bedroom:bed",
+      "chat": null
+    }
+  },
+  "meta": {
+    "curr_time": "February 16, 2023, 09:40:00"
+  }
+}

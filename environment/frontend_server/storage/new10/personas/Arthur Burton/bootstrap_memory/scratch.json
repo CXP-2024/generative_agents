@@ -1,0 +1,244 @@
+{
+  "vision_r": 8,
+  "att_bandwidth": 8,
+  "retention": 8,
+  "curr_time": "February 18, 2023, 05:10:00",
+  "curr_tile": [
+    83,
+    82
+  ],
+  "daily_plan_req": "Here\u2019s Arthur Burton\u2019s broad-stroke daily plan for **Saturday, February 18**:    1. **Wake up and complete morning routine at 7:00 AM**      - Light exercise, reflection, and breakfast.    2. **Leadership & academic finalization (9:00\u201311:00 AM, dorm study desk/library)**      - Review campaign speech notes and chemistry competition problem sets.    3. **Casual hangout with friends (1:00\u20133:00 PM, campus green/common room)**      - Relax and debrief the week over snacks or games.    4. **Interdisciplinary group follow-up (flexible, late afternoon)**      - Quick check-in with Abigail, Maria, and others via messaging or meetup.    5. **Evening reflection & wind-down (7:00\u20138:30 PM, dorm room)**      - Journaling, light stretching, and planning for the upcoming week.    *Dinner is around 4:00 PM as usual.* Arthur keeps the day balanced, leaving room for spontaneity or election updates.",
+  "name": "Arthur Burton",
+  "first_name": "Arthur",
+  "last_name": "Burton",
+  "age": 18,
+  "innate": "friendly, outgoing, generous",
+  "learned": "Arthur Burton is a high school student at grade 11. He is kind and is always ready to help others. He's talkative. He also likes chemistry. He lives in a student dormitory.",
+  "currently": "**Status: Saturday, February 18**  \n\nArthur Burton wakes with a quiet sense of purpose, carrying the momentum of a week well spent into the weekend. The structured intensity of Friday\u2019s preparations gives way to a more fluid but intentional Saturday\u2014one that balances final touches on his goals with well-earned rest and camaraderie. His reflections from the previous night linger: a recognition of progress, the value of collaboration, and the need to stay adaptable while honoring his commitments.  \n\n1. **Leadership & Academic Finalization**  \n   - **Time:** 9:00\u201311:00 AM (*Dorm study desk or library, if open*).  \n   - **Tasks:**  \n     - Review campaign speech notes and election strategy one last time (*last refined February 17 at 9:30 PM*).  \n     - Skim chemistry competition problem sets for confidence (*last practiced February 17 at 8:00 PM*).  \n   - **Mindset:** Arthur approaches this as a consolidation rather than a cram\u2014trusting his preparation but leaving no gaps unchecked.  \n\n2. **Casual Weekend Plans with Friends**  \n   - **Time:** 1:00\u20133:00 PM (*Location: Campus green or common room, pending confirmation*).  \n   - **Details:** Lighthearted downtime, a chance to debrief the week or simply unwind. Arthur values these moments as much as his structured work, knowing they recharge his energy for the days ahead.  \n\n3. **Interdisciplinary Group Follow-Up**  \n   - **Time:** Flexible (*likely late afternoon, via messaging or quick meetup*).  \n   - **Focus:** Check in with *Abigail, Maria, Isabella, Adam, and Klaus* on any lingering tasks or feedback from Friday\u2019s collaboration (*February 17, 6:20 PM*).  \n\n4. **Evening Reflection & Adjustment**  \n   - **Time:** 7:00\u20138:30 PM (*Dorm room*).  \n   - **Activities:**  \n     - Journaling to process the week\u2019s progress and outline goals for the upcoming week (*as done February 17 at 11:40 AM*).  \n     - Light stretching or a walk to clear his head, ensuring mental clarity before Sunday.  \n\n5. **Contingencies & Balance**  \n   - If election results or competition updates arrive, Arthur will prioritize processing them\u2014whether celebrating or recalibrating.  \n   - He remains open to spontaneous peer discussions, as some of his best insights this week came from unplanned exchanges (*e.g., February 14\u2019s brainstorming*).  \n\n**Additional Notes:**  \n- Arthur is mindful not to overpack the day, leaving breathing room between tasks to avoid burnout.  \n- Sleep remains a priority; he aims to wind down by 11:00 PM to maintain his rhythm for the week ahead.  \n\n**Reflection:**  \nSaturday unfolds as a bridge between reflection and action for Arthur. The week\u2019s repetitions\u2014speech drills, problem sets, group huddles\u2014have sharpened his readiness, but today is about synthesis: tying loose ends, appreciating his support network, and grounding himself before new challenges. His quiet confidence persists, tempered by gratitude for the peers who\u2019ve shaped his growth. Whether today holds quiet study or lively conversation, Arthur meets it with the same deliberate energy that has carried him this far.  \n\n**\u2014Arthur Burton**",
+  "lifestyle": "Arthur Burton goes to bed around midnight, awakes up around 7am, eats dinner around 4pm.",
+  "living_area": "the School:student dormitory 4:common room",
+  "concept_forget": 100,
+  "daily_reflection_time": 180,
+  "daily_reflection_size": 5,
+  "overlap_reflect_th": 4,
+  "kw_strg_event_reflect_th": 10,
+  "kw_strg_thought_reflect_th": 9,
+  "recency_w": 1,
+  "relevance_w": 1,
+  "importance_w": 1,
+  "recency_decay": 0.995,
+  "importance_trigger_max": 250,
+  "importance_trigger_curr": 113,
+  "importance_ele_n": 67,
+  "thought_count": 5,
+  "daily_req": [
+    "wake up and complete the morning routine at 7:00 am",
+    "wake up and complete the morning routine from 7:00 am to 7:30 am",
+    "have breakfast from 7:30 am to 8:00 am",
+    "attend classes in classroom 1 from 8:00 am to 12:00 pm",
+    "have lunch from 12:00 pm to 12:30 pm",
+    "study in the library room from 12:30 pm to 2:30 pm",
+    "attend afternoon classes in classroom 1 from 2:30 pm to 4:00 pm",
+    "have dinner at 4:00 pm",
+    "prepare for the class minister election from 4:30 pm to 6:00 pm",
+    "study for the chemistry competition in the library room from 6:00 pm to 8:00 pm",
+    "do exercises in the sports room from 8:00 pm to 9:00 pm",
+    "socialize with dormitory friends from 9:00 pm to 10:30 pm",
+    "complete the evening routine and relax from 10:30 pm to 12:00 am",
+    "go to bed at midnight"
+  ],
+  "f_daily_schedule": [
+    [
+      "sleeping",
+      420
+    ],
+    [
+      "waking up and stretching in bed",
+      5
+    ],
+    [
+      "getting out of bed and washing his face",
+      5
+    ],
+    [
+      "brushing his teeth",
+      5
+    ],
+    [
+      "changing into workout clothes",
+      5
+    ],
+    [
+      "doing light stretching exercises",
+      10
+    ],
+    [
+      "doing a short bodyweight workout (push-ups, squats)",
+      15
+    ],
+    [
+      "reflecting on his goals for the day",
+      10
+    ],
+    [
+      "tidying up his dorm room",
+      5
+    ],
+    [
+      "having breakfast and preparing for his morning activities",
+      60
+    ],
+    [
+      "reviewing campaign speech notes and chemistry competition problem sets at his dorm study desk",
+      60
+    ],
+    [
+      "continuing to review campaign speech notes and chemistry competition problem sets at his dorm study desk",
+      60
+    ],
+    [
+      "finishing up his review of campaign speech notes and chemistry competition problem sets at his dorm study desk",
+      60
+    ],
+    [
+      "having lunch in the dormitory cafeteria",
+      60
+    ],
+    [
+      "relaxing and hanging out with friends on the campus green or in the common room, debriefing the week over snacks or games",
+      120
+    ],
+    [
+      "having a quick check-in with his interdisciplinary group (Abigail, Maria, Isabella, Adam, and Klaus) via messaging or a brief meetup to discuss any lingering tasks or feedback from Friday's collaboration",
+      60
+    ],
+    [
+      "having dinner in the dormitory cafeteria",
+      60
+    ],
+    [
+      "having a quick check-in with his interdisciplinary group (Abigail, Maria, Isabella, Adam, and Klaus) via messaging or a brief meetup to discuss any lingering tasks or feedback from Friday's collaboration",
+      60
+    ],
+    [
+      "studying for the chemistry competition in the library room",
+      60
+    ],
+    [
+      "journaling in his dorm room to process the week's progress and outline goals for the upcoming week, and at around 7:45, will do some light stretching or take a walk to clear his head",
+      60
+    ],
+    [
+      "socializing with dormitory friends in the common room, sharing stories and relaxing after a productive day",
+      120
+    ],
+    [
+      "socializing with dormitory friends in the common room, sharing stories and relaxing after a productive day, and at around 10:30, will start his evening routine and wind down for bed",
+      60
+    ],
+    [
+      "completing his evening routine and getting ready for bed, and at around 11:30, will be sleeping",
+      60
+    ],
+    [
+      "sleeping",
+      0
+    ]
+  ],
+  "f_daily_schedule_hourly_org": [
+    [
+      "sleeping",
+      420
+    ],
+    [
+      "waking up and starting his morning routine with light exercise and reflection",
+      60
+    ],
+    [
+      "having breakfast and preparing for his morning activities",
+      60
+    ],
+    [
+      "reviewing campaign speech notes and chemistry competition problem sets at his dorm study desk",
+      60
+    ],
+    [
+      "continuing to review campaign speech notes and chemistry competition problem sets at his dorm study desk",
+      60
+    ],
+    [
+      "finishing up his review of campaign speech notes and chemistry competition problem sets at his dorm study desk",
+      60
+    ],
+    [
+      "having lunch in the dormitory cafeteria",
+      60
+    ],
+    [
+      "relaxing and hanging out with friends on the campus green or in the common room, debriefing the week over snacks or games",
+      120
+    ],
+    [
+      "having a quick check-in with his interdisciplinary group (Abigail, Maria, Isabella, Adam, and Klaus) via messaging or a brief meetup to discuss any lingering tasks or feedback from Friday's collaboration",
+      60
+    ],
+    [
+      "having dinner in the dormitory cafeteria",
+      60
+    ],
+    [
+      "having a quick check-in with his interdisciplinary group (Abigail, Maria, Isabella, Adam, and Klaus) via messaging or a brief meetup to discuss any lingering tasks or feedback from Friday's collaboration",
+      60
+    ],
+    [
+      "studying for the chemistry competition in the library room",
+      60
+    ],
+    [
+      "journaling in his dorm room to process the week's progress and outline goals for the upcoming week, and at around 7:45, will do some light stretching or take a walk to clear his head",
+      60
+    ],
+    [
+      "socializing with dormitory friends in the common room, sharing stories and relaxing after a productive day",
+      120
+    ],
+    [
+      "socializing with dormitory friends in the common room, sharing stories and relaxing after a productive day, and at around 10:30, will start his evening routine and wind down for bed",
+      60
+    ],
+    [
+      "completing his evening routine and getting ready for bed, and at around 11:30, will be sleeping",
+      60
+    ]
+  ],
+  "act_address": "the School:student dormitory 4:common room:bed",
+  "act_start_time": "February 18, 2023, 01:55:00",
+  "act_duration": 420,
+  "act_description": "sleeping",
+  "act_pronunciatio": "\ud83d\ude34",
+  "act_event": [
+    "Arthur Burton",
+    "is",
+    "sleep"
+  ],
+  "act_obj_description": "being slept in",
+  "act_obj_pronunciatio": "\ud83d\ude34\ud83d\udecc",
+  "act_obj_event": [
+    "bed",
+    "is",
+    "unused"
+  ],
+  "chatting_with": null,
+  "chat": null,
+  "chatting_with_buffer": {
+    "Klaus Mueller": 279,
+    "Adam Smith": -597,
+    "Isabella Rodriguez": 272,
+    "Maria Lopez": 297,
+    "Abigail Chen": 270,
+    "Ayesha Khan": 635
+  },
+  "chatting_end_time": null,
+  "act_path_set": true,
+  "planned_path": []
+}

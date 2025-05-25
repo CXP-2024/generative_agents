@@ -1,0 +1,70 @@
+{
+  "persona": {
+    "Isabella Rodriguez": {
+      "movement": [
+        50,
+        45
+      ],
+      "pronunciatio": "\ud83e\uddd8\u200d\u2642",
+      "description": "cooling down with gentle stretches @ the School:playground:playground:running track",
+      "chat": null
+    },
+    "Maria Lopez": {
+      "movement": [
+        106,
+        22
+      ],
+      "pronunciatio": "\ud83d\udcda\ud83d\udeb6\u200d",
+      "description": "packing up her materials as class ends @ the School:classroom building:classroom 1:classroom podium",
+      "chat": null
+    },
+    "Klaus Mueller": {
+      "movement": [
+        121,
+        23
+      ],
+      "pronunciatio": "\ud83d\udcda\u270f\ufe0f",
+      "description": "organizing his notes and materials for later review @ the School:classroom building:library room:library table",
+      "chat": null
+    },
+    "Adam Smith": {
+      "movement": [
+        83,
+        82
+      ],
+      "pronunciatio": "\ud83d\ude34",
+      "description": "sleeping @ the School:student dormitory 4:common room:bed",
+      "chat": null
+    },
+    "Abigail Chen": {
+      "movement": [
+        79,
+        87
+      ],
+      "pronunciatio": "\ud83d\udd27\u2699\ufe0f",
+      "description": "testing kinetic elements (e.g., movable parts) on a separate draft @ the School:student dormitory 4:balcony:closet",
+      "chat": null
+    },
+    "Arthur Burton": {
+      "movement": [
+        61,
+        16
+      ],
+      "pronunciatio": "\ud83c\udf7d\ufe0f\ud83d\udcac",
+      "description": "eating his meal while chatting with friends   @ the School:canteen:student canteen:student restaurant table",
+      "chat": null
+    },
+    "Ayesha Khan": {
+      "movement": [
+        106,
+        21
+      ],
+      "pronunciatio": "\ud83c\udfa4\ud83d\udc68\u200d",
+      "description": "moderating the student debate @ the School:classroom building:classroom 1:classroom podium",
+      "chat": null
+    }
+  },
+  "meta": {
+    "curr_time": "February 17, 2023, 16:45:00"
+  }
+}

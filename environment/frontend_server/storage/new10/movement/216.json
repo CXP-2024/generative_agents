@@ -1,0 +1,70 @@
+{
+  "persona": {
+    "Isabella Rodriguez": {
+      "movement": [
+        58,
+        16
+      ],
+      "pronunciatio": "\ud83d\udeb6\u200d\u2642",
+      "description": "walking to the dining area @ the School:canteen:student canteen:student restaurant table",
+      "chat": null
+    },
+    "Maria Lopez": {
+      "movement": [
+        72,
+        79
+      ],
+      "pronunciatio": "\ud83e\uddd8\u200d\u2642",
+      "description": "stretching and relaxing before dinner @ the School:student dormitory 3:common room:bed",
+      "chat": null
+    },
+    "Klaus Mueller": {
+      "movement": [
+        66,
+        76
+      ],
+      "pronunciatio": "\ud83d\udcdd\ud83d\udd0d",
+      "description": "reviewing his research notes @ the School:student dormitory 3:common room:desk",
+      "chat": null
+    },
+    "Adam Smith": {
+      "movement": [
+        77,
+        78
+      ],
+      "pronunciatio": "\ud83d\udcdd\ud83d\udd0d",
+      "description": "reviewing the essay for grammar and spelling errors @ the School:student dormitory 4:common room:desk",
+      "chat": null
+    },
+    "Abigail Chen": {
+      "movement": [
+        63,
+        26
+      ],
+      "pronunciatio": "\ud83d\udeb6\u200d\u2642",
+      "description": "walking to the dormitory cafeteria @ the School:canteen:student canteen:buffet table",
+      "chat": null
+    },
+    "Arthur Burton": {
+      "movement": [
+        77,
+        80
+      ],
+      "pronunciatio": "\ud83d\udcda\ud83e\uddea",
+      "description": "reviewing chemistry notes from class @ the School:student dormitory 4:common room:desk",
+      "chat": null
+    },
+    "Ayesha Khan": {
+      "movement": [
+        26,
+        14
+      ],
+      "pronunciatio": "\ud83c\udf7d\ufe0f\ud83e\uddfc",
+      "description": "washing the dishes @ the School:Ayesha Khan's office and dormitory:bathroom:washing machine",
+      "chat": null
+    }
+  },
+  "meta": {
+    "curr_time": "February 13, 2023, 18:00:00"
+  }
+}

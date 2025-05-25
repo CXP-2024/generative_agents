@@ -1,0 +1,70 @@
+{
+  "persona": {
+    "Isabella Rodriguez": {
+      "movement": [
+        106,
+        21
+      ],
+      "pronunciatio": "\ud83d\udcdd\ud83d\udc4f",
+      "description": "summarizing key takeaways and praising students for their participation   @ the School:classroom building:classroom 1:classroom podium",
+      "chat": null
+    },
+    "Maria Lopez": {
+      "movement": [
+        66,
+        78
+      ],
+      "pronunciatio": "\ud83c\udf7d\ufe0f\u2615",
+      "description": "sitting down to eat breakfast   @ the School:student dormitory 3:common room:desk",
+      "chat": null
+    },
+    "Klaus Mueller": {
+      "movement": [
+        129,
+        33
+      ],
+      "pronunciatio": "\ud83c\udfa7\ud83d\udcda",
+      "description": "listening to the second lecture   @ the School:classroom building:classroom 2:blackboard",
+      "chat": null
+    },
+    "Adam Smith": {
+      "movement": [
+        83,
+        81
+      ],
+      "pronunciatio": "\ud83d\ude34",
+      "description": "sleeping @ the School:student dormitory 4:common room:bed",
+      "chat": null
+    },
+    "Abigail Chen": {
+      "movement": [
+        77,
+        78
+      ],
+      "pronunciatio": "\ud83c\udf73\ud83d\udcc5",
+      "description": "eating breakfast while reviewing her planner   @ the School:student dormitory 4:common room:desk",
+      "chat": null
+    },
+    "Arthur Burton": {
+      "movement": [
+        121,
+        23
+      ],
+      "pronunciatio": "\ud83e\udd1d\ud83e\udde0",
+      "description": "collaborating with classmates on a group activity (conversing about Arthur Burton and Klaus Mueller planning an interdisciplinary project meeting at 2:30 involving chemistry, social studies, environmental justice, labor rights, art, physics, and systems thinking, while coordinating with Abigail, Ayesha, Maria, Isabella, and Adam to combine their perspectives and strengthen the collaboration.) @ the School:classroom building:library room:library table",
+      "chat": null
+    },
+    "Ayesha Khan": {
+      "movement": [
+        23,
+        18
+      ],
+      "pronunciatio": "\ud83d\ude34",
+      "description": "sleeping @ the School:Ayesha Khan's office and dormitory:bedroom:bed",
+      "chat": null
+    }
+  },
+  "meta": {
+    "curr_time": "February 16, 2023, 09:50:00"
+  }
+}

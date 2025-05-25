@@ -1,0 +1,70 @@
+{
+  "persona": {
+    "Isabella Rodriguez": {
+      "movement": [
+        107,
+        16
+      ],
+      "pronunciatio": "\ud83d\udcc5\ud83c\udf33",
+      "description": "setting a reminder for the outdoor class @ the School:classroom building:classroom 1:blackboard",
+      "chat": null
+    },
+    "Maria Lopez": {
+      "movement": [
+        74,
+        26
+      ],
+      "pronunciatio": "\ud83c\udf4e\u2615",
+      "description": "taking a short snack break @ the School:canteen:student canteen:buffet table",
+      "chat": null
+    },
+    "Klaus Mueller": {
+      "movement": [
+        107,
+        16
+      ],
+      "pronunciatio": "\ud83d\udc65\ud83e\udd1d",
+      "description": "collaborating with classmates on a group activity   @ the School:classroom building:classroom 1:blackboard",
+      "chat": null
+    },
+    "Adam Smith": {
+      "movement": [
+        6,
+        20
+      ],
+      "pronunciatio": "\ud83d\udcdd\ud83d\uddc2\ufe0f",
+      "description": "organizing his notes for future reference @ the School:Isabella Rodriguez's office and dormitory:office:computer desk",
+      "chat": null
+    },
+    "Abigail Chen": {
+      "movement": [
+        77,
+        78
+      ],
+      "pronunciatio": "\ud83d\udcdc\ud83d\udd0d",
+      "description": "summarizing key points for history @ the School:student dormitory 4:common room:desk",
+      "chat": null
+    },
+    "Arthur Burton": {
+      "movement": [
+        77,
+        76
+      ],
+      "pronunciatio": "\ud83c\udf92\ud83c\udf7d\ufe0f",
+      "description": "organizing his bag for dinner @ the School:student dormitory 4:common room:desk",
+      "chat": null
+    },
+    "Ayesha Khan": {
+      "movement": [
+        106,
+        16
+      ],
+      "pronunciatio": "\ud83d\udcdd\ud83d\udd11",
+      "description": "summarizing key takeaways and assigning homework @ the School:classroom building:classroom 1:blackboard",
+      "chat": null
+    }
+  },
+  "meta": {
+    "curr_time": "February 13, 2023, 15:55:00"
+  }
+}

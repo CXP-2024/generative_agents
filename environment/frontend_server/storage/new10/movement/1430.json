@@ -1,0 +1,70 @@
+{
+  "persona": {
+    "Isabella Rodriguez": {
+      "movement": [
+        10,
+        19
+      ],
+      "pronunciatio": "\ud83d\ude34",
+      "description": "sleeping @ the School:Isabella Rodriguez's office and dormitory:bedroom:bed",
+      "chat": null
+    },
+    "Maria Lopez": {
+      "movement": [
+        68,
+        75
+      ],
+      "pronunciatio": "\ud83c\udfa4\ud83c\udfb6",
+      "description": "playing a soft Hatsune Miku song in the background @ the School:student dormitory 3:common room:hatsune miku figure",
+      "chat": null
+    },
+    "Klaus Mueller": {
+      "movement": [
+        66,
+        76
+      ],
+      "pronunciatio": "\ud83c\udf92\ud83d\udcda",
+      "description": "organizing his backpack for the next day @ the School:student dormitory 3:common room:desk",
+      "chat": null
+    },
+    "Adam Smith": {
+      "movement": [
+        83,
+        82
+      ],
+      "pronunciatio": "\ud83d\ude34",
+      "description": "sleeping @ the School:student dormitory 4:common room:bed",
+      "chat": null
+    },
+    "Abigail Chen": {
+      "movement": [
+        82,
+        72
+      ],
+      "pronunciatio": "\ud83d\udc5a\ud83d\udecc",
+      "description": "changing into pajamas @ the School:student dormitory 4:bathroom:shower",
+      "chat": null
+    },
+    "Arthur Burton": {
+      "movement": [
+        83,
+        77
+      ],
+      "pronunciatio": "\ud83d\udecc\ud83d\udec1",
+      "description": "relaxing and completing his evening routine before bed @ the School:student dormitory 4:common room:bed",
+      "chat": null
+    },
+    "Ayesha Khan": {
+      "movement": [
+        23,
+        19
+      ],
+      "pronunciatio": "\ud83d\ude34",
+      "description": "sleeping @ the School:Ayesha Khan's office and dormitory:bedroom:bed",
+      "chat": null
+    }
+  },
+  "meta": {
+    "curr_time": "February 17, 2023, 23:10:00"
+  }
+}

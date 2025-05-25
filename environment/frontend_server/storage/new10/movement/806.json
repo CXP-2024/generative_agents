@@ -1,0 +1,70 @@
+{
+  "persona": {
+    "Isabella Rodriguez": {
+      "movement": [
+        6,
+        20
+      ],
+      "pronunciatio": "\ud83d\udcdd\u270f\ufe0f",
+      "description": "setting up her workspace with a notebook and pen for notes @ the School:Isabella Rodriguez's office and dormitory:office:computer desk",
+      "chat": null
+    },
+    "Maria Lopez": {
+      "movement": [
+        124,
+        23
+      ],
+      "pronunciatio": "\ud83d\udcda\u270f\ufe0f",
+      "description": "solving practice problems from the kinematics section @ the School:classroom building:library room:library table",
+      "chat": null
+    },
+    "Klaus Mueller": {
+      "movement": [
+        121,
+        23
+      ],
+      "pronunciatio": "\ud83d\udcdd\u270d\ufe0f",
+      "description": "drafting the introduction of the research paper @ the School:classroom building:library room:library table",
+      "chat": null
+    },
+    "Adam Smith": {
+      "movement": [
+        83,
+        81
+      ],
+      "pronunciatio": "\ud83d\ude34",
+      "description": "sleeping @ the School:student dormitory 4:common room:bed",
+      "chat": null
+    },
+    "Abigail Chen": {
+      "movement": [
+        123,
+        17
+      ],
+      "pronunciatio": "\ud83d\udd0d\ud83c\udfa8",
+      "description": "researching kinetic sculpture artists @ the School:classroom building:library room:bookshelf",
+      "chat": null
+    },
+    "Arthur Burton": {
+      "movement": [
+        77,
+        76
+      ],
+      "pronunciatio": "\ud83e\uddea\ud83d\udcca",
+      "description": "working on advanced stoichiometry problems @ the School:student dormitory 4:common room:desk",
+      "chat": null
+    },
+    "Ayesha Khan": {
+      "movement": [
+        23,
+        18
+      ],
+      "pronunciatio": "\ud83d\ude34",
+      "description": "sleeping @ the School:Ayesha Khan's office and dormitory:bedroom:bed",
+      "chat": null
+    }
+  },
+  "meta": {
+    "curr_time": "February 15, 2023, 19:10:00"
+  }
+}

@@ -1,0 +1,70 @@
+{
+  "persona": {
+    "Isabella Rodriguez": {
+      "movement": [
+        106,
+        16
+      ],
+      "pronunciatio": "\ud83d\udc41\ufe0f\ud83d\udcdd",
+      "description": "monitoring group work and offering guidance   @ the School:classroom building:classroom 1:blackboard",
+      "chat": null
+    },
+    "Maria Lopez": {
+      "movement": [
+        107,
+        16
+      ],
+      "pronunciatio": "\ud83d\udcdd\ud83d\udcda",
+      "description": "taking notes on the physics concepts   @ the School:classroom building:classroom 1:blackboard",
+      "chat": null
+    },
+    "Klaus Mueller": {
+      "movement": [
+        116,
+        24
+      ],
+      "pronunciatio": "\ud83d\udde3\ufe0f\ud83c\udfa5",
+      "description": "discussing the documentary with classmates   @ the School:classroom building:classroom 1:classroom student seating",
+      "chat": null
+    },
+    "Adam Smith": {
+      "movement": [
+        107,
+        16
+      ],
+      "pronunciatio": "\ud83d\udc42\ud83d\udcdd",
+      "description": "listening to the teacher explain the next assignment   @ the School:classroom building:classroom 1:blackboard",
+      "chat": null
+    },
+    "Abigail Chen": {
+      "movement": [
+        107,
+        16
+      ],
+      "pronunciatio": "\ud83d\udc42\ud83d\udcdd",
+      "description": "listening to the teacher's lecture and taking notes @ the School:classroom building:classroom 1:blackboard",
+      "chat": null
+    },
+    "Arthur Burton": {
+      "movement": [
+        106,
+        21
+      ],
+      "pronunciatio": "\ud83d\udcca\ud83d\udc65",
+      "description": "presenting his group's findings   @ the School:classroom building:classroom 1:classroom podium",
+      "chat": null
+    },
+    "Ayesha Khan": {
+      "movement": [
+        18,
+        20
+      ],
+      "pronunciatio": "\ud83d\udcda\ud83d\udd70\ufe0f",
+      "description": "researching historical context related to the book @ the School:Ayesha Khan's office and dormitory:office:computer desk",
+      "chat": null
+    }
+  },
+  "meta": {
+    "curr_time": "February 13, 2023, 10:25:00"
+  }
+}

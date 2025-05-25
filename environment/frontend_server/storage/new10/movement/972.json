@@ -1,0 +1,120 @@
+{
+  "persona": {
+    "Isabella Rodriguez": {
+      "movement": [
+        106,
+        21
+      ],
+      "pronunciatio": "\ud83d\udd27\ud83e\uddea",
+      "description": "setting up the hands-on experiment materials @ the School:classroom building:classroom 1:classroom podium",
+      "chat": null
+    },
+    "Maria Lopez": {
+      "movement": [
+        71,
+        72
+      ],
+      "pronunciatio": "\u2600\ufe0f\ud83e\uddf4",
+      "description": "waking up and completing her morning routine @ the School:student dormitory 3:bathroom:shower",
+      "chat": null
+    },
+    "Klaus Mueller": {
+      "movement": [
+        107,
+        16
+      ],
+      "pronunciatio": "\ud83d\udcdd\u270d\ufe0f",
+      "description": "taking notes on the lecture   @ the School:classroom building:classroom 1:blackboard",
+      "chat": null
+    },
+    "Adam Smith": {
+      "movement": [
+        83,
+        81
+      ],
+      "pronunciatio": "\ud83d\ude34",
+      "description": "sleeping @ the School:student dormitory 4:common room:bed",
+      "chat": null
+    },
+    "Abigail Chen": {
+      "movement": [
+        82,
+        76
+      ],
+      "pronunciatio": "\ud83d\udcac",
+      "description": "conversing about Arthur offering to help Abigail with her materials for class and discussing their upcoming project meeting where they plan to integrate physics and chemistry concepts into their art project, including arranging to meet at the library entrance at 2:15 for setup and planning. @ <persona> Arthur Burton",
+      "chat": [
+        [
+          "Arthur Burton",
+          "Hey Abigail! Need some help gathering your materials for class? You seem pretty busy!"
+        ],
+        [
+          "Abigail Chen",
+          "Thanks Arthur! Actually, I could use a hand with these books. And hey, I'm really excited about our project meeting later today\u2014I've been thinking about how we can integrate more of the physics concepts into the art component."
+        ],
+        [
+          "Arthur Burton",
+          "That sounds awesome! I was just reviewing some chemistry notes that might tie in well with the physics concepts you mentioned. Maybe we can brainstorm how to connect them during the meeting? Also, do you need help carrying anything specific to the library later?"
+        ],
+        [
+          "Abigail Chen",
+          "That would be perfect! I'd love to hear your chemistry insights\u2014maybe we can create a cohesive narrative linking all the disciplines. And yes, if you could help carry the large sketchbook and some reference materials to the library later, that'd be great!"
+        ],
+        [
+          "Arthur Burton",
+          "Great! I'll make sure to bring my chemistry notes too. Let's meet at the library entrance at 2:15 so we have time to set up before the others arrive. And don't worry about the sketchbook\u2014I've got it covered!"
+        ],
+        [
+          "Abigail Chen",
+          "Sounds like a plan! I'll bring some additional art references that might inspire our approach. See you at 2:15 then\u2014thanks again for your help!"
+        ]
+      ]
+    },
+    "Arthur Burton": {
+      "movement": [
+        83,
+        81
+      ],
+      "pronunciatio": "\ud83d\udcac",
+      "description": "conversing about Arthur offering to help Abigail with her materials for class and discussing their upcoming project meeting where they plan to integrate physics and chemistry concepts into their art project, including arranging to meet at the library entrance at 2:15 for setup and planning. @ <persona> Abigail Chen",
+      "chat": [
+        [
+          "Arthur Burton",
+          "Hey Abigail! Need some help gathering your materials for class? You seem pretty busy!"
+        ],
+        [
+          "Abigail Chen",
+          "Thanks Arthur! Actually, I could use a hand with these books. And hey, I'm really excited about our project meeting later today\u2014I've been thinking about how we can integrate more of the physics concepts into the art component."
+        ],
+        [
+          "Arthur Burton",
+          "That sounds awesome! I was just reviewing some chemistry notes that might tie in well with the physics concepts you mentioned. Maybe we can brainstorm how to connect them during the meeting? Also, do you need help carrying anything specific to the library later?"
+        ],
+        [
+          "Abigail Chen",
+          "That would be perfect! I'd love to hear your chemistry insights\u2014maybe we can create a cohesive narrative linking all the disciplines. And yes, if you could help carry the large sketchbook and some reference materials to the library later, that'd be great!"
+        ],
+        [
+          "Arthur Burton",
+          "Great! I'll make sure to bring my chemistry notes too. Let's meet at the library entrance at 2:15 so we have time to set up before the others arrive. And don't worry about the sketchbook\u2014I've got it covered!"
+        ],
+        [
+          "Abigail Chen",
+          "Sounds like a plan! I'll bring some additional art references that might inspire our approach. See you at 2:15 then\u2014thanks again for your help!"
+        ]
+      ]
+    },
+    "Ayesha Khan": {
+      "movement": [
+        23,
+        18
+      ],
+      "pronunciatio": "\ud83d\ude34",
+      "description": "sleeping @ the School:Ayesha Khan's office and dormitory:bedroom:bed",
+      "chat": null
+    }
+  },
+  "meta": {
+    "curr_time": "February 16, 2023, 09:00:00"
+  }
+}

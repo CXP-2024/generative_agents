@@ -1,0 +1,70 @@
+{
+  "persona": {
+    "Isabella Rodriguez": {
+      "movement": [
+        134,
+        29
+      ],
+      "pronunciatio": "\u2615\ud83e\uddd8",
+      "description": "taking a short break while students work independently   @ the School:classroom building:corridor:coffee vending machine",
+      "chat": null
+    },
+    "Maria Lopez": {
+      "movement": [
+        107,
+        16
+      ],
+      "pronunciatio": "\u269b\ufe0f\ud83d\udd2c",
+      "description": "taking notes on interdisciplinary connections (physics/chemistry) @ the School:classroom building:classroom 1:blackboard",
+      "chat": null
+    },
+    "Klaus Mueller": {
+      "movement": [
+        126,
+        26
+      ],
+      "pronunciatio": "\ud83d\udcda\u270d\ufe0f",
+      "description": "starting the third lesson (Literature)   @ the School:classroom building:library room:bookshelf",
+      "chat": null
+    },
+    "Adam Smith": {
+      "movement": [
+        83,
+        81
+      ],
+      "pronunciatio": "\ud83d\ude34",
+      "description": "sleeping @ the School:student dormitory 4:common room:bed",
+      "chat": null
+    },
+    "Abigail Chen": {
+      "movement": [
+        121,
+        23
+      ],
+      "pronunciatio": "\ud83d\udcdd\ud83d\udc65",
+      "description": "reviewing notes and clarifying points with a classmate   @ the School:classroom building:library room:library table",
+      "chat": null
+    },
+    "Arthur Burton": {
+      "movement": [
+        106,
+        16
+      ],
+      "pronunciatio": "\ud83d\udd2c\ud83d\udc69\u200d",
+      "description": "conducting a lab experiment with a partner @ the School:classroom building:classroom 1:blackboard",
+      "chat": null
+    },
+    "Ayesha Khan": {
+      "movement": [
+        23,
+        18
+      ],
+      "pronunciatio": "\ud83d\ude34",
+      "description": "sleeping @ the School:Ayesha Khan's office and dormitory:bedroom:bed",
+      "chat": null
+    }
+  },
+  "meta": {
+    "curr_time": "February 15, 2023, 11:00:00"
+  }
+}

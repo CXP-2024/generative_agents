@@ -1,0 +1,70 @@
+{
+  "persona": {
+    "Isabella Rodriguez": {
+      "movement": [
+        124,
+        23
+      ],
+      "pronunciatio": "\ud83d\udcda\ud83e\udd1d",
+      "description": "greeting students as they arrive (conversing about Isabella Rodriguez and Klaus Mueller discussing their enthusiasm for an upcoming library session where they plan to merge creative thinking techniques with physics perspectives to analyze historical-modern parallels in social movements, incorporating systems thinking, physics concepts like momentum and equilibrium, Adam\u2019s creative techniques, and insights from a recent guest speaker on labor rights movements, while also coordinating with Arthur and Adam to explore interdisciplinary connections with chemistry and art.) @ the School:classroom building:library room:library table",
+      "chat": null
+    },
+    "Maria Lopez": {
+      "movement": [
+        72,
+        75
+      ],
+      "pronunciatio": "\ud83e\udea5\ud83e\uddfc",
+      "description": "brushing her teeth and washing her face @ the School:student dormitory 3:bathroom:bathroom sink",
+      "chat": null
+    },
+    "Klaus Mueller": {
+      "movement": [
+        8,
+        21
+      ],
+      "pronunciatio": "\ud83d\udcda\ud83e\udd1d",
+      "description": "reviewing notes from previous classes (conversing about Isabella Rodriguez and Klaus Mueller discussing their enthusiasm for an upcoming library session where they plan to merge creative thinking techniques with physics perspectives to analyze historical-modern parallels in social movements, incorporating systems thinking, physics concepts like momentum and equilibrium, Adam\u2019s creative techniques, and insights from a recent guest speaker on labor rights movements, while also coordinating with Arthur and Adam to explore interdisciplinary connections with chemistry and art.) @ the School:Isabella Rodriguez's office and dormitory:office:blackboard",
+      "chat": null
+    },
+    "Adam Smith": {
+      "movement": [
+        83,
+        82
+      ],
+      "pronunciatio": "\ud83d\ude34",
+      "description": "sleeping @ the School:student dormitory 4:common room:bed",
+      "chat": null
+    },
+    "Abigail Chen": {
+      "movement": [
+        82,
+        72
+      ],
+      "pronunciatio": "\ud83d\udc5a\ud83d\udc56",
+      "description": "getting dressed for the day @ the School:student dormitory 4:bathroom:shower",
+      "chat": null
+    },
+    "Arthur Burton": {
+      "movement": [
+        83,
+        79
+      ],
+      "pronunciatio": "\ud83d\ude34",
+      "description": "sleeping @ the School:student dormitory 4:common room:bed",
+      "chat": null
+    },
+    "Ayesha Khan": {
+      "movement": [
+        23,
+        18
+      ],
+      "pronunciatio": "\ud83d\ude34",
+      "description": "sleeping @ the School:Ayesha Khan's office and dormitory:bedroom:bed",
+      "chat": null
+    }
+  },
+  "meta": {
+    "curr_time": "February 15, 2023, 08:15:00"
+  }
+}

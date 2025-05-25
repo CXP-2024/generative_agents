@@ -1,0 +1,70 @@
+{
+  "persona": {
+    "Isabella Rodriguez": {
+      "movement": [
+        6,
+        14
+      ],
+      "pronunciatio": "\ud83c\udfa7\ud83d\ude0c",
+      "description": "sitting comfortably and listening to the music while closing her eyes @ the School:Isabella Rodriguez's office and dormitory:living room:sofa",
+      "chat": null
+    },
+    "Maria Lopez": {
+      "movement": [
+        89,
+        49
+      ],
+      "pronunciatio": "\ud83d\ude8f\ud83d\ude8c",
+      "description": "waiting for the bus @ the School:playground:playground:soccer field",
+      "chat": null
+    },
+    "Klaus Mueller": {
+      "movement": [
+        121,
+        21
+      ],
+      "pronunciatio": "\ud83d\udcdd\ud83d\udd0d",
+      "description": "reviewing homework instructions   @ the School:classroom building:library room:library table",
+      "chat": null
+    },
+    "Adam Smith": {
+      "movement": [
+        83,
+        81
+      ],
+      "pronunciatio": "\ud83d\ude34",
+      "description": "sleeping @ the School:student dormitory 4:common room:bed",
+      "chat": null
+    },
+    "Abigail Chen": {
+      "movement": [
+        77,
+        76
+      ],
+      "pronunciatio": "\ud83d\udc50\ud83d\udc40",
+      "description": "practicing the demonstrated technique @ the School:student dormitory 4:common room:desk",
+      "chat": null
+    },
+    "Arthur Burton": {
+      "movement": [
+        77,
+        80
+      ],
+      "pronunciatio": "\ud83d\udcdd\ud83d\udd04",
+      "description": "incorporating feedback from Tuesday and Wednesday @ the School:student dormitory 4:common room:desk",
+      "chat": null
+    },
+    "Ayesha Khan": {
+      "movement": [
+        17,
+        11
+      ],
+      "pronunciatio": "\ud83c\udf7d\ufe0f\ud83d\udc69",
+      "description": "setting the table @ the School:Ayesha Khan's office and dormitory:living room:toaster",
+      "chat": null
+    }
+  },
+  "meta": {
+    "curr_time": "February 16, 2023, 17:15:00"
+  }
+}

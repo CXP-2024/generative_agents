@@ -1,0 +1,70 @@
+{
+  "persona": {
+    "Isabella Rodriguez": {
+      "movement": [
+        94,
+        50
+      ],
+      "pronunciatio": "\ud83e\uddb5\ud83c\udfcb\ufe0f",
+      "description": "doing a set of lunges @ the School:playground:playground:running track",
+      "chat": null
+    },
+    "Maria Lopez": {
+      "movement": [
+        116,
+        36
+      ],
+      "pronunciatio": "\ud83c\udfa8\u269b\ufe0f",
+      "description": "working on an art project inspired by physics and chemistry concepts @ the School:classroom building:art room:easel",
+      "chat": null
+    },
+    "Klaus Mueller": {
+      "movement": [
+        121,
+        23
+      ],
+      "pronunciatio": "\ud83d\udde3\ufe0f\ud83d\udd17",
+      "description": "discussing interdisciplinary connections with a classmate @ the School:classroom building:library room:library table",
+      "chat": null
+    },
+    "Adam Smith": {
+      "movement": [
+        77,
+        78
+      ],
+      "pronunciatio": "\ud83d\udcdd\ud83e\udd14",
+      "description": "taking notes on key strengths and weaknesses @ the School:student dormitory 4:common room:desk",
+      "chat": null
+    },
+    "Abigail Chen": {
+      "movement": [
+        77,
+        82
+      ],
+      "pronunciatio": "\ud83d\udd01\ud83d\udcf9",
+      "description": "revisiting the tutorial video to refresh key techniques @ the School:student dormitory 4:common room:desk",
+      "chat": null
+    },
+    "Arthur Burton": {
+      "movement": [
+        77,
+        76
+      ],
+      "pronunciatio": "\ud83d\udcac\ud83d\udc65",
+      "description": "sitting down with friends and starting casual conversation @ the School:student dormitory 4:common room:desk",
+      "chat": null
+    },
+    "Ayesha Khan": {
+      "movement": [
+        23,
+        18
+      ],
+      "pronunciatio": "\ud83d\ude34",
+      "description": "sleeping @ the School:Ayesha Khan's office and dormitory:bedroom:bed",
+      "chat": null
+    }
+  },
+  "meta": {
+    "curr_time": "February 14, 2023, 16:15:00"
+  }
+}

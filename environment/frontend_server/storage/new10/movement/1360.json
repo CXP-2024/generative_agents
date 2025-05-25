@@ -1,0 +1,70 @@
+{
+  "persona": {
+    "Isabella Rodriguez": {
+      "movement": [
+        6,
+        14
+      ],
+      "pronunciatio": "\ud83c\udfa4\ud83c\udfb6",
+      "description": "listening to Hatsune Miku music @ the School:Isabella Rodriguez's office and dormitory:living room:sofa",
+      "chat": null
+    },
+    "Maria Lopez": {
+      "movement": [
+        72,
+        77
+      ],
+      "pronunciatio": "\ud83d\udeb6\u200d\u2642",
+      "description": "walking to the dormitory @ the School:student dormitory 3:common room:bed",
+      "chat": null
+    },
+    "Klaus Mueller": {
+      "movement": [
+        107,
+        16
+      ],
+      "pronunciatio": "\ud83d\udcdd\ud83d\udcdc",
+      "description": "taking notes on key historical events discussed @ the School:classroom building:classroom 1:blackboard",
+      "chat": null
+    },
+    "Adam Smith": {
+      "movement": [
+        83,
+        82
+      ],
+      "pronunciatio": "\ud83d\ude34",
+      "description": "sleeping @ the School:student dormitory 4:common room:bed",
+      "chat": null
+    },
+    "Abigail Chen": {
+      "movement": [
+        77,
+        80
+      ],
+      "pronunciatio": "\ud83c\udfa8\u270f\ufe0f",
+      "description": "experimenting with shading techniques @ the School:student dormitory 4:common room:desk",
+      "chat": null
+    },
+    "Arthur Burton": {
+      "movement": [
+        6,
+        20
+      ],
+      "pronunciatio": "\u270d\ufe0f\u2728",
+      "description": "refining the opening statement for clarity and impact @ the School:Isabella Rodriguez's office and dormitory:office:computer desk",
+      "chat": null
+    },
+    "Ayesha Khan": {
+      "movement": [
+        17,
+        11
+      ],
+      "pronunciatio": "\ud83c\udf7d\ufe0f\ud83e\ude91",
+      "description": "sitting down at the dining table to eat @ the School:Ayesha Khan's office and dormitory:living room:toaster",
+      "chat": null
+    }
+  },
+  "meta": {
+    "curr_time": "February 17, 2023, 17:20:00"
+  }
+}

@@ -1,0 +1,70 @@
+{
+  "persona": {
+    "Isabella Rodriguez": {
+      "movement": [
+        6,
+        15
+      ],
+      "pronunciatio": "\ud83d\udcda\ud83d\udecc",
+      "description": "spending time reading or watching educational videos, and at around 09:00, will wind down and prepare for bed @ the School:Isabella Rodriguez's office and dormitory:living room:sofa",
+      "chat": null
+    },
+    "Maria Lopez": {
+      "movement": [
+        66,
+        78
+      ],
+      "pronunciatio": "\ud83c\udfa5\ud83d\udd0c",
+      "description": "setting up the streaming equipment @ the School:student dormitory 3:common room:desk",
+      "chat": null
+    },
+    "Klaus Mueller": {
+      "movement": [
+        66,
+        76
+      ],
+      "pronunciatio": "\ud83d\udcdd\u270d\ufe0f",
+      "description": "writing the introduction section @ the School:student dormitory 3:common room:desk",
+      "chat": null
+    },
+    "Adam Smith": {
+      "movement": [
+        83,
+        81
+      ],
+      "pronunciatio": "\ud83d\ude34",
+      "description": "sleeping @ the School:student dormitory 4:common room:bed",
+      "chat": null
+    },
+    "Abigail Chen": {
+      "movement": [
+        77,
+        78
+      ],
+      "pronunciatio": "\ud83c\udfa8\ud83d\udda5\ufe0f",
+      "description": "browsing art inspiration online @ the School:student dormitory 4:common room:desk",
+      "chat": null
+    },
+    "Arthur Burton": {
+      "movement": [
+        83,
+        77
+      ],
+      "pronunciatio": "\ud83c\udfc3\u200d\u2642",
+      "description": "warming up with light stretches @ the School:student dormitory 4:common room:bed",
+      "chat": null
+    },
+    "Ayesha Khan": {
+      "movement": [
+        18,
+        20
+      ],
+      "pronunciatio": "\ud83d\udcda\ud83d\udd0d",
+      "description": "cross-referencing lesson materials with the curriculum @ the School:Ayesha Khan's office and dormitory:office:computer desk",
+      "chat": null
+    }
+  },
+  "meta": {
+    "curr_time": "February 13, 2023, 20:05:00"
+  }
+}

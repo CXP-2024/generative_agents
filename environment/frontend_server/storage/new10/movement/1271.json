@@ -1,0 +1,70 @@
+{
+  "persona": {
+    "Isabella Rodriguez": {
+      "movement": [
+        106,
+        16
+      ],
+      "pronunciatio": "\ud83d\udcdd\ud83d\udcad",
+      "description": "summarizing takeaways and assigning reflection questions @ the School:classroom building:classroom 1:blackboard",
+      "chat": null
+    },
+    "Maria Lopez": {
+      "movement": [
+        72,
+        75
+      ],
+      "pronunciatio": "\ud83d\udce1\u23fa\ufe0f",
+      "description": "doing a quick vocal warm-up (for streaming later) @ the School:student dormitory 3:bathroom:bathroom sink",
+      "chat": null
+    },
+    "Klaus Mueller": {
+      "movement": [
+        106,
+        22
+      ],
+      "pronunciatio": "\ud83d\udde3\ufe0f\u2696",
+      "description": "engaging in a class debate on labor rights @ the School:classroom building:classroom 1:classroom podium",
+      "chat": null
+    },
+    "Adam Smith": {
+      "movement": [
+        83,
+        82
+      ],
+      "pronunciatio": "\ud83d\ude34",
+      "description": "sleeping @ the School:student dormitory 4:common room:bed",
+      "chat": null
+    },
+    "Abigail Chen": {
+      "movement": [
+        77,
+        76
+      ],
+      "pronunciatio": "\ud83d\udc5f\ud83e\udde5",
+      "description": "putting on her shoes and jacket to leave for class @ the School:student dormitory 4:common room:desk",
+      "chat": null
+    },
+    "Arthur Burton": {
+      "movement": [
+        124,
+        23
+      ],
+      "pronunciatio": "\ud83d\udc65\ud83e\udd1d",
+      "description": "collaborating with a peer on a group activity @ the School:classroom building:library room:library table",
+      "chat": null
+    },
+    "Ayesha Khan": {
+      "movement": [
+        23,
+        18
+      ],
+      "pronunciatio": "\ud83d\ude34",
+      "description": "sleeping @ the School:Ayesha Khan's office and dormitory:bedroom:bed",
+      "chat": null
+    }
+  },
+  "meta": {
+    "curr_time": "February 17, 2023, 09:55:00"
+  }
+}

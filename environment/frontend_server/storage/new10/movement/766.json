@@ -1,0 +1,70 @@
+{
+  "persona": {
+    "Isabella Rodriguez": {
+      "movement": [
+        24,
+        57
+      ],
+      "pronunciatio": "\ud83d\udde3\ufe0f\ud83d\udc65",
+      "description": "facilitating a group discussion on observations @ the School:pond:island 1:island in the pond",
+      "chat": null
+    },
+    "Maria Lopez": {
+      "movement": [
+        106,
+        22
+      ],
+      "pronunciatio": "\ud83d\ude4b\u200d\u2642",
+      "description": "asking the teacher clarifying questions about the lesson @ the School:classroom building:classroom 1:classroom podium",
+      "chat": null
+    },
+    "Klaus Mueller": {
+      "movement": [
+        107,
+        16
+      ],
+      "pronunciatio": "\ud83c\udfa7\ud83d\udcd6",
+      "description": "listening to another lecture segment @ the School:classroom building:classroom 1:blackboard",
+      "chat": null
+    },
+    "Adam Smith": {
+      "movement": [
+        83,
+        81
+      ],
+      "pronunciatio": "\ud83d\ude34",
+      "description": "sleeping @ the School:student dormitory 4:common room:bed",
+      "chat": null
+    },
+    "Abigail Chen": {
+      "movement": [
+        124,
+        19
+      ],
+      "pronunciatio": "\ud83d\udce7\u270f\ufe0f",
+      "description": "emailing the instructor to confirm the drawing class time @ the School:classroom building:library room:library table",
+      "chat": null
+    },
+    "Arthur Burton": {
+      "movement": [
+        106,
+        21
+      ],
+      "pronunciatio": "\u2753\ud83d\udc69\u200d",
+      "description": "asking a question about the lesson @ the School:classroom building:classroom 1:classroom podium",
+      "chat": null
+    },
+    "Ayesha Khan": {
+      "movement": [
+        23,
+        18
+      ],
+      "pronunciatio": "\ud83d\ude34",
+      "description": "sleeping @ the School:Ayesha Khan's office and dormitory:bedroom:bed",
+      "chat": null
+    }
+  },
+  "meta": {
+    "curr_time": "February 15, 2023, 15:50:00"
+  }
+}

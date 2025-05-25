@@ -1,0 +1,70 @@
+{
+  "persona": {
+    "Isabella Rodriguez": {
+      "movement": [
+        31,
+        55
+      ],
+      "pronunciatio": "\ud83d\udcdd\ud83c\udf3f",
+      "description": "preparing a list of local plants and wildlife for identification @ the School:pond:island 1:island in the pond",
+      "chat": null
+    },
+    "Maria Lopez": {
+      "movement": [
+        107,
+        16
+      ],
+      "pronunciatio": "\u270d\ufe0f\ud83d\udcdd",
+      "description": "taking notes on the lecture @ the School:classroom building:classroom 1:blackboard",
+      "chat": null
+    },
+    "Klaus Mueller": {
+      "movement": [
+        107,
+        16
+      ],
+      "pronunciatio": "\ud83d\udcdd\ud83d\udcd6",
+      "description": "taking notes on the lecture material @ the School:classroom building:classroom 1:blackboard",
+      "chat": null
+    },
+    "Adam Smith": {
+      "movement": [
+        107,
+        16
+      ],
+      "pronunciatio": "\ud83d\udcdd\u270f\ufe0f",
+      "description": "working on an in-class assignment   @ the School:classroom building:classroom 1:blackboard",
+      "chat": null
+    },
+    "Abigail Chen": {
+      "movement": [
+        124,
+        21
+      ],
+      "pronunciatio": "\ud83d\udcdc\u270d\ufe0f",
+      "description": "writing a history essay   @ the School:classroom building:library room:library table",
+      "chat": null
+    },
+    "Arthur Burton": {
+      "movement": [
+        106,
+        16
+      ],
+      "pronunciatio": "\ud83d\udcdd\u270f\ufe0f",
+      "description": "taking notes on the lesson @ the School:classroom building:classroom 1:blackboard",
+      "chat": null
+    },
+    "Ayesha Khan": {
+      "movement": [
+        106,
+        21
+      ],
+      "pronunciatio": "\ud83d\udde3\ufe0f\ud83d\udcd6",
+      "description": "leading a discussion on the assigned reading @ the School:classroom building:classroom 1:classroom podium",
+      "chat": null
+    }
+  },
+  "meta": {
+    "curr_time": "February 13, 2023, 14:30:00"
+  }
+}

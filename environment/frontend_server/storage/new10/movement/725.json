@@ -1,0 +1,70 @@
+{
+  "persona": {
+    "Isabella Rodriguez": {
+      "movement": [
+        82,
+        16
+      ],
+      "pronunciatio": "\ud83c\udf71\ud83d\udcdd",
+      "description": "eating her lunch while reviewing student notes @ the School:canteen:staff canteen:teacher restaurant table",
+      "chat": null
+    },
+    "Maria Lopez": {
+      "movement": [
+        66,
+        16
+      ],
+      "pronunciatio": "\ud83c\udf7d\ufe0f\ud83d\udc6b",
+      "description": "eating lunch with friends @ the School:canteen:student canteen:student restaurant table",
+      "chat": null
+    },
+    "Klaus Mueller": {
+      "movement": [
+        63,
+        18
+      ],
+      "pronunciatio": "\ud83c\udf7d\ufe0f\ud83e\ude91",
+      "description": "sitting down and eating lunch @ the School:canteen:student canteen:student restaurant table",
+      "chat": null
+    },
+    "Adam Smith": {
+      "movement": [
+        83,
+        82
+      ],
+      "pronunciatio": "\ud83d\ude34",
+      "description": "sleeping @ the School:student dormitory 4:common room:bed",
+      "chat": null
+    },
+    "Abigail Chen": {
+      "movement": [
+        58,
+        23
+      ],
+      "pronunciatio": "\ud83d\udcf1\ud83c\udf7d\ufe0f",
+      "description": "checking messages on her phone while eating @ the School:canteen:student canteen:student restaurant table",
+      "chat": null
+    },
+    "Arthur Burton": {
+      "movement": [
+        63,
+        16
+      ],
+      "pronunciatio": "\ud83d\udde3\ufe0f\ud83d\udcda",
+      "description": "chatting with friends about classes and upcoming projects @ the School:canteen:student canteen:student restaurant table",
+      "chat": null
+    },
+    "Ayesha Khan": {
+      "movement": [
+        23,
+        18
+      ],
+      "pronunciatio": "\ud83d\ude34",
+      "description": "sleeping @ the School:Ayesha Khan's office and dormitory:bedroom:bed",
+      "chat": null
+    }
+  },
+  "meta": {
+    "curr_time": "February 15, 2023, 12:25:00"
+  }
+}

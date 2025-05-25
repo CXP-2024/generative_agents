@@ -1,0 +1,70 @@
+{
+  "persona": {
+    "Isabella Rodriguez": {
+      "movement": [
+        6,
+        20
+      ],
+      "pronunciatio": "\ud83d\udcbb\ud83d\ude0c",
+      "description": "setting up her laptop and getting comfortable @ the School:Isabella Rodriguez's office and dormitory:office:computer desk",
+      "chat": null
+    },
+    "Maria Lopez": {
+      "movement": [
+        121,
+        21
+      ],
+      "pronunciatio": "\ud83d\udcda\u270f\ufe0f",
+      "description": "solving practice problems @ the School:classroom building:library room:library table",
+      "chat": null
+    },
+    "Klaus Mueller": {
+      "movement": [
+        124,
+        23
+      ],
+      "pronunciatio": "\ud83d\udcdc\ud83d\udd0d",
+      "description": "analyzing historical sources for his paper @ the School:classroom building:library room:library table",
+      "chat": null
+    },
+    "Adam Smith": {
+      "movement": [
+        83,
+        81
+      ],
+      "pronunciatio": "\ud83d\ude34",
+      "description": "sleeping @ the School:student dormitory 4:common room:bed",
+      "chat": null
+    },
+    "Abigail Chen": {
+      "movement": [
+        77,
+        78
+      ],
+      "pronunciatio": "\ud83d\udcdd\ud83e\udd1d",
+      "description": "reviewing her notes from the interdisciplinary project meeting @ the School:student dormitory 4:common room:desk",
+      "chat": null
+    },
+    "Arthur Burton": {
+      "movement": [
+        77,
+        76
+      ],
+      "pronunciatio": "\ud83d\udcda\ud83e\uddea",
+      "description": "reviewing his chemistry notes on key concepts @ the School:student dormitory 4:common room:desk",
+      "chat": null
+    },
+    "Ayesha Khan": {
+      "movement": [
+        22,
+        18
+      ],
+      "pronunciatio": "\ud83d\udcda\ud83e\udd14",
+      "description": "selecting a book from her personal collection @ the School:Ayesha Khan's office and dormitory:bedroom:closet",
+      "chat": null
+    }
+  },
+  "meta": {
+    "curr_time": "February 16, 2023, 19:10:00"
+  }
+}

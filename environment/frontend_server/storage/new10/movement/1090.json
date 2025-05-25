@@ -1,0 +1,70 @@
+{
+  "persona": {
+    "Isabella Rodriguez": {
+      "movement": [
+        6,
+        15
+      ],
+      "pronunciatio": "\ud83d\udcd6\ud83d\udecb\ufe0f",
+      "description": "settling into her favorite reading/watching spot @ the School:Isabella Rodriguez's office and dormitory:living room:sofa",
+      "chat": null
+    },
+    "Maria Lopez": {
+      "movement": [
+        58,
+        18
+      ],
+      "pronunciatio": "\ud83c\udf7d\ufe0f\ud83d\udca1",
+      "description": "finishing her meal and discussing physics competition ideas with classmates @ the School:canteen:student canteen:student restaurant table",
+      "chat": null
+    },
+    "Klaus Mueller": {
+      "movement": [
+        121,
+        19
+      ],
+      "pronunciatio": "\u270d\ufe0f\ud83d\udcdd",
+      "description": "drafting the introduction for the next section @ the School:classroom building:library room:library table",
+      "chat": null
+    },
+    "Adam Smith": {
+      "movement": [
+        83,
+        81
+      ],
+      "pronunciatio": "\ud83d\ude34",
+      "description": "sleeping @ the School:student dormitory 4:common room:bed",
+      "chat": null
+    },
+    "Abigail Chen": {
+      "movement": [
+        77,
+        76
+      ],
+      "pronunciatio": "\ud83d\udcda\ud83d\udd0d",
+      "description": "setting up her workspace for research @ the School:student dormitory 4:common room:desk",
+      "chat": null
+    },
+    "Arthur Burton": {
+      "movement": [
+        121,
+        23
+      ],
+      "pronunciatio": "\u2705\u270f\ufe0f",
+      "description": "checking his answers and correcting mistakes @ the School:classroom building:library room:library table",
+      "chat": null
+    },
+    "Ayesha Khan": {
+      "movement": [
+        18,
+        20
+      ],
+      "pronunciatio": "\ud83d\udcda\u2705",
+      "description": "cross-referencing student responses with Friday\u2019s lesson objectives @ the School:Ayesha Khan's office and dormitory:office:computer desk",
+      "chat": null
+    }
+  },
+  "meta": {
+    "curr_time": "February 16, 2023, 18:50:00"
+  }
+}

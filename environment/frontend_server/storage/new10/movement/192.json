@@ -1,0 +1,70 @@
+{
+  "persona": {
+    "Isabella Rodriguez": {
+      "movement": [
+        87,
+        37
+      ],
+      "pronunciatio": "\ud83c\udfc3\u200d\u2642",
+      "description": "warming up with light stretches @ the School:playground:playground:running track",
+      "chat": null
+    },
+    "Maria Lopez": {
+      "movement": [
+        8,
+        21
+      ],
+      "pronunciatio": "\ud83d\udcd6\u270f\ufe0f",
+      "description": "reviewing her notes and clarifying doubts with the teacher @ the School:Isabella Rodriguez's office and dormitory:office:blackboard",
+      "chat": null
+    },
+    "Klaus Mueller": {
+      "movement": [
+        107,
+        16
+      ],
+      "pronunciatio": "\ud83d\udc65\ud83e\udd1d",
+      "description": "collaborating with classmates on a group activity   @ the School:classroom building:classroom 1:blackboard",
+      "chat": null
+    },
+    "Adam Smith": {
+      "movement": [
+        6,
+        20
+      ],
+      "pronunciatio": "\ud83d\udd0d\ud83d\udc64",
+      "description": "researching potential candidates online @ the School:Isabella Rodriguez's office and dormitory:office:computer desk",
+      "chat": null
+    },
+    "Abigail Chen": {
+      "movement": [
+        116,
+        36
+      ],
+      "pronunciatio": "\ud83c\udfa8\ud83d\udd8c\ufe0f",
+      "description": "setting up her painting supplies @ the School:classroom building:art room:easel",
+      "chat": null
+    },
+    "Arthur Burton": {
+      "movement": [
+        59,
+        26
+      ],
+      "pronunciatio": "\ud83d\udeb6\u200d\u2642",
+      "description": "walking to the dormitory cafeteria @ the School:canteen:student canteen:buffet table",
+      "chat": null
+    },
+    "Ayesha Khan": {
+      "movement": [
+        106,
+        16
+      ],
+      "pronunciatio": "\ud83d\udcd6\ud83d\udc69\u200d",
+      "description": "reviewing the lesson objectives with students @ the School:classroom building:classroom 1:blackboard",
+      "chat": null
+    }
+  },
+  "meta": {
+    "curr_time": "February 13, 2023, 16:00:00"
+  }
+}

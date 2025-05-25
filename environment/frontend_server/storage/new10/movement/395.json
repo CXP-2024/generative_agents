@@ -1,0 +1,70 @@
+{
+  "persona": {
+    "Isabella Rodriguez": {
+      "movement": [
+        30,
+        57
+      ],
+      "pronunciatio": "\ud83d\udc68\u200d\ud83c\udfeb",
+      "description": "leading students to the pond islands @ the School:pond:island 1:island in the pond",
+      "chat": null
+    },
+    "Maria Lopez": {
+      "movement": [
+        71,
+        72
+      ],
+      "pronunciatio": "\u2600\ufe0f\ud83e\uddd6",
+      "description": "waking up and completing her morning routine @ the School:student dormitory 3:bathroom:shower",
+      "chat": null
+    },
+    "Klaus Mueller": {
+      "movement": [
+        107,
+        16
+      ],
+      "pronunciatio": "\ud83c\udf93\ud83d\udcda",
+      "description": "participating in the first class lecture @ the School:classroom building:classroom 1:blackboard",
+      "chat": null
+    },
+    "Adam Smith": {
+      "movement": [
+        83,
+        82
+      ],
+      "pronunciatio": "\ud83d\ude34",
+      "description": "sleeping @ the School:student dormitory 4:common room:bed",
+      "chat": null
+    },
+    "Abigail Chen": {
+      "movement": [
+        77,
+        82
+      ],
+      "pronunciatio": "\ud83c\udf4f\ud83e\udd5b",
+      "description": "grabbing a quick snack before breakfast @ the School:student dormitory 4:common room:desk",
+      "chat": null
+    },
+    "Arthur Burton": {
+      "movement": [
+        110,
+        24
+      ],
+      "pronunciatio": "\ud83c\udfeb\ud83e\ude91",
+      "description": "arriving at Classroom 1 and settling in @ the School:classroom building:classroom 1:classroom student seating",
+      "chat": null
+    },
+    "Ayesha Khan": {
+      "movement": [
+        23,
+        18
+      ],
+      "pronunciatio": "\ud83d\ude34",
+      "description": "sleeping @ the School:Ayesha Khan's office and dormitory:bedroom:bed",
+      "chat": null
+    }
+  },
+  "meta": {
+    "curr_time": "February 14, 2023, 08:55:00"
+  }
+}

@@ -1,0 +1,70 @@
+{
+  "persona": {
+    "Isabella Rodriguez": {
+      "movement": [
+        76,
+        20
+      ],
+      "pronunciatio": "\ud83c\udf7d\ufe0f\ud83e\uddfc",
+      "description": "cleaning up her dishes @ the School:canteen:student canteen:restaurant sink",
+      "chat": null
+    },
+    "Maria Lopez": {
+      "movement": [
+        71,
+        23
+      ],
+      "pronunciatio": "\ud83c\udf7d\ufe0f\ud83e\ude91",
+      "description": "sitting down and starting to eat @ the School:canteen:student canteen:student restaurant table",
+      "chat": null
+    },
+    "Klaus Mueller": {
+      "movement": [
+        126,
+        26
+      ],
+      "pronunciatio": "\ud83d\udd0d\ud83d\udcda",
+      "description": "identifying key sources for his project @ the School:classroom building:library room:bookshelf",
+      "chat": null
+    },
+    "Adam Smith": {
+      "movement": [
+        77,
+        76
+      ],
+      "pronunciatio": "\u270d\ufe0f\ud83d\udcdd",
+      "description": "refining the essay's arguments and structure @ the School:student dormitory 4:common room:desk",
+      "chat": null
+    },
+    "Abigail Chen": {
+      "movement": [
+        71,
+        18
+      ],
+      "pronunciatio": "\ud83c\udf7d\ufe0f\ud83d\udc69",
+      "description": "eating her dinner @ the School:canteen:student canteen:student restaurant table",
+      "chat": null
+    },
+    "Arthur Burton": {
+      "movement": [
+        121,
+        23
+      ],
+      "pronunciatio": "\ud83d\udcda\u270d\ufe0f",
+      "description": "working through practice problems @ the School:classroom building:library room:library table",
+      "chat": null
+    },
+    "Ayesha Khan": {
+      "movement": [
+        18,
+        18
+      ],
+      "pronunciatio": "\ud83d\udcd6\ud83d\udd0d",
+      "description": "selecting relevant passages from the assigned book @ the School:Ayesha Khan's office and dormitory:office:bookshelf",
+      "chat": null
+    }
+  },
+  "meta": {
+    "curr_time": "February 13, 2023, 18:30:00"
+  }
+}

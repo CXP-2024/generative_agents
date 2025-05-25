@@ -1,0 +1,70 @@
+{
+  "persona": {
+    "Isabella Rodriguez": {
+      "movement": [
+        82,
+        19
+      ],
+      "pronunciatio": "\ud83c\udf71\ud83d\udcdd",
+      "description": "eating her lunch while reviewing student notes @ the School:canteen:staff canteen:teacher restaurant table",
+      "chat": null
+    },
+    "Maria Lopez": {
+      "movement": [
+        8,
+        21
+      ],
+      "pronunciatio": "\ud83d\udde3\ufe0f\ud83d\udc65",
+      "description": "discussing project progress with the group @ the School:Isabella Rodriguez's office and dormitory:office:blackboard",
+      "chat": null
+    },
+    "Klaus Mueller": {
+      "movement": [
+        121,
+        19
+      ],
+      "pronunciatio": "\ud83d\udcdd\ud83d\udd0d",
+      "description": "highlighting key takeaways relevant to his research paper @ the School:classroom building:library room:library table",
+      "chat": null
+    },
+    "Adam Smith": {
+      "movement": [
+        83,
+        82
+      ],
+      "pronunciatio": "\ud83d\ude34",
+      "description": "sleeping @ the School:student dormitory 4:common room:bed",
+      "chat": null
+    },
+    "Abigail Chen": {
+      "movement": [
+        68,
+        23
+      ],
+      "pronunciatio": "\ud83c\udf71\ud83d\udcda",
+      "description": "eating her lunch while reviewing class notes @ the School:canteen:student canteen:student restaurant table",
+      "chat": null
+    },
+    "Arthur Burton": {
+      "movement": [
+        66,
+        16
+      ],
+      "pronunciatio": "\ud83c\udf7d\ufe0f\ud83d\udc6b",
+      "description": "sitting down with friends and starting to eat @ the School:canteen:student canteen:student restaurant table",
+      "chat": null
+    },
+    "Ayesha Khan": {
+      "movement": [
+        18,
+        20
+      ],
+      "pronunciatio": "\ud83d\udcda\ud83d\udd0d",
+      "description": "continuing her personal study, refining discussion questions and exploring interdisciplinary links between literature, history, and physics concepts @ the School:Ayesha Khan's office and dormitory:office:computer desk",
+      "chat": null
+    }
+  },
+  "meta": {
+    "curr_time": "February 17, 2023, 12:15:00"
+  }
+}

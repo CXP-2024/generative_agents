@@ -1,0 +1,70 @@
+{
+  "persona": {
+    "Isabella Rodriguez": {
+      "movement": [
+        74,
+        59
+      ],
+      "pronunciatio": "\ud83e\uddd8\u200d\u2640",
+      "description": "cooling down with gentle stretches @ the School:playground:playground:running track",
+      "chat": null
+    },
+    "Maria Lopez": {
+      "movement": [
+        121,
+        21
+      ],
+      "pronunciatio": "\ud83d\udcdd\u270d\ufe0f",
+      "description": "working on a practice problem   @ the School:classroom building:library room:library table",
+      "chat": null
+    },
+    "Klaus Mueller": {
+      "movement": [
+        106,
+        16
+      ],
+      "pronunciatio": "\u270d\ufe0f\ud83d\udcda",
+      "description": "working on another in-class exercise   @ the School:classroom building:classroom 1:blackboard",
+      "chat": null
+    },
+    "Adam Smith": {
+      "movement": [
+        77,
+        78
+      ],
+      "pronunciatio": "\ud83d\udcdd\u270d\ufe0f",
+      "description": "organizing his notes into a summary @ the School:student dormitory 4:common room:desk",
+      "chat": null
+    },
+    "Abigail Chen": {
+      "movement": [
+        79,
+        87
+      ],
+      "pronunciatio": "\ud83c\udfa8\ud83d\udd8c\ufe0f",
+      "description": "applying the base layers of paint @ the School:student dormitory 4:balcony:closet",
+      "chat": null
+    },
+    "Arthur Burton": {
+      "movement": [
+        6,
+        20
+      ],
+      "pronunciatio": "\ud83d\udccb\u270f\ufe0f",
+      "description": "gathering materials for the class minister election preparation @ the School:Isabella Rodriguez's office and dormitory:office:computer desk",
+      "chat": null
+    },
+    "Ayesha Khan": {
+      "movement": [
+        107,
+        16
+      ],
+      "pronunciatio": "\ud83d\udcdd\ud83d\udcad",
+      "description": "assigning a short reflection activity   @ the School:classroom building:classroom 1:blackboard",
+      "chat": null
+    }
+  },
+  "meta": {
+    "curr_time": "February 13, 2023, 16:45:00"
+  }
+}

@@ -1,0 +1,70 @@
+{
+  "persona": {
+    "Isabella Rodriguez": {
+      "movement": [
+        11,
+        18
+      ],
+      "pronunciatio": "\ud83d\ude34\ud83c\udf19",
+      "description": "winding down and preparing for bed, and at around 11:00, will go to sleep @ the School:Isabella Rodriguez's office and dormitory:bedroom:bed",
+      "chat": null
+    },
+    "Maria Lopez": {
+      "movement": [
+        66,
+        76
+      ],
+      "pronunciatio": "\ud83d\udcdd\ud83d\udcac",
+      "description": "reading and responding to viewer comments @ the School:student dormitory 3:common room:desk",
+      "chat": null
+    },
+    "Klaus Mueller": {
+      "movement": [
+        92,
+        47
+      ],
+      "pronunciatio": "\ud83d\udc5f\ud83e\uddd0",
+      "description": "analyzing his jumps and adjusting technique @ the School:playground:playground:long jump pit",
+      "chat": null
+    },
+    "Adam Smith": {
+      "movement": [
+        83,
+        81
+      ],
+      "pronunciatio": "\ud83d\ude34",
+      "description": "sleeping @ the School:student dormitory 4:common room:bed",
+      "chat": null
+    },
+    "Abigail Chen": {
+      "movement": [
+        77,
+        78
+      ],
+      "pronunciatio": "\ud83c\udfa8\ud83d\udcfa",
+      "description": "watching an art tutorial video @ the School:student dormitory 4:common room:desk",
+      "chat": null
+    },
+    "Arthur Burton": {
+      "movement": [
+        6,
+        15
+      ],
+      "pronunciatio": "\ud83d\ude02\ud83c\udfad",
+      "description": "laughing and telling jokes @ the School:Isabella Rodriguez's office and dormitory:living room:sofa",
+      "chat": null
+    },
+    "Ayesha Khan": {
+      "movement": [
+        17,
+        11
+      ],
+      "pronunciatio": "\ud83d\udca1\ud83d\udcf4",
+      "description": "turning off lights and electronics @ the School:Ayesha Khan's office and dormitory:living room:toaster",
+      "chat": null
+    }
+  },
+  "meta": {
+    "curr_time": "February 13, 2023, 21:45:00"
+  }
+}

@@ -1,0 +1,70 @@
+{
+  "persona": {
+    "Isabella Rodriguez": {
+      "movement": [
+        11,
+        21
+      ],
+      "pronunciatio": "\ud83d\udecf\ud83c\udfb6",
+      "description": "winding down and preparing for bed, listening to Hatsune Miku music for relaxation @ the School:Isabella Rodriguez's office and dormitory:bedroom:hatsune miku figure",
+      "chat": null
+    },
+    "Maria Lopez": {
+      "movement": [
+        68,
+        75
+      ],
+      "pronunciatio": "\ud83c\udfb5\ud83d\udc46",
+      "description": "playing the viewer-chosen song @ the School:student dormitory 3:common room:hatsune miku figure",
+      "chat": null
+    },
+    "Klaus Mueller": {
+      "movement": [
+        92,
+        48
+      ],
+      "pronunciatio": "\ud83c\udfc3\u200d\u2642",
+      "description": "performing long jump drills @ the School:playground:playground:long jump pit",
+      "chat": null
+    },
+    "Adam Smith": {
+      "movement": [
+        83,
+        81
+      ],
+      "pronunciatio": "\ud83d\ude34",
+      "description": "sleeping @ the School:student dormitory 4:common room:bed",
+      "chat": null
+    },
+    "Abigail Chen": {
+      "movement": [
+        77,
+        78
+      ],
+      "pronunciatio": "\ud83c\udfa8\ud83c\udf00",
+      "description": "brainstorming ways to incorporate kinetic elements into her art @ the School:student dormitory 4:common room:desk",
+      "chat": null
+    },
+    "Arthur Burton": {
+      "movement": [
+        77,
+        82
+      ],
+      "pronunciatio": "\ud83d\udcac\ud83e\uddea",
+      "description": "engaging in light-hearted conversation about shared interests, like chemistry or school projects @ the School:student dormitory 4:common room:desk",
+      "chat": null
+    },
+    "Ayesha Khan": {
+      "movement": [
+        18,
+        14
+      ],
+      "pronunciatio": "\ud83c\udf75\ud83e\udd14",
+      "description": "sipping tea while reflecting on the day @ the School:Ayesha Khan's office and dormitory:living room:sofa",
+      "chat": null
+    }
+  },
+  "meta": {
+    "curr_time": "February 16, 2023, 21:40:00"
+  }
+}

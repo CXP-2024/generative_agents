@@ -1,0 +1,160 @@
+{
+  "persona": {
+    "Isabella Rodriguez": {
+      "movement": [
+        63,
+        23
+      ],
+      "pronunciatio": "\ud83c\udf7d\ufe0f\ud83d\udc69",
+      "description": "sitting down to eat her lunch @ the School:canteen:student canteen:student restaurant table",
+      "chat": null
+    },
+    "Maria Lopez": {
+      "movement": [
+        61,
+        23
+      ],
+      "pronunciatio": "\ud83c\udf7d\ufe0f\ud83c\udf71",
+      "description": "eating her lunch   @ the School:canteen:student canteen:student restaurant table",
+      "chat": null
+    },
+    "Klaus Mueller": {
+      "movement": [
+        68,
+        23
+      ],
+      "pronunciatio": "\ud83c\udf7d\ufe0f\ud83c\udf71",
+      "description": "eating lunch @ the School:canteen:student canteen:student restaurant table",
+      "chat": null
+    },
+    "Adam Smith": {
+      "movement": [
+        76,
+        75
+      ],
+      "pronunciatio": "\ud83d\udcd6\u2728",
+      "description": "reading a book on creativity @ the School:student dormitory 4:common room:bookshelf",
+      "chat": null
+    },
+    "Abigail Chen": {
+      "movement": [
+        67,
+        15
+      ],
+      "pronunciatio": "\ud83d\udcac",
+      "description": "conversing about Arthur Burton and Abigail Chen discussing their plans to collaborate on an interdisciplinary project combining chemistry, physics, art, and social studies for environmental justice, involving Maria, Isabella, Adam, and Klaus, with a meeting scheduled at 2:30 in the library. @ <persona> Arthur Burton",
+      "chat": [
+        [
+          "Arthur Burton",
+          "Hey Abigail! Over here! There's an empty seat next to me if you'd like to join for lunch."
+        ],
+        [
+          "Abigail Chen",
+          "Hey Arthur! Thanks for saving me a seat. How's your day going so far?"
+        ],
+        [
+          "Arthur Burton",
+          "It's been pretty busy but good! I had a great discussion with Ms. Rodriguez about chemistry earlier, and later I'm meeting Maria in the library for a brainstorming session. How about you?"
+        ],
+        [
+          "Abigail Chen",
+          "Oh, that sounds interesting! I'm actually meeting Maria later too for a brainstorming session about combining physics and art for environmental justice projects. Maybe we can all collaborate?"
+        ],
+        [
+          "Arthur Burton",
+          "That's a great idea! I'd love to collaborate. I can bring my chemistry notes to see how we can connect all three subjects - physics, art, and chemistry - for the environmental justice project. What time is your session with Maria?"
+        ],
+        [
+          "Abigail Chen",
+          "Our session is at 2:30 in the library. Maybe we can combine our meetings and make it a bigger interdisciplinary collaboration? I think Isabella might be interested in joining too since she's been working on connecting physics and art concepts with me."
+        ],
+        [
+          "Arthur Burton",
+          "That sounds perfect! 2:30 works great for me too. I'll let Maria know we're combining the sessions - the more perspectives we have, the better our project will be. Isabella's input would be fantastic as well! This is going to be such a productive collaboration."
+        ],
+        [
+          "Abigail Chen",
+          "Great! I'm really excited about this collaboration. I'll message Isabella to join us at 2:30 as well. This way we can have art, physics, and chemistry perspectives all together - it'll be such a unique project!"
+        ],
+        [
+          "Arthur Burton",
+          "Awesome! I'll also check with Adam and Klaus if they'd like to join - they've been working on some related ideas combining social studies with science. This could turn into a really comprehensive interdisciplinary project!"
+        ],
+        [
+          "Abigail Chen",
+          "That sounds perfect! The more diverse perspectives we have, the richer our project will be. I'll bring my sketchbook and physics notes to the session - maybe we can start by mapping out how all these disciplines intersect with environmental justice. See you at 2:30!"
+        ],
+        [
+          "Arthur Burton",
+          "Sounds like a plan! I'll bring my chemistry materials and coordinate with everyone too. This is going to be an amazing collaboration - can't wait to see what we come up with together! Enjoy the rest of your lunch, Abigail!"
+        ]
+      ]
+    },
+    "Arthur Burton": {
+      "movement": [
+        62,
+        19
+      ],
+      "pronunciatio": "\ud83d\udcac",
+      "description": "conversing about Arthur Burton and Abigail Chen discussing their plans to collaborate on an interdisciplinary project combining chemistry, physics, art, and social studies for environmental justice, involving Maria, Isabella, Adam, and Klaus, with a meeting scheduled at 2:30 in the library. @ <persona> Abigail Chen",
+      "chat": [
+        [
+          "Arthur Burton",
+          "Hey Abigail! Over here! There's an empty seat next to me if you'd like to join for lunch."
+        ],
+        [
+          "Abigail Chen",
+          "Hey Arthur! Thanks for saving me a seat. How's your day going so far?"
+        ],
+        [
+          "Arthur Burton",
+          "It's been pretty busy but good! I had a great discussion with Ms. Rodriguez about chemistry earlier, and later I'm meeting Maria in the library for a brainstorming session. How about you?"
+        ],
+        [
+          "Abigail Chen",
+          "Oh, that sounds interesting! I'm actually meeting Maria later too for a brainstorming session about combining physics and art for environmental justice projects. Maybe we can all collaborate?"
+        ],
+        [
+          "Arthur Burton",
+          "That's a great idea! I'd love to collaborate. I can bring my chemistry notes to see how we can connect all three subjects - physics, art, and chemistry - for the environmental justice project. What time is your session with Maria?"
+        ],
+        [
+          "Abigail Chen",
+          "Our session is at 2:30 in the library. Maybe we can combine our meetings and make it a bigger interdisciplinary collaboration? I think Isabella might be interested in joining too since she's been working on connecting physics and art concepts with me."
+        ],
+        [
+          "Arthur Burton",
+          "That sounds perfect! 2:30 works great for me too. I'll let Maria know we're combining the sessions - the more perspectives we have, the better our project will be. Isabella's input would be fantastic as well! This is going to be such a productive collaboration."
+        ],
+        [
+          "Abigail Chen",
+          "Great! I'm really excited about this collaboration. I'll message Isabella to join us at 2:30 as well. This way we can have art, physics, and chemistry perspectives all together - it'll be such a unique project!"
+        ],
+        [
+          "Arthur Burton",
+          "Awesome! I'll also check with Adam and Klaus if they'd like to join - they've been working on some related ideas combining social studies with science. This could turn into a really comprehensive interdisciplinary project!"
+        ],
+        [
+          "Abigail Chen",
+          "That sounds perfect! The more diverse perspectives we have, the richer our project will be. I'll bring my sketchbook and physics notes to the session - maybe we can start by mapping out how all these disciplines intersect with environmental justice. See you at 2:30!"
+        ],
+        [
+          "Arthur Burton",
+          "Sounds like a plan! I'll bring my chemistry materials and coordinate with everyone too. This is going to be an amazing collaboration - can't wait to see what we come up with together! Enjoy the rest of your lunch, Abigail!"
+        ]
+      ]
+    },
+    "Ayesha Khan": {
+      "movement": [
+        63,
+        21
+      ],
+      "pronunciatio": "\ud83c\udf7d\ufe0f\ud83c\udf71",
+      "description": "eating her lunch @ the School:canteen:student canteen:student restaurant table",
+      "chat": null
+    }
+  },
+  "meta": {
+    "curr_time": "February 13, 2023, 12:25:00"
+  }
+}

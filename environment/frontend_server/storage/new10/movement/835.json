@@ -1,0 +1,70 @@
+{
+  "persona": {
+    "Isabella Rodriguez": {
+      "movement": [
+        6,
+        15
+      ],
+      "pronunciatio": "\ud83e\uddd8\u200d\u2642",
+      "description": "doing light stretching @ the School:Isabella Rodriguez's office and dormitory:living room:sofa",
+      "chat": null
+    },
+    "Maria Lopez": {
+      "movement": [
+        66,
+        82
+      ],
+      "pronunciatio": "\ud83d\udcac\ud83d\udc65",
+      "description": "responding to more viewer comments @ the School:student dormitory 3:common room:desk",
+      "chat": null
+    },
+    "Klaus Mueller": {
+      "movement": [
+        55,
+        45
+      ],
+      "pronunciatio": "\ud83d\udd04\ud83d\udcdd",
+      "description": "adjusting his technique based on feedback @ the School:playground:playground:soccer field",
+      "chat": null
+    },
+    "Adam Smith": {
+      "movement": [
+        83,
+        82
+      ],
+      "pronunciatio": "\ud83d\ude34",
+      "description": "sleeping @ the School:student dormitory 4:common room:bed",
+      "chat": null
+    },
+    "Abigail Chen": {
+      "movement": [
+        77,
+        82
+      ],
+      "pronunciatio": "\u270f\ufe0f\ud83c\udfa8",
+      "description": "refining a previous sketch with shading @ the School:student dormitory 4:common room:desk",
+      "chat": null
+    },
+    "Arthur Burton": {
+      "movement": [
+        8,
+        20
+      ],
+      "pronunciatio": "\ud83d\udcac\ud83d\udc65",
+      "description": "sharing thoughts on the interdisciplinary project with Abigail, Maria, Isabella, Adam, and Klaus @ the School:Isabella Rodriguez's office and dormitory:office:blackboard",
+      "chat": null
+    },
+    "Ayesha Khan": {
+      "movement": [
+        23,
+        18
+      ],
+      "pronunciatio": "\ud83d\ude34",
+      "description": "sleeping @ the School:Ayesha Khan's office and dormitory:bedroom:bed",
+      "chat": null
+    }
+  },
+  "meta": {
+    "curr_time": "February 15, 2023, 21:35:00"
+  }
+}

@@ -1,0 +1,224 @@
+{
+  "vision_r": 8,
+  "att_bandwidth": 8,
+  "retention": 8,
+  "curr_time": "February 18, 2023, 05:10:00",
+  "curr_tile": [
+    72,
+    79
+  ],
+  "daily_plan_req": "Here\u2019s Maria Lopez\u2019s broad-stroke plan for **Saturday, February 18**:    1. **Wake up and complete morning routine at 8:00 AM**, then head to the **playground for long jump training from 9:00 AM to 11:00 AM**.   2. **Grab lunch at 12:00 PM**, then dive into **physics competition prep in the library from 1:00 PM to 3:00 PM**.   3. **Free time from 3:30 PM to 6:00 PM**\u2014sketch ideas, organize notes, or relax in the dorm. **Dinner at 6:00 PM**.   4. **Stream Hatsune Miku-themed content from 8:30 PM to 10:30 PM** in her dorm, blending music, athletics, and fan interaction.   5. **Wind down with her Hatsune Miku figure collection at 11:00 PM**, debating a **quick late-night long jump session** before bed by **1:30 AM**.    *\"Balance? Nah\u2014*momentum*.\"* \u26a1\ud83c\udfa4",
+  "name": "Maria Lopez",
+  "first_name": "Maria",
+  "last_name": "Lopez",
+  "age": 17,
+  "innate": "energetic, enthusiastic, inquisitive",
+  "learned": "Maria Lopez is a high school student at grade 11. She likes physics. She's also a part time hatsune miku streamer who loves to connect with people and explore new ideas. She lives in a student dormitory.",
+  "currently": "**Status:**  \nMaria Lopez charges into **Saturday, February 18** with the same unstoppable drive that defines her whirlwind lifestyle. True to her reflections, she prioritizes **long jump training** first, hitting the **playground from 9:00 AM to 11:00 AM**\u2014her favorite time to push her limits under the morning sun. After a quick lunch, she dives into **physics competition prep** in the **library from 1:00 PM to 3:00 PM**, tackling complex problems with the same intensity she brings to the sandpit.  \n\nEver the multitasker, Maria uses the late afternoon to tie up loose ends\u2014whether it\u2019s sketching ideas for her next interdisciplinary collaboration or fine-tuning notes from Friday\u2019s sessions. By **8:30 PM**, she\u2019s back in her dorm, ready to light up her stream with her signature **Hatsune Miku-themed content**, blending her love for music, athletics, and community engagement (stream runs **8:30 PM\u201310:30 PM**).  \n\nAs the night winds down, Maria reserves time for her cherished rituals\u2014perhaps a quiet moment with her **Hatsune Miku figure collection** or an impromptu **late-night long jump session** if her energy holds (*\"Maybe just 30 minutes past midnight?\"*). She\u2019s mindful of balance, though, teasing a cutoff by **1:30 AM** to avoid burnout.  \n\n*\"Chaotic? Maybe. But it\u2019s *my* rhythm,\"* she grins, already mentally drafting Sunday\u2019s plan. For now, Saturday is another triumph of passion, discipline, and just the right amount of Miku magic.",
+  "lifestyle": "Maria Lopez goes to bed around 2am, awakes up around 8am, eats dinner around 6pm. She likes to stay at dormitory.",
+  "living_area": "the School:student dormitory 3:common room",
+  "concept_forget": 100,
+  "daily_reflection_time": 180,
+  "daily_reflection_size": 5,
+  "overlap_reflect_th": 4,
+  "kw_strg_event_reflect_th": 10,
+  "kw_strg_thought_reflect_th": 9,
+  "recency_w": 1,
+  "relevance_w": 1,
+  "importance_w": 1,
+  "recency_decay": 0.99,
+  "importance_trigger_max": 150,
+  "importance_trigger_curr": 135,
+  "importance_ele_n": 12,
+  "thought_count": 5,
+  "daily_req": [
+    "wake up and complete the morning routine at 8:00 am",
+    "wake up and complete the morning routine at 8:00 am",
+    "have breakfast at the dormitory from 8:30 am to 9:00 am",
+    "go to school at 9:00 am",
+    "attend classes in Classroom 1 from 9:30 am to 12:00 pm",
+    "take a break from 12:00 pm to 2:00 pm",
+    "continue attending classes in Classroom 1 from 2:00 pm to 5:00 pm",
+    "return to the dormitory at 5:30 pm",
+    "have dinner at 6:00 pm",
+    "study for the physics competition from 6:30 pm to 8:00 pm",
+    "stream Hatsune Miku content from 8:30 pm to 10:30 pm",
+    "spend time with Hatsune Miku figure from 11:00 pm to 12:00 am",
+    "go long jumping on the playground from 1:00 am to 2:00 am",
+    "go to sleep at 2:00 am"
+  ],
+  "f_daily_schedule": [
+    [
+      "sleeping",
+      480
+    ],
+    [
+      "waking up and stretching in bed",
+      10
+    ],
+    [
+      "brushing her teeth and washing her face",
+      10
+    ],
+    [
+      "changing into her workout clothes",
+      5
+    ],
+    [
+      "doing a quick warm-up routine (jumping jacks, dynamic stretches)",
+      10
+    ],
+    [
+      "packing her training bag (water bottle, towel, snacks)",
+      5
+    ],
+    [
+      "checking her phone for messages and updates",
+      5
+    ],
+    [
+      "reviewing her long jump training goals for the day",
+      5
+    ],
+    [
+      "grabbing a quick energy bar for breakfast",
+      5
+    ],
+    [
+      "heading out the door to the playground",
+      5
+    ],
+    [
+      "at the playground for long jump training",
+      180
+    ],
+    [
+      "grabbing lunch at the dormitory",
+      60
+    ],
+    [
+      "preparing for the physics competition in the library",
+      180
+    ],
+    [
+      "organizing notes and sketching ideas in her dormitory, and at around 4:30, will take a short break to relax",
+      60
+    ],
+    [
+      "organizing notes and sketching ideas in her dormitory, and at around 5:30, will start preparing for dinner",
+      60
+    ],
+    [
+      "having dinner at the dormitory",
+      60
+    ],
+    [
+      "studying for the physics competition in her dormitory, and at around 7:45, will take a short break before streaming",
+      60
+    ],
+    [
+      "setting up her streaming equipment and preparing for her Hatsune Miku-themed content",
+      60
+    ],
+    [
+      "streaming Hatsune Miku-themed content in her dormitory, engaging with her audience and blending music with athletics discussions",
+      60
+    ],
+    [
+      "streaming Hatsune Miku-themed content in her dormitory, engaging with her audience and blending music with athletics discussions, and at around 10:30, will wrap up the stream and start winding down",
+      60
+    ],
+    [
+      "spending time with her Hatsune Miku figure collection, and at around 11:30, will consider a quick late-night long jump session",
+      60
+    ],
+    [
+      "sleeping",
+      0
+    ]
+  ],
+  "f_daily_schedule_hourly_org": [
+    [
+      "sleeping",
+      480
+    ],
+    [
+      "waking up and completing her morning routine",
+      60
+    ],
+    [
+      "at the playground for long jump training",
+      180
+    ],
+    [
+      "grabbing lunch at the dormitory",
+      60
+    ],
+    [
+      "preparing for the physics competition in the library",
+      180
+    ],
+    [
+      "organizing notes and sketching ideas in her dormitory, and at around 4:30, will take a short break to relax",
+      60
+    ],
+    [
+      "organizing notes and sketching ideas in her dormitory, and at around 5:30, will start preparing for dinner",
+      60
+    ],
+    [
+      "having dinner at the dormitory",
+      60
+    ],
+    [
+      "studying for the physics competition in her dormitory, and at around 7:45, will take a short break before streaming",
+      60
+    ],
+    [
+      "setting up her streaming equipment and preparing for her Hatsune Miku-themed content",
+      60
+    ],
+    [
+      "streaming Hatsune Miku-themed content in her dormitory, engaging with her audience and blending music with athletics discussions",
+      60
+    ],
+    [
+      "streaming Hatsune Miku-themed content in her dormitory, engaging with her audience and blending music with athletics discussions, and at around 10:30, will wrap up the stream and start winding down",
+      60
+    ],
+    [
+      "spending time with her Hatsune Miku figure collection, and at around 11:30, will consider a quick late-night long jump session",
+      60
+    ]
+  ],
+  "act_address": "the School:student dormitory 3:common room:bed",
+  "act_start_time": "February 18, 2023, 00:00:00",
+  "act_duration": 480,
+  "act_description": "sleeping",
+  "act_pronunciatio": "\ud83d\ude34",
+  "act_event": [
+    "Maria Lopez",
+    "is",
+    "sleep"
+  ],
+  "act_obj_description": "being used by Maria Lopez for sleeping",
+  "act_obj_pronunciatio": "\ud83d\udecc\ud83d\ude34",
+  "act_obj_event": [
+    "bed",
+    "is",
+    "used"
+  ],
+  "chatting_with": null,
+  "chat": null,
+  "chatting_with_buffer": {
+    "Klaus Mueller": 260,
+    "Isabella Rodriguez": 286,
+    "Abigail Chen": 304,
+    "Arthur Burton": 297,
+    "Adam Smith": -568,
+    "Ayesha Khan": 328
+  },
+  "chatting_end_time": null,
+  "act_path_set": true,
+  "planned_path": []
+}

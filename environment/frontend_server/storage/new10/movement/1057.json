@@ -1,0 +1,70 @@
+{
+  "persona": {
+    "Isabella Rodriguez": {
+      "movement": [
+        59,
+        60
+      ],
+      "pronunciatio": "\ud83e\udd38\u200d\u2640",
+      "description": "stretching before her workout   @ the School:playground:playground:running track",
+      "chat": null
+    },
+    "Maria Lopez": {
+      "movement": [
+        121,
+        23
+      ],
+      "pronunciatio": "\ud83d\udc65\ud83d\udcda",
+      "description": "collaborating with classmates on a group activity @ the School:classroom building:library room:library table",
+      "chat": null
+    },
+    "Klaus Mueller": {
+      "movement": [
+        106,
+        16
+      ],
+      "pronunciatio": "\ud83d\udc42\ud83d\udcda",
+      "description": "listening to another lecture segment   @ the School:classroom building:classroom 1:blackboard",
+      "chat": null
+    },
+    "Adam Smith": {
+      "movement": [
+        83,
+        81
+      ],
+      "pronunciatio": "\ud83d\ude34",
+      "description": "sleeping @ the School:student dormitory 4:common room:bed",
+      "chat": null
+    },
+    "Abigail Chen": {
+      "movement": [
+        121,
+        36
+      ],
+      "pronunciatio": "\u270f\ufe0f\ud83d\udcc5",
+      "description": "reviewing her sketch from Wednesday\u2019s progress @ the School:classroom building:art room:easel",
+      "chat": null
+    },
+    "Arthur Burton": {
+      "movement": [
+        71,
+        13
+      ],
+      "pronunciatio": "\ud83c\udf7d\ufe0f\ud83e\udd14",
+      "description": "choosing his meal from the cafeteria options @ the School:canteen:student canteen:buffet table",
+      "chat": null
+    },
+    "Ayesha Khan": {
+      "movement": [
+        107,
+        16
+      ],
+      "pronunciatio": "\ud83d\udcda\ud83d\udd51",
+      "description": "teaching literature and history in Classroom 1, and at around 2:30, will attend the library session if confirmed   @ the School:classroom building:classroom 1:blackboard",
+      "chat": null
+    }
+  },
+  "meta": {
+    "curr_time": "February 16, 2023, 16:05:00"
+  }
+}

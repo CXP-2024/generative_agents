@@ -1,0 +1,70 @@
+{
+  "persona": {
+    "Isabella Rodriguez": {
+      "movement": [
+        11,
+        18
+      ],
+      "pronunciatio": "\u23f0\ud83d\ude34",
+      "description": "setting an alarm and lying down to nap   @ the School:Isabella Rodriguez's office and dormitory:bedroom:bed",
+      "chat": null
+    },
+    "Maria Lopez": {
+      "movement": [
+        66,
+        78
+      ],
+      "pronunciatio": "\ud83d\uddd1\ufe0f\ud83e\uddf9",
+      "description": "throwing away her trash and cleaning her table   @ the School:student dormitory 3:common room:desk",
+      "chat": null
+    },
+    "Klaus Mueller": {
+      "movement": [
+        121,
+        21
+      ],
+      "pronunciatio": "\ud83d\udeb6\u200d\u2642",
+      "description": "walking to the library @ the School:classroom building:library room:library table",
+      "chat": null
+    },
+    "Adam Smith": {
+      "movement": [
+        121,
+        23
+      ],
+      "pronunciatio": "\ud83c\udf0d\ud83d\udcda",
+      "description": "reflecting on how to apply the ideas to his essay (conversing about Abigail Chen and Adam Smith discussing their interdisciplinary project connecting Bauhaus principles, sustainable materials, kinetic sculptures, environmental justice, and historical labor movements while planning to involve classmates Klaus (chemistry) and Arthur (social studies) in their brainstorming session.) @ the School:classroom building:library room:library table",
+      "chat": null
+    },
+    "Abigail Chen": {
+      "movement": [
+        107,
+        16
+      ],
+      "pronunciatio": "\ud83c\udf0d\ud83d\udcda",
+      "description": "cleaning up her tray and disposing of trash (conversing about Abigail Chen and Adam Smith discussing their interdisciplinary project connecting Bauhaus principles, sustainable materials, kinetic sculptures, environmental justice, and historical labor movements while planning to involve classmates Klaus (chemistry) and Arthur (social studies) in their brainstorming session.) @ the School:classroom building:classroom 1:blackboard",
+      "chat": null
+    },
+    "Arthur Burton": {
+      "movement": [
+        77,
+        78
+      ],
+      "pronunciatio": "\ud83c\udf92\ud83d\udcda",
+      "description": "packing his bag with notebooks and textbooks   @ the School:student dormitory 4:common room:desk",
+      "chat": null
+    },
+    "Ayesha Khan": {
+      "movement": [
+        19,
+        18
+      ],
+      "pronunciatio": "\ud83d\udcda\ud83d\udcd6",
+      "description": "reviewing the lesson objectives for literature and history   @ the School:Ayesha Khan's office and dormitory:office:bookshelf",
+      "chat": null
+    }
+  },
+  "meta": {
+    "curr_time": "February 13, 2023, 12:55:00"
+  }
+}

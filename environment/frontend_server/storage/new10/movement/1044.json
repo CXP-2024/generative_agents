@@ -1,0 +1,70 @@
+{
+  "persona": {
+    "Isabella Rodriguez": {
+      "movement": [
+        107,
+        19
+      ],
+      "pronunciatio": "\ud83d\udce6\ud83e\uddfa",
+      "description": "packing the materials into a portable storage bin @ the School:classroom building:classroom 1:potted plant",
+      "chat": null
+    },
+    "Maria Lopez": {
+      "movement": [
+        106,
+        16
+      ],
+      "pronunciatio": "\u270d\ufe0f\ud83d\udcda",
+      "description": "working on an in-class exercise @ the School:classroom building:classroom 1:blackboard",
+      "chat": null
+    },
+    "Klaus Mueller": {
+      "movement": [
+        107,
+        16
+      ],
+      "pronunciatio": "\ud83d\udcac\ud83d\udc69\u200d",
+      "description": "participating in a class discussion   @ the School:classroom building:classroom 1:blackboard",
+      "chat": null
+    },
+    "Adam Smith": {
+      "movement": [
+        83,
+        81
+      ],
+      "pronunciatio": "\ud83d\ude34",
+      "description": "sleeping @ the School:student dormitory 4:common room:bed",
+      "chat": null
+    },
+    "Abigail Chen": {
+      "movement": [
+        124,
+        21
+      ],
+      "pronunciatio": "\ud83d\udcda\ud83e\ude91",
+      "description": "arriving at the library and setting up her workspace @ the School:classroom building:library room:library table",
+      "chat": null
+    },
+    "Arthur Burton": {
+      "movement": [
+        107,
+        16
+      ],
+      "pronunciatio": "\ud83d\udc42\ud83d\udcda",
+      "description": "listening to the teacher's lecture @ the School:classroom building:classroom 1:blackboard",
+      "chat": null
+    },
+    "Ayesha Khan": {
+      "movement": [
+        107,
+        16
+      ],
+      "pronunciatio": "\ud83d\udcdd\u2753",
+      "description": "assigning homework and answering student questions   @ the School:classroom building:classroom 1:blackboard",
+      "chat": null
+    }
+  },
+  "meta": {
+    "curr_time": "February 16, 2023, 15:00:00"
+  }
+}

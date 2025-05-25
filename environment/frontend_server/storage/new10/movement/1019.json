@@ -1,0 +1,70 @@
+{
+  "persona": {
+    "Isabella Rodriguez": {
+      "movement": [
+        6,
+        20
+      ],
+      "pronunciatio": "\ud83e\uddf9\ud83d\uddd1\ufe0f",
+      "description": "cleaning up her table and disposing of trash @ the School:Isabella Rodriguez's office and dormitory:office:computer desk",
+      "chat": null
+    },
+    "Maria Lopez": {
+      "movement": [
+        121,
+        19
+      ],
+      "pronunciatio": "\ud83d\udcdd\u270d\ufe0f",
+      "description": "drafting her section of the project report @ the School:classroom building:library room:library table",
+      "chat": null
+    },
+    "Klaus Mueller": {
+      "movement": [
+        121,
+        23
+      ],
+      "pronunciatio": "\ud83d\udcdd\ud83d\udd0d",
+      "description": "drafting follow-up questions for further research @ the School:classroom building:library room:library table",
+      "chat": null
+    },
+    "Adam Smith": {
+      "movement": [
+        83,
+        81
+      ],
+      "pronunciatio": "\ud83d\ude34",
+      "description": "sleeping @ the School:student dormitory 4:common room:bed",
+      "chat": null
+    },
+    "Abigail Chen": {
+      "movement": [
+        124,
+        21
+      ],
+      "pronunciatio": "\ud83d\udcdd\u2705",
+      "description": "reviewing her to-do list for the study session @ the School:classroom building:library room:library table",
+      "chat": null
+    },
+    "Arthur Burton": {
+      "movement": [
+        134,
+        29
+      ],
+      "pronunciatio": "\ud83e\uddf9\ud83d\udca7",
+      "description": "helping a friend clean up spilled water @ the School:classroom building:corridor:coffee vending machine",
+      "chat": null
+    },
+    "Ayesha Khan": {
+      "movement": [
+        20,
+        12
+      ],
+      "pronunciatio": "\ud83c\udf7d\ufe0f\ud83e\uddf9",
+      "description": "putting away leftovers and tidying the kitchen @ the School:Ayesha Khan's office and dormitory:living room:refrigerator",
+      "chat": null
+    }
+  },
+  "meta": {
+    "curr_time": "February 16, 2023, 12:55:00"
+  }
+}

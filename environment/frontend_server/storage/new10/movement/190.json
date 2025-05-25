@@ -1,0 +1,70 @@
+{
+  "persona": {
+    "Isabella Rodriguez": {
+      "movement": [
+        6,
+        20
+      ],
+      "pronunciatio": "\ud83c\udf92",
+      "description": "packing the materials into a portable bag @ the School:Isabella Rodriguez's office and dormitory:office:computer desk",
+      "chat": null
+    },
+    "Maria Lopez": {
+      "movement": [
+        74,
+        26
+      ],
+      "pronunciatio": "\ud83c\udf4e\u2615",
+      "description": "taking a short snack break @ the School:canteen:student canteen:buffet table",
+      "chat": null
+    },
+    "Klaus Mueller": {
+      "movement": [
+        107,
+        16
+      ],
+      "pronunciatio": "\ud83d\udc65\ud83e\udd1d",
+      "description": "collaborating with classmates on a group activity   @ the School:classroom building:classroom 1:blackboard",
+      "chat": null
+    },
+    "Adam Smith": {
+      "movement": [
+        6,
+        20
+      ],
+      "pronunciatio": "\ud83e\udd14\ud83d\udcca",
+      "description": "comparing both candidates' platforms @ the School:Isabella Rodriguez's office and dormitory:office:computer desk",
+      "chat": null
+    },
+    "Abigail Chen": {
+      "movement": [
+        77,
+        76
+      ],
+      "pronunciatio": "\ud83d\udcd6\ud83d\udd0d",
+      "description": "reviewing her history notes @ the School:student dormitory 4:common room:desk",
+      "chat": null
+    },
+    "Arthur Burton": {
+      "movement": [
+        121,
+        21
+      ],
+      "pronunciatio": "\ud83d\udcda\u270f\ufe0f",
+      "description": "preparing for the next subject @ the School:classroom building:library room:library table",
+      "chat": null
+    },
+    "Ayesha Khan": {
+      "movement": [
+        106,
+        16
+      ],
+      "pronunciatio": "\ud83d\udcdd\ud83d\udd11",
+      "description": "summarizing key takeaways and assigning homework @ the School:classroom building:classroom 1:blackboard",
+      "chat": null
+    }
+  },
+  "meta": {
+    "curr_time": "February 13, 2023, 15:50:00"
+  }
+}

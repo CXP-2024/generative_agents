@@ -1,0 +1,70 @@
+{
+  "persona": {
+    "Isabella Rodriguez": {
+      "movement": [
+        106,
+        16
+      ],
+      "pronunciatio": "\ud83d\udc65\ud83d\udcda",
+      "description": "assigning small group projects related to the lesson   @ the School:classroom building:classroom 1:blackboard",
+      "chat": null
+    },
+    "Maria Lopez": {
+      "movement": [
+        117,
+        29
+      ],
+      "pronunciatio": "\ud83d\udc4b\ud83d\ude0a",
+      "description": "greeting friends in the hallway   @ the School:classroom building:corridor:vending machine",
+      "chat": null
+    },
+    "Klaus Mueller": {
+      "movement": [
+        65,
+        87
+      ],
+      "pronunciatio": "\ud83e\uddd8\u200d\u2642",
+      "description": "taking a quick stretch break   @ the School:student dormitory 3:balcony:potted plant",
+      "chat": null
+    },
+    "Adam Smith": {
+      "movement": [
+        110,
+        24
+      ],
+      "pronunciatio": "\ud83d\udc65\ud83d\udcdd",
+      "description": "participating in a peer review activity   @ the School:classroom building:classroom 1:classroom student seating",
+      "chat": null
+    },
+    "Abigail Chen": {
+      "movement": [
+        73,
+        23
+      ],
+      "pronunciatio": "\ud83d\uddd1\ufe0f\ud83e\uddf9",
+      "description": "cleaning up her tray and disposing of trash @ the School:canteen:student canteen:tray rack",
+      "chat": null
+    },
+    "Arthur Burton": {
+      "movement": [
+        121,
+        23
+      ],
+      "pronunciatio": "\u270d\ufe0f\ud83d\udcdd",
+      "description": "jotting down key points   @ the School:classroom building:library room:library table",
+      "chat": null
+    },
+    "Ayesha Khan": {
+      "movement": [
+        18,
+        20
+      ],
+      "pronunciatio": "\ud83d\udcdd\ud83d\udcd6",
+      "description": "taking notes on key themes and passages @ the School:Ayesha Khan's office and dormitory:office:computer desk",
+      "chat": null
+    }
+  },
+  "meta": {
+    "curr_time": "February 13, 2023, 09:55:00"
+  }
+}

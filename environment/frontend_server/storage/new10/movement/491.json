@@ -1,0 +1,70 @@
+{
+  "persona": {
+    "Isabella Rodriguez": {
+      "movement": [
+        86,
+        59
+      ],
+      "pronunciatio": "\ud83e\uddd8\u200d\u2642",
+      "description": "cooling down with light stretching @ the School:playground:playground:running track",
+      "chat": null
+    },
+    "Maria Lopez": {
+      "movement": [
+        121,
+        23
+      ],
+      "pronunciatio": "\ud83d\udc65\ud83d\udcac",
+      "description": "collaborating with classmates on a group discussion @ the School:classroom building:library room:library table",
+      "chat": null
+    },
+    "Klaus Mueller": {
+      "movement": [
+        106,
+        22
+      ],
+      "pronunciatio": "\ud83d\udc42\ud83c\udfa4",
+      "description": "listening to a guest speaker's presentation @ the School:classroom building:classroom 1:classroom podium",
+      "chat": null
+    },
+    "Adam Smith": {
+      "movement": [
+        6,
+        12
+      ],
+      "pronunciatio": "\ud83d\udcdd\ud83d\uddc2\ufe0f",
+      "description": "organizing his notes for future review @ the School:Isabella Rodriguez's office and dormitory:living room:closet",
+      "chat": null
+    },
+    "Abigail Chen": {
+      "movement": [
+        77,
+        82
+      ],
+      "pronunciatio": "\ud83e\uddf9\ud83d\udce6",
+      "description": "cleaning up her workspace and organizing materials @ the School:student dormitory 4:common room:desk",
+      "chat": null
+    },
+    "Arthur Burton": {
+      "movement": [
+        74,
+        23
+      ],
+      "pronunciatio": "\ud83d\udc4b\ud83d\uddd1\ufe0f",
+      "description": "wrapping up the conversation and clearing his tray @ the School:canteen:student canteen:tray rack",
+      "chat": null
+    },
+    "Ayesha Khan": {
+      "movement": [
+        23,
+        18
+      ],
+      "pronunciatio": "\ud83d\ude34",
+      "description": "sleeping @ the School:Ayesha Khan's office and dormitory:bedroom:bed",
+      "chat": null
+    }
+  },
+  "meta": {
+    "curr_time": "February 14, 2023, 16:55:00"
+  }
+}
