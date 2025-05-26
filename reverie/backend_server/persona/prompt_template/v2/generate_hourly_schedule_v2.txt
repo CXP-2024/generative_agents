@@ -24,6 +24,13 @@ Example: "reading a book, and at around 02:45, will prepare for bed"
 
 For sleep: Simply write "sleeping" with no additional details.
 
+Don't output the same activity for more than 2 consecutive hours (except sleeping).
+If an activity would naturally last longer than 2 hours, break it into smaller segments with brief intermissions or transitions.
+Examples:
+- "reading a book, and at around 02:45, will take a break for 15 minutes, then continue reading"
+- "still reading a book, and at around 03:30, will take a break for 15 minutes, then go to eat"
+This ensures realistic human behavior patterns with natural breaks between extended activities.
+
 Important: Do not include any timestamps, day information, or template elements in your response. Provide only the activity description.
 
 ===
