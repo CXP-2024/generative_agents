@@ -13,6 +13,11 @@ Variables:
 Here is some basic information about !<INPUT 0>!.
 !<INPUT 1>!
 
+
+Task: Generate the next line of conversation for !<INPUT 0>! based on the previous conversation and the provided information.
+You must output start with the name of the agent, followed by a colon and a space, and then your response.
+Your Output Format (name : "response"):
+!<INPUT 7>!: "<content>"
 === 
 Following is a conversation between !<INPUT 2>! and !<INPUT 3>!. 
 

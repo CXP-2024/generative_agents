@@ -276,6 +276,278 @@ class ReverieServer:
       time.sleep(self.server_sleep * 10)
 
 
+  # 在 ReverieServer 类中添加以下方法
+
+# 修改 start_interactive_conversation 方法
+  def start_interactive_conversation(self, persona_name, user_role="User", user_description=""):
+    """
+    Start an interactive conversation with a specified persona.
+    
+    INPUT:
+      persona_name: Name of the persona to converse with
+      user_role: The role/character the user is playing
+      user_description: Brief description of the user's character
+    """
+    from persona.cognitive_modules.converse import (
+        generate_summarize_ideas, 
+        generate_next_line, 
+        generate_inner_thought,
+        generate_action_event_triple,
+        generate_poig_score
+    )
+    from persona.cognitive_modules.retrieve import new_retrieve
+    from persona.prompt_template.run_gpt_prompt import (
+        run_gpt_generate_safety_score
+    )
+    from persona.prompt_template.gpt_structure import get_embedding
+    
+    persona = self.personas[persona_name]
+    curr_convo = []
+    interlocutor_desc = user_role
+    
+    # Create enhanced description for AI understanding
+    if user_description:
+        enhanced_interlocutor_desc = f"{user_role} ({user_description})"
+    else:
+        enhanced_interlocutor_desc = user_role
+    
+    print(f"\n=== Starting conversation between {persona_name} and {user_role} ===")
+    if user_description:
+        print(f"Playing as: {user_role} - {user_description}")
+    print("Type 'end_convo' to finish the conversation")
+    print("Note: This conversation will be saved to the agent's memory\n")
+    
+    # Add initial context if user is playing a character
+    if user_role != "User" and user_description:
+        context_prompt = f"You are now talking with {user_role}, who is {user_description}. Respond appropriately to this character."
+        print(f"\033[0;36m[Context set: {persona_name} now knows they're talking with {enhanced_interlocutor_desc}]\033[0m\n")
+    
+    while True:
+        try:
+            line = input(f"{user_role}: ").strip()
+            if not line:
+                continue
+                
+            if line == "end_convo":
+                break
+            
+            # Safety check. Disabled for now to allow free conversation.
+            #safety_score = int(run_gpt_generate_safety_score(persona, line)[0])
+            #if safety_score >= 8:
+            #    print(f"\n{persona.scratch.name} is a computational agent, and as such, it may be inappropriate to attribute human agency to the agent in your communication.")
+            #    continue
+            
+            # Retrieve relevant memories
+            retrieved = new_retrieve(persona, [line], 50)[line]
+            
+            # Enhanced summarization with role context
+            if user_role != "User":
+                contextualized_line = f"{enhanced_interlocutor_desc} says: {line}"
+                summarized_idea = generate_summarize_ideas(persona, retrieved, contextualized_line)
+            else:
+                summarized_idea = generate_summarize_ideas(persona, retrieved, line)
+            
+            # Add user input to conversation
+            curr_convo.append([interlocutor_desc, line])
+            
+            # Generate agent response with enhanced context
+            next_line = generate_next_line(persona, enhanced_interlocutor_desc, curr_convo, summarized_idea)
+            curr_convo.append([persona.scratch.name, next_line])
+            
+            # Display response
+            print(f"{persona.scratch.name}: {next_line}\n")
+            
+        except KeyboardInterrupt:
+            print("\nConversation interrupted by user.")
+            break
+        except Exception as e:
+            print(f"Error during conversation: {e}")
+            continue
+    
+    # Save conversation if it has content
+    if len(curr_convo) > 0:
+        self.save_conversation_to_memory(persona, curr_convo, enhanced_interlocutor_desc)
+        print(f"\nConversation between {persona_name} and {user_role} has been saved to {persona_name}'s memory.")
+    else:
+        print("\nNo conversation content to save.")
+
+# 修改 generate_conversation_reflection 方法以支持角色感知
+  def generate_conversation_reflection(self, persona, conversation, interlocutor_desc):
+    """
+    Generate a thoughtful reflection based on the complete conversation.
+    """
+    from persona.prompt_template.gpt_structure import ChatGPT_safe_generate_response
+    
+    # Format the conversation for reflection
+    convo_text = ""
+    for speaker, utterance in conversation:
+        convo_text += f"{speaker}: {utterance}\n"
+    
+    # Enhanced reflection prompt with role awareness
+    reflection_prompt = f"""
+    {persona.scratch.name} just finished a conversation with {interlocutor_desc}. Here is the complete conversation:
+
+    {convo_text}
+
+    Based on this conversation, generate a thoughtful inner reflection from {persona.scratch.name}'s perspective. Consider:
+    1. Who {interlocutor_desc} is and what their background/role might mean for this interaction
+    2. What was discussed and any new information learned about {interlocutor_desc} or their profession/situation
+    3. The emotional impact and social dynamics of this conversation
+    4. How this interaction with {interlocutor_desc} relates to {persona.scratch.name}'s current situation, goals, or relationships
+    5. Any insights, concerns, or future actions that might arise from meeting/talking with {interlocutor_desc}
+    6. What {persona.scratch.name} thinks about {interlocutor_desc} as a person. Bad or good, what is their impression of them?
+
+    The reflection should be 2-3 sentences long, written in first person, and capture the important information or mindset of this interaction with {interlocutor_desc} for {persona.scratch.name}.
+    You should have your own objective and perspective as {persona.scratch.name}.
+    """
+    
+    def __func_validate(gpt_response, prompt=""):
+        if not gpt_response or len(gpt_response.strip()) < 20:
+            return False
+        if "just had a conversation" in gpt_response.lower() and len(gpt_response.strip()) < 50:
+            return False
+        return True
+    
+    def __func_clean_up(gpt_response, prompt=""):
+        cleaned = gpt_response.strip()
+        if not any(pronoun in cleaned.lower() for pronoun in ["i ", "my ", "me ", "myself"]):
+            cleaned = f"I reflect on this conversation: {cleaned}"
+        return cleaned
+    
+    # Role-specific example output
+    if "singer" in interlocutor_desc.lower():
+        example_output = f"Meeting {interlocutor_desc} was interesting - their passion for music reminds me of the creative energy on campus, and I'm curious about their musical background and what brought them here."
+    elif "student" in interlocutor_desc.lower():
+        example_output = f"It's nice to connect with {interlocutor_desc}, and I appreciate getting to know someone new in our community."
+    else:
+        example_output = f"My conversation with {interlocutor_desc} gave me some new perspectives to consider, and I found their viewpoint quite engaging."
+    
+    special_instruction = f"Generate a thoughtful, introspective reflection that shows {persona.scratch.name}'s genuine thoughts about meeting and talking with {interlocutor_desc}. Consider their role/profession in the reflection."
+    
+    reflection = ChatGPT_safe_generate_response(
+        reflection_prompt,
+        example_output,
+        special_instruction,
+        repeat=3,
+        fail_safe_response=f"I had an interesting conversation with {interlocutor_desc} that gave me some new perspectives to think about.",
+        func_validate=__func_validate,
+        func_clean_up=__func_clean_up,
+        verbose=False
+    )
+    
+    return reflection if reflection else f"I had a meaningful conversation with {interlocutor_desc} that I'll need to think more about."
+
+
+  def extract_conversation_topics(self, conversation):
+    """
+    Extract key topics from the conversation for further reflection.
+    """
+    topics = []
+    for speaker, utterance in conversation:
+        words = utterance.lower().split()
+        meaningful_words = [word for word in words if len(word) > 4 and word not in 
+                          ['about', 'think', 'really', 'would', 'could', 'should', 'there', 'where', 'which']]
+        topics.extend(meaningful_words[:3])
+    
+    return list(set(topics))[:5]
+
+  def save_conversation_to_memory(self, persona, conversation, interlocutor_desc):
+    """
+    Save the conversation to persona's memory as chat and thought nodes.
+    """
+    from persona.cognitive_modules.converse import (
+        generate_action_event_triple,
+        generate_poig_score,
+        generate_inner_thought
+    )
+    from persona.prompt_template.gpt_structure import get_embedding
+    from persona.prompt_template.run_gpt_prompt import run_gpt_prompt_summarize_conversation
+    import datetime
+    
+    try:
+        # Validate and format conversation data properly
+        formatted_conversation = []
+        convo_str = ""
+        
+        for item in conversation:
+            if isinstance(item, list) and len(item) >= 2:
+                speaker, utterance = str(item[0]), str(item[1])
+                if speaker and utterance:
+                    formatted_conversation.append([speaker, utterance])
+                    convo_str += f"{speaker}: {utterance}\n"
+        
+        if not formatted_conversation:
+            print("\033[0;31m✗ No valid conversation data to save\033[0m")
+            return
+        
+        created = persona.scratch.curr_time
+        expiration = persona.scratch.curr_time + datetime.timedelta(days=30)
+        
+        # 1. Save as chat node
+        try:
+            chat_summary_result = run_gpt_prompt_summarize_conversation(persona, formatted_conversation)
+            if chat_summary_result and len(chat_summary_result) > 0:
+                chat_summary = chat_summary_result[0]
+            else:
+                raise Exception("GPT summarization returned empty result")
+        except Exception as gpt_error:
+            topics = []
+            for speaker, utterance in formatted_conversation:
+                if len(utterance) > 10:
+                    topics.append(utterance[:50] + "..." if len(utterance) > 50 else utterance)
+            
+            if topics:
+                chat_summary = f"conversing about {'; '.join(topics[:3])}"
+            else:
+                chat_summary = f"conversing with {interlocutor_desc}"
+        
+        # Generate action event triple for chat
+        s, p, o = generate_action_event_triple(chat_summary, persona)
+        keywords = set([s, p, o])
+        
+        # Calculate poignancy score
+        chat_poignancy = generate_poig_score(persona, "chat", chat_summary)
+        
+        # Create embedding
+        chat_embedding_pair = (chat_summary, get_embedding(chat_summary))
+        
+        # Save chat to memory
+        try:
+            if hasattr(persona.a_mem, 'add_chat'):
+                persona.a_mem.add_chat(created, expiration, s, p, o,
+                                     chat_summary, keywords, chat_poignancy,
+                                     chat_embedding_pair, convo_str)
+            else:
+                persona.a_mem.add_thought(created, expiration, s, p, o,
+                                        chat_summary, keywords, chat_poignancy,
+                                        chat_embedding_pair, convo_str)
+            
+            print(f"\033[0;32m✓ Chat summary saved: {chat_summary}\033[0m")
+        except Exception as e:
+            print(f"\033[0;31m✗ Error saving chat: {e}\033[0m")
+        
+        # 2. Generate and save comprehensive reflection
+        try:
+            reflection_content = self.generate_conversation_reflection(persona, formatted_conversation, interlocutor_desc)
+            
+            s_thought, p_thought, o_thought = generate_action_event_triple(reflection_content, persona)
+            keywords_thought = set([s_thought, p_thought, o_thought])
+            thought_poignancy = generate_poig_score(persona, "thought", reflection_content)
+            thought_embedding_pair = (reflection_content, get_embedding(reflection_content))
+            
+            persona.a_mem.add_thought(created, expiration, s_thought, p_thought, o_thought,
+                                    reflection_content, keywords_thought, thought_poignancy,
+                                    thought_embedding_pair, None)
+            
+            print(f"\033[0;32m✓ Reflection saved: {reflection_content}\033[0m")
+        except Exception as e:
+            print(f"\033[0;31m✗ Error saving reflection: {e}\033[0m")
+        
+    except Exception as e:
+        print(f"\033[0;31m✗ Error saving conversation to memory: {e}\033[0m")
+        import traceback
+        traceback.print_exc()      
+
   def start_server(self, int_counter, debug_mode=False): 
     """
     The main backend server of Reverie. 
@@ -629,6 +901,66 @@ class ReverieServer:
           # Ex: call -- analysis Isabella Rodriguez
           persona_name = sim_command[len("call -- analysis"):].strip() 
           self.personas[persona_name].open_convo_session("analysis")
+          
+        elif ("insert -- thought" 
+              in sim_command.lower()): 
+          # Starts a stateless chat session with the agent. It does not save 
+          # anything to the agent's memory. 
+          # Ex: insert -- thought Isabella Rodriguez
+          persona_name = sim_command[len("insert -- thought"):].strip() 
+          self.personas[persona_name].open_convo_session("whisper")
+        
+        elif ("converse with" in sim_command.lower()): 
+            # Start a conversation with the specified persona and save as chat/thought nodes
+            persona_name = sim_command[len("converse with"):].strip()
+            if persona_name not in self.personas:
+                print(f"Persona '{persona_name}' not found.")
+                print("Available personas:")
+                for name in self.personas.keys():
+                    print(f"  - {name}")
+            else:
+                # Ask user to define their role
+                print("\n=== Role Definition ===")
+                print("You can play as yourself (User) or define a specific character.")
+                user_role_input = input("Enter your role/character (press Enter for 'User'): ").strip()
+                user_role = user_role_input if user_role_input else "User"
+                
+                # If user defines a character, ask for brief description
+                user_description = ""
+                if user_role != "User":
+                    user_description = input(f"Brief description of {user_role} (optional): ").strip()
+                
+                self.start_interactive_conversation(persona_name, user_role, user_description)
+
+        # 在 open_server 方法的命令处理循环中添加快速角色设置
+        elif ("converse as" in sim_command.lower()):
+            # Quick role setup: "converse as Wei Xu with Isabella Rodriguez"
+            command_parts = sim_command[len("converse as"):].strip().split(" with ")
+            if len(command_parts) == 2:
+                user_role = command_parts[0].strip()
+                persona_name = command_parts[1].strip()
+                
+                if persona_name not in self.personas:
+                    print(f"Persona '{persona_name}' not found.")
+                    print("Available personas:")
+                    for name in self.personas.keys():
+                        print(f"  - {name}")
+                else:
+                    # Pre-defined role descriptions
+                    role_descriptions = {
+                        "Wei Xu": "a new campus singer who just arrived and is passionate about music",
+                        "wei xu": "a new campus singer who just arrived and is passionate about music",
+                        "Wei": "a new campus singer who just arrived and is passionate about music"
+                    }
+                    
+                    user_description = role_descriptions.get(user_role, "")
+                    if not user_description and user_role.lower() in role_descriptions:
+                        user_description = role_descriptions[user_role.lower()]
+                    
+                    self.start_interactive_conversation(persona_name, user_role, user_description)
+            else:
+                print("Usage: converse as [role name] with [persona name]")
+                print("Example: converse as Wei Xu with Isabella Rodriguez")
 
         elif ("call -- load history" 
               in sim_command.lower()): 

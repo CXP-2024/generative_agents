@@ -6,6 +6,7 @@ Variables:
 
 <commentblockmarker>###</commentblockmarker>
 Translate the following thought into a statement about !<INPUT 0>!. 
+You should start with " and end with ".
 
 Thought: "!<INPUT 1>!"
 Statement: "

@@ -2728,7 +2728,15 @@ def run_gpt_prompt_generate_next_convo_line(persona, interlocutor_desc, prev_con
     return prompt_input
   
   def __func_clean_up(gpt_response, prompt=""):
-    return gpt_response.split('"')[0].strip()
+		# Check if there are exactly two quotes, then extract content between them
+    quote_count = gpt_response.count('"')
+    if quote_count >= 2:
+      first_quote = gpt_response.find('"')
+      last_quote = gpt_response.rfind('"')
+      if first_quote != last_quote:
+        gpt_response = gpt_response[first_quote + 1:last_quote].strip()
+		# Otherwise return original result (no modification needed)
+    return gpt_response
 
   def __func_validate(gpt_response, prompt=""): 
     try: 
@@ -2771,7 +2779,7 @@ def run_gpt_prompt_generate_next_convo_line(persona, interlocutor_desc, prev_con
 
 
 
-  gpt_param = {"engine": "text-davinci-003", "max_tokens": 250, 
+  gpt_param = {"engine": "text-davinci-003", "max_tokens": 500, 
                "temperature": 1, "top_p": 1, "stream": False,
                "frequency_penalty": 0, "presence_penalty": 0, "stop": None}
   prompt_template = "persona/prompt_template/v2/generate_next_convo_line_v1.txt"
@@ -2799,8 +2807,16 @@ def run_gpt_prompt_generate_whisper_inner_thought(persona, whisper, test_input=N
     return prompt_input
   
   def __func_clean_up(gpt_response, prompt=""):
-    return gpt_response.split('"')[0].strip()
-
+    if gpt_response.startswith('"') and gpt_response.endswith('"'):
+      gpt_response = gpt_response[1:-1]
+    elif gpt_response.startswith('Statement: "'):
+      gpt_response = gpt_response.split('"')[1]
+    elif gpt_response.startswith('Statement: '):
+      gpt_response = gpt_response.split('Statement: ')[-1]
+    else:
+      raise ValueError("Unexpected format in gpt_response")
+    return gpt_response
+  
   def __func_validate(gpt_response, prompt=""): 
     try: 
       __func_clean_up(gpt_response, prompt)
