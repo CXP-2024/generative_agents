@@ -148,9 +148,10 @@ def execute(persona, maze, personas, plan):
   # Setting up the next immediate step. We stay at our curr_tile if there is
   # no <planned_path> left, but otherwise, we go to the next tile in the path.
   ret = persona.scratch.curr_tile
+  ###################################### IMPORTANT #############################################
   if persona.scratch.planned_path: 
-    ret = persona.scratch.planned_path[-1]
-    persona.scratch.planned_path = []
+    ret = persona.scratch.planned_path[0]
+    persona.scratch.planned_path = persona.scratch.planned_path[1:]
 
   description = f"{persona.scratch.act_description}"
   description += f" @ {persona.scratch.act_address}"

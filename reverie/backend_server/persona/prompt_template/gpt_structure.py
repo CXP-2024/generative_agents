@@ -153,9 +153,9 @@ def ChatGPT_safe_generate_response(prompt,
 
   #print("\033[0;31mprompt!\033[0m") 
   print("\033[1;32mtrying ChatGPT_request to get json\033[0m")
-  if verbose: 
-    print ("CHAT GPT PROMPT")
-    print (prompt)
+  #if verbose: 
+  print ("CHAT GPT PROMPT")
+  print (prompt)
 
   for i in range(repeat+3): 
 

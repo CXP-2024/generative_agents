@@ -233,10 +233,11 @@ def reflect(persona):
   # print (persona.scratch.name, "al;sdhfjlsad", persona.scratch.chatting_end_time)
   if persona.scratch.chatting_end_time: 
     print("\033[0;33m---in reflect---", persona.scratch.name, "start check if we are in a chat --\033[0m")
-    print("current time + 5min:", persona.scratch.curr_time + datetime.timedelta(0,300))  ### IMPORTANT TIME
+    print("current time + 10s:", persona.scratch.curr_time + datetime.timedelta(0,10))  ### IMPORTANT TIME
     print("chatting end time:", persona.scratch.chatting_end_time)
     # print("DEBUG", persona.scratch.curr_time + datetime.timedelta(0,10))
-    if persona.scratch.curr_time + datetime.timedelta(0,300) >= persona.scratch.chatting_end_time: 
+    ######################################################    IMPORTANT TIME   ###################################################################
+    if persona.scratch.curr_time + datetime.timedelta(0,10) >= persona.scratch.chatting_end_time: 
       # print ("KABOOOOOMMMMMMM")
       print("\033[0;33m---in reflect---", persona.scratch.name, "start reflect after a chat! --\033[0m")
       all_utt = ""

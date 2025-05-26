@@ -1293,8 +1293,9 @@ def plan(persona, maze, personas, new_day, retrieved):
       if persona_name == persona.scratch.chatting_with:
         continue
 
-			# decrement and clamp at zero
-      new_count = max(buffer_count - 30, 0)
+			# decrement and clamp at zero   
+      ###################################### IMPORTANT ###############################################
+      new_count = max(buffer_count - 1, 0)
       curr_persona_chat_buffer[persona_name] = new_count
 
 			# optionally clean up entries that have reached zero
