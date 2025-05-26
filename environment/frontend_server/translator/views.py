@@ -113,84 +113,102 @@ def UIST_Demo(request):
 
 
 def home(request):
-  f_curr_sim_code = "temp_storage/curr_sim_code.json"
-  f_curr_step = "temp_storage/curr_step.json"
+    f_curr_sim_code = "temp_storage/curr_sim_code.json"
+    f_curr_step = "temp_storage/curr_step.json"
 
-  if not check_if_file_exists(f_curr_step): 
-    context = {}
-    template = "home/error_start_backend.html"
+    if not check_if_file_exists(f_curr_step): 
+        context = {}
+        template = "home/error_start_backend.html"
+        return render(request, template, context)
+
+    with open(f_curr_sim_code) as json_file:  
+        sim_code = json.load(json_file)["sim_code"]
+    
+    with open(f_curr_step) as json_file:  
+        step = json.load(json_file)["step"]
+
+    os.remove(f_curr_step)
+
+    # 修改这部分 - 创建包含所需属性的对象列表
+    persona_names = []
+    persona_names_set = set()
+    for i in find_filenames(f"storage/{sim_code}/personas", ""): 
+        x = i.split("/")[-1].strip()
+        if x[0] != ".": 
+            # 创建包含demo版本所需属性的对象
+            persona_obj = type('PersonaInfo', (), {
+                'original': x,
+                'underscore': x.replace(" ", "_"),
+                'full_name': x,
+                'initial': "".join([word[0] for word in x.split()])
+            })()
+            persona_names.append(persona_obj)
+            persona_names_set.add(x)
+
+    persona_init_pos = []
+    file_count = []
+    for i in find_filenames(f"storage/{sim_code}/environment", ".json"):
+        x = i.split("/")[-1].strip()
+        if x[0] != ".": 
+            file_count += [int(x.split(".")[0])]
+    
+    curr_json = f'storage/{sim_code}/environment/{str(max(file_count))}.json'
+    with open(curr_json) as json_file:  
+        persona_init_pos_dict = json.load(json_file)
+        for key, val in persona_init_pos_dict.items(): 
+            if key in persona_names_set: 
+                persona_init_pos += [[key, val["x"], val["y"]]]
+
+    context = {"sim_code": sim_code,
+               "step": step, 
+               "persona_names": persona_names,  # 现在包含了underscore等属性
+               "persona_init_pos": persona_init_pos,
+               "mode": "simulate"}
+    template = "home/home.html"
     return render(request, template, context)
-
-  with open(f_curr_sim_code) as json_file:  
-    sim_code = json.load(json_file)["sim_code"]
-  
-  with open(f_curr_step) as json_file:  
-    step = json.load(json_file)["step"]
-
-  os.remove(f_curr_step)
-
-  persona_names = []
-  persona_names_set = set()
-  for i in find_filenames(f"storage/{sim_code}/personas", ""): 
-    x = i.split("/")[-1].strip()
-    if x[0] != ".": 
-      persona_names += [[x, x.replace(" ", "_")]]
-      persona_names_set.add(x)
-
-  persona_init_pos = []
-  file_count = []
-  for i in find_filenames(f"storage/{sim_code}/environment", ".json"):
-    x = i.split("/")[-1].strip()
-    if x[0] != ".": 
-      file_count += [int(x.split(".")[0])]
-  curr_json = f'storage/{sim_code}/environment/{str(max(file_count))}.json'
-  with open(curr_json) as json_file:  
-    persona_init_pos_dict = json.load(json_file)
-    for key, val in persona_init_pos_dict.items(): 
-      if key in persona_names_set: 
-        persona_init_pos += [[key, val["x"], val["y"]]]
-
-  context = {"sim_code": sim_code,
-             "step": step, 
-             "persona_names": persona_names,
-             "persona_init_pos": persona_init_pos,
-             "mode": "simulate"}
-  template = "home/home.html"
-  return render(request, template, context)
 
 
 def replay(request, sim_code, step): 
-  sim_code = sim_code
-  step = int(step)
+    sim_code = sim_code
+    step = int(step)
 
-  persona_names = []
-  persona_names_set = set()
-  for i in find_filenames(f"storage/{sim_code}/personas", ""): 
-    x = i.split("/")[-1].strip()
-    if x[0] != ".": 
-      persona_names += [[x, x.replace(" ", "_")]]
-      persona_names_set.add(x)
+    # 修改这部分 - 创建包含所需属性的对象列表
+    persona_names = []
+    persona_names_set = set()
+    for i in find_filenames(f"storage/{sim_code}/personas", ""): 
+        x = i.split("/")[-1].strip()
+        if x[0] != ".": 
+            # 创建包含demo版本所需属性的对象
+            persona_obj = type('PersonaInfo', (), {
+                'original': x,
+                'underscore': x.replace(" ", "_"),
+                'full_name': x,
+                'initial': "".join([word[0] for word in x.split()])
+            })()
+            persona_names.append(persona_obj)
+            persona_names_set.add(x)
 
-  persona_init_pos = []
-  file_count = []
-  for i in find_filenames(f"storage/{sim_code}/environment", ".json"):
-    x = i.split("/")[-1].strip()
-    if x[0] != ".": 
-      file_count += [int(x.split(".")[0])]
-  curr_json = f'storage/{sim_code}/environment/{str(max(file_count))}.json'
-  with open(curr_json) as json_file:  
-    persona_init_pos_dict = json.load(json_file)
-    for key, val in persona_init_pos_dict.items(): 
-      if key in persona_names_set: 
-        persona_init_pos += [[key, val["x"], val["y"]]]
+    persona_init_pos = []
+    file_count = []
+    for i in find_filenames(f"storage/{sim_code}/environment", ".json"):
+        x = i.split("/")[-1].strip()
+        if x[0] != ".": 
+            file_count += [int(x.split(".")[0])]
+    
+    curr_json = f'storage/{sim_code}/environment/{str(max(file_count))}.json'
+    with open(curr_json) as json_file:  
+        persona_init_pos_dict = json.load(json_file)
+        for key, val in persona_init_pos_dict.items(): 
+            if key in persona_names_set: 
+                persona_init_pos += [[key, val["x"], val["y"]]]
 
-  context = {"sim_code": sim_code,
-             "step": step,
-             "persona_names": persona_names,
-             "persona_init_pos": persona_init_pos, 
-             "mode": "replay"}
-  template = "home/home.html"
-  return render(request, template, context)
+    context = {"sim_code": sim_code,
+               "step": step,
+               "persona_names": persona_names,  # 现在包含了underscore等属性
+               "persona_init_pos": persona_init_pos, 
+               "mode": "replay"}
+    template = "home/home.html"
+    return render(request, template, context)
 
 
 def replay_persona_state(request, sim_code, step, persona_name): 

@@ -386,23 +386,41 @@
 
 	// 在update函数的execute阶段调用updatePersonaStatus()
 	function updatePersonaStatus() {
-	    if (phase === "execute" && execute_movement && execute_movement["persona"]) {
-	        for (let persona_name in personas) {
-	            let display_name = persona_name.replace("_", " ");
-	            
-	            // 从execute_movement获取状态信息
-	            if (execute_movement["persona"][persona_name]) {
-	                let persona_data = execute_movement["persona"][persona_name];
-	                let pronunciatio_content = persona_data["pronunciatio"] || "🤔";
-	                let emoji_element = document.getElementById("quick_emoji-" + persona_name);
-	                if (emoji_element) {
-	                    emoji_element.innerHTML = pronunciatio_content;
-	                }
-	                persona_status_data[persona_name] = persona_data;
-	            }
-	        }
-	    }
-	}
+    console.log("🔍 updatePersonaStatus called, phase:", phase);
+    
+    if (phase === "execute" && execute_movement && execute_movement["persona"]) {
+        console.log("✅ 条件满足，开始更新emoji");
+        
+        for (let persona_name in personas) {
+            if (execute_movement["persona"][persona_name]) {
+                let persona_data = execute_movement["persona"][persona_name];
+                let pronunciatio_content = persona_data["pronunciatio"] || "🤔";
+                
+                // 使用下划线格式的名称来匹配DOM元素ID
+                let persona_name_underscore = persona_name.replace(/ /g, "_");
+                let emoji_element = document.getElementById("quick_emoji-" + persona_name_underscore);
+                
+                console.log(`🔍 处理角色: ${persona_name} -> ${persona_name_underscore}`);
+                console.log(`🔍 Emoji内容: ${pronunciatio_content}`);
+                console.log(`🔍 DOM元素:`, emoji_element);
+                
+                if (emoji_element) {
+                    emoji_element.innerHTML = pronunciatio_content;
+                    console.log(`✅ 成功更新 ${persona_name_underscore} emoji: ${pronunciatio_content}`);
+                } else {
+                    console.log(`❌ 找不到元素: quick_emoji-${persona_name_underscore}`);
+                }
+                
+                persona_status_data[persona_name] = persona_data;
+            }
+        }
+    } else {
+        console.log("❌ 条件不满足");
+        console.log("  phase === 'execute':", phase === "execute");
+        console.log("  execute_movement exists:", !!execute_movement);
+        console.log("  persona data exists:", !!(execute_movement && execute_movement["persona"]));
+    }
+}
 
 	function update(time, delta) {
 		// *** SETUP PLAY AND PAUSE BUTTON *** 
@@ -628,7 +646,8 @@
 		      	chat_content = "<em>None at the moment</em>"
 		      }
 	        // action_description += description_content + "<br>";
-
+ 
+	        //document.getElementById("quick_emoji-"+curr_persona_name).innerHTML = pronunciatio_content;
 	        document.getElementById("current_action__"+curr_persona_name_os).innerHTML = description_content.split("@")[0];
 	        document.getElementById("target_address__"+curr_persona_name_os).innerHTML = description_content.split("@")[1];
 	        document.getElementById("chat__"+curr_persona_name_os).innerHTML = chat_content;
