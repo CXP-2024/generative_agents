@@ -381,6 +381,28 @@
 	    repeat: -1 });
 	}
 
+	let persona_status_data = {}; 
+	let selected_persona = null;  
+
+	// 在update函数的execute阶段调用updatePersonaStatus()
+	function updatePersonaStatus() {
+	    if (phase === "execute" && execute_movement && execute_movement["persona"]) {
+	        for (let persona_name in personas) {
+	            let display_name = persona_name.replace("_", " ");
+	            
+	            // 从execute_movement获取状态信息
+	            if (execute_movement["persona"][persona_name]) {
+	                let persona_data = execute_movement["persona"][persona_name];
+	                let pronunciatio_content = persona_data["pronunciatio"] || "🤔";
+	                let emoji_element = document.getElementById("quick_emoji-" + persona_name);
+	                if (emoji_element) {
+	                    emoji_element.innerHTML = pronunciatio_content;
+	                }
+	                persona_status_data[persona_name] = persona_data;
+	            }
+	        }
+	    }
+	}
 
 	function update(time, delta) {
 		// *** SETUP PLAY AND PAUSE BUTTON *** 
@@ -610,12 +632,23 @@
 	        document.getElementById("current_action__"+curr_persona_name_os).innerHTML = description_content.split("@")[0];
 	        document.getElementById("target_address__"+curr_persona_name_os).innerHTML = description_content.split("@")[1];
 	        document.getElementById("chat__"+curr_persona_name_os).innerHTML = chat_content;
-	      }
+	      }// 添加这一行调用updatePersonaStatus函数
+  			updatePersonaStatus();
 	      
 	    }
 
 	    execute_count = execute_count - 1;
 	  }
+
+	  // 在函数最末尾添加聚焦功能
+    let curr_focused_persona = document.getElementById("temp_focus").textContent;
+    if (curr_focused_persona != "") {
+        if (personas[curr_focused_persona]) {
+            player.body.x = personas[curr_focused_persona].body.x;
+            player.body.y = personas[curr_focused_persona].body.y;
+        }
+        document.getElementById("temp_focus").innerHTML = "";
+    }
 	}
 
 	// Control button binders
