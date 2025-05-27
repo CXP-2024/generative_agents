@@ -7,15 +7,22 @@ import string
 import random
 import json
 from os import listdir
-import os
-
+import datetime
+import sys
+import io
+from contextlib import redirect_stdout, redirect_stderr
+from django.views.decorators.csrf import csrf_exempt
 import datetime
 from django.shortcuts import render, redirect, HttpResponseRedirect
 from django.http import HttpResponse, JsonResponse
+
+sys.path.append(os.path.join(os.path.dirname(__file__), '..'))
 from global_methods import *
 
 from django.contrib.staticfiles.templatetags.staticfiles import static
 from .models import *
+sys.path.append(os.path.join(os.path.dirname(__file__), '../../../reverie/backend_server'))
+from reverie import ReverieServer
 
 def landing(request): 
   context = {}
@@ -161,7 +168,7 @@ def home(request):
 
     context = {"sim_code": sim_code,
                "step": step, 
-               "persona_names": persona_names,  # 现在包含了underscore等属性
+               "persona_names": persona_names,
                "persona_init_pos": persona_init_pos,
                "mode": "simulate"}
     template = "home/home.html"
@@ -204,7 +211,7 @@ def replay(request, sim_code, step):
 
     context = {"sim_code": sim_code,
                "step": step,
-               "persona_names": persona_names,  # 现在包含了underscore等属性
+               "persona_names": persona_names,
                "persona_init_pos": persona_init_pos, 
                "mode": "replay"}
     template = "home/home.html"
@@ -341,11 +348,240 @@ def path_tester_update(request):
 
   return HttpResponse("received")
 
+def wait_and_read_command_output(command, sim_code, timeout=30):
+    """等待并读取命令执行结果"""
+    import time
+    
+    temp_storage = "temp_storage"
+    output_file = f"{temp_storage}/command_output.json"
+    
+    start_time = time.time()
+    while time.time() - start_time < timeout:
+        if os.path.exists(output_file):
+            try:
+                with open(output_file, 'r') as f:
+                    output_data = json.load(f)
+                
+                os.remove(output_file)
+                
+                if output_data.get('command') == command:
+                    return {
+                        'success': output_data.get('success', True),
+                        'output': output_data.get('output', ''),
+                        'command_type': 'general'
+                    }
+                
+            except Exception as e:
+                continue
+        
+        time.sleep(0.5)
+    
+    return {
+        'success': False,
+        'error': f'Command timeout after {timeout} seconds. Reverie backend may not be running.'
+    }
 
+@csrf_exempt
+def execute_console_command(request):
+    """执行控制台命令 - 通过文件与reverie后端通信"""
+    print(f"📨 收到控制台命令请求: {request.method}")
+    
+    if request.method == 'POST':
+        try:
+            data = json.loads(request.body)
+            command = data.get('command', '').strip()
+            sim_code = data.get('sim_code')
+            
+            print(f"📋 命令: {command}")
+            print(f"📋 模拟代码: {sim_code}")
+            
+            if not command:
+                return JsonResponse({
+                    'success': False,
+                    'error': 'No command provided'
+                })
+            
+            # 特殊处理：help命令
+            if command.lower() == 'help':
+                return JsonResponse({
+                    'success': True,
+                    'output': get_console_help_text(),
+                    'command_type': 'help'
+                })
+            
+            # 特殊处理：status命令
+            if command.lower() in ['info', 'status']:
+                status_output = get_status_from_files(sim_code)
+                return JsonResponse({
+                    'success': True,
+                    'output': status_output,
+                    'command_type': 'status'
+                })
+            
+            # 检查是否是长时间运行的命令
+            long_running_commands = ['run', 'debug run']
+            is_long_running = any(command.lower().startswith(cmd) for cmd in long_running_commands)
+            
+            # 写入命令到文件
+            command_result = write_command_to_file(command, sim_code)
+            if not command_result['success']:
+                return JsonResponse(command_result)
+            
+            # 如果是长时间命令，立即返回执行中的状态
+            if is_long_running:
+                # 启动后台线程等待结果
+                import threading
+                
+                def wait_for_result():
+                    result = wait_and_read_command_output(command, sim_code)
+                    # 这里可以添加WebSocket推送结果给前端的逻辑
+                
+                thread = threading.Thread(target=wait_for_result, daemon=True)
+                thread.start()
+                
+                return JsonResponse({
+                    'success': True,
+                    'output': f'🚀 命令已启动: {command}\n⏳ 正在执行中，请稍候...\n💡 可以继续使用其他命令查看状态',
+                    'command_type': 'long_running',
+                    'status': 'started'
+                })
+            else:
+                # 短命令正常等待结果
+                output_result = wait_and_read_command_output(command, sim_code)
+                return JsonResponse(output_result)
+            
+        except Exception as e:
+            import traceback
+            error_trace = traceback.format_exc()
+            print(f"❌ 控制台命令执行错误: {e}")
+            return JsonResponse({
+                'success': False,
+                'error': f'Error: {str(e)}',
+                'traceback': error_trace
+            })
+    
+    return JsonResponse({
+        'success': False,
+        'error': 'Invalid request method'
+    })
 
+def write_command_to_file(command, sim_code):
+    """将命令写入文件，供reverie后端读取"""
+    try:
+        # 确保temp_storage目录存在
+        temp_storage = "temp_storage"
+        if not os.path.exists(temp_storage):
+            os.makedirs(temp_storage)
+        
+        # 创建命令文件
+        command_data = {
+            "command": command,
+            "sim_code": sim_code,
+            "timestamp": datetime.datetime.now().isoformat(),
+            "status": "pending"
+        }
+        
+        command_file = f"{temp_storage}/frontend_command.json"
+        with open(command_file, "w") as outfile:
+            outfile.write(json.dumps(command_data, indent=2))
+        
+        # 创建一个信号文件，告诉后端有新命令
+        signal_file = f"{temp_storage}/command_ready.signal"
+        with open(signal_file, "w") as outfile:
+            outfile.write("ready")
+        
+        print(f"✅ 命令已写入文件: {command}")
+        return {'success': True}
+        
+    except Exception as e:
+        print(f"❌ 写入命令文件失败: {e}")
+        return {
+            'success': False,
+            'error': f'Failed to write command: {str(e)}'
+        }
 
+def get_status_from_files(sim_code):
+    """从文件系统读取模拟状态"""
+    try:
+        sim_folder = f"storage/{sim_code}"
+        if not os.path.exists(sim_folder):
+            return f"❌ Simulation folder not found: {sim_code}\n💡 请确保您已经通过reverie.py创建了这个模拟"
+        
+        # 读取meta信息
+        meta_file = f"{sim_folder}/reverie/meta.json"
+        if os.path.exists(meta_file):
+            with open(meta_file) as f:
+                meta_data = json.load(f)
+            
+            # 检查当前步数文件
+            temp_storage = "temp_storage"
+            current_step = meta_data.get('step', 0)
+            
+            # 尝试读取当前步数
+            curr_step_file = f"{temp_storage}/curr_step.json"
+            if os.path.exists(curr_step_file):
+                try:
+                    with open(curr_step_file) as f:
+                        step_data = json.load(f)
+                    current_step = step_data.get('step', current_step)
+                except:
+                    pass
+            
+            # 检查reverie是否正在运行
+            reverie_running = "❌ Not running"
+            command_file = f"{temp_storage}/frontend_command.json"
+            if os.path.exists(command_file):
+                reverie_running = "🟡 May be running (command file exists)"
+            
+            status_info = f"""
+🎮 Simulation Status (File-based):
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+🗂️ Simulation Code: {sim_code}
+📊 Current Step: {current_step}
+📅 Start Date: {meta_data.get('start_date', 'Unknown')}
+👥 Personas: {len(meta_data.get('persona_names', []))}
+🔧 Reverie Backend: {reverie_running}
 
+📋 Available personas:
+{chr(10).join([f"  • {name}" for name in meta_data.get('persona_names', [])])}
 
+💡 To interact with simulation, make sure reverie.py is running
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+"""
+            return status_info
+        else:
+            return f"❌ Meta file not found for simulation: {sim_code}"
+            
+    except Exception as e:
+        return f"❌ Error reading simulation info: {str(e)}"
 
+def get_console_help_text():
+    """返回控制台帮助文本"""
+    return """
+🎮 Reverie Console Commands (File-based Communication):
 
+📊 Simulation Control:
+  • status / info                 - Show simulation status from files
+  • save                          - Save simulation progress
+  • run <steps>                   - Run simulation for specified steps
+  • debug run <steps>             - Run simulation in debug mode
+  • print current time            - Show current simulation time
 
+👥 Persona Management:
+  • print all persona schedule    - Show all personas' schedules
+  • print persona schedule <name> - Show specific persona's schedule
+  • print persona associative memory (event) <name>   - Show event memory
+  • print persona associative memory (thought) <name> - Show thought memory
+  • print persona associative memory (chat) <name>    - Show chat memory
+
+💬 Interaction:
+  • converse with <persona>       - Start conversation with persona
+
+Examples:
+  status                                        # Check simulation status
+  run 10                                       # Run 10 steps
+  print persona schedule Isabella Rodriguez    # Check persona schedule
+  save                                         # Save simulation
+
+💡 Note: Commands are sent to reverie.py via files. Make sure reverie.py is running!
+"""

@@ -101,6 +101,77 @@
 	</div>
 </div>
 
+<!-- 在角色显示区域后添加控制台 -->
+<div style="width:55%; margin: 0 auto; margin-top:2em">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h4 class="panel-title">
+                <a data-toggle="collapse" href="#reverie-console" style="text-decoration: none;">
+                    <i class="glyphicon glyphicon-console"></i> Reverie Console
+                    <span class="caret"></span>
+                </a>
+            </h4>
+        </div>
+        <div id="reverie-console" class="panel-collapse collapse">
+            <div class="panel-body">
+                <!-- 控制台输出区域 -->
+                <div id="console-output" style="background-color: #1e1e1e; color: #00ff00; font-family: 'Courier New', monospace; height: 400px; overflow-y: auto; padding: 15px; border-radius: 5px; margin-bottom: 15px; border: 1px solid #333;">
+                    <div class="console-line">🎮 Reverie Console Ready...</div>
+                    <div class="console-line">💡 Type 'help' for available commands</div>
+                    <div class="console-line">📊 Type 'status' for simulation info</div>
+                </div>
+                
+                <!-- 命令输入区域 -->
+                <div class="input-group">
+                    <span class="input-group-addon" style="background-color: #1e1e1e; color: #00ff00; border: 1px solid #333;">reverie$</span>
+                    <input type="text" id="console-input" class="form-control" 
+                           placeholder="Enter command..." 
+                           style="background-color: #2d2d2d; color: #ffffff; border: 1px solid #333;">
+                    <span class="input-group-btn">
+                        <button class="btn btn-success" type="button" onclick="window.executeCommand()">
+                            <i class="glyphicon glyphicon-play"></i> Execute
+                        </button>
+                    </span>
+                </div>
+                
+                <!-- 快捷命令按钮 -->
+                <div style="margin-top: 15px;">
+                    <div class="btn-group" role="group" style="margin-bottom: 10px;">
+                        <button class="btn btn-sm btn-info" onclick="quickCommand('status')">
+                            <i class="glyphicon glyphicon-info-sign"></i> Status
+                        </button>
+                        <button class="btn btn-sm btn-info" onclick="quickCommand('print current time')">
+                            <i class="glyphicon glyphicon-time"></i> Current Time
+                        </button>
+                        <button class="btn btn-sm btn-info" onclick="quickCommand('print all persona schedule')">
+                            <i class="glyphicon glyphicon-list"></i> All Schedules
+                        </button>
+                        <button class="btn btn-sm btn-success" onclick="quickCommand('save')">
+                            <i class="glyphicon glyphicon-floppy-disk"></i> Save
+                        </button>
+                    </div>
+                    <div class="btn-group" role="group">
+                        <button class="btn btn-sm btn-warning" onclick="quickCommand('run 5')">
+                            <i class="glyphicon glyphicon-forward"></i> Run 5 Steps
+                        </button>
+                        <button class="btn btn-sm btn-warning" onclick="quickCommand('run 10')">
+                            <i class="glyphicon glyphicon-fast-forward"></i> Run 10 Steps
+                        </button>
+                        <button class="btn btn-sm btn-danger" onclick="quickCommand('debug run 3')">
+                            <i class="glyphicon glyphicon-wrench"></i> Debug Run 3
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- 命令历史提示 -->
+                <div style="margin-top: 10px; font-size: 12px; color: #666;">
+                    💡 Use ↑/↓ arrows for command history, Tab for suggestions
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
 <div style="padding-bottom:15em"> </div>
 
 <div style="display: none" id="temp_focus"></div>
@@ -108,39 +179,263 @@
 {% endblock content %}
 
 {% block js_content %}
+<!-- 确保jQuery和Bootstrap在Phaser之前加载 -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
 <script src='https://cdn.jsdelivr.net/npm/phaser@3.55.2/dist/phaser.js'></script>
 {% include 'home/main_script.html' %}
 
 <script>
-// 添加人物点击事件
-{% for p in persona_names %}
-$('#on_screen_det_trigger-{{p.underscore}}').click(function () {
-    // 隐藏初始提示
-    $('#on_screen_det_content-init').css({'display': 'none'});
+// 等待jQuery和DOM完全加载后再执行
+$(document).ready(function() {
+    console.log('jQuery loaded, version:', $.fn.jquery);
     
-    // 隐藏所有其他人物的详情并重置样式
-    {% for p_i in persona_names %}
-    $('#on_screen_det_content-{{p_i.underscore}}').css({'display': 'none'});
-    $('#on_screen_det_trigger-{{p_i.underscore}}').css({'font-weight': '500'});
-    $('#on_screen_det_trigger_container-{{p_i.underscore}}').css({
-        'background-color': 'white',
-        'border-radius': '10px'
+    // 控制台相关的JavaScript函数
+    let commandHistory = [];
+    let historyIndex = -1;
+
+    // 获取当前模拟代码
+    function getCurrentSimCode() {
+        return typeof window.sim_code !== 'undefined' ? window.sim_code : 'default_sim';
+    }
+
+    // 获取当前步骤
+    function getCurrentStep() {
+        return typeof window.step !== 'undefined' ? window.step : 0;
+    }
+
+    // CSRF Token获取函数
+    function getCookie(name) {
+        let cookieValue = null;
+        if (document.cookie && document.cookie !== '') {
+            const cookies = document.cookie.split(';');
+            for (let i = 0; i < cookies.length; i++) {
+                const cookie = cookies[i].trim();
+                if (cookie.substring(0, name.length + 1) === (name + '=')) {
+                    cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+                    break;
+                }
+            }
+        }
+        return cookieValue;
+    }
+
+    // 添加控制台输出 - 修复语法错误
+    window.addConsoleOutput = function(text, type = 'output') {
+        const output = document.getElementById('console-output');
+        if (!output) {
+            console.error('Console output element not found');
+            return;
+        }
+        
+        const line = document.createElement('div');
+        line.className = 'console-line';
+        
+        // 根据类型设置样式
+        switch(type) {
+            case 'user-command':
+                line.style.color = '#ffffff';
+                line.style.fontWeight = 'bold';
+                line.style.backgroundColor = '#333';
+                line.style.padding = '2px 5px';
+                line.style.borderRadius = '3px';
+                break;
+            case 'error':
+                line.style.color = '#ff6b6b';
+                break;
+            case 'error-detail':
+                line.style.color = '#ff9999';
+                line.style.fontSize = '11px';
+                line.style.fontFamily = 'monospace';
+                break;
+            case 'success':
+                line.style.color = '#51cf66';
+                break;
+            case 'info':
+                line.style.color = '#74c0fc';
+                break;
+            case 'system':
+                line.style.color = '#ffd43b';
+                break;
+            case 'separator':
+                line.style.color = '#666';
+                line.style.margin = '5px 0';
+                break;
+            default:
+                line.style.color = '#00ff00';
+        }
+        
+        line.textContent = text;
+        output.appendChild(line);
+        
+        // 自动滚动到底部
+        output.scrollTop = output.scrollHeight;
+        
+        // 限制输出行数（避免内存占用过多）
+        const maxLines = 1000;
+        while (output.children.length > maxLines) {
+            output.removeChild(output.firstChild);
+        }
+    };
+
+    // 全局函数定义 - 执行命令
+    window.executeCommand = function() {
+        const input = document.getElementById('console-input');
+        const command = input.value.trim();
+        
+        console.log('🎯 执行命令:', command);
+        console.log('🔍 当前sim_code:', getCurrentSimCode());
+        console.log('📊 当前step:', getCurrentStep());
+        
+        if (command === '') {
+            console.log('❌ 命令为空，返回');
+            return;
+        }
+        
+        // 添加到历史记录
+        commandHistory.push(command);
+        historyIndex = commandHistory.length;
+        
+        // 显示用户输入
+        window.addConsoleOutput(`reverie$ ${command}`, 'user-command');
+        window.addConsoleOutput('🔄 正在发送命令到后端...', 'system');
+        
+        const requestData = {
+            command: command,
+            sim_code: getCurrentSimCode(),
+            step: getCurrentStep()
+        };
+        
+        console.log('📤 发送的数据:', requestData);
+        
+        // 发送命令 - 添加CSRF token
+        $.ajax({
+            url: '/execute_console_command/',
+            type: 'POST',
+            contentType: 'application/json',
+            headers: {
+                'X-CSRFToken': getCookie('csrftoken')
+            },
+            data: JSON.stringify(requestData),
+            success: function(response) {
+                console.log('📥 收到响应:', response);
+                if (response.success) {
+                    window.addConsoleOutput(response.output || '✅ 命令执行成功', 'success');
+                    
+                    // 如果是长时间命令，可以添加状态检查
+                    if (response.command_type === 'long_running') {
+                        window.addConsoleOutput('💡 提示：可以使用 "status" 命令查看当前状态', 'info');
+                    }
+                } else {
+                    window.addConsoleOutput('❌ Error: ' + (response.error || 'Unknown error'), 'error');
+                }
+            },
+            error: function(xhr, status, error) {
+                console.error('🚨 AJAX错误:', {xhr: xhr.responseText, status, error});
+                window.addConsoleOutput('❌ 网络错误: ' + error, 'error');
+            }
+        });
+        
+        input.value = '';
+    };
+
+    // 快捷命令
+    window.quickCommand = function(command) {
+        console.log('🚀 快捷命令:', command);
+        document.getElementById('console-input').value = command;
+        window.executeCommand();
+    };
+
+    // 测试函数
+    window.testConsole = function() {
+        console.log('🧪 测试按钮被点击');
+        alert('控制台功能正常！');
+        window.addConsoleOutput('🎉 测试成功！控制台正常工作', 'success');
+    };
+
+    // 绑定键盘事件
+    const consoleInput = document.getElementById('console-input');
+    if (consoleInput) {
+        consoleInput.addEventListener('keydown', function(event) {
+            if (event.key === 'Enter') {
+                window.executeCommand();
+            } else if (event.key === 'ArrowUp') {
+                // 上箭头 - 历史记录向上
+                event.preventDefault();
+                if (historyIndex > 0) {
+                    historyIndex--;
+                    this.value = commandHistory[historyIndex];
+                }
+            } else if (event.key === 'ArrowDown') {
+                // 下箭头 - 历史记录向下
+                event.preventDefault();
+                if (historyIndex < commandHistory.length - 1) {
+                    historyIndex++;
+                    this.value = commandHistory[historyIndex];
+                } else {
+                    historyIndex = commandHistory.length;
+                    this.value = '';
+                }
+            } else if (event.key === 'Tab') {
+                // Tab - 简单的命令自动补全
+                event.preventDefault();
+                const value = this.value.toLowerCase();
+                const suggestions = [
+                    'help', 'save', 'status', 'run ', 'debug run ',
+                    'print current time', 'print all persona schedule',
+                    'print persona schedule ', 'converse with '
+                ];
+                
+                const match = suggestions.find(cmd => cmd.startsWith(value));
+                if (match) {
+                    this.value = match;
+                }
+            }
+        });
+    }
+
+    // 添加人物点击事件
+    {% for p in persona_names %}
+    $('#on_screen_det_trigger-{{p.underscore}}').click(function () {
+        console.log('🎭 点击了角色: {{p.underscore}}');
+        
+        // 隐藏初始提示
+        $('#on_screen_det_content-init').css({'display': 'none'});
+        
+        // 隐藏所有其他人物的详情并重置样式
+        {% for p_i in persona_names %}
+        $('#on_screen_det_content-{{p_i.underscore}}').css({'display': 'none'});
+        $('#on_screen_det_trigger-{{p_i.underscore}}').css({'font-weight': '500'});
+        $('#on_screen_det_trigger_container-{{p_i.underscore}}').css({
+            'background-color': 'white',
+            'border-radius': '10px'
+        });
+        {% endfor %}
+
+        // 高亮当前选中的人物
+        $('#on_screen_det_trigger-{{p.underscore}}').css({'font-weight': '900'});
+        $('#on_screen_det_trigger_container-{{p.underscore}}').css({
+            'background-color': '#ABFF84',
+            'border-radius': '10px'
+        });
+        
+        // 显示当前人物的详情
+        $('#on_screen_det_content-{{p.underscore}}').css({'display': 'block'});
+
+        // 设置聚焦目标
+        document.getElementById("temp_focus").innerHTML = "{{p.underscore}}";
     });
     {% endfor %}
-
-    // 高亮当前选中的人物
-    $('#on_screen_det_trigger-{{p.underscore}}').css({'font-weight': '900'});
-    $('#on_screen_det_trigger_container-{{p.underscore}}').css({
-        'background-color': '#ABFF84',
-        'border-radius': '10px'
-    });
     
-    // 显示当前人物的详情
-    $('#on_screen_det_content-{{p.underscore}}').css({'display': 'block'});
-
-    // 设置聚焦目标
-    document.getElementById("temp_focus").innerHTML = "{{p.underscore}}";
+    // 初始化完成提示
+    console.log('✅ DOM ready, 所有功能已初始化');
+    
+    // 延迟执行初始命令
+    setTimeout(() => {
+        console.log('🎮 尝试执行初始status命令');
+        window.addConsoleOutput('🎮 控制台已就绪！', 'info');
+    }, 1000);
 });
-{% endfor %}
 </script>
 {% endblock js_content %}

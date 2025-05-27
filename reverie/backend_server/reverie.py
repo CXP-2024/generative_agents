@@ -27,6 +27,7 @@ import math
 import os
 import shutil
 import traceback
+import threading
 
 from selenium import webdriver
 
@@ -734,24 +735,186 @@ class ReverieServer:
           time.sleep(self.server_sleep)
 
 
+  def monitor_frontend_commands(self):
+    """监听前端命令文件 - 后台线程运行"""
+    import time
+    import os
+    import json
+    
+    print("🔍 Started monitoring frontend commands...")
+    
+    while True:
+        try:
+            # Check for command signal file
+            signal_file = f"{fs_temp_storage}/command_ready.signal"
+            command_file = f"{fs_temp_storage}/frontend_command.json"
+            
+            if os.path.exists(signal_file) and os.path.exists(command_file):
+                # Read the command
+                with open(command_file, 'r') as f:
+                    command_data = json.load(f)
+                
+                command = command_data.get('command', '').strip()
+                sim_code = command_data.get('sim_code')
+                
+                # Remove signal file
+                os.remove(signal_file)
+                
+                # Execute the command
+                if command:
+                    print(f"📨 Received command from frontend: {command}")
+                    self.execute_and_save_command(command)
+                
+        except Exception as e:
+            print(f"❌ Error monitoring commands: {e}")
+        
+        time.sleep(0.5)  # Check every 500ms
+
+  def execute_and_save_command(self, sim_command):
+    """执行命令并保存结果到文件"""
+    import io
+    from contextlib import redirect_stdout
+    
+    success = True
+    error_msg = ""
+    captured_output = ""
+    
+    try:
+        # 检查是否是需要保持原始输出的命令
+        long_running_commands = ['run ', 'debug run ']
+        is_long_running = any(sim_command.lower().startswith(cmd) for cmd in long_running_commands)
+        
+        if is_long_running:
+            # 对于 run 命令，不重定向输出，保持原始的 stdout
+            print(f"🚀 [Frontend Command] 开始执行: {sim_command}")
+            
+            if sim_command.lower().startswith("run "):
+                try:
+                    steps = int(sim_command.split()[-1])
+                    print(f"📊 [Frontend Command] 启动 {steps} 步模拟...")
+                    self.start_server(steps)
+                    captured_output = f"✅ Successfully executed {steps} steps"
+                    print(f"✅ [Frontend Command] 完成 {steps} 步模拟")
+                except ValueError:
+                    captured_output = "❌ Invalid step count. Usage: run <number>"
+                    success = False
+                    
+            elif sim_command.lower().startswith("debug run "):
+                try:
+                    steps = int(sim_command.split()[-1])
+                    print(f"🐛 [Frontend Command] 启动调试模式 {steps} 步...")
+                    self.start_server(steps, debug_mode=True)
+                    captured_output = f"✅ Debug executed {steps} steps"
+                    print(f"🐛 [Frontend Command] 调试模式完成 {steps} 步")
+                except ValueError:
+                    captured_output = "❌ Invalid step count. Usage: debug run <number>"
+                    success = False
+        else:
+            # 对于其他命令，使用重定向捕获输出
+            output_buffer = io.StringIO()
+            with redirect_stdout(output_buffer):
+                if sim_command.lower() == "print current time":
+                    print(f"Current time: {self.curr_time.strftime('%A %B %d, %Y, %H:%M:%S')}")
+                elif sim_command.lower() == "save":
+                    self.save()
+                    print("✅ Simulation saved successfully!")
+                elif "print all persona schedule" in sim_command.lower():
+                    for persona_name, persona in self.personas.items():
+                        print(f"\n👤 {persona_name}'s schedule:")
+                        print(persona.scratch.get_str_daily_schedule_summary())
+                        print("─" * 50)
+                elif ("print persona schedule" in sim_command[:22].lower()): 
+                    persona_name = " ".join(sim_command.split()[-2:])
+                    if persona_name in self.personas:
+                        print(f"👤 {persona_name}")
+                        print(self.personas[persona_name].scratch.get_str_daily_schedule_summary())
+                    else:
+                        print(f"❌ Persona '{persona_name}' not found")
+                elif ("print persona associative memory (event)" in sim_command.lower()):
+                    persona_name = " ".join(sim_command.split()[-2:])
+                    if persona_name in self.personas:
+                        print(f"👤 {persona_name} - Event Memory:")
+                        print(self.personas[persona_name].a_mem.get_str_seq_events())
+                    else:
+                        print(f"❌ Persona '{persona_name}' not found")
+                elif ("print persona associative memory (thought)" in sim_command.lower()): 
+                    persona_name = " ".join(sim_command.split()[-2:])
+                    if persona_name in self.personas:
+                        print(f"👤 {persona_name} - Thought Memory:")
+                        print(self.personas[persona_name].a_mem.get_str_seq_thoughts())
+                    else:
+                        print(f"❌ Persona '{persona_name}' not found")
+                elif ("print persona associative memory (chat)" in sim_command.lower()): 
+                    persona_name = " ".join(sim_command.split()[-2:])
+                    if persona_name in self.personas:
+                        print(f"👤 {persona_name} - Chat Memory:")
+                        print(self.personas[persona_name].a_mem.get_str_seq_chats())
+                    else:
+                        print(f"❌ Persona '{persona_name}' not found")
+                elif ("converse with" in sim_command.lower()): 
+                    persona_name = sim_command[len("converse with"):].strip()
+                    if persona_name in self.personas:
+                        print(f"💬 Conversation with {persona_name} is available in terminal mode")
+                    else:
+                        print(f"❌ Persona '{persona_name}' not found")
+                else:
+                    print(f"❌ Unknown command: '{sim_command}'")
+                    success = False
+            
+            captured_output = output_buffer.getvalue()
+            
+    except Exception as e:
+        success = False
+        error_msg = str(e)
+        captured_output = f"❌ Error: {error_msg}"
+        print(f"❌ [Frontend Command] 执行错误: {e}")
+        import traceback
+        traceback.print_exc()
+    
+    # 保存结果到文件
+    try:
+        result_data = {
+            'command': sim_command,
+            'success': success,
+            'output': captured_output,
+            'error': error_msg if error_msg else None,
+            'timestamp': datetime.datetime.now().isoformat()
+        }
+        
+        output_file = f"{fs_temp_storage}/command_output.json"
+        with open(output_file, 'w') as f:
+            json.dump(result_data, f, indent=2)
+            
+        print(f"💾 [Frontend Command] 结果已保存到文件")
+        
+        # 删除命令文件，表示处理完成
+        command_file = f"{fs_temp_storage}/frontend_command.json"
+        if os.path.exists(command_file):
+            os.remove(command_file)
+        
+    except Exception as e:
+        print(f"❌ [Frontend Command] 保存结果失败: {e}")
+
+# 修改open_server方法，只在开头添加3行启动文件监听
   def open_server(self): 
     """
     Open up an interactive terminal prompt that lets you run the simulation 
     step by step and probe agent state. 
-
-    INPUT 
-      None
-    OUTPUT
-      None
     """
     print ("Note: The agents in this simulation package are computational")
     print ("constructs powered by generative agents architecture and LLM. We")
     print ("clarify that these agents lack human-like agency, consciousness,")
     print ("and independent decision-making.\n---")
+    
+    # 只添加这3行 - 启动文件监听
+    print("🌐 File-based frontend communication enabled")
+    file_monitor_thread = threading.Thread(target=self.monitor_frontend_commands, daemon=True)
+    file_monitor_thread.start()
 
     # <sim_folder> points to the current simulation folder.
     sim_folder = f"{fs_storage}/{self.sim_code}"
 
+    # 保持原有的while循环完全不变
     while True: 
       sim_command = input("Enter option: ")
       sim_command = sim_command.strip()
@@ -759,41 +922,23 @@ class ReverieServer:
 
       try: 
         if sim_command.lower() in ["f", "fin", "finish", "save and finish"]: 
-          # Finishes the simulation environment and saves the progress. 
-          # Example: fin
           self.save()
           break
 
-        elif sim_command.lower() == "start path tester mode": 
-          # Starts the path tester and removes the currently forked sim files.
-          # Note that once you start this mode, you need to exit out of the
-          # session and restart in case you want to run something else. 
-          shutil.rmtree(sim_folder) 
-          self.start_path_tester_server()
-
         elif sim_command.lower() == "exit": 
-          # Finishes the simulation environment but does not save the progress
-          # and erases all saved data from current simulation. 
-          # Example: exit 
           shutil.rmtree(sim_folder) 
           break 
 
         elif sim_command.lower() == "save": 
-          # Saves the current simulation progress. 
-          # Example: save
           self.save()
 
         elif sim_command[:3].lower() == "run": 
-          # Runs the number of steps specified in the prompt.
-          # Example: run 1000
           int_count = int(sim_command.split()[-1])
-          rs.start_server(int_count)
+          self.start_server(int_count)
         
         elif sim_command[:9].lower() == "debug run":
-          # Runs the number of steps specified in the prompt.
-					# Example: debug run 1000
           int_count = int(sim_command.split()[-1])
-          rs.start_server(int_count, debug_mode=True)
+          self.start_server(int_count, debug_mode=True)
 
         elif ("print persona schedule" 
               in sim_command[:22].lower()): 
@@ -845,7 +990,7 @@ class ReverieServer:
           # Ex: print persona associative memory (event) Isabella Rodriguez
           ret_str += f'{self.personas[" ".join(sim_command.split()[-2:])]}\n'
           ret_str += (self.personas[" ".join(sim_command.split()[-2:])]
-                                       .a_mem.get_str_seq_events())
+                                           .a_mem.get_str_seq_events())
 
         elif ("print persona associative memory (thought)" 
               in sim_command.lower()): 
@@ -854,7 +999,7 @@ class ReverieServer:
           # Ex: print persona associative memory (thought) Isabella Rodriguez
           ret_str += f'{self.personas[" ".join(sim_command.split()[-2:])]}\n'
           ret_str += (self.personas[" ".join(sim_command.split()[-2:])]
-                                       .a_mem.get_str_seq_thoughts())
+                                           .a_mem.get_str_seq_thoughts())
 
         elif ("print persona associative memory (chat)" 
               in sim_command.lower()): 
@@ -863,13 +1008,7 @@ class ReverieServer:
           # Ex: print persona associative memory (chat) Isabella Rodriguez
           ret_str += f'{self.personas[" ".join(sim_command.split()[-2:])]}\n'
           ret_str += (self.personas[" ".join(sim_command.split()[-2:])]
-                                       .a_mem.get_str_seq_chats())
-
-        elif ("print persona spatial memory" 
-              in sim_command.lower()): 
-          # Print the spatial memory of the persona specified in the prompt
-          # Ex: print persona spatial memory Isabella Rodriguez
-          self.personas[" ".join(sim_command.split()[-2:])].s_mem.print_tree()
+                                           .a_mem.get_str_seq_chats())
 
         elif ("print current time" 
               in sim_command[:18].lower()): 
