@@ -423,58 +423,53 @@
 }
 
 	function update(time, delta) {
-		// *** SETUP PLAY AND PAUSE BUTTON *** 
-		let play_context = this;
-		function game_resume() {  
-			play_context.scene.resume();
-		}  
-		play_button.onclick = function(){
-			game_resume();
-		};
-		function game_pause() {  
-			play_context.scene.pause();
-		}  
-		pause_button.onclick = function(){
-			game_pause();
-		};
+    // *** SETUP PLAY AND PAUSE BUTTON *** 
+    let play_context = this;
+    function game_resume() {  
+        play_context.scene.resume();
+    }  
+    play_button.onclick = function(){
+        game_resume();
+    };
+    function game_pause() {  
+        play_context.scene.pause();
+    }  
+    pause_button.onclick = function(){
+        game_pause();
+    };
 
-	  // *** MOVE CAMERA *** 
+    // *** MOVE CAMERA *** 
 	  // This is where we finish up the camera setting we started in the create() 
 	  // function. We set the movement speed of the camera and wire up the keys to
 	  // map to the actual movement.
-		const camera_speed = 800;
-		// 添加WASD键控制
-		wasdKeys = this.input.keyboard.addKeys({
-			up: Phaser.Input.Keyboard.KeyCodes.W,
-			down: Phaser.Input.Keyboard.KeyCodes.S,
-			left: Phaser.Input.Keyboard.KeyCodes.A,
-			right: Phaser.Input.Keyboard.KeyCodes.D
-		});
-	  // Stop any previous movement from the last frame
-	  player.body.setVelocity(0);
-	  // 检测方向键或WASD键
-		if (cursors.left.isDown || wasdKeys.left.isDown) {
-			player.body.setVelocityX(-camera_speed);
-		}
-		if (cursors.right.isDown || wasdKeys.right.isDown) {
-			player.body.setVelocityX(camera_speed);
-		}
-		if (cursors.up.isDown || wasdKeys.up.isDown) {
-			player.body.setVelocityY(-camera_speed);
-		}
-		if (cursors.down.isDown || wasdKeys.down.isDown) {
-			player.body.setVelocityY(camera_speed);
-		}
-		// 添加空格键放大和Shift键缩小功能
-		const camera = this.cameras.main;
-		if (cursors.space.isDown) {
-			// 空格键放大
-			camera.zoom = Math.min(2.0, camera.zoom + 0.01);
-		}
-		if (cursors.shift.isDown) {
-			// Shift键缩小
-			camera.zoom = Math.max(0.75, camera.zoom - 0.01);
-		}
+    const camera_speed = 800;
+    
+    // Stop any previous movement from the last frame
+    player.body.setVelocity(0);
+    
+    // 只保留方向键移动功能，删除WASD
+    if (cursors.left.isDown) {
+        player.body.setVelocityX(-camera_speed);
+    }
+    if (cursors.right.isDown) {
+        player.body.setVelocityX(camera_speed);
+    }
+    if (cursors.up.isDown) {
+        player.body.setVelocityY(-camera_speed);
+    }
+    if (cursors.down.isDown) {
+        player.body.setVelocityY(camera_speed);
+    }
+    // 将空格改为Tab键缩放，删除Shift功能
+    const camera = this.cameras.main;
+    if (this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.TAB).isDown) {
+        // Tab键放大
+        camera.zoom = Math.min(2.0, camera.zoom + 0.01);
+    }
+	if (cursors.shift.isDown) {
+		// Shift键缩小
+		camera.zoom = Math.max(0.75, camera.zoom - 0.01);
+	}
 
 	  // console.log("phase: " + phase + ", step: " + step);
 	  // *** MOVE PERSONAS ***

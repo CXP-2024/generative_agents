@@ -383,7 +383,7 @@ def wait_and_read_command_output(command, sim_code, timeout=30):
 
 @csrf_exempt
 def execute_console_command(request):
-    """执行控制台命令 - 通过文件与reverie后端通信"""
+    """执行控制台命令 - 支持对话交互"""
     print(f"📨 收到控制台命令请求: {request.method}")
     
     if request.method == 'POST':
@@ -418,8 +418,10 @@ def execute_console_command(request):
                     'command_type': 'status'
                 })
             
-            # 检查是否是长时间运行的命令
+            # 检查命令类型
+            conversation_commands = ['converse as', 'converse with', 'say ', 'end_conversation']
             long_running_commands = ['run', 'debug run']
+            is_conversation = any(command.lower().startswith(cmd) for cmd in conversation_commands)
             is_long_running = any(command.lower().startswith(cmd) for cmd in long_running_commands)
             
             # 写入命令到文件
@@ -427,28 +429,22 @@ def execute_console_command(request):
             if not command_result['success']:
                 return JsonResponse(command_result)
             
-            # 如果是长时间命令，立即返回执行中的状态
-            if is_long_running:
-                # 启动后台线程等待结果
-                import threading
-                
-                def wait_for_result():
-                    result = wait_and_read_command_output(command, sim_code)
-                    # 这里可以添加WebSocket推送结果给前端的逻辑
-                
-                thread = threading.Thread(target=wait_for_result, daemon=True)
-                thread.start()
-                
-                return JsonResponse({
-                    'success': True,
-                    'output': f'🚀 命令已启动: {command}\n⏳ 正在执行中，请稍候...\n💡 可以继续使用其他命令查看状态',
-                    'command_type': 'long_running',
-                    'status': 'started'
-                })
+            # 根据命令类型调整等待时间
+            if is_conversation:
+                timeout = 60  # 对话命令等待1分钟
+            elif is_long_running:
+                timeout = 600  # 长时间命令等待10分钟
             else:
-                # 短命令正常等待结果
-                output_result = wait_and_read_command_output(command, sim_code)
-                return JsonResponse(output_result)
+                timeout = 30  # 普通命令等待30秒
+            
+            # 等待结果
+            output_result = wait_and_read_command_output(command, sim_code, timeout)
+            
+            # 如果是对话命令，添加特殊标记
+            if is_conversation:
+                output_result['command_type'] = 'conversation'
+            
+            return JsonResponse(output_result)
             
         except Exception as e:
             import traceback
@@ -585,3 +581,85 @@ Examples:
 
 💡 Note: Commands are sent to reverie.py via files. Make sure reverie.py is running!
 """
+
+import json
+import os
+from django.http import JsonResponse
+from django.views.decorators.csrf import csrf_exempt
+from django.views.decorators.http import require_http_methods
+
+@csrf_exempt
+@require_http_methods(["POST"])
+def create_pause_file(request):
+    """直接创建暂停文件，不通过命令队列"""
+    try:
+        # 获取temp_storage路径
+        current_dir = os.path.dirname(os.path.abspath(__file__))
+        project_root = os.path.dirname(os.path.dirname(os.path.dirname(current_dir)))
+        temp_storage = os.path.join(project_root, "environment", "frontend_server", "temp_storage")
+        
+        # 确保目录存在
+        os.makedirs(temp_storage, exist_ok=True)
+        
+        # 创建暂停文件
+        pause_file = os.path.join(temp_storage, "simulation_pause.flag")
+        
+        with open(pause_file, 'w') as f:
+            f.write('0')  # 写入暂停信号
+        
+        # 验证文件创建
+        if os.path.exists(pause_file):
+            print(f"✅ Pause file created successfully: {pause_file}")
+            return JsonResponse({
+                'success': True,
+                'message': 'Pause file created successfully',
+                'file_path': pause_file
+            })
+        else:
+            print(f"❌ Failed to create pause file: {pause_file}")
+            return JsonResponse({
+                'success': False,
+                'error': 'Failed to create pause file'
+            })
+            
+    except Exception as e:
+        print(f"❌ Error creating pause file: {e}")
+        return JsonResponse({
+            'success': False,
+            'error': str(e)
+        })
+
+@csrf_exempt
+@require_http_methods(["POST"])
+def check_pause_status(request):
+    """检查暂停状态，不通过命令队列"""
+    try:
+        # 获取temp_storage路径
+        current_dir = os.path.dirname(os.path.abspath(__file__))
+        project_root = os.path.dirname(os.path.dirname(os.path.dirname(current_dir)))
+        temp_storage = os.path.join(project_root, "environment", "frontend_server", "temp_storage")
+        
+        pause_file = os.path.join(temp_storage, "simulation_pause.flag")
+        running_file = os.path.join(temp_storage, "simulation_running.flag")
+        
+        if not os.path.exists(pause_file) and not os.path.exists(running_file):
+            status = "Pause file not found - simulation stopped"
+        elif os.path.exists(pause_file):
+            status = "Pause file exists - waiting for simulation to stop"
+        elif os.path.exists(running_file):
+            status = "Simulation is still running"
+        else:
+            status = "Unknown state"
+            
+        return JsonResponse({
+            'success': True,
+            'status': status,
+            'pause_file_exists': os.path.exists(pause_file),
+            'running_file_exists': os.path.exists(running_file)
+        })
+        
+    except Exception as e:
+        return JsonResponse({
+            'success': False,
+            'error': str(e)
+        })

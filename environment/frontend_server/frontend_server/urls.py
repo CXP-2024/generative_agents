@@ -32,5 +32,7 @@ urlpatterns = [
     url(r'^path_tester/$', translator_views.path_tester, name='path_tester'),
     url(r'^path_tester_update/$', translator_views.path_tester_update, name='path_tester_update'),
     url(r'^execute_console_command/$', translator_views.execute_console_command, name='execute_console_command'),
+    path('create_pause_file/', translator_views.create_pause_file, name='create_pause_file'),
+    path('check_pause_status/', translator_views.check_pause_status, name='check_pause_status'),
     path('admin/', admin.site.urls),
 ]
