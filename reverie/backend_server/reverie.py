@@ -561,23 +561,30 @@ class ReverieServer:
     # 创建运行状态文件
     pause_file = f"{fs_temp_storage}/simulation_pause.flag"
     running_file = f"{fs_temp_storage}/simulation_running.flag"
+    result_file = f"{fs_temp_storage}/frontend_result.json"  # 添加结果文件路径
     
-    # 删除可能存在的暂停文件，创建运行文件
+    # 删除可能存在的暂停文件和旧结果文件，创建运行文件
     if os.path.exists(pause_file):
         os.remove(pause_file)
+    if os.path.exists(result_file):  # 清理旧的结果文件
+        os.remove(result_file)
     
     with open(running_file, 'w') as f:
         f.write('1')  # 1表示继续运行
     
     print(f"📁 Pause control file: {pause_file}")
     print(f"📁 Running control file: {running_file}")
+    print(f"📁 Result file: {result_file}")  # 显示结果文件路径
+
+    original_counter = int_counter  # 保存原始步数计划
     
     # The main while loop of Reverie with pause control
     while (True): 
         # 首先检查是否收到暂停信号
         if os.path.exists(pause_file):
+            executed_steps = original_counter - int_counter
             print(f"\n⏸️ Pause signal detected! Finishing current step {self.step}...")
-            print(f"🛑 Stopping simulation and saving...")
+            print(f"🛑 Stopping simulation and saving... (executed {executed_steps}/{original_counter} steps)")
             
             # 删除暂停文件和运行文件
             os.remove(pause_file)
@@ -586,18 +593,64 @@ class ReverieServer:
             
             # 保存当前状态
             self.save()
-            print(f"✅ Simulation paused at step {self.step} and saved successfully")
-            break
+            
+            # 写入暂停结果文件 - 这是关键添加的部分喵！
+            try:
+                result_data = {
+                    'success': True,
+                    'output': f"✅ Simulation paused at step {executed_steps}/{original_counter}. Progress saved.",
+                    'executed_steps': executed_steps,
+                    'total_planned_steps': original_counter,
+                    'current_simulation_step': self.step,
+                    'status': 'paused',
+                    'timestamp': time.time(),
+                    'pause_reason': 'user_requested'
+                }
+                
+                with open(result_file, 'w') as f:
+                    json.dump(result_data, f, indent=2)
+                    
+                print(f"📊 前端结果已写入: 执行 {executed_steps}/{original_counter} 步，当前模拟步数 {self.step}")
+                
+            except Exception as save_error:
+                print(f"❌ 写入暂停结果失败: {save_error}")
+            
+            print(f"✅ Simulation paused at step {executed_steps}/{original_counter} and saved successfully")
+            return executed_steps  # 返回实际执行的步数
         
         # Done with this iteration if <int_counter> reaches 0. 
         if int_counter == 0: 
-            print(f"✅ Simulation completed normally after {int_counter} steps")
+            executed_steps = original_counter
+            print(f"✅ Simulation completed normally after {executed_steps} steps")
+            
             # 删除运行文件
             if os.path.exists(running_file):
                 os.remove(running_file)
-            break
+            
+            # 写入完成结果文件 - 这也是新添加的部分喵！
+            try:
+                result_data = {
+                    'success': True,
+                    'output': f"✅ Simulation completed successfully. Executed {executed_steps} steps.",
+                    'executed_steps': executed_steps,
+                    'total_planned_steps': original_counter,
+                    'current_simulation_step': self.step,
+                    'status': 'completed',
+                    'timestamp': time.time(),
+                    'completion_reason': 'normal_finish'
+                }
+                
+                with open(result_file, 'w') as f:
+                    json.dump(result_data, f, indent=2)
+                    
+                print(f"📊 前端结果已写入: 完成 {executed_steps} 步，当前模拟步数 {self.step}")
+                
+            except Exception as save_error:
+                print(f"❌ 写入完成结果失败: {save_error}")
+            
+            return executed_steps
 
-        # ... 保持原有的环境处理逻辑不变 ...
+        # ... 保持其余的模拟逻辑不变 ...
         env_retrieved = debug_mode
         new_env = {}
         
@@ -621,12 +674,7 @@ class ReverieServer:
                 except: 
                     pass
 
-        if env_retrieved:
-            # 在处理personas之前再次检查暂停
-            if os.path.exists(pause_file):
-                print(f"⏸️ Pause detected before processing personas")
-                continue  # 跳到下一次循环，会在开头处理暂停
-            
+        if env_retrieved:            
             # ... 保持原有的游戏对象处理逻辑 ...
             for key, val in game_obj_cleanup.items(): 
                 self.maze.turn_event_from_tile_idle(key, val)
@@ -651,10 +699,10 @@ class ReverieServer:
             print(f"\n🔄 Step {self.step} starting at {self.curr_time}")
 
             for persona_name, persona in self.personas.items(): 
-                # 在每个persona移动前检查暂停
-                if os.path.exists(pause_file):
-                    print(f"⏸️ Pause detected during {persona_name}'s turn")
-                    break
+                # # 在每个persona移动前检查暂停
+                # if os.path.exists(pause_file):
+                #     print(f"⏸️ Pause detected during {persona_name}'s turn")
+                #     break
                     
                 print(f"👤 {persona_name} starting move...")
                 next_tile, pronunciatio, description = persona.move(
@@ -675,10 +723,10 @@ class ReverieServer:
                     self.maze.remove_subject_events_from_tile(persona.name, curr_tile)
                     self.maze.add_event_from_tile(persona.scratch.get_curr_event_and_desc(), next_tile)
 
-            # 如果在persona循环中检测到暂停，跳到下一次主循环
-            if os.path.exists(pause_file):
-                print(f"⏸️ Pause detected after persona decisions")
-                continue
+            # # 如果在persona循环中检测到暂停，跳到下一次主循环
+            # if os.path.exists(pause_file):
+            #     print(f"⏸️ Pause detected after persona decisions")
+            #     continue
 
             # 保存移动数据
             movements["meta"]["curr_time"] = self.curr_time.strftime("%B %d, %Y, %H:%M:%S")
@@ -699,7 +747,8 @@ class ReverieServer:
                 self.save()
 
             int_counter -= 1
-            print(f"📊 Completed step {self.step-1}, {int_counter} steps remaining")
+            executed_steps = original_counter - int_counter
+            print(f"📊 Completed step {self.step-1}, {int_counter} steps remaining, executed {executed_steps}")
             
         # 最后在sleep前再次检查暂停
         if os.path.exists(pause_file):
@@ -709,10 +758,11 @@ class ReverieServer:
         if not debug_mode:
             time.sleep(self.server_sleep)
     
-    # 清理文件
+    # 清理文件（这部分应该不会被执行，但保险起见）
     if os.path.exists(running_file):
         os.remove(running_file)
     print(f"🔚 Simulation ended normally")
+    return original_counter - int_counter
 
   def monitor_frontend_commands(self):
     """监听前端命令文件 - 后台线程运行"""
@@ -823,27 +873,42 @@ class ReverieServer:
             # 对于 run 命令，不重定向输出，保持原始的 stdout
             print(f"🚀 [Frontend Command] 开始执行: {sim_command}")
             
-            if sim_command.lower().startswith("run "):
-                try:
+            try:
+                if sim_command.lower().startswith("run "):
                     steps = int(sim_command.split()[-1])
                     print(f"📊 [Frontend Command] 启动 {steps} 步模拟...")
-                    self.start_server(steps)
-                    captured_output = f"✅ Successfully executed {steps} steps"
-                    print(f"✅ [Frontend Command] 完成 {steps} 步模拟")
-                except ValueError:
-                    captured_output = "❌ Invalid step count. Usage: run <number>"
-                    success = False
-                    
-            elif sim_command.lower().startswith("debug run "):
-                try:
+                    ran_steps = self.start_server(steps)
+                    captured_output = f"✅ Successfully executed {ran_steps}/{steps} steps"
+                    print(f"✅ [Frontend Command] 完成 {ran_steps}/{steps} 步模拟")
+                elif sim_command.lower().startswith("debug run "):
                     steps = int(sim_command.split()[-1])
                     print(f"🐛 [Frontend Command] 启动调试模式 {steps} 步...")
-                    self.start_server(steps, debug_mode=True)
-                    captured_output = f"✅ Debug executed {steps} steps"
-                    print(f"🐛 [Frontend Command] 调试模式完成 {steps} 步")
-                except ValueError:
-                    captured_output = "❌ Invalid step count. Usage: debug run <number>"
-                    success = False
+                    ran_steps = self.start_server(steps, debug_mode=True)
+                    captured_output = f"✅ Debug executed {ran_steps}/{steps} steps"
+                    print(f"🐛 [Frontend Command] 调试模式完成 {ran_steps}/{steps} 步")
+            except ValueError:
+                captured_output = "❌ Invalid step count. Usage: run <number>"
+                success = False
+            except Exception as e:
+                # 如果运行过程中出错，也要写入结果文件
+                result_file = f"{fs_temp_storage}/frontend_result.json"
+                try:
+                    error_result = {
+                        'success': False,
+                        'output': f"❌ Simulation failed: {str(e)}",
+                        'executed_steps': 0,
+                        'total_planned_steps': 0,
+                        'status': 'error',
+                        'timestamp': time.time(),
+                        'error_reason': str(e)
+                    }
+                    with open(result_file, 'w') as f:
+                        json.dump(error_result, f, indent=2)
+                except:
+                    pass
+                
+                captured_output = f"❌ Simulation error: {str(e)}"
+                success = False
         elif sim_command.lower().startswith("converse as"):
             output_buffer = io.StringIO()
             

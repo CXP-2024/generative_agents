@@ -346,7 +346,7 @@ $(document).ready(function() {
     // 更新按钮状态
     function updateButtonStates(running = false) {
         document.getElementById('run-btn').disabled = running;
-        document.getElementById('debug-run-btn').disabled = running;
+        document.getElementById('debug-run-btn').disabled = running
         document.getElementById('pause-btn').disabled = !running;
         document.getElementById('step-input').disabled = running;
     }
@@ -369,11 +369,17 @@ $(document).ready(function() {
             data: JSON.stringify(requestData),
             success: function(response) {
                 if (response.success) {
-                    updateCommandStatus(successMessage, 'success');
+                    // 只有当 successMessage 不为 null 时才显示消息
+                    if (successMessage) {
+                        updateCommandStatus(successMessage, 'success');
+                    }
                     console.log('Command output:', response.output);
-                    
-                    // 模拟完成，重置状态
-                    resetSimulationState();
+                    // 对于运行命令，启动状态监控
+                    if (command.startsWith('run ') || command.startsWith('debug run ')) {
+                        startPauseStatusCheck(); // 复用现有的检查函数
+                    } else {
+                        resetSimulationState();
+                    }
                 } else {
                     updateCommandStatus(`Error: ${response.error || 'Unknown error'}`, 'error');
                     resetSimulationState();
@@ -394,12 +400,16 @@ $(document).ready(function() {
             return;
         }
         
+        // 立即显示 started 状态
+        updateCommandStatus(`Started ${steps} step simulation`, 'success');
+        
         simulationRunning = true;
         currentSimulationType = 'normal';
         updateButtonStates(true);
         updateSimulationStatus('running', 'Normal');
         
-        executeSimulationCommand(`run ${steps}`, `Started ${steps} step simulation`);
+        // 发送命令，但不在成功回调中再次显示 started
+        executeSimulationCommand(`run ${steps}`, null); // 传入 null 表示不显示额外的成功消息
     };
 
     window.debugRunSimulation = function() {
@@ -409,12 +419,16 @@ $(document).ready(function() {
             return;
         }
         
+        // 立即显示 started 状态
+        updateCommandStatus(`Started debug mode with ${steps} steps`, 'success');
+        
         simulationRunning = true;
         currentSimulationType = 'debug';
         updateButtonStates(true);
         updateSimulationStatus('running', 'Debug');
         
-        executeSimulationCommand(`debug run ${steps}`, `Started debug mode with ${steps} steps`);
+        // 发送命令，但不在成功回调中再次显示 started
+        executeSimulationCommand(`debug run ${steps}`, null); // 传入 null 表示不显示额外的成功消息
     };
 
     // 新增：暂停模拟函数
@@ -476,8 +490,9 @@ $(document).ready(function() {
             checkCount++;
             console.log(`🔍 第${checkCount}次检查暂停状态...`);
             
+            // 🐱 直接检查结果文件而不是暂停文件状态
             $.ajax({
-                url: '/check_pause_status/',  // 使用新的专用端点
+                url: '/check_simulation_result/',  // 使用结果检查端点
                 type: 'POST',
                 contentType: 'application/json',
                 headers: {
@@ -488,12 +503,12 @@ $(document).ready(function() {
                     step: getCurrentStep()
                 }),
                 success: function(response) {
-                    console.log(`🔍 状态检查响应 #${checkCount}:`, response);
+                    console.log(`🔍 结果检查响应 #${checkCount}:`, response);
                     
-                    if (response.success) {
-                        const status = response.status.toLowerCase();
+                    if (response.success && response.result) {
+                        const result = response.result;
                         
-                        if (status.includes('pause file not found') || status.includes('simulation stopped')) {
+                        if (result.status === 'paused') {
                             console.log('✅ 检测到暂停完成');
                             clearInterval(pauseCheckInterval);
                             pauseCheckInterval = null;
@@ -501,21 +516,38 @@ $(document).ready(function() {
                             simulationRunning = false;
                             updateButtonStates(false);
                             updateSimulationStatus('paused');
-                            updateCommandStatus('Simulation paused and saved', 'success');
-                        } else if (status.includes('running')) {
-                            console.log('ℹ️ 模拟仍在运行');
-                            updateCommandStatus(`Waiting for pause (${checkCount * 2}s)...`, 'progress');
+                            
+                            // 🐱 现在可以直接使用结果文件中的信息了
+                            const executedSteps = result.executed_steps;
+                            const totalSteps = result.total_planned_steps;
+                            updateCommandStatus(`Paused at step ${executedSteps}/${totalSteps}. Progress saved.`, 'success');
+                            
+                        } else if (result.status === 'completed') {
+                            console.log('✅ 检测到模拟完成');
+                            clearInterval(pauseCheckInterval);
+                            pauseCheckInterval = null;
+                            
+                            simulationRunning = false;
+                            updateButtonStates(false);
+                            updateSimulationStatus('ready');
+                            
+                            const executedSteps = result.executed_steps;
+                            updateCommandStatus(`Completed ${executedSteps} steps successfully`, 'success');
                         } else {
                             // 继续等待
-                            updateCommandStatus(`Checking pause status (${checkCount * 2}s)...`, 'progress');
+                            updateCommandStatus(`Checking simulation status (${checkCount * 2}s)...`, 'progress');
                         }
+                    } else {
+                        // 结果文件不存在，可能还在运行
+                        updateCommandStatus(`Waiting for simulation result (${checkCount * 2}s)...`, 'progress');
                     }
                 },
                 error: function(xhr, status, error) {
-                    console.error(`❌ 状态检查错误 #${checkCount}:`, error);
+                    console.error(`❌ 结果检查错误 #${checkCount}:`, error);
+                    updateCommandStatus(`Result check error (retrying...)`, 'warning');
                 }
             });
-        }, 2000); // 每2秒检查一次
+        }, 2000);
         
         // 30秒后停止检查
         setTimeout(() => {
@@ -980,25 +1012,23 @@ $(document).ready(function() {
             console.log(`🔍 第${checkCount}次检查暂停状态...`);
             
             $.ajax({
-                url: '/check_pause_status/',  // 使用新的专用端点
+                url: '/check_simulation_result/',  // 使用结果检查端点
                 type: 'POST',
                 contentType: 'application/json',
                 headers: {
                     'X-CSRFToken': getCookie('csrftoken')
                 },
                 data: JSON.stringify({
-                    command: 'check_pause_file',  // 检查暂停文件
                     sim_code: getCurrentSimCode(),
                     step: getCurrentStep()
                 }),
                 success: function(response) {
                     console.log(`🔍 状态检查响应 #${checkCount}:`, response);
                     
-                    if (response.success) {
-                        const output = response.output.toLowerCase();
+                    if (response.success && response.result) {
+                        const result = response.result;
                         
-                        // 如果暂停文件不存在，说明模拟已停止
-                        if (output.includes('pause file not found') || output.includes('simulation stopped')) {
+                        if (result.status === 'paused') {
                             console.log('✅ 检测到暂停完成');
                             clearInterval(pauseCheckInterval);
                             pauseCheckInterval = null;
@@ -1006,16 +1036,29 @@ $(document).ready(function() {
                             simulationRunning = false;
                             updateButtonStates(false);
                             updateSimulationStatus('paused');
-                            updateCommandStatus('Simulation paused and saved', 'success');
-                        } else if (output.includes('running normally')) {
-                            console.log('ℹ️ 模拟已完成，停止检查');
+                            
+                            const executedSteps = result.executed_steps;
+                            const totalSteps = result.total_planned_steps;
+                            updateCommandStatus(`Paused at step ${executedSteps}/${totalSteps}. Progress saved.`, 'success');
+                            
+                        } else if (result.status === 'completed') {
+                            console.log('✅ 检测到模拟完成');
                             clearInterval(pauseCheckInterval);
                             pauseCheckInterval = null;
-                            resetSimulationState();
+                            
+                            simulationRunning = false;
+                            updateButtonStates(false);
+                            updateSimulationStatus('ready');
+                            
+                            const executedSteps = result.executed_steps;
+                            updateCommandStatus(`Completed ${executedSteps} steps successfully`, 'success');
                         } else {
                             // 继续等待
-                            updateCommandStatus(`Waiting for pause (${checkCount * 2}s)...`, 'progress');
+                            updateCommandStatus(`Checking simulation status (${checkCount * 2}s)...`, 'progress');
                         }
+                    } else {
+                        // 结果文件不存在，可能还在运行
+                        updateCommandStatus(`Waiting for simulation result (${checkCount * 2}s)...`, 'progress');
                     }
                 },
                 error: function(xhr, status, error) {
@@ -1072,6 +1115,45 @@ $(document).ready(function() {
     // 初始化完成提示
     console.log('✅ DOM ready, 所有功能已初始化');
     updateCommandStatus('Ready to execute commands', 'info');
+
+    // 确保空格键在输入框中正常工作
+    $('#message-input').on('keydown', function(e) {
+        if (e.keyCode === 32) { // 空格键
+            e.stopPropagation(); // 阻止事件冒泡到其他监听器
+            console.log('✅ 空格键在输入框中正常工作');
+        }
+    });
+
+    // 专门处理消息输入框的键盘事件
+    $('#message-input').on('keydown keypress keyup', function(e) {
+        // 阻止所有键盘事件冒泡到游戏
+        e.stopPropagation();
+        
+        if (e.type === 'keypress' && e.which === 13) {
+            // 回车键发送消息
+            e.preventDefault();
+            sendMessage();
+        }
+        
+        if (e.type === 'keydown') {
+            console.log(`🔤 输入框按键: ${e.key} (${e.keyCode})`);
+        }
+    });
+
+    // 确保输入框可以正常接收所有字符
+    $('#message-input').on('input', function(e) {
+        console.log(`📝 输入框内容: "${$(this).val()}"`);
+    });
+    // 额外处理：确保输入框获得焦点时阻止游戏键盘事件
+    $('#message-input').on('focus', function() {
+        console.log('🔍 消息输入框获得焦点');
+        $(this).data('has-focus', true);
+    });
+
+    $('#message-input').on('blur', function() {
+        console.log('🔍 消息输入框失去焦点');
+        $(this).data('has-focus', false);
+    });
 });
 </script>
 

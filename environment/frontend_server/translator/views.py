@@ -641,6 +641,16 @@ def check_pause_status(request):
         
         pause_file = os.path.join(temp_storage, "simulation_pause.flag")
         running_file = os.path.join(temp_storage, "simulation_running.flag")
+        result_file = os.path.join(temp_storage, "frontend_result.json")
+        
+        # 尝试读取结果文件获取详细信息
+        execution_info = None
+        if os.path.exists(result_file):
+            try:
+                with open(result_file, 'r') as f:
+                    execution_info = json.load(f)
+            except Exception as e:
+                print(f"❌ 读取结果文件失败: {e}")
         
         if not os.path.exists(pause_file) and not os.path.exists(running_file):
             status = "Pause file not found - simulation stopped"
@@ -655,9 +665,45 @@ def check_pause_status(request):
             'success': True,
             'status': status,
             'pause_file_exists': os.path.exists(pause_file),
-            'running_file_exists': os.path.exists(running_file)
+            'running_file_exists': os.path.exists(running_file),
+            'execution_info': execution_info  # 添加执行信息
         })
         
+    except Exception as e:
+        return JsonResponse({
+            'success': False,
+            'error': str(e)
+        })
+
+@csrf_exempt
+@require_http_methods(["POST"])
+def check_simulation_result(request):
+    """检查模拟执行结果"""
+    try:
+        # 获取temp_storage路径
+        current_dir = os.path.dirname(os.path.abspath(__file__))
+        project_root = os.path.dirname(os.path.dirname(os.path.dirname(current_dir)))
+        temp_storage = os.path.join(project_root, "environment", "frontend_server", "temp_storage")
+        
+        result_file = os.path.join(temp_storage, "frontend_result.json")
+        
+        if os.path.exists(result_file):
+            with open(result_file, 'r') as f:
+                result_data = json.load(f)
+            
+            return JsonResponse({
+                'success': True,
+                'result': result_data,
+                'file_exists': True
+            })
+        else:
+            return JsonResponse({
+                'success': True,
+                'result': None,
+                'file_exists': False,
+                'message': 'Result file not found - simulation may still be running'
+            })
+            
     except Exception as e:
         return JsonResponse({
             'success': False,
