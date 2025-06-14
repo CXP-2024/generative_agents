@@ -741,8 +741,46 @@ def _determine_action(persona, maze):
 
   if 1440 - x_emergency > 0: 
     print ("\033[1;31merror x_emergency__AAA", x_emergency, "\033[0m")
+    # the total time is less than 24 hours, so we add sleeping time to the end of the schedule
     persona.scratch.f_daily_schedule += [["sleeping", 1440 - x_emergency]]  # Only add if there's time left
-  
+
+# If the total time is more than 24 hours, we need to adjust the last activity
+  if 1440 - x_emergency < 0:
+    print ("\033[1;31merror x_emergency__BBB", x_emergency, "\033[0m")
+    # the total time is more than 24 hours, so we need to adjust the last activity
+    last_act = persona.scratch.f_daily_schedule[-1]
+    adjustment = 1440 - x_emergency  # This will be negative
+    
+    if last_act[1] + adjustment > 0:
+      # Simple case: just adjust the last activity
+      persona.scratch.f_daily_schedule[-1][1] += adjustment
+    else:
+      print("\033[1;31merror x_emergency__CCC", x_emergency, "\033[0m")
+      # Complex case: need to reconstruct the entire schedule
+      
+      # Create a new schedule by accumulating time until we reach 1440
+      new_schedule = []
+      accumulated_time = 0
+      
+      for i, (activity, duration) in enumerate(persona.scratch.f_daily_schedule):
+        if accumulated_time + duration <= 1440:
+          # This activity fits completely
+          new_schedule.append([activity, duration])
+          accumulated_time += duration
+        else:
+          # This activity would exceed 1440, so we need to truncate it
+          remaining_time = 1440 - accumulated_time
+          if remaining_time > 0:
+            # Add the truncated activity
+            new_schedule.append([activity, remaining_time])
+          break
+      
+      # Replace the original schedule with the reconstructed one
+      persona.scratch.f_daily_schedule = new_schedule
+      
+      # Verify the total time is exactly 1440
+      total_time = sum(act[1] for act in persona.scratch.f_daily_schedule)
+      print(f"\033[0;32mReconstructed schedule total time: {total_time}\033[0m")
 
 
 
@@ -1058,6 +1096,23 @@ def _create_react(persona, inserted_act, inserted_act_dur,
   # 如果没找到end_index，设置为列表长度
   if end_index is None:
     end_index = len(p.scratch.f_daily_schedule)
+
+  # 检查所选范围内的最后一个事件是否是sleeping，如果是则调整end_index
+  if end_index > start_index:
+    # 从end_index-1开始向后检查，找到第一个sleeping事件
+    for i in range(end_index - 1, start_index - 1, -1):
+      if i < len(p.scratch.f_daily_schedule):
+        act_name = p.scratch.f_daily_schedule[i][0]
+        if "sleeping" in act_name.lower():
+          # 找到sleeping事件，将end_index调整到这个事件之前
+          end_index = i
+          
+          # 重新计算end_hour
+          dur_sum = 0
+          for j in range(end_index):
+            dur_sum += p.scratch.f_daily_schedule[j][1]
+          end_hour = int(dur_sum / 60)
+          break
 
   ret = generate_new_decomp_schedule(p, inserted_act, inserted_act_dur, 
                                        start_hour, end_hour)

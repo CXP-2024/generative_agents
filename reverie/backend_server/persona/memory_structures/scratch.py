@@ -597,7 +597,7 @@ class Scratch:
 
     print("\033[0;33m ", self.name, " current time: ", self.curr_time.strftime("%H:%M:%S"),"end time: ", end_time.strftime("%H:%M:%S"), "\033[0m")
     if end_time.strftime("%H:%M:%S") <= self.curr_time.strftime("%H:%M:%S"):
-      if end_time.strftime("%H:%M:%S") == "00:00:00" and self.curr_time.strftime("%H:%M:%S") >= "23:00:00":
+      if end_time.strftime("%H:%M:%S") == "00:00:00" and self.curr_time.strftime("%H:%M:%S") >= "15:00:00": # suppose the last one event won't lay before the 15:00 P.M.
         print(f"Action not finished: {self.name} is still doing {self.act_description}")
         return False
       print(f"Action finished: {self.name} is done with {self.act_description}")

@@ -346,23 +346,34 @@ def safe_generate_response(prompt,
   return fail_safe_response
 
 
-def get_embedding(text, model="bge-m3"): # original is text-embedding-ada-002, here we use deepseek-v3
+def get_embedding(text, model="bge-m3", max_retries=100): # original is text-embedding-ada-002, here we use deepseek-v3
+  import time
+  import numpy as np
+  
   text = text.replace("\n", " ")
   if not text: 
     text = "this is blank"
-  try:
-    # First try with the specified model
-    return openai.Embedding.create(
-            input=[text], model=model)['data'][0]['embedding']
-  except Exception as e:
-    # If that fails, use a simpler fallback approach
-    import numpy as np
-    print(f"Warning: Could not get embedding from API. Using fallback method. Error: {e}")
-    # Create a simple deterministic hash-based embedding as fallback
-    hash_val = hash(text)
-    np.random.seed(hash_val)
-    # Create a 1536-dimensional embedding (same as Ada)
-    return list(np.random.uniform(-1, 1, 1536))
+  
+  # Retry mechanism with exponential backoff
+  for attempt in range(max_retries):
+    try:
+      # Try with the specified model
+      return openai.Embedding.create(
+              input=[text], model=model)['data'][0]['embedding']
+    except Exception as e:
+      print(f"Attempt {attempt + 1}/{max_retries} failed. Error: {e}")
+      if attempt < max_retries - 1:  # Don't wait after the last attempt
+        wait_time = 10  # Wait 10 seconds before retry
+        print(f"Waiting {wait_time} seconds before retry...")
+        time.sleep(wait_time)
+      else:
+        # If all retries failed, use fallback approach
+        print(f"Warning: All {max_retries} attempts failed. Using fallback method.")
+        # Create a simple deterministic hash-based embedding as fallback
+        hash_val = hash(text)
+        np.random.seed(hash_val)
+        # Create a 1536-dimensional embedding (same as Ada)
+        return list(np.random.uniform(-1, 1, 1536))
 
 
 if __name__ == '__main__':

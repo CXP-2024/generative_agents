@@ -82,6 +82,7 @@ IMPORTANT FORMATTING INSTRUCTIONS:
 - Another example: For "16:55 ~ 17:08 -- walking in the park", output:
 	"16:55 ~ 17:00 -- walking in the park"
 	"17:00 ~ 17:08 -- still walking in the park"
+- DO NOT CHANGE THE SLEEP SCHEDULE!!!!! The sleep time schedule should remain unchanged, so just keep it the EXACTLY SAME as the original schedule.
 
 The revised schedule:
 !<INPUT 11>!

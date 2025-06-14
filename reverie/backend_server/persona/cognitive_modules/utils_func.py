@@ -99,36 +99,50 @@ def extract_schedule_changes_from_thought(persona, planning_thought):
         planning_thought = planning_thought[len(f"For {persona.scratch.name}'s planning:"):]
     
     schedule_change_prompt = f"""
-    The following is a planning thought from {persona.name}:
-    
-    "{planning_thought}"
-    
-    Based on this reflection, identify ALL suggested changes to {persona.name}'s schedule.
-    Extract each activity that should be added or modified, with detailed descriptions of the activity.
-    Include approximately how many minutes each activity should take.
-    If the activity is not relevant to the current day, please ignore it.
+	You are analyzing a planning thought from {persona.scratch.name} to identify concrete schedule changes needed for today.
 
-    Answer in JSON format, without any ``` or ``` json tags code blocks or markdown formatting.
-    Format the response as a list of schedule changes:
-    [
-      {{
-        "change_needed": true,
-        "activity": "detailed activity description (can include sub-activities and transitions)",
-        "duration": minutes_as_integer,
-        "suggested_time": "morning/afternoon/evening/specific time",
-        "priority": "high/medium/low"
-      }},
-      {{
-        "change_needed": true,
-        "activity": "detailed activity description (can include sub-activities and transitions)",
-        "duration": minutes_as_integer,
-        "suggested_time": "morning/afternoon/evening/specific time",
-        "priority": "high/medium/low"
-      }}
-    ]
-    
-    If no changes are needed, return an empty list: []
-    """
+	Planning thought: "{planning_thought}"
+
+	Current time: {persona.scratch.curr_time.strftime('%H:%M')}
+
+	Task: Extract all specific activities that need to be scheduled today. Only include changes that:
+	1. Are concrete, actionable activities (not just thoughts or wishes)
+	2. Have a clear time requirement or urgency
+	3. Are relevant for today's schedule
+	4. Can realistically be completed
+
+	For each identified change, provide:
+	- Detailed activity description including who/what/where if mentioned
+	- Realistic duration in minutes
+	- Preferred time period or specific time if indicated
+	- Priority level based on urgency/importance in the thought
+
+	Guidelines:
+	- Maximum 3 changes total to avoid over-scheduling
+	- Prioritize activities with specific time mentions or high urgency
+	- Ignore vague future plans or general thoughts
+	- If no concrete changes are identified, return empty list
+
+	Response format (valid JSON only, no markdown):
+	[
+		{{
+		  "change_needed": true,
+		  "activity": "specific activity description with context",
+		  "duration": integer_minutes,
+		  "suggested_time": "HH:MM format or morning/afternoon/evening",
+		  "priority": "high/medium/low",
+		}},
+		{{
+      "change_needed": true,
+      "activity": "detailed activity description (can include sub-activities and transitions)",
+      "duration": minutes_as_integer,
+      "suggested_time": "HH:MM format or morning/afternoon/evening",
+      "priority": "high/medium/low"
+    }}
+	]
+
+	If no schedule changes are needed, return: []
+	"""
     
     for i in range(3):
         try:
