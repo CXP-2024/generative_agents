@@ -381,60 +381,95 @@
 	    repeat: -1 });
 	}
 
+	let persona_status_data = {}; 
+	let selected_persona = null;  
+
+	// 在update函数的execute阶段调用updatePersonaStatus()
+	function updatePersonaStatus() {
+    console.log("🔍 updatePersonaStatus called, phase:", phase);
+    
+    if (phase === "execute" && execute_movement && execute_movement["persona"]) {
+        console.log("✅ 条件满足，开始更新emoji");
+        
+        for (let persona_name in personas) {
+            if (execute_movement["persona"][persona_name]) {
+                let persona_data = execute_movement["persona"][persona_name];
+                let pronunciatio_content = persona_data["pronunciatio"] || "🤔";
+                
+                // 使用下划线格式的名称来匹配DOM元素ID
+                let persona_name_underscore = persona_name.replace(/ /g, "_");
+                let emoji_element = document.getElementById("quick_emoji-" + persona_name_underscore);
+                
+                console.log(`🔍 处理角色: ${persona_name} -> ${persona_name_underscore}`);
+                console.log(`🔍 Emoji内容: ${pronunciatio_content}`);
+                console.log(`🔍 DOM元素:`, emoji_element);
+                
+                if (emoji_element) {
+                    emoji_element.innerHTML = pronunciatio_content;
+                    console.log(`✅ 成功更新 ${persona_name_underscore} emoji: ${pronunciatio_content}`);
+                } else {
+                    console.log(`❌ 找不到元素: quick_emoji-${persona_name_underscore}`);
+                }
+                
+                persona_status_data[persona_name] = persona_data;
+            }
+        }
+    } else {
+        console.log("❌ 条件不满足");
+        console.log("  phase === 'execute':", phase === "execute");
+        console.log("  execute_movement exists:", !!execute_movement);
+        console.log("  persona data exists:", !!(execute_movement && execute_movement["persona"]));
+    }
+}
 
 	function update(time, delta) {
-		// *** SETUP PLAY AND PAUSE BUTTON *** 
-		let play_context = this;
-		function game_resume() {  
-			play_context.scene.resume();
-		}  
-		play_button.onclick = function(){
-			game_resume();
-		};
-		function game_pause() {  
-			play_context.scene.pause();
-		}  
-		pause_button.onclick = function(){
-			game_pause();
-		};
+    // *** SETUP PLAY AND PAUSE BUTTON *** 
+    let play_context = this;
+    function game_resume() {  
+        play_context.scene.resume();
+    }  
+    play_button.onclick = function(){
+        game_resume();
+    };
+    function game_pause() {  
+        play_context.scene.pause();
+    }  
+    pause_button.onclick = function(){
+        game_pause();
+    };
 
-	  // *** MOVE CAMERA *** 
+    // *** MOVE CAMERA *** 
 	  // This is where we finish up the camera setting we started in the create() 
 	  // function. We set the movement speed of the camera and wire up the keys to
 	  // map to the actual movement.
-		const camera_speed = 800;
-		// 添加WASD键控制
-		wasdKeys = this.input.keyboard.addKeys({
-			up: Phaser.Input.Keyboard.KeyCodes.W,
-			down: Phaser.Input.Keyboard.KeyCodes.S,
-			left: Phaser.Input.Keyboard.KeyCodes.A,
-			right: Phaser.Input.Keyboard.KeyCodes.D
-		});
-	  // Stop any previous movement from the last frame
-	  player.body.setVelocity(0);
-	  // 检测方向键或WASD键
-		if (cursors.left.isDown || wasdKeys.left.isDown) {
-			player.body.setVelocityX(-camera_speed);
-		}
-		if (cursors.right.isDown || wasdKeys.right.isDown) {
-			player.body.setVelocityX(camera_speed);
-		}
-		if (cursors.up.isDown || wasdKeys.up.isDown) {
-			player.body.setVelocityY(-camera_speed);
-		}
-		if (cursors.down.isDown || wasdKeys.down.isDown) {
-			player.body.setVelocityY(camera_speed);
-		}
-		// 添加空格键放大和Shift键缩小功能
-		const camera = this.cameras.main;
-		if (cursors.space.isDown) {
-			// 空格键放大
-			camera.zoom = Math.min(2.0, camera.zoom + 0.01);
-		}
-		if (cursors.shift.isDown) {
-			// Shift键缩小
-			camera.zoom = Math.max(0.75, camera.zoom - 0.01);
-		}
+    const camera_speed = 800;
+    
+    // Stop any previous movement from the last frame
+    player.body.setVelocity(0);
+    
+    // 只保留方向键移动功能，删除WASD
+    if (cursors.left.isDown) {
+        player.body.setVelocityX(-camera_speed);
+    }
+    if (cursors.right.isDown) {
+        player.body.setVelocityX(camera_speed);
+    }
+    if (cursors.up.isDown) {
+        player.body.setVelocityY(-camera_speed);
+    }
+    if (cursors.down.isDown) {
+        player.body.setVelocityY(camera_speed);
+    }
+    // 将空格改为Tab键缩放，删除Shift功能
+    const camera = this.cameras.main;
+    if (this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.TAB).isDown) {
+        // Tab键放大
+        camera.zoom = Math.min(2.0, camera.zoom + 0.01);
+    }
+	if (cursors.shift.isDown) {
+		// Shift键缩小
+		camera.zoom = Math.max(0.75, camera.zoom - 0.01);
+	}
 
 	  // console.log("phase: " + phase + ", step: " + step);
 	  // *** MOVE PERSONAS ***
@@ -606,16 +641,28 @@
 		      	chat_content = "<em>None at the moment</em>"
 		      }
 	        // action_description += description_content + "<br>";
-
+ 
+	        //document.getElementById("quick_emoji-"+curr_persona_name).innerHTML = pronunciatio_content;
 	        document.getElementById("current_action__"+curr_persona_name_os).innerHTML = description_content.split("@")[0];
 	        document.getElementById("target_address__"+curr_persona_name_os).innerHTML = description_content.split("@")[1];
 	        document.getElementById("chat__"+curr_persona_name_os).innerHTML = chat_content;
-	      }
+	      }// 添加这一行调用updatePersonaStatus函数
+  			updatePersonaStatus();
 	      
 	    }
 
 	    execute_count = execute_count - 1;
 	  }
+
+	  // 在函数最末尾添加聚焦功能
+    let curr_focused_persona = document.getElementById("temp_focus").textContent;
+    if (curr_focused_persona != "") {
+        if (personas[curr_focused_persona]) {
+            player.body.x = personas[curr_focused_persona].body.x;
+            player.body.y = personas[curr_focused_persona].body.y;
+        }
+        document.getElementById("temp_focus").innerHTML = "";
+    }
 	}
 
 	// Control button binders

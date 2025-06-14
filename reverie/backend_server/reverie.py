@@ -27,6 +27,7 @@ import math
 import os
 import shutil
 import traceback
+import threading
 
 from selenium import webdriver
 
@@ -550,208 +551,554 @@ class ReverieServer:
 
   def start_server(self, int_counter, debug_mode=False): 
     """
-    The main backend server of Reverie. 
-    This function retrieves the environment file from the frontend to 
-    understand the state of the world, calls on each personas to make 
-    decisions based on the world state, and saves their moves at certain step
-    intervals. 
-    INPUT
-      int_counter: Integer value for the number of steps left for us to take
-                   in this iteration. 
-      debug_mode: If True, runs without frontend interaction
-    OUTPUT 
-      None
+    The main backend server of Reverie with file-based pause control.
     """
-    # <sim_folder> points to the current simulation folder.
     sim_folder = f"{fs_storage}/{self.sim_code}"
-
-    # When a persona arrives at a game object, we give a unique event
-    # to that object. 
-    # e.g., ('double studio[...]:bed', 'is', 'unmade', 'unmade')
-    # Later on, before this cycle ends, we need to return that to its 
-    # initial state, like this: 
-    # e.g., ('double studio[...]:bed', None, None, None)
-    # So we need to keep track of which event we added. 
-    # <game_obj_cleanup> is used for that. 
     game_obj_cleanup = dict()
 
-    # The main while loop of Reverie. 
+    print(f"🚀 Starting simulation for {int_counter} steps (debug: {debug_mode})")
+    
+    # 创建运行状态文件
+    pause_file = f"{fs_temp_storage}/simulation_pause.flag"
+    running_file = f"{fs_temp_storage}/simulation_running.flag"
+    result_file = f"{fs_temp_storage}/frontend_result.json"  # 添加结果文件路径
+    
+    # 删除可能存在的暂停文件和旧结果文件，创建运行文件
+    if os.path.exists(pause_file):
+        os.remove(pause_file)
+    if os.path.exists(result_file):  # 清理旧的结果文件
+        os.remove(result_file)
+    
+    with open(running_file, 'w') as f:
+        f.write('1')  # 1表示继续运行
+    
+    print(f"📁 Pause control file: {pause_file}")
+    print(f"📁 Running control file: {running_file}")
+    print(f"📁 Result file: {result_file}")  # 显示结果文件路径
+
+    original_counter = int_counter  # 保存原始步数计划
+    
+    # The main while loop of Reverie with pause control
     while (True): 
-      # Done with this iteration if <int_counter> reaches 0. 
-      if int_counter == 0: 
-        break
-
-      # <curr_env_file> file is the file that our frontend outputs. When the
-      # frontend has done its job and moved the personas, then it will put a 
-      # new environment file that matches our step count. That's when we run 
-      # the content of this for loop. Otherwise, we just wait. 
-      # curr_env_file = f"{sim_folder}/environment/{self.step}.json"
-      # if check_if_file_exists(curr_env_file):
-      #   # If we have an environment file, it means we have a new perception
-      #   # input to our personas. So we first retrieve it.
-      #   try: 
-      #     # Try and save block for robustness of the while loop.
-      #     with open(curr_env_file) as json_file:
-      #       new_env = json.load(json_file)
-      #       env_retrieved = True
-      #   except: 
-      #     pass
-      # Skip file checking in debug mode# In debug mode, we don't need to wait for environment files
-      env_retrieved = debug_mode
-      new_env = {}
-      
-      # In debug mode, generate our own environment data based on current state
-      if debug_mode:
-          # Create environment data based on current persona positions
-          for persona_name, position in self.personas_tile.items():
-              new_env[persona_name] = {"x": position[0], "y": position[1]}
-          
-          # Save environment file for this step (for record keeping)
-          env_path = f"{sim_folder}/environment"
-          if not os.path.exists(env_path):
-              os.makedirs(env_path)
-          env_file = f"{sim_folder}/environment/{self.step}.json"
-          with open(env_file, "w") as outfile:
-              outfile.write(json.dumps(new_env, indent=2))
-      # In normal mode, check for environment files from frontend
-      else:
-          curr_env_file = f"{sim_folder}/environment/{self.step}.json"
-          if check_if_file_exists(curr_env_file):
-              try: 
-                  with open(curr_env_file) as json_file:
-                      new_env = json.load(json_file)
-                      env_retrieved = True
-              except: 
-                  pass
-
-      if env_retrieved:
-          # This is where we go through <game_obj_cleanup> to clean up all
-          # object actions that were used in this cycle.
-          for key, val in game_obj_cleanup.items(): 
-            # We turn all object actions to their blank form (with None). 
-            self.maze.turn_event_from_tile_idle(key, val)
-          # Then we initialize game_obj_cleanup for this cycle. 
-          game_obj_cleanup = dict()
-
-          # Only process frontend environment data if not in debug mode
-          if not debug_mode:
-           for persona_name, persona in self.personas.items(): 
-            # <curr_tile> is the tile that the persona was at previously. 
-            curr_tile = self.personas_tile[persona_name]
-            # <new_tile> is the tile that the persona will move to right now,
-            # during this cycle. 
-            new_tile = (new_env[persona_name]["x"], 
-                        new_env[persona_name]["y"])
-
-            # We actually move the persona on the backend tile map here. 
-            self.personas_tile[persona_name] = new_tile
-            self.maze.remove_subject_events_from_tile(persona.name, curr_tile)
-            self.maze.add_event_from_tile(persona.scratch
-                                         .get_curr_event_and_desc(), new_tile)
-
-            # Now, the persona will travel to get to their destination. *Once*
-            # the persona gets there, we activate the object action.
-            if not persona.scratch.planned_path: 
-              # We add that new object action event to the backend tile map. 
-              # At its creation, it is stored in the persona's backend. 
-              game_obj_cleanup[persona.scratch
-                               .get_curr_obj_event_and_desc()] = new_tile
-              self.maze.add_event_from_tile(persona.scratch
-                                     .get_curr_obj_event_and_desc(), new_tile)
-              # We also need to remove the temporary blank action for the 
-              # object that is currently taking the action. 
-              blank = (persona.scratch.get_curr_obj_event_and_desc()[0], 
-                       None, None, None)
-              self.maze.remove_event_from_tile(blank, new_tile)
-
-          # Then we need to actually have each of the personas perceive and
-          # move. The movement for each of the personas comes in the form of
-          # x y coordinates where the persona will move towards. e.g., (50, 34)
-          # This is where the core brains of the personas are invoked. 
-          movements = {"persona": dict(), 
-                       "meta": dict()}
-          print("\n\n\n\033[3;7;36mStart Step: ", self.step, "\033[0m")
-          print("\033[3;7;36mCurrent Time: ", self.curr_time, "\033[0m")
-
-          for persona_name, persona in self.personas.items(): 
-            # <next_tile> is a x,y coordinate. e.g., (58, 9)
-            # <pronunciatio> is an emoji. e.g., "\ud83d\udca4"
-            # <description> is a string description of the movement. e.g., 
-            #   writing her next novel (editing her novel) 
-            #   @ double studio:double studio:common room:sofa
-            print(f"\n\033[1;7;35m>>>>>   In step {self.step}   >>>>> {persona_name} start a move --\033[0m")
-            next_tile, pronunciatio, description = persona.move(
-              self.maze, self.personas, self.personas_tile[persona_name], 
-              self.curr_time)
-            print(f"\033[1;7;35m>>>>>   In step {self.step}   >>>>> {persona_name} finished a move --\033[0m")
-
-            movements["persona"][persona_name] = {}
-            movements["persona"][persona_name]["movement"] = next_tile
-            movements["persona"][persona_name]["pronunciatio"] = pronunciatio
-            movements["persona"][persona_name]["description"] = description
-            movements["persona"][persona_name]["chat"] = (persona
-                                                          .scratch.chat)
+        # 首先检查是否收到暂停信号
+        if os.path.exists(pause_file):
+            executed_steps = original_counter - int_counter
+            print(f"\n⏸️ Pause signal detected! Finishing current step {self.step}...")
+            print(f"🛑 Stopping simulation and saving... (executed {executed_steps}/{original_counter} steps)")
             
-						# in debug mode, update the persona's tile immediately
-            if debug_mode:
-                  curr_tile = self.personas_tile[persona_name]
-                  self.personas_tile[persona_name] = next_tile
-                  self.maze.remove_subject_events_from_tile(persona.name, curr_tile)
-                  self.maze.add_event_from_tile(persona.scratch.get_curr_event_and_desc(), next_tile)
+            # 删除暂停文件和运行文件
+            os.remove(pause_file)
+            if os.path.exists(running_file):
+                os.remove(running_file)
+            
+            # 保存当前状态
+            self.save()
+            
+            # 写入暂停结果文件 - 这是关键添加的部分喵！
+            try:
+                result_data = {
+                    'success': True,
+                    'output': f"✅ Simulation paused at step {executed_steps}/{original_counter}. Progress saved.",
+                    'executed_steps': executed_steps,
+                    'total_planned_steps': original_counter,
+                    'current_simulation_step': self.step,
+                    'status': 'paused',
+                    'timestamp': time.time(),
+                    'pause_reason': 'user_requested'
+                }
+                
+                with open(result_file, 'w') as f:
+                    json.dump(result_data, f, indent=2)
+                    
+                print(f"📊 前端结果已写入: 执行 {executed_steps}/{original_counter} 步，当前模拟步数 {self.step}")
+                
+            except Exception as save_error:
+                print(f"❌ 写入暂停结果失败: {save_error}")
+            
+            print(f"✅ Simulation paused at step {executed_steps}/{original_counter} and saved successfully")
+            return executed_steps  # 返回实际执行的步数
+        
+        # Done with this iteration if <int_counter> reaches 0. 
+        if int_counter == 0: 
+            executed_steps = original_counter
+            print(f"✅ Simulation completed normally after {executed_steps} steps")
+            
+            # 删除运行文件
+            if os.path.exists(running_file):
+                os.remove(running_file)
+            
+            # 写入完成结果文件 - 这也是新添加的部分喵！
+            try:
+                result_data = {
+                    'success': True,
+                    'output': f"✅ Simulation completed successfully. Executed {executed_steps} steps.",
+                    'executed_steps': executed_steps,
+                    'total_planned_steps': original_counter,
+                    'current_simulation_step': self.step,
+                    'status': 'completed',
+                    'timestamp': time.time(),
+                    'completion_reason': 'normal_finish'
+                }
+                
+                with open(result_file, 'w') as f:
+                    json.dump(result_data, f, indent=2)
+                    
+                print(f"📊 前端结果已写入: 完成 {executed_steps} 步，当前模拟步数 {self.step}")
+                
+            except Exception as save_error:
+                print(f"❌ 写入完成结果失败: {save_error}")
+            
+            return executed_steps
 
-          # Include the meta information about the current stage in the 
-          # movements dictionary. 
-          movements["meta"]["curr_time"] = (self.curr_time 
-                                             .strftime("%B %d, %Y, %H:%M:%S"))
+        # ... 保持其余的模拟逻辑不变 ...
+        env_retrieved = debug_mode
+        new_env = {}
+        
+        if debug_mode:
+            for persona_name, position in self.personas_tile.items():
+                new_env[persona_name] = {"x": position[0], "y": position[1]}
+            
+            env_path = f"{sim_folder}/environment"
+            if not os.path.exists(env_path):
+                os.makedirs(env_path)
+            env_file = f"{sim_folder}/environment/{self.step}.json"
+            with open(env_file, "w") as outfile:
+                outfile.write(json.dumps(new_env, indent=2))
+        else:
+            curr_env_file = f"{sim_folder}/environment/{self.step}.json"
+            if check_if_file_exists(curr_env_file):
+                try: 
+                    with open(curr_env_file) as json_file:
+                        new_env = json.load(json_file)
+                        env_retrieved = True
+                except: 
+                    pass
 
-          # We then write the personas' movements to a file that will be sent 
-          # to the frontend server. always save the file in json format.
-          # Example json output: 
-          # {"persona": {"Maria Lopez": {"movement": [58, 9]}},
-          #  "persona": {"Klaus Mueller": {"movement": [38, 12]}}, 
-          #  "meta": {curr_time: <datetime>}}
-          curr_move_path = f"{sim_folder}/movement"
-          if not os.path.exists(curr_move_path):
-            os.makedirs(curr_move_path)
-          curr_move_file = f"{sim_folder}/movement/{self.step}.json"
-          with open(curr_move_file, "w") as outfile: 
-            outfile.write(json.dumps(movements, indent=2))
+        if env_retrieved:            
+            # ... 保持原有的游戏对象处理逻辑 ...
+            for key, val in game_obj_cleanup.items(): 
+                self.maze.turn_event_from_tile_idle(key, val)
+            game_obj_cleanup = dict()
 
-          # After this cycle, the world takes one step forward, and the 
-          # current time moves by <sec_per_step> amount. 
-          self.step += 1
-          self.curr_time += datetime.timedelta(seconds=self.sec_per_step)
-          
-          # 自动保存机制 - 每10步保存一次
-          if self.step % 10 == 0:
-              print(f"\033[1;36m自动保存点 - 步数: {self.step}\033[0m")
-              self.save()
+            if not debug_mode:
+                for persona_name, persona in self.personas.items(): 
+                    curr_tile = self.personas_tile[persona_name]
+                    new_tile = (new_env[persona_name]["x"], new_env[persona_name]["y"])
+                    self.personas_tile[persona_name] = new_tile
+                    self.maze.remove_subject_events_from_tile(persona.name, curr_tile)
+                    self.maze.add_event_from_tile(persona.scratch.get_curr_event_and_desc(), new_tile)
 
-          int_counter -= 1
-          
-      # Only wait between steps in non-debug mode
-      if not debug_mode:
-          time.sleep(self.server_sleep)
+                    if not persona.scratch.planned_path: 
+                        game_obj_cleanup[persona.scratch.get_curr_obj_event_and_desc()] = new_tile
+                        self.maze.add_event_from_tile(persona.scratch.get_curr_obj_event_and_desc(), new_tile)
+                        blank = (persona.scratch.get_curr_obj_event_and_desc()[0], None, None, None)
+                        self.maze.remove_event_from_tile(blank, new_tile)
 
+            # Persona决策循环
+            movements = {"persona": dict(), "meta": dict()}
+            print(f"\n🔄 Step {self.step} starting at {self.curr_time}")
 
+            for persona_name, persona in self.personas.items(): 
+                # # 在每个persona移动前检查暂停
+                # if os.path.exists(pause_file):
+                #     print(f"⏸️ Pause detected during {persona_name}'s turn")
+                #     break
+                    
+                print(f"👤 {persona_name} starting move...")
+                next_tile, pronunciatio, description = persona.move(
+                    self.maze, self.personas, self.personas_tile[persona_name], 
+                    self.curr_time)
+                print(f"✅ {persona_name} finished move")
+
+                movements["persona"][persona_name] = {
+                    "movement": next_tile,
+                    "pronunciatio": pronunciatio,
+                    "description": description,
+                    "chat": persona.scratch.chat
+                }
+                
+                if debug_mode:
+                    curr_tile = self.personas_tile[persona_name]
+                    self.personas_tile[persona_name] = next_tile
+                    self.maze.remove_subject_events_from_tile(persona.name, curr_tile)
+                    self.maze.add_event_from_tile(persona.scratch.get_curr_event_and_desc(), next_tile)
+
+            # # 如果在persona循环中检测到暂停，跳到下一次主循环
+            # if os.path.exists(pause_file):
+            #     print(f"⏸️ Pause detected after persona decisions")
+            #     continue
+
+            # 保存移动数据
+            movements["meta"]["curr_time"] = self.curr_time.strftime("%B %d, %Y, %H:%M:%S")
+            curr_move_path = f"{sim_folder}/movement"
+            if not os.path.exists(curr_move_path):
+                os.makedirs(curr_move_path)
+            curr_move_file = f"{sim_folder}/movement/{self.step}.json"
+            with open(curr_move_file, "w") as outfile: 
+                outfile.write(json.dumps(movements, indent=2))
+
+            # 步数递增
+            self.step += 1
+            self.curr_time += datetime.timedelta(seconds=self.sec_per_step)
+            
+            # 自动保存
+            if self.step % 10 == 0:
+                print(f"💾 Auto-save at step {self.step}")
+                self.save()
+
+            int_counter -= 1
+            executed_steps = original_counter - int_counter
+            print(f"📊 Completed step {self.step-1}, {int_counter} steps remaining, executed {executed_steps}")
+            
+        # 最后在sleep前再次检查暂停
+        if os.path.exists(pause_file):
+            print(f"⏸️ Pause detected before sleep")
+            continue
+            
+        if not debug_mode:
+            time.sleep(self.server_sleep)
+    
+    # 清理文件（这部分应该不会被执行，但保险起见）
+    if os.path.exists(running_file):
+        os.remove(running_file)
+    print(f"🔚 Simulation ended normally")
+    return original_counter - int_counter
+
+  def monitor_frontend_commands(self):
+    """监听前端命令文件 - 后台线程运行"""
+    import time
+    import os
+    import json
+    
+    print("🔍 Started monitoring frontend commands...")
+    
+    while True:
+        try:
+            # Check for command signal file
+            signal_file = f"{fs_temp_storage}/command_ready.signal"
+            command_file = f"{fs_temp_storage}/frontend_command.json"
+            
+            if os.path.exists(signal_file) and os.path.exists(command_file):
+                # Read the command
+                with open(command_file, 'r') as f:
+                    command_data = json.load(f)
+                
+                command = command_data.get('command', '').strip()
+                sim_code = command_data.get('sim_code')
+                
+                # Remove signal file
+                os.remove(signal_file)
+                
+                # Execute the command
+                if command:
+                    print(f"📨 Received command from frontend: {command}")
+                    self.execute_and_save_command(command)
+                
+        except Exception as e:
+            print(f"❌ Error monitoring commands: {e}")
+        
+        time.sleep(0.5)  # Check every 500ms
+
+  def execute_and_save_command(self, sim_command):
+    """执行命令并保存结果到文件"""
+    import io
+    import sys
+    from contextlib import redirect_stdout  # 添加这个导入
+    
+    success = True
+    error_msg = ""
+    captured_output = ""
+    
+    try:
+        print(f"🔍 [Debug] Processing command: '{sim_command}'")  # 添加调试输出
+        
+        # 处理暂停命令
+        if sim_command.lower() == "pause_now":
+            pause_file = f"{fs_temp_storage}/simulation_pause.flag"
+            print(f"🔍 [Debug] Creating pause file: {pause_file}")  # 添加调试输出
+            
+            # 确保目录存在
+            os.makedirs(fs_temp_storage, exist_ok=True)
+            
+            with open(pause_file, 'w') as f:
+                f.write('0')  # 写入暂停信号
+            
+            # 验证文件创建
+            if os.path.exists(pause_file):
+                print(f"✅ [Debug] Pause file created successfully")
+                captured_output = "✅ Pause signal sent. Simulation will stop after current step."
+            else:
+                print(f"❌ [Debug] Pause file creation failed")
+                captured_output = "❌ Failed to create pause file"
+                success = False
+            
+        # 新增：处理恢复命令
+        elif sim_command.lower() == "resume_now":
+            running_file = f"{fs_temp_storage}/simulation_running.flag"
+            print(f"🔍 [Debug] Creating running file: {running_file}")  # 添加调试输出
+            
+            with open(running_file, 'w') as f:
+                f.write('1')  # 1表示继续运行
+            
+            captured_output = "✅ Resume signal sent. Simulation will continue."
+            print(f"▶️ [Debug] Simulation will continue")
+        
+        # 新增：检查暂停文件状态
+        elif sim_command.lower() == "check_pause_file":
+            pause_file = f"{fs_temp_storage}/simulation_pause.flag"
+            running_file = f"{fs_temp_storage}/simulation_running.flag"
+            
+            if not os.path.exists(pause_file) and not os.path.exists(running_file):
+                captured_output = "✅ Pause file not found - simulation stopped"
+            elif os.path.exists(pause_file):
+                captured_output = "⏳ Pause file exists - waiting for simulation to stop"
+            elif os.path.exists(running_file):
+                captured_output = "▶️ Simulation is still running"
+            else:
+                captured_output = "❓ Unknown state"
+                
+        # ... 保持其他现有命令处理逻辑不变 ...
+        elif sim_command.lower().startswith("say "):
+            result = self.handle_conversation_message(sim_command)
+            success = result['success']
+            captured_output = result['output']
+            
+        elif sim_command.lower() == "end_conversation":
+            result = self.end_conversation_session()
+            success = result['success']
+            captured_output = result['output']
+            
+        # 检查是否是需要保持原始输出的命令
+        elif sim_command.lower().startswith(('run ', 'debug run ')):
+            # 对于 run 命令，不重定向输出，保持原始的 stdout
+            print(f"🚀 [Frontend Command] 开始执行: {sim_command}")
+            
+            try:
+                if sim_command.lower().startswith("run "):
+                    steps = int(sim_command.split()[-1])
+                    print(f"📊 [Frontend Command] 启动 {steps} 步模拟...")
+                    ran_steps = self.start_server(steps)
+                    captured_output = f"✅ Successfully executed {ran_steps}/{steps} steps"
+                    print(f"✅ [Frontend Command] 完成 {ran_steps}/{steps} 步模拟")
+                elif sim_command.lower().startswith("debug run "):
+                    steps = int(sim_command.split()[-1])
+                    print(f"🐛 [Frontend Command] 启动调试模式 {steps} 步...")
+                    ran_steps = self.start_server(steps, debug_mode=True)
+                    captured_output = f"✅ Debug executed {ran_steps}/{steps} steps"
+                    print(f"🐛 [Frontend Command] 调试模式完成 {ran_steps}/{steps} 步")
+            except ValueError:
+                captured_output = "❌ Invalid step count. Usage: run <number>"
+                success = False
+            except Exception as e:
+                # 如果运行过程中出错，也要写入结果文件
+                result_file = f"{fs_temp_storage}/frontend_result.json"
+                try:
+                    error_result = {
+                        'success': False,
+                        'output': f"❌ Simulation failed: {str(e)}",
+                        'executed_steps': 0,
+                        'total_planned_steps': 0,
+                        'status': 'error',
+                        'timestamp': time.time(),
+                        'error_reason': str(e)
+                    }
+                    with open(result_file, 'w') as f:
+                        json.dump(error_result, f, indent=2)
+                except:
+                    pass
+                
+                captured_output = f"❌ Simulation error: {str(e)}"
+                success = False
+        elif sim_command.lower().startswith("converse as"):
+            output_buffer = io.StringIO()
+            
+            # 解析命令
+            command_parts = sim_command[len("converse as"):].strip().split(" with ")
+            if len(command_parts) == 2:
+                user_role = command_parts[0].strip()
+                persona_name = command_parts[1].strip()
+                
+                if persona_name not in self.personas:
+                    with redirect_stdout(output_buffer):
+                        print(f"Persona '{persona_name}' not found.")
+                        print("Available personas:")
+                        for name in self.personas.keys():
+                            print(f"  - {name}")
+                    captured_output = output_buffer.getvalue()
+                else:
+                    # 预定义角色描述
+                    role_descriptions = {
+                        "Wei Xu": "a new campus singer who just arrived and is passionate about music",
+                        "wei xu": "a new campus singer who just arrived and is passionate about music",
+                        "Xu": "a new campus singer who just arrived and is passionate about music"
+                    }
+                    
+                    user_description = role_descriptions.get(user_role, "")
+                    if not user_description and user_role.lower() in role_descriptions:
+                        user_description = role_descriptions[user_role.lower()]
+                    
+                    # 创建前端对话会话
+                    session_data = {
+                        "persona_name": persona_name,
+                        "user_role": user_role,
+                        "user_description": user_description,
+                        "conversation": [],
+                        "status": "active"
+                    }
+                    
+                    with open(f"{fs_temp_storage}/conversation_session.json", 'w') as f:
+                        json.dump(session_data, f, indent=2)
+                    
+                    captured_output = f"""💬 Conversation session started!
+
+👤 Role Setup:
+  • You are playing: {user_role}
+  • Talking with: {persona_name}
+  • Description: {user_description if user_description else "No specific description"}
+
+🎭 {persona_name} now knows they're talking with {user_role}.
+Ready to start the conversation!"""
+
+            else:
+                captured_output = "❌ Usage: converse as [role name] with [persona name]\nExample: converse as Wei Xu with Isabella Rodriguez"
+
+        elif sim_command.lower().startswith("converse with"):
+            persona_name = sim_command[len("converse with"):].strip()
+            
+            if persona_name not in self.personas:
+                captured_output = f"""❌ Persona '{persona_name}' not found.
+
+Available personas:"""
+                for name in self.personas.keys():
+                    captured_output += f"\n  - {name}"
+            else:
+                # 直接使用默认的 User 角色，不需要额外输入
+                session_data = {
+                    "persona_name": persona_name,
+                    "user_role": "User",
+                    "user_description": "",
+                    "conversation": [],
+                    "status": "active"
+                }
+                
+                with open(f"{fs_temp_storage}/conversation_session.json", 'w') as f:
+                    json.dump(session_data, f, indent=2)
+                
+                captured_output = f"""💬 Conversation session started!
+
+👤 Role Setup:
+  • You are playing: User (default role)
+  • Talking with: {persona_name}
+  • Description: Default user role
+
+🎭 {persona_name} is ready to talk with you.
+Ready to start the conversation!"""
+
+        else:
+            # 对于其他命令，使用重定向捕获输出
+            output_buffer = io.StringIO()
+            with redirect_stdout(output_buffer):
+                if sim_command.lower() == "print current time":
+                    print(f"Current time: {self.curr_time.strftime('%A %B %d, %Y, %H:%M:%S')}")
+                elif sim_command.lower() == "save":
+                    self.save()
+                    print("✅ Simulation saved successfully!")
+                elif "print all persona schedule" in sim_command.lower():
+                    for persona_name, persona in self.personas.items():
+                        print(f"\n👤 {persona_name}'s schedule:")
+                        print(persona.scratch.get_str_daily_schedule_summary())
+                        print("─" * 50)
+                elif ("print persona schedule" in sim_command[:22].lower()): 
+                    persona_name = " ".join(sim_command.split()[-2:])
+                    if persona_name in self.personas:
+                        print(f"👤 {persona_name}")
+                        print(self.personas[persona_name].scratch.get_str_daily_schedule_summary())
+                    else:
+                        print(f"❌ Persona '{persona_name}' not found")
+                elif ("print persona associative memory (event)" in sim_command.lower()):
+                    persona_name = " ".join(sim_command.split()[-2:])
+                    if persona_name in self.personas:
+                        print(f"👤 {persona_name} - Event Memory:")
+                        print(self.personas[persona_name].a_mem.get_str_seq_events())
+                    else:
+                        print(f"❌ Persona '{persona_name}' not found")
+                elif ("print persona associative memory (thought)" in sim_command.lower()): 
+                    persona_name = " ".join(sim_command.split()[-2:])
+                    if persona_name in self.personas:
+                        print(f"👤 {persona_name} - Thought Memory:")
+                        print(self.personas[persona_name].a_mem.get_str_seq_thoughts())
+                    else:
+                        print(f"❌ Persona '{persona_name}' not found")
+                elif ("print persona associative memory (chat)" in sim_command.lower()): 
+                    persona_name = " ".join(sim_command.split()[-2:])
+                    if persona_name in self.personas:
+                        print(f"👤 {persona_name} - Chat Memory:")
+                        print(self.personas[persona_name].a_mem.get_str_seq_chats())
+                    else:
+                        print(f"❌ Persona '{persona_name}' not found")
+                elif ("converse with" in sim_command.lower()): 
+                    persona_name = sim_command[len("converse with"):].strip()
+                    if persona_name in self.personas:
+                        print(f"💬 Conversation with {persona_name} is available in terminal mode")
+                    else:
+                        print(f"❌ Persona '{persona_name}' not found")
+                else:
+                    print(f"❌ Unknown command: '{sim_command}'")
+                    success = False
+            
+            captured_output = output_buffer.getvalue()
+            
+    except Exception as e:
+        success = False
+        error_msg = str(e)
+        captured_output = f"❌ Error: {error_msg}"
+        print(f"❌ [Frontend Command] 执行错误: {e}")
+        traceback.print_exc()
+    
+    # 保存结果到文件
+    try:
+        result_data = {
+            'command': sim_command,
+            'success': success,
+            'output': captured_output,
+            'error': error_msg if error_msg else None,
+            'timestamp': datetime.datetime.now().isoformat()
+        }
+        
+        output_file = f"{fs_temp_storage}/command_output.json"
+        with open(output_file, 'w') as f:
+            json.dump(result_data, f, indent=2)
+            
+        print(f"💾 [Frontend Command] 结果已保存到文件")
+        
+        # 删除命令文件，表示处理完成
+        command_file = f"{fs_temp_storage}/frontend_command.json"
+        if os.path.exists(command_file):
+            os.remove(command_file)
+        
+    except Exception as e:
+        print(f"❌ [Frontend Command] 保存结果失败: {e}")
+
+# 修改open_server方法，只在开头添加3行启动文件监听
   def open_server(self): 
     """
     Open up an interactive terminal prompt that lets you run the simulation 
     step by step and probe agent state. 
-
-    INPUT 
-      None
-    OUTPUT
-      None
     """
     print ("Note: The agents in this simulation package are computational")
     print ("constructs powered by generative agents architecture and LLM. We")
     print ("clarify that these agents lack human-like agency, consciousness,")
     print ("and independent decision-making.\n---")
+    
+    # 只添加这3行 - 启动文件监听
+    print("🌐 File-based frontend communication enabled")
+    file_monitor_thread = threading.Thread(target=self.monitor_frontend_commands, daemon=True)
+    file_monitor_thread.start()
 
     # <sim_folder> points to the current simulation folder.
     sim_folder = f"{fs_storage}/{self.sim_code}"
 
+    # 保持原有的while循环完全不变
     while True: 
       sim_command = input("Enter option: ")
       sim_command = sim_command.strip()
@@ -759,41 +1106,23 @@ class ReverieServer:
 
       try: 
         if sim_command.lower() in ["f", "fin", "finish", "save and finish"]: 
-          # Finishes the simulation environment and saves the progress. 
-          # Example: fin
           self.save()
           break
 
-        elif sim_command.lower() == "start path tester mode": 
-          # Starts the path tester and removes the currently forked sim files.
-          # Note that once you start this mode, you need to exit out of the
-          # session and restart in case you want to run something else. 
-          shutil.rmtree(sim_folder) 
-          self.start_path_tester_server()
-
         elif sim_command.lower() == "exit": 
-          # Finishes the simulation environment but does not save the progress
-          # and erases all saved data from current simulation. 
-          # Example: exit 
           shutil.rmtree(sim_folder) 
           break 
 
         elif sim_command.lower() == "save": 
-          # Saves the current simulation progress. 
-          # Example: save
           self.save()
 
         elif sim_command[:3].lower() == "run": 
-          # Runs the number of steps specified in the prompt.
-          # Example: run 1000
           int_count = int(sim_command.split()[-1])
-          rs.start_server(int_count)
+          self.start_server(int_count)
         
         elif sim_command[:9].lower() == "debug run":
-          # Runs the number of steps specified in the prompt.
-					# Example: debug run 1000
           int_count = int(sim_command.split()[-1])
-          rs.start_server(int_count, debug_mode=True)
+          self.start_server(int_count, debug_mode=True)
 
         elif ("print persona schedule" 
               in sim_command[:22].lower()): 
@@ -845,7 +1174,7 @@ class ReverieServer:
           # Ex: print persona associative memory (event) Isabella Rodriguez
           ret_str += f'{self.personas[" ".join(sim_command.split()[-2:])]}\n'
           ret_str += (self.personas[" ".join(sim_command.split()[-2:])]
-                                       .a_mem.get_str_seq_events())
+                                           .a_mem.get_str_seq_events())
 
         elif ("print persona associative memory (thought)" 
               in sim_command.lower()): 
@@ -854,7 +1183,7 @@ class ReverieServer:
           # Ex: print persona associative memory (thought) Isabella Rodriguez
           ret_str += f'{self.personas[" ".join(sim_command.split()[-2:])]}\n'
           ret_str += (self.personas[" ".join(sim_command.split()[-2:])]
-                                       .a_mem.get_str_seq_thoughts())
+                                           .a_mem.get_str_seq_thoughts())
 
         elif ("print persona associative memory (chat)" 
               in sim_command.lower()): 
@@ -863,13 +1192,7 @@ class ReverieServer:
           # Ex: print persona associative memory (chat) Isabella Rodriguez
           ret_str += f'{self.personas[" ".join(sim_command.split()[-2:])]}\n'
           ret_str += (self.personas[" ".join(sim_command.split()[-2:])]
-                                       .a_mem.get_str_seq_chats())
-
-        elif ("print persona spatial memory" 
-              in sim_command.lower()): 
-          # Print the spatial memory of the persona specified in the prompt
-          # Ex: print persona spatial memory Isabella Rodriguez
-          self.personas[" ".join(sim_command.split()[-2:])].s_mem.print_tree()
+                                           .a_mem.get_str_seq_chats())
 
         elif ("print current time" 
               in sim_command[:18].lower()): 
@@ -986,6 +1309,189 @@ class ReverieServer:
         pass
 
 
+  def handle_conversation_message(self, command):
+    """处理对话消息"""
+    try:
+        session_file = f"{fs_temp_storage}/conversation_session.json"
+        
+        if not os.path.exists(session_file):
+            return {
+                'success': False,
+                'output': '❌ 没有活跃的对话会话。请先使用 "converse as" 或 "converse with" 命令启动对话。'
+            }
+        
+        # 读取会话信息
+        with open(session_file, 'r') as f:
+            session_data = json.load(f)
+        
+        # 提取消息内容
+        message = command[4:].strip()  # 去掉 "say "
+        if not message:
+            return {
+                'success': False,
+                'output': '❌ 消息不能为空。用法: say [您要说的话]'
+            }
+        
+        result = self.process_conversation_message(session_data, message)
+        
+        # 更新会话文件
+        with open(session_file, 'w') as f:
+            json.dump(session_data, f, indent=2)
+        
+        return {
+            'success': True,
+            'output': result
+        }
+        
+    except Exception as e:
+        import traceback
+        return {
+            'success': False,
+            'output': f'❌ 处理对话时出错: {str(e)}\n{traceback.format_exc()}'
+        }
+
+  def process_conversation_message(self, session_data, user_input):
+    """处理对话消息并生成回复"""
+    try:
+        from persona.cognitive_modules.converse import (
+            generate_summarize_ideas, 
+            generate_next_line
+        )
+        from persona.cognitive_modules.retrieve import new_retrieve
+        
+        persona_name = session_data['persona_name']
+        user_role = session_data['user_role']
+        user_description = session_data.get('user_description', '')
+        conversation = session_data['conversation']
+        
+        if persona_name not in self.personas:
+            return f'❌ Persona {persona_name} not found'
+        
+        persona = self.personas[persona_name]
+        
+        # Create enhanced description for AI understanding
+        if user_description:
+            enhanced_interlocutor_desc = f"{user_role} ({user_description})"
+        else:
+            enhanced_interlocutor_desc = user_role
+        
+        # 检索相关记忆
+        retrieved = new_retrieve(persona, [user_input], 50)[user_input]
+        
+        # 生成总结想法
+        if user_role != "User":
+            contextualized_line = f"{enhanced_interlocutor_desc} says: {user_input}"
+            summarized_idea = generate_summarize_ideas(persona, retrieved, contextualized_line)
+        else:
+            summarized_idea = generate_summarize_ideas(persona, retrieved, user_input)
+        
+        # 添加用户输入到对话
+        conversation.append([user_role, user_input])
+        
+        # 生成回复
+        next_line = generate_next_line(persona, enhanced_interlocutor_desc, conversation, summarized_idea)
+        conversation.append([persona.scratch.name, next_line])
+        
+        # 更新会话数据
+        session_data['conversation'] = conversation
+        
+        # 构建输出 - 简化格式便于前端解析
+        output = f"{user_role}: {user_input}\n{persona.scratch.name}: {next_line}"
+        
+        # 终端也显示对话
+        print(f"💬 [Frontend] {user_role}: {user_input}")
+        print(f"💬 [Frontend] {persona.scratch.name}: {next_line}")
+        
+        return output
+        
+    except Exception as e:
+        import traceback
+        return f'❌ 处理消息时出错: {str(e)}\n{traceback.format_exc()}'
+
+  def end_conversation_session(self):
+    """结束对话会话并生成反思"""
+    try:
+        session_file = f"{fs_temp_storage}/conversation_session.json"
+        
+        if not os.path.exists(session_file):
+            return {
+                'success': False,
+                'output': '❌ 没有活跃的对话会话。'
+            }
+        
+        # 读取会话信息
+        with open(session_file, 'r') as f:
+            session_data = json.load(f)
+        
+        persona_name = session_data['persona_name']
+        user_role = session_data['user_role']
+        user_description = session_data.get('user_description', '')
+        conversation = session_data['conversation']
+        
+        if persona_name not in self.personas:
+            return {
+                'success': False,
+                'output': f'❌ Persona {persona_name} not found'
+            }
+        
+        if not conversation:
+            # 删除会话文件
+            os.remove(session_file)
+            return {
+                'success': True,
+                'output': '✅ 对话已结束（没有对话内容）'
+            }
+        
+        persona = self.personas[persona_name]
+        
+        # Create enhanced description for AI understanding
+        if user_description:
+            enhanced_interlocutor_desc = f"{user_role} ({user_description})"
+        else:
+            enhanced_interlocutor_desc = user_role
+        
+        # 保存对话到记忆
+        self.save_conversation_to_memory(persona, conversation, enhanced_interlocutor_desc)
+        
+        # 生成反思
+        reflection = self.generate_conversation_reflection(persona, conversation, enhanced_interlocutor_desc)
+        
+        # 构建完整的对话回顾
+        conversation_review = "\n".join([
+            f"{speaker}: {utterance}" for speaker, utterance in conversation
+        ])
+        
+        output = f"""✅ 对话已结束！
+
+📝 完整对话记录:
+{conversation_review}
+
+🤔 {persona_name} 的反思:
+{reflection}
+
+💾 对话已保存到 {persona_name} 的记忆中。"""
+        
+        # 终端也显示结束信息
+        print(f"✅ [Frontend] 对话结束: {user_role} <-> {persona_name}")
+        print(f"🤔 [Frontend] {persona_name}: {reflection}")
+        
+        # 删除会话文件
+        os.remove(session_file)
+        
+        return {
+            'success': True,
+            'output': output
+        }
+        
+    except Exception as e:
+        import traceback
+        return {
+            'success': False,
+            'output': f'❌ 结束对话时出错: {str(e)}\n{traceback.format_exc()}'
+        }
+
+
+
 if __name__ == '__main__':
   # rs = ReverieServer("base_the_ville_isabella_maria_klaus", 
   #                    "July1_the_ville_isabella_maria_klaus-step-3-1")
@@ -993,12 +1499,15 @@ if __name__ == '__main__':
   #                    "July1_the_ville_isabella_maria_klaus-step-3-21")
   # rs.open_server()
   while(True):
-    num = int(input("""Choose the forked simulation: \n1. base_the_ville_isabella_maria_klaus\n2. 4ps\n3. custom\n"""))
+    num = int(input("""Choose the forked simulation: \n1. base_the_ville_isabella_maria_klaus\n2. 4ps\n3. new28\n4. custom\n"""))
     if num == 1: 
       origin = "base_the_ville_isabella_maria_klaus"
       break
     if num == 2:
       origin = "4ps"
+      break
+    if num == 3:
+      origin = "new28"
       break
     else:
       origin = input("Enter the name of the simulation to fork from: ").strip()

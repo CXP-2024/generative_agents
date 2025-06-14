@@ -31,5 +31,9 @@ urlpatterns = [
     url(r'^update_environment/$', translator_views.update_environment, name='update_environment'),
     url(r'^path_tester/$', translator_views.path_tester, name='path_tester'),
     url(r'^path_tester_update/$', translator_views.path_tester_update, name='path_tester_update'),
+    url(r'^execute_console_command/$', translator_views.execute_console_command, name='execute_console_command'),
+    url(r'^create_pause_file/$', translator_views.create_pause_file, name='create_pause_file'),
+    url(r'^check_pause_status/$', translator_views.check_pause_status, name='check_pause_status'),
+    url(r'^check_simulation_result/$', translator_views.check_simulation_result, name='check_simulation_result'),
     path('admin/', admin.site.urls),
 ]

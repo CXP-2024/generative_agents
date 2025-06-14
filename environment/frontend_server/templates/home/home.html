@@ -5,75 +5,1217 @@
 <br>
 <br>
 <div>
-	<div id="game-container" style="text-align: center"></div>
+    <div id="game-container" style="text-align: center"></div>
 
-	<div style="width:55%; margin: 0 auto; margin-top:4.5em">
-		<h3 style="margin-bottom:-0.5em; font-size:1.5em">Current Time:</h3>
-		<div class="row">
-			<div class="col-md-8" id="game-time" style="">
-				<h2><span id="game-time-content"></span></h2> 
-			</div>
-			<div class="col-md-4">
-				
-				<h2 style="text-align: right; {% if mode == 'simulate' %} display: none {% endif %}">
-					<button id="play_button" type="button" class="btn btn-default">
-				    <strong style=" font-size:1.2em"><i class="glyphicon glyphicon-play"></i> &nbsp;Play</strong>
-				  </button>
-				  
-				  <button id="pause_button" type="button" class="btn btn-default">
-				    <strong style=" font-size:1.2em"><i class="glyphicon glyphicon-pause"></i> &nbsp;Pause</strong>
-				  </button>
+    <div style="width:55%; margin: 0 auto; margin-top:4.5em">
+        <h3 style="margin-bottom:-0.5em; font-size:1.5em">Current Time:</h3>
+        <div class="row">
+            <div class="col-md-8" id="game-time" style="">
+                <h2><span id="game-time-content"></span></h2> 
+            </div>
+            <div class="col-md-4">
+                <h2 style="text-align: right; {% if mode == 'simulate' %} display: none {% endif %}">
+                    <button id="play_button" type="button" class="btn btn-default">
+                    <strong style=" font-size:1.2em"><i class="glyphicon glyphicon-play"></i> &nbsp;Play</strong>
+                  </button>
+                  
+                  <button id="pause_button" type="button" class="btn btn-default">
+                    <strong style=" font-size:1.2em"><i class="glyphicon glyphicon-pause"></i> &nbsp;Pause</strong>
+                  </button>
+                </h2>
+            </div>
+        </div>
 
-				</h2>
-				
-			</div>
-		</div>
+        <br>
+        <hr style="border-color:#999999">
+        <br>
 
-		<br>
-		<hr style="border-color:#999999">
-		<br>
+        <!-- 新增：控制面板 -->
+        <div class="row" style="margin-bottom: 20px;">
+            <div class="col-md-12">
+                <div class="panel panel-info">
+                    <div class="panel-heading">
+                        <h4 class="panel-title">
+                            <i class="glyphicon glyphicon-cog"></i> Simulation Control
+                        </h4>
+                    </div>
+                    <div class="panel-body">
+                        <!-- 第一行：运行控制 -->
+                        <div class="row" style="margin-bottom: 15px;">
+                            <div class="col-md-2">
+                                <label for="step-input">Steps:</label>
+                                <input type="number" id="step-input" class="form-control" value="5" min="1" max="100" style="text-align: center;">
+                            </div>
+                            <div class="col-md-6">
+                                <div class="btn-group" role="group" style="margin-top: 25px;">
+                                    <button class="btn btn-success" onclick="runSimulation()" id="run-btn">
+                                        <i class="glyphicon glyphicon-play"></i> Run
+                                    </button>
+                                    <button class="btn btn-warning" onclick="debugRunSimulation()" id="debug-run-btn">
+                                        <i class="glyphicon glyphicon-wrench"></i> Debug Run
+                                    </button>
+                                    <button class="btn btn-danger" onclick="pauseSimulation()" id="pause-btn" disabled>
+                                        <i class="glyphicon glyphicon-pause"></i> Pause
+                                    </button>
+                                    <button class="btn btn-primary" onclick="saveSimulation()">
+                                        <i class="glyphicon glyphicon-floppy-disk"></i> Save
+                                    </button>
+                                    <button class="btn btn-info" onclick="showStatus()">
+                                        <i class="glyphicon glyphicon-info-sign"></i> Status
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div id="command-status" style="margin-top: 25px; padding: 8px; border-radius: 4px; background-color: #f8f8f8; text-align: center; font-size: 12px; color: #666;">
+                                    Ready to execute commands
+                                </div>
+                                <!-- 新增：运行状态指示器 -->
+                                <div id="simulation-status" style="margin-top: 5px; padding: 4px; border-radius: 4px; background-color: #e9ecef; text-align: center; font-size: 10px; color: #6c757d; display: none;">
+                                    <span id="status-icon">⏸️</span> <span id="status-text">Ready</span>
+                                </div>
+                            </div>
+                        </div>
 
-		{% for p_name, p_name_os in persona_names %}
-			<div class="media" style="background-color:#EEEEEE; padding:1em; padding-left:3.5em; padding-right:2em; border-radius:10px">
-			  <div class="media-left media-middle">
-			    <a href="#">
-			      <img class="media-object" src="{% static 'img/atlas.png' %}" style="width:5em">
-			    </a>
-			  </div>
-			  <div class="media-body" style='padding-left:3em; padding-top:0.5em; padding-bottom:1em'>
-			  	<div class="row">
-			    	<h2 class="col-md-8" id="name__{{ p_name_os }}" style="margin-bottom:0.8em; font-size:1.85em; ">
-			    		{{p_name}} &nbsp;&nbsp;
-			    		<a href="{% url 'replay_persona_state' sim_code step p_name_os %}" style="font-size:0.6em">State Details</a>
-			    	</h2>
-			    </div>
-			    <div style="">
-					  <p style="font-size:1.2em"><strong>Current Action:</strong> <br><span id="current_action__{{ p_name_os }}"></span></p>
-					  <p style="font-size:1.2em"><strong>Location:</strong> <br><span id="target_address__{{ p_name_os }}"></span></p>
-					  <p style="font-size:1.2em"><strong>Current Conversation:</strong> <br><span id="chat__{{ p_name_os }}"></span></p>
-					</div>
-			  </div>
-			</div>	
-			<br>
-		{% endfor %}
+                        <!-- 第二行：对话控制 -->
+                        <div class="row">
+                            <div class="col-md-3">
+                                <label for="persona-select">Select Persona:</label>
+                                <select id="persona-select" class="form-control">
+                                    <option value="">Choose persona...</option>
+                                    {% for p in persona_names %}
+                                    <option value="{{p.original}}">{{p.original}}</option>
+                                    {% endfor %}
+                                </select>
+                            </div>
+                            <div class="col-md-3">
+                                <label for="role-input">Your Role:</label>
+                                <input type="text" id="role-input" class="form-control" placeholder="Wei Xu" value="Wei Xu">
+                            </div>
+                            <div class="col-md-4">
+                                <div class="btn-group" role="group" style="margin-top: 25px;">
+                                    <button class="btn btn-success" onclick="startConversationAs()">
+                                        <i class="glyphicon glyphicon-user"></i> Converse As
+                                    </button>
+                                    <button class="btn btn-success" onclick="startConversationWith()">
+                                        <i class="glyphicon glyphicon-comment"></i> Converse With
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="col-md-2">
+                                <button class="btn btn-danger btn-block" onclick="endConversation()" style="margin-top: 25px;" disabled id="end-conversation-btn">
+                                    <i class="glyphicon glyphicon-stop"></i> End Chat
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
 
+        <!-- 角色显示区域 -->
+        <div class="row">
+            <div class="col-md-12" style="border:solid; padding:2em; border-radius: 15px">
+                <div class="row" style="">
+                    {% for p in persona_names %}
+                    <div class="col-md-2 col-sm-2" style="text-align:center; margin-bottom:0.8em;">
+                        <div id="on_screen_det_trigger-{{p.underscore}}" style="cursor: pointer;">
+                            <div class="row" style="padding:0">
+                                <div class="col-md-4" id="on_screen_det_trigger_container-{{p.underscore}}"
+                                    style="text-align:center; padding:0; padding-top:0.3em">
+                                    {% with 'assets/characters/profile/'|add:p.underscore|add:'.png' as image_static %}
+                                    <img src="{% static image_static %}" style="width:46px; padding:0; ">
+                                    {% endwith %}
+                                    <br>
+                                    {{ p.initial }}
+                                </div>
+                                <div class="col-md-8" style="padding-top:0.5em; ">
+                                    <span style="font-size:1.5em" id="quick_emoji-{{p.underscore}}">🤔</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+        <br>
 
+        <div class="media" id="on_screen_det_content-init"
+            style="background-color:#EEEEEE; padding:1em; padding-left:3.5em; padding-right:2em; border-radius:10px; ">
+            <div class="media-left media-middle">
+                <em>Click on one of the character sprites to see its current state in more detail. </em>
+            </div>
+        </div>
 
+        {% for p in persona_names %}
+        <div class="media" id="on_screen_det_content-{{p.underscore}}"
+            style="background-color:#EEEEEE; padding:1em; padding-left:3.5em; padding-right:2em; border-radius:10px; display: none;">
+            <div class="media-left media-middle">
+                <a href="#">
+                    {% with 'assets/characters/profile/'|add:p.underscore|add:'.png' as image_static %}
+                    <img src="{% static image_static %}" style="width:5em">
+                    {% endwith %}
+                </a>
+            </div>
+            <div class="media-body" style='padding-left:3em; padding-top:0.5em; padding-bottom:1em'>
+                <div class="row">
+                    <h2 class="col-md-8" id="name__{{ p.underscore }}" style="margin-bottom:0.8em; font-size:1.85em; ">
+                        {{p.original}} &nbsp;&nbsp;
+                        <a href="{% url 'replay_persona_state' sim_code step p.underscore %}" style="font-size:0.6em">State
+                            Details</a>
+                    </h2>
+                </div>
+                <div style="">
+                    <p style="font-size:1.2em"><strong>Current Action:</strong> <br><span
+                            id="current_action__{{ p.underscore }}"></span></p>
+                    <p style="font-size:1.2em"><strong>Location:</strong> <br><span
+                            id="target_address__{{ p.underscore }}"></span></p>
+                    <p style="font-size:1.2em"><strong>Current Conversation:</strong> <br><span
+                            id="chat__{{ p.underscore }}"></span></p>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
 
-		
-
-	</div>
+        <!-- 对话控制台 -->
+        <div style="margin-top:2em">
+            <div class="panel panel-success" id="conversation-panel" style="display: none;">
+                <div class="panel-heading">
+                    <h4 class="panel-title">
+                        <i class="glyphicon glyphicon-comment"></i> 
+                        <span id="conversation-title">Conversation</span>
+                    </h4>
+                </div>
+                <div class="panel-body">
+                    <!-- 对话历史显示区域 -->
+                    <div id="conversation-history" style="background-color: #f9f9f9; border: 1px solid #ddd; border-radius: 5px; height: 300px; overflow-y: auto; padding: 15px; margin-bottom: 15px; font-family: 'Georgia', serif;">
+                        <div class="conversation-message system-message">
+                            💬 Conversation will appear here...
+                        </div>
+                    </div>
+                    
+                    <!-- 消息输入区域 -->
+                    <div class="input-group">
+                        <span class="input-group-addon" style="background-color: #5cb85c; color: white; border-color: #4cae4c;">
+                            <span id="user-role-display">You</span>:
+                        </span>
+                        <input type="text" id="message-input" class="form-control" 
+                               placeholder="Type your message here..." 
+                               style="border-color: #4cae4c;" disabled>
+                        <span class="input-group-btn">
+                            <button class="btn btn-success" type="button" onclick="sendMessage()" id="send-message-btn" disabled>
+                                <i class="glyphicon glyphicon-send"></i> Send
+                            </button>
+                        </span>
+                    </div>
+                    
+                    <!-- 对话状态提示 -->
+                    <div id="conversation-status" style="margin-top: 10px; padding: 8px; border-radius: 4px; background-color: #d9edf7; color: #31708f; text-align: center; font-size: 12px;">
+                        Start a conversation to begin chatting
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
 
-  
-
-
-
 <div style="padding-bottom:15em"> </div>
+<div style="display: none" id="temp_focus"></div>
 
-
-<!-- partial -->
-<script src='https://cdn.jsdelivr.net/npm/phaser@3.55.2/dist/phaser.js'></script>
-{% include 'home/main_script.html' %}
 {% endblock content %}
 
+{% block js_content %}
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src='https://cdn.jsdelivr.net/npm/phaser@3.55.2/dist/phaser.js'></script>
+{% include 'home/main_script.html' %}
+
+<script>
+// 等待jQuery和DOM完全加载后再执行
+$(document).ready(function() {
+    console.log('jQuery loaded, version:', $.fn.jquery);
+    
+    // 全局状态变量
+    let conversationActive = false;
+    let currentPersona = null;
+    let currentRole = null;
+    let commandInProgress = false;
+    let simulationRunning = false;
+    let currentSimulationType = null; // 'run' 或 'debug'
+    let pauseCheckInterval = null; // 暂停检查定时器
+
+    // 获取当前模拟代码
+    function getCurrentSimCode() {
+        return typeof window.sim_code !== 'undefined' ? window.sim_code : 'default_sim';
+    }
+
+    // 获取当前步骤
+    function getCurrentStep() {
+        return typeof window.step !== 'undefined' ? window.step : 0;
+    }
+
+    // CSRF Token获取函数
+    function getCookie(name) {
+        let cookieValue = null;
+        if (document.cookie && document.cookie !== '') {
+            const cookies = document.cookie.split(';');
+            for (let i = 0; i < cookies.length; i++) {
+                const cookie = cookies[i].trim();
+                if (cookie.substring(0, name.length + 1) === (name + '=')) {
+                    cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+                    break;
+                }
+            }
+        }
+        return cookieValue;
+    }
+
+    // 更新命令状态显示
+    function updateCommandStatus(message, type = 'info') {
+        const statusDiv = document.getElementById('command-status');
+        statusDiv.textContent = message;
+        
+        // 移除所有状态类
+        statusDiv.classList.remove('status-success', 'status-error', 'status-warning', 'status-info');
+        
+        // 添加对应的状态类和样式
+        switch(type) {
+            case 'success':
+                statusDiv.style.backgroundColor = '#d4edda';
+                statusDiv.style.color = '#155724';
+                statusDiv.style.borderColor = '#c3e6cb';
+                break;
+            case 'error':
+                statusDiv.style.backgroundColor = '#f8d7da';
+                statusDiv.style.color = '#721c24';
+                statusDiv.style.borderColor = '#f5c6cb';
+                break;
+            case 'warning':
+                statusDiv.style.backgroundColor = '#fff3cd';
+                statusDiv.style.color = '#856404';
+                statusDiv.style.borderColor = '#ffeaa7';
+                break;
+            case 'progress':
+                statusDiv.style.backgroundColor = '#cce5ff';
+                statusDiv.style.color = '#004085';
+                statusDiv.style.borderColor = '#b3d7ff';
+                break;
+            default:
+                statusDiv.style.backgroundColor = '#f8f8f8';
+                statusDiv.style.color = '#666';
+                statusDiv.style.borderColor = '#ddd';
+        }
+    }
+
+    // 更新模拟状态显示
+    function updateSimulationStatus(status, type = 'info') {
+        const statusDiv = document.getElementById('simulation-status');
+        const statusIcon = document.getElementById('status-icon');
+        const statusText = document.getElementById('status-text');
+        
+        statusDiv.style.display = 'block';
+        
+        switch(status) {
+            case 'running':
+                statusIcon.textContent = '▶️';
+                statusText.textContent = `Running (${type})`;
+                statusDiv.style.backgroundColor = '#d4edda';
+                statusDiv.style.color = '#155724';
+                break;
+            case 'pausing':
+                statusIcon.textContent = '⏳';
+                statusText.textContent = 'Pausing...';
+                statusDiv.style.backgroundColor = '#fff3cd';
+                statusDiv.style.color = '#856404';
+                break;
+            case 'paused':
+                statusIcon.textContent = '⏸️';
+                statusText.textContent = 'Paused';
+                statusDiv.style.backgroundColor = '#f8d7da';
+                statusDiv.style.color = '#721c24';
+                break;
+            case 'ready':
+                statusIcon.textContent = '✅';
+                statusText.textContent = 'Ready';
+                statusDiv.style.backgroundColor = '#e9ecef';
+                statusDiv.style.color = '#6c757d';
+                break;
+        }
+    }
+
+    // 更新按钮状态
+    function updateButtonStates(running = false) {
+        document.getElementById('run-btn').disabled = running;
+        document.getElementById('debug-run-btn').disabled = running
+        document.getElementById('pause-btn').disabled = !running;
+        document.getElementById('step-input').disabled = running;
+    }
+
+    // 执行通用命令
+    function executeSimulationCommand(command, successMessage = '命令执行成功') {
+        const requestData = {
+            command: command,
+            sim_code: getCurrentSimCode(),
+            step: getCurrentStep()
+        };
+
+        $.ajax({
+            url: '/execute_console_command/',
+            type: 'POST',
+            contentType: 'application/json',
+            headers: {
+                'X-CSRFToken': getCookie('csrftoken')
+            },
+            data: JSON.stringify(requestData),
+            success: function(response) {
+                if (response.success) {
+                    // 只有当 successMessage 不为 null 时才显示消息
+                    if (successMessage) {
+                        updateCommandStatus(successMessage, 'success');
+                    }
+                    console.log('Command output:', response.output);
+                    // 对于运行命令，启动状态监控
+                    if (command.startsWith('run ') || command.startsWith('debug run ')) {
+                        startPauseStatusCheck(); // 复用现有的检查函数
+                    } else {
+                        resetSimulationState();
+                    }
+                } else {
+                    updateCommandStatus(`Error: ${response.error || 'Unknown error'}`, 'error');
+                    resetSimulationState();
+                }
+            },
+            error: function(xhr, status, error) {
+                updateCommandStatus(`Network error: ${error}`, 'error');
+                resetSimulationState();
+            }
+        });
+    }
+
+    // 模拟控制函数
+    window.runSimulation = function() {
+        const steps = document.getElementById('step-input').value;
+        if (!steps || steps < 1) {
+            updateCommandStatus('Please enter a valid number of steps', 'warning');
+            return;
+        }
+        
+        // 立即显示 started 状态
+        updateCommandStatus(`Started ${steps} step simulation`, 'success');
+        
+        simulationRunning = true;
+        currentSimulationType = 'normal';
+        updateButtonStates(true);
+        updateSimulationStatus('running', 'Normal');
+        
+        // 发送命令，但不在成功回调中再次显示 started
+        executeSimulationCommand(`run ${steps}`, null); // 传入 null 表示不显示额外的成功消息
+    };
+
+    window.debugRunSimulation = function() {
+        const steps = document.getElementById('step-input').value;
+        if (!steps || steps < 1) {
+            updateCommandStatus('Please enter a valid number of steps', 'warning');
+            return;
+        }
+        
+        // 立即显示 started 状态
+        updateCommandStatus(`Started debug mode with ${steps} steps`, 'success');
+        
+        simulationRunning = true;
+        currentSimulationType = 'debug';
+        updateButtonStates(true);
+        updateSimulationStatus('running', 'Debug');
+        
+        // 发送命令，但不在成功回调中再次显示 started
+        executeSimulationCommand(`debug run ${steps}`, null); // 传入 null 表示不显示额外的成功消息
+    };
+
+    // 新增：暂停模拟函数
+    window.pauseSimulation = function() {
+        if (!simulationRunning) {
+            updateCommandStatus('No simulation running', 'warning');
+            return;
+        }
+        
+        updateSimulationStatus('pausing');
+        updateCommandStatus('Sending pause signal...', 'warning');
+        
+        console.log('🔍 发送暂停命令...');
+        
+        // 直接创建暂停文件，不通过命令队列
+        $.ajax({
+            url: '/create_pause_file/',  // 新的专用端点
+            type: 'POST',
+            contentType: 'application/json',
+            headers: {
+                'X-CSRFToken': getCookie('csrftoken')
+            },
+            data: JSON.stringify({
+                sim_code: getCurrentSimCode(),
+                step: getCurrentStep()
+            }),
+            success: function(response) {
+                console.log('🔍 暂停文件创建响应:', response);
+                
+                if (response.success) {
+                    updateCommandStatus('Pause file created successfully', 'success');
+                    updateSimulationStatus('pausing');
+                    
+                    // 开始检查暂停状态
+                    startPauseStatusCheck();
+                } else {
+                    updateCommandStatus(`Failed to create pause file: ${response.error}`, 'error');
+                    resetSimulationState();
+                }
+            },
+            error: function(xhr, status, error) {
+                console.error('🔍 暂停文件创建错误:', {xhr, status, error});
+                updateCommandStatus(`Network error: ${error}`, 'error');
+                resetSimulationState();
+            }
+        });
+    };
+
+    // 修改状态检查函数 - 使用新的专用端点
+    function startPauseStatusCheck() {
+        if (pauseCheckInterval) {
+            clearInterval(pauseCheckInterval);
+        }
+        
+        console.log('🔄 开始检查暂停状态...');
+        
+        let checkCount = 0;
+        pauseCheckInterval = setInterval(() => {
+            checkCount++;
+            console.log(`🔍 第${checkCount}次检查暂停状态...`);
+            
+            // 🐱 直接检查结果文件而不是暂停文件状态
+            $.ajax({
+                url: '/check_simulation_result/',  // 使用结果检查端点
+                type: 'POST',
+                contentType: 'application/json',
+                headers: {
+                    'X-CSRFToken': getCookie('csrftoken')
+                },
+                data: JSON.stringify({
+                    sim_code: getCurrentSimCode(),
+                    step: getCurrentStep()
+                }),
+                success: function(response) {
+                    console.log(`🔍 结果检查响应 #${checkCount}:`, response);
+                    
+                    if (response.success && response.result) {
+                        const result = response.result;
+                        
+                        if (result.status === 'paused') {
+                            console.log('✅ 检测到暂停完成');
+                            clearInterval(pauseCheckInterval);
+                            pauseCheckInterval = null;
+                            
+                            simulationRunning = false;
+                            updateButtonStates(false);
+                            updateSimulationStatus('paused');
+                            
+                            // 🐱 现在可以直接使用结果文件中的信息了
+                            const executedSteps = result.executed_steps;
+                            const totalSteps = result.total_planned_steps;
+                            updateCommandStatus(`Paused at step ${executedSteps}/${totalSteps}. Progress saved.`, 'success');
+                            
+                        } else if (result.status === 'completed') {
+                            console.log('✅ 检测到模拟完成');
+                            clearInterval(pauseCheckInterval);
+                            pauseCheckInterval = null;
+                            
+                            simulationRunning = false;
+                            updateButtonStates(false);
+                            updateSimulationStatus('ready');
+                            
+                            const executedSteps = result.executed_steps;
+                            updateCommandStatus(`Completed ${executedSteps} steps successfully`, 'success');
+                        } else {
+                            // 继续等待
+                            updateCommandStatus(`Checking simulation status (${checkCount * 2}s)...`, 'progress');
+                        }
+                    } else {
+                        // 结果文件不存在，可能还在运行
+                        updateCommandStatus(`Waiting for simulation result (${checkCount * 2}s)...`, 'progress');
+                    }
+                },
+                error: function(xhr, status, error) {
+                    console.error(`❌ 结果检查错误 #${checkCount}:`, error);
+                    updateCommandStatus(`Result check error (retrying...)`, 'warning');
+                }
+            });
+        }, 2000);
+        
+        // 30秒后停止检查
+        setTimeout(() => {
+            if (pauseCheckInterval) {
+                clearInterval(pauseCheckInterval);
+                pauseCheckInterval = null;
+                updateCommandStatus('Pause completed or timed out', 'info');
+                resetSimulationState();
+            }
+        }, 30000);
+    }
+
+    // 重置模拟状态
+    function resetSimulationState() {
+        simulationRunning = false;
+        currentSimulationType = null;
+        updateButtonStates(false);
+        updateSimulationStatus('ready');
+        
+        if (pauseCheckInterval) {
+            clearInterval(pauseCheckInterval);
+            pauseCheckInterval = null;
+        }
+    }
+
+    // 对话相关函数
+    function addConversationMessage(speaker, message, type = 'normal') {
+        const historyDiv = document.getElementById('conversation-history');
+        const messageDiv = document.createElement('div');
+        messageDiv.className = 'conversation-message';
+        
+        let messageClass = '';
+        let speakerStyle = '';
+        
+        switch(type) {
+            case 'user':
+                messageClass = 'user-message';
+                speakerStyle = 'color: #2c5282; font-weight: bold;';
+                break;
+            case 'persona':
+                messageClass = 'persona-message';
+                speakerStyle = 'color: #2d7d32; font-weight: bold;';
+                break;
+            case 'system':
+                messageClass = 'system-message';
+                speakerStyle = 'color: #757575; font-style: italic;';
+                break;
+            case 'reflection':
+                messageClass = 'reflection-message';
+                speakerStyle = 'color: #6a4c93; font-style: italic;';
+                break;
+        }
+        
+        messageDiv.innerHTML = `
+            <div style="${speakerStyle} margin-bottom: 5px;">${speaker}</div>
+            <div style="margin-left: 15px; line-height: 1.4;">${message}</div>
+            <div style="height: 10px;"></div>
+        `;
+        
+        historyDiv.appendChild(messageDiv);
+        historyDiv.scrollTop = historyDiv.scrollHeight;
+    }
+
+    function updateConversationStatus(message, type = 'info') {
+        const statusDiv = document.getElementById('conversation-status');
+        statusDiv.textContent = message;
+        
+        switch(type) {
+            case 'active':
+                statusDiv.style.backgroundColor = '#d4edda';
+                statusDiv.style.color = '#155724';
+                break;
+            case 'waiting':
+                statusDiv.style.backgroundColor = '#fff3cd';
+                statusDiv.style.color = '#856404';
+                break;
+            case 'error':
+                statusDiv.style.backgroundColor = '#f8d7da';
+                statusDiv.style.color = '#721c24';
+                break;
+            default:
+                statusDiv.style.backgroundColor = '#d9edf7';
+                statusDiv.style.color = '#31708f';
+        }
+    }
+
+    window.startConversationAs = function() {
+        const persona = document.getElementById('persona-select').value;
+        const role = document.getElementById('role-input').value.trim();
+        
+        if (!persona) {
+            updateCommandStatus('Please select a persona', 'warning');
+            return;
+        }
+        if (!role) {
+            updateCommandStatus('Please enter your role', 'warning');
+            return;
+        }
+
+        const command = `converse as ${role} with ${persona}`;
+        
+        updateCommandStatus(`Starting conversation as ${role} with ${persona}`, 'progress');
+
+        $.ajax({
+            url: '/execute_console_command/',
+            type: 'POST',
+            contentType: 'application/json',
+            headers: {
+                'X-CSRFToken': getCookie('csrftoken')
+            },
+            data: JSON.stringify({
+                command: command,
+                sim_code: getCurrentSimCode(),
+                step: getCurrentStep()
+            }),
+            success: function(response) {
+                if (response.success) {
+                    // 启动对话界面
+                    conversationActive = true;
+                    currentPersona = persona;
+                    currentRole = role;
+                    
+                    // 显示对话面板
+                    document.getElementById('conversation-panel').style.display = 'block';
+                    document.getElementById('conversation-title').textContent = `${role} talking with ${persona}`;
+                    document.getElementById('user-role-display').textContent = role;
+                    
+                    // 启用输入控件
+                    document.getElementById('message-input').disabled = false;
+                    document.getElementById('send-message-btn').disabled = false;
+                    document.getElementById('end-conversation-btn').disabled = false;
+                    
+                    // 清空对话历史
+                    document.getElementById('conversation-history').innerHTML = '';
+                    
+                    // 添加系统消息
+                    addConversationMessage('System', `Conversation started between ${role} and ${persona}`, 'system');
+                    
+                    // 显示后端返回的初始信息
+                    if (response.output) {
+                        const lines = response.output.split('\n');
+                        for (const line of lines) {
+                            if (line.trim()) {
+                                addConversationMessage('System', line.trim(), 'system');
+                            }
+                        }
+                    }
+                    
+                    updateCommandStatus(`Conversation with ${persona} started`, 'success');
+                    updateConversationStatus(`Active conversation with ${persona}`, 'active');
+                    
+                    // 聚焦到输入框
+                    document.getElementById('message-input').focus();
+                    
+                } else {
+                    updateCommandStatus(`Error: ${response.error || 'Failed to start conversation'}`, 'error');
+                }
+            },
+            error: function(xhr, status, error) {
+                updateCommandStatus(`Network error: ${error}`, 'error');
+            }
+        });
+    };
+
+    window.startConversationWith = function() {
+        const persona = document.getElementById('persona-select').value;
+        
+        if (!persona) {
+            updateCommandStatus('Please select a persona', 'warning');
+            return;
+        }
+
+        // 弹出对话框让用户输入角色设定
+        const userRoleSetup = prompt(
+            `Please set your role background:\n\n` +
+            `You can play any role to chat with ${persona}.\n` +
+            `For example:\n` +
+            `- A curious visitor who wants to learn about life here\n\n` +
+            `Enter your role setting (leave blank for default):`,
+            ""
+        );
+
+        // 如果用户点击取消，则返回
+        if (userRoleSetup === null) {
+            return;
+        }
+
+        // 处理角色设定
+        let userRole = "User";
+        let userDescription = userRoleSetup.trim();
+
+        const command = userDescription ? 
+            `converse as ${userRole} with ${persona}` : 
+            `converse with ${persona}`;
+        
+        updateCommandStatus(`Starting conversation as ${userRole} with ${persona}`, 'progress');
+
+        $.ajax({
+            url: '/execute_console_command/',
+            type: 'POST',
+            contentType: 'application/json',
+            headers: {
+                'X-CSRFToken': getCookie('csrftoken')
+            },
+            data: JSON.stringify({
+                command: command,
+                sim_code: getCurrentSimCode(),
+                step: getCurrentStep()
+            }),
+            success: function(response) {
+                if (response.success) {
+                    // 启动对话界面
+                    conversationActive = true;
+                    currentPersona = persona;
+                    currentRole = userRole;
+                    
+                    // 显示对话面板
+                    document.getElementById('conversation-panel').style.display = 'block';
+                    document.getElementById('conversation-title').textContent = `${userRole} talking with ${persona}`;
+                    document.getElementById('user-role-display').textContent = userRole;
+                    
+                    // 启用输入控件
+                    document.getElementById('message-input').disabled = false;
+                    document.getElementById('send-message-btn').disabled = false;
+                    document.getElementById('end-conversation-btn').disabled = false;
+                    
+                    // 清空对话历史
+                    document.getElementById('conversation-history').innerHTML = '';
+                    
+                    // 添加系统消息
+                    addConversationMessage('System', `Conversation started between ${userRole} and ${persona}`, 'system');
+                    
+                    if (userDescription) {
+                        addConversationMessage('System', `Your role: ${userDescription}`, 'system');
+                    }
+                    
+                    // 显示后端返回的初始信息
+                    if (response.output) {
+                        const lines = response.output.split('\n');
+                        for (const line of lines) {
+                            if (line.trim()) {
+                                addConversationMessage('System', line.trim(), 'system');
+                            }
+                        }
+                    }
+                    
+                    updateCommandStatus(`Conversation with ${persona} started`, 'success');
+                    updateConversationStatus(`Active conversation with ${persona}`, 'active');
+                    
+                    // 聚焦到输入框
+                    document.getElementById('message-input').focus();
+                    
+                } else {
+                    updateCommandStatus(`Error: ${response.error || 'Failed to start conversation'}`, 'error');
+                }
+            },
+            error: function(xhr, status, error) {
+                updateCommandStatus(`Network error: ${error}`, 'error');
+            }
+        });
+    };
+
+    window.sendMessage = function() {
+        if (!conversationActive) {
+            updateConversationStatus('No active conversation', 'error');
+            return;
+        }
+
+        const messageInput = document.getElementById('message-input');
+        const message = messageInput.value.trim();
+        
+        if (!message) {
+            return;
+        }
+
+        // 显示用户消息
+        addConversationMessage(currentRole, message, 'user');
+        
+        // 清空输入框并禁用
+        messageInput.value = '';
+        messageInput.disabled = true;
+        document.getElementById('send-message-btn').disabled = true;
+        
+        updateConversationStatus('Waiting for response...', 'waiting');
+
+        // 发送 say 命令到后端（这是关键修改）
+        const command = `say ${message}`;
+        
+        $.ajax({
+            url: '/execute_console_command/',
+            type: 'POST',
+            contentType: 'application/json',
+            headers: {
+                'X-CSRFToken': getCookie('csrftoken')
+            },
+            data: JSON.stringify({
+                command: command,  // 发送 "say [消息]" 格式
+                sim_code: getCurrentSimCode(),
+                step: getCurrentStep()
+            }),
+            success: function(response) {
+                // 重新启用输入
+                messageInput.disabled = false;
+                document.getElementById('send-message-btn').disabled = false;
+                messageInput.focus();
+                
+                if (response.success) {
+                    // 解析响应，提取persona的回复
+                    const output = response.output;
+                    const lines = output.split('\n');
+                    
+                    for (const line of lines) {
+                        if (line.includes(':') && !line.startsWith('💡') && !line.startsWith('━')) {
+                            const parts = line.split(':');
+                            if (parts.length >= 2) {
+                                const speaker = parts[0].trim();
+                                const content = parts.slice(1).join(':').trim();
+                                
+                                if (speaker === currentPersona) {
+                                    addConversationMessage(speaker, content, 'persona');
+                                } else if (line.includes('reflection') || line.includes('🤔')) {
+                                    addConversationMessage('Reflection', content, 'reflection');
+                                }
+                            }
+                        } else if (line.trim() && !line.startsWith('💡') && !line.startsWith('━') && !line.includes('继续对话')) {
+                            addConversationMessage('System', line.trim(), 'system');
+                        }
+                    }
+                    
+                    updateConversationStatus(`Active conversation with ${currentPersona}`, 'active');
+                } else {
+                    addConversationMessage('System', `Error: ${response.error || 'Failed to send message'}`, 'system');
+                    updateConversationStatus('Error occurred', 'error');
+                }
+            },
+            error: function(xhr, status, error) {
+                messageInput.disabled = false;
+                document.getElementById('send-message-btn').disabled = false;
+                addConversationMessage('System', `Network error: ${error}`, 'system');
+                updateConversationStatus('Network error', 'error');
+            }
+        });
+    };
+
+    window.endConversation = function() {
+        if (!conversationActive) {
+            return;
+        }
+
+        updateConversationStatus('Ending conversation...', 'waiting');
+
+        $.ajax({
+            url: '/execute_console_command/',
+            type: 'POST',
+            contentType: 'application/json',
+            headers: {
+                'X-CSRFToken': getCookie('csrftoken')
+            },
+            data: JSON.stringify({
+                command: 'end_conversation',
+                sim_code: getCurrentSimCode(),
+                step: getCurrentStep()
+            }),
+            success: function(response) {
+                if (response.success) {
+                    // 显示结束信息
+                    addConversationMessage('System', 'Conversation ended', 'system');
+                    
+                    // 显示后端返回的总结信息
+                    if (response.output) {
+                        const lines = response.output.split('\n');
+                        for (const line of lines) {
+                            if (line.trim()) {
+                                addConversationMessage('System', line.trim(), 'system');
+                            }
+                        }
+                    }
+                    
+                    updateConversationStatus('Conversation ended', 'info');
+                    updateCommandStatus('Conversation ended successfully', 'success');
+                } else {
+                    addConversationMessage('System', `Error ending conversation: ${response.error}`, 'system');
+                    updateConversationStatus('Error ending conversation', 'error');
+                }
+                
+                // 重置状态
+                conversationActive = false;
+                currentPersona = null;
+                currentRole = null;
+                
+                // 禁用输入控件
+                document.getElementById('message-input').disabled = true;
+                document.getElementById('send-message-btn').disabled = true;
+                document.getElementById('end-conversation-btn').disabled = true;
+            },
+            error: function(xhr, status, error) {
+                addConversationMessage('System', `Network error: ${error}`, 'system');
+                updateConversationStatus('Network error', 'error');
+            }
+        });
+    };
+
+    // 页面卸载时清理定时器
+    $(window).on('beforeunload', function() {
+        if (pauseCheckInterval) {
+            clearInterval(pauseCheckInterval);
+        }
+    });
+
+    // 修改暂停函数
+    window.pauseSimulation = function() {
+        if (!simulationRunning) {
+            updateCommandStatus('No simulation running', 'warning');
+            return;
+        }
+        
+        updateSimulationStatus('pausing');
+        updateCommandStatus('Sending pause signal...', 'warning');
+        
+        // 直接创建暂停文件，不通过命令队列
+        $.ajax({
+            url: '/create_pause_file/',  // 新的专用端点
+            type: 'POST',
+            contentType: 'application/json',
+            headers: {
+                'X-CSRFToken': getCookie('csrftoken')
+            },
+            data: JSON.stringify({
+                sim_code: getCurrentSimCode(),
+                step: getCurrentStep()
+            }),
+            success: function(response) {
+                if (response.success) {
+                    updateCommandStatus('Pause file created, waiting for simulation to stop...', 'success');
+                    updateSimulationStatus('pausing');
+                    
+                    // 开始检查暂停状态
+                    startPauseStatusCheck();
+                } else {
+                    updateCommandStatus(`Failed to send pause signal: ${response.error}`, 'error');
+                    resetSimulationState();
+                }
+            },
+            error: function(xhr, status, error) {
+                updateCommandStatus(`Network error: ${error}`, 'error');
+                resetSimulationState();
+            }
+        });
+    };
+
+    // 简化状态检查 - 检查暂停文件是否消失
+    function startPauseStatusCheck() {
+        if (pauseCheckInterval) {
+            clearInterval(pauseCheckInterval);
+        }
+        
+        console.log('🔄 开始检查暂停状态...');
+        
+        let checkCount = 0;
+        pauseCheckInterval = setInterval(() => {
+            checkCount++;
+            console.log(`🔍 第${checkCount}次检查暂停状态...`);
+            
+            $.ajax({
+                url: '/check_simulation_result/',  // 使用结果检查端点
+                type: 'POST',
+                contentType: 'application/json',
+                headers: {
+                    'X-CSRFToken': getCookie('csrftoken')
+                },
+                data: JSON.stringify({
+                    sim_code: getCurrentSimCode(),
+                    step: getCurrentStep()
+                }),
+                success: function(response) {
+                    console.log(`🔍 状态检查响应 #${checkCount}:`, response);
+                    
+                    if (response.success && response.result) {
+                        const result = response.result;
+                        
+                        if (result.status === 'paused') {
+                            console.log('✅ 检测到暂停完成');
+                            clearInterval(pauseCheckInterval);
+                            pauseCheckInterval = null;
+                            
+                            simulationRunning = false;
+                            updateButtonStates(false);
+                            updateSimulationStatus('paused');
+                            
+                            const executedSteps = result.executed_steps;
+                            const totalSteps = result.total_planned_steps;
+                            updateCommandStatus(`Paused at step ${executedSteps}/${totalSteps}. Progress saved.`, 'success');
+                            
+                        } else if (result.status === 'completed') {
+                            console.log('✅ 检测到模拟完成');
+                            clearInterval(pauseCheckInterval);
+                            pauseCheckInterval = null;
+                            
+                            simulationRunning = false;
+                            updateButtonStates(false);
+                            updateSimulationStatus('ready');
+                            
+                            const executedSteps = result.executed_steps;
+                            updateCommandStatus(`Completed ${executedSteps} steps successfully`, 'success');
+                        } else {
+                            // 继续等待
+                            updateCommandStatus(`Checking simulation status (${checkCount * 2}s)...`, 'progress');
+                        }
+                    } else {
+                        // 结果文件不存在，可能还在运行
+                        updateCommandStatus(`Waiting for simulation result (${checkCount * 2}s)...`, 'progress');
+                    }
+                },
+                error: function(xhr, status, error) {
+                    console.error(`❌ 状态检查错误 #${checkCount}:`, error);
+                }
+            });
+        }, 2000); // 每2秒检查一次
+        
+        // 30秒后停止检查
+        setTimeout(() => {
+            if (pauseCheckInterval) {
+                clearInterval(pauseCheckInterval);
+                pauseCheckInterval = null;
+                updateCommandStatus('Pause completed or timed out', 'info');
+                resetSimulationState();
+            }
+        }, 30000);
+    }
+
+    // 添加人物点击事件
+    {% for p in persona_names %}
+    $('#on_screen_det_trigger-{{p.underscore}}').click(function () {
+        console.log('🎭 点击了角色: {{p.underscore}}');
+        $('#persona-select').val('{{p.original}}');
+        
+        // 隐藏初始提示
+        $('#on_screen_det_content-init').css({'display': 'none'});
+        
+     // 隐藏所有其他人物的详情并重置样式
+        {% for p_i in persona_names %}
+        $('#on_screen_det_content-{{p_i.underscore}}').css({'display': 'none'});
+        $('#on_screen_det_trigger-{{p_i.underscore}}').css({'font-weight': '500'});
+        $('#on_screen_det_trigger_container-{{p_i.underscore}}').css({
+            'background-color': 'white',
+            'border-radius': '10px'
+        });
+        {% endfor %}
+
+        // 高亮当前选中的人物
+        $('#on_screen_det_trigger-{{p.underscore}}').css({'font-weight': '900'});
+        $('#on_screen_det_trigger_container-{{p.underscore}}').css({
+            'background-color': '#ABFF84',
+            'border-radius': '10px'
+        });
+        
+        // 显示当前人物的详情
+        $('#on_screen_det_content-{{p.underscore}}').css({'display': 'block'});
+
+        // 设置聚焦目标
+        document.getElementById("temp_focus").innerHTML = "{{p.underscore}}";
+    });
+    {% endfor %}
+    
+    // 初始化完成提示
+    console.log('✅ DOM ready, 所有功能已初始化');
+    updateCommandStatus('Ready to execute commands', 'info');
+
+    // 确保空格键在输入框中正常工作
+    $('#message-input').on('keydown', function(e) {
+        if (e.keyCode === 32) { // 空格键
+            e.stopPropagation(); // 阻止事件冒泡到其他监听器
+            console.log('✅ 空格键在输入框中正常工作');
+        }
+    });
+
+    // 专门处理消息输入框的键盘事件
+    $('#message-input').on('keydown keypress keyup', function(e) {
+        // 阻止所有键盘事件冒泡到游戏
+        e.stopPropagation();
+        
+        if (e.type === 'keypress' && e.which === 13) {
+            // 回车键发送消息
+            e.preventDefault();
+            sendMessage();
+        }
+        
+        if (e.type === 'keydown') {
+            console.log(`🔤 输入框按键: ${e.key} (${e.keyCode})`);
+        }
+    });
+
+    // 确保输入框可以正常接收所有字符
+    $('#message-input').on('input', function(e) {
+        console.log(`📝 输入框内容: "${$(this).val()}"`);
+    });
+    // 额外处理：确保输入框获得焦点时阻止游戏键盘事件
+    $('#message-input').on('focus', function() {
+        console.log('🔍 消息输入框获得焦点');
+        $(this).data('has-focus', true);
+    });
+
+    $('#message-input').on('blur', function() {
+        console.log('🔍 消息输入框失去焦点');
+        $(this).data('has-focus', false);
+    });
+});
+</script>
+
+<style>
+.conversation-message {
+    margin-bottom: 10px;
+    padding: 8px;
+    border-radius: 5px;
+}
+
+.user-message {
+    background-color: #e3f2fd;
+    border-left: 4px solid #2196f3;
+}
+
+.persona-message {
+    background-color: #f1f8e9;
+    border-left: 4px solid #4caf50;
+}
+
+.system-message {
+    background-color: #fafafa;
+    border-left: 4px solid #757575;
+    font-style: italic;
+}
+
+.reflection-message {
+    background-color: #f3e5f5;
+    border-left: 4px solid #9c27b0;
+    font-style: italic;
+}
+
+#step-input {
+    max-width: 80px;
+}
+
+.btn-group .btn {
+    margin-right: 5px;
+}
+
+.panel-title {
+    font-size: 16px;
+    font-weight: 600;
+}
+
+#command-status {
+    border: 1px solid #ddd;
+    transition: all 0.3s ease;
+}
+
+#conversation-status {
+    transition: all 0.3s ease;
+}
+
+#conversation-panel {
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+#message-input:focus {
+    border-color: #5cb85c;
+    box-shadow: 0 0 5px rgba(92, 184, 92, 0.3);
+}
+</style>
+
+{% endblock js_content %}
