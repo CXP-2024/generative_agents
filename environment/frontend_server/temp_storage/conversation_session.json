@@ -1,0 +1,24 @@
+{
+  "persona_name": "Klaus Mueller",
+  "user_role": "Wei Xu",
+  "user_description": "a new campus singer who just arrived and is passionate about music",
+  "conversation": [
+    [
+      "Wei Xu",
+      "have maria told you something unusual?"
+    ],
+    [
+      "Klaus Mueller",
+      "Hmm, no, Maria just mentioned her physics competition study session with Arthur and Isabella. Why, did she say something to you?"
+    ],
+    [
+      "Wei Xu",
+      "no, nothing happened. sorry to bother you.  bye."
+    ],
+    [
+      "Klaus Mueller",
+      "Oh, no worries! If you ever want to talk about anything\u2014or maybe even music\u2014I'm usually in the library during my breaks. Good luck with your singing!\""
+    ]
+  ],
+  "status": "active"
+}

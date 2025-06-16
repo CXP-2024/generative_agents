@@ -1,10 +1,10 @@
 {
   "success": true,
-  "output": "\u2705 Simulation paused at step 1/80. Progress saved.",
-  "executed_steps": 1,
-  "total_planned_steps": 80,
-  "current_simulation_step": 51,
-  "status": "paused",
-  "timestamp": 1748426124.0686643,
-  "pause_reason": "user_requested"
+  "output": "\u2705 Simulation completed successfully. Executed 500 steps.",
+  "executed_steps": 500,
+  "total_planned_steps": 500,
+  "current_simulation_step": 5635,
+  "status": "completed",
+  "timestamp": 1750055528.3513572,
+  "completion_reason": "normal_finish"
 }

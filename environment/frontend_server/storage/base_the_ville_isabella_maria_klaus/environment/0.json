@@ -4,6 +4,26 @@
     "x": 11,
     "y": 18
   },
+  "Francisco Lopez": {
+    "maze": "the_ville",
+    "x": 50,
+    "y": 77
+  },
+  "Giorgio Rossi": {
+    "maze": "the_ville",
+    "x": 50,
+    "y": 79
+  },
+  "Hailey Johnson": {
+    "maze": "the_ville",
+    "x": 50,
+    "y": 81
+  },
+  "Jennifer Moore": {
+    "maze": "the_ville",
+    "x": 50,
+    "y": 82
+  },
   "Klaus Mueller": {
     "maze": "the_ville",
     "x": 72,
@@ -13,6 +33,16 @@
     "maze": "the_ville",
     "x": 72,
     "y": 81
+  },
+  "Eddy Lin": {
+    "maze": "the_ville",
+    "x": 72,
+    "y": 82
+  },
+  "Carmen Ortiz": {
+    "maze": "the_ville",
+    "x": 72,
+    "y": 79
   },
   "Adam Smith": {
     "maze": "the_ville",
@@ -33,6 +63,21 @@
     "maze": "the_ville",
     "x": 23,
     "y": 18
+  },
+  "Carlos Gomez": {
+    "maze": "the_ville",
+    "x": 83,
+    "y": 79
+  },
+  "Jane Moreno": {
+    "maze": "the_ville",
+    "x": 35,
+    "y": 18
+  },
+  "Sam Moore": {
+    "maze": "the_ville",
+    "x": 61,
+    "y": 77
   }
 }
 
