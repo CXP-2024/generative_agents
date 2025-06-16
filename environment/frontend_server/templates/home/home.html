@@ -51,17 +51,11 @@
                                     <button class="btn btn-success" onclick="runSimulation()" id="run-btn">
                                         <i class="glyphicon glyphicon-play"></i> Run
                                     </button>
-                                    <button class="btn btn-warning" onclick="debugRunSimulation()" id="debug-run-btn">
-                                        <i class="glyphicon glyphicon-wrench"></i> Debug Run
-                                    </button>
                                     <button class="btn btn-danger" onclick="pauseSimulation()" id="pause-btn" disabled>
                                         <i class="glyphicon glyphicon-pause"></i> Pause
                                     </button>
                                     <button class="btn btn-primary" onclick="saveSimulation()">
                                         <i class="glyphicon glyphicon-floppy-disk"></i> Save
-                                    </button>
-                                    <button class="btn btn-info" onclick="showStatus()">
-                                        <i class="glyphicon glyphicon-info-sign"></i> Status
                                     </button>
                                 </div>
                             </div>
@@ -346,7 +340,6 @@ $(document).ready(function() {
     // 更新按钮状态
     function updateButtonStates(running = false) {
         document.getElementById('run-btn').disabled = running;
-        document.getElementById('debug-run-btn').disabled = running
         document.getElementById('pause-btn').disabled = !running;
         document.getElementById('step-input').disabled = running;
     }
@@ -410,25 +403,6 @@ $(document).ready(function() {
         
         // 发送命令，但不在成功回调中再次显示 started
         executeSimulationCommand(`run ${steps}`, null); // 传入 null 表示不显示额外的成功消息
-    };
-
-    window.debugRunSimulation = function() {
-        const steps = document.getElementById('step-input').value;
-        if (!steps || steps < 1) {
-            updateCommandStatus('Please enter a valid number of steps', 'warning');
-            return;
-        }
-        
-        // 立即显示 started 状态
-        updateCommandStatus(`Started debug mode with ${steps} steps`, 'success');
-        
-        simulationRunning = true;
-        currentSimulationType = 'debug';
-        updateButtonStates(true);
-        updateSimulationStatus('running', 'Debug');
-        
-        // 发送命令，但不在成功回调中再次显示 started
-        executeSimulationCommand(`debug run ${steps}`, null); // 传入 null 表示不显示额外的成功消息
     };
 
     // 新增：暂停模拟函数
@@ -634,10 +608,12 @@ $(document).ready(function() {
         }
     }
 
-    window.startConversationAs = function() {
+    window.startConversationAs = function () {
         const persona = document.getElementById('persona-select').value;
         const role = document.getElementById('role-input').value.trim();
-        
+
+        console.log('🎭 startConversationAs called:', { persona, role }); // 调试信息
+
         if (!persona) {
             updateCommandStatus('Please select a persona', 'warning');
             return;
@@ -648,7 +624,7 @@ $(document).ready(function() {
         }
 
         const command = `converse as ${role} with ${persona}`;
-        
+
         updateCommandStatus(`Starting conversation as ${role} with ${persona}`, 'progress');
 
         $.ajax({
@@ -663,50 +639,88 @@ $(document).ready(function() {
                 sim_code: getCurrentSimCode(),
                 step: getCurrentStep()
             }),
-            success: function(response) {
+            success: function (response) {
+                console.log('🎭 Backend response:', response); // 调试信息
+
                 if (response.success) {
-                    // 启动对话界面
-                    conversationActive = true;
-                    currentPersona = persona;
-                    currentRole = role;
-                    
-                    // 显示对话面板
-                    document.getElementById('conversation-panel').style.display = 'block';
-                    document.getElementById('conversation-title').textContent = `${role} talking with ${persona}`;
-                    document.getElementById('user-role-display').textContent = role;
-                    
-                    // 启用输入控件
-                    document.getElementById('message-input').disabled = false;
-                    document.getElementById('send-message-btn').disabled = false;
-                    document.getElementById('end-conversation-btn').disabled = false;
-                    
-                    // 清空对话历史
-                    document.getElementById('conversation-history').innerHTML = '';
-                    
-                    // 添加系统消息
-                    addConversationMessage('System', `Conversation started between ${role} and ${persona}`, 'system');
-                    
-                    // 显示后端返回的初始信息
-                    if (response.output) {
-                        const lines = response.output.split('\n');
-                        for (const line of lines) {
-                            if (line.trim()) {
-                                addConversationMessage('System', line.trim(), 'system');
+                    try {
+                        // 设置全局状态变量
+                        conversationActive = true;
+                        currentPersona = persona;
+                        currentRole = role;
+
+                        console.log('🎭 Setting conversation state:', { conversationActive, currentPersona, currentRole });
+
+                        // 检查DOM元素是否存在
+                        const conversationPanel = document.getElementById('conversation-panel');
+                        const conversationTitle = document.getElementById('conversation-title');
+                        const userRoleDisplay = document.getElementById('user-role-display');
+                        const messageInput = document.getElementById('message-input');
+                        const sendBtn = document.getElementById('send-message-btn');
+                        const endBtn = document.getElementById('end-conversation-btn');
+                        const conversationHistory = document.getElementById('conversation-history');
+
+                        if (!conversationPanel) {
+                            console.error('❌ conversation-panel element not found!');
+                            updateCommandStatus('UI Error: conversation panel not found', 'error');
+                            return;
+                        }
+
+                        // 显示对话面板
+                        conversationPanel.style.display = 'block';
+
+                        if (conversationTitle) {
+                            conversationTitle.textContent = `${role} talking with ${persona}`;
+                        }
+
+                        if (userRoleDisplay) {
+                            userRoleDisplay.textContent = role;
+                        }
+
+                        // 启用输入控件
+                        if (messageInput) messageInput.disabled = false;
+                        if (sendBtn) sendBtn.disabled = false;
+                        if (endBtn) endBtn.disabled = false;
+
+                        // 清空对话历史
+                        if (conversationHistory) {
+                            conversationHistory.innerHTML = '';
+                        }
+
+                        // 添加系统消息
+                        addConversationMessage('System', `Conversation started between ${role} and ${persona}`, 'system');
+
+                        // 显示后端返回的初始信息
+                        if (response.output) {
+                            const lines = response.output.split('\n');
+                            for (const line of lines) {
+                                if (line.trim()) {
+                                    addConversationMessage('System', line.trim(), 'system');
+                                }
                             }
                         }
+
+                        updateCommandStatus(`Conversation with ${persona} started`, 'success');
+                        updateConversationStatus(`Active conversation with ${persona}`, 'active');
+
+                        // 聚焦到输入框
+                        if (messageInput) {
+                            messageInput.focus();
+                        }
+
+                        console.log('✅ Conversation UI setup completed');
+
+                    } catch (error) {
+                        console.error('❌ Error setting up conversation UI:', error);
+                        updateCommandStatus(`UI Error: ${error.message}`, 'error');
                     }
-                    
-                    updateCommandStatus(`Conversation with ${persona} started`, 'success');
-                    updateConversationStatus(`Active conversation with ${persona}`, 'active');
-                    
-                    // 聚焦到输入框
-                    document.getElementById('message-input').focus();
-                    
                 } else {
+                    console.error('❌ Backend error:', response.error);
                     updateCommandStatus(`Error: ${response.error || 'Failed to start conversation'}`, 'error');
                 }
             },
-            error: function(xhr, status, error) {
+            error: function (xhr, status, error) {
+                console.error('❌ Network error:', { xhr, status, error });
                 updateCommandStatus(`Network error: ${error}`, 'error');
             }
         });
@@ -720,28 +734,68 @@ $(document).ready(function() {
             return;
         }
 
-        // 弹出对话框让用户输入角色设定
-        const userRoleSetup = prompt(
-            `Please set your role background:\n\n` +
-            `You can play any role to chat with ${persona}.\n` +
-            `For example:\n` +
-            `- A curious visitor who wants to learn about life here\n\n` +
-            `Enter your role setting (leave blank for default):`,
-            ""
+        // 第一步：询问是否要自定义角色
+        const useCustomRole = confirm(
+            `Do you want to play as a custom character when talking with ${persona}?\n\n` +
+            `• Click "OK" to define a custom character (recommended)\n` +
+            `• Click "Cancel" to use default "User" role`
         );
 
-        // 如果用户点击取消，则返回
-        if (userRoleSetup === null) {
-            return;
+        let command;
+        let userRole;
+        let userDescription = "";
+
+        if (useCustomRole) {
+            // 第二步：输入角色名称
+            userRole = prompt(
+                `Please enter your character name:\n\n` +
+                `Examples:\n` +
+                `• Wei Xu\n` +
+                `• Dr. Sarah Chen\n` +
+                `• Maria the Artist\n\n` +
+                `Character name:`,
+                ""
+            );
+
+            if (userRole === null) {
+                return; // 用户取消
+            }
+
+            userRole = userRole.trim();
+            if (!userRole) {
+                updateCommandStatus('Character name cannot be empty', 'warning');
+                return;
+            }
+
+            // 第三步：输入角色描述
+            userDescription = prompt(
+                `Please describe your character "${userRole}":\n\n` +
+                `This helps ${persona} understand who they're talking to.\n\n` +
+                `Examples:\n` +
+                `• A curious student studying social dynamics\n` +
+                `• A friendly neighbor who just moved to the area\n` +
+                `• An artist interested in community life\n\n` +
+                `Character description:`,
+                ""
+            );
+
+            if (userDescription === null) {
+                return; // 用户取消
+            }
+
+            userDescription = userDescription.trim();
+            
+            // 构建命令 - 使用新的格式
+            if (userDescription) {
+                command = `converse with ${persona} as ${userRole} : ${userDescription}`;
+            } else {
+                command = `converse with ${persona} as ${userRole}`;
+            }
+        } else {
+            // 使用默认 User 角色
+            userRole = "User";
+            command = `converse with ${persona}`;
         }
-
-        // 处理角色设定
-        let userRole = "User";
-        let userDescription = userRoleSetup.trim();
-
-        const command = userDescription ? 
-            `converse as ${userRole} with ${persona}` : 
-            `converse with ${persona}`;
         
         updateCommandStatus(`Starting conversation as ${userRole} with ${persona}`, 'progress');
 
@@ -950,6 +1004,13 @@ $(document).ready(function() {
         });
     };
 
+        // 保存模拟状态
+    window.saveSimulation = function () {
+        updateCommandStatus('Saving simulation...', 'progress');
+
+        executeSimulationCommand('save', 'Simulation saved successfully');
+    };
+
     // 页面卸载时清理定时器
     $(window).on('beforeunload', function() {
         if (pauseCheckInterval) {
@@ -1144,6 +1205,37 @@ $(document).ready(function() {
     $('#message-input').on('input', function(e) {
         console.log(`📝 输入框内容: "${$(this).val()}"`);
     });
+
+    // 确保role-input输入框中空格键正常工作
+    $('#role-input').on('keydown keypress keyup', function(e) {
+        // 阻止所有键盘事件冒泡到游戏引擎
+        e.stopPropagation();
+        
+        if (e.type === 'keydown' && e.keyCode === 32) {
+            console.log('✅ role-input中空格键正常工作');
+        }
+        
+        if (e.type === 'keydown') {
+            console.log(`🔤 role-input按键: ${e.key} (${e.keyCode})`);
+        }
+    });
+
+    // 确保role-input输入框可以正常接收所有字符
+    $('#role-input').on('input', function(e) {
+        console.log(`📝 role-input内容: "${$(this).val()}"`);
+    });
+
+    // role-input焦点处理
+    $('#role-input').on('focus', function() {
+        console.log('🔍 role-input获得焦点');
+        $(this).data('has-focus', true);
+    });
+
+    $('#role-input').on('blur', function() {
+        console.log('🔍 role-input失去焦点');
+        $(this).data('has-focus', false);
+    });
+
     // 额外处理：确保输入框获得焦点时阻止游戏键盘事件
     $('#message-input').on('focus', function() {
         console.log('🔍 消息输入框获得焦点');
@@ -1156,66 +1248,5 @@ $(document).ready(function() {
     });
 });
 </script>
-
-<style>
-.conversation-message {
-    margin-bottom: 10px;
-    padding: 8px;
-    border-radius: 5px;
-}
-
-.user-message {
-    background-color: #e3f2fd;
-    border-left: 4px solid #2196f3;
-}
-
-.persona-message {
-    background-color: #f1f8e9;
-    border-left: 4px solid #4caf50;
-}
-
-.system-message {
-    background-color: #fafafa;
-    border-left: 4px solid #757575;
-    font-style: italic;
-}
-
-.reflection-message {
-    background-color: #f3e5f5;
-    border-left: 4px solid #9c27b0;
-    font-style: italic;
-}
-
-#step-input {
-    max-width: 80px;
-}
-
-.btn-group .btn {
-    margin-right: 5px;
-}
-
-.panel-title {
-    font-size: 16px;
-    font-weight: 600;
-}
-
-#command-status {
-    border: 1px solid #ddd;
-    transition: all 0.3s ease;
-}
-
-#conversation-status {
-    transition: all 0.3s ease;
-}
-
-#conversation-panel {
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
-
-#message-input:focus {
-    border-color: #5cb85c;
-    box-shadow: 0 0 5px rgba(92, 184, 92, 0.3);
-}
-</style>
 
 {% endblock js_content %}
