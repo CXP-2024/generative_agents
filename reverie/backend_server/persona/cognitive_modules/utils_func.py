@@ -123,7 +123,7 @@ def extract_schedule_changes_from_thought(persona, planning_thought):
 	- Ignore vague future plans or general thoughts
 	- If no concrete changes are identified, return empty list
 
-	Response format (valid JSON only, no markdown):
+	Response format (valid JSON only, without any markdown ``` code blocks):
 	[
 		{{
 		  "change_needed": true,

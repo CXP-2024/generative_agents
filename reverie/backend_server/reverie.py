@@ -31,6 +31,7 @@ import threading
 
 from selenium import webdriver
 
+from roles_config import get_role_description, list_available_roles, roles_manager, add_role, remove_role
 from global_methods import *
 from utils import *
 from maze import *
@@ -927,15 +928,10 @@ class ReverieServer:
                     captured_output = output_buffer.getvalue()
                 else:
                     # 预定义角色描述
-                    role_descriptions = {
-                        "Wei Xu": "a new campus singer who just arrived and is passionate about music",
-                        "wei xu": "a new campus singer who just arrived and is passionate about music",
-                        "Xu": "a new campus singer who just arrived and is passionate about music"
-                    }
+                    user_description = get_role_description(user_role)
                     
-                    user_description = role_descriptions.get(user_role, "")
-                    if not user_description and user_role.lower() in role_descriptions:
-                        user_description = role_descriptions[user_role.lower()]
+                    #if not user_description and user_role.lower() in role_descriptions:
+                        #user_description = role_descriptions[user_role.lower()]
                     
                     # 创建前端对话会话
                     session_data = {
@@ -1244,7 +1240,7 @@ Ready to start the conversation!"""
             else:
                 # Ask user to define their role
                 print("\n=== Role Definition ===")
-                print("You can play as yourself (User) or define a specific character.")
+                print("You can play as yourself (User) or define a specific character. User mode will not save any role information, but character mode will.")
                 user_role_input = input("Enter your role/character (press Enter for 'User'): ").strip()
                 user_role = user_role_input if user_role_input else "User"
                 
@@ -1252,6 +1248,8 @@ Ready to start the conversation!"""
                 user_description = ""
                 if user_role != "User":
                     user_description = input(f"Brief description of {user_role} (optional): ").strip()
+                    add_role(user_role, user_description)  # Ensure role is added in non-user mode
+                print(f"\n🎭 You are now playing as: {user_role}")
                 
                 self.start_interactive_conversation(persona_name, user_role, user_description)
 
@@ -1269,18 +1267,16 @@ Ready to start the conversation!"""
                     for name in self.personas.keys():
                         print(f"  - {name}")
                 else:
-                    # Pre-defined role descriptions
-                    role_descriptions = {
-                        "Wei Xu": "a new campus singer who just arrived and is passionate about music",
-                        "wei xu": "a new campus singer who just arrived and is passionate about music",
-                        "Wei": "a new campus singer who just arrived and is passionate about music"
-                    }
-                    
-                    user_description = role_descriptions.get(user_role, "")
-                    if not user_description and user_role.lower() in role_descriptions:
-                        user_description = role_descriptions[user_role.lower()]
-                    
-                    self.start_interactive_conversation(persona_name, user_role, user_description)
+                     # 使用JSON配置文件中的角色描述
+                    user_description = get_role_description(user_role)
+                    if not user_description:
+                        print(f"Role '{user_role}' not found in predefined roles.")
+                        print("Available roles:")
+                        for role in list_available_roles():
+                            print(f"  - {role}")
+                        print("\nYou can also add new roles using: role add [name] [description]")
+                    else:
+                        self.start_interactive_conversation(persona_name, user_role, user_description)
             else:
                 print("Usage: converse as [role name] with [persona name]")
                 print("Example: converse as Wei Xu with Isabella Rodriguez")
@@ -1300,6 +1296,61 @@ Ready to start the conversation!"""
               clean_whispers += [[agent_name, whisper]]
 
           load_history_via_whisper(self.personas, clean_whispers)
+
+        elif sim_command.lower().startswith("role"):
+            parts = sim_command.split(maxsplit=3)
+            
+            if len(parts) == 1 or parts[1] == "list":
+                print("📋 Available predefined roles:")
+                for role, desc in roles_manager.get_all_roles().items():
+                    print(f"  - {role}: {desc}")
+                print(f"\n📊 Total: {len(list_available_roles())} roles")
+            
+            elif parts[1] == "add" and len(parts) >= 4:
+                role_name = parts[2]
+                description = parts[3]
+                if add_role(role_name, description):
+                    print(f"✅ Added role: {role_name}")
+                else:
+                    print(f"❌ Failed to add role: {role_name}")
+            
+            elif parts[1] == "remove" and len(parts) == 3:
+                role_name = parts[2]
+                if remove_role(role_name):
+                    print(f"✅ Removed role: {role_name}")
+                else:
+                    print(f"❌ Role '{role_name}' not found")
+            
+            elif parts[1] == "search" and len(parts) == 3:
+                keyword = parts[2]
+                results = roles_manager.search_roles(keyword)
+                if results:
+                    print(f"🔍 Found {len(results)} roles matching '{keyword}':")
+                    for role, desc in results.items():
+                        print(f"  - {role}: {desc}")
+                else:
+                    print(f"🔍 No roles found matching '{keyword}'")
+            
+            elif parts[1] == "info":
+                metadata = roles_manager.get_metadata()
+                print("📈 Roles database info:")
+                for key, value in metadata.items():
+                    print(f"  - {key}: {value}")
+            
+            elif parts[1] == "reload":
+                if roles_manager.load_roles():
+                    print("🔄 Roles reloaded successfully")
+                else:
+                    print("❌ Failed to reload roles")
+            
+            else:
+                print("🛠️  Role management commands:")
+                print("  role list                    - List all roles")
+                print("  role add [name] [description] - Add new role")
+                print("  role remove [name]           - Remove role")
+                print("  role search [keyword]        - Search roles")
+                print("  role info                    - Show database info")
+                print("  role reload                  - Reload from file")
 
         print (ret_str)
 
