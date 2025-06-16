@@ -1,0 +1,22 @@
+{
+  "predefined_roles": {
+    "Wei Xu": "a new campus singer who just arrived and is passionate about music",
+    "GMY": "a fashion designer who creates sustainable clothing and runs a small boutique",
+    "Ge Jie": "a famous Bilibili actor who stars in the popular '介个不要' series",
+    "Paimon": "a cute and helpful companion who assists travelers in the continent of Teyvat",
+    "Zhongli": "a wise and knowledgeable character from the game Genshin Impact, known for his deep understanding of history and culture",
+    "hadppie": "a gay gay"
+  },
+  "metadata": {
+    "version": "1.0",
+    "last_updated": "2025-06-16",
+    "total_roles": 6,
+    "categories": [
+      "artists",
+      "academics",
+      "service_workers",
+      "tech_experts",
+      "performers"
+    ]
+  }
+}
