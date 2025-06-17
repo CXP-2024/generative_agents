@@ -15,6 +15,7 @@ include/
 pip-selfcheck.json
 .DS_Store
 
+.vscode/
 environment/frontend_server/compressed_storage/
 # Byte-compiled / optimized / DLL files
 __pycache__/

@@ -1,12 +1,31 @@
 
 
-# Generative Agents: Interactive Simulacra of Human Behavior 
+# Generative Agents: Interactive Simulacra of Human Behavior (Forked improved version)
 
 <p align="center" width="100%">
 <img src="cover.png" alt="Smallville" style="width: 80%; min-width: 300px; display: block; margin: auto;">
 </p>
 
-This repository accompanies our research paper titled "[Generative Agents: Interactive Simulacra of Human Behavior](https://arxiv.org/abs/2304.03442)." It contains our core simulation module for  generative agents—computational agents that simulate believable human behaviors—and their game environment. Below, we document the steps for setting up the simulation environment on your local machine and for replaying the simulation as a demo animation.
+This repository is based on the original Stanford AI-town. We build our own version of the original project, which is a 2D school simulation.
+## Key Features
+
+This enhanced version includes several improvements over the original implementation:
+
+- **Reliable Execution**: Robust simulation engine that runs consistently without crashes
+- **Agent Memory System**: Agents can remember and follow through on commitments made with other agents throughout the day
+- **Graphical User Interface**: Intuitive GUI controls replace complex command-line operations for easier interaction
+- **Simulation Control**: Built-in stop functionality allows you to pause or halt simulations at any time
+- **Interactive Roleplay**: Users can directly interact and roleplay with agents within the simulation environment
+- **Flexible Time Steps**: Configurable simulation speed with different time step options for varied pacing
+
+<p align="center" width="100%">
+<img src="gui1.png" alt="Smallville" style="width: 80%; min-width: 300px; display: block; margin: auto;">
+</p>
+
+<p align="center" width="100%">
+<img src="gui2.png" alt="Smallville" style="width: 80%; min-width: 300px; display: block; margin: auto;">
+</p>
+
 
 ## <img src="https://joonsungpark.s3.amazonaws.com:443/static/assets/characters/profile/Isabella_Rodriguez.png" alt="Generative Isabella">   Setting Up the Environment 
 To set up your environment, you will need to generate a `utils.py` file that contains your OpenAI API key and download the necessary packages.
@@ -14,10 +33,13 @@ To set up your environment, you will need to generate a `utils.py` file that con
 ### Step 1. Generate Utils File
 In the `reverie/backend_server` folder (where `reverie.py` is located), create a new file titled `utils.py` and copy and paste the content below into the file:
 ```
-# Copy and paste your OpenAI API Key
-openai_api_key = "<Your OpenAI API>"
+# Copy and paste your API Key and your Base URL here, if you use OpenAI API, then needn't provide Base URL.
+# If use infini, then need to provide Base URL.
+openai_api_key = "xxxxxxxx"
+openai_base_url = "xxxxxxxxxx"
+
 # Put your name
-key_owner = "<Name>"
+key_owner = "Genshin"
 
 maze_assets_loc = "../../environment/frontend_server/static_dirs/assets"
 env_matrix = f"{maze_assets_loc}/the_ville/matrix"
@@ -30,6 +52,14 @@ collision_block_id = "32125"
 
 # Verbose 
 debug = True
+
+# .env file
+INFINI_API_KEY="sk-dahw6xzrbxbobrsy"
+INFINI_BASE_URL="https://cloud.infini-ai.com/maas/v1"
+
+
+SF_API_KEY="sk-yrzrsigqduxddbjhqbzuokdsmwygqoshoyliuehhnbxccvnp"
+SF_BASE_URL="https://api.siliconflow.cn/v1"
 ```
 Replace `<Your OpenAI API>` with your OpenAI API key, and `<name>` with your name.
  
@@ -112,7 +142,7 @@ For a more involved customization, you will need to author your own base simulat
 
 ## <img src="https://joonsungpark.s3.amazonaws.com:443/static/assets/characters/profile/Eddy_Lin.png" alt="Generative Eddy">   Authors and Citation 
 
-**Authors:** Joon Sung Park, Joseph C. O'Brien, Carrie J. Cai, Meredith Ringel Morris, Percy Liang, Michael S. Bernstein
+**Original Authors:** Joon Sung Park, Joseph C. O'Brien, Carrie J. Cai, Meredith Ringel Morris, Percy Liang, Michael S. Bernstein
 
 Please cite our paper if you use the code or data in this repository. 
 ```

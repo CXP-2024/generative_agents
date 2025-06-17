@@ -5,40 +5,61 @@
 <br>
 <br>
 <div>
-    <div id="game-container" style="text-align: center"></div>
-
-    <div style="width:100%; max-width: 1200px; margin: 0 auto; margin-top:4.5em; padding: 0 15px;">
-        <!-- 时间显示模块 - GitHub风格面板 -->
+    <!-- 地图容器 - GitHub风格面板 -->
+    <div style="width:100%; max-width: 1680px; margin: 0 auto; margin-top:2em; padding: 0 15px;">
         <div class="row" style="margin-bottom: 25px;">
-            <div class="col-md-10 col-md-offset-1 col-sm-12 col-xs-12">
+            <div class="col-md-12">
                 <div class="panel panel-default control-panel">
                     <div class="panel-heading control-panel-header" style="padding: 15px 20px;">
                         <h4 class="panel-title" style="color: white; margin: 0;">
-                            <i class="glyphicon glyphicon-time" style="margin-right: 8px;"></i>
-                            Current Time
+                            <i class="glyphicon glyphicon-globe" style="margin-right: 8px;"></i>
+                            Simulation Map
                         </h4>
                     </div>
+                    <div class="panel-body control-panel-body" style="padding: 20px;">
+                        <div id="game-container" style="text-align: center; width: 100%; overflow: hidden;">
+                            <!-- 地图画布将在这里渲染，尺寸: 1600x1000px (3200x2000 @ 0.5 scale) -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div style="width:100%; max-width: 1200px; margin: 0 auto; margin-top:1em; padding: 0 15px;">
+        <!-- 时间显示模块 - GitHub风格面板 -->
+        <div style="margin-bottom: 25px;">
+            <div class="control-panel">
+                <div class="control-panel-header">
+                    <h3 class="panel-title">
+                        <i class="glyphicon glyphicon-time" style="margin-right: 8px;"></i>
+                        Current Time
+                    </h3>
+                </div>
+                <div class="control-panel-body">
+                    <!-- 当前时间显示 - 与demo保持一致 -->
+                    <div style="text-align: center; margin-bottom: 25px;">
+                        <label style="margin-bottom: 8px; display: block;">
+                            <i class="glyphicon glyphicon-calendar" style="margin-right: 5px;"></i>
+                            Current Time
+                        </label>
+                        <div class="simulation-status-display" style="font-size: 18px; font-weight: 600; color: #0969da;">
+                            <span id="game-time-content"></span>
+                        </div>
+                    </div>
                     
-                    <div class="panel-body" style="padding: 25px;">
-                        <div class="row">
-                            <div class="col-md-8" id="game-time" style="">
-                                <h2 style="margin: 0; color: #24292f; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans', Helvetica, Arial, sans-serif;">
-                                    <span id="game-time-content"></span>
-                                </h2> 
-                            </div>
-                            <div class="col-md-4">
-                                <div style="text-align: right; {% if mode == 'simulate' %} display: none {% endif %}">
-                                    <button id="play_button" type="button" class="github-btn github-btn-primary" style="margin-right: 8px;">
-                                        <i class="glyphicon glyphicon-play"></i>
-                                        Play
-                                    </button>
-                                    
-                                    <button id="pause_button" type="button" class="github-btn github-btn-secondary">
-                                        <i class="glyphicon glyphicon-pause"></i>
-                                        Pause
-                                    </button>
-                                </div>
-                            </div>
+                    <!-- 播放控制按钮 -->
+                    <div style="{% if mode == 'simulate' %}display: none;{% endif %}">
+                        <div class="github-buttons-container" style="justify-content: center; margin-bottom: 25px;">
+                            <button id="play_button" type="button" class="github-btn github-btn-primary" style="margin-right: 8px;">
+                                <i class="glyphicon glyphicon-play"></i>
+                                Play
+                            </button>
+                            
+                            <button id="pause_button" type="button" class="github-btn github-btn-secondary">
+                                <i class="glyphicon glyphicon-pause"></i>
+                                Pause
+                            </button>
                         </div>
                     </div>
                 </div>
@@ -46,17 +67,15 @@
         </div>
         
         <!-- 优化后的控制面板 -->
-        <div class="row" style="margin-bottom: 25px;">
-            <div class="col-md-12">
-                <div class="panel panel-default control-panel">
-                    <div class="panel-heading control-panel-header" style="padding: 15px 20px;">
-                        <h4 class="panel-title" style="color: white; margin: 0;">
-                            <i class="glyphicon glyphicon-dashboard" style="margin-right: 8px;"></i>
-                            Simulation Control Center
-                        </h4>
-                    </div>
-                    
-                    <div class="panel-body control-panel-body" style="padding: 25px;">
+        <div style="margin-bottom: 25px;">
+            <div class="control-panel">
+                <div class="control-panel-header">
+                    <h3 class="panel-title">
+                        <i class="glyphicon glyphicon-dashboard" style="margin-right: 8px;"></i>
+                        Simulation Control Center
+                    </h3>
+                </div>
+                <div class="control-panel-body" style="padding: 25px;">
                         <!-- 第一行：状态显示区居中 -->
                         <div class="row" style="margin-bottom: 20px;">
                             <div class="col-md-12">
@@ -159,19 +178,19 @@
                 </div>
             </div>
         </div>
+    </div>
 
+    <div style="width:100%; max-width: 1200px; margin: 0 auto; margin-top:1em; padding: 0 15px;">
         <!-- 角色显示区域 - GitHub风格面板 -->
-        <div class="row" style="margin-bottom: 25px;">
-            <div class="col-md-10 col-md-offset-1 col-sm-12 col-xs-12">
-                <div class="panel panel-default control-panel">
-                    <div class="panel-heading control-panel-header" style="padding: 15px 20px;">
-                        <h4 class="panel-title" style="color: white; margin: 0;">
-                            <i class="glyphicon glyphicon-user" style="margin-right: 8px;"></i>
-                            Agent Status Overview
-                        </h4>
-                    </div>
-                    
-                    <div class="panel-body" style="padding: 25px;">
+        <div style="margin-bottom: 25px;">
+            <div class="control-panel">
+                <div class="control-panel-header">
+                    <h3 class="panel-title">
+                        <i class="glyphicon glyphicon-user" style="margin-right: 8px;"></i>
+                        Agent Status Overview
+                    </h3>
+                </div>
+                <div class="control-panel-body" style="padding: 25px;">
                             <div class="agents-grid">
                             {% for p in persona_names %}
                             <div class="agent-card" id="on_screen_det_trigger-{{p.underscore}}">
@@ -192,19 +211,19 @@
                 </div>
             </div>
         </div>
+    </div>
 
+    <div style="width:100%; max-width: 1200px; margin: 0 auto; margin-top:1em; padding: 0 15px;">
         <!-- Agent详情显示区域 - GitHub风格 -->
-        <div class="row" style="margin-bottom: 25px;">
-            <div class="col-md-10 col-md-offset-1 col-sm-12 col-xs-12">
-                <div class="panel panel-default control-panel">
-                    <div class="panel-heading control-panel-header" style="padding: 15px 20px;">
-                        <h4 class="panel-title" style="color: white; margin: 0;">
-                            <i class="glyphicon glyphicon-info-circle" style="margin-right: 8px;"></i>
-                            Agent Details
-                        </h4>
-                    </div>
-                    
-                    <div class="panel-body" style="padding: 25px;">
+        <div style="margin-bottom: 25px;">
+            <div class="control-panel">
+                <div class="control-panel-header">
+                    <h3 class="panel-title">
+                        <i class="glyphicon glyphicon-info-circle" style="margin-right: 8px;"></i>
+                        Agent Details
+                    </h3>
+                </div>
+                <div class="control-panel-body" style="padding: 25px;">
                         <!-- 初始提示信息 -->
                         <div id="on_screen_det_content-init">
                             <div class="agent-detail-placeholder">
@@ -271,17 +290,18 @@
                 </div>
             </div>
         </div>
+    </div>
 
+    <div style="width:100%; max-width: 1200px; margin: 0 auto; margin-top:1em; padding: 0 15px;">
         <!-- 对话控制台 - GitHub风格面板 -->
-        <div class="row" style="margin-bottom: 25px;">
-            <div class="col-md-10 col-md-offset-1 col-sm-12 col-xs-12">
-                <div class="panel panel-default control-panel">
-                    <div class="panel-heading control-panel-header" style="padding: 15px 20px;">
-                        <h4 class="panel-title" style="color: white; margin: 0;">
-                            <i class="glyphicon glyphicon-comment" style="margin-right: 8px;"></i>
-                            <span id="conversation-title">Conversation</span>
-                        </h4>
-                    </div>
+        <div style="margin-bottom: 25px;">
+            <div class="control-panel">
+                <div class="control-panel-header">
+                    <h3 class="panel-title">
+                        <i class="glyphicon glyphicon-comment" style="margin-right: 8px;"></i>
+                        <span id="conversation-title">Conversation</span>
+                    </h3>
+                </div>
                     
                     <div class="panel-body" style="padding: 25px;">
                         <div id="conversation-panel" style="display: none;">
@@ -323,7 +343,6 @@
             </div>
         </div>
     </div>
-</div>
 
 <!-- 加载动画遮罩层 - 现在隐藏，使用状态栏加载 -->
 <div id="loading-overlay" class="loading-overlay" style="display: none !important;">
@@ -810,6 +829,62 @@ label {
     background-color: #ffffff !important;
     border-radius: 0 0 12px 12px !important;
     padding: 20px !important;
+}
+
+/* 地图容器响应式样式 - 保持横纵比 */
+#game-container {
+    width: 100%;
+    max-width: 1600px; /* 匹配实际地图显示宽度 3200 * 0.5 = 1600px */
+    margin: 0 auto;
+    overflow: hidden;
+    position: relative;
+    /* 地图原始比例: 1600x1000, 即 16:10 或 1.6:1 */
+    aspect-ratio: 1.6 / 1;
+}
+
+#game-container canvas {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: contain; /* 保持比例，完整显示 */
+    display: block;
+    margin: 0 auto;
+}
+
+/* 容器宽度自适应缩放 - 保持横纵比不变 */
+@media (max-width: 1680px) {
+    #game-container {
+        /* 在1680px以下，容器会自然缩放但保持比例 */
+        max-width: calc(100vw - 80px); /* 减去左右padding */
+    }
+}
+
+@media (max-width: 1200px) {
+    #game-container {
+        max-width: calc(100vw - 60px);
+    }
+}
+
+@media (max-width: 900px) {
+    #game-container {
+        max-width: calc(100vw - 40px);
+    }
+}
+
+@media (max-width: 700px) {
+    #game-container {
+        max-width: calc(100vw - 30px);
+    }
+}
+
+/* 额外的canvas适配确保在所有情况下都保持比例 */
+@media (max-width: 768px) {
+    #game-container canvas {
+        max-width: 100%;
+        max-height: 100%;
+        width: auto !important;
+        height: auto !important;
+        object-fit: contain;
+    }
 }
 
 .panel-title {
