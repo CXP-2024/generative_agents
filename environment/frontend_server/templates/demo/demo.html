@@ -5,176 +5,613 @@
 <br>
 <br>
 <div>
+    <div id="game-container" style="text-align: center"></div>
 
-	<div id="game-container" style="text-align: center"></div>
+    <div style="width:100%; max-width: 1200px; margin: 0 auto; margin-top:4.5em; padding: 0 15px;">
+        <!-- 状态显示区域 -->
+        <div style="text-align: center; margin-bottom: 30px;">
+            <div class="status-display" style="background: linear-gradient(135deg, #f6f8fa 0%, #e1e7ee 100%); border: 1px solid #d1d9e0; color: #24292f; font-weight: 600;">
+                <i class="glyphicon glyphicon-play-circle" style="margin-right: 8px;"></i>
+                This is a pre-computed replay
+            </div>
+        </div>
 
-	<div style="width:55%; margin: 0 auto; margin-top:4.5em">
-		<h3 style="margin-bottom:1.5em; font-size:1.5em"><em>This is a pre-computed replay.</em></h3>
+        <!-- 控制面板 -->
+        <div class="control-panel" style="margin-bottom: 30px;">
+            <div class="control-panel-header">
+                <h3 class="panel-title">
+                    <i class="glyphicon glyphicon-time" style="margin-right: 8px;"></i>
+                    Simulation Control
+                </h3>
+            </div>
+            <div class="control-panel-body">
+                <!-- 当前时间显示 -->
+                <div style="text-align: center; margin-bottom: 25px;">
+                    <label style="margin-bottom: 8px; display: block;">
+                        <i class="glyphicon glyphicon-calendar" style="margin-right: 5px;"></i>
+                        Current Time
+                    </label>
+                    <div class="simulation-status-display" style="font-size: 18px; font-weight: 600; color: #0969da;">
+                        <span id="game-time-content"></span>
+                    </div>
+                </div>
 
+                <!-- 播放控制区域 -->
+                <div class="{% if mode == 'simulate' %}hide{% endif %}" style="{% if mode == 'simulate' %}display: none;{% endif %}">
+                    <!-- 播放控制按钮 -->
+                    <div class="github-buttons-container" style="justify-content: center; margin-bottom: 25px;">
+                        <button id="play_button" type="button" class="github-btn github-btn-success">
+                            <i class="glyphicon glyphicon-play"></i>
+                            Play
+                        </button>
+                        <button id="pause_button" type="button" class="github-btn github-btn-secondary">
+                            <i class="glyphicon glyphicon-pause"></i>
+                            Pause
+                        </button>
+                        <button id="prev_frame_button" type="button" class="github-btn github-btn-tertiary" disabled>
+                            <i class="glyphicon glyphicon-step-backward"></i>
+                            Prev Frame
+                        </button>
+                        <button id="next_frame_button" type="button" class="github-btn github-btn-tertiary" disabled>
+                            <i class="glyphicon glyphicon-step-forward"></i>
+                            Next Frame
+                        </button>
+                    </div>
 
-		<h3 style="margin-bottom:-0.5em; font-size:1.5em">Current Time:</h3>
-		<div class="row">
-			<div class="col-md-8" id="game-time" style="">
-				<h2><span id="game-time-content"></span></h2>
-			</div>
-			<div class="col-md-12" style="margin-top: 15px; {% if mode == 'simulate' %} display: none {% endif %}">
-				<!-- 播放控制按钮行 -->
-				<div style="display: flex; justify-content: center; gap: 10px; margin-bottom: 15px;">
-					<button id="play_button" type="button" class="btn btn-default" style="min-width: 100px;">
-						<strong style="font-size:1.2em"><i class="glyphicon glyphicon-play"></i> &nbsp;Play</strong>
-					</button>
+                    <!-- 速度控制滑块 -->
+                    <div style="display: flex; justify-content: center; gap: 30px; flex-wrap: wrap;">
+                        <div style="display: flex; flex-direction: column; align-items: center; min-width: 200px;">
+                            <label for="speed-slider" class="roleplay-label">
+                                <i class="glyphicon glyphicon-dashboard"></i>
+                                Simulation Speed: <span id="speed-value">3</span>
+                            </label>
+                            <input type="range" id="speed-slider" min="1" max="9" step="1" value="3" 
+                                   class="github-input" style="width: 200px;">
+                        </div>
+                        <div style="display: flex; flex-direction: column; align-items: center; min-width: 200px;">
+                            <label for="frame-speed-slider" class="roleplay-label">
+                                <i class="glyphicon glyphicon-forward"></i>
+                                Frame Nav Speed: <span id="frame-speed-value">5</span>
+                            </label>
+                            <input type="range" id="frame-speed-slider" min="1" max="10" step="1" value="5" 
+                                   class="github-input" style="width: 200px;">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
 
-					<button id="pause_button" type="button" class="btn btn-default" style="min-width: 100px;">
-						<strong style="font-size:1.2em"><i class="glyphicon glyphicon-pause"></i> &nbsp;Pause</strong>
-					</button>
+        <!-- Agent状态面板 -->
+        <div class="control-panel">
+            <div class="control-panel-header">
+                <h3 class="panel-title">
+                    <i class="glyphicon glyphicon-user" style="margin-right: 8px;"></i>
+                    Agent Status
+                </h3>
+            </div>
+            <div class="control-panel-body">
+                <!-- Agent状态网格 -->
+                <div class="agents-grid">
+                    {% for p in persona_names %}
+                    <div class="agent-card" id="on_screen_det_trigger-{{p.underscore}}">
+                        <div class="agent-avatar-section">
+                            <div class="agent-avatar" id="on_screen_det_trigger_container-{{p.underscore}}">
+                                {% with 'assets/characters/profile/'|add:p.underscore|add:'.png' as image_static %}
+                                <img src="{% static image_static %}" alt="{{p.original}}">
+                                {% endwith %}
+                            </div>
+                            <div class="agent-name">{{ p.initial }}</div>
+                        </div>
+                        <div class="agent-status-section">
+                            <div class="agent-emoji" id="quick_emoji-{{p.underscore}}"></div>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
 
-					<span style="width: 20px;"></span> <!-- 添加间隔 -->
+        <!-- Agent详情面板 -->
+        <div id="on_screen_det_content-init" class="agent-detail-placeholder">
+            <div class="agent-detail-content">
+                <em><i class="glyphicon glyphicon-info-sign" style="margin-right: 8px;"></i>Click on one of the character sprites to see its current state in more detail.</em>
+            </div>
+        </div>
 
-					<button id="prev_frame_button" type="button" class="btn btn-default" disabled style="min-width: 130px;">
-						<strong style="font-size:1.2em"><i class="glyphicon glyphicon-step-backward"></i> &nbsp;Prev Frame</strong>
-					</button>
+        {% for p in persona_names %}
+        <div class="control-panel" id="on_screen_det_content-{{p.underscore}}" style="display: none;">
+            <div class="control-panel-header">
+                <div class="agent-detail-header">
+                    <div class="agent-detail-avatar">
+                        {% with 'assets/characters/profile/'|add:p.underscore|add:'.png' as image_static %}
+                        <img src="{% static image_static %}" alt="{{p.original}}">
+                        {% endwith %}
+                    </div>
+                    <div class="agent-detail-info">
+                        <h3 class="agent-detail-name" id="name__{{ p.underscore }}">
+                            {{p.original}}
+                            <a href="{% url 'replay_persona_state' sim_code step p.underscore %}" class="agent-detail-link">
+                                <i class="glyphicon glyphicon-list-alt" style="margin-right: 4px;"></i>State Details
+                            </a>
+                        </h3>
+                    </div>
+                </div>
+            </div>
+            <div class="control-panel-body">
+                <div class="agent-detail-content">
+                    <div class="agent-detail-item">
+                        <div class="agent-detail-label">
+                            <i class="glyphicon glyphicon-play-circle" style="margin-right: 5px;"></i>
+                            Current Action:
+                        </div>
+                        <div class="agent-detail-value" id="current_action__{{ p.underscore }}"></div>
+                    </div>
+                    <div class="agent-detail-item">
+                        <div class="agent-detail-label">
+                            <i class="glyphicon glyphicon-map-marker" style="margin-right: 5px;"></i>
+                            Location:
+                        </div>
+                        <div class="agent-detail-value" id="target_address__{{ p.underscore }}"></div>
+                    </div>
+                    <div class="agent-detail-item">
+                        <div class="agent-detail-label">
+                            <i class="glyphicon glyphicon-comment" style="margin-right: 5px;"></i>
+                            Current Conversation:
+                        </div>
+                        <div class="agent-detail-value" id="chat__{{ p.underscore }}"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
 
-					<button id="next_frame_button" type="button" class="btn btn-default" disabled style="min-width: 130px;">
-						<strong style="font-size:1.2em"><i class="glyphicon glyphicon-step-forward"></i> &nbsp;Next Frame</strong>
-					</button>
-				</div>
-
-				<!-- 速度控制滑块行 -->
-				<div style="display: flex; justify-content: center; align-items: center; margin-bottom: 15px;">
-					<label for="speed-slider" style="margin-right: 10px; min-width: 140px;">
-						<strong>Simulation Speed: <span id="speed-value">3</span></strong>
-					</label>
-					<input type="range" id="speed-slider" min="1" max="10" step="1" value="3" style="width: 200px;">
-				</div>
-
-				<!-- 帧导航速度控制滑块 -->
-				<div style="display: flex; justify-content: center; align-items: center; margin-bottom: 15px;">
-					<label for="frame-speed-slider" style="margin-right: 10px; min-width: 140px;">
-						<strong>Frame Nav Speed: <span id="frame-speed-value">5</span></strong>
-					</label>
-					<input type="range" id="frame-speed-slider" min="1" max="10" step="1" value="5" style="width: 300px;">
-				</div>
-			</div>
-		</div>
-
-		<br>
-		<hr style="border-color:#999999">
-		<br>
-
-		<div class="row">
-			<div class="col-md-12" style="border:solid; padding:2em; border-radius: 15px">
-				<div class="row" style="">
-					{% for p in persona_names %}
-					<div class="col-md-2 col-sm-2" style="text-align:center; margin-bottom:0.8em;">
-						<div id="on_screen_det_trigger-{{p.underscore}}" style="cursor: pointer;">
-							<div class="row" style="padding:0">
-								<div class="col-md-4" id="on_screen_det_trigger_container-{{p.underscore}}"
-									style="text-align:center; padding:0; padding-top:0.3em">
-									{% with 'assets/characters/profile/'|add:p.underscore|add:'.png' as image_static %}
-									<img src="{% static image_static %}" style="width:46px; padding:0; ">
-									{% endwith %}
-									<br>
-									{{ p.initial }}
-								</div>
-								<div class="col-md-8" style="padding-top:0.5em; ">
-									<span style="font-size:1.5em" id="quick_emoji-{{p.underscore}}"></span>
-								</div>
-							</div>
-						</div>
-					</div>
-					{% endfor %}
-				</div>
-			</div>
-		</div>
-		<br>
-
-		<div class="media" id="on_screen_det_content-init"
-			style="background-color:#EEEEEE; padding:1em; padding-left:3.5em; padding-right:2em; border-radius:10px; ">
-			<div class="media-left media-middle">
-				<em>Click on one of the character sprites to see its current state in more detail. </em>
-			</div>
-		</div>
-
-
-		{% for p in persona_names %}
-		<div class="media" id="on_screen_det_content-{{p.underscore}}"
-			style="background-color:#EEEEEE; padding:1em; padding-left:3.5em; padding-right:2em; border-radius:10px; display: none;">
-			<div class="media-left media-middle">
-				<a href="#">
-					{% with 'assets/characters/profile/'|add:p.underscore|add:'.png' as image_static %}
-					<img src="{% static image_static %}" style="width:5em">
-					{% endwith %}
-				</a>
-			</div>
-			<div class="media-body" style='padding-left:3em; padding-top:0.5em; padding-bottom:1em'>
-				<div class="row">
-					<h2 class="col-md-8" id="name__{{ p.underscore }}" style="margin-bottom:0.8em; font-size:1.85em; ">
-						{{p.original}} &nbsp;&nbsp;
-						<a href="{% url 'replay_persona_state' sim_code step p.underscore %}" style="font-size:0.6em">State
-							Details</a>
-					</h2>
-				</div>
-				<div style="">
-					<p style="font-size:1.2em"><strong>Current Action:</strong> <br><span
-							id="current_action__{{ p.underscore }}"></span></p>
-					<p style="font-size:1.2em"><strong>Location:</strong> <br><span
-							id="target_address__{{ p.underscore }}"></span></p>
-					<p style="font-size:1.2em"><strong>Current Conversation:</strong> <br><span
-							id="chat__{{ p.underscore }}"></span></p>
-				</div>
-			</div>
-		</div>
-		{% endfor %}
-
-	</div>
+    </div>
 </div>
 
-<div style="margin-top:10em"></div>
-
-
-<div style="display: " id="temp_focus"></div>
-
-
+<div style="padding-bottom:15em"></div>
+<div style="display: none" id="temp_focus"></div>
 
 {% endblock content %}
 
-
 {% block js_content %}
+<style>
+/* 导入home.html的完整CSS样式 */
+/* GitHub风格按钮样式 */
+.github-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 6px 16px;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 20px;
+    white-space: nowrap;
+    vertical-align: middle;
+    cursor: pointer;
+    user-select: none;
+    background-repeat: no-repeat;
+    background-position: right 8px center;
+    background-size: 16px;
+    border: 1px solid;
+    border-radius: 6px;
+    appearance: none;
+    transition: all 0.15s cubic-bezier(0.4, 0, 0.2, 1);
+    text-decoration: none;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans", Helvetica, Arial, sans-serif;
+    position: relative;
+}
+
+.github-btn:focus {
+    outline: none;
+}
+
+.github-btn:disabled {
+    color: #8c959f;
+    background-color: #f6f8fa;
+    border-color: #d1d9e0;
+    cursor: not-allowed;
+}
+
+.github-btn:not(:disabled):hover {
+    transform: translateY(-1px);
+}
+
+.github-btn:not(:disabled):active {
+    transform: translateY(0);
+    filter: brightness(0.9);
+}
+
+.github-btn i {
+    margin-right: 6px;
+    font-size: 12px;
+}
+
+/* 按钮颜色变体 */
+.github-btn-primary {
+    color: #ffffff;
+    background-color: #1f883d;
+    border-color: #1f883d;
+}
+
+.github-btn-primary:not(:disabled):hover {
+    background-color: #1a7f37;
+    border-color: #1a7f37;
+}
+
+.github-btn-secondary {
+    color: #24292f;
+    background-color: #f6f8fa;
+    border-color: #d1d9e0;
+}
+
+.github-btn-secondary:not(:disabled):hover {
+    background-color: #f3f4f6;
+    border-color: #d1d9e0;
+}
+
+.github-btn-tertiary {
+    color: #ffffff;
+    background-color: #0969da;
+    border-color: #0969da;
+}
+
+.github-btn-tertiary:not(:disabled):hover {
+    background-color: #0860ca;
+    border-color: #0860ca;
+}
+
+.github-btn-success {
+    color: #ffffff;
+    background-color: #1f883d;
+    border-color: #1f883d;
+}
+
+.github-btn-success:not(:disabled):hover {
+    background-color: #1a7f37;
+    border-color: #1a7f37;
+}
+
+/* 按钮容器 */
+.github-buttons-container {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+/* 状态显示样式 */
+.status-display {
+    padding: 12px 20px;
+    border-radius: 6px;
+    background-color: #f6f8fa;
+    color: #24292f;
+    font-size: 14px;
+    font-weight: 500;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans", Helvetica, Arial, sans-serif;
+    min-width: 260px;
+    text-align: center;
+    border: 1px solid #d1d9e0;
+    box-shadow: 0 1px 3px rgba(16, 22, 26, 0.1);
+    cursor: default;
+    user-select: none;
+    transition: all 0.15s ease-in-out;
+}
+
+.simulation-status-display {
+    padding: 10px 18px;
+    border-radius: 8px;
+    background-color: #ffffff;
+    color: #24292f;
+    font-size: 14px;
+    font-weight: 500;
+    text-align: center;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans", Helvetica, Arial, sans-serif;
+    min-width: 180px;
+    border: 1px solid #d1d9e0;
+    box-shadow: 0 1px 3px rgba(16, 22, 26, 0.1);
+}
+
+/* 标签样式 */
+label, .roleplay-label {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans", Helvetica, Arial, sans-serif;
+    font-weight: 600;
+    color: #24292f;
+    font-size: 14px;
+    margin-bottom: 8px;
+}
+
+/* 控制面板样式 */
+.control-panel {
+    border: 1px solid #d1d9e0 !important;
+    border-radius: 12px !important;
+    background-color: #ffffff !important;
+    box-shadow: 0 1px 3px rgba(16, 22, 26, 0.1) !important;
+    margin-bottom: 20px;
+}
+
+.control-panel-header {
+    background: linear-gradient(135deg, #24292f 0%, #32383f 100%) !important;
+    border: none !important;
+    border-radius: 12px 12px 0 0 !important;
+    padding: 16px 20px !important;
+}
+
+.control-panel-body {
+    background-color: #ffffff !important;
+    border-radius: 0 0 12px 12px !important;
+    padding: 20px !important;
+}
+
+.panel-title {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans", Helvetica, Arial, sans-serif;
+    font-weight: 600;
+    color: #ffffff !important;
+    font-size: 16px;
+    margin: 0 !important;
+}
+
+/* 输入框样式 */
+.github-input {
+    border: 1px solid #d1d9e0 !important;
+    border-radius: 6px !important;
+    padding: 6px 12px !important;
+    font-size: 14px !important;
+    line-height: 20px !important;
+    color: #24292f !important;
+    background-color: #ffffff !important;
+    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out !important;
+}
+
+.github-input:focus {
+    border-color: #0969da !important;
+    outline: none !important;
+    box-shadow: 0 0 0 3px rgba(9, 105, 218, 0.1) !important;
+}
+
+/* Agent状态卡片样式 */
+.agents-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 16px;
+    margin-bottom: 20px;
+}
+
+.agent-card {
+    background: #ffffff;
+    border: 1px solid #d1d9e0;
+    border-radius: 8px;
+    padding: 16px;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+    box-shadow: 0 1px 3px rgba(16, 22, 26, 0.1);
+}
+
+.agent-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(16, 22, 26, 0.15);
+    border-color: #0969da;
+}
+
+.agent-avatar-section {
+    margin-bottom: 12px;
+}
+
+.agent-avatar {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    margin: 0 auto 8px;
+    background-color: #f6f8fa;
+    border: 2px solid #d1d9e0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease-in-out;
+}
+
+.agent-card:hover .agent-avatar {
+    border-color: #0969da;
+    background-color: #e6f3ff;
+}
+
+.agent-avatar img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.agent-name {
+    font-size: 12px;
+    font-weight: 600;
+    color: #24292f;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans", Helvetica, Arial, sans-serif;
+}
+
+.agent-status-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.agent-emoji {
+    font-size: 24px;
+    min-height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Agent详情面板样式 */
+.agent-detail-placeholder {
+    background-color: #f6f8fa;
+    border: 1px solid #d1d9e0;
+    border-radius: 8px;
+    padding: 20px;
+    text-align: center;
+    color: #656d76;
+    font-style: italic;
+    margin-bottom: 20px;
+}
+
+.agent-detail-header {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.agent-detail-avatar img {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.agent-detail-info {
+    flex: 1;
+}
+
+.agent-detail-name {
+    color: #ffffff !important;
+    font-size: 18px;
+    font-weight: 600;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.agent-detail-link {
+    color: #58a6ff !important;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 400;
+}
+
+.agent-detail-link:hover {
+    color: #79c0ff !important;
+    text-decoration: underline;
+}
+
+.agent-detail-content {
+    margin-top: 16px;
+}
+
+.agent-detail-item {
+    margin-bottom: 16px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.agent-detail-item:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+.agent-detail-label {
+    font-weight: 600;
+    color: #24292f;
+    margin-bottom: 8px;
+    font-size: 14px;
+}
+
+.agent-detail-value {
+    color: #656d76;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+    .github-buttons-container {
+        justify-content: center;
+    }
+    
+    .github-btn {
+        min-width: auto;
+        padding: 8px 12px;
+        font-size: 12px;
+    }
+    
+    .agents-grid {
+        grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+        gap: 12px;
+    }
+    
+    .agent-card {
+        padding: 12px;
+    }
+    
+    .agent-avatar {
+        width: 50px;
+        height: 50px;
+    }
+    
+    .agent-avatar img {
+        width: 40px;
+        height: 40px;
+    }
+    
+    .agent-detail-header {
+        flex-direction: column;
+        text-align: center;
+        gap: 12px;
+    }
+    
+    .agent-detail-name {
+        flex-direction: column;
+        gap: 8px;
+    }
+}
+</style>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <script src='https://cdn.jsdelivr.net/npm/phaser@3.55.2/dist/phaser.js'></script>
 {% include 'demo/main_script.html' %}
+
 <script>
-	{% for p in persona_names %}
-	$('#on_screen_det_trigger-{{p.underscore}}').click(function () {
-		$('#on_screen_det_content-init').css({
-			'display': 'none',
-		});
-		{% for p_i in persona_names %}
-		$('#on_screen_det_content-{{p_i.underscore}}').css({
-			'display': 'none',
-		});
-		$('#on_screen_det_trigger-{{p_i.underscore}}').css({
-			'font-weight': '500',
-		});
-		$('#on_screen_det_trigger_container-{{p_i.underscore}}').css({
-			'background-color': 'white',
-			'border-radius': '10px'
-		});
-		{% endfor %}
+// 等待jQuery和DOM完全加载后再执行
+$(document).ready(function() {
+    // Agent选择功能
+    {% for p in persona_names %}
+    $('#on_screen_det_trigger-{{p.underscore}}').click(function () {
+        // 隐藏初始提示
+        $('#on_screen_det_content-init').hide();
+        
+        // 重置所有agent卡片样式
+        {% for p_i in persona_names %}
+        $('#on_screen_det_content-{{p_i.underscore}}').hide();
+        $('#on_screen_det_trigger-{{p_i.underscore}}').removeClass('selected');
+        $('#on_screen_det_trigger_container-{{p_i.underscore}}').css({
+            'background-color': '#f6f8fa',
+            'border-color': '#d1d9e0'
+        });
+        {% endfor %}
 
-		$('#on_screen_det_trigger-{{p.underscore}}').css({
-			'font-weight': '900',
-		});
-		$('#on_screen_det_trigger_container-{{p.underscore}}').css({
-			'background-color': '#ABFF84',
-			'border-radius': '10px'
-		});
-		$('#on_screen_det_content-{{p.underscore}}').css({
-			'display': 'block',
-		});
+        // 设置当前选中的agent样式
+        $('#on_screen_det_trigger_container-{{p.underscore}}').css({
+            'background-color': '#e6f3ff',
+            'border-color': '#0969da'
+        });
+        $('#on_screen_det_content-{{p.underscore}}').show();
+        $('#on_screen_det_trigger-{{p.underscore}}').addClass('selected');
 
-		document.getElementById("temp_focus").innerHTML = "{{p.underscore}}";
+        // 设置focus
+        document.getElementById("temp_focus").innerHTML = "{{p.underscore}}";
+    });
+    {% endfor %}
 
-	});
-	{% endfor %}
+    // 速度滑块功能
+    $('#speed-slider').on('input', function() {
+        $('#speed-value').text($(this).val());
+    });
+
+    $('#frame-speed-slider').on('input', function() {
+        $('#frame-speed-value').text($(this).val());
+    });
+});
 </script>
 {% endblock js_content %}

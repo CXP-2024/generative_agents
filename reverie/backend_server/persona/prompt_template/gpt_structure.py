@@ -363,7 +363,7 @@ def get_embedding(text, model="bge-m3", max_retries=100): # original is text-emb
     except Exception as e:
       print(f"Attempt {attempt + 1}/{max_retries} failed. Error: {e}")
       if attempt < max_retries - 1:  # Don't wait after the last attempt
-        wait_time = 10  # Wait 10 seconds before retry
+        wait_time = 3  # Wait 3 seconds before retry
         print(f"Waiting {wait_time} seconds before retry...")
         time.sleep(wait_time)
       else:

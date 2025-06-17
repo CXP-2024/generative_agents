@@ -23,6 +23,6 @@ Following is a conversation between !<INPUT 2>! and !<INPUT 3>!.
 
 !<INPUT 4>!
 
-(Note -- This is the only information that !<INPUT 5>! has: !<INPUT 6>!)
+(Note -- !<INPUT 5>! should consider !<INPUT 5>!'s conversation history and the information !<INPUT 5>! has: !<INPUT 6>!)
 
 !<INPUT 7>!: "
