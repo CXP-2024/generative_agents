@@ -5,14 +5,31 @@
 <br>
 <br>
 <div>
-    <div id="game-container" style="text-align: center"></div>
+    <!-- 地图容器 - GitHub风格面板 -->
+    <div style="width:100%; max-width: 1680px; margin: 0 auto; margin-top:2em; padding: 0 15px;">
+        <div style="margin-bottom: 25px;">
+            <div class="control-panel">
+                <div class="control-panel-header">
+                    <h3 class="panel-title">
+                        <i class="glyphicon glyphicon-globe" style="margin-right: 8px;"></i>
+                        Simulation Map
+                    </h3>
+                </div>
+                <div class="control-panel-body" style="padding: 20px;">
+                    <div id="game-container" style="text-align: center; width: 100%; overflow: hidden;">
+                        <!-- 地图画布将在这里渲染，尺寸: 1600x1000px (3200x2000 @ 0.5 scale) -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
-    <div style="width:100%; max-width: 1200px; margin: 0 auto; margin-top:4.5em; padding: 0 15px;">
+    <div style="width:100%; max-width: 1200px; margin: 0 auto; margin-top:1em; padding: 0 15px;">
         <!-- 状态显示区域 -->
         <div style="text-align: center; margin-bottom: 30px;">
             <div class="status-display" style="background: linear-gradient(135deg, #f6f8fa 0%, #e1e7ee 100%); border: 1px solid #d1d9e0; color: #24292f; font-weight: 600;">
                 <i class="glyphicon glyphicon-play-circle" style="margin-right: 8px;"></i>
-                This is a pre-computed replay
+                This is a pre-computed replay, 按空格键和shift键进行地图缩放（或鼠标滚轮），鼠标拖住地图，如果遇到agents鬼畜请将地图放大以适应分辨率
             </div>
         </div>
 
@@ -521,6 +538,62 @@ label, .roleplay-label {
     color: #656d76;
     font-size: 14px;
     line-height: 1.5;
+}
+
+/* 地图容器响应式样式 - 保持横纵比 */
+#game-container {
+    width: 100%;
+    max-width: 1600px; /* 匹配实际地图显示宽度 3200 * 0.5 = 1600px */
+    margin: 0 auto;
+    overflow: hidden;
+    position: relative;
+    /* 地图原始比例: 1600x1000, 即 16:10 或 1.6:1 */
+    aspect-ratio: 1.6 / 1;
+}
+
+#game-container canvas {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: contain; /* 保持比例，完整显示 */
+    display: block;
+    margin: 0 auto;
+}
+
+/* 容器宽度自适应缩放 - 保持横纵比不变 */
+@media (max-width: 1680px) {
+    #game-container {
+        /* 在1680px以下，容器会自然缩放但保持比例 */
+        max-width: calc(100vw - 80px); /* 减去左右padding */
+    }
+}
+
+@media (max-width: 1200px) {
+    #game-container {
+        max-width: calc(100vw - 60px);
+    }
+}
+
+@media (max-width: 900px) {
+    #game-container {
+        max-width: calc(100vw - 40px);
+    }
+}
+
+@media (max-width: 700px) {
+    #game-container {
+        max-width: calc(100vw - 30px);
+    }
+}
+
+/* 额外的canvas适配确保在所有情况下都保持比例 */
+@media (max-width: 768px) {
+    #game-container canvas {
+        max-width: 100%;
+        max-height: 100%;
+        width: auto !important;
+        height: auto !important;
+        object-fit: contain;
+    }
 }
 
 /* 响应式设计 */
