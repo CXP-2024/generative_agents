@@ -709,3 +709,64 @@ def check_simulation_result(request):
             'success': False,
             'error': str(e)
         })
+
+@csrf_exempt
+def get_available_roles(request):
+    """获取可用的预设角色列表"""
+    try:
+        # 尝试从不同路径导入角色管理模块
+        roles_data = {}
+        try:
+            # 直接读取 roles_data.json 文件
+            roles_file_path = os.path.join(os.path.dirname(__file__), '../../../reverie/backend_server/roles_data.json')
+            if os.path.exists(roles_file_path):
+                with open(roles_file_path, 'r', encoding='utf-8') as f:
+                    roles_json = json.load(f)
+                    roles_data = roles_json.get('predefined_roles', {})
+                    metadata = roles_json.get('metadata', {})
+            else:
+                # 如果文件不存在，返回空数据
+                roles_data = {}
+                metadata = {"error": "roles_data.json not found"}
+        except Exception as file_error:
+            print(f"⚠️ 无法读取角色文件: {file_error}")
+            # 尝试通过模块导入
+            try:
+                sys.path.append(os.path.join(os.path.dirname(__file__), '../../../reverie/backend_server'))
+                from roles_config import roles_manager
+                roles_data = roles_manager.get_all_roles()
+                metadata = roles_manager.get_metadata()
+            except Exception as import_error:
+                print(f"⚠️ 无法导入角色模块: {import_error}")
+                # 使用默认数据
+                roles_data = {
+                    "Wei Xu": "a new campus singer who just arrived and is passionate about music",
+                    "GMY": "a fashion designer who creates sustainable clothing and runs a small boutique",
+                    "Ge Jie": "a famous Bilibili actor who stars in the popular '介个不要' series",
+                    "Paimon": "a cute and helpful companion who assists travelers in the continent of Teyvat",
+                    "Kun": "a chicken who is a member of the 'chicken family' and has gift of playing basketball",
+                    "杰哥": "不要",
+                    "Ab": "A friedly man"
+                }
+                metadata = {"source": "fallback", "note": "Using default roles due to import error"}
+        
+        return JsonResponse({
+            'success': True,
+            'roles': roles_data,
+            'metadata': metadata,
+            'total_roles': len(roles_data),
+            'source': 'backend_api'
+        })
+        
+    except Exception as e:
+        import traceback
+        print(f"❌ Error getting roles: {e}")
+        traceback.print_exc()
+        
+        return JsonResponse({
+            'success': False,
+            'error': str(e),
+            'roles': {},
+            'metadata': {},
+            'source': 'error'
+        })
