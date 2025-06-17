@@ -267,17 +267,25 @@ class AgentEvaluator:
         # Build evaluation context for this dimension
         conversations_text = ""
         for i, conv in enumerate(conversations, 1):
+            # 添加问题和回答
             conversations_text += f"Q{i}: {conv['question']}\n"
-            conversations_text += f"A{i}: {conv['response']}\n\n"
-        
-
+            conversations_text += f"A{i}: {conv['response']}\n"
+            
+            # 添加相关记忆（关键改进）
+            if 'relevant_memories' in conv and conv['relevant_memories']:
+                conversations_text += f"Related memories:\n{conv['relevant_memories']}\n"
+            else:
+                conversations_text += "No related memories found.\n"
+            conversations_text += "\n"
+    
+        # 更新评估prompt，要求比对记忆与回答
         evaluation_prompt = f"""
 Please evaluate {persona_name}'s performance in the {dimension} dimension.
 
-Conversation records:
+Conversation records with related memories:
 {conversations_text}
 
-Please give a score from 1-10 and briefly explain the reason.
+Please give a score from 1-10 and briefly explain the reason based on the memory comparison.
 
 Output format:
 Score: X.X
