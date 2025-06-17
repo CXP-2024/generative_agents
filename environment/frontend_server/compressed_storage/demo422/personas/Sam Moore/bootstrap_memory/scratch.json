@@ -1,0 +1,461 @@
+{
+  "vision_r": 8,
+  "att_bandwidth": 8,
+  "retention": 8,
+  "curr_time": "February 13, 2023, 09:59:50",
+  "curr_tile": [
+    107,
+    16
+  ],
+  "daily_plan_req": "Sam Moore does long running after awaking up, and he eats breakfast at 7:30. He attend class in classroom 2, from 8am to 3pm, with a lunch break from 12am to 1:30pm. In his spare time he goes to the playground or the sports room.",
+  "name": "Sam Moore",
+  "first_name": "Sam",
+  "last_name": "Moore",
+  "age": 18,
+  "innate": "wise, resourceful, humorous",
+  "learned": "Sam Moore is a grade 12 high school student. He loves table tennis, and he plays table tennis only when he has an appointment with Francisco Lopez. He also likes other sports. He loves his younger sister, Jennifer Moore.",
+  "currently": "Sam Moore is preparing for a sport college.",
+  "lifestyle": "Sam Moore goes to bed around 9pm, awakes up around 5am, eats dinner around 5pm.",
+  "living_area": "the School:student dormitory 2:common room",
+  "concept_forget": 100,
+  "daily_reflection_time": 180,
+  "daily_reflection_size": 5,
+  "overlap_reflect_th": 4,
+  "kw_strg_event_reflect_th": 10,
+  "kw_strg_thought_reflect_th": 9,
+  "recency_w": 1,
+  "relevance_w": 1,
+  "importance_w": 1,
+  "recency_decay": 0.995,
+  "importance_trigger_max": 250,
+  "importance_trigger_curr": 241,
+  "importance_ele_n": 5,
+  "thought_count": 5,
+  "commitments": {
+    "2023-02-13": [
+      {
+        "time": "9:00",
+        "duration": 60,
+        "description": "Prepare thoughts on how biology and sports science intersect for lunch discussion with Arthur Burton tomorrow",
+        "with": "Arthur",
+        "location": ""
+      },
+      {
+        "time": "10:00",
+        "duration": 5,
+        "description": "Text Arthur to invite him to the table tennis match at 4:30pm in the sports room",
+        "with": "Arthur",
+        "location": ""
+      },
+      {
+        "time": "14:00",
+        "duration": 120,
+        "description": "Finish classwork before the table tennis match at 4:30pm",
+        "with": "",
+        "location": ""
+      },
+      {
+        "time": "10:00",
+        "duration": 30,
+        "description": "Meet Jane Moreno and Wolfgang after class by the faculty lounge to discuss historical resources on sports science and cellular respiration, and collaborate on connecting these topics to athletic performance",
+        "with": "Jane",
+        "location": ""
+      },
+      {
+        "time": "16:30",
+        "duration": 60,
+        "description": "Attend table tennis match with Maria, Francisco, and possibly Arthur in the sports room",
+        "with": "Maria",
+        "location": ""
+      }
+    ]
+  },
+  "daily_req": [
+    "wake up and complete the morning routine at 5:00 am",
+    "Wake up and complete morning routine at 5:00 am",
+    "Long running from 5:30 am to 6:30 am",
+    "Shower and get ready for the day from 6:30 am to 7:00 am",
+    "Eat breakfast at 7:30 am",
+    "Attend class in classroom 2 from 8:00 am to 12:00 pm",
+    "Lunch break from 12:00 pm to 1:30 pm",
+    "Attend class in classroom 2 from 1:30 pm to 3:00 pm",
+    "Free time\u2014visit the playground or sports room from 3:00 pm to 4:30 pm",
+    "Eat dinner at 5:00 pm",
+    "Study or prepare for sport college from 5:30 pm to 7:30 pm",
+    "Spend time with younger sister Jennifer Moore from 7:30 pm to 8:30 pm",
+    "Wind down and get ready for bed from 8:30 pm to 9:00 pm",
+    "Go to bed at 9:00 pm"
+  ],
+  "f_daily_schedule": [
+    [
+      "sleeping",
+      300
+    ],
+    [
+      "waking up and getting out of bed",
+      5
+    ],
+    [
+      "brushing his teeth",
+      5
+    ],
+    [
+      "washing his face",
+      5
+    ],
+    [
+      "changing into running clothes",
+      5
+    ],
+    [
+      "drinking a glass of water",
+      5
+    ],
+    [
+      "doing light dynamic stretches",
+      10
+    ],
+    [
+      "doing deeper stretches for his legs",
+      10
+    ],
+    [
+      "doing core activation exercises",
+      5
+    ],
+    [
+      "putting on his running shoes",
+      5
+    ],
+    [
+      "heading outside to start his run",
+      5
+    ],
+    [
+      "warming up with dynamic stretches",
+      5
+    ],
+    [
+      "starting his run at a steady pace",
+      15
+    ],
+    [
+      "increasing his speed slightly",
+      10
+    ],
+    [
+      "maintaining his pace while focusing on breathing",
+      10
+    ],
+    [
+      "beginning to slow down for a cooldown",
+      5
+    ],
+    [
+      "transitioning to a light jog",
+      10
+    ],
+    [
+      "walking to fully cool down",
+      5
+    ],
+    [
+      "taking off his running clothes",
+      5
+    ],
+    [
+      "turning on the shower and adjusting the water temperature",
+      5
+    ],
+    [
+      "showering and washing his hair",
+      15
+    ],
+    [
+      "drying off with a towel",
+      5
+    ],
+    [
+      "brushing his teeth",
+      5
+    ],
+    [
+      "putting on fresh clothes",
+      10
+    ],
+    [
+      "combing his hair",
+      5
+    ],
+    [
+      "gathering ingredients for breakfast",
+      5
+    ],
+    [
+      "preparing and eating breakfast",
+      5
+    ],
+    [
+      "listening to the teacher's lecture",
+      15
+    ],
+    [
+      "taking notes on the lesson",
+      3
+    ],
+    [
+      "taking notes on the lesson (waiting to start taking notes on the lesso)",
+      7
+    ],
+    [
+      "participating in a class discussion  ",
+      2
+    ],
+    [
+      "participating in a class discussion   (conversing about Arthur Burton and Sam Moore discussed their shared interest in the connections between sports science, biology, and chemistry, particularly how cellular respiration impacts athletic performance, and agreed to meet for lunch the next day to continue their conversation while also mentioning Arthur's upcoming chemistry competition and table tennis match with Francisco.)",
+      9
+    ],
+    [
+      "reviewing his notes quietly  ",
+      4
+    ],
+    [
+      "stretching his legs during the short break  ",
+      5
+    ],
+    [
+      "returning to his seat and refocusing  ",
+      5
+    ],
+    [
+      "working on an in-class assignment  ",
+      1
+    ],
+    [
+      "working on an in-class assignment   (waiting to start working on an in-class assignment )",
+      9
+    ],
+    [
+      "listening to the teacher's lecture  ",
+      1
+    ],
+    [
+      "listening to the teacher's lecture   (waiting to start listening to the teacher's lecture )",
+      14
+    ],
+    [
+      "taking notes on the lesson   (waiting to start taking notes on the lesson )",
+      10
+    ],
+    [
+      "still working on a class exercise   (conversing about Francisco Lopez and Sam Moore discussed their class exercises, excitement for their table tennis match at 4:30pm in the sports room, and plans to invite Arthur to watch and share insights on sports science.)",
+      8
+    ],
+    [
+      "still working on a class exercise  ",
+      1
+    ],
+    [
+      "still working on a class exercise   (conversing about Jane and Sam discussed connecting cellular respiration to sports science, with Jane offering historical resources and suggesting collaboration with Wolfgang, and they agreed to meet after class by the faculty lounge to further discuss the topic together.)",
+      7
+    ],
+    [
+      "still working on a class exercise  ",
+      3
+    ],
+    [
+      "still working on a class exercise   (conversing about Maria Lopez and Sam Moore discussed their class exercises and plans to meet for table tennis at 4:30 in the sports room, where Maria will bring her Hatsune Miku figure for luck and Arthur might join to share sports science insights, with Francisco also participating in the game.)",
+      6
+    ],
+    [
+      "chatting with classmates during the break  ",
+      5
+    ],
+    [
+      "packing up his notebook  ",
+      5
+    ],
+    [
+      "listening to the teacher's lecture  ",
+      15
+    ],
+    [
+      "taking notes on the lecture material  ",
+      10
+    ],
+    [
+      "briefly pausing to think about biology and sports science connections  ",
+      5
+    ],
+    [
+      "engaging in a class discussion  ",
+      10
+    ],
+    [
+      "taking a short break to drink water  ",
+      5
+    ],
+    [
+      "jotting down ideas on biology and sports science intersection  ",
+      10
+    ],
+    [
+      "organizing his notes before the next segment",
+      5
+    ],
+    [
+      "attending class in classroom 2, and at around 11:45, will start packing up for lunch break, finishing thoughts on biology and sports science intersection",
+      60
+    ],
+    [
+      "on his lunch break, and at around 12:30, will eat his meal in the cafeteria",
+      60
+    ],
+    [
+      "attending class in classroom 2, and at around 2:00, will take a short break to stretch his legs",
+      60
+    ],
+    [
+      "attending class in classroom 2, and at around 2:45, will start packing up his materials, and at around 3:00, will begin preparing to discuss sports science angles and warm-up routines with Francisco",
+      60
+    ],
+    [
+      "packing up his materials after class, and at around 3:15, will meet Jane Moreno and Wolfgang by the faculty lounge to discuss historical resources on sports science and cellular respiration, and collaborate on connecting these topics to athletic performance, continuing to prepare to discuss sports science angles and warm-up routines with Francisco",
+      60
+    ],
+    [
+      "playing basketball at the playground, and at around 4:20, will take a short water break before continuing, and at around 4:30, will attend the table tennis match with Maria, Francisco, and possibly Arthur in the sports room",
+      60
+    ],
+    [
+      "eating dinner with his family, and at around 5:30, will start cleaning up the table",
+      60
+    ],
+    [
+      "studying and preparing for sport college, and at around 6:45, will take a short break to stretch",
+      60
+    ],
+    [
+      "studying and preparing for sport college, and at around 7:15, will take a short break to chat with his sister Jennifer",
+      60
+    ],
+    [
+      "spending time with his younger sister Jennifer Moore, and at around 8:15, will play a board game with her",
+      60
+    ],
+    [
+      "winding down and getting ready for bed, and at around 9:15, will turn off the lights to sleep",
+      60
+    ],
+    [
+      "sleeping",
+      120
+    ]
+  ],
+  "f_daily_schedule_hourly_org": [
+    [
+      "sleeping",
+      300
+    ],
+    [
+      "waking up and completing his morning routine, and at around 05:20, will start stretching for his run",
+      60
+    ],
+    [
+      "on his long run, and at around 06:25, will start cooling down with a light jog",
+      60
+    ],
+    [
+      "showering and getting ready for the day, and at around 07:25, will start preparing breakfast",
+      60
+    ],
+    [
+      "attending class in classroom 2, and at around 10:00, will take a short break to stretch his legs",
+      60
+    ],
+    [
+      "attending class in classroom 2, and at around 9:30, will start preparing thoughts on biology and sports science intersection, and at around 9:45, will text Arthur to invite him to the table tennis match at 4:30pm in the sports room",
+      60
+    ],
+    [
+      "attending class in classroom 2, and at around 10:30, will take a short break to drink some water, continuing to prepare thoughts on biology and sports science intersection",
+      60
+    ],
+    [
+      "attending class in classroom 2, and at around 11:45, will start packing up for lunch break, finishing thoughts on biology and sports science intersection",
+      60
+    ],
+    [
+      "on his lunch break, and at around 12:30, will eat his meal in the cafeteria",
+      60
+    ],
+    [
+      "attending class in classroom 2, and at around 2:00, will take a short break to stretch his legs",
+      60
+    ],
+    [
+      "attending class in classroom 2, and at around 2:45, will start packing up his materials, and at around 3:00, will begin preparing to discuss sports science angles and warm-up routines with Francisco",
+      60
+    ],
+    [
+      "packing up his materials after class, and at around 3:15, will meet Jane Moreno and Wolfgang by the faculty lounge to discuss historical resources on sports science and cellular respiration, and collaborate on connecting these topics to athletic performance, continuing to prepare to discuss sports science angles and warm-up routines with Francisco",
+      60
+    ],
+    [
+      "playing basketball at the playground, and at around 4:20, will take a short water break before continuing, and at around 4:30, will attend the table tennis match with Maria, Francisco, and possibly Arthur in the sports room",
+      60
+    ],
+    [
+      "eating dinner with his family, and at around 5:30, will start cleaning up the table",
+      60
+    ],
+    [
+      "studying and preparing for sport college, and at around 6:45, will take a short break to stretch",
+      60
+    ],
+    [
+      "studying and preparing for sport college, and at around 7:15, will take a short break to chat with his sister Jennifer",
+      60
+    ],
+    [
+      "spending time with his younger sister Jennifer Moore, and at around 8:15, will play a board game with her",
+      60
+    ],
+    [
+      "winding down and getting ready for bed, and at around 9:15, will turn off the lights to sleep",
+      60
+    ],
+    [
+      "sleeping",
+      120
+    ]
+  ],
+  "act_address": "the School:classroom building:classroom 1:blackboard",
+  "act_start_time": "February 13, 2023, 09:55:00",
+  "act_duration": 5,
+  "act_description": "packing up his notebook  ",
+  "act_pronunciatio": "\ud83d\udcd3\u270f\ufe0f",
+  "act_event": [
+    "Sam Moore",
+    "pack",
+    "notebook"
+  ],
+  "act_obj_description": "being cleaned",
+  "act_obj_pronunciatio": "\ud83e\uddfc\ud83e\uddfd",
+  "act_obj_event": [
+    "blackboard",
+    "is",
+    "cleaned"
+  ],
+  "chatting_with": null,
+  "chat": null,
+  "chatting_with_buffer": {
+    "Arthur Burton": 0,
+    "Francisco Lopez": 240,
+    "Jane Moreno": 383,
+    "Maria Lopez": 584
+  },
+  "chatting_end_time": null,
+  "act_path_set": true,
+  "planned_path": []
+}

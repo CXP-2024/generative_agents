@@ -1,0 +1,370 @@
+{
+  "vision_r": 8,
+  "att_bandwidth": 8,
+  "retention": 8,
+  "curr_time": "February 13, 2023, 09:59:50",
+  "curr_tile": [
+    121,
+    23
+  ],
+  "daily_plan_req": "Tom Moreno attends class at classroom 2, from 8am to 4:30pm. He studies at dormitory whenever he has time.",
+  "name": "Tom Moreno",
+  "first_name": "Tom",
+  "last_name": "Moreno",
+  "age": 17,
+  "innate": "silent, studious, hardworking",
+  "learned": "Tom Moreno is a grade 11 high school student. He is always studing, as if he never feels tired.",
+  "currently": "Tom Moreno is preparing for exams and projects.",
+  "lifestyle": "Tom Moreno goes to bed around 12pm, awakes up around 6:30am, eats dinner around 5pm.",
+  "living_area": "the School:student dormitory 5:common room",
+  "concept_forget": 100,
+  "daily_reflection_time": 180,
+  "daily_reflection_size": 5,
+  "overlap_reflect_th": 4,
+  "kw_strg_event_reflect_th": 10,
+  "kw_strg_thought_reflect_th": 9,
+  "recency_w": 1,
+  "relevance_w": 1,
+  "importance_w": 1,
+  "recency_decay": 0.995,
+  "importance_trigger_max": 250,
+  "importance_trigger_curr": 201,
+  "importance_ele_n": 20,
+  "thought_count": 5,
+  "commitments": {
+    "2023-02-13": [
+      {
+        "time": "9:00",
+        "duration": 45,
+        "description": "Review the sine rule and cosine rule concepts, focusing on the formulas a/sinA = b/sinB and c\u00b2 = a\u00b2 + b\u00b2 - 2ab cos(C), and solve 5 practice problems to reinforce understanding",
+        "with": "",
+        "location": ""
+      },
+      {
+        "time": "9:00",
+        "duration": 30,
+        "description": "Prepare materials and examples for the history lesson focusing on the connections between trigonometry (sine and cosine rules) and Industrial Revolution engineering applications, specifically steam engines and railway tracks.",
+        "with": "",
+        "location": ""
+      },
+      {
+        "time": "9:00",
+        "duration": 45,
+        "description": "Deliver the history lesson with a segment dedicated to explaining how sine and cosine rules were applied in designing steam engines and railway tracks during the Industrial Revolution.",
+        "with": "",
+        "location": ""
+      }
+    ]
+  },
+  "daily_req": [
+    "wake up and complete the morning routine at 6:00 am",
+    "Wake up and complete morning routine from 6:30 am to 7:00 am",
+    "Study at dormitory from 7:00 am to 7:45 am",
+    "Attend class at classroom 2 from 8:00 am to 12:00 pm",
+    "Have lunch from 12:00 pm to 12:30 pm",
+    "Study at dormitory from 12:30 pm to 1:30 pm",
+    "Attend class at classroom 2 from 1:30 pm to 4:30 pm",
+    "Study at dormitory from 4:30 pm to 5:00 pm",
+    "Have dinner at 5:00 pm",
+    "Study at dormitory from 5:30 pm to 11:45 pm",
+    "Prepare for bed and sleep at 12:00 pm"
+  ],
+  "f_daily_schedule": [
+    [
+      "sleeping",
+      360
+    ],
+    [
+      "waking up and turning off the alarm",
+      5
+    ],
+    [
+      "stretching and getting out of bed",
+      5
+    ],
+    [
+      "brushing his teeth",
+      5
+    ],
+    [
+      "washing his face",
+      5
+    ],
+    [
+      "changing into school clothes",
+      5
+    ],
+    [
+      "making his bed",
+      5
+    ],
+    [
+      "preparing a quick breakfast",
+      10
+    ],
+    [
+      "eating breakfast",
+      10
+    ],
+    [
+      "cleaning up the breakfast dishes",
+      5
+    ],
+    [
+      "checking his school bag for essentials",
+      5
+    ],
+    [
+      "reviewing his notes from yesterday's classes",
+      15
+    ],
+    [
+      "working on a math problem set",
+      20
+    ],
+    [
+      "checking his answers against the textbook solutions",
+      10
+    ],
+    [
+      "organizing his study materials for the day",
+      5
+    ],
+    [
+      "packing his bag with textbooks and notebooks",
+      5
+    ],
+    [
+      "double-checking his class schedule",
+      5
+    ],
+    [
+      "listening to the teacher's lecture",
+      4
+    ],
+    [
+      "listening to the teacher's lecture (conversing about Isabella Rodriguez and Tom Moreno discussed a math lesson focusing on geometry, specifically solving trigonometry problem 5 using the sine rule, where Tom successfully calculated side a as approximately 5.94 units, and then moved on to problem 6 to apply the cosine rule with given values a = 7 units, b = 9 units, and angle C = 50 degrees.)",
+      12
+    ],
+    [
+      "still listening to the teacher's lecture  ",
+      4
+    ],
+    [
+      "taking notes on the lecture material  ",
+      1
+    ],
+    [
+      "taking notes on the lecture material   (waiting to start taking notes on the lecture material )",
+      14
+    ],
+    [
+      "reviewing previous class notes  ",
+      1
+    ],
+    [
+      "reviewing previous class notes   (conversing about Jane Moreno and Tom Moreno discussed Tom's focus on trigonometry and his interest in connecting it to the new history topic on the Industrial Revolution, with Jane agreeing to provide specific examples of how trigonometry was applied in industrial advancements during the lesson.)",
+      9
+    ],
+    [
+      "participating in a class discussion  ",
+      1
+    ],
+    [
+      "participating in a class discussion   (waiting to start participating in a class discussion )",
+      4
+    ],
+    [
+      "still participating in a class discussion   (waiting to start still participating in a class discussion )",
+      10
+    ],
+    [
+      "still participating in a class discussion   (waiting to start still participating in a class discussion )",
+      10
+    ],
+    [
+      "solving practice problems  ",
+      10
+    ],
+    [
+      "asking the teacher a clarifying question  ",
+      5
+    ],
+    [
+      "working on a group activity   (waiting to start working on a group activity )",
+      10
+    ],
+    [
+      "still working on a group activity  ",
+      25
+    ],
+    [
+      "summarizing key points from the lesson  ",
+      10
+    ],
+    [
+      "reviewing homework assignments  ",
+      5
+    ],
+    [
+      "organizing his class materials  ",
+      5
+    ],
+    [
+      "listening to another lecture segment  ",
+      20
+    ],
+    [
+      "annotating his textbook  ",
+      15
+    ],
+    [
+      "solving additional practice questions  ",
+      20
+    ],
+    [
+      "reviewing flashcards for memorization  ",
+      15
+    ],
+    [
+      "preparing questions for the next class  ",
+      10
+    ],
+    [
+      "tidying his desk  ",
+      5
+    ],
+    [
+      "reviewing the day's notes one last time  ",
+      10
+    ],
+    [
+      "packing his bag for the next class",
+      5
+    ],
+    [
+      "having lunch in the cafeteria, and at around 12:30, will head back to the dormitory to study, and at around 12:45, will review the sine rule and cosine rule concepts, focusing on the formulas a/sinA = b/sinB and c\u00b2 = a\u00b2 + b\u00b2 - 2ab cos(C), and solve 5 practice problems to reinforce understanding, and at around 12:50, will prepare materials and examples for the history lesson focusing on the connections between trigonometry (sine and cosine rules) and Industrial Revolution engineering applications, specifically steam engines and railway tracks",
+      60
+    ],
+    [
+      "studying at the dormitory, and at around 01:15, will take a short break to stretch before continuing to practice solving additional trigonometry problems to ensure mastery before the upcoming session, and at around 01:30, will continue preparing materials and examples for the history lesson",
+      60
+    ],
+    [
+      "attending class at classroom 2, and at around 2:30 PM, will deliver the history lesson with a segment dedicated to explaining how sine and cosine rules were applied in designing steam engines and railway tracks during the Industrial Revolution",
+      180
+    ],
+    [
+      "studying at the dormitory, and at around 05:00, will take a short break before dinner",
+      60
+    ],
+    [
+      "studying at the dormitory, and at around 06:30, will take a short break to drink water before continuing",
+      60
+    ],
+    [
+      "studying at the dormitory, and at around 07:30, will take a short break to organize his notes before continuing",
+      60
+    ],
+    [
+      "studying at the dormitory, and at around 08:20, will take a short break to review his progress before continuing",
+      60
+    ],
+    [
+      "studying at the dormitory, and at around 09:15, will take a short break to stretch before continuing",
+      60
+    ],
+    [
+      "studying at the dormitory, and at around 10:20, will take a short break to drink water before continuing",
+      60
+    ],
+    [
+      "studying at the dormitory, and at around 11:45, will prepare for bed",
+      60
+    ]
+  ],
+  "f_daily_schedule_hourly_org": [
+    [
+      "sleeping",
+      360
+    ],
+    [
+      "waking up and starting his morning routine",
+      60
+    ],
+    [
+      "studying at the dormitory, and at around 07:45, will pack his bag for class",
+      60
+    ],
+    [
+      "attending class at classroom 2",
+      240
+    ],
+    [
+      "having lunch in the cafeteria, and at around 12:30, will head back to the dormitory to study, and at around 12:45, will review the sine rule and cosine rule concepts, focusing on the formulas a/sinA = b/sinB and c\u00b2 = a\u00b2 + b\u00b2 - 2ab cos(C), and solve 5 practice problems to reinforce understanding, and at around 12:50, will prepare materials and examples for the history lesson focusing on the connections between trigonometry (sine and cosine rules) and Industrial Revolution engineering applications, specifically steam engines and railway tracks",
+      60
+    ],
+    [
+      "studying at the dormitory, and at around 01:15, will take a short break to stretch before continuing to practice solving additional trigonometry problems to ensure mastery before the upcoming session, and at around 01:30, will continue preparing materials and examples for the history lesson",
+      60
+    ],
+    [
+      "attending class at classroom 2, and at around 2:30 PM, will deliver the history lesson with a segment dedicated to explaining how sine and cosine rules were applied in designing steam engines and railway tracks during the Industrial Revolution",
+      180
+    ],
+    [
+      "studying at the dormitory, and at around 05:00, will take a short break before dinner",
+      60
+    ],
+    [
+      "studying at the dormitory, and at around 06:30, will take a short break to drink water before continuing",
+      60
+    ],
+    [
+      "studying at the dormitory, and at around 07:30, will take a short break to organize his notes before continuing",
+      60
+    ],
+    [
+      "studying at the dormitory, and at around 08:20, will take a short break to review his progress before continuing",
+      60
+    ],
+    [
+      "studying at the dormitory, and at around 09:15, will take a short break to stretch before continuing",
+      60
+    ],
+    [
+      "studying at the dormitory, and at around 10:20, will take a short break to drink water before continuing",
+      60
+    ],
+    [
+      "studying at the dormitory, and at around 11:45, will prepare for bed",
+      60
+    ]
+  ],
+  "act_address": "the School:classroom building:library room:library table",
+  "act_start_time": "February 13, 2023, 09:35:00",
+  "act_duration": 25,
+  "act_description": "still working on a group activity  ",
+  "act_pronunciatio": "\ud83d\udc65\ud83d\udd04",
+  "act_event": [
+    "Tom Moreno",
+    "work",
+    "group activity"
+  ],
+  "act_obj_description": "occupied by Tom Moreno for a group activity",
+  "act_obj_pronunciatio": "\ud83d\udc65\ud83c\udf89",
+  "act_obj_event": [
+    "library table",
+    "is",
+    "occupied"
+  ],
+  "chatting_with": null,
+  "chat": null,
+  "chatting_with_buffer": {
+    "Isabella Rodriguez": 0,
+    "Jane Moreno": 0
+  },
+  "chatting_end_time": null,
+  "act_path_set": true,
+  "planned_path": []
+}

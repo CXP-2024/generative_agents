@@ -1,0 +1,337 @@
+{
+  "vision_r": 8,
+  "att_bandwidth": 8,
+  "retention": 8,
+  "curr_time": "February 13, 2023, 09:59:50",
+  "curr_tile": [
+    121,
+    28
+  ],
+  "daily_plan_req": "He attends class from 8am to 4pm at classroom 1. He has a lunch break from 12pm to 1pm at the student canteen.",
+  "name": "Francisco Lopez",
+  "first_name": "Francisco",
+  "last_name": "Lopez",
+  "age": 18,
+  "innate": "outgoing, friendly, honest",
+  "learned": "Francisco Lopez is a high school student at grade 12. He loves to play table tennis. Sometimes he does strength training. He plays table tennis only when he has an appointment with Sam Moore.",
+  "currently": "He plays table tennis and do strength training at the sports room in his spare time.",
+  "lifestyle": "Francisco Lopez goes to bed around 11pm, awakes up around 7am, eats dinner around 6pm.",
+  "living_area": "the School:student dormitory 1:common room",
+  "concept_forget": 100,
+  "daily_reflection_time": 180,
+  "daily_reflection_size": 5,
+  "overlap_reflect_th": 4,
+  "kw_strg_event_reflect_th": 10,
+  "kw_strg_thought_reflect_th": 9,
+  "recency_w": 1,
+  "relevance_w": 1,
+  "importance_w": 1,
+  "recency_decay": 0.995,
+  "importance_trigger_max": 250,
+  "importance_trigger_curr": 54,
+  "importance_ele_n": 78,
+  "thought_count": 5,
+  "commitments": {
+    "2023-02-13": [
+      {
+        "time": "12:00",
+        "duration": 30,
+        "description": "Meet Giorgio Rossi during lunch break to discuss examples of fractal geometry in nature",
+        "with": "",
+        "location": ""
+      },
+      {
+        "time": "14:00",
+        "duration": 60,
+        "description": "Table tennis match with Sam (location unspecified)",
+        "with": "Sam",
+        "location": ""
+      },
+      {
+        "time": "12:00",
+        "duration": 60,
+        "description": "Lunch with Arthur Burton to discuss competition preparations (location unspecified)",
+        "with": "Arthur",
+        "location": ""
+      },
+      {
+        "time": "10:00",
+        "duration": 60,
+        "description": "Prepare initial ideas about the parallels between historical labor movements and modern gig economy challenges for tomorrow's lunch meeting with Ms. Moreno and Klaus",
+        "with": "Klaus",
+        "location": ""
+      },
+      {
+        "time": "16:30",
+        "duration": 90,
+        "description": "Meet Sam Moore and Arthur at 4:30pm in the sports room for a table tennis match",
+        "with": "Arthur",
+        "location": ""
+      }
+    ]
+  },
+  "daily_req": [
+    "wake up and complete the morning routine at 7:00 am",
+    "wake up and complete the morning routine at 7:00 am",
+    "attend class from 8:00 am to 12:00 pm at classroom 1",
+    "have lunch from 12:00 pm to 1:00 pm at the student canteen",
+    "attend class from 1:00 pm to 4:00 pm at classroom 1",
+    "play table tennis with Sam Moore from 4:30 pm to 5:30 pm at the sports room",
+    "do strength training from 5:30 pm to 6:00 pm at the sports room",
+    "eat dinner at 6:00 pm",
+    "relax or study from 7:00 pm to 10:30 pm",
+    "go to bed at 11:00 pm"
+  ],
+  "f_daily_schedule": [
+    [
+      "sleeping",
+      420
+    ],
+    [
+      "waking up and stretching in bed",
+      5
+    ],
+    [
+      "brushing his teeth (waiting to start brushing his teet)",
+      5
+    ],
+    [
+      "taking a quick shower  ",
+      10
+    ],
+    [
+      "drying off and getting dressed  ",
+      5
+    ],
+    [
+      "preparing breakfast  ",
+      5
+    ],
+    [
+      "preparing breakfast   (conversing about Francisco Lopez and Giorgio Rossi discussed their breakfast plans and shared their excitement for the day\u2014Giorgio about fractal geometry in math class and his research on mathematical patterns in nature, and Francisco about his upcoming table tennis with Sam and strength training, with Giorgio agreeing to show Francisco examples of natural patterns during lunch break.)",
+      7
+    ],
+    [
+      "eating breakfast  ",
+      8
+    ],
+    [
+      "packing his school bag  ",
+      15
+    ],
+    [
+      "walking to classroom 1  ",
+      5
+    ],
+    [
+      "settling into his seat and organizing his materials  ",
+      5
+    ],
+    [
+      "listening to the teacher's lecture  ",
+      11
+    ],
+    [
+      "listening to the teacher's lecture   (conversing about Arthur Burton and Francisco Lopez discussed their current lecture, with Arthur preparing for a chemistry competition and Francisco anticipating a table tennis match with Sam, and they agreed to chat more about their plans during lunch, where Arthur also mentioned a study session with Wolfgang the next day.)",
+      6
+    ],
+    [
+      "still listening to the teacher's lecture  ",
+      13
+    ],
+    [
+      "taking notes on the lecture  ",
+      20
+    ],
+    [
+      "participating in a class discussion  ",
+      6
+    ],
+    [
+      "participating in a class discussion   (conversing about Francisco Lopez and Jane Moreno discussed the influence of historical events like the Industrial Revolution on modern social structures, particularly the gig economy, and agreed to meet during lunch the next day to prepare a class project proposal with Klaus's input on comparing historical labor movements to modern gig economy challenges.)",
+      13
+    ],
+    [
+      "working on an in-class assignment  ",
+      6
+    ],
+    [
+      "working on an in-class assignment   (conversing about Francisco Lopez and Sam Moore discussed their class exercises, excitement for their table tennis match at 4:30pm in the sports room, and plans to invite Arthur to watch and share insights on sports science.)",
+      8
+    ],
+    [
+      "still working on an in-class assignment  ",
+      11
+    ],
+    [
+      "taking a short break to stretch  ",
+      1
+    ],
+    [
+      "reviewing his notes  ",
+      3
+    ],
+    [
+      "reviewing his notes   (waiting to start reviewing his notes )",
+      12
+    ],
+    [
+      "still reviewing his notes   (waiting to start reviewing his notes )",
+      5
+    ],
+    [
+      "listening to another lecture segment  ",
+      15
+    ],
+    [
+      "collaborating with classmates on a group activity  ",
+      20
+    ],
+    [
+      "asking the teacher a question  ",
+      5
+    ],
+    [
+      "working on a problem set  ",
+      20
+    ],
+    [
+      "checking his answers with a peer  ",
+      10
+    ],
+    [
+      "listening to the teacher's feedback  ",
+      15
+    ],
+    [
+      "packing up his materials  ",
+      5
+    ],
+    [
+      "reviewing homework instructions  ",
+      10
+    ],
+    [
+      "chatting with classmates before the next class  ",
+      10
+    ],
+    [
+      "preparing to leave for lunch",
+      5
+    ],
+    [
+      "having lunch at the student canteen, and at around 12:00, meet Giorgio Rossi to discuss examples of fractal geometry in nature for 30 minutes, and at around 12:30, have lunch with Arthur Burton to discuss competition preparations",
+      60
+    ],
+    [
+      "attending class at classroom 1",
+      240
+    ],
+    [
+      "playing table tennis with Sam Moore at the sports room, and at around 16:30, meet Sam Moore and Arthur for a table tennis match for 90 minutes, applying sports science concepts (cellular respiration and warm-up routines) for 15 minutes, and at around 17:30, prepare initial ideas about the parallels between historical labor movements and modern gig economy challenges for tomorrow's lunch meeting with Ms. Moreno and Klaus",
+      60
+    ],
+    [
+      "eating dinner, and continuing the table tennis match with Sam Moore and Arthur, finishing applying sports science concepts, then at around 18:30, continue preparing initial ideas about the parallels between historical labor movements and modern gig economy challenges for tomorrow's lunch meeting with Ms. Moreno and Klaus",
+      60
+    ],
+    [
+      "relaxing at home, and at around 07:45, will start studying for upcoming exams",
+      60
+    ],
+    [
+      "studying for upcoming exams, and at around 08:30, will take a short break to stretch and grab a snack, then collaborate on creating a comparison chart for tomorrow's lunch meeting with Ms. Moreno and Klaus",
+      60
+    ],
+    [
+      "studying for upcoming exams, and at around 09:20, will take a short break to chat with friends online, then finish collaborating on creating a comparison chart for tomorrow's lunch meeting with Ms. Moreno and Klaus",
+      60
+    ],
+    [
+      "watching TV, and at around 10:30, will start getting ready for bed",
+      60
+    ],
+    [
+      "getting ready for bed and preparing to sleep",
+      60
+    ]
+  ],
+  "f_daily_schedule_hourly_org": [
+    [
+      "sleeping",
+      420
+    ],
+    [
+      "waking up and completing his morning routine",
+      60
+    ],
+    [
+      "attending class at classroom 1",
+      240
+    ],
+    [
+      "having lunch at the student canteen, and at around 12:00, meet Giorgio Rossi to discuss examples of fractal geometry in nature for 30 minutes, and at around 12:30, have lunch with Arthur Burton to discuss competition preparations",
+      60
+    ],
+    [
+      "attending class at classroom 1",
+      240
+    ],
+    [
+      "playing table tennis with Sam Moore at the sports room, and at around 16:30, meet Sam Moore and Arthur for a table tennis match for 90 minutes, applying sports science concepts (cellular respiration and warm-up routines) for 15 minutes, and at around 17:30, prepare initial ideas about the parallels between historical labor movements and modern gig economy challenges for tomorrow's lunch meeting with Ms. Moreno and Klaus",
+      60
+    ],
+    [
+      "eating dinner, and continuing the table tennis match with Sam Moore and Arthur, finishing applying sports science concepts, then at around 18:30, continue preparing initial ideas about the parallels between historical labor movements and modern gig economy challenges for tomorrow's lunch meeting with Ms. Moreno and Klaus",
+      60
+    ],
+    [
+      "relaxing at home, and at around 07:45, will start studying for upcoming exams",
+      60
+    ],
+    [
+      "studying for upcoming exams, and at around 08:30, will take a short break to stretch and grab a snack, then collaborate on creating a comparison chart for tomorrow's lunch meeting with Ms. Moreno and Klaus",
+      60
+    ],
+    [
+      "studying for upcoming exams, and at around 09:20, will take a short break to chat with friends online, then finish collaborating on creating a comparison chart for tomorrow's lunch meeting with Ms. Moreno and Klaus",
+      60
+    ],
+    [
+      "watching TV, and at around 10:30, will start getting ready for bed",
+      60
+    ],
+    [
+      "getting ready for bed and preparing to sleep",
+      60
+    ]
+  ],
+  "act_address": "<waiting> 121 28",
+  "act_start_time": "February 13, 2023, 09:48:00",
+  "act_duration": 12,
+  "act_description": "waiting to start reviewing his notes ",
+  "act_pronunciatio": "\u231b",
+  "act_event": [
+    "Francisco Lopez",
+    "waiting to start",
+    "reviewing his notes "
+  ],
+  "act_obj_description": null,
+  "act_obj_pronunciatio": null,
+  "act_obj_event": [
+    null,
+    null,
+    null
+  ],
+  "chatting_with": null,
+  "chat": null,
+  "chatting_with_buffer": {
+    "Giorgio Rossi": 0,
+    "Arthur Burton": 0,
+    "Jane Moreno": 0,
+    "Sam Moore": 176
+  },
+  "chatting_end_time": null,
+  "act_path_set": true,
+  "planned_path": []
+}

@@ -1,0 +1,288 @@
+{
+  "vision_r": 8,
+  "att_bandwidth": 8,
+  "retention": 8,
+  "curr_time": "February 13, 2023, 09:59:50",
+  "curr_tile": [
+    61,
+    79
+  ],
+  "daily_plan_req": "He writes code in the library room in the morning and attends class at classroom 2 in the afternoon. He sometimes go jogging at night.",
+  "name": "Ryan Park",
+  "first_name": "Ryan",
+  "last_name": "Park",
+  "age": 17,
+  "innate": "analytical, pragmatic, driven",
+  "learned": "Ryan Park is a grade 11 student who likes coding and software engineering. He loves to solve problems. He always take his laptop with him.",
+  "currently": "Ryan Park is working on a project to create a new school management system.",
+  "lifestyle": "Ryan Park goes to bed around 2am, awakes up around 10am, eats dinner around 8pm.",
+  "living_area": "the School:student dormitory 2:common room",
+  "concept_forget": 100,
+  "daily_reflection_time": 180,
+  "daily_reflection_size": 5,
+  "overlap_reflect_th": 4,
+  "kw_strg_event_reflect_th": 10,
+  "kw_strg_thought_reflect_th": 9,
+  "recency_w": 1,
+  "relevance_w": 1,
+  "importance_w": 1,
+  "recency_decay": 0.995,
+  "importance_trigger_max": 250,
+  "importance_trigger_curr": 59,
+  "importance_ele_n": 73,
+  "thought_count": 5,
+  "commitments": {
+    "2023-02-13": []
+  },
+  "daily_req": [
+    "wake up and complete the morning routine at 10:00 am",
+    "wake up and complete the morning routine at 10:00 am",
+    "have breakfast from 10:15 am to 10:45 am",
+    "work on the school management system project in the library from 11:00 am to 12:30 pm",
+    "have lunch at 12:30 pm",
+    "attend classes at classroom 2 from 1:30 pm to 5:00 pm",
+    "take a short break and review project progress from 5:00 pm to 5:30 pm",
+    "eat dinner at 8:00 pm",
+    "go jogging from 9:00 pm to 9:45 pm",
+    "finalize project improvements from 10:00 pm to 12:30 am",
+    "relax and wind down from 12:30 am to 2:00 am",
+    "go to bed at 2:00 am"
+  ],
+  "f_daily_schedule": [
+    [
+      "reviewing the project requirements",
+      10
+    ],
+    [
+      "debugging the login module",
+      15
+    ],
+    [
+      "optimizing database queries",
+      10
+    ],
+    [
+      "testing the user interface",
+      10
+    ],
+    [
+      "documenting recent changes",
+      10
+    ],
+    [
+      "committing code to the repository",
+      5
+    ],
+    [
+      "debugging the school management system's login module",
+      15
+    ],
+    [
+      "optimizing the database queries for faster performance",
+      20
+    ],
+    [
+      "taking a short break to stretch and walk around",
+      4
+    ],
+    [
+      "taking a short break to stretch and walk around (conversing about Maria Lopez and Ryan Park discussed Ryan's struggles with debugging the school system's login module and Maria's preparation for a physics competition involving jumps, with Maria inviting Ryan to join her for jumps later to take a break from coding, and Ryan considering the offer.)",
+      6
+    ],
+    [
+      "writing unit tests for the attendance tracking feature  ",
+      10
+    ],
+    [
+      "committing the latest changes to GitHub",
+      5
+    ],
+    [
+      "sleeping",
+      480
+    ],
+    [
+      "waking up and stretching in bed",
+      10
+    ],
+    [
+      "getting out of bed and walking to the bathroom",
+      5
+    ],
+    [
+      "brushing his teeth",
+      5
+    ],
+    [
+      "washing his face",
+      5
+    ],
+    [
+      "changing into fresh clothes",
+      5
+    ],
+    [
+      "making his bed",
+      5
+    ],
+    [
+      "preparing a quick breakfast",
+      10
+    ],
+    [
+      "eating breakfast while checking his phone",
+      10
+    ],
+    [
+      "packing his laptop and school supplies into his bag",
+      5
+    ],
+    [
+      "working on the school management system project in the library, and at around 11:45, will take a short break to check his phone",
+      60
+    ],
+    [
+      "working on the school management system project in the library, and at around 12:15, will take a short break to stretch",
+      60
+    ],
+    [
+      "attending classes at classroom 2, and at around 01:45, will take notes on a new programming concept",
+      60
+    ],
+    [
+      "attending classes at classroom 2, and at around 02:30, will participate in a group discussion about programming concepts, and at around 02:45, will join Maria for jumps",
+      60
+    ],
+    [
+      "attending classes at classroom 2, and at around 03:20, will work on a small coding exercise related to the lesson",
+      60
+    ],
+    [
+      "attending classes at classroom 2, and at around 04:15, will work on a small coding challenge related to the lesson",
+      60
+    ],
+    [
+      "attending classes at classroom 2, and at around 05:00, will take a short break to review project progress",
+      60
+    ],
+    [
+      "taking a short break and reviewing project progress, and at around 06:15, will brainstorm solutions for any issues found",
+      60
+    ],
+    [
+      "working on debugging the school management system project, and at around 07:30, will take a short break to grab a snack",
+      60
+    ],
+    [
+      "eating dinner",
+      60
+    ],
+    [
+      "going jogging, and at around 09:30, will take a short break to stretch before heading back",
+      60
+    ],
+    [
+      "finalizing project improvements, and at around 10:45, will take a short break to stretch",
+      60
+    ],
+    [
+      "finalizing project improvements, and at around 11:45, will take a short break to stretch",
+      60
+    ]
+  ],
+  "f_daily_schedule_hourly_org": [
+    [
+      "working on final project improvements",
+      60
+    ],
+    [
+      "still working on final project improvements, and at around 01:30, will take a short break to stretch",
+      60
+    ],
+    [
+      "sleeping",
+      480
+    ],
+    [
+      "waking up and completing his morning routine",
+      60
+    ],
+    [
+      "working on the school management system project in the library, and at around 11:45, will take a short break to check his phone",
+      60
+    ],
+    [
+      "working on the school management system project in the library, and at around 12:15, will take a short break to stretch",
+      60
+    ],
+    [
+      "attending classes at classroom 2, and at around 01:45, will take notes on a new programming concept",
+      60
+    ],
+    [
+      "attending classes at classroom 2, and at around 02:30, will participate in a group discussion about programming concepts, and at around 02:45, will join Maria for jumps",
+      60
+    ],
+    [
+      "attending classes at classroom 2, and at around 03:20, will work on a small coding exercise related to the lesson",
+      60
+    ],
+    [
+      "attending classes at classroom 2, and at around 04:15, will work on a small coding challenge related to the lesson",
+      60
+    ],
+    [
+      "attending classes at classroom 2, and at around 05:00, will take a short break to review project progress",
+      60
+    ],
+    [
+      "taking a short break and reviewing project progress, and at around 06:15, will brainstorm solutions for any issues found",
+      60
+    ],
+    [
+      "working on debugging the school management system project, and at around 07:30, will take a short break to grab a snack",
+      60
+    ],
+    [
+      "eating dinner",
+      60
+    ],
+    [
+      "going jogging, and at around 09:30, will take a short break to stretch before heading back",
+      60
+    ],
+    [
+      "finalizing project improvements, and at around 10:45, will take a short break to stretch",
+      60
+    ],
+    [
+      "finalizing project improvements, and at around 11:45, will take a short break to stretch",
+      60
+    ]
+  ],
+  "act_address": "the School:student dormitory 2:common room:bed",
+  "act_start_time": "February 13, 2023, 02:00:00",
+  "act_duration": 480,
+  "act_description": "sleeping",
+  "act_pronunciatio": "\ud83d\ude34",
+  "act_event": [
+    "Ryan Park",
+    "is",
+    "sleep"
+  ],
+  "act_obj_description": "being used by Ryan Park for sleeping",
+  "act_obj_pronunciatio": "\ud83d\udecc\ud83d\ude34",
+  "act_obj_event": [
+    "bed",
+    "is",
+    "used"
+  ],
+  "chatting_with": null,
+  "chat": null,
+  "chatting_with_buffer": {
+    "Maria Lopez": 0
+  },
+  "chatting_end_time": null,
+  "act_path_set": true,
+  "planned_path": []
+}

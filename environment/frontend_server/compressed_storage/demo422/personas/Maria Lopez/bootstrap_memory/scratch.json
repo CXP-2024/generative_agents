@@ -1,0 +1,419 @@
+{
+  "vision_r": 8,
+  "att_bandwidth": 8,
+  "retention": 8,
+  "curr_time": "February 13, 2023, 09:59:50",
+  "curr_tile": [
+    106,
+    19
+  ],
+  "daily_plan_req": "Maria Lopez goes to the school at 9am, attends classes in classroom 1 until 5pm, and takes a break at noon from 12am to 2pm. She spends at least 1 hours a day with Hatsune Miku figure. Everyday at 1am, she goes long jumping on the playground for an hour, and then go to sleep.",
+  "name": "Maria Lopez",
+  "first_name": "Maria",
+  "last_name": "Lopez",
+  "age": 17,
+  "innate": "energetic, enthusiastic, inquisitive",
+  "learned": "Maria Lopez is a high school student at grade 11. She likes physics. She's also a part time hatsune miku streamer who loves to connect with people and explore new ideas. She lives in a student dormitory.",
+  "currently": "Maria Lopez is preparing for a physics competition. She's also streaming hatsune miku streamer to make some extra money.",
+  "lifestyle": "Maria Lopez goes to bed around 2am, awakes up around 8am, eats dinner around 6pm. She likes to stay at dormitory.",
+  "living_area": "the School:student dormitory 3:common room",
+  "concept_forget": 100,
+  "daily_reflection_time": 180,
+  "daily_reflection_size": 5,
+  "overlap_reflect_th": 4,
+  "kw_strg_event_reflect_th": 10,
+  "kw_strg_thought_reflect_th": 9,
+  "recency_w": 1,
+  "relevance_w": 1,
+  "importance_w": 1,
+  "recency_decay": 0.99,
+  "importance_trigger_max": 150,
+  "importance_trigger_curr": 122,
+  "importance_ele_n": 9,
+  "thought_count": 5,
+  "commitments": {
+    "2023-02-13": [
+      {
+        "time": "before 16:30",
+        "duration": 10,
+        "description": "Bring Hatsune Miku figure to the sports room for the table tennis match",
+        "with": "",
+        "location": ""
+      },
+      {
+        "time": "16:30",
+        "duration": 60,
+        "description": "Attend table tennis match with Sam, Francisco, and possibly Arthur in the sports room",
+        "with": "Arthur",
+        "location": ""
+      }
+    ]
+  },
+  "daily_req": [
+    "wake up and complete the morning routine at 8:00 am",
+    "wake up and complete the morning routine at 8:00 am",
+    "eat breakfast at 8:30 am",
+    "go to school at 9:00 am",
+    "attend classes in classroom 1 from 9:00 am to 12:00 pm",
+    "take a break from 12:00 pm to 2:00 pm (includes lunch and relaxation",
+    "attend classes in classroom 1 from 2:00 pm to 5:00 pm",
+    "return to the dormitory at 5:30 pm",
+    "spend time with Hatsune Miku figure from 5:30 pm to 6:30 pm",
+    "have dinner at 6:00 pm",
+    "prepare for the physics competition from 7:00 pm to 9:00 pm",
+    "stream Hatsune Miku content from 9:30 pm to 11:30 pm",
+    "unwind at the dormitory from 11:30 pm to 1:00 am",
+    "go long jumping on the playground from 1:00 am to 2:00 am",
+    "go to sleep at 2:00 am"
+  ],
+  "f_daily_schedule": [
+    [
+      "sleeping",
+      60
+    ],
+    [
+      "warming up with light stretches",
+      10
+    ],
+    [
+      "jogging around the playground to get her heart rate up",
+      10
+    ],
+    [
+      "practicing short jumps to refine her technique",
+      15
+    ],
+    [
+      "taking a quick water break",
+      4
+    ],
+    [
+      "taking a quick water break (conversing about Maria Lopez and Ryan Park discussed Ryan's struggles with debugging the school system's login module and Maria's preparation for a physics competition involving jumps, with Maria inviting Ryan to join her for jumps later to take a break from coding, and Ryan considering the offer.)",
+      6
+    ],
+    [
+      "attempting full long jumps with measured run-ups  ",
+      10
+    ],
+    [
+      "cooling down with slow walking and deep breathing",
+      5
+    ],
+    [
+      "sleeping",
+      360
+    ],
+    [
+      "waking up and turning off the alarm (conversing about Maria Lopez and Carmen Ortiz discussed Carmen's upcoming solo cello concert, her plans to meet Eddy for lunch at 12 and study music theory at the library with possible attendance from Klaus, and agreed that Maria would attend a practice session later in the week, possibly with her Hatsune Miku figure for inspiration.)",
+      7
+    ],
+    [
+      "stretching in bed  ",
+      3
+    ],
+    [
+      "getting out of bed and putting on slippers  ",
+      5
+    ],
+    [
+      "brushing her teeth  ",
+      5
+    ],
+    [
+      "washing her face  ",
+      5
+    ],
+    [
+      "changing into school clothes  ",
+      5
+    ],
+    [
+      "still changing into school clothes  ",
+      5
+    ],
+    [
+      "combing her hair  ",
+      5
+    ],
+    [
+      "preparing breakfast  ",
+      5
+    ],
+    [
+      "still preparing breakfast  ",
+      5
+    ],
+    [
+      "eating breakfast  ",
+      5
+    ],
+    [
+      "still eating breakfast  ",
+      5
+    ],
+    [
+      "listening to the teacher's introduction to the day's lesson  ",
+      5
+    ],
+    [
+      "still listening to the teacher's introduction to the day's lesson  ",
+      5
+    ],
+    [
+      "taking notes on the lecture  ",
+      5
+    ],
+    [
+      "still taking notes on the lecture   (conversing about Maria Lopez and Giorgio Rossi discussed their mutual interest in the connections between algebra, fractals, and physics, particularly in wave functions and chaotic systems, and agreed to meet during lunch the next day with Arthur and Sam to brainstorm applications of fractal geometry to Maria's long jump training and Giorgio's research on patterns in nature, with Maria planning to bring her Hatsune Miku figure as a lucky charm.)",
+      8
+    ],
+    [
+      "still taking notes on the lecture  ",
+      1
+    ],
+    [
+      "still taking notes on the lecture   (waiting to start still taking notes on the lecture )",
+      20
+    ],
+    [
+      "still taking notes on the lecture   (conversing about Maria Lopez and Sam Moore discussed their class exercises and plans to meet for table tennis at 4:30 in the sports room, where Maria will bring her Hatsune Miku figure for luck and Arthur might join to share sports science insights, with Francisco also participating in the game.)",
+      6
+    ],
+    [
+      "asking a question about a physics concept  ",
+      1
+    ],
+    [
+      "asking a question about a physics concept   (conversing about Maria Lopez and Jennifer Moore complimented each other's work, discussed blending fractal patterns with physics concepts for a mural at an arts event, and agreed to meet after school tomorrow in the music room to sketch ideas, with Maria bringing a Hatsune Miku figure and Jennifer bringing watercolor supplies.)",
+      8
+    ],
+    [
+      "still asking a question about a physics concept  ",
+      1
+    ],
+    [
+      "working on a short in-class problem set  ",
+      5
+    ],
+    [
+      "still working on a short in-class problem set  ",
+      5
+    ],
+    [
+      "still working on a short in-class problem set  ",
+      5
+    ],
+    [
+      "discussing the problem set with a classmate  ",
+      5
+    ],
+    [
+      "reviewing her notes for clarity  ",
+      5
+    ],
+    [
+      "stretching at her desk  ",
+      5
+    ],
+    [
+      "packing up her notebook and pens  ",
+      5
+    ],
+    [
+      "listening to the physics lecture  ",
+      10
+    ],
+    [
+      "jotting down key concepts from the lecture  ",
+      10
+    ],
+    [
+      "organizing her notes in a structured format",
+      5
+    ],
+    [
+      "attending classes in classroom 1, and at around 11:45, will pack up her books for the lunch break",
+      60
+    ],
+    [
+      "taking a break from classes, eating lunch in the cafeteria, and at around 12:30, will chat with friends",
+      60
+    ],
+    [
+      "taking a break from classes, relaxing in the dormitory common area, and at around 01:30, will review some physics notes",
+      60
+    ],
+    [
+      "attending classes in classroom 1, and at around 03:30, will take a short break to stretch",
+      60
+    ],
+    [
+      "attending classes in classroom 1, and at around 04:00, will take a short break to drink water, and at around 04:15, will bring Hatsune Miku figure to the sports room for the table tennis match",
+      60
+    ],
+    [
+      "attending classes in classroom 1, and at around 04:45, will pack up her books to prepare for the end of the school day, then at around 04:50, will begin attending table tennis match with Sam, Francisco, and possibly Arthur in the sports room",
+      60
+    ],
+    [
+      "continuing attending table tennis match with Sam, Francisco, and possibly Arthur in the sports room, then at around 05:15, will organize her study materials",
+      60
+    ],
+    [
+      "having dinner in the dormitory cafeteria, and at around 06:30, will chat with dorm mates",
+      60
+    ],
+    [
+      "preparing for the physics competition in her dorm room, and at around 08:00, will take a short break to stretch",
+      60
+    ],
+    [
+      "preparing for the physics competition in her dorm room, and at around 08:45, will take a short break to stretch",
+      60
+    ],
+    [
+      "streaming Hatsune Miku content, and at around 10:15, will take a short break to interact with viewers",
+      60
+    ],
+    [
+      "streaming Hatsune Miku content, and at around 10:45, will take a short break to interact with viewers",
+      60
+    ],
+    [
+      "unwinding in her dormitory, and at around 11:45, will prepare for bed",
+      60
+    ]
+  ],
+  "f_daily_schedule_hourly_org": [
+    [
+      "sleeping",
+      60
+    ],
+    [
+      "long jumping on the playground",
+      60
+    ],
+    [
+      "sleeping",
+      360
+    ],
+    [
+      "waking up and completing her morning routine, and at around 08:30, will eat breakfast",
+      60
+    ],
+    [
+      "attending classes in classroom 1, and at around 11:00, will take a short break to stretch",
+      60
+    ],
+    [
+      "attending classes in classroom 1, and at around 10:30, will take notes on a physics lecture",
+      60
+    ],
+    [
+      "attending classes in classroom 1, and at around 11:45, will pack up her books for the lunch break",
+      60
+    ],
+    [
+      "taking a break from classes, eating lunch in the cafeteria, and at around 12:30, will chat with friends",
+      60
+    ],
+    [
+      "taking a break from classes, relaxing in the dormitory common area, and at around 01:30, will review some physics notes",
+      60
+    ],
+    [
+      "attending classes in classroom 1, and at around 03:30, will take a short break to stretch",
+      60
+    ],
+    [
+      "attending classes in classroom 1, and at around 04:00, will take a short break to drink water, and at around 04:15, will bring Hatsune Miku figure to the sports room for the table tennis match",
+      60
+    ],
+    [
+      "attending classes in classroom 1, and at around 04:45, will pack up her books to prepare for the end of the school day, then at around 04:50, will begin attending table tennis match with Sam, Francisco, and possibly Arthur in the sports room",
+      60
+    ],
+    [
+      "continuing attending table tennis match with Sam, Francisco, and possibly Arthur in the sports room, then at around 05:15, will organize her study materials",
+      60
+    ],
+    [
+      "having dinner in the dormitory cafeteria, and at around 06:30, will chat with dorm mates",
+      60
+    ],
+    [
+      "preparing for the physics competition in her dorm room, and at around 08:00, will take a short break to stretch",
+      60
+    ],
+    [
+      "preparing for the physics competition in her dorm room, and at around 08:45, will take a short break to stretch",
+      60
+    ],
+    [
+      "streaming Hatsune Miku content, and at around 10:15, will take a short break to interact with viewers",
+      60
+    ],
+    [
+      "streaming Hatsune Miku content, and at around 10:45, will take a short break to interact with viewers",
+      60
+    ],
+    [
+      "unwinding in her dormitory, and at around 11:45, will prepare for bed",
+      60
+    ]
+  ],
+  "act_address": "<persona> Jennifer Moore",
+  "act_start_time": "February 13, 2023, 09:51:50",
+  "act_duration": 8,
+  "act_description": "conversing about Maria Lopez and Jennifer Moore complimented each other's work, discussed blending fractal patterns with physics concepts for a mural at an arts event, and agreed to meet after school tomorrow in the music room to sketch ideas, with Maria bringing a Hatsune Miku figure and Jennifer bringing watercolor supplies.",
+  "act_pronunciatio": "\ud83d\udcac",
+  "act_event": [
+    "Maria Lopez",
+    "chat with",
+    "Jennifer Moore"
+  ],
+  "act_obj_description": null,
+  "act_obj_pronunciatio": null,
+  "act_obj_event": [
+    null,
+    null,
+    null
+  ],
+  "chatting_with": "Jennifer Moore",
+  "chat": [
+    [
+      "Maria Lopez",
+      "Hey Jennifer, I couldn't help but notice your presentation on the group findings. That was really impressive! Do you have a moment to discuss the connections between the physics concepts and the fractal patterns we've been studying?"
+    ],
+    [
+      "Jennifer Moore",
+      "Thanks, Maria! I'd love to discuss that. Actually, I was thinking about how we could incorporate some of these fractal patterns into the live mural session we're planning for the arts event. Maybe we could brainstorm some ideas together?"
+    ],
+    [
+      "Maria Lopez",
+      "That sounds like a fantastic idea! I've been exploring how fractal geometry can be applied to physics, especially in chaotic systems. Maybe we can create a mural that visually represents these concepts\u2014like how fractal patterns emerge in wave functions or quantum mechanics models. It could be both educational and artistic!"
+    ],
+    [
+      "Jennifer Moore",
+      "That\u2019s exactly what I was imagining! A mural blending fractal art with physics concepts could be so captivating. Maybe we could even coordinate with Eddy\u2019s music to reflect the rhythm of chaotic systems\u2014like a full sensory experience! Would you be open to sketching some ideas with me after school tomorrow? We\u2019re meeting in the music room to plan the details."
+    ],
+    [
+      "Maria Lopez",
+      "That sounds perfect! I'll bring my Hatsune Miku figure for inspiration\u2014she's my lucky charm for creative ideas. Let's meet in the music room after school tomorrow and sketch out some concepts. I can't wait to see how we blend physics, fractals, and art!"
+    ],
+    [
+      "Jennifer Moore",
+      "Great! I'll bring some watercolor supplies too\u2014I think the fluidity of watercolors could really complement the fractal patterns. And I love that you're bringing Hatsune Miku; she always sparks such creative energy! See you tomorrow in the music room!"
+    ]
+  ],
+  "chatting_with_buffer": {
+    "Ryan Park": 0,
+    "Carmen Ortiz": 0,
+    "Giorgio Rossi": 10,
+    "Sam Moore": 535,
+    "Jennifer Moore": 800
+  },
+  "chatting_end_time": "February 13, 2023, 10:00:00",
+  "act_path_set": true,
+  "planned_path": []
+}

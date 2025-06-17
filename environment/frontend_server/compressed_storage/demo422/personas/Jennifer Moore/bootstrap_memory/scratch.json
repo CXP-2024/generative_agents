@@ -1,0 +1,423 @@
+{
+  "vision_r": 8,
+  "att_bandwidth": 8,
+  "retention": 8,
+  "curr_time": "February 13, 2023, 09:59:50",
+  "curr_tile": [
+    107,
+    19
+  ],
+  "daily_plan_req": "",
+  "name": "Jennifer Moore",
+  "first_name": "Jennifer",
+  "last_name": "Moore",
+  "age": 16,
+  "innate": "warm, lively, creative",
+  "learned": "Jennifer Moore is a grade 10 high school student. She likes watercolor painting and often paints in the art room. Sometimes she communicates with Ayesha Khan about painting. ",
+  "currently": "Jennifer Moore has a brother, Sam Moore.",
+  "lifestyle": "Jennifer Moore goes to bed around 9pm, awakes up around 5am, eats dinner around 5pm.",
+  "living_area": "the School:student dormitory 1:common room",
+  "concept_forget": 100,
+  "daily_reflection_time": 180,
+  "daily_reflection_size": 5,
+  "overlap_reflect_th": 4,
+  "kw_strg_event_reflect_th": 10,
+  "kw_strg_thought_reflect_th": 9,
+  "recency_w": 1,
+  "relevance_w": 1,
+  "importance_w": 1,
+  "recency_decay": 0.995,
+  "importance_trigger_max": 250,
+  "importance_trigger_curr": 76,
+  "importance_ele_n": 60,
+  "thought_count": 5,
+  "commitments": {},
+  "daily_req": [
+    "wake up and complete the morning routine at 5:00 am",
+    "Wake up and complete morning routine at 5:00 am",
+    "Eat breakfast at 5:30 am",
+    "Travel to school from 6:30 am to 7:00 am",
+    "Attend school from 7:30 am to 3:00 pm",
+    "Paint in the art room from 3:30 pm to 4:30 pm",
+    "Have dinner at 5:00 pm",
+    "Talk with brother Sam from 5:30 pm to 6:00 pm",
+    "Work on homework from 6:30 pm to 7:30 pm",
+    "Relax and read or sketch from 8:00 pm to 8:45 pm",
+    "Prepare for bed and sleep at 9:00 pm"
+  ],
+  "f_daily_schedule": [
+    [
+      "sleeping",
+      300
+    ],
+    [
+      "waking up and stretching in bed",
+      5
+    ],
+    [
+      "getting out of bed and turning on the lights",
+      5
+    ],
+    [
+      "changing into her morning clothes",
+      10
+    ],
+    [
+      "making her bed",
+      5
+    ],
+    [
+      "walking to the bathroom",
+      5
+    ],
+    [
+      "brushing her teeth",
+      5
+    ],
+    [
+      "washing her face",
+      5
+    ],
+    [
+      "applying moisturizer",
+      5
+    ],
+    [
+      "combing her hair",
+      5
+    ],
+    [
+      "checking her school bag for essentials",
+      5
+    ],
+    [
+      "grabbing a glass of water",
+      5
+    ],
+    [
+      "getting a bowl and cereal from the kitchen",
+      5
+    ],
+    [
+      "eating her breakfast",
+      15
+    ],
+    [
+      "washing her bowl and spoon",
+      5
+    ],
+    [
+      "checking her school schedule for the day",
+      5
+    ],
+    [
+      "gathering her textbooks and notebooks",
+      10
+    ],
+    [
+      "organizing her art supplies for class",
+      5
+    ],
+    [
+      "double-checking her bag for homework",
+      15
+    ],
+    [
+      "walking to the bus stop",
+      10
+    ],
+    [
+      "waiting for the bus",
+      5
+    ],
+    [
+      "boarding the bus",
+      5
+    ],
+    [
+      "finding a seat on the bus",
+      5
+    ],
+    [
+      "listening to music (waiting to start listening to musi)",
+      10
+    ],
+    [
+      "still listening to music  ",
+      10
+    ],
+    [
+      "exiting the bus  ",
+      15
+    ],
+    [
+      "arriving at the classroom and settling in  ",
+      5
+    ],
+    [
+      "listening to the teacher's introduction of the lesson  ",
+      10
+    ],
+    [
+      "reading the assigned literature passage  ",
+      15
+    ],
+    [
+      "taking notes on key themes and quotes  ",
+      15
+    ],
+    [
+      "reviewing her notes and organizing them  ",
+      10
+    ],
+    [
+      "packing up her notebook and materials",
+      5
+    ],
+    [
+      "listening to the teacher's introduction",
+      10
+    ],
+    [
+      "reviewing the discussion topic",
+      5
+    ],
+    [
+      "jotting down initial thoughts",
+      5
+    ],
+    [
+      "forming a group with classmates",
+      5
+    ],
+    [
+      "actively participating in the discussion",
+      14
+    ],
+    [
+      "actively participating in the discussion (conversing about Carmen Ortiz and Jennifer Moore discussed combining leadership qualities with music and visual arts for an upcoming event, planning a live mural session with music performances by Eddy and Maria, and agreed to meet tomorrow after school in the music room to coordinate details, including mural sketches and art supplies.)",
+      9
+    ],
+    [
+      "summarizing group points  ",
+      2
+    ],
+    [
+      "presenting group findings  ",
+      1
+    ],
+    [
+      "presenting group findings   (conversing about Maria Lopez and Jennifer Moore complimented each other's work, discussed blending fractal patterns with physics concepts for a mural at an arts event, and agreed to meet after school tomorrow in the music room to sketch ideas, with Maria bringing a Hatsune Miku figure and Jennifer bringing watercolor supplies.)",
+      8
+    ],
+    [
+      "still presenting group findings  ",
+      1
+    ],
+    [
+      "listening to the teacher's lecture  ",
+      15
+    ],
+    [
+      "taking notes on the lesson  ",
+      10
+    ],
+    [
+      "asking a question about the topic  ",
+      5
+    ],
+    [
+      "reviewing the science project instructions  ",
+      5
+    ],
+    [
+      "gathering materials for the science project  ",
+      10
+    ],
+    [
+      "working on the science project  ",
+      10
+    ],
+    [
+      "putting away the science project materials",
+      5
+    ],
+    [
+      "attending her fourth class of the day, and at around 11:30, will work on a math assignment",
+      60
+    ],
+    [
+      "eating lunch in the school cafeteria, and at around 12:30, will chat with friends",
+      60
+    ],
+    [
+      "attending her fifth class of the day, and at around 01:30, will work on a history presentation",
+      60
+    ],
+    [
+      "attending her sixth class of the day, and at around 02:30, will work on an art project",
+      60
+    ],
+    [
+      "working on her art project in the art room, and at around 03:45, will take a short break to stretch",
+      60
+    ],
+    [
+      "still working on her art project in the art room, and at around 04:15, will clean up her painting supplies",
+      60
+    ],
+    [
+      "eating dinner with her family, and at around 05:20, will share about her day at school",
+      60
+    ],
+    [
+      "talking with her brother Sam about their day, and at around 06:15, will help him with his homework",
+      60
+    ],
+    [
+      "working on her homework, and at around 07:15, will take a short break to stretch",
+      60
+    ],
+    [
+      "relaxing with a book, and at around 08:30, will do some light sketching in her sketchbook",
+      60
+    ],
+    [
+      "getting ready for bed, and at around 09:15, will turn off the lights to sleep",
+      60
+    ],
+    [
+      "sleeping",
+      120
+    ]
+  ],
+  "f_daily_schedule_hourly_org": [
+    [
+      "sleeping",
+      300
+    ],
+    [
+      "waking up and starting her morning routine, and at around 05:20, will brush her teeth and wash her face",
+      60
+    ],
+    [
+      "eating breakfast, and at around 06:15, will pack her school bag",
+      60
+    ],
+    [
+      "traveling to school, and at around 07:15, will listen to music on the bus",
+      60
+    ],
+    [
+      "attending her first class of the day, and at around 08:30, will take notes on literature",
+      60
+    ],
+    [
+      "attending her second class of the day, and at around 09:30, will participate in a group discussion",
+      60
+    ],
+    [
+      "attending her third class of the day, and at around 10:30, will work on a science project",
+      60
+    ],
+    [
+      "attending her fourth class of the day, and at around 11:30, will work on a math assignment",
+      60
+    ],
+    [
+      "eating lunch in the school cafeteria, and at around 12:30, will chat with friends",
+      60
+    ],
+    [
+      "attending her fifth class of the day, and at around 01:30, will work on a history presentation",
+      60
+    ],
+    [
+      "attending her sixth class of the day, and at around 02:30, will work on an art project",
+      60
+    ],
+    [
+      "working on her art project in the art room, and at around 03:45, will take a short break to stretch",
+      60
+    ],
+    [
+      "still working on her art project in the art room, and at around 04:15, will clean up her painting supplies",
+      60
+    ],
+    [
+      "eating dinner with her family, and at around 05:20, will share about her day at school",
+      60
+    ],
+    [
+      "talking with her brother Sam about their day, and at around 06:15, will help him with his homework",
+      60
+    ],
+    [
+      "working on her homework, and at around 07:15, will take a short break to stretch",
+      60
+    ],
+    [
+      "relaxing with a book, and at around 08:30, will do some light sketching in her sketchbook",
+      60
+    ],
+    [
+      "getting ready for bed, and at around 09:15, will turn off the lights to sleep",
+      60
+    ],
+    [
+      "sleeping",
+      120
+    ]
+  ],
+  "act_address": "<persona> Maria Lopez",
+  "act_start_time": "February 13, 2023, 09:51:50",
+  "act_duration": 8,
+  "act_description": "conversing about Maria Lopez and Jennifer Moore complimented each other's work, discussed blending fractal patterns with physics concepts for a mural at an arts event, and agreed to meet after school tomorrow in the music room to sketch ideas, with Maria bringing a Hatsune Miku figure and Jennifer bringing watercolor supplies.",
+  "act_pronunciatio": "\ud83d\udcac",
+  "act_event": [
+    "Jennifer Moore",
+    "chat with",
+    "Maria Lopez"
+  ],
+  "act_obj_description": null,
+  "act_obj_pronunciatio": null,
+  "act_obj_event": [
+    null,
+    null,
+    null
+  ],
+  "chatting_with": "Maria Lopez",
+  "chat": [
+    [
+      "Maria Lopez",
+      "Hey Jennifer, I couldn't help but notice your presentation on the group findings. That was really impressive! Do you have a moment to discuss the connections between the physics concepts and the fractal patterns we've been studying?"
+    ],
+    [
+      "Jennifer Moore",
+      "Thanks, Maria! I'd love to discuss that. Actually, I was thinking about how we could incorporate some of these fractal patterns into the live mural session we're planning for the arts event. Maybe we could brainstorm some ideas together?"
+    ],
+    [
+      "Maria Lopez",
+      "That sounds like a fantastic idea! I've been exploring how fractal geometry can be applied to physics, especially in chaotic systems. Maybe we can create a mural that visually represents these concepts\u2014like how fractal patterns emerge in wave functions or quantum mechanics models. It could be both educational and artistic!"
+    ],
+    [
+      "Jennifer Moore",
+      "That\u2019s exactly what I was imagining! A mural blending fractal art with physics concepts could be so captivating. Maybe we could even coordinate with Eddy\u2019s music to reflect the rhythm of chaotic systems\u2014like a full sensory experience! Would you be open to sketching some ideas with me after school tomorrow? We\u2019re meeting in the music room to plan the details."
+    ],
+    [
+      "Maria Lopez",
+      "That sounds perfect! I'll bring my Hatsune Miku figure for inspiration\u2014she's my lucky charm for creative ideas. Let's meet in the music room after school tomorrow and sketch out some concepts. I can't wait to see how we blend physics, fractals, and art!"
+    ],
+    [
+      "Jennifer Moore",
+      "Great! I'll bring some watercolor supplies too\u2014I think the fluidity of watercolors could really complement the fractal patterns. And I love that you're bringing Hatsune Miku; she always sparks such creative energy! See you tomorrow in the music room!"
+    ]
+  ],
+  "chatting_with_buffer": {
+    "Carmen Ortiz": 685,
+    "Maria Lopez": 800
+  },
+  "chatting_end_time": "February 13, 2023, 10:00:00",
+  "act_path_set": true,
+  "planned_path": []
+}

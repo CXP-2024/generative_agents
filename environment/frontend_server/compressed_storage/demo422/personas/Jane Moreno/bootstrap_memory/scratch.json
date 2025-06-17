@@ -1,0 +1,462 @@
+{
+  "vision_r": 8,
+  "att_bandwidth": 8,
+  "retention": 8,
+  "curr_time": "February 13, 2023, 09:59:50",
+  "curr_tile": [
+    106,
+    16
+  ],
+  "daily_plan_req": "She teaches in classroom 2 in the morning and has a lunch break at 12am. In her spare time, she plays guitar in the music room or in her bedroom.",
+  "name": "Jane Moreno",
+  "first_name": "Jane",
+  "last_name": "Moreno",
+  "age": 46,
+  "innate": "friendly, helpful, organized",
+  "learned": "Jane Moreno is a high school history teacher. She is always looking for new ways to make the courses easier and more enjoyable for students. She also plays guitar.",
+  "currently": "Jane Moreno wants to cooperate with Ayesha Khan to hold a new course.",
+  "lifestyle": "Jane Moreno goes to bed around 10pm, awakes up around 6am, eats dinner around 6pm.",
+  "living_area": "the School:Jane Moreno's office and dormitory:living room",
+  "concept_forget": 100,
+  "daily_reflection_time": 180,
+  "daily_reflection_size": 5,
+  "overlap_reflect_th": 4,
+  "kw_strg_event_reflect_th": 10,
+  "kw_strg_thought_reflect_th": 9,
+  "recency_w": 1,
+  "relevance_w": 1,
+  "importance_w": 1,
+  "recency_decay": 0.995,
+  "importance_trigger_max": 250,
+  "importance_trigger_curr": 81,
+  "importance_ele_n": 56,
+  "thought_count": 5,
+  "commitments": {
+    "2023-02-13": [
+      {
+        "time": "09:00",
+        "duration": 30,
+        "description": "Prepare specific examples of trigonometry applications in steam engine components for today's lesson",
+        "with": "",
+        "location": ""
+      },
+      {
+        "time": "09:30",
+        "duration": 30,
+        "description": "Research and gather materials on trigonometry applications in railway track design for today's lesson",
+        "with": "",
+        "location": ""
+      },
+      {
+        "time": "10:00",
+        "duration": 30,
+        "description": "Reach out to Klaus to coordinate his presentation with the project proposal (likely via email or call)",
+        "with": "Klaus",
+        "location": ""
+      },
+      {
+        "time": "10:00",
+        "duration": 20,
+        "description": "Gather articles and documentary about early 20th century studies on oxygen consumption and sports science to share with Wolfgang after class",
+        "with": "",
+        "location": ""
+      },
+      {
+        "time": "10:00",
+        "duration": 30,
+        "description": "Meet Wolfgang by the faculty lounge after class to discuss incorporating historical perspectives into his genetics project with Isabella",
+        "with": "Isabella",
+        "location": ""
+      },
+      {
+        "time": "10:00",
+        "duration": 15,
+        "description": "Gather historical resources on sports science evolution and additional notes about cellular respiration and athletic performance to bring to the after-class meeting with Sam Moore and Wolfgang at the faculty lounge",
+        "with": "Sam",
+        "location": ""
+      },
+      {
+        "time": "10:00",
+        "duration": 60,
+        "description": "Attend after-class meeting with Sam Moore and Wolfgang at the faculty lounge to discuss historical resources and notes on sports science evolution and cellular respiration",
+        "with": "Sam",
+        "location": ""
+      },
+      {
+        "time": "10:00",
+        "duration": 15,
+        "description": "Reach out to Francisco Lopez to confirm the lunch meeting with Klaus Mueller tomorrow",
+        "with": "Klaus",
+        "location": ""
+      },
+      {
+        "time": "14:00",
+        "duration": 30,
+        "description": "Be available in her office when Klaus Mueller stops by after his long jump practice to discuss the project outline",
+        "with": "Klaus",
+        "location": "Office"
+      }
+    ]
+  },
+  "daily_req": [
+    "wake up and complete the morning routine at 6:00 am",
+    "Wake up and complete the morning routine from 6:00 am to 6:30 am",
+    "Prepare and eat breakfast from 6:30 am to 7:00 am",
+    "Travel to school and arrive by 7:30 am",
+    "Teach history in classroom 2 from 8:00 am to 10:00 am",
+    "Short break and review lesson plans from 10:00 am to 10:15 am",
+    "Teach history in classroom 2 from 10:15 am to 12:00 pm",
+    "Lunch break from 12:00 pm to 1:00 pm",
+    "Meet with Ayesha Khan to discuss the new course from 1:00 pm to 2:30 pm",
+    "Play guitar in the music room from 2:30 pm to 3:30 pm",
+    "Grade papers and prepare for the next day\u2019s lessons from 3:30 pm to 5:00 pm",
+    "Travel home and relax from 5:00 pm to 6:00 pm",
+    "Eat dinner at 6:00 pm",
+    "Play guitar in the bedroom from 7:00 pm to 8:00 pm",
+    "Read or watch TV from 8:00 pm to 9:30 pm",
+    "Prepare for bed and sleep at 10:00 pm"
+  ],
+  "f_daily_schedule": [
+    [
+      "sleeping",
+      360
+    ],
+    [
+      "waking up and stretching",
+      5
+    ],
+    [
+      "brushing her teeth",
+      5
+    ],
+    [
+      "washing her face",
+      5
+    ],
+    [
+      "getting dressed",
+      10
+    ],
+    [
+      "making her bed",
+      5
+    ],
+    [
+      "preparing coffee",
+      5
+    ],
+    [
+      "cooking breakfast (e.g., eggs and toast)",
+      15
+    ],
+    [
+      "setting the table",
+      5
+    ],
+    [
+      "sitting down to eat breakfast",
+      5
+    ],
+    [
+      "eating breakfast at the dining table",
+      20
+    ],
+    [
+      "cleaning up the breakfast dishes",
+      10
+    ],
+    [
+      "brushing her teeth in the bathroom",
+      5
+    ],
+    [
+      "changing into work clothes in the bedroom",
+      10
+    ],
+    [
+      "packing her teaching materials into her bag",
+      5
+    ],
+    [
+      "checking her lesson plan one last time",
+      5
+    ],
+    [
+      "putting on her shoes and coat by the door",
+      5
+    ],
+    [
+      "setting up the classroom materials",
+      9
+    ],
+    [
+      "setting up the classroom materials (waiting to start setting up the classroom material)",
+      6
+    ],
+    [
+      "greeting students as they enter  ",
+      10
+    ],
+    [
+      "reviewing the previous lesson  ",
+      10
+    ],
+    [
+      "introducing the new history topic  ",
+      1
+    ],
+    [
+      "introducing the new history topic   (conversing about Jane Moreno and Tom Moreno discussed Tom's focus on trigonometry and his interest in connecting it to the new history topic on the Industrial Revolution, with Jane agreeing to provide specific examples of how trigonometry was applied in industrial advancements during the lesson.)",
+      9
+    ],
+    [
+      "still introducing the new history topic  ",
+      5
+    ],
+    [
+      "facilitating a class discussion  ",
+      2
+    ],
+    [
+      "facilitating a class discussion   (conversing about Jane Moreno and Klaus Mueller discussed the connection between the Industrial Revolution and modern societal issues, with Klaus expressing interest in sharing his AP Social Studies project with the class and mentioning his plans to attend Carmen and Eddy's music theory session at the library later that day to gain fresh perspectives for his research.)",
+      6
+    ],
+    [
+      "still facilitating a class discussion  ",
+      2
+    ],
+    [
+      "taking a short break to answer student questions   (conversing about Jane Moreno and Valerie Florentini discussed Valerie's color-coded note-taking system, with blue for dates, green for key concepts, and pink for important people, and agreed that Valerie would present her method and demonstrate how she connects historical music periods to her harp practice during Wednesday's class.)",
+      6
+    ],
+    [
+      "taking a short break to answer student questions   (conversing about Francisco Lopez and Jane Moreno discussed the influence of historical events like the Industrial Revolution on modern social structures, particularly the gig economy, and agreed to meet during lunch the next day to prepare a class project proposal with Klaus's input on comparing historical labor movements to modern gig economy challenges.)",
+      13
+    ],
+    [
+      "introducing today's history topic  ",
+      1
+    ],
+    [
+      "writing key points on the whiteboard   (conversing about Jane and Wolfgang discussed the lecture on cellular respiration and its connection to athletic performance, with Jane offering to share historical resources and help Wolfgang incorporate this perspective into his genetics project with Isabella, agreeing to meet after class by the faculty lounge.)",
+      11
+    ],
+    [
+      "explaining the first concept with examples  ",
+      3
+    ],
+    [
+      "explaining the first concept with examples   (conversing about Jane and Sam discussed connecting cellular respiration to sports science, with Jane offering historical resources and suggesting collaboration with Wolfgang, and they agreed to meet after class by the faculty lounge to further discuss the topic together.)",
+      7
+    ],
+    [
+      "answering student questions  ",
+      1
+    ],
+    [
+      "answering student questions   (conversing about Jane Moreno and Tamara Taylor discussed Tamara's approach to a problem by connecting it to cellular respiration, with Tamara agreeing to present her solution and this interdisciplinary connection to the class immediately by going to the whiteboard.)",
+      7
+    ],
+    [
+      "still answering student questions  ",
+      1
+    ],
+    [
+      "continuing with the next concept   (conversing about Klaus Mueller and Jane Moreno discussed connecting ideas about the Industrial Revolution and modern societal issues to their class project, specifically comparing historical labor movements with the gig economy, and planned to meet during lunch the next day with Francisco Lopez to combine their ideas, with Klaus preparing an outline incorporating fractal models and planning to stop by Jane's office later that day after his long jump practice.)",
+      8
+    ],
+    [
+      "still continuing with the next concept  ",
+      2
+    ],
+    [
+      "incorporating the prepared examples of trigonometry applications in steam engine components into the lesson plan  ",
+      15
+    ],
+    [
+      "reviewing the gathered materials on trigonometry applications in railway track design  ",
+      10
+    ],
+    [
+      "organizing the materials for the next segment of the lesson  ",
+      10
+    ],
+    [
+      "taking a short break to stretch and drink water  ",
+      5
+    ],
+    [
+      "making final adjustments to the lesson plan  ",
+      10
+    ],
+    [
+      "gathering her teaching materials and notes  ",
+      5
+    ],
+    [
+      "walking back to classroom 2 to resume teaching",
+      5
+    ],
+    [
+      "teaching history in classroom 2, and at around 11:30, will take a short break to organize materials for the next lesson, then meet Wolfgang and Sam Moore by the faculty lounge after class to discuss incorporating historical perspectives into his genetics project with Isabella, and share historical resources on sports science evolution and additional notes about cellular respiration and athletic performance",
+      60
+    ],
+    [
+      "having lunch in the school cafeteria, and at around 12:30, will take a short walk to clear her mind before the meeting",
+      60
+    ],
+    [
+      "meeting with Ayesha Khan to discuss the new course, and at around 01:15, will take a short break to reach out to Klaus to coordinate his presentation with the project proposal, then at around 01:45, will take a short break to gather additional historical resources on sports science evolution and notes on cellular respiration and athletic performance for the after-class meeting",
+      60
+    ],
+    [
+      "still meeting with Ayesha Khan to discuss the new course, and at around 02:15, will take a short break to stretch and get some water, then at around 02:30, will begin preparing discussion points for the lunch meeting with Francisco tomorrow, and will be available in her office when Klaus Mueller stops by after his long jump practice to discuss the project outline",
+      60
+    ],
+    [
+      "playing guitar in the music room, and at around 03:15, will take a short break to stretch and get some water, then will continue preparing discussion points for the lunch meeting with Francisco tomorrow",
+      60
+    ],
+    [
+      "grading papers and preparing for the next day's lessons, and at around 04:00, will finish preparing discussion points for the lunch meeting with Francisco tomorrow and begin creating a comparison chart for the lunch meeting, then at around 04:30, will take a short break to stretch and get some water",
+      60
+    ],
+    [
+      "finishing grading papers and preparing for the next day's lessons, and at around 05:00, will finish creating the comparison chart for the lunch meeting with Francisco tomorrow, then at around 05:15, will pack up her things to leave school",
+      60
+    ],
+    [
+      "eating dinner at home, and at around 06:30, will clean up the kitchen",
+      60
+    ],
+    [
+      "playing guitar in her bedroom, and at around 07:30, will take a short break to stretch and get some water",
+      60
+    ],
+    [
+      "reading a book in the living room, and at around 08:30, will take a short break to make some tea",
+      60
+    ],
+    [
+      "reading a book in the living room, and at around 09:15, will take a short break to stretch and get ready for bed",
+      60
+    ],
+    [
+      "preparing for bed and getting ready to sleep",
+      60
+    ],
+    [
+      "sleeping",
+      60
+    ]
+  ],
+  "f_daily_schedule_hourly_org": [
+    [
+      "sleeping",
+      360
+    ],
+    [
+      "waking up and completing her morning routine, and at around 06:30, will prepare breakfast",
+      60
+    ],
+    [
+      "eating breakfast, and at around 07:20, will clean up and get ready to leave for school",
+      60
+    ],
+    [
+      "teaching history in classroom 2, and at around 08:45, will take a short break to answer student questions",
+      60
+    ],
+    [
+      "teaching history in classroom 2, and at around 09:00, will prepare specific examples of trigonometry applications in steam engine components for today's lesson, and at around 09:30, will research and gather materials on trigonometry applications in railway track design for today's lesson, then at around 09:45, will take a short break to stretch and drink some water",
+      60
+    ],
+    [
+      "taking a short break and reviewing lesson plans, and at around 10:00, will incorporate the prepared examples into the lesson plan for today's class, then at around 10:15, will return to teaching history in classroom 2, and at around 10:30, will reach out to Francisco Lopez to confirm the lunch meeting with Klaus Mueller tomorrow, then at around 10:45, will gather articles and documentary about early 20th century studies on oxygen consumption and sports science to share with Wolfgang after class",
+      60
+    ],
+    [
+      "teaching history in classroom 2, and at around 11:30, will take a short break to organize materials for the next lesson, then meet Wolfgang and Sam Moore by the faculty lounge after class to discuss incorporating historical perspectives into his genetics project with Isabella, and share historical resources on sports science evolution and additional notes about cellular respiration and athletic performance",
+      60
+    ],
+    [
+      "having lunch in the school cafeteria, and at around 12:30, will take a short walk to clear her mind before the meeting",
+      60
+    ],
+    [
+      "meeting with Ayesha Khan to discuss the new course, and at around 01:15, will take a short break to reach out to Klaus to coordinate his presentation with the project proposal, then at around 01:45, will take a short break to gather additional historical resources on sports science evolution and notes on cellular respiration and athletic performance for the after-class meeting",
+      60
+    ],
+    [
+      "still meeting with Ayesha Khan to discuss the new course, and at around 02:15, will take a short break to stretch and get some water, then at around 02:30, will begin preparing discussion points for the lunch meeting with Francisco tomorrow, and will be available in her office when Klaus Mueller stops by after his long jump practice to discuss the project outline",
+      60
+    ],
+    [
+      "playing guitar in the music room, and at around 03:15, will take a short break to stretch and get some water, then will continue preparing discussion points for the lunch meeting with Francisco tomorrow",
+      60
+    ],
+    [
+      "grading papers and preparing for the next day's lessons, and at around 04:00, will finish preparing discussion points for the lunch meeting with Francisco tomorrow and begin creating a comparison chart for the lunch meeting, then at around 04:30, will take a short break to stretch and get some water",
+      60
+    ],
+    [
+      "finishing grading papers and preparing for the next day's lessons, and at around 05:00, will finish creating the comparison chart for the lunch meeting with Francisco tomorrow, then at around 05:15, will pack up her things to leave school",
+      60
+    ],
+    [
+      "eating dinner at home, and at around 06:30, will clean up the kitchen",
+      60
+    ],
+    [
+      "playing guitar in her bedroom, and at around 07:30, will take a short break to stretch and get some water",
+      60
+    ],
+    [
+      "reading a book in the living room, and at around 08:30, will take a short break to make some tea",
+      60
+    ],
+    [
+      "reading a book in the living room, and at around 09:15, will take a short break to stretch and get ready for bed",
+      60
+    ],
+    [
+      "preparing for bed and getting ready to sleep",
+      60
+    ],
+    [
+      "sleeping",
+      60
+    ]
+  ],
+  "act_address": "the School:classroom building:classroom 1:blackboard",
+  "act_start_time": "February 13, 2023, 09:58:00",
+  "act_duration": 2,
+  "act_description": "still continuing with the next concept  ",
+  "act_pronunciatio": "\u27a1\ufe0f\ud83d\udcd6",
+  "act_event": [
+    "Jane Moreno",
+    "continue",
+    "next concept"
+  ],
+  "act_obj_description": "being used by Jane Moreno",
+  "act_obj_pronunciatio": "\ud83d\udc64\ud83d\udee0\ufe0f",
+  "act_obj_event": [
+    "blackboard",
+    "is",
+    "used by Jane Moreno"
+  ],
+  "chatting_with": null,
+  "chat": null,
+  "chatting_with_buffer": {
+    "Tom Moreno": 0,
+    "Klaus Mueller": 758,
+    "Valerie Florentini": 0,
+    "Francisco Lopez": 0,
+    "Wolfgang Schulz": 0,
+    "Sam Moore": 45,
+    "Tamara Taylor": 380
+  },
+  "chatting_end_time": null,
+  "act_path_set": true,
+  "planned_path": []
+}

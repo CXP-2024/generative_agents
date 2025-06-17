@@ -1,0 +1,361 @@
+{
+  "vision_r": 8,
+  "att_bandwidth": 8,
+  "retention": 8,
+  "curr_time": "February 13, 2023, 09:59:50",
+  "curr_tile": [
+    121,
+    21
+  ],
+  "daily_plan_req": "",
+  "name": "Giorgio Rossi",
+  "first_name": "Giorgio",
+  "last_name": "Rossi",
+  "age": 17,
+  "innate": "analytical, logical, eccentric",
+  "learned": "Giorgio Rossi is a grade 11 high school student. He loves mathematics and enjoys solving challenging problems.",
+  "currently": "Giorgio Rossi is working on a research project to explore mathematical patterns in nature. He is also curious about who will be running for the class minister election next week.",
+  "lifestyle": "Giorgio Rossi goes to bed around midnight, awakes up around 7am, eats dinner around 4pm.",
+  "living_area": "the School:student dormitory 1:common room",
+  "concept_forget": 100,
+  "daily_reflection_time": 180,
+  "daily_reflection_size": 5,
+  "overlap_reflect_th": 4,
+  "kw_strg_event_reflect_th": 10,
+  "kw_strg_thought_reflect_th": 9,
+  "recency_w": 1,
+  "relevance_w": 1,
+  "importance_w": 1,
+  "recency_decay": 0.995,
+  "importance_trigger_max": 250,
+  "importance_trigger_curr": 173,
+  "importance_ele_n": 30,
+  "thought_count": 5,
+  "commitments": {
+    "2023-02-13": [
+      {
+        "time": "8:00",
+        "duration": 10,
+        "description": "Show Francisco the prepared examples of fractal patterns in nature during lunch break",
+        "with": "",
+        "location": ""
+      },
+      {
+        "time": "9:00",
+        "duration": 30,
+        "description": "Practice applying the quadratic formula to quadratic equations with coefficients greater than 1 (e.g., 2x\u00b2 + 5x - 3 = 0). Use a quiet workspace with paper, pen, and a calculator.",
+        "with": "",
+        "location": ""
+      },
+      {
+        "time": "14:00",
+        "duration": 30,
+        "description": "Gather materials on fractal modeling and chaos theory applications for tomorrow's library meeting with Klaus and Isabella",
+        "with": "Isabella",
+        "location": "Library"
+      }
+    ]
+  },
+  "daily_req": [
+    "wake up and complete the morning routine at 7:00 am",
+    "wake up and complete the morning routine at 7:00 am",
+    "review mathematical concepts for today's class from 7:30 am to 8:00 am",
+    "attend high school classes from 8:30 am to 2:30 pm",
+    "work on the research project on mathematical patterns in nature from 3:00 pm to 3:45 pm",
+    "eat dinner at 4:00 pm",
+    "analyze potential candidates for the class minister election from 5:00 pm to 5:30 pm",
+    "solve advanced math problems for self-study from 6:00 pm to 7:30 pm",
+    "read about fractal patterns in nature from 8:00 pm to 9:00 pm",
+    "wind down with light browsing on mathematical forums from 10:00 pm to 11:30 pm",
+    "go to bed at midnight"
+  ],
+  "f_daily_schedule": [
+    [
+      "sleeping",
+      420
+    ],
+    [
+      "waking up and stretching (waiting to start waking up and stretchin)",
+      5
+    ],
+    [
+      "brushing his teeth  ",
+      5
+    ],
+    [
+      "washing his face  ",
+      5
+    ],
+    [
+      "getting dressed  ",
+      10
+    ],
+    [
+      "making his bed  ",
+      5
+    ],
+    [
+      "preparing breakfast   (conversing about Francisco Lopez and Giorgio Rossi discussed their breakfast plans and shared their excitement for the day\u2014Giorgio about fractal geometry in math class and his research on mathematical patterns in nature, and Francisco about his upcoming table tennis with Sam and strength training, with Giorgio agreeing to show Francisco examples of natural patterns during lunch break.)",
+      7
+    ],
+    [
+      "still preparing breakfast  ",
+      3
+    ],
+    [
+      "eating breakfast  ",
+      15
+    ],
+    [
+      "packing his school bag  ",
+      5
+    ],
+    [
+      "reviewing the previous day's algebra notes  ",
+      10
+    ],
+    [
+      "solving practice problems from the textbook  ",
+      11
+    ],
+    [
+      "solving practice problems from the textbook   (conversing about Isabella Rodriguez helped Giorgio Rossi with quadratic equations, explaining both factoring and the quadratic formula, and they practiced applying the quadratic formula to 2x\u00b2 + 4x - 6 = 0, verifying the solutions together.)",
+      16
+    ],
+    [
+      "organizing his notes and arranging them in his binder  ",
+      8
+    ],
+    [
+      "taking a short break to stretch and drink water   (conversing about Arthur and Giorgio discussed their studies, with Arthur preparing for a chemistry competition and Giorgio focusing on a math project about fractals in nature; they agreed to meet with Sam for lunch the next day to discuss math, biology, and sports science, including fractal patterns in cellular processes.)",
+      7
+    ],
+    [
+      "reviewing the upcoming lesson's key concepts  ",
+      8
+    ],
+    [
+      "jotting down questions to ask during class  ",
+      5
+    ],
+    [
+      "packing his bag with necessary materials  ",
+      5
+    ],
+    [
+      "listening to the teacher's introduction to the day's algebra topic  ",
+      5
+    ],
+    [
+      "solving a warm-up algebra problem on his notebook   (conversing about Maria Lopez and Giorgio Rossi discussed their mutual interest in the connections between algebra, fractals, and physics, particularly in wave functions and chaotic systems, and agreed to meet during lunch the next day with Arthur and Sam to brainstorm applications of fractal geometry to Maria's long jump training and Giorgio's research on patterns in nature, with Maria planning to bring her Hatsune Miku figure as a lucky charm.)",
+      8
+    ],
+    [
+      "participating in a class discussion about algebraic structures  ",
+      3
+    ],
+    [
+      "participating in a class discussion about algebraic structures   (conversing about Klaus Mueller and Giorgio Rossi discussed parallels between mathematical structures like fractals and social hierarchies, particularly in labor conditions from the Industrial Revolution to the modern gig economy, and agreed to meet with Isabella in the library after school tomorrow to collaborate on incorporating fractal models and chaos theory into Klaus's project.)",
+      10
+    ],
+    [
+      "still participating in a class discussion about algebraic structures  ",
+      9
+    ],
+    [
+      "working on a set of practice problems with a partner  ",
+      5
+    ],
+    [
+      "working on a set of practice problems with a partner   (waiting to start working on a set of practice problems with a partner )",
+      5
+    ],
+    [
+      "still working on a set of practice problems with a partner  ",
+      5
+    ],
+    [
+      "listening to the teacher's introduction of the day's geometry topic  ",
+      10
+    ],
+    [
+      "taking notes on key geometric principles  ",
+      15
+    ],
+    [
+      "reviewing the problem set instructions  ",
+      5
+    ],
+    [
+      "discussing the first problem with classmates  ",
+      10
+    ],
+    [
+      "solving the first problem collaboratively  ",
+      10
+    ],
+    [
+      "verifying the solution with his group  ",
+      5
+    ],
+    [
+      "jotting down final answers neatly",
+      5
+    ],
+    [
+      "attending his third high school class, physics, and at around 11:20, will solve practice problems related to wave equations",
+      60
+    ],
+    [
+      "eating lunch in the school cafeteria, and at around 12:30, will discuss a challenging math problem with friends, and at around 12:40, will show Francisco the prepared examples of fractal patterns in nature",
+      60
+    ],
+    [
+      "attending his fourth high school class, calculus, and at around 01:20, will work on derivative problems, and at around 01:40, will practice applying the quadratic formula to quadratic equations with coefficients greater than 1",
+      60
+    ],
+    [
+      "attending his fifth high school class, computer science, and at around 02:15, will work on a programming algorithm, and at around 02:45, will continue practicing the quadratic formula",
+      60
+    ],
+    [
+      "working on his research project about mathematical patterns in nature, and at around 03:20, will take a short break to organize his findings, and at around 03:40, will verify solutions by plugging them back into the original equations after solving, and at around 03:50, will begin gathering materials on fractal modeling and chaos theory applications for tomorrow's library meeting with Klaus and Isabella",
+      60
+    ],
+    [
+      "eating dinner, and at around 04:20, will continue gathering materials on fractal modeling and chaos theory applications for tomorrow's library meeting with Klaus and Isabella",
+      60
+    ],
+    [
+      "analyzing potential candidates for the class minister election, and at around 05:15, will jot down notes about their possible campaign strategies, and at around 05:45, will finish gathering materials on fractal modeling and chaos theory applications for tomorrow's library meeting with Klaus and Isabella",
+      60
+    ],
+    [
+      "solving advanced math problems for self-study, and at around 06:45, will take a short break to stretch and organize his notes",
+      60
+    ],
+    [
+      "continuing to solve advanced math problems for self-study, and at around 07:15, will take a short break to review his progress",
+      60
+    ],
+    [
+      "reading about fractal patterns in nature, and at around 08:30, will take notes on interesting findings",
+      60
+    ],
+    [
+      "reading about fractal patterns in nature, and at around 09:30, will take a short break to organize his thoughts",
+      60
+    ],
+    [
+      "browsing mathematical forums for interesting discussions, and at around 10:45, will take notes on a new problem to solve later",
+      60
+    ],
+    [
+      "winding down with light browsing on mathematical forums, and at around 11:30, will prepare for bed",
+      60
+    ]
+  ],
+  "f_daily_schedule_hourly_org": [
+    [
+      "sleeping",
+      420
+    ],
+    [
+      "waking up and completing his morning routine",
+      60
+    ],
+    [
+      "reviewing mathematical concepts for today's class, and at around 08:15, will take a short break to organize his notes, and at around 08:45, will prepare examples of fractal patterns in nature to show Francisco during lunch break",
+      60
+    ],
+    [
+      "attending his first high school class of the day, focusing on advanced algebra, and at around 09:45, will take notes on a new theorem",
+      60
+    ],
+    [
+      "attending his second high school class, studying geometry, and at around 10:30, will work on a problem set with classmates",
+      60
+    ],
+    [
+      "attending his third high school class, physics, and at around 11:20, will solve practice problems related to wave equations",
+      60
+    ],
+    [
+      "eating lunch in the school cafeteria, and at around 12:30, will discuss a challenging math problem with friends, and at around 12:40, will show Francisco the prepared examples of fractal patterns in nature",
+      60
+    ],
+    [
+      "attending his fourth high school class, calculus, and at around 01:20, will work on derivative problems, and at around 01:40, will practice applying the quadratic formula to quadratic equations with coefficients greater than 1",
+      60
+    ],
+    [
+      "attending his fifth high school class, computer science, and at around 02:15, will work on a programming algorithm, and at around 02:45, will continue practicing the quadratic formula",
+      60
+    ],
+    [
+      "working on his research project about mathematical patterns in nature, and at around 03:20, will take a short break to organize his findings, and at around 03:40, will verify solutions by plugging them back into the original equations after solving, and at around 03:50, will begin gathering materials on fractal modeling and chaos theory applications for tomorrow's library meeting with Klaus and Isabella",
+      60
+    ],
+    [
+      "eating dinner, and at around 04:20, will continue gathering materials on fractal modeling and chaos theory applications for tomorrow's library meeting with Klaus and Isabella",
+      60
+    ],
+    [
+      "analyzing potential candidates for the class minister election, and at around 05:15, will jot down notes about their possible campaign strategies, and at around 05:45, will finish gathering materials on fractal modeling and chaos theory applications for tomorrow's library meeting with Klaus and Isabella",
+      60
+    ],
+    [
+      "solving advanced math problems for self-study, and at around 06:45, will take a short break to stretch and organize his notes",
+      60
+    ],
+    [
+      "continuing to solve advanced math problems for self-study, and at around 07:15, will take a short break to review his progress",
+      60
+    ],
+    [
+      "reading about fractal patterns in nature, and at around 08:30, will take notes on interesting findings",
+      60
+    ],
+    [
+      "reading about fractal patterns in nature, and at around 09:30, will take a short break to organize his thoughts",
+      60
+    ],
+    [
+      "browsing mathematical forums for interesting discussions, and at around 10:45, will take notes on a new problem to solve later",
+      60
+    ],
+    [
+      "winding down with light browsing on mathematical forums, and at around 11:30, will prepare for bed",
+      60
+    ]
+  ],
+  "act_address": "the School:classroom building:library room:library table",
+  "act_start_time": "February 13, 2023, 09:55:00",
+  "act_duration": 5,
+  "act_description": "still working on a set of practice problems with a partner  ",
+  "act_pronunciatio": "\ud83d\udcda\ud83d\udc65",
+  "act_event": [
+    "Giorgio Rossi",
+    "work",
+    "practice problems"
+  ],
+  "act_obj_description": "in use by Giorgio Rossi and a partner for working on practice problems",
+  "act_obj_pronunciatio": "\ud83d\udc68\u200d\ud83d\udcbb",
+  "act_obj_event": [
+    "library table",
+    "is",
+    "in use"
+  ],
+  "chatting_with": null,
+  "chat": null,
+  "chatting_with_buffer": {
+    "Francisco Lopez": 0,
+    "Isabella Rodriguez": 0,
+    "Arthur Burton": 0,
+    "Maria Lopez": 0,
+    "Klaus Mueller": 110
+  },
+  "chatting_end_time": null,
+  "act_path_set": true,
+  "planned_path": []
+}
