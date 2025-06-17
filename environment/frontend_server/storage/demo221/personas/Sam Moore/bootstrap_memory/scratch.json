@@ -1,0 +1,322 @@
+{
+  "vision_r": 8,
+  "att_bandwidth": 8,
+  "retention": 8,
+  "curr_time": "February 13, 2023, 06:59:50",
+  "curr_tile": [
+    85,
+    59
+  ],
+  "daily_plan_req": "Sam Moore does long running after awaking up, and he eats breakfast at 7:30. He attend class in classroom 2, from 8am to 3pm, with a lunch break from 12am to 1:30pm. In his spare time he goes to the playground or the sports room.",
+  "name": "Sam Moore",
+  "first_name": "Sam",
+  "last_name": "Moore",
+  "age": 18,
+  "innate": "wise, resourceful, humorous",
+  "learned": "Sam Moore is a grade 12 high school student. He loves table tennis, and he plays table tennis only when he has an appointment with Francisco Lopez. He also likes other sports. He loves his younger sister, Jennifer Moore.",
+  "currently": "Sam Moore is preparing for a sport college.",
+  "lifestyle": "Sam Moore goes to bed around 9pm, awakes up around 5am, eats dinner around 5pm.",
+  "living_area": "the School:student dormitory 2:common room",
+  "concept_forget": 100,
+  "daily_reflection_time": 180,
+  "daily_reflection_size": 5,
+  "overlap_reflect_th": 4,
+  "kw_strg_event_reflect_th": 10,
+  "kw_strg_thought_reflect_th": 9,
+  "recency_w": 1,
+  "relevance_w": 1,
+  "importance_w": 1,
+  "recency_decay": 0.995,
+  "importance_trigger_max": 250,
+  "importance_trigger_curr": 138,
+  "importance_ele_n": 71,
+  "thought_count": 5,
+  "commitments": {},
+  "daily_req": [
+    "wake up and complete the morning routine at 5:00 am",
+    "Wake up and complete morning routine at 5:00 am",
+    "Long running from 5:30 am to 6:30 am",
+    "Shower and get ready for the day from 6:30 am to 7:00 am",
+    "Eat breakfast at 7:30 am",
+    "Attend class in classroom 2 from 8:00 am to 12:00 pm",
+    "Lunch break from 12:00 pm to 1:30 pm",
+    "Attend class in classroom 2 from 1:30 pm to 3:00 pm",
+    "Free time\u2014visit the playground or sports room from 3:00 pm to 4:30 pm",
+    "Eat dinner at 5:00 pm",
+    "Study or prepare for sport college from 5:30 pm to 7:30 pm",
+    "Spend time with younger sister Jennifer Moore from 7:30 pm to 8:30 pm",
+    "Wind down and get ready for bed from 8:30 pm to 9:00 pm",
+    "Go to bed at 9:00 pm"
+  ],
+  "f_daily_schedule": [
+    [
+      "sleeping",
+      300
+    ],
+    [
+      "waking up and getting out of bed",
+      5
+    ],
+    [
+      "brushing his teeth",
+      5
+    ],
+    [
+      "washing his face",
+      5
+    ],
+    [
+      "changing into running clothes",
+      5
+    ],
+    [
+      "drinking a glass of water",
+      5
+    ],
+    [
+      "doing light dynamic stretches",
+      10
+    ],
+    [
+      "doing deeper stretches for his legs",
+      10
+    ],
+    [
+      "doing core activation exercises",
+      5
+    ],
+    [
+      "putting on his running shoes",
+      5
+    ],
+    [
+      "heading outside to start his run",
+      5
+    ],
+    [
+      "warming up with dynamic stretches",
+      5
+    ],
+    [
+      "starting his run at a steady pace",
+      15
+    ],
+    [
+      "increasing his speed slightly",
+      10
+    ],
+    [
+      "maintaining his pace while focusing on breathing",
+      10
+    ],
+    [
+      "beginning to slow down for a cooldown",
+      5
+    ],
+    [
+      "transitioning to a light jog",
+      10
+    ],
+    [
+      "walking to fully cool down",
+      5
+    ],
+    [
+      "taking off his running clothes",
+      5
+    ],
+    [
+      "turning on the shower and adjusting the water temperature",
+      5
+    ],
+    [
+      "showering and washing his hair",
+      15
+    ],
+    [
+      "drying off with a towel",
+      5
+    ],
+    [
+      "brushing his teeth",
+      5
+    ],
+    [
+      "putting on fresh clothes",
+      10
+    ],
+    [
+      "combing his hair",
+      5
+    ],
+    [
+      "gathering ingredients for breakfast",
+      5
+    ],
+    [
+      "preparing and eating breakfast",
+      5
+    ],
+    [
+      "attending class in classroom 2, and at around 10:00, will take a short break to stretch his legs",
+      60
+    ],
+    [
+      "attending class in classroom 2, and at around 11:00, will take a short break to chat with classmates",
+      60
+    ],
+    [
+      "attending class in classroom 2, and at around 10:30, will take a short break to drink some water",
+      60
+    ],
+    [
+      "attending class in classroom 2, and at around 11:45, will start packing up for lunch break",
+      60
+    ],
+    [
+      "on his lunch break, and at around 12:30, will eat his meal in the cafeteria",
+      60
+    ],
+    [
+      "attending class in classroom 2, and at around 2:00, will take a short break to stretch his legs",
+      60
+    ],
+    [
+      "attending class in classroom 2, and at around 2:45, will start packing up his materials",
+      60
+    ],
+    [
+      "packing up his materials after class, and at around 3:15, will head to the playground for some free time",
+      60
+    ],
+    [
+      "playing basketball at the playground, and at around 4:20, will take a short water break before continuing",
+      60
+    ],
+    [
+      "eating dinner with his family, and at around 5:30, will start cleaning up the table",
+      60
+    ],
+    [
+      "studying and preparing for sport college, and at around 6:45, will take a short break to stretch",
+      60
+    ],
+    [
+      "studying and preparing for sport college, and at around 7:15, will take a short break to chat with his sister Jennifer",
+      60
+    ],
+    [
+      "spending time with his younger sister Jennifer Moore, and at around 8:15, will play a board game with her",
+      60
+    ],
+    [
+      "winding down and getting ready for bed, and at around 9:15, will turn off the lights to sleep",
+      60
+    ],
+    [
+      "sleeping",
+      120
+    ]
+  ],
+  "f_daily_schedule_hourly_org": [
+    [
+      "sleeping",
+      300
+    ],
+    [
+      "waking up and completing his morning routine, and at around 05:20, will start stretching for his run",
+      60
+    ],
+    [
+      "on his long run, and at around 06:25, will start cooling down with a light jog",
+      60
+    ],
+    [
+      "showering and getting ready for the day, and at around 07:25, will start preparing breakfast",
+      60
+    ],
+    [
+      "attending class in classroom 2, and at around 10:00, will take a short break to stretch his legs",
+      60
+    ],
+    [
+      "attending class in classroom 2, and at around 11:00, will take a short break to chat with classmates",
+      60
+    ],
+    [
+      "attending class in classroom 2, and at around 10:30, will take a short break to drink some water",
+      60
+    ],
+    [
+      "attending class in classroom 2, and at around 11:45, will start packing up for lunch break",
+      60
+    ],
+    [
+      "on his lunch break, and at around 12:30, will eat his meal in the cafeteria",
+      60
+    ],
+    [
+      "attending class in classroom 2, and at around 2:00, will take a short break to stretch his legs",
+      60
+    ],
+    [
+      "attending class in classroom 2, and at around 2:45, will start packing up his materials",
+      60
+    ],
+    [
+      "packing up his materials after class, and at around 3:15, will head to the playground for some free time",
+      60
+    ],
+    [
+      "playing basketball at the playground, and at around 4:20, will take a short water break before continuing",
+      60
+    ],
+    [
+      "eating dinner with his family, and at around 5:30, will start cleaning up the table",
+      60
+    ],
+    [
+      "studying and preparing for sport college, and at around 6:45, will take a short break to stretch",
+      60
+    ],
+    [
+      "studying and preparing for sport college, and at around 7:15, will take a short break to chat with his sister Jennifer",
+      60
+    ],
+    [
+      "spending time with his younger sister Jennifer Moore, and at around 8:15, will play a board game with her",
+      60
+    ],
+    [
+      "winding down and getting ready for bed, and at around 9:15, will turn off the lights to sleep",
+      60
+    ],
+    [
+      "sleeping",
+      120
+    ]
+  ],
+  "act_address": "the School:playground:playground:running track",
+  "act_start_time": "February 13, 2023, 06:55:00",
+  "act_duration": 5,
+  "act_description": "walking to fully cool down",
+  "act_pronunciatio": "\ud83d\udeb6\u200d\u2642",
+  "act_event": [
+    "Sam Moore",
+    "walk",
+    "cool down"
+  ],
+  "act_obj_description": "in use by Sam Moore for cooling down",
+  "act_obj_pronunciatio": "\u2744\ufe0f\ud83e\uddca",
+  "act_obj_event": [
+    "running track",
+    "is",
+    "in use"
+  ],
+  "chatting_with": null,
+  "chat": null,
+  "chatting_with_buffer": {},
+  "chatting_end_time": null,
+  "act_path_set": true,
+  "planned_path": []
+}

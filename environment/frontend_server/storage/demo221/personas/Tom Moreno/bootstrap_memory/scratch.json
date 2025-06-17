@@ -1,0 +1,243 @@
+{
+  "vision_r": 8,
+  "att_bandwidth": 8,
+  "retention": 8,
+  "curr_time": "February 13, 2023, 06:59:50",
+  "curr_tile": [
+    88,
+    75
+  ],
+  "daily_plan_req": "Tom Moreno attends class at classroom 2, from 8am to 4:30pm. He studies at dormitory whenever he has time.",
+  "name": "Tom Moreno",
+  "first_name": "Tom",
+  "last_name": "Moreno",
+  "age": 17,
+  "innate": "silent, studious, hardworking",
+  "learned": "Tom Moreno is a grade 11 high school student. He is always studing, as if he never feels tired.",
+  "currently": "Tom Moreno is preparing for exams and projects.",
+  "lifestyle": "Tom Moreno goes to bed around 12pm, awakes up around 6:30am, eats dinner around 5pm.",
+  "living_area": "the School:student dormitory 5:common room",
+  "concept_forget": 100,
+  "daily_reflection_time": 180,
+  "daily_reflection_size": 5,
+  "overlap_reflect_th": 4,
+  "kw_strg_event_reflect_th": 10,
+  "kw_strg_thought_reflect_th": 9,
+  "recency_w": 1,
+  "relevance_w": 1,
+  "importance_w": 1,
+  "recency_decay": 0.995,
+  "importance_trigger_max": 250,
+  "importance_trigger_curr": 197,
+  "importance_ele_n": 42,
+  "thought_count": 5,
+  "commitments": {},
+  "daily_req": [
+    "wake up and complete the morning routine at 6:00 am",
+    "Wake up and complete morning routine from 6:30 am to 7:00 am",
+    "Study at dormitory from 7:00 am to 7:45 am",
+    "Attend class at classroom 2 from 8:00 am to 12:00 pm",
+    "Have lunch from 12:00 pm to 12:30 pm",
+    "Study at dormitory from 12:30 pm to 1:30 pm",
+    "Attend class at classroom 2 from 1:30 pm to 4:30 pm",
+    "Study at dormitory from 4:30 pm to 5:00 pm",
+    "Have dinner at 5:00 pm",
+    "Study at dormitory from 5:30 pm to 11:45 pm",
+    "Prepare for bed and sleep at 12:00 pm"
+  ],
+  "f_daily_schedule": [
+    [
+      "sleeping",
+      360
+    ],
+    [
+      "waking up and turning off the alarm",
+      5
+    ],
+    [
+      "stretching and getting out of bed",
+      5
+    ],
+    [
+      "brushing his teeth",
+      5
+    ],
+    [
+      "washing his face",
+      5
+    ],
+    [
+      "changing into school clothes",
+      5
+    ],
+    [
+      "making his bed",
+      5
+    ],
+    [
+      "preparing a quick breakfast",
+      10
+    ],
+    [
+      "eating breakfast",
+      10
+    ],
+    [
+      "cleaning up the breakfast dishes",
+      5
+    ],
+    [
+      "checking his school bag for essentials",
+      5
+    ],
+    [
+      "reviewing his notes from yesterday's classes",
+      15
+    ],
+    [
+      "working on a math problem set",
+      20
+    ],
+    [
+      "checking his answers against the textbook solutions",
+      10
+    ],
+    [
+      "organizing his study materials for the day",
+      5
+    ],
+    [
+      "packing his bag with textbooks and notebooks",
+      5
+    ],
+    [
+      "double-checking his class schedule",
+      5
+    ],
+    [
+      "attending class at classroom 2",
+      240
+    ],
+    [
+      "having lunch in the cafeteria, and at around 12:30, will head back to the dormitory to study",
+      60
+    ],
+    [
+      "studying at the dormitory, and at around 01:15, will take a short break to stretch before continuing",
+      60
+    ],
+    [
+      "attending class at classroom 2",
+      180
+    ],
+    [
+      "studying at the dormitory, and at around 05:00, will take a short break before dinner",
+      60
+    ],
+    [
+      "studying at the dormitory, and at around 06:30, will take a short break to drink water before continuing",
+      60
+    ],
+    [
+      "studying at the dormitory, and at around 07:30, will take a short break to organize his notes before continuing",
+      60
+    ],
+    [
+      "studying at the dormitory, and at around 08:20, will take a short break to review his progress before continuing",
+      60
+    ],
+    [
+      "studying at the dormitory, and at around 09:15, will take a short break to stretch before continuing",
+      60
+    ],
+    [
+      "studying at the dormitory, and at around 10:20, will take a short break to drink water before continuing",
+      60
+    ],
+    [
+      "studying at the dormitory, and at around 11:45, will prepare for bed",
+      60
+    ]
+  ],
+  "f_daily_schedule_hourly_org": [
+    [
+      "sleeping",
+      360
+    ],
+    [
+      "waking up and starting his morning routine",
+      60
+    ],
+    [
+      "studying at the dormitory, and at around 07:45, will pack his bag for class",
+      60
+    ],
+    [
+      "attending class at classroom 2",
+      240
+    ],
+    [
+      "having lunch in the cafeteria, and at around 12:30, will head back to the dormitory to study",
+      60
+    ],
+    [
+      "studying at the dormitory, and at around 01:15, will take a short break to stretch before continuing",
+      60
+    ],
+    [
+      "attending class at classroom 2",
+      180
+    ],
+    [
+      "studying at the dormitory, and at around 05:00, will take a short break before dinner",
+      60
+    ],
+    [
+      "studying at the dormitory, and at around 06:30, will take a short break to drink water before continuing",
+      60
+    ],
+    [
+      "studying at the dormitory, and at around 07:30, will take a short break to organize his notes before continuing",
+      60
+    ],
+    [
+      "studying at the dormitory, and at around 08:20, will take a short break to review his progress before continuing",
+      60
+    ],
+    [
+      "studying at the dormitory, and at around 09:15, will take a short break to stretch before continuing",
+      60
+    ],
+    [
+      "studying at the dormitory, and at around 10:20, will take a short break to drink water before continuing",
+      60
+    ],
+    [
+      "studying at the dormitory, and at around 11:45, will prepare for bed",
+      60
+    ]
+  ],
+  "act_address": "the School:student dormitory 5:common room:desk",
+  "act_start_time": "February 13, 2023, 06:55:00",
+  "act_duration": 5,
+  "act_description": "checking his school bag for essentials",
+  "act_pronunciatio": "\ud83c\udf92\ud83d\udd0d",
+  "act_event": [
+    "Tom Moreno",
+    "check",
+    "school bag"
+  ],
+  "act_obj_description": "being used to check a school bag",
+  "act_obj_pronunciatio": "\ud83c\udf92\ud83d\udd0d",
+  "act_obj_event": [
+    "desk",
+    "is",
+    "used"
+  ],
+  "chatting_with": null,
+  "chat": null,
+  "chatting_with_buffer": {},
+  "chatting_end_time": null,
+  "act_path_set": true,
+  "planned_path": []
+}

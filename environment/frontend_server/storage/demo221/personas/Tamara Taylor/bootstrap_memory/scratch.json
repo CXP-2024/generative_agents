@@ -1,0 +1,252 @@
+{
+  "vision_r": 8,
+  "att_bandwidth": 8,
+  "retention": 8,
+  "curr_time": "February 13, 2023, 06:59:50",
+  "curr_tile": [
+    94,
+    79
+  ],
+  "daily_plan_req": "",
+  "name": "Tamara Taylor",
+  "first_name": "Tamara",
+  "last_name": "Taylor",
+  "age": 16,
+  "innate": "imaginative, patient, kind",
+  "learned": "Tamara Taylor is a grade 10 high school student. He loves classical music. ",
+  "currently": "Tamara Taylor is trying to learn music theory. Sometimes he ask Eddy Lin for help.",
+  "lifestyle": "Tamara Taylor goes to bed around 12pm, awakes up around 7am, eats dinner around 6pm.",
+  "living_area": "the School:student dormitory 5:common room",
+  "concept_forget": 100,
+  "daily_reflection_time": 180,
+  "daily_reflection_size": 5,
+  "overlap_reflect_th": 4,
+  "kw_strg_event_reflect_th": 10,
+  "kw_strg_thought_reflect_th": 9,
+  "recency_w": 1,
+  "relevance_w": 1,
+  "importance_w": 1,
+  "recency_decay": 0.995,
+  "importance_trigger_max": 250,
+  "importance_trigger_curr": 243,
+  "importance_ele_n": 7,
+  "thought_count": 5,
+  "commitments": {},
+  "daily_req": [
+    "wake up and complete the morning routine at 7:00 am",
+    "wake up and complete the morning routine at 7:00 am",
+    "eat breakfast and review school notes from 7:30 am to 8:00 am",
+    "attend high school classes from 8:30 am to 3:00 pm",
+    "have lunch at school at 12:00 pm",
+    "practice music theory exercises from 3:30 pm to 4:30 pm",
+    "ask Eddy Lin for help with music theory from 4:45 pm to 5:30 pm",
+    "eat dinner at 6:00 pm",
+    "listen to classical music and relax from 6:30 pm to 7:30 pm",
+    "complete homework from 8:00 pm to 10:00 pm",
+    "wind down and prepare for bed from 11:00 pm to 12:00 am",
+    "go to bed at 12:00 am"
+  ],
+  "f_daily_schedule": [
+    [
+      "sleeping",
+      420
+    ],
+    [
+      "waking up and stretching in bed",
+      5
+    ],
+    [
+      "getting out of bed and turning off the alarm",
+      5
+    ],
+    [
+      "walking to the bathroom to wash face",
+      5
+    ],
+    [
+      "brushing teeth",
+      5
+    ],
+    [
+      "taking a quick shower",
+      15
+    ],
+    [
+      "drying off and applying skincare",
+      5
+    ],
+    [
+      "getting dressed in school clothes",
+      10
+    ],
+    [
+      "combing hair and checking appearance",
+      5
+    ],
+    [
+      "packing school bag with needed materials",
+      5
+    ],
+    [
+      "eating breakfast and reviewing school notes, and at around 08:30, will leave for high school classes",
+      60
+    ],
+    [
+      "attending high school classes, and at around 09:45, will take a short break to stretch",
+      60
+    ],
+    [
+      "attending high school classes, and at around 10:30, will take notes on music history",
+      60
+    ],
+    [
+      "attending high school classes, and at around 11:30, will chat with classmates during break",
+      60
+    ],
+    [
+      "having lunch at school with friends, and at around 12:30, will chat about music class assignments",
+      60
+    ],
+    [
+      "attending high school classes, and at around 01:30, will work on a group project with classmates",
+      60
+    ],
+    [
+      "attending high school classes, and at around 02:30, will work on a math assignment",
+      60
+    ],
+    [
+      "attending high school classes, and at around 03:15, will pack up belongings to leave school",
+      60
+    ],
+    [
+      "practicing music theory exercises, and at around 04:15, will take a short break to stretch",
+      60
+    ],
+    [
+      "asking Eddy Lin for help with music theory, and at around 05:15, will take notes on new concepts",
+      60
+    ],
+    [
+      "eating dinner with family, and at around 06:30, will help clear the table",
+      60
+    ],
+    [
+      "listening to classical music and relaxing, and at around 07:15, will take a short break to stretch",
+      60
+    ],
+    [
+      "completing homework assignments, and at around 08:30, will take a short break to stretch",
+      60
+    ],
+    [
+      "completing homework assignments, and at around 09:30, will take a short break to stretch",
+      60
+    ],
+    [
+      "completing homework assignments, and at around 10:30, will take a short break to stretch",
+      60
+    ],
+    [
+      "winding down and preparing for bed, and at around 11:30, will brush teeth and get ready to sleep",
+      60
+    ]
+  ],
+  "f_daily_schedule_hourly_org": [
+    [
+      "sleeping",
+      420
+    ],
+    [
+      "waking up and completing the morning routine",
+      60
+    ],
+    [
+      "eating breakfast and reviewing school notes, and at around 08:30, will leave for high school classes",
+      60
+    ],
+    [
+      "attending high school classes, and at around 09:45, will take a short break to stretch",
+      60
+    ],
+    [
+      "attending high school classes, and at around 10:30, will take notes on music history",
+      60
+    ],
+    [
+      "attending high school classes, and at around 11:30, will chat with classmates during break",
+      60
+    ],
+    [
+      "having lunch at school with friends, and at around 12:30, will chat about music class assignments",
+      60
+    ],
+    [
+      "attending high school classes, and at around 01:30, will work on a group project with classmates",
+      60
+    ],
+    [
+      "attending high school classes, and at around 02:30, will work on a math assignment",
+      60
+    ],
+    [
+      "attending high school classes, and at around 03:15, will pack up belongings to leave school",
+      60
+    ],
+    [
+      "practicing music theory exercises, and at around 04:15, will take a short break to stretch",
+      60
+    ],
+    [
+      "asking Eddy Lin for help with music theory, and at around 05:15, will take notes on new concepts",
+      60
+    ],
+    [
+      "eating dinner with family, and at around 06:30, will help clear the table",
+      60
+    ],
+    [
+      "listening to classical music and relaxing, and at around 07:15, will take a short break to stretch",
+      60
+    ],
+    [
+      "completing homework assignments, and at around 08:30, will take a short break to stretch",
+      60
+    ],
+    [
+      "completing homework assignments, and at around 09:30, will take a short break to stretch",
+      60
+    ],
+    [
+      "completing homework assignments, and at around 10:30, will take a short break to stretch",
+      60
+    ],
+    [
+      "winding down and preparing for bed, and at around 11:30, will brush teeth and get ready to sleep",
+      60
+    ]
+  ],
+  "act_address": "the School:student dormitory 5:common room:bed",
+  "act_start_time": "February 13, 2023, 00:00:00",
+  "act_duration": 420,
+  "act_description": "sleeping",
+  "act_pronunciatio": "\ud83d\ude34",
+  "act_event": [
+    "Tamara Taylor",
+    "is",
+    "sleep"
+  ],
+  "act_obj_description": "being used for sleeping",
+  "act_obj_pronunciatio": "\ud83d\udecc\ud83d\ude34",
+  "act_obj_event": [
+    "bed",
+    "is",
+    "used"
+  ],
+  "chatting_with": null,
+  "chat": null,
+  "chatting_with_buffer": {},
+  "chatting_end_time": null,
+  "act_path_set": true,
+  "planned_path": []
+}

@@ -1,0 +1,484 @@
+{
+  "vision_r": 8,
+  "att_bandwidth": 8,
+  "retention": 8,
+  "curr_time": "February 13, 2023, 06:59:50",
+  "curr_tile": [
+    74,
+    41
+  ],
+  "daily_plan_req": "Adam Smith eats breakfast at 6am. He don't have lunch and spend his lunch time at library room. He attends class in classroom 1.",
+  "name": "Adam Smith",
+  "first_name": "Adam",
+  "last_name": "Smith",
+  "age": 17,
+  "innate": "thoughtful, reflective, intellectual",
+  "learned": "Adam Smith is a high school student at grade 11. He likes to challenge teachers' ideas. He lives in a student dormitory.",
+  "currently": "Adam Smith is writing an essay about the importance of creativity and how it can shape the world. Adam is also curious about who will be running for the class minister election next week.",
+  "lifestyle": "Adam Smith goes to bed around 8pm, awakes up around 4am, eats dinner around 5pm.",
+  "living_area": "the School:student dormitory 4:common room",
+  "concept_forget": 100,
+  "daily_reflection_time": 180,
+  "daily_reflection_size": 5,
+  "overlap_reflect_th": 4,
+  "kw_strg_event_reflect_th": 10,
+  "kw_strg_thought_reflect_th": 9,
+  "recency_w": 1,
+  "relevance_w": 1,
+  "importance_w": 1,
+  "recency_decay": 0.995,
+  "importance_trigger_max": 250,
+  "importance_trigger_curr": 110,
+  "importance_ele_n": 84,
+  "thought_count": 5,
+  "commitments": {},
+  "daily_req": [
+    "wake up and complete the morning routine at 4:00 am",
+    "wake up and complete the morning routine from 4:00 am to 4:30 am",
+    "work on the essay about creativity from 4:30 am to 5:45 am",
+    "eat breakfast at 6:00 am",
+    "attend classes in classroom 1 from 7:00 am to 12:00 pm",
+    "spend time in the library room from 12:00 pm to 1:00 pm",
+    "attend afternoon classes in classroom 1 from 1:00 pm to 3:00 pm",
+    "research class minister election candidates from 3:00 pm to 4:30 pm",
+    "eat dinner at 5:00 pm",
+    "review and refine the essay from 5:30 pm to 7:30 pm",
+    "prepare for bed and sleep at 8:00 pm"
+  ],
+  "f_daily_schedule": [
+    [
+      "sleeping",
+      240
+    ],
+    [
+      "waking up and stretching",
+      5
+    ],
+    [
+      "brushing his teeth",
+      5
+    ],
+    [
+      "washing his face",
+      5
+    ],
+    [
+      "getting dressed",
+      5
+    ],
+    [
+      "organizing his desk for essay work",
+      5
+    ],
+    [
+      "reviewing his essay outline",
+      10
+    ],
+    [
+      "writing the introduction for his essay",
+      15
+    ],
+    [
+      "taking a short break to gather thoughts",
+      5
+    ],
+    [
+      "jotting down key points for the next section",
+      5
+    ],
+    [
+      "reviewing his essay outline",
+      10
+    ],
+    [
+      "researching sources on creativity",
+      15
+    ],
+    [
+      "drafting the introduction paragraph",
+      10
+    ],
+    [
+      "writing the first body paragraph",
+      15
+    ],
+    [
+      "taking a short break",
+      5
+    ],
+    [
+      "organizing his notes for the next writing session",
+      5
+    ],
+    [
+      "walking to the dormitory dining hall",
+      5
+    ],
+    [
+      "grabbing a tray and selecting breakfast items",
+      10
+    ],
+    [
+      "sitting down at a table and starting to eat",
+      15
+    ],
+    [
+      "reading a book while eating",
+      15
+    ],
+    [
+      "finishing breakfast and clearing his tray",
+      10
+    ],
+    [
+      "walking back to his dorm room",
+      5
+    ],
+    [
+      "listening to the teacher's lecture",
+      20
+    ],
+    [
+      "taking notes on key points",
+      15
+    ],
+    [
+      "raising a question to challenge the teacher's idea",
+      10
+    ],
+    [
+      "discussing the topic with classmates",
+      10
+    ],
+    [
+      "taking a short break between lessons",
+      5
+    ],
+    [
+      "attending classes in classroom 1, and at around 08:50, will take a short break between lessons",
+      60
+    ],
+    [
+      "attending classes in classroom 1, and at around 09:50, will take a short break between lessons",
+      60
+    ],
+    [
+      "attending classes in classroom 1, and at around 10:50, will take a short break between lessons",
+      60
+    ],
+    [
+      "attending classes in classroom 1, and at around 11:50, will prepare to leave for the library",
+      60
+    ],
+    [
+      "spending time in the library room, reading about creativity theories, and at around 12:45, will prepare for afternoon classes",
+      60
+    ],
+    [
+      "attending afternoon classes in classroom 1, and at around 01:50, will take a short break between lessons",
+      60
+    ],
+    [
+      "attending afternoon classes in classroom 1, and at around 02:50, will take a short break between lessons",
+      60
+    ],
+    [
+      "researching class minister election candidates in the library, and at around 03:45, will take a short break to stretch",
+      60
+    ],
+    [
+      "researching class minister election candidates in the library, and at around 04:30, will take a short break before dinner",
+      60
+    ],
+    [
+      "eating dinner in the dormitory dining hall",
+      60
+    ],
+    [
+      "reviewing and refining his essay about creativity, and at around 06:45, will take a short break to stretch",
+      60
+    ],
+    [
+      "reviewing and refining his essay about creativity, and at around 07:30, will start preparing for bed",
+      60
+    ],
+    [
+      "sleeping",
+      240
+    ]
+  ],
+  "f_daily_schedule_hourly_org": [
+    [
+      "sleeping",
+      240
+    ],
+    [
+      "waking up and completing his morning routine, and at around 04:30, will start working on his essay about creativity",
+      60
+    ],
+    [
+      "working on his essay about creativity, and at around 05:45, will take a short break before breakfast",
+      60
+    ],
+    [
+      "eating breakfast in the dormitory dining hall",
+      60
+    ],
+    [
+      "attending morning classes in classroom 1, and at around 07:50, will take a short break between lessons",
+      60
+    ],
+    [
+      "attending classes in classroom 1, and at around 08:50, will take a short break between lessons",
+      60
+    ],
+    [
+      "attending classes in classroom 1, and at around 09:50, will take a short break between lessons",
+      60
+    ],
+    [
+      "attending classes in classroom 1, and at around 10:50, will take a short break between lessons",
+      60
+    ],
+    [
+      "attending classes in classroom 1, and at around 11:50, will prepare to leave for the library",
+      60
+    ],
+    [
+      "spending time in the library room, reading about creativity theories, and at around 12:45, will prepare for afternoon classes",
+      60
+    ],
+    [
+      "attending afternoon classes in classroom 1, and at around 01:50, will take a short break between lessons",
+      60
+    ],
+    [
+      "attending afternoon classes in classroom 1, and at around 02:50, will take a short break between lessons",
+      60
+    ],
+    [
+      "researching class minister election candidates in the library, and at around 03:45, will take a short break to stretch",
+      60
+    ],
+    [
+      "researching class minister election candidates in the library, and at around 04:30, will take a short break before dinner",
+      60
+    ],
+    [
+      "eating dinner in the dormitory dining hall",
+      60
+    ],
+    [
+      "reviewing and refining his essay about creativity, and at around 06:45, will take a short break to stretch",
+      60
+    ],
+    [
+      "reviewing and refining his essay about creativity, and at around 07:30, will start preparing for bed",
+      60
+    ],
+    [
+      "sleeping",
+      240
+    ]
+  ],
+  "act_address": "the School:student dormitory 4:common room:bed",
+  "act_start_time": "February 13, 2023, 06:55:00",
+  "act_duration": 5,
+  "act_description": "walking back to his dorm room",
+  "act_pronunciatio": "\ud83d\udeb6\u200d\u2642",
+  "act_event": [
+    "Adam Smith",
+    "walk",
+    "dorm room"
+  ],
+  "act_obj_description": "not in use",
+  "act_obj_pronunciatio": "\ud83d\udeab\ud83d\udd0c",
+  "act_obj_event": [
+    "bed",
+    "is",
+    "unused"
+  ],
+  "chatting_with": null,
+  "chat": null,
+  "chatting_with_buffer": {},
+  "chatting_end_time": null,
+  "act_path_set": true,
+  "planned_path": [
+    [
+      74,
+      43
+    ],
+    [
+      74,
+      44
+    ],
+    [
+      74,
+      45
+    ],
+    [
+      74,
+      46
+    ],
+    [
+      74,
+      47
+    ],
+    [
+      74,
+      48
+    ],
+    [
+      74,
+      49
+    ],
+    [
+      74,
+      50
+    ],
+    [
+      74,
+      51
+    ],
+    [
+      74,
+      52
+    ],
+    [
+      74,
+      53
+    ],
+    [
+      74,
+      54
+    ],
+    [
+      74,
+      55
+    ],
+    [
+      74,
+      56
+    ],
+    [
+      74,
+      57
+    ],
+    [
+      74,
+      58
+    ],
+    [
+      74,
+      59
+    ],
+    [
+      74,
+      60
+    ],
+    [
+      74,
+      61
+    ],
+    [
+      74,
+      62
+    ],
+    [
+      75,
+      62
+    ],
+    [
+      76,
+      62
+    ],
+    [
+      77,
+      62
+    ],
+    [
+      78,
+      62
+    ],
+    [
+      78,
+      63
+    ],
+    [
+      78,
+      64
+    ],
+    [
+      78,
+      65
+    ],
+    [
+      78,
+      66
+    ],
+    [
+      78,
+      67
+    ],
+    [
+      78,
+      68
+    ],
+    [
+      78,
+      69
+    ],
+    [
+      78,
+      70
+    ],
+    [
+      78,
+      71
+    ],
+    [
+      78,
+      72
+    ],
+    [
+      78,
+      73
+    ],
+    [
+      79,
+      73
+    ],
+    [
+      80,
+      73
+    ],
+    [
+      80,
+      74
+    ],
+    [
+      80,
+      75
+    ],
+    [
+      80,
+      76
+    ],
+    [
+      81,
+      76
+    ],
+    [
+      82,
+      76
+    ],
+    [
+      83,
+      76
+    ],
+    [
+      83,
+      77
+    ]
+  ]
+}

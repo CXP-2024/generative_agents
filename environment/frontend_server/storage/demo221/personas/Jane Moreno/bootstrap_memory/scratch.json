@@ -1,0 +1,288 @@
+{
+  "vision_r": 8,
+  "att_bandwidth": 8,
+  "retention": 8,
+  "curr_time": "February 13, 2023, 06:59:50",
+  "curr_tile": [
+    29,
+    11
+  ],
+  "daily_plan_req": "She teaches in classroom 2 in the morning and has a lunch break at 12am. In her spare time, she plays guitar in the music room or in her bedroom.",
+  "name": "Jane Moreno",
+  "first_name": "Jane",
+  "last_name": "Moreno",
+  "age": 46,
+  "innate": "friendly, helpful, organized",
+  "learned": "Jane Moreno is a high school history teacher. She is always looking for new ways to make the courses easier and more enjoyable for students. She also plays guitar.",
+  "currently": "Jane Moreno wants to cooperate with Ayesha Khan to hold a new course.",
+  "lifestyle": "Jane Moreno goes to bed around 10pm, awakes up around 6am, eats dinner around 6pm.",
+  "living_area": "the School:Jane Moreno's office and dormitory:living room",
+  "concept_forget": 100,
+  "daily_reflection_time": 180,
+  "daily_reflection_size": 5,
+  "overlap_reflect_th": 4,
+  "kw_strg_event_reflect_th": 10,
+  "kw_strg_thought_reflect_th": 9,
+  "recency_w": 1,
+  "relevance_w": 1,
+  "importance_w": 1,
+  "recency_decay": 0.995,
+  "importance_trigger_max": 250,
+  "importance_trigger_curr": 205,
+  "importance_ele_n": 38,
+  "thought_count": 5,
+  "commitments": {},
+  "daily_req": [
+    "wake up and complete the morning routine at 6:00 am",
+    "Wake up and complete the morning routine from 6:00 am to 6:30 am",
+    "Prepare and eat breakfast from 6:30 am to 7:00 am",
+    "Travel to school and arrive by 7:30 am",
+    "Teach history in classroom 2 from 8:00 am to 10:00 am",
+    "Short break and review lesson plans from 10:00 am to 10:15 am",
+    "Teach history in classroom 2 from 10:15 am to 12:00 pm",
+    "Lunch break from 12:00 pm to 1:00 pm",
+    "Meet with Ayesha Khan to discuss the new course from 1:00 pm to 2:30 pm",
+    "Play guitar in the music room from 2:30 pm to 3:30 pm",
+    "Grade papers and prepare for the next day\u2019s lessons from 3:30 pm to 5:00 pm",
+    "Travel home and relax from 5:00 pm to 6:00 pm",
+    "Eat dinner at 6:00 pm",
+    "Play guitar in the bedroom from 7:00 pm to 8:00 pm",
+    "Read or watch TV from 8:00 pm to 9:30 pm",
+    "Prepare for bed and sleep at 10:00 pm"
+  ],
+  "f_daily_schedule": [
+    [
+      "sleeping",
+      360
+    ],
+    [
+      "waking up and stretching",
+      5
+    ],
+    [
+      "brushing her teeth",
+      5
+    ],
+    [
+      "washing her face",
+      5
+    ],
+    [
+      "getting dressed",
+      10
+    ],
+    [
+      "making her bed",
+      5
+    ],
+    [
+      "preparing coffee",
+      5
+    ],
+    [
+      "cooking breakfast (e.g., eggs and toast)",
+      15
+    ],
+    [
+      "setting the table",
+      5
+    ],
+    [
+      "sitting down to eat breakfast",
+      5
+    ],
+    [
+      "eating breakfast at the dining table",
+      20
+    ],
+    [
+      "cleaning up the breakfast dishes",
+      10
+    ],
+    [
+      "brushing her teeth in the bathroom",
+      5
+    ],
+    [
+      "changing into work clothes in the bedroom",
+      10
+    ],
+    [
+      "packing her teaching materials into her bag",
+      5
+    ],
+    [
+      "checking her lesson plan one last time",
+      5
+    ],
+    [
+      "putting on her shoes and coat by the door",
+      5
+    ],
+    [
+      "teaching history in classroom 2, and at around 08:45, will take a short break to answer student questions",
+      60
+    ],
+    [
+      "teaching history in classroom 2, and at around 09:30, will take a short break to stretch and drink some water",
+      60
+    ],
+    [
+      "taking a short break and reviewing lesson plans, and at around 10:15, will return to teaching history in classroom 2",
+      60
+    ],
+    [
+      "teaching history in classroom 2, and at around 11:30, will take a short break to organize materials for the next lesson",
+      60
+    ],
+    [
+      "having lunch in the school cafeteria, and at around 12:30, will take a short walk to clear her mind before the meeting",
+      60
+    ],
+    [
+      "meeting with Ayesha Khan to discuss the new course, and at around 01:45, will take a short break to get some water",
+      60
+    ],
+    [
+      "still meeting with Ayesha Khan to discuss the new course, and at around 02:15, will take a short break to stretch and get some water",
+      60
+    ],
+    [
+      "playing guitar in the music room, and at around 03:15, will take a short break to stretch and get some water",
+      60
+    ],
+    [
+      "grading papers and preparing for the next day's lessons, and at around 04:30, will take a short break to stretch and get some water",
+      60
+    ],
+    [
+      "finishing grading papers and preparing for the next day's lessons, and at around 05:15, will pack up her things to leave school",
+      60
+    ],
+    [
+      "eating dinner at home, and at around 06:30, will clean up the kitchen",
+      60
+    ],
+    [
+      "playing guitar in her bedroom, and at around 07:30, will take a short break to stretch and get some water",
+      60
+    ],
+    [
+      "reading a book in the living room, and at around 08:30, will take a short break to make some tea",
+      60
+    ],
+    [
+      "reading a book in the living room, and at around 09:15, will take a short break to stretch and get ready for bed",
+      60
+    ],
+    [
+      "preparing for bed and getting ready to sleep",
+      60
+    ],
+    [
+      "sleeping",
+      60
+    ]
+  ],
+  "f_daily_schedule_hourly_org": [
+    [
+      "sleeping",
+      360
+    ],
+    [
+      "waking up and completing her morning routine, and at around 06:30, will prepare breakfast",
+      60
+    ],
+    [
+      "eating breakfast, and at around 07:20, will clean up and get ready to leave for school",
+      60
+    ],
+    [
+      "teaching history in classroom 2, and at around 08:45, will take a short break to answer student questions",
+      60
+    ],
+    [
+      "teaching history in classroom 2, and at around 09:30, will take a short break to stretch and drink some water",
+      60
+    ],
+    [
+      "taking a short break and reviewing lesson plans, and at around 10:15, will return to teaching history in classroom 2",
+      60
+    ],
+    [
+      "teaching history in classroom 2, and at around 11:30, will take a short break to organize materials for the next lesson",
+      60
+    ],
+    [
+      "having lunch in the school cafeteria, and at around 12:30, will take a short walk to clear her mind before the meeting",
+      60
+    ],
+    [
+      "meeting with Ayesha Khan to discuss the new course, and at around 01:45, will take a short break to get some water",
+      60
+    ],
+    [
+      "still meeting with Ayesha Khan to discuss the new course, and at around 02:15, will take a short break to stretch and get some water",
+      60
+    ],
+    [
+      "playing guitar in the music room, and at around 03:15, will take a short break to stretch and get some water",
+      60
+    ],
+    [
+      "grading papers and preparing for the next day's lessons, and at around 04:30, will take a short break to stretch and get some water",
+      60
+    ],
+    [
+      "finishing grading papers and preparing for the next day's lessons, and at around 05:15, will pack up her things to leave school",
+      60
+    ],
+    [
+      "eating dinner at home, and at around 06:30, will clean up the kitchen",
+      60
+    ],
+    [
+      "playing guitar in her bedroom, and at around 07:30, will take a short break to stretch and get some water",
+      60
+    ],
+    [
+      "reading a book in the living room, and at around 08:30, will take a short break to make some tea",
+      60
+    ],
+    [
+      "reading a book in the living room, and at around 09:15, will take a short break to stretch and get ready for bed",
+      60
+    ],
+    [
+      "preparing for bed and getting ready to sleep",
+      60
+    ],
+    [
+      "sleeping",
+      60
+    ]
+  ],
+  "act_address": "the School:Jane Moreno's office and dormitory:living room:coffee machine",
+  "act_start_time": "February 13, 2023, 06:55:00",
+  "act_duration": 5,
+  "act_description": "sitting down to eat breakfast",
+  "act_pronunciatio": "\ud83c\udf7d\ufe0f\u2615",
+  "act_event": [
+    "Jane Moreno",
+    "eat",
+    "breakfast"
+  ],
+  "act_obj_description": "in use by Jane Moreno",
+  "act_obj_pronunciatio": "\ud83d\udc69\u200d\ud83d\udcbc",
+  "act_obj_event": [
+    "coffee machine",
+    "is",
+    "in use"
+  ],
+  "chatting_with": null,
+  "chat": null,
+  "chatting_with_buffer": {},
+  "chatting_end_time": null,
+  "act_path_set": true,
+  "planned_path": []
+}

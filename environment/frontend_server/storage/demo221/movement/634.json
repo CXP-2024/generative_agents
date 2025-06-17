@@ -1,0 +1,298 @@
+{
+  "persona": {
+    "Rajiv Patel": {
+      "movement": [
+        35,
+        38
+      ],
+      "pronunciatio": "\ud83d\ude34",
+      "description": "sleeping @ the School:headmasters' office and dormitory:bedroom:bed",
+      "chat": null
+    },
+    "Ryan Park": {
+      "movement": [
+        52,
+        57
+      ],
+      "pronunciatio": "\ud83d\udcac",
+      "description": "conversing about Maria Lopez and Ryan Park discussed Ryan's struggles with debugging the school system's login module and Maria's preparation for a physics competition involving jumps, with Maria inviting Ryan to join her for jumps later to take a break from coding, and Ryan considering the offer. @ <persona> Maria Lopez",
+      "chat": [
+        [
+          "Maria Lopez",
+          "Hey Ryan! Taking a break from debugging the school system? How's it going?"
+        ],
+        [
+          "Ryan Park",
+          "Hey Maria! Yeah, needed to stretch a bit after staring at the login module for hours. It's going... slowly. How about you? Taking a quick break from your workout?"
+        ],
+        [
+          "Maria Lopez",
+          "Yeah, just hydrating before my next set of jumps! The physics competition prep has me extra motivated to stay active. How's the login module coming along? Still giving you trouble?"
+        ],
+        [
+          "Ryan Park",
+          "Ugh, tell me about it. The login module is stubborn \u2013 keeps throwing errors when multiple users try to access it simultaneously. But I'm making progress! The physics competition sounds intense though, what kind of jumps are you working on?"
+        ],
+        [
+          "Maria Lopez",
+          "I'm practicing short jumps to refine my technique for the competition! It's all about precision and control. Maybe you should take a break and try a few jumps with me \u2013 could help clear your mind from all that coding!"
+        ],
+        [
+          "Ryan Park",
+          "Haha, I might take you up on that offer after I fix this bug! Though I doubt my jumping skills are anywhere near competition level. Good luck with your next set!"
+        ],
+        [
+          "Maria Lopez",
+          "Thanks! And good luck with that bug \u2013 I'm sure you'll crack it soon! Let me know if you want to join me for some jumps later!"
+        ],
+        [
+          "Ryan Park",
+          "Thanks, Maria! I'll definitely let you know if I need a coding break \u2013 those jumps sound like a fun challenge. Good luck with your practice!"
+        ]
+      ]
+    },
+    "Wolfgang Schulz": {
+      "movement": [
+        94,
+        77
+      ],
+      "pronunciatio": "\ud83d\ude34",
+      "description": "sleeping @ the School:student dormitory 5:common room:bed",
+      "chat": null
+    },
+    "Tom Moreno": {
+      "movement": [
+        94,
+        82
+      ],
+      "pronunciatio": "\ud83d\ude34",
+      "description": "sleeping @ the School:student dormitory 5:common room:bed",
+      "chat": null
+    },
+    "Tamara Taylor": {
+      "movement": [
+        94,
+        79
+      ],
+      "pronunciatio": "\ud83d\ude34",
+      "description": "sleeping @ the School:student dormitory 5:common room:bed",
+      "chat": null
+    },
+    "Yuriko Yamamoto": {
+      "movement": [
+        94,
+        81
+      ],
+      "pronunciatio": "\ud83d\ude34",
+      "description": "sleeping @ the School:student dormitory 5:common room:bed",
+      "chat": null
+    },
+    "Isabella Rodriguez": {
+      "movement": [
+        11,
+        18
+      ],
+      "pronunciatio": "\ud83d\ude34",
+      "description": "sleeping @ the School:Isabella Rodriguez's office and dormitory:bedroom:bed",
+      "chat": null
+    },
+    "Maria Lopez": {
+      "movement": [
+        51,
+        57
+      ],
+      "pronunciatio": "\ud83d\udcac",
+      "description": "conversing about Maria Lopez and Ryan Park discussed Ryan's struggles with debugging the school system's login module and Maria's preparation for a physics competition involving jumps, with Maria inviting Ryan to join her for jumps later to take a break from coding, and Ryan considering the offer. @ <persona> Ryan Park",
+      "chat": [
+        [
+          "Maria Lopez",
+          "Hey Ryan! Taking a break from debugging the school system? How's it going?"
+        ],
+        [
+          "Ryan Park",
+          "Hey Maria! Yeah, needed to stretch a bit after staring at the login module for hours. It's going... slowly. How about you? Taking a quick break from your workout?"
+        ],
+        [
+          "Maria Lopez",
+          "Yeah, just hydrating before my next set of jumps! The physics competition prep has me extra motivated to stay active. How's the login module coming along? Still giving you trouble?"
+        ],
+        [
+          "Ryan Park",
+          "Ugh, tell me about it. The login module is stubborn \u2013 keeps throwing errors when multiple users try to access it simultaneously. But I'm making progress! The physics competition sounds intense though, what kind of jumps are you working on?"
+        ],
+        [
+          "Maria Lopez",
+          "I'm practicing short jumps to refine my technique for the competition! It's all about precision and control. Maybe you should take a break and try a few jumps with me \u2013 could help clear your mind from all that coding!"
+        ],
+        [
+          "Ryan Park",
+          "Haha, I might take you up on that offer after I fix this bug! Though I doubt my jumping skills are anywhere near competition level. Good luck with your next set!"
+        ],
+        [
+          "Maria Lopez",
+          "Thanks! And good luck with that bug \u2013 I'm sure you'll crack it soon! Let me know if you want to join me for some jumps later!"
+        ],
+        [
+          "Ryan Park",
+          "Thanks, Maria! I'll definitely let you know if I need a coding break \u2013 those jumps sound like a fun challenge. Good luck with your practice!"
+        ]
+      ]
+    },
+    "Klaus Mueller": {
+      "movement": [
+        72,
+        77
+      ],
+      "pronunciatio": "\ud83d\ude34",
+      "description": "sleeping @ the School:student dormitory 3:common room:bed",
+      "chat": null
+    },
+    "Adam Smith": {
+      "movement": [
+        83,
+        77
+      ],
+      "pronunciatio": "\ud83d\ude34",
+      "description": "sleeping @ the School:student dormitory 4:common room:bed",
+      "chat": null
+    },
+    "Abigail Chen": {
+      "movement": [
+        83,
+        81
+      ],
+      "pronunciatio": "\ud83d\ude34",
+      "description": "sleeping @ the School:student dormitory 4:common room:bed",
+      "chat": null
+    },
+    "Arthur Burton": {
+      "movement": [
+        83,
+        82
+      ],
+      "pronunciatio": "\ud83d\ude34",
+      "description": "sleeping @ the School:student dormitory 4:common room:bed",
+      "chat": null
+    },
+    "Ayesha Khan": {
+      "movement": [
+        23,
+        18
+      ],
+      "pronunciatio": "\ud83d\ude34",
+      "description": "sleeping @ the School:Ayesha Khan's office and dormitory:bedroom:bed",
+      "chat": null
+    },
+    "Carlos Gomez": {
+      "movement": [
+        83,
+        79
+      ],
+      "pronunciatio": "\ud83d\ude34",
+      "description": "sleeping @ the School:student dormitory 4:common room:bed",
+      "chat": null
+    },
+    "Carmen Ortiz": {
+      "movement": [
+        72,
+        79
+      ],
+      "pronunciatio": "\ud83d\ude34",
+      "description": "sleeping @ the School:student dormitory 3:common room:bed",
+      "chat": null
+    },
+    "Eddy Lin": {
+      "movement": [
+        72,
+        82
+      ],
+      "pronunciatio": "\ud83d\ude34",
+      "description": "sleeping @ the School:student dormitory 3:common room:bed",
+      "chat": null
+    },
+    "Francisco Lopez": {
+      "movement": [
+        50,
+        77
+      ],
+      "pronunciatio": "\ud83d\ude34",
+      "description": "sleeping @ the School:student dormitory 1:common room:bed",
+      "chat": null
+    },
+    "Giorgio Rossi": {
+      "movement": [
+        50,
+        79
+      ],
+      "pronunciatio": "\ud83d\ude34",
+      "description": "sleeping @ the School:student dormitory 1:common room:bed",
+      "chat": null
+    },
+    "Hailey Johnson": {
+      "movement": [
+        44,
+        78
+      ],
+      "pronunciatio": "\ud83d\udca1\ud83d\udde3\ufe0f",
+      "description": "brainstorming dialogue for the next scene @ the School:student dormitory 1:common room:desk",
+      "chat": null
+    },
+    "Jane Moreno": {
+      "movement": [
+        35,
+        18
+      ],
+      "pronunciatio": "\ud83d\ude34",
+      "description": "sleeping @ the School:Jane Moreno's office and dormitory:bedroom:bed",
+      "chat": null
+    },
+    "Jennifer Moore": {
+      "movement": [
+        50,
+        82
+      ],
+      "pronunciatio": "\ud83d\ude34",
+      "description": "sleeping @ the School:student dormitory 1:common room:bed",
+      "chat": null
+    },
+    "Sam Moore": {
+      "movement": [
+        61,
+        82
+      ],
+      "pronunciatio": "\ud83d\ude34",
+      "description": "sleeping @ the School:student dormitory 2:common room:bed",
+      "chat": null
+    },
+    "Jacky Ma": {
+      "movement": [
+        61,
+        77
+      ],
+      "pronunciatio": "\ud83d\ude34",
+      "description": "sleeping @ the School:student dormitory 2:common room:bed",
+      "chat": null
+    },
+    "Latoya Williams": {
+      "movement": [
+        11,
+        38
+      ],
+      "pronunciatio": "\ud83d\ude34",
+      "description": "sleeping @ the School:Latoya Williams's office and dormitory:bedroom:bed",
+      "chat": null
+    },
+    "Valerie Florentini": {
+      "movement": [
+        61,
+        81
+      ],
+      "pronunciatio": "\ud83d\ude34",
+      "description": "sleeping @ the School:student dormitory 2:common room:bed",
+      "chat": null
+    }
+  },
+  "meta": {
+    "curr_time": "February 13, 2023, 01:45:40"
+  }
+}

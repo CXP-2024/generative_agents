@@ -1,0 +1,232 @@
+{
+  "persona": {
+    "Rajiv Patel": {
+      "movement": [
+        35,
+        38
+      ],
+      "pronunciatio": "\ud83d\ude34",
+      "description": "sleeping @ the School:headmasters' office and dormitory:bedroom:bed",
+      "chat": null
+    },
+    "Ryan Park": {
+      "movement": [
+        55,
+        78
+      ],
+      "pronunciatio": "\ud83d\udcdd\ud83d\udd04",
+      "description": "documenting recent changes @ the School:student dormitory 2:common room:desk",
+      "chat": null
+    },
+    "Wolfgang Schulz": {
+      "movement": [
+        94,
+        77
+      ],
+      "pronunciatio": "\ud83d\ude34",
+      "description": "sleeping @ the School:student dormitory 5:common room:bed",
+      "chat": null
+    },
+    "Tom Moreno": {
+      "movement": [
+        94,
+        82
+      ],
+      "pronunciatio": "\ud83d\ude34",
+      "description": "sleeping @ the School:student dormitory 5:common room:bed",
+      "chat": null
+    },
+    "Tamara Taylor": {
+      "movement": [
+        94,
+        79
+      ],
+      "pronunciatio": "\ud83d\ude34",
+      "description": "sleeping @ the School:student dormitory 5:common room:bed",
+      "chat": null
+    },
+    "Yuriko Yamamoto": {
+      "movement": [
+        94,
+        81
+      ],
+      "pronunciatio": "\ud83d\ude34",
+      "description": "sleeping @ the School:student dormitory 5:common room:bed",
+      "chat": null
+    },
+    "Isabella Rodriguez": {
+      "movement": [
+        11,
+        18
+      ],
+      "pronunciatio": "\ud83d\ude34",
+      "description": "sleeping @ the School:Isabella Rodriguez's office and dormitory:bedroom:bed",
+      "chat": null
+    },
+    "Maria Lopez": {
+      "movement": [
+        72,
+        81
+      ],
+      "pronunciatio": "\ud83d\ude34",
+      "description": "sleeping @ the School:student dormitory 3:common room:bed",
+      "chat": null
+    },
+    "Klaus Mueller": {
+      "movement": [
+        72,
+        77
+      ],
+      "pronunciatio": "\ud83d\ude34",
+      "description": "sleeping @ the School:student dormitory 3:common room:bed",
+      "chat": null
+    },
+    "Adam Smith": {
+      "movement": [
+        83,
+        77
+      ],
+      "pronunciatio": "\ud83d\ude34",
+      "description": "sleeping @ the School:student dormitory 4:common room:bed",
+      "chat": null
+    },
+    "Abigail Chen": {
+      "movement": [
+        83,
+        81
+      ],
+      "pronunciatio": "\ud83d\ude34",
+      "description": "sleeping @ the School:student dormitory 4:common room:bed",
+      "chat": null
+    },
+    "Arthur Burton": {
+      "movement": [
+        83,
+        82
+      ],
+      "pronunciatio": "\ud83d\ude34",
+      "description": "sleeping @ the School:student dormitory 4:common room:bed",
+      "chat": null
+    },
+    "Ayesha Khan": {
+      "movement": [
+        23,
+        18
+      ],
+      "pronunciatio": "\ud83d\ude34",
+      "description": "sleeping @ the School:Ayesha Khan's office and dormitory:bedroom:bed",
+      "chat": null
+    },
+    "Carlos Gomez": {
+      "movement": [
+        83,
+        79
+      ],
+      "pronunciatio": "\ud83d\ude34",
+      "description": "sleeping @ the School:student dormitory 4:common room:bed",
+      "chat": null
+    },
+    "Carmen Ortiz": {
+      "movement": [
+        72,
+        79
+      ],
+      "pronunciatio": "\ud83d\ude34",
+      "description": "sleeping @ the School:student dormitory 3:common room:bed",
+      "chat": null
+    },
+    "Eddy Lin": {
+      "movement": [
+        72,
+        82
+      ],
+      "pronunciatio": "\ud83d\ude34",
+      "description": "sleeping @ the School:student dormitory 3:common room:bed",
+      "chat": null
+    },
+    "Francisco Lopez": {
+      "movement": [
+        50,
+        77
+      ],
+      "pronunciatio": "\ud83d\ude34",
+      "description": "sleeping @ the School:student dormitory 1:common room:bed",
+      "chat": null
+    },
+    "Giorgio Rossi": {
+      "movement": [
+        50,
+        79
+      ],
+      "pronunciatio": "\ud83d\ude34",
+      "description": "sleeping @ the School:student dormitory 1:common room:bed",
+      "chat": null
+    },
+    "Hailey Johnson": {
+      "movement": [
+        44,
+        82
+      ],
+      "pronunciatio": "\u270f\ufe0f\ud83c\udfac",
+      "description": "editing the drafted scene @ the School:student dormitory 1:common room:desk",
+      "chat": null
+    },
+    "Jane Moreno": {
+      "movement": [
+        35,
+        18
+      ],
+      "pronunciatio": "\ud83d\ude34",
+      "description": "sleeping @ the School:Jane Moreno's office and dormitory:bedroom:bed",
+      "chat": null
+    },
+    "Jennifer Moore": {
+      "movement": [
+        50,
+        82
+      ],
+      "pronunciatio": "\ud83d\ude34",
+      "description": "sleeping @ the School:student dormitory 1:common room:bed",
+      "chat": null
+    },
+    "Sam Moore": {
+      "movement": [
+        61,
+        82
+      ],
+      "pronunciatio": "\ud83d\ude34",
+      "description": "sleeping @ the School:student dormitory 2:common room:bed",
+      "chat": null
+    },
+    "Jacky Ma": {
+      "movement": [
+        61,
+        77
+      ],
+      "pronunciatio": "\ud83d\ude34",
+      "description": "sleeping @ the School:student dormitory 2:common room:bed",
+      "chat": null
+    },
+    "Latoya Williams": {
+      "movement": [
+        11,
+        38
+      ],
+      "pronunciatio": "\ud83d\ude34",
+      "description": "sleeping @ the School:Latoya Williams's office and dormitory:bedroom:bed",
+      "chat": null
+    },
+    "Valerie Florentini": {
+      "movement": [
+        61,
+        81
+      ],
+      "pronunciatio": "\ud83d\ude34",
+      "description": "sleeping @ the School:student dormitory 2:common room:bed",
+      "chat": null
+    }
+  },
+  "meta": {
+    "curr_time": "February 13, 2023, 00:54:10"
+  }
+}

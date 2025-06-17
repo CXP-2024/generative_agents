@@ -9,6 +9,7 @@ environment/frontend_server/static_dirs/assets/the_ville/matrix/maze_o/*
 !storage/base_the_ville_isabella_maria_klaus/*
 !storage/base_the_ville_isabella_maria_klaus/persona/*
 !storage/base_the_ville_n25/*
+!storage/demo221/*
 *.ans
 bin/
 include/

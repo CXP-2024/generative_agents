@@ -1,0 +1,251 @@
+{
+  "vision_r": 8,
+  "att_bandwidth": 8,
+  "retention": 8,
+  "curr_time": "February 13, 2023, 06:59:50",
+  "curr_tile": [
+    72,
+    79
+  ],
+  "daily_plan_req": "Carmen goes to the classroom at 8am. She takes the lunch break from 12am to 1:30pm. Then she returns to the classroom and study until 4:30pm. She attends class in classroom 1.",
+  "name": "Carmen Ortiz",
+  "first_name": "Carmen",
+  "last_name": "Ortiz",
+  "age": 18,
+  "innate": "friendly, outgoing, helpful",
+  "learned": "Carmen Ortiz is a Grade 12 high school student. She loves to help people. She also loves the cello and practices it in her spare time at the music room.",
+  "currently": "Carmen Ortiz is preparing for a small solo concert.",
+  "lifestyle": "Carmen Ortiz goes to bed around 11pm, awakes up around 7am, eats dinner around 8pm.",
+  "living_area": "the School:student dormitory 3:common room",
+  "concept_forget": 100,
+  "daily_reflection_time": 180,
+  "daily_reflection_size": 5,
+  "overlap_reflect_th": 4,
+  "kw_strg_event_reflect_th": 10,
+  "kw_strg_thought_reflect_th": 9,
+  "recency_w": 1,
+  "relevance_w": 1,
+  "importance_w": 1,
+  "recency_decay": 0.995,
+  "importance_trigger_max": 250,
+  "importance_trigger_curr": 242,
+  "importance_ele_n": 8,
+  "thought_count": 5,
+  "commitments": {},
+  "daily_req": [
+    "wake up and complete the morning routine at 7:00 am",
+    "wake up and complete the morning routine at 7:00 am",
+    "eat breakfast from 7:30 am to 7:50 am",
+    "go to classroom 1 at 8:00 am",
+    "attend classes from 8:15 am to 12:00 pm",
+    "take lunch break from 12:00 pm to 1:30 pm",
+    "return to classroom 1 and study from 1:30 pm to 4:30 pm",
+    "practice cello in the music room from 4:45 pm to 6:30 pm",
+    "eat dinner at 8:00 pm",
+    "relax and prepare for the next day from 8:30 pm to 10:45 pm",
+    "go to bed at 11:00 pm"
+  ],
+  "f_daily_schedule": [
+    [
+      "sleeping",
+      420
+    ],
+    [
+      "waking up and stretching in bed",
+      5
+    ],
+    [
+      "brushing her teeth",
+      5
+    ],
+    [
+      "taking a quick shower",
+      15
+    ],
+    [
+      "drying off and applying skincare",
+      5
+    ],
+    [
+      "getting dressed in her school uniform",
+      5
+    ],
+    [
+      "combing her hair and styling it",
+      5
+    ],
+    [
+      "packing her school bag with books and sheet music",
+      5
+    ],
+    [
+      "eating a quick breakfast",
+      5
+    ],
+    [
+      "putting on her shoes and grabbing her cello case",
+      10
+    ],
+    [
+      "going to classroom 1",
+      60
+    ],
+    [
+      "attending classes in classroom 1, and at around 09:45, will take a short break to chat with classmates",
+      60
+    ],
+    [
+      "attending classes in classroom 1, and at around 10:30, will take a short break to stretch and get some water",
+      60
+    ],
+    [
+      "attending classes in classroom 1, and at around 11:30, will start packing up for lunch break",
+      60
+    ],
+    [
+      "taking her lunch break, chatting with friends in the cafeteria, and at around 12:45, will take a short walk outside before returning to class",
+      60
+    ],
+    [
+      "returning to classroom 1 and studying, and at around 01:45, will take a short break to stretch and get some water",
+      60
+    ],
+    [
+      "studying in classroom 1, and at around 02:30, will take a short break to chat with classmates",
+      60
+    ],
+    [
+      "studying in classroom 1, and at around 03:30, will take a short break to organize her notes before continuing",
+      60
+    ],
+    [
+      "studying in classroom 1, and at around 04:15, will start packing up to head to the music room",
+      60
+    ],
+    [
+      "practicing cello in the music room, and at around 05:30, will take a short break to review her sheet music",
+      60
+    ],
+    [
+      "practicing cello in the music room, and at around 06:15, will take a short break to stretch before continuing her practice session",
+      60
+    ],
+    [
+      "practicing cello in the music room, and at around 07:15, will take a short break to review her concert pieces",
+      60
+    ],
+    [
+      "eating dinner with her family, and at around 08:30, will help clean up the table before relaxing",
+      60
+    ],
+    [
+      "relaxing at home, reviewing her concert pieces, and at around 09:30, will take a short break to chat with her family",
+      60
+    ],
+    [
+      "relaxing at home, reviewing her concert pieces, and at around 10:30, will start getting ready for bed",
+      60
+    ],
+    [
+      "going to bed and falling asleep",
+      60
+    ]
+  ],
+  "f_daily_schedule_hourly_org": [
+    [
+      "sleeping",
+      420
+    ],
+    [
+      "waking up and completing her morning routine",
+      60
+    ],
+    [
+      "going to classroom 1",
+      60
+    ],
+    [
+      "attending classes in classroom 1, and at around 09:45, will take a short break to chat with classmates",
+      60
+    ],
+    [
+      "attending classes in classroom 1, and at around 10:30, will take a short break to stretch and get some water",
+      60
+    ],
+    [
+      "attending classes in classroom 1, and at around 11:30, will start packing up for lunch break",
+      60
+    ],
+    [
+      "taking her lunch break, chatting with friends in the cafeteria, and at around 12:45, will take a short walk outside before returning to class",
+      60
+    ],
+    [
+      "returning to classroom 1 and studying, and at around 01:45, will take a short break to stretch and get some water",
+      60
+    ],
+    [
+      "studying in classroom 1, and at around 02:30, will take a short break to chat with classmates",
+      60
+    ],
+    [
+      "studying in classroom 1, and at around 03:30, will take a short break to organize her notes before continuing",
+      60
+    ],
+    [
+      "studying in classroom 1, and at around 04:15, will start packing up to head to the music room",
+      60
+    ],
+    [
+      "practicing cello in the music room, and at around 05:30, will take a short break to review her sheet music",
+      60
+    ],
+    [
+      "practicing cello in the music room, and at around 06:15, will take a short break to stretch before continuing her practice session",
+      60
+    ],
+    [
+      "practicing cello in the music room, and at around 07:15, will take a short break to review her concert pieces",
+      60
+    ],
+    [
+      "eating dinner with her family, and at around 08:30, will help clean up the table before relaxing",
+      60
+    ],
+    [
+      "relaxing at home, reviewing her concert pieces, and at around 09:30, will take a short break to chat with her family",
+      60
+    ],
+    [
+      "relaxing at home, reviewing her concert pieces, and at around 10:30, will start getting ready for bed",
+      60
+    ],
+    [
+      "going to bed and falling asleep",
+      60
+    ]
+  ],
+  "act_address": "the School:student dormitory 3:common room:bed",
+  "act_start_time": "February 13, 2023, 00:00:00",
+  "act_duration": 420,
+  "act_description": "sleeping",
+  "act_pronunciatio": "\ud83d\ude34",
+  "act_event": [
+    "Carmen Ortiz",
+    "is",
+    "sleep"
+  ],
+  "act_obj_description": "being used by Carmen Ortiz for sleeping",
+  "act_obj_pronunciatio": "\ud83d\udca4\ud83d\udecf\ufe0f",
+  "act_obj_event": [
+    "bed",
+    "sleep",
+    "bed"
+  ],
+  "chatting_with": null,
+  "chat": null,
+  "chatting_with_buffer": {},
+  "chatting_end_time": null,
+  "act_path_set": true,
+  "planned_path": []
+}

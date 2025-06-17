@@ -1,0 +1,289 @@
+{
+  "vision_r": 8,
+  "att_bandwidth": 8,
+  "retention": 8,
+  "curr_time": "February 13, 2023, 06:59:50",
+  "curr_tile": [
+    72,
+    81
+  ],
+  "daily_plan_req": "Maria Lopez goes to the school at 9am, attends classes in classroom 1 until 5pm, and takes a break at noon from 12am to 2pm. She spends at least 1 hours a day with Hatsune Miku figure. Everyday at 1am, she goes long jumping on the playground for an hour, and then go to sleep.",
+  "name": "Maria Lopez",
+  "first_name": "Maria",
+  "last_name": "Lopez",
+  "age": 17,
+  "innate": "energetic, enthusiastic, inquisitive",
+  "learned": "Maria Lopez is a high school student at grade 11. She likes physics. She's also a part time hatsune miku streamer who loves to connect with people and explore new ideas. She lives in a student dormitory.",
+  "currently": "Maria Lopez is preparing for a physics competition. She's also streaming hatsune miku streamer to make some extra money.",
+  "lifestyle": "Maria Lopez goes to bed around 2am, awakes up around 8am, eats dinner around 6pm. She likes to stay at dormitory.",
+  "living_area": "the School:student dormitory 3:common room",
+  "concept_forget": 100,
+  "daily_reflection_time": 180,
+  "daily_reflection_size": 5,
+  "overlap_reflect_th": 4,
+  "kw_strg_event_reflect_th": 10,
+  "kw_strg_thought_reflect_th": 9,
+  "recency_w": 1,
+  "relevance_w": 1,
+  "importance_w": 1,
+  "recency_decay": 0.99,
+  "importance_trigger_max": 150,
+  "importance_trigger_curr": 66,
+  "importance_ele_n": 46,
+  "thought_count": 5,
+  "commitments": {},
+  "daily_req": [
+    "wake up and complete the morning routine at 8:00 am",
+    "wake up and complete the morning routine at 8:00 am",
+    "eat breakfast at 8:30 am",
+    "go to school at 9:00 am",
+    "attend classes in classroom 1 from 9:00 am to 12:00 pm",
+    "take a break from 12:00 pm to 2:00 pm (includes lunch and relaxation",
+    "attend classes in classroom 1 from 2:00 pm to 5:00 pm",
+    "return to the dormitory at 5:30 pm",
+    "spend time with Hatsune Miku figure from 5:30 pm to 6:30 pm",
+    "have dinner at 6:00 pm",
+    "prepare for the physics competition from 7:00 pm to 9:00 pm",
+    "stream Hatsune Miku content from 9:30 pm to 11:30 pm",
+    "unwind at the dormitory from 11:30 pm to 1:00 am",
+    "go long jumping on the playground from 1:00 am to 2:00 am",
+    "go to sleep at 2:00 am"
+  ],
+  "f_daily_schedule": [
+    [
+      "sleeping",
+      60
+    ],
+    [
+      "warming up with light stretches",
+      10
+    ],
+    [
+      "jogging around the playground to get her heart rate up",
+      10
+    ],
+    [
+      "practicing short jumps to refine her technique",
+      15
+    ],
+    [
+      "taking a quick water break",
+      4
+    ],
+    [
+      "taking a quick water break (conversing about Maria Lopez and Ryan Park discussed Ryan's struggles with debugging the school system's login module and Maria's preparation for a physics competition involving jumps, with Maria inviting Ryan to join her for jumps later to take a break from coding, and Ryan considering the offer.)",
+      6
+    ],
+    [
+      "attempting full long jumps with measured run-ups  ",
+      10
+    ],
+    [
+      "cooling down with slow walking and deep breathing",
+      5
+    ],
+    [
+      "sleeping",
+      360
+    ],
+    [
+      "waking up and turning off the alarm",
+      5
+    ],
+    [
+      "stretching in bed",
+      5
+    ],
+    [
+      "getting out of bed and putting on slippers",
+      5
+    ],
+    [
+      "brushing her teeth",
+      5
+    ],
+    [
+      "washing her face",
+      5
+    ],
+    [
+      "changing into school clothes",
+      10
+    ],
+    [
+      "combing her hair",
+      5
+    ],
+    [
+      "preparing breakfast",
+      10
+    ],
+    [
+      "eating breakfast",
+      10
+    ],
+    [
+      "attending classes in classroom 1, and at around 11:00, will take a short break to stretch",
+      60
+    ],
+    [
+      "attending classes in classroom 1, and at around 10:30, will take notes on a physics lecture",
+      60
+    ],
+    [
+      "attending classes in classroom 1, and at around 11:45, will pack up her books for the lunch break",
+      60
+    ],
+    [
+      "taking a break from classes, eating lunch in the cafeteria, and at around 12:30, will chat with friends",
+      60
+    ],
+    [
+      "taking a break from classes, relaxing in the dormitory common area, and at around 01:30, will review some physics notes",
+      60
+    ],
+    [
+      "attending classes in classroom 1, and at around 03:30, will take a short break to stretch",
+      60
+    ],
+    [
+      "attending classes in classroom 1, and at around 04:00, will take a short break to drink water",
+      60
+    ],
+    [
+      "attending classes in classroom 1, and at around 04:45, will pack up her books to prepare for the end of the school day",
+      60
+    ],
+    [
+      "returning to the dormitory after classes, and at around 05:15, will organize her study materials",
+      60
+    ],
+    [
+      "having dinner in the dormitory cafeteria, and at around 06:30, will chat with dorm mates",
+      60
+    ],
+    [
+      "preparing for the physics competition in her dorm room, and at around 08:00, will take a short break to stretch",
+      60
+    ],
+    [
+      "preparing for the physics competition in her dorm room, and at around 08:45, will take a short break to stretch",
+      60
+    ],
+    [
+      "streaming Hatsune Miku content, and at around 10:15, will take a short break to interact with viewers",
+      60
+    ],
+    [
+      "streaming Hatsune Miku content, and at around 10:45, will take a short break to interact with viewers",
+      60
+    ],
+    [
+      "unwinding in her dormitory, and at around 11:45, will prepare for bed",
+      60
+    ]
+  ],
+  "f_daily_schedule_hourly_org": [
+    [
+      "sleeping",
+      60
+    ],
+    [
+      "long jumping on the playground",
+      60
+    ],
+    [
+      "sleeping",
+      360
+    ],
+    [
+      "waking up and completing her morning routine, and at around 08:30, will eat breakfast",
+      60
+    ],
+    [
+      "attending classes in classroom 1, and at around 11:00, will take a short break to stretch",
+      60
+    ],
+    [
+      "attending classes in classroom 1, and at around 10:30, will take notes on a physics lecture",
+      60
+    ],
+    [
+      "attending classes in classroom 1, and at around 11:45, will pack up her books for the lunch break",
+      60
+    ],
+    [
+      "taking a break from classes, eating lunch in the cafeteria, and at around 12:30, will chat with friends",
+      60
+    ],
+    [
+      "taking a break from classes, relaxing in the dormitory common area, and at around 01:30, will review some physics notes",
+      60
+    ],
+    [
+      "attending classes in classroom 1, and at around 03:30, will take a short break to stretch",
+      60
+    ],
+    [
+      "attending classes in classroom 1, and at around 04:00, will take a short break to drink water",
+      60
+    ],
+    [
+      "attending classes in classroom 1, and at around 04:45, will pack up her books to prepare for the end of the school day",
+      60
+    ],
+    [
+      "returning to the dormitory after classes, and at around 05:15, will organize her study materials",
+      60
+    ],
+    [
+      "having dinner in the dormitory cafeteria, and at around 06:30, will chat with dorm mates",
+      60
+    ],
+    [
+      "preparing for the physics competition in her dorm room, and at around 08:00, will take a short break to stretch",
+      60
+    ],
+    [
+      "preparing for the physics competition in her dorm room, and at around 08:45, will take a short break to stretch",
+      60
+    ],
+    [
+      "streaming Hatsune Miku content, and at around 10:15, will take a short break to interact with viewers",
+      60
+    ],
+    [
+      "streaming Hatsune Miku content, and at around 10:45, will take a short break to interact with viewers",
+      60
+    ],
+    [
+      "unwinding in her dormitory, and at around 11:45, will prepare for bed",
+      60
+    ]
+  ],
+  "act_address": "the School:student dormitory 3:common room:bed",
+  "act_start_time": "February 13, 2023, 02:00:00",
+  "act_duration": 360,
+  "act_description": "sleeping",
+  "act_pronunciatio": "\ud83d\ude34",
+  "act_event": [
+    "Maria Lopez",
+    "is",
+    "sleep"
+  ],
+  "act_obj_description": "occupied",
+  "act_obj_pronunciatio": "\ud83d\udeab\ud83d\udecb\ufe0f",
+  "act_obj_event": [
+    "bed",
+    "is",
+    "occupied"
+  ],
+  "chatting_with": null,
+  "chat": null,
+  "chatting_with_buffer": {
+    "Ryan Park": 0
+  },
+  "chatting_end_time": null,
+  "act_path_set": true,
+  "planned_path": []
+}

@@ -1,0 +1,253 @@
+{
+  "vision_r": 8,
+  "att_bandwidth": 8,
+  "retention": 8,
+  "curr_time": "February 13, 2023, 06:59:50",
+  "curr_tile": [
+    35,
+    38
+  ],
+  "daily_plan_req": "He works at his office for 8 hours each day. In his spare time he plays billiards in the sports room or walks on the islands. He watches tv before sleeping.",
+  "name": "Rajiv Patel",
+  "first_name": "Rajiv",
+  "last_name": "Patel",
+  "age": 50,
+  "innate": "patient, reliable, cheerful",
+  "learned": "Rajiv Patel is the headmaster of the high school. He is responsible and kind to teachers and students.",
+  "currently": "Rajiv Patel is planning to organize a football match for the students and teachers.",
+  "lifestyle": "Rajiv Patel goes to bed around midnight, awakes up around 7am, eats dinner around 5pm.",
+  "living_area": "the School:headmasters' office and dormitory:living room",
+  "concept_forget": 100,
+  "daily_reflection_time": 180,
+  "daily_reflection_size": 5,
+  "overlap_reflect_th": 4,
+  "kw_strg_event_reflect_th": 10,
+  "kw_strg_thought_reflect_th": 9,
+  "recency_w": 1,
+  "relevance_w": 1,
+  "importance_w": 1,
+  "recency_decay": 0.995,
+  "importance_trigger_max": 250,
+  "importance_trigger_curr": 246,
+  "importance_ele_n": 4,
+  "thought_count": 5,
+  "commitments": {},
+  "daily_req": [
+    "wake up and complete the morning routine at 7:00 am",
+    "wake up and complete the morning routine at 7:00 am",
+    "have breakfast at 7:30 am",
+    "commute to school from 8:00 am to 8:30 am",
+    "work at the office from 8:30 am to 12:30 pm",
+    "have lunch at 12:30 pm",
+    "work at the office from 1:30 pm to 5:00 pm",
+    "organize plans for the football match from 5:00 pm to 5:30 pm",
+    "have dinner at 5:30 pm",
+    "play billiards in the sports room from 6:30 pm to 7:30 pm",
+    "take a walk on the islands from 7:30 pm to 8:30 pm",
+    "watch TV from 9:00 pm to 11:30 pm",
+    "go to bed at midnight"
+  ],
+  "f_daily_schedule": [
+    [
+      "sleeping",
+      420
+    ],
+    [
+      "waking up and stretching",
+      5
+    ],
+    [
+      "brushing his teeth",
+      5
+    ],
+    [
+      "washing his face",
+      5
+    ],
+    [
+      "taking a shower",
+      15
+    ],
+    [
+      "drying off and getting dressed",
+      10
+    ],
+    [
+      "combing his hair",
+      5
+    ],
+    [
+      "checking his work bag for essentials",
+      5
+    ],
+    [
+      "making his bed",
+      5
+    ],
+    [
+      "grabbing his keys and phone",
+      5
+    ],
+    [
+      "having breakfast, and at around 08:15, will prepare to leave for work",
+      60
+    ],
+    [
+      "working in his office, reviewing school reports and responding to emails",
+      60
+    ],
+    [
+      "working in his office, meeting with teachers to discuss curriculum updates",
+      60
+    ],
+    [
+      "working in his office, preparing for the upcoming staff meeting",
+      60
+    ],
+    [
+      "having lunch in the school cafeteria, chatting with colleagues",
+      60
+    ],
+    [
+      "working in his office, attending the staff meeting and discussing school policies",
+      60
+    ],
+    [
+      "working in his office, reviewing student performance data and planning interventions",
+      60
+    ],
+    [
+      "working in his office, finalizing plans for the upcoming football match and making phone calls to coordinate with staff",
+      60
+    ],
+    [
+      "working in his office, finalizing the day's tasks and preparing to leave",
+      60
+    ],
+    [
+      "finishing work tasks and organizing final details for the football match, and at around 05:30, will prepare to leave the office",
+      60
+    ],
+    [
+      "having dinner at home, enjoying a meal with his family",
+      60
+    ],
+    [
+      "playing billiards in the sports room, and at around 07:45, will take a short break before continuing",
+      60
+    ],
+    [
+      "taking a walk on the islands, enjoying the evening breeze and scenery",
+      60
+    ],
+    [
+      "watching TV, and at around 10:15, will take a short break to make some tea",
+      60
+    ],
+    [
+      "watching TV, and at around 10:45, will start preparing for bed",
+      60
+    ],
+    [
+      "watching TV, and at around 11:30, will prepare for bed",
+      60
+    ]
+  ],
+  "f_daily_schedule_hourly_org": [
+    [
+      "sleeping",
+      420
+    ],
+    [
+      "waking up and completing his morning routine",
+      60
+    ],
+    [
+      "having breakfast, and at around 08:15, will prepare to leave for work",
+      60
+    ],
+    [
+      "working in his office, reviewing school reports and responding to emails",
+      60
+    ],
+    [
+      "working in his office, meeting with teachers to discuss curriculum updates",
+      60
+    ],
+    [
+      "working in his office, preparing for the upcoming staff meeting",
+      60
+    ],
+    [
+      "having lunch in the school cafeteria, chatting with colleagues",
+      60
+    ],
+    [
+      "working in his office, attending the staff meeting and discussing school policies",
+      60
+    ],
+    [
+      "working in his office, reviewing student performance data and planning interventions",
+      60
+    ],
+    [
+      "working in his office, finalizing plans for the upcoming football match and making phone calls to coordinate with staff",
+      60
+    ],
+    [
+      "working in his office, finalizing the day's tasks and preparing to leave",
+      60
+    ],
+    [
+      "finishing work tasks and organizing final details for the football match, and at around 05:30, will prepare to leave the office",
+      60
+    ],
+    [
+      "having dinner at home, enjoying a meal with his family",
+      60
+    ],
+    [
+      "playing billiards in the sports room, and at around 07:45, will take a short break before continuing",
+      60
+    ],
+    [
+      "taking a walk on the islands, enjoying the evening breeze and scenery",
+      60
+    ],
+    [
+      "watching TV, and at around 10:15, will take a short break to make some tea",
+      60
+    ],
+    [
+      "watching TV, and at around 10:45, will start preparing for bed",
+      60
+    ],
+    [
+      "watching TV, and at around 11:30, will prepare for bed",
+      60
+    ]
+  ],
+  "act_address": "the School:headmasters' office and dormitory:bedroom:bed",
+  "act_start_time": "February 13, 2023, 00:00:00",
+  "act_duration": 420,
+  "act_description": "sleeping",
+  "act_pronunciatio": "\ud83d\ude34",
+  "act_event": [
+    "Rajiv Patel",
+    "is",
+    "sleep"
+  ],
+  "act_obj_description": "being slept in",
+  "act_obj_pronunciatio": "\ud83d\ude34\ud83d\udecc",
+  "act_obj_event": [
+    "bed",
+    "is",
+    "unused"
+  ],
+  "chatting_with": null,
+  "chat": null,
+  "chatting_with_buffer": {},
+  "chatting_end_time": null,
+  "act_path_set": true,
+  "planned_path": []
+}

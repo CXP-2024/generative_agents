@@ -1,0 +1,323 @@
+{
+  "vision_r": 8,
+  "att_bandwidth": 8,
+  "retention": 8,
+  "curr_time": "February 13, 2023, 06:59:50",
+  "curr_tile": [
+    49,
+    44
+  ],
+  "daily_plan_req": "Everyday at 6:30am, Isabella Rodriguez goes jogging on the playground for half an hour. Then she takes breakfast. At 7:30 she goes to classroom 1 to teach her 5 students. She has lunch at 12am and take a nap at dormitory until 2pm. She's free in the afternoon, when she usually does exercises. ",
+  "name": "Isabella Rodriguez",
+  "first_name": "Isabella",
+  "last_name": "Rodriguez",
+  "age": 34,
+  "innate": "patient, kind, encouraging",
+  "learned": "Isabella Rodriguez is a high school math and science teacher who is passionate about helping her students learn and grow. She believes in creating a supportive and engaging classroom environment where every student feels valued and empowered. She does exercises at dormitory or in sports room, and she likes hatsune miku.",
+  "currently": "Isabella Rodriguez is planning an outdoor class on the islands in the pond at school on February 14th, 2023, from 9am to 11am. She is preparing the lesson plan and gathering materials for a nature study and creative writing session.",
+  "lifestyle": "Isabella Rodriguez goes to bed around 11pm and wakes up around 6am to prepare for her classes.",
+  "living_area": "the School:Isabella Rodriguez's office and dormitory:living room",
+  "concept_forget": 100,
+  "daily_reflection_time": 180,
+  "daily_reflection_size": 5,
+  "overlap_reflect_th": 4,
+  "kw_strg_event_reflect_th": 10,
+  "kw_strg_thought_reflect_th": 9,
+  "recency_w": 1,
+  "relevance_w": 1,
+  "importance_w": 1,
+  "recency_decay": 0.995,
+  "importance_trigger_max": 150,
+  "importance_trigger_curr": 104,
+  "importance_ele_n": 35,
+  "thought_count": 5,
+  "commitments": {},
+  "daily_req": [
+    "wake up and complete the morning routine at 6:00 am",
+    "Wake up and complete the morning routine from 6:00 am to 6:30 am",
+    "Go jogging on the playground from 6:30 am to 7:00 am",
+    "Have breakfast from 7:00 am to 7:30 am",
+    "Teach her students in classroom 1 from 7:30 am to 12:00 pm",
+    "Have lunch from 12:00 pm to 1:00 pm",
+    "Take a nap at the dormitory from 1:00 pm to 2:00 pm",
+    "Prepare lesson materials for the outdoor class on February 14th from 2:00 pm to 4:00 pm",
+    "Do exercises (either at the dormitory or sports room",
+    "Listen to Hatsune Miku music and relax from 5:00 pm to 6:00 pm",
+    "Have dinner from 6:00 pm to 7:00 pm",
+    "Review and finalize the outdoor class plan from 7:00 pm to 9:00 pm",
+    "Wind down and read a book or watch a show from 9:00 pm to 11:00 pm",
+    "Go to bed at 11:00 pm"
+  ],
+  "f_daily_schedule": [
+    [
+      "sleeping",
+      360
+    ],
+    [
+      "waking up and stretching in bed",
+      5
+    ],
+    [
+      "washing her face",
+      5
+    ],
+    [
+      "brushing her teeth",
+      5
+    ],
+    [
+      "applying skincare products",
+      5
+    ],
+    [
+      "choosing her outfit for the day",
+      5
+    ],
+    [
+      "getting dressed",
+      10
+    ],
+    [
+      "fixing her hair",
+      5
+    ],
+    [
+      "putting on her shoes",
+      5
+    ],
+    [
+      "packing her jogging essentials (water bottle, towel)",
+      5
+    ],
+    [
+      "heading out to the playground for jogging",
+      10
+    ],
+    [
+      "walking to the school cafeteria",
+      5
+    ],
+    [
+      "selecting breakfast items from the cafeteria line",
+      5
+    ],
+    [
+      "sitting down and eating breakfast",
+      20
+    ],
+    [
+      "reviewing her lesson notes while finishing breakfast",
+      10
+    ],
+    [
+      "cleaning up her tray and returning it",
+      5
+    ],
+    [
+      "walking back to her classroom",
+      5
+    ],
+    [
+      "gathering math worksheets and science handouts",
+      5
+    ],
+    [
+      "organizing materials in her teaching bag",
+      5
+    ],
+    [
+      "teaching her morning math class, and at around 08:45, will take a short break to answer student questions",
+      60
+    ],
+    [
+      "teaching her morning science class, and at around 09:45, will take a short break to demonstrate an experiment",
+      60
+    ],
+    [
+      "teaching her morning science class, and at around 10:30, will take a short break to prepare for the next lesson",
+      60
+    ],
+    [
+      "teaching her morning science class, and at around 11:30, will wrap up the lesson and prepare for lunch",
+      60
+    ],
+    [
+      "having lunch in the school cafeteria, and at around 12:30, will chat with fellow teachers about the upcoming outdoor class",
+      60
+    ],
+    [
+      "taking a nap at the dormitory, and at around 01:30, will briefly wake up to drink some water before continuing her nap",
+      60
+    ],
+    [
+      "preparing lesson materials for the outdoor class on February 14th, and at around 02:45, will take a short break to organize her notes",
+      60
+    ],
+    [
+      "preparing lesson materials for the outdoor class on February 14th, and at around 03:30, will take a short break to stretch and have some tea",
+      60
+    ],
+    [
+      "preparing lesson materials for the outdoor class on February 14th, and at around 04:30, will take a short break to gather additional resources from the school library",
+      60
+    ],
+    [
+      "doing exercises in the sports room, and at around 05:30, will take a short break to hydrate and stretch",
+      60
+    ],
+    [
+      "listening to Hatsune Miku music and relaxing in her dormitory, and at around 06:30, will start preparing for dinner",
+      60
+    ],
+    [
+      "having dinner in the school cafeteria, and at around 07:30, will chat with colleagues about the upcoming outdoor class",
+      60
+    ],
+    [
+      "reviewing and finalizing the outdoor class plan, and at around 08:30, will take a short break to organize her notes",
+      60
+    ],
+    [
+      "winding down by reading a book in her dormitory, and at around 09:30, will take a short break to make some tea",
+      60
+    ],
+    [
+      "winding down by reading a book in her dormitory, and at around 10:30, will prepare for bed",
+      60
+    ],
+    [
+      "sleeping",
+      60
+    ]
+  ],
+  "f_daily_schedule_hourly_org": [
+    [
+      "sleeping",
+      360
+    ],
+    [
+      "waking up and starting her morning routine, and at around 06:15, will brush her teeth and get dressed",
+      60
+    ],
+    [
+      "having breakfast in the school cafeteria, and at around 07:20, will gather her teaching materials for the morning classes",
+      60
+    ],
+    [
+      "teaching her morning math class, and at around 08:45, will take a short break to answer student questions",
+      60
+    ],
+    [
+      "teaching her morning science class, and at around 09:45, will take a short break to demonstrate an experiment",
+      60
+    ],
+    [
+      "teaching her morning science class, and at around 10:30, will take a short break to prepare for the next lesson",
+      60
+    ],
+    [
+      "teaching her morning science class, and at around 11:30, will wrap up the lesson and prepare for lunch",
+      60
+    ],
+    [
+      "having lunch in the school cafeteria, and at around 12:30, will chat with fellow teachers about the upcoming outdoor class",
+      60
+    ],
+    [
+      "taking a nap at the dormitory, and at around 01:30, will briefly wake up to drink some water before continuing her nap",
+      60
+    ],
+    [
+      "preparing lesson materials for the outdoor class on February 14th, and at around 02:45, will take a short break to organize her notes",
+      60
+    ],
+    [
+      "preparing lesson materials for the outdoor class on February 14th, and at around 03:30, will take a short break to stretch and have some tea",
+      60
+    ],
+    [
+      "preparing lesson materials for the outdoor class on February 14th, and at around 04:30, will take a short break to gather additional resources from the school library",
+      60
+    ],
+    [
+      "doing exercises in the sports room, and at around 05:30, will take a short break to hydrate and stretch",
+      60
+    ],
+    [
+      "listening to Hatsune Miku music and relaxing in her dormitory, and at around 06:30, will start preparing for dinner",
+      60
+    ],
+    [
+      "having dinner in the school cafeteria, and at around 07:30, will chat with colleagues about the upcoming outdoor class",
+      60
+    ],
+    [
+      "reviewing and finalizing the outdoor class plan, and at around 08:30, will take a short break to organize her notes",
+      60
+    ],
+    [
+      "winding down by reading a book in her dormitory, and at around 09:30, will take a short break to make some tea",
+      60
+    ],
+    [
+      "winding down by reading a book in her dormitory, and at around 10:30, will prepare for bed",
+      60
+    ],
+    [
+      "sleeping",
+      60
+    ]
+  ],
+  "act_address": "the School:playground:playground:running track",
+  "act_start_time": "February 13, 2023, 06:50:00",
+  "act_duration": 10,
+  "act_description": "heading out to the playground for jogging",
+  "act_pronunciatio": "\ud83c\udfc3\u200d\u2642",
+  "act_event": [
+    "Isabella Rodriguez",
+    "jog",
+    "playground"
+  ],
+  "act_obj_description": "in use by Isabella Rodriguez for jogging",
+  "act_obj_pronunciatio": "\ud83c\udfc3\u200d\u2640",
+  "act_obj_event": [
+    "running track",
+    "is",
+    "in use"
+  ],
+  "chatting_with": null,
+  "chat": null,
+  "chatting_with_buffer": {},
+  "chatting_end_time": null,
+  "act_path_set": true,
+  "planned_path": [
+    [
+      49,
+      46
+    ],
+    [
+      49,
+      47
+    ],
+    [
+      49,
+      48
+    ],
+    [
+      49,
+      49
+    ],
+    [
+      49,
+      50
+    ],
+    [
+      49,
+      51
+    ],
+    [
+      49,
+      52
+    ]
+  ]
+}

@@ -1,0 +1,274 @@
+{
+  "vision_r": 8,
+  "att_bandwidth": 8,
+  "retention": 8,
+  "curr_time": "February 13, 2023, 06:59:50",
+  "curr_tile": [
+    14,
+    32
+  ],
+  "daily_plan_req": "He teaches in the afternoon at classroom 2, from 1:30pm to 4:30 pm.",
+  "name": "Latoya Williams",
+  "first_name": "Latoya",
+  "last_name": "Williams",
+  "age": 29,
+  "innate": "organized, logical, attentive",
+  "learned": "Latoya Williams is a professional maths teacher. In her spare time she sometimes create digital arts.",
+  "currently": "Latoya Williams is creating a series of digital arts inspired by her travels, and is seeking to combine these photography with teaching.",
+  "lifestyle": "Latoya Williams goes to bed around 10pm, awakes up around 6am, eats dinner around 17:30pm.",
+  "living_area": "the School:Latoya Williams's office and dormitory:living room",
+  "concept_forget": 100,
+  "daily_reflection_time": 180,
+  "daily_reflection_size": 5,
+  "overlap_reflect_th": 4,
+  "kw_strg_event_reflect_th": 10,
+  "kw_strg_thought_reflect_th": 9,
+  "recency_w": 1,
+  "relevance_w": 1,
+  "importance_w": 1,
+  "recency_decay": 0.995,
+  "importance_trigger_max": 250,
+  "importance_trigger_curr": 216,
+  "importance_ele_n": 25,
+  "thought_count": 5,
+  "commitments": {},
+  "daily_req": [
+    "wake up and complete the morning routine at 6:00 am",
+    "wake up and complete the morning routine from 6:00 am to 6:30 am",
+    "have breakfast and review lesson plans from 6:30 am to 7:30 am",
+    "work on digital art project from 7:30 am to 9:00 am",
+    "prepare teaching materials from 9:00 am to 10:30 am",
+    "have a short break and light snack from 10:30 am to 11:00 am",
+    "travel to school and set up classroom from 11:00 am to 12:30 pm",
+    "have lunch from 12:30 pm to 1:15 pm",
+    "teach mathematics in classroom 2 from 1:30 pm to 4:30 pm",
+    "wrap up teaching duties and organize classroom from 4:30 pm to 5:00 pm",
+    "have dinner at 5:30 pm",
+    "edit and refine digital art from 6:00 pm to 8:00 pm",
+    "relax and unwind from 8:00 pm to 9:30 pm",
+    "prepare for bed and sleep at 10:00 pm"
+  ],
+  "f_daily_schedule": [
+    [
+      "sleeping",
+      360
+    ],
+    [
+      "waking up and stretching in bed",
+      5
+    ],
+    [
+      "getting out of bed and turning off the alarm",
+      5
+    ],
+    [
+      "walking to the bathroom to wash her face",
+      5
+    ],
+    [
+      "brushing her teeth",
+      5
+    ],
+    [
+      "taking a quick shower",
+      15
+    ],
+    [
+      "drying off and applying skincare",
+      5
+    ],
+    [
+      "getting dressed for the day",
+      10
+    ],
+    [
+      "styling her hair",
+      5
+    ],
+    [
+      "putting on light makeup",
+      5
+    ],
+    [
+      "preparing breakfast",
+      10
+    ],
+    [
+      "eating breakfast",
+      15
+    ],
+    [
+      "checking emails",
+      10
+    ],
+    [
+      "reviewing today's lesson objectives",
+      10
+    ],
+    [
+      "organizing teaching materials",
+      10
+    ],
+    [
+      "packing her teaching bag",
+      5
+    ],
+    [
+      "working on her digital art project, and at around 08:45, will take a short stretch break before continuing",
+      60
+    ],
+    [
+      "preparing teaching materials, and at around 09:45, will organize her notes for the afternoon class",
+      60
+    ],
+    [
+      "still preparing teaching materials, and at around 10:15, will take a short break before finalizing the lesson plan",
+      60
+    ],
+    [
+      "having a short break and light snack, and at around 11:20, will start preparing to travel to school",
+      60
+    ],
+    [
+      "traveling to school and setting up the classroom, and at around 12:15, will arrange teaching materials on her desk",
+      60
+    ],
+    [
+      "having lunch in the school cafeteria, and at around 01:10, will review her afternoon lesson notes",
+      60
+    ],
+    [
+      "teaching mathematics in classroom 2, and at around 02:45, will take a short break to answer student questions",
+      60
+    ],
+    [
+      "still teaching mathematics in classroom 2, and at around 03:30, will take a short break before continuing with the lesson",
+      60
+    ],
+    [
+      "still teaching mathematics in classroom 2, and at around 04:15, will wrap up the lesson and answer final student questions",
+      60
+    ],
+    [
+      "wrapping up teaching duties and organizing the classroom, and at around 05:15, will pack up her materials to leave school",
+      60
+    ],
+    [
+      "having dinner, and at around 06:15, will clean up after the meal before starting her evening activities",
+      60
+    ],
+    [
+      "editing her digital art project, and at around 07:45, will take a short break to stretch before continuing",
+      60
+    ],
+    [
+      "still editing her digital art project, and at around 08:15, will take a short break to relax before continuing",
+      60
+    ],
+    [
+      "relaxing and unwinding with a book, and at around 09:15, will prepare for bed by starting her nighttime routine",
+      60
+    ],
+    [
+      "sleeping",
+      120
+    ]
+  ],
+  "f_daily_schedule_hourly_org": [
+    [
+      "sleeping",
+      360
+    ],
+    [
+      "waking up and starting her morning routine, and at around 06:30, will finish getting ready for the day",
+      60
+    ],
+    [
+      "having breakfast and reviewing lesson plans, and at around 07:15, will check emails",
+      60
+    ],
+    [
+      "working on her digital art project, and at around 08:45, will take a short stretch break before continuing",
+      60
+    ],
+    [
+      "preparing teaching materials, and at around 09:45, will organize her notes for the afternoon class",
+      60
+    ],
+    [
+      "still preparing teaching materials, and at around 10:15, will take a short break before finalizing the lesson plan",
+      60
+    ],
+    [
+      "having a short break and light snack, and at around 11:20, will start preparing to travel to school",
+      60
+    ],
+    [
+      "traveling to school and setting up the classroom, and at around 12:15, will arrange teaching materials on her desk",
+      60
+    ],
+    [
+      "having lunch in the school cafeteria, and at around 01:10, will review her afternoon lesson notes",
+      60
+    ],
+    [
+      "teaching mathematics in classroom 2, and at around 02:45, will take a short break to answer student questions",
+      60
+    ],
+    [
+      "still teaching mathematics in classroom 2, and at around 03:30, will take a short break before continuing with the lesson",
+      60
+    ],
+    [
+      "still teaching mathematics in classroom 2, and at around 04:15, will wrap up the lesson and answer final student questions",
+      60
+    ],
+    [
+      "wrapping up teaching duties and organizing the classroom, and at around 05:15, will pack up her materials to leave school",
+      60
+    ],
+    [
+      "having dinner, and at around 06:15, will clean up after the meal before starting her evening activities",
+      60
+    ],
+    [
+      "editing her digital art project, and at around 07:45, will take a short break to stretch before continuing",
+      60
+    ],
+    [
+      "still editing her digital art project, and at around 08:15, will take a short break to relax before continuing",
+      60
+    ],
+    [
+      "relaxing and unwinding with a book, and at around 09:15, will prepare for bed by starting her nighttime routine",
+      60
+    ],
+    [
+      "sleeping",
+      120
+    ]
+  ],
+  "act_address": "the School:Latoya Williams's office and dormitory:bathroom:bathroom sink",
+  "act_start_time": "February 13, 2023, 06:55:00",
+  "act_duration": 5,
+  "act_description": "putting on light makeup",
+  "act_pronunciatio": "\ud83d\udc84\ud83d\udc69",
+  "act_event": [
+    "Latoya Williams",
+    "put on",
+    "light makeup"
+  ],
+  "act_obj_description": "in use for applying light makeup",
+  "act_obj_pronunciatio": "\ud83d\udc84\u2728",
+  "act_obj_event": [
+    "bathroom sink",
+    "is",
+    "in use"
+  ],
+  "chatting_with": null,
+  "chat": null,
+  "chatting_with_buffer": {},
+  "chatting_end_time": null,
+  "act_path_set": true,
+  "planned_path": []
+}
