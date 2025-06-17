@@ -1,0 +1,298 @@
+{
+  "persona": {
+    "Rajiv Patel": {
+      "movement": [
+        38,
+        34
+      ],
+      "pronunciatio": "\ud83c\udf7d\ufe0f\ud83e\uddfd",
+      "description": "washing the dishes and cleaning the kitchen @ the School:headmasters' office and dormitory:bathroom:washing machine",
+      "chat": null
+    },
+    "Ryan Park": {
+      "movement": [
+        61,
+        79
+      ],
+      "pronunciatio": "\ud83d\ude34",
+      "description": "sleeping @ the School:student dormitory 2:common room:bed",
+      "chat": null
+    },
+    "Wolfgang Schulz": {
+      "movement": [
+        122,
+        24
+      ],
+      "pronunciatio": "\u231b",
+      "description": "waiting to start participating in a class discussion  @ <waiting> 122 24",
+      "chat": null
+    },
+    "Tom Moreno": {
+      "movement": [
+        113,
+        29
+      ],
+      "pronunciatio": "\ud83d\udcac",
+      "description": "conversing about Jane Moreno and Tom Moreno discussed Tom's focus on trigonometry and his interest in connecting it to the new history topic on the Industrial Revolution, with Jane agreeing to provide specific examples of how trigonometry was applied in industrial advancements during the lesson. @ <persona> Jane Moreno",
+      "chat": [
+        [
+          "Jane Moreno",
+          "Hi Tom! I noticed you're reviewing your previous class notes. How's your understanding of the material so far? Do you have any questions about the new topic we're starting today?"
+        ],
+        [
+          "Tom Moreno",
+          "Hi Jane. I've been focusing mostly on trigonometry lately, especially the sine and cosine rules. But I should probably pay more attention to history too. Could you briefly explain what the new topic is about?"
+        ],
+        [
+          "Jane Moreno",
+          "Of course, Tom! Today we're starting a unit on the Industrial Revolution, focusing on how it transformed societies and economies. It's a fascinating period with lots of connections to modern life. Would you like me to highlight some key points that might help you connect it with your math studies, like how industrialization influenced technological advancements?"
+        ],
+        [
+          "Tom Moreno",
+          "That would be great, Jane. I'm curious about how the Industrial Revolution might have influenced mathematical advancements or engineering applications. Were there any notable developments in trigonometry or geometry during that period?"
+        ],
+        [
+          "Jane Moreno",
+          "That's an interesting angle, Tom! The Industrial Revolution did see significant advancements in applied mathematics, particularly in engineering. For example, trigonometry became crucial in designing machinery, bridges, and railways. Engineers used sine and cosine rules to calculate forces and angles for structural stability. Would you like me to share some specific examples during our lesson today?"
+        ],
+        [
+          "Tom Moreno",
+          "Yes, please! I'd really appreciate some specific examples connecting trigonometry to industrial applications. It would help me see the practical side of what we're learning in math class."
+        ],
+        [
+          "Jane Moreno",
+          "Wonderful! I'll make sure to include examples like the use of trigonometry in designing steam engine components and railway tracks. It's amazing how math and history intersect in such practical ways. I think you'll find today's lesson particularly relevant to your interests!"
+        ],
+        [
+          "Tom Moreno",
+          "That sounds perfect, Jane. I'm looking forward to the lesson now. Thanks for taking the time to explain this to me!"
+        ]
+      ]
+    },
+    "Tamara Taylor": {
+      "movement": [
+        88,
+        78
+      ],
+      "pronunciatio": "\ud83c\udf73\ud83c\udfbb",
+      "description": "eating breakfast while listening to classical music   @ the School:student dormitory 5:common room:desk",
+      "chat": null
+    },
+    "Yuriko Yamamoto": {
+      "movement": [
+        95,
+        55
+      ],
+      "pronunciatio": "\ud83d\ude8c\ud83d\udcba",
+      "description": "boarding the bus and finding a seat @ the School:playground:playground:running track",
+      "chat": null
+    },
+    "Isabella Rodriguez": {
+      "movement": [
+        124,
+        23
+      ],
+      "pronunciatio": "\ud83d\udcd6\ud83e\udd14",
+      "description": "still reviewing the previous lesson's key concepts   @ the School:classroom building:library room:library table",
+      "chat": null
+    },
+    "Maria Lopez": {
+      "movement": [
+        72,
+        75
+      ],
+      "pronunciatio": "\ud83d\udc87\u200d\u2640",
+      "description": "combing her hair   @ the School:student dormitory 3:bathroom:bathroom sink",
+      "chat": null
+    },
+    "Klaus Mueller": {
+      "movement": [
+        106,
+        16
+      ],
+      "pronunciatio": "\ud83d\udde3\ufe0f\ud83d\udcac",
+      "description": "participating in a class discussion   @ the School:classroom building:classroom 1:blackboard",
+      "chat": null
+    },
+    "Adam Smith": {
+      "movement": [
+        106,
+        19
+      ],
+      "pronunciatio": "\u231b",
+      "description": "waiting to start engaging in a class discussio @ <waiting> 106 19",
+      "chat": null
+    },
+    "Abigail Chen": {
+      "movement": [
+        76,
+        27
+      ],
+      "pronunciatio": "\ud83c\udf73\u2615",
+      "description": "eating breakfast @ the School:canteen:student canteen:student restaurant table",
+      "chat": null
+    },
+    "Arthur Burton": {
+      "movement": [
+        113,
+        29
+      ],
+      "pronunciatio": "\ud83d\udcac\ud83d\udc65",
+      "description": "discussing the topic with a classmate   @ the School:classroom building:library room:library table",
+      "chat": null
+    },
+    "Ayesha Khan": {
+      "movement": [
+        17,
+        11
+      ],
+      "pronunciatio": "\ud83c\udf7d\ufe0f\ud83e\uddfd",
+      "description": "cleaning up the dishes @ the School:Ayesha Khan's office and dormitory:living room:toaster",
+      "chat": null
+    },
+    "Carlos Gomez": {
+      "movement": [
+        76,
+        75
+      ],
+      "pronunciatio": "\ud83d\udcda\ud83c\udf92",
+      "description": "gathering his books and notebooks for class   @ the School:student dormitory 4:common room:bookshelf",
+      "chat": null
+    },
+    "Carmen Ortiz": {
+      "movement": [
+        59,
+        37
+      ],
+      "pronunciatio": "\ud83d\ude8c\ud83c\udfeb",
+      "description": "riding the bus to school   @ the School:classroom building:corridor:coffee vending machine",
+      "chat": null
+    },
+    "Eddy Lin": {
+      "movement": [
+        121,
+        21
+      ],
+      "pronunciatio": "\ud83d\udcdd\ud83d\udd0d",
+      "description": "reviewing his notes   @ the School:classroom building:library room:library table",
+      "chat": null
+    },
+    "Francisco Lopez": {
+      "movement": [
+        107,
+        16
+      ],
+      "pronunciatio": "\ud83d\udc42\ud83d\udcda",
+      "description": "still listening to the teacher's lecture   @ the School:classroom building:classroom 1:blackboard",
+      "chat": null
+    },
+    "Giorgio Rossi": {
+      "movement": [
+        121,
+        23
+      ],
+      "pronunciatio": "\ud83d\udcda\ud83d\uddc2\ufe0f",
+      "description": "organizing his notes and arranging them in his binder   @ the School:classroom building:library room:library table",
+      "chat": null
+    },
+    "Hailey Johnson": {
+      "movement": [
+        50,
+        81
+      ],
+      "pronunciatio": "\ud83d\ude34",
+      "description": "sleeping @ the School:student dormitory 1:common room:bed",
+      "chat": null
+    },
+    "Jane Moreno": {
+      "movement": [
+        112,
+        29
+      ],
+      "pronunciatio": "\ud83d\udcac",
+      "description": "conversing about Jane Moreno and Tom Moreno discussed Tom's focus on trigonometry and his interest in connecting it to the new history topic on the Industrial Revolution, with Jane agreeing to provide specific examples of how trigonometry was applied in industrial advancements during the lesson. @ <persona> Tom Moreno",
+      "chat": [
+        [
+          "Jane Moreno",
+          "Hi Tom! I noticed you're reviewing your previous class notes. How's your understanding of the material so far? Do you have any questions about the new topic we're starting today?"
+        ],
+        [
+          "Tom Moreno",
+          "Hi Jane. I've been focusing mostly on trigonometry lately, especially the sine and cosine rules. But I should probably pay more attention to history too. Could you briefly explain what the new topic is about?"
+        ],
+        [
+          "Jane Moreno",
+          "Of course, Tom! Today we're starting a unit on the Industrial Revolution, focusing on how it transformed societies and economies. It's a fascinating period with lots of connections to modern life. Would you like me to highlight some key points that might help you connect it with your math studies, like how industrialization influenced technological advancements?"
+        ],
+        [
+          "Tom Moreno",
+          "That would be great, Jane. I'm curious about how the Industrial Revolution might have influenced mathematical advancements or engineering applications. Were there any notable developments in trigonometry or geometry during that period?"
+        ],
+        [
+          "Jane Moreno",
+          "That's an interesting angle, Tom! The Industrial Revolution did see significant advancements in applied mathematics, particularly in engineering. For example, trigonometry became crucial in designing machinery, bridges, and railways. Engineers used sine and cosine rules to calculate forces and angles for structural stability. Would you like me to share some specific examples during our lesson today?"
+        ],
+        [
+          "Tom Moreno",
+          "Yes, please! I'd really appreciate some specific examples connecting trigonometry to industrial applications. It would help me see the practical side of what we're learning in math class."
+        ],
+        [
+          "Jane Moreno",
+          "Wonderful! I'll make sure to include examples like the use of trigonometry in designing steam engine components and railway tracks. It's amazing how math and history intersect in such practical ways. I think you'll find today's lesson particularly relevant to your interests!"
+        ],
+        [
+          "Tom Moreno",
+          "That sounds perfect, Jane. I'm looking forward to the lesson now. Thanks for taking the time to explain this to me!"
+        ]
+      ]
+    },
+    "Jennifer Moore": {
+      "movement": [
+        44,
+        78
+      ],
+      "pronunciatio": "\ud83d\udcdd\ud83d\udcd6",
+      "description": "taking notes on key themes and quotes   @ the School:student dormitory 1:common room:desk",
+      "chat": null
+    },
+    "Sam Moore": {
+      "movement": [
+        103,
+        29
+      ],
+      "pronunciatio": "\ud83d\udcdd\ud83e\udd2b",
+      "description": "reviewing his notes quietly   @ the School:student dormitory 2:common room:desk",
+      "chat": null
+    },
+    "Jacky Ma": {
+      "movement": [
+        53,
+        44
+      ],
+      "pronunciatio": "\ud83d\ude8c\ud83d\udcba",
+      "description": "boarding the bus and finding a seat   @ the School:playground:playground:long jump pit",
+      "chat": null
+    },
+    "Latoya Williams": {
+      "movement": [
+        6,
+        40
+      ],
+      "pronunciatio": "\ud83c\udfa8\ud83d\udd8c\ufe0f",
+      "description": "refining the sketch with digital brushes @ the School:Latoya Williams's office and dormitory:office:computer desk",
+      "chat": null
+    },
+    "Valerie Florentini": {
+      "movement": [
+        107,
+        16
+      ],
+      "pronunciatio": "\ud83d\udc42\ud83d\udcda",
+      "description": "listening to the teacher\u2019s lecture @ the School:classroom building:classroom 1:blackboard",
+      "chat": null
+    }
+  },
+  "meta": {
+    "curr_time": "February 13, 2023, 08:39:50"
+  }
+}

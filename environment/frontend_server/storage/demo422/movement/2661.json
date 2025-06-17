@@ -1,0 +1,314 @@
+{
+  "persona": {
+    "Rajiv Patel": {
+      "movement": [
+        35,
+        32
+      ],
+      "pronunciatio": "\ud83d\udebf\ud83e\uddfc",
+      "description": "taking a shower @ the School:headmasters' office and dormitory:bathroom:shower",
+      "chat": null
+    },
+    "Ryan Park": {
+      "movement": [
+        61,
+        79
+      ],
+      "pronunciatio": "\ud83d\ude34",
+      "description": "sleeping @ the School:student dormitory 2:common room:bed",
+      "chat": null
+    },
+    "Wolfgang Schulz": {
+      "movement": [
+        64,
+        24
+      ],
+      "pronunciatio": "\ud83d\udcac",
+      "description": "conversing about Isabella Rodriguez and Wolfgang Schulz discussed their morning routines and upcoming biology class topics, particularly cellular respiration and genetics, and agreed to meet after Wolfgang's last class in Isabella's classroom to brainstorm genetics project ideas. @ <persona> Isabella Rodriguez",
+      "chat": [
+        [
+          "Isabella Rodriguez",
+          "Good morning, Wolfgang! I see you're getting ready for biology class. How's your morning going so far?"
+        ],
+        [
+          "Wolfgang Schulz",
+          "Good morning, Isabella! Yeah, just making sure I have everything for class. My morning's been great so far - had a good run at the park earlier. How about you?"
+        ],
+        [
+          "Isabella Rodriguez",
+          "That sounds wonderful! I just finished my jog on the playground too. Are you excited about anything particular in biology class today?"
+        ],
+        [
+          "Wolfgang Schulz",
+          "Actually, yes! We're starting a new unit on cellular respiration today, which I've been looking forward to. It's so fascinating how our bodies convert nutrients into energy, especially since we're both athletes."
+        ],
+        [
+          "Isabella Rodriguez",
+          "That's really interesting! Cellular respiration is such a fundamental process, and it's amazing how it connects to our daily activities like jogging. I might even incorporate some of those concepts into my science lessons. Do you have any favorite topics in biology so far?"
+        ],
+        [
+          "Wolfgang Schulz",
+          "I really enjoy learning about genetics and how traits are passed down. It's incredible how much our DNA influences who we are, both physically and in terms of athletic potential. What about you? Do you have a favorite biology topic?"
+        ],
+        [
+          "Isabella Rodriguez",
+          "Genetics is indeed fascinating! I particularly love how it ties into evolution and biodiversity. It's amazing to see how life adapts over time. Since you're interested in genetics, have you considered doing any independent research projects on it? I'd be happy to mentor you if you're interested!"
+        ],
+        [
+          "Wolfgang Schulz",
+          "That would be amazing, Isabella! I'd love to explore genetics further with your guidance. Maybe we could discuss potential project ideas after class?"
+        ],
+        [
+          "Isabella Rodriguez",
+          "That sounds like a great plan, Wolfgang! How about we meet in my classroom after your last class today? We can brainstorm some project ideas then."
+        ],
+        [
+          "Wolfgang Schulz",
+          "Perfect! I'll see you in your classroom after my last class then. Looking forward to brainstorming some exciting genetics project ideas with you!"
+        ]
+      ]
+    },
+    "Tom Moreno": {
+      "movement": [
+        88,
+        78
+      ],
+      "pronunciatio": "\u270f\ufe0f\ud83e\uddee",
+      "description": "working on a math problem set @ the School:student dormitory 5:common room:desk",
+      "chat": null
+    },
+    "Tamara Taylor": {
+      "movement": [
+        93,
+        72
+      ],
+      "pronunciatio": "\ud83d\udebf",
+      "description": "taking a quick shower   @ the School:student dormitory 5:bathroom:shower",
+      "chat": null
+    },
+    "Yuriko Yamamoto": {
+      "movement": [
+        94,
+        75
+      ],
+      "pronunciatio": "\ud83d\udc87\u200d\u2640",
+      "description": "combing her hair @ the School:student dormitory 5:bathroom:bathroom sink",
+      "chat": null
+    },
+    "Isabella Rodriguez": {
+      "movement": [
+        65,
+        24
+      ],
+      "pronunciatio": "\ud83d\udcac",
+      "description": "conversing about Isabella Rodriguez and Wolfgang Schulz discussed their morning routines and upcoming biology class topics, particularly cellular respiration and genetics, and agreed to meet after Wolfgang's last class in Isabella's classroom to brainstorm genetics project ideas. @ <persona> Wolfgang Schulz",
+      "chat": [
+        [
+          "Isabella Rodriguez",
+          "Good morning, Wolfgang! I see you're getting ready for biology class. How's your morning going so far?"
+        ],
+        [
+          "Wolfgang Schulz",
+          "Good morning, Isabella! Yeah, just making sure I have everything for class. My morning's been great so far - had a good run at the park earlier. How about you?"
+        ],
+        [
+          "Isabella Rodriguez",
+          "That sounds wonderful! I just finished my jog on the playground too. Are you excited about anything particular in biology class today?"
+        ],
+        [
+          "Wolfgang Schulz",
+          "Actually, yes! We're starting a new unit on cellular respiration today, which I've been looking forward to. It's so fascinating how our bodies convert nutrients into energy, especially since we're both athletes."
+        ],
+        [
+          "Isabella Rodriguez",
+          "That's really interesting! Cellular respiration is such a fundamental process, and it's amazing how it connects to our daily activities like jogging. I might even incorporate some of those concepts into my science lessons. Do you have any favorite topics in biology so far?"
+        ],
+        [
+          "Wolfgang Schulz",
+          "I really enjoy learning about genetics and how traits are passed down. It's incredible how much our DNA influences who we are, both physically and in terms of athletic potential. What about you? Do you have a favorite biology topic?"
+        ],
+        [
+          "Isabella Rodriguez",
+          "Genetics is indeed fascinating! I particularly love how it ties into evolution and biodiversity. It's amazing to see how life adapts over time. Since you're interested in genetics, have you considered doing any independent research projects on it? I'd be happy to mentor you if you're interested!"
+        ],
+        [
+          "Wolfgang Schulz",
+          "That would be amazing, Isabella! I'd love to explore genetics further with your guidance. Maybe we could discuss potential project ideas after class?"
+        ],
+        [
+          "Isabella Rodriguez",
+          "That sounds like a great plan, Wolfgang! How about we meet in my classroom after your last class today? We can brainstorm some project ideas then."
+        ],
+        [
+          "Wolfgang Schulz",
+          "Perfect! I'll see you in your classroom after my last class then. Looking forward to brainstorming some exciting genetics project ideas with you!"
+        ]
+      ]
+    },
+    "Maria Lopez": {
+      "movement": [
+        72,
+        81
+      ],
+      "pronunciatio": "\ud83d\ude34",
+      "description": "sleeping @ the School:student dormitory 3:common room:bed",
+      "chat": null
+    },
+    "Klaus Mueller": {
+      "movement": [
+        71,
+        75
+      ],
+      "pronunciatio": "\u231b",
+      "description": "waiting to start taking a quick showe @ <waiting> 71 75",
+      "chat": null
+    },
+    "Adam Smith": {
+      "movement": [
+        106,
+        16
+      ],
+      "pronunciatio": "\ud83d\udcdd\u270d\ufe0f",
+      "description": "taking notes on key points @ the School:classroom building:classroom 1:blackboard",
+      "chat": null
+    },
+    "Abigail Chen": {
+      "movement": [
+        83,
+        81
+      ],
+      "pronunciatio": "\ud83d\ude34",
+      "description": "sleeping @ the School:student dormitory 4:common room:bed",
+      "chat": null
+    },
+    "Arthur Burton": {
+      "movement": [
+        82,
+        75
+      ],
+      "pronunciatio": "\u231b",
+      "description": "waiting to start picking out clothes for the day  @ <waiting> 82 75",
+      "chat": null
+    },
+    "Ayesha Khan": {
+      "movement": [
+        20,
+        20
+      ],
+      "pronunciatio": "\ud83c\udfa8\u270f\ufe0f",
+      "description": "sketching the outline of her painting @ the School:Ayesha Khan's office and dormitory:office:blackboard",
+      "chat": null
+    },
+    "Carlos Gomez": {
+      "movement": [
+        77,
+        76
+      ],
+      "pronunciatio": "\ud83d\udc54\ud83d\udc56",
+      "description": "picking out his clothes for the day   @ the School:student dormitory 4:common room:desk",
+      "chat": null
+    },
+    "Carmen Ortiz": {
+      "movement": [
+        71,
+        72
+      ],
+      "pronunciatio": "\ud83d\udebf\ud83e\uddfc",
+      "description": "taking a quick shower   @ the School:student dormitory 3:bathroom:shower",
+      "chat": null
+    },
+    "Eddy Lin": {
+      "movement": [
+        72,
+        75
+      ],
+      "pronunciatio": "\ud83d\udc87\u200d\u2642",
+      "description": "combing his hair   @ the School:student dormitory 3:bathroom:bathroom sink",
+      "chat": null
+    },
+    "Francisco Lopez": {
+      "movement": [
+        49,
+        72
+      ],
+      "pronunciatio": "\ud83d\udebf\ud83d\udc5a",
+      "description": "drying off and getting dressed   @ the School:student dormitory 1:bathroom:shower",
+      "chat": null
+    },
+    "Giorgio Rossi": {
+      "movement": [
+        49,
+        72
+      ],
+      "pronunciatio": "\ud83d\udc5a\ud83d\udc56",
+      "description": "getting dressed   @ the School:student dormitory 1:bathroom:shower",
+      "chat": null
+    },
+    "Hailey Johnson": {
+      "movement": [
+        50,
+        81
+      ],
+      "pronunciatio": "\ud83d\ude34",
+      "description": "sleeping @ the School:student dormitory 1:common room:bed",
+      "chat": null
+    },
+    "Jane Moreno": {
+      "movement": [
+        29,
+        11
+      ],
+      "pronunciatio": "\ud83c\udf7d\ufe0f\ud83e\uddfd",
+      "description": "cleaning up the breakfast dishes @ the School:Jane Moreno's office and dormitory:living room:coffee machine",
+      "chat": null
+    },
+    "Jennifer Moore": {
+      "movement": [
+        44,
+        64
+      ],
+      "pronunciatio": "\ud83d\ude8c\ud83d\udcba",
+      "description": "finding a seat on the bus @ the School:student dormitory 1:common room:desk",
+      "chat": null
+    },
+    "Sam Moore": {
+      "movement": [
+        60,
+        72
+      ],
+      "pronunciatio": "\ud83d\udebf\ud83e\uddf4",
+      "description": "showering and washing his hair @ the School:student dormitory 2:bathroom:shower",
+      "chat": null
+    },
+    "Jacky Ma": {
+      "movement": [
+        47,
+        62
+      ],
+      "pronunciatio": "\ud83c\udf73\u2615",
+      "description": "eating breakfast   @ the School:canteen:student canteen:student restaurant table",
+      "chat": null
+    },
+    "Latoya Williams": {
+      "movement": [
+        5,
+        31
+      ],
+      "pronunciatio": "\ud83c\udf73\u2615",
+      "description": "eating breakfast @ the School:Latoya Williams's office and dormitory:living room:toaster",
+      "chat": null
+    },
+    "Valerie Florentini": {
+      "movement": [
+        60,
+        72
+      ],
+      "pronunciatio": "\ud83d\udc5a\ud83c\udfeb",
+      "description": "changing into her school uniform @ the School:student dormitory 2:bathroom:shower",
+      "chat": null
+    }
+  },
+  "meta": {
+    "curr_time": "February 13, 2023, 07:23:30"
+  }
+}

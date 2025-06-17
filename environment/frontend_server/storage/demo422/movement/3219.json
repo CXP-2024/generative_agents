@@ -1,0 +1,414 @@
+{
+  "persona": {
+    "Rajiv Patel": {
+      "movement": [
+        29,
+        32
+      ],
+      "pronunciatio": "\ud83d\udd11\ud83d\ude97",
+      "description": "locking the door and walking to his car @ the School:headmasters' office and dormitory:living room:closet",
+      "chat": null
+    },
+    "Ryan Park": {
+      "movement": [
+        61,
+        79
+      ],
+      "pronunciatio": "\ud83d\ude34",
+      "description": "sleeping @ the School:student dormitory 2:common room:bed",
+      "chat": null
+    },
+    "Wolfgang Schulz": {
+      "movement": [
+        107,
+        29
+      ],
+      "pronunciatio": "\ud83d\udcac",
+      "description": "conversing about Arthur Burton and Wolfgang Schulz agreed to meet in the library after school tomorrow to study for a competition, focusing on comparing photosynthesis and cellular respiration, with Arthur bringing notes and articles and Wolfgang bringing biology notes and diagrams. @ <persona> Arthur Burton",
+      "chat": [
+        [
+          "Arthur Burton",
+          "Hey Wolfgang! I was just thinking about our study session tomorrow. Are you still up for meeting in the library after school? I found some really interesting articles on photosynthesis that I think could help us with the competition."
+        ],
+        [
+          "Wolfgang Schulz",
+          "Absolutely, Arthur! I'm really looking forward to it. I've also been reviewing cellular respiration and found some great diagrams that might help us visualize the processes better. Should we focus on comparing the two topics tomorrow?"
+        ],
+        [
+          "Arthur Burton",
+          "That sounds like a great plan, Wolfgang! Comparing photosynthesis and cellular respiration would definitely make the concepts clearer. I'll bring my notes and those articles, and we can go through them together. Maybe we can even draft some practice questions for the competition."
+        ],
+        [
+          "Wolfgang Schulz",
+          "Perfect! I'll make sure to bring my biology notes and those diagrams. Let's aim to cover both the theoretical and practical aspects to fully grasp the concepts. See you tomorrow in the library after school!"
+        ]
+      ]
+    },
+    "Tom Moreno": {
+      "movement": [
+        110,
+        29
+      ],
+      "pronunciatio": "\u231b",
+      "description": "waiting to start still participating in a class discussion  @ <waiting> 110 29",
+      "chat": null
+    },
+    "Tamara Taylor": {
+      "movement": [
+        88,
+        78
+      ],
+      "pronunciatio": "\ud83c\udf92\ud83c\udfeb",
+      "description": "packing school bag and leaving for high school @ the School:student dormitory 5:common room:desk",
+      "chat": null
+    },
+    "Yuriko Yamamoto": {
+      "movement": [
+        85,
+        41
+      ],
+      "pronunciatio": "\ud83d\udeb6\u200d\u2642",
+      "description": "getting off the bus and walking to classroom 2 @ the School:classroom building:corridor:coffee vending machine",
+      "chat": null
+    },
+    "Isabella Rodriguez": {
+      "movement": [
+        121,
+        28
+      ],
+      "pronunciatio": "\u270d\ufe0f\ud83d\udcdd",
+      "description": "still writing example problems on the board   @ the School:classroom building:classroom 1:blackboard",
+      "chat": null
+    },
+    "Maria Lopez": {
+      "movement": [
+        66,
+        78
+      ],
+      "pronunciatio": "\ud83c\udf73\u2615",
+      "description": "still eating breakfast   @ the School:student dormitory 3:common room:desk",
+      "chat": null
+    },
+    "Klaus Mueller": {
+      "movement": [
+        107,
+        17
+      ],
+      "pronunciatio": "\ud83d\udcac",
+      "description": "conversing about Jane Moreno and Klaus Mueller discussed the connection between the Industrial Revolution and modern societal issues, with Klaus expressing interest in sharing his AP Social Studies project with the class and mentioning his plans to attend Carmen and Eddy's music theory session at the library later that day to gain fresh perspectives for his research. @ <persona> Jane Moreno",
+      "chat": [
+        [
+          "Jane Moreno",
+          "Klaus, I noticed you're working hard on that assignment. How's it going? Are you finding the connection between the Industrial Revolution and trigonometry interesting?"
+        ],
+        [
+          "Klaus Mueller",
+          "Actually, Jane, I was just thinking about how the Industrial Revolution's societal changes might parallel some modern issues we're studying in my AP Social Studies project. It's fascinating to see these historical patterns!"
+        ],
+        [
+          "Jane Moreno",
+          "That's a great observation, Klaus! The Industrial Revolution did bring about significant societal shifts. Maybe we can explore how those changes influenced modern structures in our next lesson. Would you be interested in sharing your AP project insights with the class?"
+        ],
+        [
+          "Klaus Mueller",
+          "I'd love to share my project with the class! Though I might need to check my schedule first - I'm planning to join Carmen and Eddy's music theory session at the library later today to get some fresh perspectives that might help with my research too."
+        ],
+        [
+          "Jane Moreno",
+          "That sounds like a great plan, Klaus! The music theory session could definitely add a unique angle to your research. Let me know when you're ready to present to the class, and we can schedule it. Good luck with your session later!"
+        ]
+      ]
+    },
+    "Adam Smith": {
+      "movement": [
+        94,
+        29
+      ],
+      "pronunciatio": "\ud83d\udcac",
+      "description": "conversing about Carmen Ortiz and Adam Smith discussed the upcoming class minister election, with Carmen mentioning Maria Lopez's potential candidacy and agreeing to ask around about other candidates; they also planned to organize a leadership qualities discussion tied to music projects, with Carmen checking Mrs. Johnson's availability and creating a sign-up sheet and event plan to review with Mr. Smith the next day. @ <persona> Carmen Ortiz",
+      "chat": [
+        [
+          "Carmen Ortiz",
+          "Good morning, Mr. Smith! Do you need any help setting up for the lesson?"
+        ],
+        [
+          "Adam Smith",
+          "Good morning, Carmen! Actually, I was just thinking about the upcoming class minister election. Do you have any idea who might be running?"
+        ],
+        [
+          "Carmen Ortiz",
+          "Oh, I haven't heard much about the election yet, but I think Maria Lopez mentioned she might be interested. Would you like me to ask around and see who else is considering running?"
+        ],
+        [
+          "Adam Smith",
+          "That would be great, Carmen! I'm particularly curious because I've been thinking about how different leadership styles could impact our class dynamics. What qualities do you think make a good class minister?"
+        ],
+        [
+          "Carmen Ortiz",
+          "I think a good class minister should be approachable, organized, and able to listen to everyone's ideas - like how Maria is always open to suggestions with her Hatsune Miku project! Maybe someone who can balance fun and responsibility, since we're all preparing for big things like my cello concert and Jacky's audition."
+        ],
+        [
+          "Adam Smith",
+          "That's an interesting perspective, Carmen. I especially agree about balancing fun and responsibility - it reminds me of how we've been discussing creativity's role in shaping perspectives in class. Maybe we could organize a debate or discussion about leadership qualities before the election?"
+        ],
+        [
+          "Carmen Ortiz",
+          "That sounds like a great idea, Mr. Smith! It would give everyone a chance to think about what they value in a leader. I'd be happy to help organize it - maybe we could even tie it into our music projects, since leadership and performance both require confidence and communication skills!"
+        ],
+        [
+          "Adam Smith",
+          "That's a brilliant connection, Carmen! Combining our musical projects with leadership discussions could make it more engaging. Maybe we can propose this to Mrs. Johnson during our next class?"
+        ],
+        [
+          "Carmen Ortiz",
+          "Yes, that sounds perfect! I'll check with Mrs. Johnson about her availability and see if we can schedule it for this week. Should I also ask the others if they'd like to contribute their musical talents to make it more interactive?"
+        ],
+        [
+          "Adam Smith",
+          "That would be fantastic, Carmen! Let's make it a collaborative effort - maybe we can create a sign-up sheet for those who want to perform or share their thoughts. And if Mrs. Johnson approves, we could even turn it into a mini-event to showcase both leadership ideas and our creative talents."
+        ],
+        [
+          "Carmen Ortiz",
+          "I'll get started on that right away, Mr. Smith! I can ask Maria, Jacky, and Eddy during our lunch and study session today, and we can brainstorm some ideas. Would you like me to bring you a draft of the sign-up sheet and event plan by tomorrow?"
+        ],
+        [
+          "Adam Smith",
+          "That sounds perfect, Carmen! I really appreciate your initiative. Let's meet tomorrow to review the draft and finalize the details. I'll also think about some discussion points we can include about leadership styles and creativity."
+        ],
+        [
+          "Carmen Ortiz",
+          "Great! I'll make sure to gather everyone's input and prepare a detailed plan. Looking forward to our meeting tomorrow, Mr. Smith!"
+        ]
+      ]
+    },
+    "Abigail Chen": {
+      "movement": [
+        77,
+        75
+      ],
+      "pronunciatio": "\ud83c\udf7d\ufe0f\ud83e\uddfd",
+      "description": "cleaning up breakfast dishes @ the School:student dormitory 4:common room:desk",
+      "chat": null
+    },
+    "Arthur Burton": {
+      "movement": [
+        106,
+        29
+      ],
+      "pronunciatio": "\ud83d\udcac",
+      "description": "conversing about Arthur Burton and Wolfgang Schulz agreed to meet in the library after school tomorrow to study for a competition, focusing on comparing photosynthesis and cellular respiration, with Arthur bringing notes and articles and Wolfgang bringing biology notes and diagrams. @ <persona> Wolfgang Schulz",
+      "chat": [
+        [
+          "Arthur Burton",
+          "Hey Wolfgang! I was just thinking about our study session tomorrow. Are you still up for meeting in the library after school? I found some really interesting articles on photosynthesis that I think could help us with the competition."
+        ],
+        [
+          "Wolfgang Schulz",
+          "Absolutely, Arthur! I'm really looking forward to it. I've also been reviewing cellular respiration and found some great diagrams that might help us visualize the processes better. Should we focus on comparing the two topics tomorrow?"
+        ],
+        [
+          "Arthur Burton",
+          "That sounds like a great plan, Wolfgang! Comparing photosynthesis and cellular respiration would definitely make the concepts clearer. I'll bring my notes and those articles, and we can go through them together. Maybe we can even draft some practice questions for the competition."
+        ],
+        [
+          "Wolfgang Schulz",
+          "Perfect! I'll make sure to bring my biology notes and those diagrams. Let's aim to cover both the theoretical and practical aspects to fully grasp the concepts. See you tomorrow in the library after school!"
+        ]
+      ]
+    },
+    "Ayesha Khan": {
+      "movement": [
+        20,
+        12
+      ],
+      "pronunciatio": "\ud83c\udf7d\ufe0f\ud83d\udce6",
+      "description": "putting away leftovers @ the School:Ayesha Khan's office and dormitory:living room:refrigerator",
+      "chat": null
+    },
+    "Carlos Gomez": {
+      "movement": [
+        77,
+        78
+      ],
+      "pronunciatio": "\ud83c\udf92\ud83d\udeb6\u200d",
+      "description": "slinging his bag over his shoulder and heading out @ the School:classroom building:corridor:coffee vending machine",
+      "chat": null
+    },
+    "Carmen Ortiz": {
+      "movement": [
+        95,
+        29
+      ],
+      "pronunciatio": "\ud83d\udcac",
+      "description": "conversing about Carmen Ortiz and Adam Smith discussed the upcoming class minister election, with Carmen mentioning Maria Lopez's potential candidacy and agreeing to ask around about other candidates; they also planned to organize a leadership qualities discussion tied to music projects, with Carmen checking Mrs. Johnson's availability and creating a sign-up sheet and event plan to review with Mr. Smith the next day. @ <persona> Adam Smith",
+      "chat": [
+        [
+          "Carmen Ortiz",
+          "Good morning, Mr. Smith! Do you need any help setting up for the lesson?"
+        ],
+        [
+          "Adam Smith",
+          "Good morning, Carmen! Actually, I was just thinking about the upcoming class minister election. Do you have any idea who might be running?"
+        ],
+        [
+          "Carmen Ortiz",
+          "Oh, I haven't heard much about the election yet, but I think Maria Lopez mentioned she might be interested. Would you like me to ask around and see who else is considering running?"
+        ],
+        [
+          "Adam Smith",
+          "That would be great, Carmen! I'm particularly curious because I've been thinking about how different leadership styles could impact our class dynamics. What qualities do you think make a good class minister?"
+        ],
+        [
+          "Carmen Ortiz",
+          "I think a good class minister should be approachable, organized, and able to listen to everyone's ideas - like how Maria is always open to suggestions with her Hatsune Miku project! Maybe someone who can balance fun and responsibility, since we're all preparing for big things like my cello concert and Jacky's audition."
+        ],
+        [
+          "Adam Smith",
+          "That's an interesting perspective, Carmen. I especially agree about balancing fun and responsibility - it reminds me of how we've been discussing creativity's role in shaping perspectives in class. Maybe we could organize a debate or discussion about leadership qualities before the election?"
+        ],
+        [
+          "Carmen Ortiz",
+          "That sounds like a great idea, Mr. Smith! It would give everyone a chance to think about what they value in a leader. I'd be happy to help organize it - maybe we could even tie it into our music projects, since leadership and performance both require confidence and communication skills!"
+        ],
+        [
+          "Adam Smith",
+          "That's a brilliant connection, Carmen! Combining our musical projects with leadership discussions could make it more engaging. Maybe we can propose this to Mrs. Johnson during our next class?"
+        ],
+        [
+          "Carmen Ortiz",
+          "Yes, that sounds perfect! I'll check with Mrs. Johnson about her availability and see if we can schedule it for this week. Should I also ask the others if they'd like to contribute their musical talents to make it more interactive?"
+        ],
+        [
+          "Adam Smith",
+          "That would be fantastic, Carmen! Let's make it a collaborative effort - maybe we can create a sign-up sheet for those who want to perform or share their thoughts. And if Mrs. Johnson approves, we could even turn it into a mini-event to showcase both leadership ideas and our creative talents."
+        ],
+        [
+          "Carmen Ortiz",
+          "I'll get started on that right away, Mr. Smith! I can ask Maria, Jacky, and Eddy during our lunch and study session today, and we can brainstorm some ideas. Would you like me to bring you a draft of the sign-up sheet and event plan by tomorrow?"
+        ],
+        [
+          "Adam Smith",
+          "That sounds perfect, Carmen! I really appreciate your initiative. Let's meet tomorrow to review the draft and finalize the details. I'll also think about some discussion points we can include about leadership styles and creativity."
+        ],
+        [
+          "Carmen Ortiz",
+          "Great! I'll make sure to gather everyone's input and prepare a detailed plan. Looking forward to our meeting tomorrow, Mr. Smith!"
+        ]
+      ]
+    },
+    "Eddy Lin": {
+      "movement": [
+        121,
+        27
+      ],
+      "pronunciatio": "\ud83c\udf92\ud83d\udcda",
+      "description": "packing his materials for the next class   @ the School:classroom building:classroom 1:blackboard",
+      "chat": null
+    },
+    "Francisco Lopez": {
+      "movement": [
+        107,
+        16
+      ],
+      "pronunciatio": "\ud83d\udcdd\u270d\ufe0f",
+      "description": "taking notes on the lecture   @ the School:classroom building:classroom 1:blackboard",
+      "chat": null
+    },
+    "Giorgio Rossi": {
+      "movement": [
+        124,
+        21
+      ],
+      "pronunciatio": "\ud83d\udcd6\ud83e\udde0",
+      "description": "reviewing the upcoming lesson's key concepts   @ the School:classroom building:library room:library table",
+      "chat": null
+    },
+    "Hailey Johnson": {
+      "movement": [
+        50,
+        81
+      ],
+      "pronunciatio": "\ud83d\ude34",
+      "description": "sleeping @ the School:student dormitory 1:common room:bed",
+      "chat": null
+    },
+    "Jane Moreno": {
+      "movement": [
+        107,
+        16
+      ],
+      "pronunciatio": "\ud83d\udcac",
+      "description": "conversing about Jane Moreno and Klaus Mueller discussed the connection between the Industrial Revolution and modern societal issues, with Klaus expressing interest in sharing his AP Social Studies project with the class and mentioning his plans to attend Carmen and Eddy's music theory session at the library later that day to gain fresh perspectives for his research. @ <persona> Klaus Mueller",
+      "chat": [
+        [
+          "Jane Moreno",
+          "Klaus, I noticed you're working hard on that assignment. How's it going? Are you finding the connection between the Industrial Revolution and trigonometry interesting?"
+        ],
+        [
+          "Klaus Mueller",
+          "Actually, Jane, I was just thinking about how the Industrial Revolution's societal changes might parallel some modern issues we're studying in my AP Social Studies project. It's fascinating to see these historical patterns!"
+        ],
+        [
+          "Jane Moreno",
+          "That's a great observation, Klaus! The Industrial Revolution did bring about significant societal shifts. Maybe we can explore how those changes influenced modern structures in our next lesson. Would you be interested in sharing your AP project insights with the class?"
+        ],
+        [
+          "Klaus Mueller",
+          "I'd love to share my project with the class! Though I might need to check my schedule first - I'm planning to join Carmen and Eddy's music theory session at the library later today to get some fresh perspectives that might help with my research too."
+        ],
+        [
+          "Jane Moreno",
+          "That sounds like a great plan, Klaus! The music theory session could definitely add a unique angle to your research. Let me know when you're ready to present to the class, and we can schedule it. Good luck with your session later!"
+        ]
+      ]
+    },
+    "Jennifer Moore": {
+      "movement": [
+        44,
+        78
+      ],
+      "pronunciatio": "\ud83d\udcda\u270f\ufe0f",
+      "description": "packing up her notebook and materials @ the School:student dormitory 1:common room:desk",
+      "chat": null
+    },
+    "Sam Moore": {
+      "movement": [
+        107,
+        24
+      ],
+      "pronunciatio": "\u231b",
+      "description": "waiting to start working on an in-class assignment  @ <waiting> 107 24",
+      "chat": null
+    },
+    "Jacky Ma": {
+      "movement": [
+        54,
+        37
+      ],
+      "pronunciatio": "\ud83c\udfeb\ud83d\udeb6\u200d",
+      "description": "entering the school and heading to classroom 2   @ the School:classroom building:classroom 1:classroom student seating",
+      "chat": null
+    },
+    "Latoya Williams": {
+      "movement": [
+        6,
+        40
+      ],
+      "pronunciatio": "\ud83d\udcbe\ud83d\udcc1",
+      "description": "saving the project file @ the School:Latoya Williams's office and dormitory:office:computer desk",
+      "chat": null
+    },
+    "Valerie Florentini": {
+      "movement": [
+        106,
+        16
+      ],
+      "pronunciatio": "\ud83d\udcdd",
+      "description": "still taking notes on the lesson   @ the School:classroom building:classroom 1:blackboard",
+      "chat": null
+    }
+  },
+  "meta": {
+    "curr_time": "February 13, 2023, 08:56:30"
+  }
+}

@@ -1,0 +1,414 @@
+{
+  "persona": {
+    "Rajiv Patel": {
+      "movement": [
+        30,
+        40
+      ],
+      "pronunciatio": "\ud83e\uddf9\ud83d\udcda",
+      "description": "organizing his desk to prepare for work @ the School:headmasters' office and dormitory:office:computer desk",
+      "chat": null
+    },
+    "Ryan Park": {
+      "movement": [
+        61,
+        79
+      ],
+      "pronunciatio": "\ud83d\ude34",
+      "description": "sleeping @ the School:student dormitory 2:common room:bed",
+      "chat": null
+    },
+    "Wolfgang Schulz": {
+      "movement": [
+        107,
+        23
+      ],
+      "pronunciatio": "\ud83d\udc42\ud83d\udcda",
+      "description": "listening to the teacher's lecture   @ the School:classroom building:classroom 1:blackboard",
+      "chat": null
+    },
+    "Tom Moreno": {
+      "movement": [
+        110,
+        22
+      ],
+      "pronunciatio": "\u23f3\ud83d\udde3\ufe0f",
+      "description": "still participating in a class discussion   (waiting to start still participating in a class discussion ) @ the School:classroom building:classroom 1:classroom student seating",
+      "chat": null
+    },
+    "Tamara Taylor": {
+      "movement": [
+        96,
+        62
+      ],
+      "pronunciatio": "\ud83d\udc42\ud83d\udcda",
+      "description": "listening to the teacher's lecture @ the School:classroom building:classroom 1:blackboard",
+      "chat": null
+    },
+    "Yuriko Yamamoto": {
+      "movement": [
+        108,
+        20
+      ],
+      "pronunciatio": "\ud83d\udc42\ud83d\udcd6",
+      "description": "listening to the teacher's lecture @ the School:classroom building:classroom 1:blackboard",
+      "chat": null
+    },
+    "Isabella Rodriguez": {
+      "movement": [
+        108,
+        19
+      ],
+      "pronunciatio": "\ud83d\udcac",
+      "description": "conversing about Isabella Rodriguez and Klaus Mueller discussed Klaus's AP project on the Industrial Revolution's parallels to modern society, particularly labor conditions and the gig economy, and agreed to meet in the library after school to work on structuring the project after attending Carmen and Eddy's music theory session. @ <persona> Klaus Mueller",
+      "chat": [
+        [
+          "Isabella Rodriguez",
+          "Hey Klaus, how's the assignment going? Do you need any help with it?"
+        ],
+        [
+          "Klaus Mueller",
+          "Hey Isabella, thanks for asking! I'm almost done with the assignment, just wrapping up the last part. I was actually thinking about the Industrial Revolution's impact on modern society for my AP project\u2014did you know how much it parallels today's issues?"
+        ],
+        [
+          "Isabella Rodriguez",
+          "That's a fascinating topic, Klaus! The Industrial Revolution does have many parallels to today's technological advancements and societal changes. Would you like to discuss some specific aspects you're considering for your project? I'd be happy to brainstorm with you."
+        ],
+        [
+          "Klaus Mueller",
+          "That would be great, Isabella! I'm particularly interested in how the labor conditions during the Industrial Revolution compare to modern gig economy jobs. Also, I was thinking about attending Carmen and Eddy's music theory session later to see if I can find any unique cultural perspectives to incorporate. What do you think about that approach?"
+        ],
+        [
+          "Isabella Rodriguez",
+          "That's a brilliant approach, Klaus! Comparing labor conditions across different eras could provide deep insights, and incorporating cultural perspectives from music theory would add a unique dimension to your project. I think attending Carmen and Eddy's session is a great idea\u2014it might inspire some creative connections. Would you like me to help you outline how to structure these comparisons in your project?"
+        ],
+        [
+          "Klaus Mueller",
+          "That would be incredibly helpful, Isabella! I'd love to get your input on how to structure these comparisons. Maybe we could meet in the library after school to work on it? I'll be there for Carmen and Eddy's session anyway, so it could be a productive overlap."
+        ],
+        [
+          "Isabella Rodriguez",
+          "That sounds perfect, Klaus! Let's meet in the library after school\u2014I'll bring some resources on labor history and modern economic trends that might help with your comparisons. We can work on structuring your project after their session. Does that work for you?"
+        ],
+        [
+          "Klaus Mueller",
+          "That works perfectly, Isabella! Thanks so much for your help\u2014I really appreciate it. I'll see you in the library after school then. Looking forward to it!"
+        ]
+      ]
+    },
+    "Maria Lopez": {
+      "movement": [
+        70,
+        58
+      ],
+      "pronunciatio": "\ud83d\udc42\ud83d\udcda",
+      "description": "listening to the teacher's introduction to the day's lesson   @ the School:classroom building:classroom 1:blackboard",
+      "chat": null
+    },
+    "Klaus Mueller": {
+      "movement": [
+        108,
+        20
+      ],
+      "pronunciatio": "\ud83d\udcac",
+      "description": "conversing about Isabella Rodriguez and Klaus Mueller discussed Klaus's AP project on the Industrial Revolution's parallels to modern society, particularly labor conditions and the gig economy, and agreed to meet in the library after school to work on structuring the project after attending Carmen and Eddy's music theory session. @ <persona> Isabella Rodriguez",
+      "chat": [
+        [
+          "Isabella Rodriguez",
+          "Hey Klaus, how's the assignment going? Do you need any help with it?"
+        ],
+        [
+          "Klaus Mueller",
+          "Hey Isabella, thanks for asking! I'm almost done with the assignment, just wrapping up the last part. I was actually thinking about the Industrial Revolution's impact on modern society for my AP project\u2014did you know how much it parallels today's issues?"
+        ],
+        [
+          "Isabella Rodriguez",
+          "That's a fascinating topic, Klaus! The Industrial Revolution does have many parallels to today's technological advancements and societal changes. Would you like to discuss some specific aspects you're considering for your project? I'd be happy to brainstorm with you."
+        ],
+        [
+          "Klaus Mueller",
+          "That would be great, Isabella! I'm particularly interested in how the labor conditions during the Industrial Revolution compare to modern gig economy jobs. Also, I was thinking about attending Carmen and Eddy's music theory session later to see if I can find any unique cultural perspectives to incorporate. What do you think about that approach?"
+        ],
+        [
+          "Isabella Rodriguez",
+          "That's a brilliant approach, Klaus! Comparing labor conditions across different eras could provide deep insights, and incorporating cultural perspectives from music theory would add a unique dimension to your project. I think attending Carmen and Eddy's session is a great idea\u2014it might inspire some creative connections. Would you like me to help you outline how to structure these comparisons in your project?"
+        ],
+        [
+          "Klaus Mueller",
+          "That would be incredibly helpful, Isabella! I'd love to get your input on how to structure these comparisons. Maybe we could meet in the library after school to work on it? I'll be there for Carmen and Eddy's session anyway, so it could be a productive overlap."
+        ],
+        [
+          "Isabella Rodriguez",
+          "That sounds perfect, Klaus! Let's meet in the library after school\u2014I'll bring some resources on labor history and modern economic trends that might help with your comparisons. We can work on structuring your project after their session. Does that work for you?"
+        ],
+        [
+          "Klaus Mueller",
+          "That works perfectly, Isabella! Thanks so much for your help\u2014I really appreciate it. I'll see you in the library after school then. Looking forward to it!"
+        ]
+      ]
+    },
+    "Adam Smith": {
+      "movement": [
+        107,
+        22
+      ],
+      "pronunciatio": "\ud83d\udcac",
+      "description": "conversing about Arthur Burton and Adam Smith discussed their interest in chemistry, particularly photosynthesis and cellular respiration, and agreed to meet with Wolfgang Schulz in the library near the biology section at 4pm tomorrow to further explore these topics. @ <persona> Arthur Burton",
+      "chat": [
+        [
+          "Arthur Burton",
+          "Hey Adam, I noticed you're really focused on the lecture. Do you find this topic interesting too?"
+        ],
+        [
+          "Adam Smith",
+          "Actually, I was just thinking about how the teacher's point on chemical reactions could be challenged. Do you think there's more to it than what was presented?"
+        ],
+        [
+          "Arthur Burton",
+          "That's an interesting thought! Chemical reactions can be pretty complex. I'm actually really into chemistry, especially photosynthesis and cellular respiration. Are you interested in those topics too? Maybe we could discuss it more after class."
+        ],
+        [
+          "Adam Smith",
+          "Photosynthesis and cellular respiration are fascinating! I've been focusing more on creativity in my essays, but I'd love to hear your perspective. Maybe we can meet in the library after school tomorrow?"
+        ],
+        [
+          "Arthur Burton",
+          "That sounds great! I'm actually meeting Wolfgang Schulz in the library tomorrow to study for the chemistry competition, so we could all discuss it together. Would you like to join us?"
+        ],
+        [
+          "Adam Smith",
+          "That sounds perfect! I'd love to join you and Wolfgang. It'll be a great opportunity to explore these topics further and maybe even challenge some ideas together."
+        ],
+        [
+          "Arthur Burton",
+          "Awesome! I'll let Wolfgang know you're joining us. We usually sit near the biology section, so meet us there around 4pm?"
+        ],
+        [
+          "Adam Smith",
+          "Sounds like a plan! I'll see you and Wolfgang near the biology section at 4pm tomorrow. Looking forward to it!"
+        ]
+      ]
+    },
+    "Abigail Chen": {
+      "movement": [
+        74,
+        55
+      ],
+      "pronunciatio": "\ud83c\udf73\u2615",
+      "description": "eating breakfast @ the School:canteen:student canteen:student restaurant table",
+      "chat": null
+    },
+    "Arthur Burton": {
+      "movement": [
+        107,
+        24
+      ],
+      "pronunciatio": "\ud83d\udcac",
+      "description": "conversing about Arthur Burton and Adam Smith discussed their interest in chemistry, particularly photosynthesis and cellular respiration, and agreed to meet with Wolfgang Schulz in the library near the biology section at 4pm tomorrow to further explore these topics. @ <persona> Adam Smith",
+      "chat": [
+        [
+          "Arthur Burton",
+          "Hey Adam, I noticed you're really focused on the lecture. Do you find this topic interesting too?"
+        ],
+        [
+          "Adam Smith",
+          "Actually, I was just thinking about how the teacher's point on chemical reactions could be challenged. Do you think there's more to it than what was presented?"
+        ],
+        [
+          "Arthur Burton",
+          "That's an interesting thought! Chemical reactions can be pretty complex. I'm actually really into chemistry, especially photosynthesis and cellular respiration. Are you interested in those topics too? Maybe we could discuss it more after class."
+        ],
+        [
+          "Adam Smith",
+          "Photosynthesis and cellular respiration are fascinating! I've been focusing more on creativity in my essays, but I'd love to hear your perspective. Maybe we can meet in the library after school tomorrow?"
+        ],
+        [
+          "Arthur Burton",
+          "That sounds great! I'm actually meeting Wolfgang Schulz in the library tomorrow to study for the chemistry competition, so we could all discuss it together. Would you like to join us?"
+        ],
+        [
+          "Adam Smith",
+          "That sounds perfect! I'd love to join you and Wolfgang. It'll be a great opportunity to explore these topics further and maybe even challenge some ideas together."
+        ],
+        [
+          "Arthur Burton",
+          "Awesome! I'll let Wolfgang know you're joining us. We usually sit near the biology section, so meet us there around 4pm?"
+        ],
+        [
+          "Adam Smith",
+          "Sounds like a plan! I'll see you and Wolfgang near the biology section at 4pm tomorrow. Looking forward to it!"
+        ]
+      ]
+    },
+    "Ayesha Khan": {
+      "movement": [
+        19,
+        18
+      ],
+      "pronunciatio": "\ud83d\udcda\ud83d\udd0d",
+      "description": "reviewing the literature syllabus @ the School:Ayesha Khan's office and dormitory:office:bookshelf",
+      "chat": null
+    },
+    "Carlos Gomez": {
+      "movement": [
+        77,
+        76
+      ],
+      "pronunciatio": "\ud83d\udcd6\u270d\ufe0f",
+      "description": "taking out his poetry notebook @ the School:student dormitory 4:common room:desk",
+      "chat": null
+    },
+    "Carmen Ortiz": {
+      "movement": [
+        108,
+        18
+      ],
+      "pronunciatio": "\ud83d\udc42\ud83d\udcda",
+      "description": "listening to the teacher's lecture   @ the School:classroom building:classroom 1:blackboard",
+      "chat": null
+    },
+    "Eddy Lin": {
+      "movement": [
+        108,
+        20
+      ],
+      "pronunciatio": "\u231b",
+      "description": "waiting to start listening to the teacher's lecture  @ <waiting> 108 20",
+      "chat": null
+    },
+    "Francisco Lopez": {
+      "movement": [
+        107,
+        16
+      ],
+      "pronunciatio": "\ud83d\udde3\ufe0f\ud83d\udcac",
+      "description": "participating in a class discussion   @ the School:classroom building:classroom 1:blackboard",
+      "chat": null
+    },
+    "Giorgio Rossi": {
+      "movement": [
+        108,
+        29
+      ],
+      "pronunciatio": "\ud83d\udcdd\u2753",
+      "description": "jotting down questions to ask during class   @ the School:classroom building:classroom 1:blackboard",
+      "chat": null
+    },
+    "Hailey Johnson": {
+      "movement": [
+        50,
+        81
+      ],
+      "pronunciatio": "\ud83d\ude34",
+      "description": "sleeping @ the School:student dormitory 1:common room:bed",
+      "chat": null
+    },
+    "Jane Moreno": {
+      "movement": [
+        107,
+        16
+      ],
+      "pronunciatio": "\ud83d\udcac",
+      "description": "conversing about Jane Moreno and Valerie Florentini discussed Valerie's color-coded note-taking system, with blue for dates, green for key concepts, and pink for important people, and agreed that Valerie would present her method and demonstrate how she connects historical music periods to her harp practice during Wednesday's class. @ <persona> Valerie Florentini",
+      "chat": [
+        [
+          "Jane Moreno",
+          "Hi Valerie, I noticed you're taking such detailed notes! Would you mind sharing what color-coding techniques you're using? I'm always looking for new ways to help students organize their history notes."
+        ],
+        [
+          "Valerie Florentini",
+          "Oh, sure Ms. Moreno! I use different colors for different subjects\u2014like blue for dates, green for key concepts, and pink for important people. It helps me balance my harp practice and homework too, since I can quickly see what needs priority."
+        ],
+        [
+          "Jane Moreno",
+          "That's fascinating, Valerie! Your system sounds very efficient. Would you be interested in sharing your method with the class during our next session? I think others could benefit from your approach, especially when connecting history with other subjects like music or math."
+        ],
+        [
+          "Valerie Florentini",
+          "I'd love to share! Maybe I could show how I connect historical music periods to my harp practice too, if that would help?"
+        ],
+        [
+          "Jane Moreno",
+          "That would be wonderful, Valerie! Making those interdisciplinary connections is exactly what we're exploring with the Industrial Revolution and trigonometry. How about we schedule your presentation for Wednesday's class?"
+        ],
+        [
+          "Valerie Florentini",
+          "Wednesday sounds perfect! I'll prepare some examples of how I link historical music styles to my practice routines. Thank you for the opportunity, Ms. Moreno!"
+        ]
+      ]
+    },
+    "Jennifer Moore": {
+      "movement": [
+        44,
+        54
+      ],
+      "pronunciatio": "\ud83d\udc42\ud83d\udc69\u200d",
+      "description": "listening to the teacher's introduction @ the School:classroom building:classroom 1:blackboard",
+      "chat": null
+    },
+    "Sam Moore": {
+      "movement": [
+        108,
+        19
+      ],
+      "pronunciatio": "\u231b",
+      "description": "waiting to start listening to the teacher's lecture  @ <waiting> 108 19",
+      "chat": null
+    },
+    "Jacky Ma": {
+      "movement": [
+        90,
+        29
+      ],
+      "pronunciatio": "\ud83d\udc42\ud83d\udcdd",
+      "description": "listening to the teacher's lecture   @ the School:classroom building:classroom 1:blackboard",
+      "chat": null
+    },
+    "Latoya Williams": {
+      "movement": [
+        6,
+        40
+      ],
+      "pronunciatio": "\ud83d\udcda\u270f\ufe0f",
+      "description": "reviewing the math curriculum standards @ the School:Latoya Williams's office and dormitory:office:computer desk",
+      "chat": null
+    },
+    "Valerie Florentini": {
+      "movement": [
+        106,
+        16
+      ],
+      "pronunciatio": "\ud83d\udcac",
+      "description": "conversing about Jane Moreno and Valerie Florentini discussed Valerie's color-coded note-taking system, with blue for dates, green for key concepts, and pink for important people, and agreed that Valerie would present her method and demonstrate how she connects historical music periods to her harp practice during Wednesday's class. @ <persona> Jane Moreno",
+      "chat": [
+        [
+          "Jane Moreno",
+          "Hi Valerie, I noticed you're taking such detailed notes! Would you mind sharing what color-coding techniques you're using? I'm always looking for new ways to help students organize their history notes."
+        ],
+        [
+          "Valerie Florentini",
+          "Oh, sure Ms. Moreno! I use different colors for different subjects\u2014like blue for dates, green for key concepts, and pink for important people. It helps me balance my harp practice and homework too, since I can quickly see what needs priority."
+        ],
+        [
+          "Jane Moreno",
+          "That's fascinating, Valerie! Your system sounds very efficient. Would you be interested in sharing your method with the class during our next session? I think others could benefit from your approach, especially when connecting history with other subjects like music or math."
+        ],
+        [
+          "Valerie Florentini",
+          "I'd love to share! Maybe I could show how I connect historical music periods to my harp practice too, if that would help?"
+        ],
+        [
+          "Jane Moreno",
+          "That would be wonderful, Valerie! Making those interdisciplinary connections is exactly what we're exploring with the Industrial Revolution and trigonometry. How about we schedule your presentation for Wednesday's class?"
+        ],
+        [
+          "Valerie Florentini",
+          "Wednesday sounds perfect! I'll prepare some examples of how I link historical music styles to my practice routines. Thank you for the opportunity, Ms. Moreno!"
+        ]
+      ]
+    }
+  },
+  "meta": {
+    "curr_time": "February 13, 2023, 09:03:50"
+  }
+}

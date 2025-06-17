@@ -1,0 +1,446 @@
+{
+  "vision_r": 8,
+  "att_bandwidth": 8,
+  "retention": 8,
+  "curr_time": "February 13, 2023, 09:59:50",
+  "curr_tile": [
+    110,
+    18
+  ],
+  "daily_plan_req": "Klaus Mueller goes to the school at 7:30am, attends classes in classroom 1 until 5pm, and takes a break at noon from 12am to 2pm. Every day at 9pm, he practices long jumping on the school playground for half an hour. He spends most of his spare time at library room in the classroom building.",
+  "name": "Klaus Mueller",
+  "first_name": "Klaus",
+  "last_name": "Mueller",
+  "age": 17,
+  "innate": "kind, inquisitive, passionate",
+  "learned": "Klaus Mueller is a high school student at grade 11. He is passionate about social justice and loves to explore different perspectives. He lives in a student dormitory.",
+  "currently": "Klaus Mueller is working on a research project for his AP Social Studies class about community development.",
+  "lifestyle": "Klaus Mueller goes to bed around 12pm and wakes up at 7am.",
+  "living_area": "the School:student dormitory 3:common room",
+  "concept_forget": 100,
+  "daily_reflection_time": 180,
+  "daily_reflection_size": 5,
+  "overlap_reflect_th": 4,
+  "kw_strg_event_reflect_th": 10,
+  "kw_strg_thought_reflect_th": 9,
+  "recency_w": 1,
+  "relevance_w": 1,
+  "importance_w": 1,
+  "recency_decay": 0.99,
+  "importance_trigger_max": 150,
+  "importance_trigger_curr": 148,
+  "importance_ele_n": 2,
+  "thought_count": 5,
+  "commitments": {
+    "2023-02-13": [
+      {
+        "time": "14:00",
+        "duration": 120,
+        "description": "Work on AP Social Studies research project at the library",
+        "with": "",
+        "location": "Library"
+      },
+      {
+        "time": "12:30",
+        "duration": 60,
+        "description": "Join Carmen Ortiz and Eddy at the library for their music theory session to hear about their work and share perspectives",
+        "with": "",
+        "location": "Library"
+      },
+      {
+        "time": "9:00",
+        "duration": 10,
+        "description": "Check schedule before committing to present AP project to the class",
+        "with": "",
+        "location": ""
+      },
+      {
+        "time": "14:00",
+        "duration": 30,
+        "description": "Present AP project to the class",
+        "with": "",
+        "location": ""
+      },
+      {
+        "time": "14:00",
+        "duration": 60,
+        "description": "Attend Carmen and Eddy's music theory session",
+        "with": "",
+        "location": ""
+      },
+      {
+        "time": "10:00",
+        "duration": 90,
+        "description": "Meet Isabella Rodriguez in the library to work on structuring the AP project about the Industrial Revolution's parallels to modern society",
+        "with": "Isabella",
+        "location": "Library"
+      },
+      {
+        "time": "afternoon (before 16:00)",
+        "duration": 60,
+        "description": "Prepare and gather materials on fractal models and labor hierarchies for the 4pm meeting with Yuriko, Isabella, and Giorgio at the library",
+        "with": "Isabella",
+        "location": "Library"
+      },
+      {
+        "time": "15:30",
+        "duration": 30,
+        "description": "Travel to the library for the 4pm meeting with Yuriko, Isabella, and Giorgio",
+        "with": "Isabella",
+        "location": "Library"
+      },
+      {
+        "time": "10:00",
+        "duration": 90,
+        "description": "Prepare an outline combining historical labor movements, gig economy comparisons, and fractal models for the lunch meeting with Jane Moreno and Francisco Lopez tomorrow",
+        "with": "Jane",
+        "location": ""
+      }
+    ]
+  },
+  "daily_req": [
+    "wake up and complete the morning routine at 7:00 am",
+    "wake up and complete the morning routine at 7:00 am",
+    "leave for school at 7:30 am",
+    "attend classes in classroom 1 from 8:00 am to 12:00 pm",
+    "take a break from 12:00 pm to 2:00 pm (includes lunch and relaxation",
+    "attend classes from 2:00 pm to 5:00 pm",
+    "study and work on the research project at the library from 5:30 pm to 8:30 pm",
+    "practice long jumping at the school playground from 9:00 pm to 9:30 pm",
+    "return to the dormitory and unwind from 10:00 pm to 12:00 am",
+    "go to bed at 12:00 am"
+  ],
+  "f_daily_schedule": [
+    [
+      "sleeping",
+      420
+    ],
+    [
+      "waking up and stretching in bed",
+      5
+    ],
+    [
+      "brushing his teeth",
+      5
+    ],
+    [
+      "taking a quick shower (waiting to start taking a quick showe)",
+      15
+    ],
+    [
+      "drying off and getting dressed   (waiting to start drying off and getting dressed )",
+      5
+    ],
+    [
+      "packing his school bag with books and materials  ",
+      5
+    ],
+    [
+      "grabbing a quick breakfast from the dorm kitchen   (conversing about Klaus Mueller and Eddy Lin greeted each other in the morning while making breakfast, with Eddy mentioning his lunch plans with Carmen followed by studying music theory together, while Klaus shared his plan to work on his AP Social Studies research project at the library, and both expressed the possibility of meeting there later in the afternoon.)",
+      6
+    ],
+    [
+      "still grabbing a quick breakfast from the dorm kitchen  ",
+      4
+    ],
+    [
+      "still grabbing a quick breakfast from the dorm kitchen   (conversing about Klaus Mueller and Carmen Ortiz discussed their plans for the day, with Carmen excited about her music theory session with Eddy at the library around 12:30pm, and Klaus planning to join them there after his classes to hear about their session and possibly offer fresh perspectives.)",
+      6
+    ],
+    [
+      "still grabbing a quick breakfast from the dorm kitchen  ",
+      9
+    ],
+    [
+      "listening to the teacher's lecture  ",
+      20
+    ],
+    [
+      "taking notes on the lecture material  ",
+      15
+    ],
+    [
+      "participating in a class discussion  ",
+      10
+    ],
+    [
+      "reviewing his notes for clarity   (conversing about Klaus Mueller and Valerie Florentini discussed their note-taking and scheduling habits, with Valerie explaining her color-coding technique for balancing harp practice after school and in the evenings with coursework, and Klaus expressing interest in trying her methods for his AP Social Studies project and extracurriculars.)",
+      6
+    ],
+    [
+      "working on a short in-class assignment  ",
+      1
+    ],
+    [
+      "working on a short in-class assignment   (conversing about Jane Moreno and Klaus Mueller discussed the connection between the Industrial Revolution and modern societal issues, with Klaus expressing interest in sharing his AP Social Studies project with the class and mentioning his plans to attend Carmen and Eddy's music theory session at the library later that day to gain fresh perspectives for his research.)",
+      6
+    ],
+    [
+      "still working on a short in-class assignment  ",
+      1
+    ],
+    [
+      "still working on a short in-class assignment   (conversing about Isabella Rodriguez and Klaus Mueller discussed Klaus's AP project on the Industrial Revolution's parallels to modern society, particularly labor conditions and the gig economy, and agreed to meet in the library after school to work on structuring the project after attending Carmen and Eddy's music theory session.)",
+      10
+    ],
+    [
+      "listening to the teacher's lecture  ",
+      1
+    ],
+    [
+      "listening to the teacher's lecture   (waiting to start listening to the teacher's lecture )",
+      10
+    ],
+    [
+      "jotting down key points in his notebook  ",
+      5
+    ],
+    [
+      "participating in a class discussion  ",
+      1
+    ],
+    [
+      "participating in a class discussion   (conversing about Klaus Mueller and Giorgio Rossi discussed parallels between mathematical structures like fractals and social hierarchies, particularly in labor conditions from the Industrial Revolution to the modern gig economy, and agreed to meet with Isabella in the library after school tomorrow to collaborate on incorporating fractal models and chaos theory into Klaus's project.)",
+      10
+    ],
+    [
+      "still participating in a class discussion  ",
+      4
+    ],
+    [
+      "taking a short break to stretch   (conversing about Klaus Mueller and Yuriko Yamamoto discussed fractal patterns in social structures, labor hierarchies, and political systems, then agreed to meet with Isabella at 4pm tomorrow in the library to brainstorm incorporating chaos theory and governance structures into Klaus's project.)",
+      9
+    ],
+    [
+      "still taking a short break to stretch  ",
+      1
+    ],
+    [
+      "reviewing his notes from earlier   (conversing about Klaus Mueller and Jane Moreno discussed connecting ideas about the Industrial Revolution and modern societal issues to their class project, specifically comparing historical labor movements with the gig economy, and planned to meet during lunch the next day with Francisco Lopez to combine their ideas, with Klaus preparing an outline incorporating fractal models and planning to stop by Jane's office later that day after his long jump practice.)",
+      8
+    ],
+    [
+      "still reviewing his notes from earlier  ",
+      1
+    ],
+    [
+      "still reviewing his notes from earlier   (conversing about Arthur Burton and Klaus Mueller discussed the parallels between societal changes during the Industrial Revolution and modern issues, particularly in labor conditions and the gig economy, with Klaus mentioning his AP Social Studies project involving fractal models and chaos theory, and they agreed to meet at 4pm tomorrow in the library to further discuss the project with Giorgio Rossi and Isabella.)",
+      7
+    ],
+    [
+      "listening to the teacher's lecture  ",
+      4
+    ],
+    [
+      "jotting down key points from the lecture  ",
+      5
+    ],
+    [
+      "asking a clarifying question about the topic  ",
+      5
+    ],
+    [
+      "reviewing his notes for accuracy  ",
+      5
+    ],
+    [
+      "listening to a class discussion  ",
+      10
+    ],
+    [
+      "taking detailed notes on the current lecture  ",
+      15
+    ],
+    [
+      "organizing his notes by topic  ",
+      5
+    ],
+    [
+      "briefly summarizing the lecture in his notebook",
+      5
+    ],
+    [
+      "attending classes in classroom 1, and at around 11:20, will briefly discuss the research project with a classmate, and continue preparing outline for the lunch meeting",
+      60
+    ],
+    [
+      "taking a break, having lunch in the school cafeteria, and at around 12:30, will join Carmen Ortiz and Eddy at the library for their music theory session to hear about their work and share perspectives, and at around 12:40, will relax in the courtyard with friends",
+      60
+    ],
+    [
+      "taking a break, reading a book in the courtyard, and at around 01:30, will grab a snack from the vending machine, and continue preparing outline for the lunch meeting",
+      60
+    ],
+    [
+      "attending classes in classroom 1, and at around 02:15, will present AP project to the class for 30 minutes, and at around 02:45, will participate in a group discussion about social justice topics, and at around 03:00, will begin preparing materials on fractal models and labor hierarchies for the 4pm meeting",
+      60
+    ],
+    [
+      "attending classes in classroom 1, and at around 03:20, will work on a short in-class assignment about community development, and at around 03:30, will continue preparing materials for the 4pm meeting, then at around 03:45, will travel to the library for the meeting",
+      60
+    ],
+    [
+      "meeting with Yuriko, Isabella, and Giorgio at the library to discuss fractal models and labor hierarchies, and at around 04:15, will pack up his materials for the day",
+      60
+    ],
+    [
+      "packing up his school materials and preparing to head to the library, and at around 05:30, will begin meeting Isabella Rodriguez in the library to work on structuring the AP project about the Industrial Revolution's parallels to modern society",
+      60
+    ],
+    [
+      "continuing work with Isabella Rodriguez on structuring the AP project, and at around 06:45, will take a short break to organize his notes",
+      60
+    ],
+    [
+      "finishing work with Isabella Rodriguez on structuring the AP project, then continuing work on his AP Social Studies research project, and at around 07:30, will take a short break to grab a coffee from the vending machine, and if seen, will say hi to Eddy for 5 minutes",
+      60
+    ],
+    [
+      "finishing work on his AP Social Studies research project, then resume studying at the library, wrapping up his research project work, and at around 08:20, will pack up his materials to leave",
+      60
+    ],
+    [
+      "practicing long jump at the school playground, and at around 09:30, will pack up his sports gear to head back to the dormitory, and at around 09:45, will stop by Jane Moreno's office for 15 minutes",
+      60
+    ],
+    [
+      "returning to the dormitory, showering, and at around 10:30, will unwind by listening to music and journaling about his day",
+      60
+    ],
+    [
+      "getting ready for bed, brushing his teeth, and at around 11:30, will set his alarm for the next morning",
+      60
+    ]
+  ],
+  "f_daily_schedule_hourly_org": [
+    [
+      "sleeping",
+      420
+    ],
+    [
+      "waking up and completing his morning routine",
+      60
+    ],
+    [
+      "attending classes in classroom 1 -- 60 minutes",
+      60
+    ],
+    [
+      "attending classes in classroom 1, and at around 09:15, will check schedule before committing to present AP project to the class for 10 minutes, and at around 09:45, will take a short break to stretch",
+      60
+    ],
+    [
+      "attending classes in classroom 1, and at around 10:30, will take notes on the current lecture, and at around 10:45, will begin preparing outline combining historical labor movements, gig economy comparisons, and fractal models for the lunch meeting with Jane Moreno and Francisco Lopez tomorrow",
+      60
+    ],
+    [
+      "attending classes in classroom 1, and at around 11:20, will briefly discuss the research project with a classmate, and continue preparing outline for the lunch meeting",
+      60
+    ],
+    [
+      "taking a break, having lunch in the school cafeteria, and at around 12:30, will join Carmen Ortiz and Eddy at the library for their music theory session to hear about their work and share perspectives, and at around 12:40, will relax in the courtyard with friends",
+      60
+    ],
+    [
+      "taking a break, reading a book in the courtyard, and at around 01:30, will grab a snack from the vending machine, and continue preparing outline for the lunch meeting",
+      60
+    ],
+    [
+      "attending classes in classroom 1, and at around 02:15, will present AP project to the class for 30 minutes, and at around 02:45, will participate in a group discussion about social justice topics, and at around 03:00, will begin preparing materials on fractal models and labor hierarchies for the 4pm meeting",
+      60
+    ],
+    [
+      "attending classes in classroom 1, and at around 03:20, will work on a short in-class assignment about community development, and at around 03:30, will continue preparing materials for the 4pm meeting, then at around 03:45, will travel to the library for the meeting",
+      60
+    ],
+    [
+      "meeting with Yuriko, Isabella, and Giorgio at the library to discuss fractal models and labor hierarchies, and at around 04:15, will pack up his materials for the day",
+      60
+    ],
+    [
+      "packing up his school materials and preparing to head to the library, and at around 05:30, will begin meeting Isabella Rodriguez in the library to work on structuring the AP project about the Industrial Revolution's parallels to modern society",
+      60
+    ],
+    [
+      "continuing work with Isabella Rodriguez on structuring the AP project, and at around 06:45, will take a short break to organize his notes",
+      60
+    ],
+    [
+      "finishing work with Isabella Rodriguez on structuring the AP project, then continuing work on his AP Social Studies research project, and at around 07:30, will take a short break to grab a coffee from the vending machine, and if seen, will say hi to Eddy for 5 minutes",
+      60
+    ],
+    [
+      "finishing work on his AP Social Studies research project, then resume studying at the library, wrapping up his research project work, and at around 08:20, will pack up his materials to leave",
+      60
+    ],
+    [
+      "practicing long jump at the school playground, and at around 09:30, will pack up his sports gear to head back to the dormitory, and at around 09:45, will stop by Jane Moreno's office for 15 minutes",
+      60
+    ],
+    [
+      "returning to the dormitory, showering, and at around 10:30, will unwind by listening to music and journaling about his day",
+      60
+    ],
+    [
+      "getting ready for bed, brushing his teeth, and at around 11:30, will set his alarm for the next morning",
+      60
+    ]
+  ],
+  "act_address": "<persona> Arthur Burton",
+  "act_start_time": "February 13, 2023, 09:59:00",
+  "act_duration": 7,
+  "act_description": "conversing about Arthur Burton and Klaus Mueller discussed the parallels between societal changes during the Industrial Revolution and modern issues, particularly in labor conditions and the gig economy, with Klaus mentioning his AP Social Studies project involving fractal models and chaos theory, and they agreed to meet at 4pm tomorrow in the library to further discuss the project with Giorgio Rossi and Isabella.",
+  "act_pronunciatio": "\ud83d\udcac",
+  "act_event": [
+    "Klaus Mueller",
+    "chat with",
+    "Arthur Burton"
+  ],
+  "act_obj_description": null,
+  "act_obj_pronunciatio": null,
+  "act_obj_event": [
+    null,
+    null,
+    null
+  ],
+  "chatting_with": "Arthur Burton",
+  "chat": [
+    [
+      "Arthur Burton",
+      "Hey Klaus, still reviewing your notes? I saw you were really focused during the lecture. Did you find anything particularly interesting?"
+    ],
+    [
+      "Klaus Mueller",
+      "Yeah, actually! I found a fascinating parallel between the societal changes during the Industrial Revolution and some modern issues we're facing. It's part of my AP Social Studies project. Have you thought about how historical patterns repeat?"
+    ],
+    [
+      "Arthur Burton",
+      "That sounds really intriguing, Klaus! I've actually been noticing some patterns too, especially in how labor conditions evolve over time. It's cool how history connects to modern issues like the gig economy. Do you think these parallels could help us predict future changes?"
+    ],
+    [
+      "Klaus Mueller",
+      "Absolutely! That's exactly what I'm exploring. I'm even collaborating with Giorgio Rossi and Isabella to incorporate fractal models and chaos theory into this analysis. It's amazing how mathematical structures can mirror social hierarchies from the Industrial Revolution to today's gig economy. Would you like to join us in the library tomorrow to discuss this further?"
+    ],
+    [
+      "Arthur Burton",
+      "That sounds like an awesome project, Klaus! I'd love to join you tomorrow in the library to discuss it further. I'm also curious to see how you're applying fractal models to social hierarchies. It's a really innovative approach!"
+    ],
+    [
+      "Klaus Mueller",
+      "Great! We're meeting at 4pm tomorrow in the library. Giorgio mentioned some interesting fractal patterns that might help visualize labor structure changes - I think your chemistry competition perspective could add another valuable dimension to our discussion. See you then!"
+    ]
+  ],
+  "chatting_with_buffer": {
+    "Eddy Lin": 0,
+    "Carmen Ortiz": 0,
+    "Valerie Florentini": 0,
+    "Jane Moreno": 753,
+    "Isabella Rodriguez": 0,
+    "Giorgio Rossi": 0,
+    "Yuriko Yamamoto": 375,
+    "Arthur Burton": 800
+  },
+  "chatting_end_time": "February 13, 2023, 10:06:00",
+  "act_path_set": true,
+  "planned_path": []
+}

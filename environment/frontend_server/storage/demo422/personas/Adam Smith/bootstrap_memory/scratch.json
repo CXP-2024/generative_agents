@@ -1,0 +1,455 @@
+{
+  "vision_r": 8,
+  "att_bandwidth": 8,
+  "retention": 8,
+  "curr_time": "February 13, 2023, 09:59:50",
+  "curr_tile": [
+    109,
+    23
+  ],
+  "daily_plan_req": "Adam Smith eats breakfast at 6am. He don't have lunch and spend his lunch time at library room. He attends class in classroom 1.",
+  "name": "Adam Smith",
+  "first_name": "Adam",
+  "last_name": "Smith",
+  "age": 17,
+  "innate": "thoughtful, reflective, intellectual",
+  "learned": "Adam Smith is a high school student at grade 11. He likes to challenge teachers' ideas. He lives in a student dormitory.",
+  "currently": "Adam Smith is writing an essay about the importance of creativity and how it can shape the world. Adam is also curious about who will be running for the class minister election next week.",
+  "lifestyle": "Adam Smith goes to bed around 8pm, awakes up around 4am, eats dinner around 5pm.",
+  "living_area": "the School:student dormitory 4:common room",
+  "concept_forget": 100,
+  "daily_reflection_time": 180,
+  "daily_reflection_size": 5,
+  "overlap_reflect_th": 4,
+  "kw_strg_event_reflect_th": 10,
+  "kw_strg_thought_reflect_th": 9,
+  "recency_w": 1,
+  "relevance_w": 1,
+  "importance_w": 1,
+  "recency_decay": 0.995,
+  "importance_trigger_max": 250,
+  "importance_trigger_curr": 142,
+  "importance_ele_n": 30,
+  "thought_count": 5,
+  "commitments": {
+    "2023-02-13": [
+      {
+        "time": "9:00",
+        "duration": 60,
+        "description": "Prepare discussion points about leadership styles and creativity for tomorrow's meeting with Carmen",
+        "with": "",
+        "location": ""
+      },
+      {
+        "time": "10:00",
+        "duration": 45,
+        "description": "Sketch out the electron transport chain diagram for tomorrow's study session",
+        "with": "",
+        "location": ""
+      },
+      {
+        "time": "16:00",
+        "duration": 60,
+        "description": "Discuss with Wolfgang how to link photosynthesis to cellular respiration at the library at 4pm",
+        "with": "",
+        "location": "Library"
+      }
+    ]
+  },
+  "daily_req": [
+    "wake up and complete the morning routine at 4:00 am",
+    "wake up and complete the morning routine from 4:00 am to 4:30 am",
+    "work on the essay about creativity from 4:30 am to 5:45 am",
+    "eat breakfast at 6:00 am",
+    "attend classes in classroom 1 from 7:00 am to 12:00 pm",
+    "spend time in the library room from 12:00 pm to 1:00 pm",
+    "attend afternoon classes in classroom 1 from 1:00 pm to 3:00 pm",
+    "research class minister election candidates from 3:00 pm to 4:30 pm",
+    "eat dinner at 5:00 pm",
+    "review and refine the essay from 5:30 pm to 7:30 pm",
+    "prepare for bed and sleep at 8:00 pm"
+  ],
+  "f_daily_schedule": [
+    [
+      "sleeping",
+      240
+    ],
+    [
+      "waking up and stretching",
+      5
+    ],
+    [
+      "brushing his teeth",
+      5
+    ],
+    [
+      "washing his face",
+      5
+    ],
+    [
+      "getting dressed",
+      5
+    ],
+    [
+      "organizing his desk for essay work",
+      5
+    ],
+    [
+      "reviewing his essay outline",
+      10
+    ],
+    [
+      "writing the introduction for his essay",
+      15
+    ],
+    [
+      "taking a short break to gather thoughts",
+      5
+    ],
+    [
+      "jotting down key points for the next section",
+      5
+    ],
+    [
+      "reviewing his essay outline",
+      10
+    ],
+    [
+      "researching sources on creativity",
+      15
+    ],
+    [
+      "drafting the introduction paragraph",
+      10
+    ],
+    [
+      "writing the first body paragraph",
+      15
+    ],
+    [
+      "taking a short break",
+      5
+    ],
+    [
+      "organizing his notes for the next writing session",
+      5
+    ],
+    [
+      "walking to the dormitory dining hall",
+      5
+    ],
+    [
+      "grabbing a tray and selecting breakfast items",
+      10
+    ],
+    [
+      "sitting down at a table and starting to eat",
+      15
+    ],
+    [
+      "reading a book while eating",
+      15
+    ],
+    [
+      "finishing breakfast and clearing his tray",
+      10
+    ],
+    [
+      "walking back to his dorm room",
+      5
+    ],
+    [
+      "listening to the teacher's lecture",
+      20
+    ],
+    [
+      "taking notes on key points",
+      15
+    ],
+    [
+      "raising a question to challenge the teacher's idea",
+      10
+    ],
+    [
+      "discussing the topic with classmates",
+      10
+    ],
+    [
+      "taking a short break between lessons",
+      5
+    ],
+    [
+      "listening to the teacher's lecture",
+      15
+    ],
+    [
+      "taking notes on the lecture",
+      10
+    ],
+    [
+      "raising a question to challenge the teacher's point",
+      5
+    ],
+    [
+      "engaging in a class discussion (waiting to start engaging in a class discussio)",
+      10
+    ],
+    [
+      "taking a short break between lessons  ",
+      5
+    ],
+    [
+      "preparing for the next lesson  ",
+      1
+    ],
+    [
+      "preparing for the next lesson   (conversing about Carmen Ortiz and Adam Smith discussed the upcoming class minister election, with Carmen mentioning Maria Lopez's potential candidacy and agreeing to ask around about other candidates; they also planned to organize a leadership qualities discussion tied to music projects, with Carmen checking Mrs. Johnson's availability and creating a sign-up sheet and event plan to review with Mr. Smith the next day.)",
+      13
+    ],
+    [
+      "still preparing for the next lesson  ",
+      1
+    ],
+    [
+      "listening to the teacher's lecture  ",
+      3
+    ],
+    [
+      "listening to the teacher's lecture   (conversing about Arthur Burton and Adam Smith discussed their interest in chemistry, particularly photosynthesis and cellular respiration, and agreed to meet with Wolfgang Schulz in the library near the biology section at 4pm tomorrow to further explore these topics.)",
+      6
+    ],
+    [
+      "still listening to the teacher's lecture  ",
+      6
+    ],
+    [
+      "taking notes on the lecture  ",
+      10
+    ],
+    [
+      "raising his hand to challenge a point made by the teacher  ",
+      5
+    ],
+    [
+      "engaging in a brief discussion with the teacher  ",
+      10
+    ],
+    [
+      "reviewing his notes and reflecting on the discussion   (conversing about Arthur Burton and Adam Smith discussed their excitement for tomorrow's study session with Wolfgang, planning to prepare diagrams of the electron transport chain and questions about energy transfer in photosynthesis and cellular respiration, while also linking the discussion to leadership skills for an upcoming election, and agreed to meet at 4pm in the library.)",
+      10
+    ],
+    [
+      "working on a short in-class assignment   (conversing about Carmen Ortiz and Adam Smith discussed their assignment progress, plans for Maria Lopez's candidacy for class minister, scheduling a discussion with Mrs. Johnson for Thursday after school, drafting a sign-up sheet, coordinating musical talents from Maria, Jacky, and Eddy, integrating a live mural session with music performances by Jennifer, Eddy, and Maria, brainstorming connections between leadership styles and musical genres, seeking insights from Arthur and Wolfgang on leadership from a science perspective, and aiming to finalize all plans by Wednesday.)",
+      12
+    ],
+    [
+      "packing up his materials for the break  ",
+      3
+    ],
+    [
+      "listening to the teacher's lecture  ",
+      15
+    ],
+    [
+      "jotting down key points from the lecture  ",
+      10
+    ],
+    [
+      "raising a question to challenge the teacher's perspective  ",
+      5
+    ],
+    [
+      "taking notes on the teacher's response  ",
+      5
+    ],
+    [
+      "reviewing the discussion points for tomorrow's meeting  ",
+      10
+    ],
+    [
+      "taking a short break between lessons  ",
+      5
+    ],
+    [
+      "refining his arguments about leadership styles",
+      5
+    ],
+    [
+      "attending classes in classroom 1, and at around 11:50, will prepare to leave for the library",
+      60
+    ],
+    [
+      "spending time in the library room, reading about creativity theories, and at around 12:45, will prepare for afternoon classes",
+      60
+    ],
+    [
+      "attending afternoon classes in classroom 1, and at around 01:50, will take a short break between lessons, then prepare thought-provoking questions about energy transfer for tomorrow's study session",
+      60
+    ],
+    [
+      "attending afternoon classes in classroom 1, and at around 02:50, will take a short break between lessons, then consider how to integrate leadership styles and creativity topics with the students' musical projects for the upcoming class minister election event",
+      60
+    ],
+    [
+      "researching class minister election candidates in the library, and at around 03:45, will take a short break to stretch, then continue integrating leadership styles and creativity topics with the students' musical projects",
+      60
+    ],
+    [
+      "discussing with Wolfgang how to link photosynthesis to cellular respiration at the library, and at around 04:30, will take a short break before dinner",
+      60
+    ],
+    [
+      "eating dinner in the dormitory dining hall",
+      60
+    ],
+    [
+      "reviewing and refining his essay about creativity, and at around 06:45, will take a short break to stretch",
+      60
+    ],
+    [
+      "reviewing and refining his essay about creativity, and at around 07:30, will start preparing for bed",
+      60
+    ],
+    [
+      "sleeping",
+      240
+    ]
+  ],
+  "f_daily_schedule_hourly_org": [
+    [
+      "sleeping",
+      240
+    ],
+    [
+      "waking up and completing his morning routine, and at around 04:30, will start working on his essay about creativity",
+      60
+    ],
+    [
+      "working on his essay about creativity, and at around 05:45, will take a short break before breakfast",
+      60
+    ],
+    [
+      "eating breakfast in the dormitory dining hall",
+      60
+    ],
+    [
+      "attending morning classes in classroom 1, and at around 07:50, will take a short break between lessons",
+      60
+    ],
+    [
+      "attending classes in classroom 1, and at around 08:50, will take a short break between lessons",
+      60
+    ],
+    [
+      "attending classes in classroom 1, and at around 09:50, will take a short break between lessons, then prepare discussion points about leadership styles and creativity for tomorrow's meeting with Carmen",
+      60
+    ],
+    [
+      "attending classes in classroom 1, and at around 10:50, will take a short break between lessons, then sketch out the electron transport chain diagram for tomorrow's study session",
+      60
+    ],
+    [
+      "attending classes in classroom 1, and at around 11:50, will prepare to leave for the library",
+      60
+    ],
+    [
+      "spending time in the library room, reading about creativity theories, and at around 12:45, will prepare for afternoon classes",
+      60
+    ],
+    [
+      "attending afternoon classes in classroom 1, and at around 01:50, will take a short break between lessons, then prepare thought-provoking questions about energy transfer for tomorrow's study session",
+      60
+    ],
+    [
+      "attending afternoon classes in classroom 1, and at around 02:50, will take a short break between lessons, then consider how to integrate leadership styles and creativity topics with the students' musical projects for the upcoming class minister election event",
+      60
+    ],
+    [
+      "researching class minister election candidates in the library, and at around 03:45, will take a short break to stretch, then continue integrating leadership styles and creativity topics with the students' musical projects",
+      60
+    ],
+    [
+      "discussing with Wolfgang how to link photosynthesis to cellular respiration at the library, and at around 04:30, will take a short break before dinner",
+      60
+    ],
+    [
+      "eating dinner in the dormitory dining hall",
+      60
+    ],
+    [
+      "reviewing and refining his essay about creativity, and at around 06:45, will take a short break to stretch",
+      60
+    ],
+    [
+      "reviewing and refining his essay about creativity, and at around 07:30, will start preparing for bed",
+      60
+    ],
+    [
+      "sleeping",
+      240
+    ]
+  ],
+  "act_address": "<persona> Carmen Ortiz",
+  "act_start_time": "February 13, 2023, 09:50:40",
+  "act_duration": 12,
+  "act_description": "conversing about Carmen Ortiz and Adam Smith discussed their assignment progress, plans for Maria Lopez's candidacy for class minister, scheduling a discussion with Mrs. Johnson for Thursday after school, drafting a sign-up sheet, coordinating musical talents from Maria, Jacky, and Eddy, integrating a live mural session with music performances by Jennifer, Eddy, and Maria, brainstorming connections between leadership styles and musical genres, seeking insights from Arthur and Wolfgang on leadership from a science perspective, and aiming to finalize all plans by Wednesday.",
+  "act_pronunciatio": "\ud83d\udcac",
+  "act_event": [
+    "Adam Smith",
+    "chat with",
+    "Carmen Ortiz"
+  ],
+  "act_obj_description": null,
+  "act_obj_pronunciatio": null,
+  "act_obj_event": [
+    null,
+    null,
+    null
+  ],
+  "chatting_with": "Carmen Ortiz",
+  "chat": [
+    [
+      "Carmen Ortiz",
+      "Hey Adam, how's the assignment going? I was just thinking about our earlier conversation\u2014did you get a chance to look into any other potential candidates for class minister?"
+    ],
+    [
+      "Adam Smith",
+      "Hey Carmen! The assignment's going well\u2014just wrapping up. Yeah, I thought more about Maria Lopez's candidacy and how we can tie leadership qualities into our music project idea. Did you manage to check Mrs. Johnson's availability for the discussion?"
+    ],
+    [
+      "Carmen Ortiz",
+      "I did! Mrs. Johnson said she's free this Thursday after school, so that could work perfectly. And I've started drafting a sign-up sheet\u2014I'll finalize it tonight so we can review it tomorrow. Oh, and during lunch I'm planning to ask Maria, Jacky, and Eddy about contributing musical talents for the event too!"
+    ],
+    [
+      "Adam Smith",
+      "That sounds great! I'll start preparing some discussion points on leadership styles and creativity tonight\u2014maybe we can connect them to different musical genres to make it more engaging. Should we also reach out to Jennifer about integrating the mural session with our music performances?"
+    ],
+    [
+      "Carmen Ortiz",
+      "Yes, that's a fantastic idea! Jennifer and I actually discussed something similar earlier\u2014we're planning a live mural session with music performances by Eddy and Maria. Maybe we can combine both events into one cohesive experience? I'll reach out to Jennifer to coordinate and see how we can align everything."
+    ],
+    [
+      "Adam Smith",
+      "That sounds like a solid plan! Let's make sure the leadership discussion and the mural-music event complement each other. Maybe we can highlight how creativity in both arts and leadership can shape our school community. I'll brainstorm some connections tonight and share my ideas with you tomorrow."
+    ],
+    [
+      "Carmen Ortiz",
+      "That sounds perfect! I'll also work on merging the event plans tonight so we have a clear outline to discuss tomorrow. Let's aim to finalize everything by Wednesday to give everyone enough time to prepare. And yes, highlighting the connection between creativity in arts and leadership is a great angle\u2014it really ties everything together!"
+    ],
+    [
+      "Adam Smith",
+      "Sounds like we're on the same page! I'll also check with Arthur and Wolfgang during our study session later to see if they have any insights about leadership from a science perspective that we could incorporate. Maybe we can create a multidisciplinary approach to this event."
+    ],
+    [
+      "Carmen Ortiz",
+      "That's a great idea to get insights from Arthur and Wolfgang! A multidisciplinary approach would make the event even more unique and engaging. I'll make sure to incorporate that into our merged plans. Let's touch base again tomorrow after we've both had time to develop our ideas further."
+    ]
+  ],
+  "chatting_with_buffer": {
+    "Carmen Ortiz": 800,
+    "Arthur Burton": 680
+  },
+  "chatting_end_time": "February 13, 2023, 10:03:00",
+  "act_path_set": true,
+  "planned_path": []
+}

@@ -1,0 +1,298 @@
+{
+  "persona": {
+    "Rajiv Patel": {
+      "movement": [
+        38,
+        34
+      ],
+      "pronunciatio": "\ud83d\udebf\ud83d\udc5a",
+      "description": "drying off and getting dressed @ the School:headmasters' office and dormitory:bathroom:washing machine",
+      "chat": null
+    },
+    "Ryan Park": {
+      "movement": [
+        61,
+        79
+      ],
+      "pronunciatio": "\ud83d\ude34",
+      "description": "sleeping @ the School:student dormitory 2:common room:bed",
+      "chat": null
+    },
+    "Wolfgang Schulz": {
+      "movement": [
+        74,
+        50
+      ],
+      "pronunciatio": "\ud83d\udcc5\ud83d\udcdd",
+      "description": "reviewing his schedule for the day   @ the School:student dormitory 5:common room:desk",
+      "chat": null
+    },
+    "Tom Moreno": {
+      "movement": [
+        88,
+        78
+      ],
+      "pronunciatio": "\u270f\ufe0f\ud83e\uddee",
+      "description": "working on a math problem set @ the School:student dormitory 5:common room:desk",
+      "chat": null
+    },
+    "Tamara Taylor": {
+      "movement": [
+        93,
+        72
+      ],
+      "pronunciatio": "\ud83d\udebf",
+      "description": "taking a quick shower   @ the School:student dormitory 5:bathroom:shower",
+      "chat": null
+    },
+    "Yuriko Yamamoto": {
+      "movement": [
+        88,
+        76
+      ],
+      "pronunciatio": "\ud83c\udf73\u2615",
+      "description": "preparing breakfast in the kitchen @ the School:student dormitory 5:common room:desk",
+      "chat": null
+    },
+    "Isabella Rodriguez": {
+      "movement": [
+        63,
+        18
+      ],
+      "pronunciatio": "\ud83d\udcdd\u2615",
+      "description": "reviewing her lesson notes while finishing breakfast   @ the School:canteen:student canteen:student restaurant table",
+      "chat": null
+    },
+    "Maria Lopez": {
+      "movement": [
+        72,
+        81
+      ],
+      "pronunciatio": "\ud83d\ude34",
+      "description": "sleeping @ the School:student dormitory 3:common room:bed",
+      "chat": null
+    },
+    "Klaus Mueller": {
+      "movement": [
+        66,
+        76
+      ],
+      "pronunciatio": "\ud83c\udf92\ud83d\udcda",
+      "description": "packing his school bag with books and materials   @ the School:student dormitory 3:common room:desk",
+      "chat": null
+    },
+    "Adam Smith": {
+      "movement": [
+        106,
+        16
+      ],
+      "pronunciatio": "\ud83d\udcdd\u270d\ufe0f",
+      "description": "taking notes on key points @ the School:classroom building:classroom 1:blackboard",
+      "chat": null
+    },
+    "Abigail Chen": {
+      "movement": [
+        83,
+        81
+      ],
+      "pronunciatio": "\ud83d\ude34",
+      "description": "sleeping @ the School:student dormitory 4:common room:bed",
+      "chat": null
+    },
+    "Arthur Burton": {
+      "movement": [
+        83,
+        77
+      ],
+      "pronunciatio": "\ud83d\udecf\ufe0f",
+      "description": "making his bed   @ the School:student dormitory 4:common room:bed",
+      "chat": null
+    },
+    "Ayesha Khan": {
+      "movement": [
+        19,
+        18
+      ],
+      "pronunciatio": "\ud83c\udfa8\ud83d\udd8c\ufe0f",
+      "description": "mixing colors on her palette @ the School:Ayesha Khan's office and dormitory:office:bookshelf",
+      "chat": null
+    },
+    "Carlos Gomez": {
+      "movement": [
+        77,
+        76
+      ],
+      "pronunciatio": "\ud83c\udf92\ud83d\udd0d",
+      "description": "checking his backpack for school supplies   @ the School:student dormitory 4:common room:desk",
+      "chat": null
+    },
+    "Carmen Ortiz": {
+      "movement": [
+        71,
+        72
+      ],
+      "pronunciatio": "\ud83d\udc5a\ud83d\udc54",
+      "description": "getting dressed in her school uniform   @ the School:student dormitory 3:bathroom:shower",
+      "chat": null
+    },
+    "Eddy Lin": {
+      "movement": [
+        66,
+        76
+      ],
+      "pronunciatio": "\ud83d\udeb6\u200d\u2640",
+      "description": "walking to the kitchen to prepare breakfast   @ the School:student dormitory 3:common room:desk",
+      "chat": null
+    },
+    "Francisco Lopez": {
+      "movement": [
+        48,
+        76
+      ],
+      "pronunciatio": "\ud83d\udcac",
+      "description": "conversing about Francisco Lopez and Giorgio Rossi discussed their breakfast plans and shared their excitement for the day\u2014Giorgio about fractal geometry in math class and his research on mathematical patterns in nature, and Francisco about his upcoming table tennis with Sam and strength training, with Giorgio agreeing to show Francisco examples of natural patterns during lunch break. @ <persona> Giorgio Rossi",
+      "chat": [
+        [
+          "Francisco Lopez",
+          "Hey Giorgio! You're up early too? What are you making for breakfast?"
+        ],
+        [
+          "Giorgio Rossi",
+          "Hey Francisco! Yeah, I wanted to get an early start. Just making some toast and coffee\u2014need the energy for today's math class. What about you?"
+        ],
+        [
+          "Francisco Lopez",
+          "Same here! I'm making scrambled eggs and toast. Math class is tough, but at least we'll be caffeinated, right?"
+        ],
+        [
+          "Giorgio Rossi",
+          "Definitely! Though I'm actually looking forward to it\u2014we're covering fractal geometry today, which ties into my research project on mathematical patterns in nature. Are you working on anything interesting for class?"
+        ],
+        [
+          "Francisco Lopez",
+          "That sounds fascinating! I'm more into sports myself\u2014I have table tennis with Sam later and some strength training. But I admire your passion for math! What kind of natural patterns are you studying?"
+        ],
+        [
+          "Giorgio Rossi",
+          "Mainly fractals\u2014like how tree branches, snowflakes, and even coastlines repeat patterns at different scales. It's amazing how math describes nature so precisely! Good luck with your table tennis and training though\u2014sounds like a solid workout plan."
+        ],
+        [
+          "Francisco Lopez",
+          "That's really cool! I never thought about how math connects to things like trees and snowflakes. Maybe you could show me some examples sometime? For now though, I should finish up breakfast\u2014don\u2019t want to be late for class!"
+        ],
+        [
+          "Giorgio Rossi",
+          "Absolutely! I'd love to show you some examples\u2014maybe during lunch break? And yeah, better not be late. See you in class, Francisco!"
+        ]
+      ]
+    },
+    "Giorgio Rossi": {
+      "movement": [
+        47,
+        76
+      ],
+      "pronunciatio": "\ud83d\udcac",
+      "description": "conversing about Francisco Lopez and Giorgio Rossi discussed their breakfast plans and shared their excitement for the day\u2014Giorgio about fractal geometry in math class and his research on mathematical patterns in nature, and Francisco about his upcoming table tennis with Sam and strength training, with Giorgio agreeing to show Francisco examples of natural patterns during lunch break. @ <persona> Francisco Lopez",
+      "chat": [
+        [
+          "Francisco Lopez",
+          "Hey Giorgio! You're up early too? What are you making for breakfast?"
+        ],
+        [
+          "Giorgio Rossi",
+          "Hey Francisco! Yeah, I wanted to get an early start. Just making some toast and coffee\u2014need the energy for today's math class. What about you?"
+        ],
+        [
+          "Francisco Lopez",
+          "Same here! I'm making scrambled eggs and toast. Math class is tough, but at least we'll be caffeinated, right?"
+        ],
+        [
+          "Giorgio Rossi",
+          "Definitely! Though I'm actually looking forward to it\u2014we're covering fractal geometry today, which ties into my research project on mathematical patterns in nature. Are you working on anything interesting for class?"
+        ],
+        [
+          "Francisco Lopez",
+          "That sounds fascinating! I'm more into sports myself\u2014I have table tennis with Sam later and some strength training. But I admire your passion for math! What kind of natural patterns are you studying?"
+        ],
+        [
+          "Giorgio Rossi",
+          "Mainly fractals\u2014like how tree branches, snowflakes, and even coastlines repeat patterns at different scales. It's amazing how math describes nature so precisely! Good luck with your table tennis and training though\u2014sounds like a solid workout plan."
+        ],
+        [
+          "Francisco Lopez",
+          "That's really cool! I never thought about how math connects to things like trees and snowflakes. Maybe you could show me some examples sometime? For now though, I should finish up breakfast\u2014don\u2019t want to be late for class!"
+        ],
+        [
+          "Giorgio Rossi",
+          "Absolutely! I'd love to show you some examples\u2014maybe during lunch break? And yeah, better not be late. See you in class, Francisco!"
+        ]
+      ]
+    },
+    "Hailey Johnson": {
+      "movement": [
+        50,
+        81
+      ],
+      "pronunciatio": "\ud83d\ude34",
+      "description": "sleeping @ the School:student dormitory 1:common room:bed",
+      "chat": null
+    },
+    "Jane Moreno": {
+      "movement": [
+        34,
+        12
+      ],
+      "pronunciatio": "\ud83e\udea5\ud83d\udeb0",
+      "description": "brushing her teeth in the bathroom @ the School:Jane Moreno's office and dormitory:bathroom:bathroom sink",
+      "chat": null
+    },
+    "Jennifer Moore": {
+      "movement": [
+        44,
+        75
+      ],
+      "pronunciatio": "\u231b",
+      "description": "waiting to start listening to musi @ <waiting> 44 75",
+      "chat": null
+    },
+    "Sam Moore": {
+      "movement": [
+        61,
+        75
+      ],
+      "pronunciatio": "\ud83e\udea5\ud83d\ude2c",
+      "description": "brushing his teeth @ the School:student dormitory 2:bathroom:bathroom sink",
+      "chat": null
+    },
+    "Jacky Ma": {
+      "movement": [
+        57,
+        24
+      ],
+      "pronunciatio": "\ud83c\udf73\u2615",
+      "description": "eating breakfast   @ the School:canteen:student canteen:student restaurant table",
+      "chat": null
+    },
+    "Latoya Williams": {
+      "movement": [
+        6,
+        40
+      ],
+      "pronunciatio": "\ud83d\udce7\ud83d\udc40",
+      "description": "checking emails @ the School:Latoya Williams's office and dormitory:office:computer desk",
+      "chat": null
+    },
+    "Valerie Florentini": {
+      "movement": [
+        55,
+        76
+      ],
+      "pronunciatio": "\ud83c\udf73\u2615",
+      "description": "preparing a simple breakfast @ the School:student dormitory 2:common room:desk",
+      "chat": null
+    }
+  },
+  "meta": {
+    "curr_time": "February 13, 2023, 07:31:30"
+  }
+}

@@ -1,0 +1,315 @@
+{
+  "persona": {
+    "Rajiv Patel": {
+      "movement": [
+        30,
+        40
+      ],
+      "pronunciatio": "\ud83d\udcdd\ud83d\udc65",
+      "description": "making notes for follow-up discussions with staff @ the School:headmasters' office and dormitory:office:computer desk",
+      "chat": null
+    },
+    "Ryan Park": {
+      "movement": [
+        61,
+        79
+      ],
+      "pronunciatio": "\ud83d\ude34",
+      "description": "sleeping @ the School:student dormitory 2:common room:bed",
+      "chat": null
+    },
+    "Wolfgang Schulz": {
+      "movement": [
+        119,
+        29
+      ],
+      "pronunciatio": "\ud83d\udcdd\ud83d\udde3\ufe0f",
+      "description": "summarizing the main concepts in his own words   @ the School:student dormitory 5:common room:desk",
+      "chat": null
+    },
+    "Tom Moreno": {
+      "movement": [
+        121,
+        23
+      ],
+      "pronunciatio": "\ud83d\udc65\ud83d\udd04",
+      "description": "still working on a group activity   @ the School:classroom building:library room:library table",
+      "chat": null
+    },
+    "Tamara Taylor": {
+      "movement": [
+        107,
+        17
+      ],
+      "pronunciatio": "\ud83d\udcdd\ud83d\udc40",
+      "description": "reviewing her notes from the lecture   @ the School:classroom building:library room:library table",
+      "chat": null
+    },
+    "Yuriko Yamamoto": {
+      "movement": [
+        108,
+        18
+      ],
+      "pronunciatio": "\ud83d\udcda\ud83d\udcdd",
+      "description": "organizing her study materials   @ the School:classroom building:library room:bookshelf",
+      "chat": null
+    },
+    "Isabella Rodriguez": {
+      "movement": [
+        96,
+        29
+      ],
+      "pronunciatio": "\ud83e\uddea\ud83d\udccb",
+      "description": "setting up the experiment materials   @ the School:classroom building:classroom 1:blackboard",
+      "chat": null
+    },
+    "Maria Lopez": {
+      "movement": [
+        107,
+        16
+      ],
+      "pronunciatio": "\ud83d\udcac",
+      "description": "conversing about Maria Lopez and Sam Moore discussed their class exercises and plans to meet for table tennis at 4:30 in the sports room, where Maria will bring her Hatsune Miku figure for luck and Arthur might join to share sports science insights, with Francisco also participating in the game. @ <persona> Sam Moore",
+      "chat": [
+        [
+          "Maria Lopez",
+          "Hey Sam, how's the class exercise going? I saw you were really focused on it."
+        ],
+        [
+          "Sam Moore",
+          "Hey Maria, it's going alright! Just trying to wrap my head around some of the details. How about you? Those notes look pretty thorough!"
+        ],
+        [
+          "Maria Lopez",
+          "Thanks! Yeah, I'm trying to keep up with everything while also preparing for that physics competition. By the way, I overheard you and Francisco talking about table tennis later. Mind if I join? I could use a break from all the studying!"
+        ],
+        [
+          "Sam Moore",
+          "Of course, Maria! The more the merrier. We're meeting at 4:30 in the sports room, and Arthur might join too to share some sports science insights. It'll be fun!"
+        ],
+        [
+          "Maria Lopez",
+          "That sounds great! I'll bring my Hatsune Miku figure along for good luck\u2014maybe she'll bring us some extra energy for the game!"
+        ],
+        [
+          "Sam Moore",
+          "Haha, Hatsune Miku as our table tennis mascot? That's a first! Just make sure she doesn't distract us too much\u2014Francisco gets competitive when he's losing!"
+        ],
+        [
+          "Maria Lopez",
+          "Don't worry, Miku will be our secret weapon\u2014Francisco won't know what hit him! I'll see you at 4:30 then!"
+        ]
+      ]
+    },
+    "Klaus Mueller": {
+      "movement": [
+        108,
+        17
+      ],
+      "pronunciatio": "\ud83d\udcdd\ud83d\udd0d",
+      "description": "reviewing his notes from earlier   @ the School:classroom building:library room:library table",
+      "chat": null
+    },
+    "Adam Smith": {
+      "movement": [
+        108,
+        23
+      ],
+      "pronunciatio": "\ud83d\udcdd\u270f\ufe0f",
+      "description": "working on a short in-class assignment   @ the School:classroom building:classroom 1:classroom student seating",
+      "chat": null
+    },
+    "Abigail Chen": {
+      "movement": [
+        77,
+        77
+      ],
+      "pronunciatio": "\ud83d\udcc5\ud83d\udc69\u200d",
+      "description": "checking her class schedule @ the School:student dormitory 4:common room:desk",
+      "chat": null
+    },
+    "Arthur Burton": {
+      "movement": [
+        106,
+        24
+      ],
+      "pronunciatio": "\ud83d\udcac",
+      "description": "conversing about Arthur Burton and Tamara Taylor discussed their studies, with Tamara drawing parallels between cellular respiration and music theory, and Arthur preparing for a chemistry competition and a table tennis match; they agreed to meet with Wolfgang in the library at 3:30pm the next day to study together and explore these interdisciplinary connections further. @ <persona> Tamara Taylor",
+      "chat": [
+        [
+          "Arthur Burton",
+          "Hey Tamara, how's your review going? I noticed you were really focused on those lecture notes. Anything particularly interesting or challenging you're working on?"
+        ],
+        [
+          "Tamara Taylor",
+          "Hey Arthur! It's going well. I was actually just drawing some parallels between the current problem we're discussing and cellular respiration. It's fascinating how both involve decomposition and transformation to achieve outcomes. How about you? How's your chemistry competition preparation coming along?"
+        ],
+        [
+          "Arthur Burton",
+          "That's a really interesting connection, Tamara! I've been diving deep into cellular respiration too, especially how it relates to athletic performance for my upcoming table tennis match. The chemistry competition prep is going well\u2014Wolfgang and I are meeting in the library tomorrow to study together. Do you want to join us?"
+        ],
+        [
+          "Tamara Taylor",
+          "That sounds great, Arthur! I'd love to join you and Wolfgang in the library tomorrow. It'll be a good chance to explore these connections further and maybe get some insights for my music theory too\u2014I've been thinking about how musical structures can sometimes mirror scientific processes. What time are you planning to meet?"
+        ],
+        [
+          "Arthur Burton",
+          "We're meeting right after school, around 3:30pm in the library. That's perfect if you're drawing parallels to music theory too\u2014I'd love to hear your thoughts on that! Wolfgang is really into interdisciplinary connections as well."
+        ],
+        [
+          "Tamara Taylor",
+          "3:30pm works perfectly for me! I'll bring my notes on both cellular respiration and music theory\u2014it'll be interesting to see if we can find even more connections between these topics. See you tomorrow then!"
+        ]
+      ]
+    },
+    "Ayesha Khan": {
+      "movement": [
+        18,
+        20
+      ],
+      "pronunciatio": "\ud83c\udf75\ud83d\udcdd",
+      "description": "sipping tea while reviewing notes @ the School:Ayesha Khan's office and dormitory:office:computer desk",
+      "chat": null
+    },
+    "Carlos Gomez": {
+      "movement": [
+        77,
+        78
+      ],
+      "pronunciatio": "\u270d\ufe0f\ud83d\udcdc",
+      "description": "writing the second stanza of the poem @ the School:student dormitory 4:common room:desk",
+      "chat": null
+    },
+    "Carmen Ortiz": {
+      "movement": [
+        108,
+        26
+      ],
+      "pronunciatio": "\ud83d\udcda\u270f\ufe0f",
+      "description": "preparing her materials for the next part of the lesson   @ the School:classroom building:classroom 1:blackboard",
+      "chat": null
+    },
+    "Eddy Lin": {
+      "movement": [
+        70,
+        44
+      ],
+      "pronunciatio": "\ud83d\udc42\ud83d\udcd6",
+      "description": "listening to the teacher's next explanation   @ the School:classroom building:classroom 1:blackboard",
+      "chat": null
+    },
+    "Francisco Lopez": {
+      "movement": [
+        121,
+        28
+      ],
+      "pronunciatio": "\u231b",
+      "description": "waiting to start reviewing his notes  @ <waiting> 121 28",
+      "chat": null
+    },
+    "Giorgio Rossi": {
+      "movement": [
+        121,
+        25
+      ],
+      "pronunciatio": "\ud83d\udcdd\ud83d\udc65",
+      "description": "working on a set of practice problems with a partner   @ the School:classroom building:library room:library table",
+      "chat": null
+    },
+    "Hailey Johnson": {
+      "movement": [
+        50,
+        81
+      ],
+      "pronunciatio": "\ud83d\ude34",
+      "description": "sleeping @ the School:student dormitory 1:common room:bed",
+      "chat": null
+    },
+    "Jane Moreno": {
+      "movement": [
+        106,
+        16
+      ],
+      "pronunciatio": "\u27a1\ufe0f\ud83d\udcda",
+      "description": "continuing with the next concept   @ the School:classroom building:classroom 1:blackboard",
+      "chat": null
+    },
+    "Jennifer Moore": {
+      "movement": [
+        108,
+        19
+      ],
+      "pronunciatio": "\ud83d\udcca\ud83d\udc65",
+      "description": "presenting group findings   @ the School:classroom building:classroom 1:classroom podium",
+      "chat": null
+    },
+    "Sam Moore": {
+      "movement": [
+        107,
+        16
+      ],
+      "pronunciatio": "\ud83d\udcac",
+      "description": "conversing about Maria Lopez and Sam Moore discussed their class exercises and plans to meet for table tennis at 4:30 in the sports room, where Maria will bring her Hatsune Miku figure for luck and Arthur might join to share sports science insights, with Francisco also participating in the game. @ <persona> Maria Lopez",
+      "chat": [
+        [
+          "Maria Lopez",
+          "Hey Sam, how's the class exercise going? I saw you were really focused on it."
+        ],
+        [
+          "Sam Moore",
+          "Hey Maria, it's going alright! Just trying to wrap my head around some of the details. How about you? Those notes look pretty thorough!"
+        ],
+        [
+          "Maria Lopez",
+          "Thanks! Yeah, I'm trying to keep up with everything while also preparing for that physics competition. By the way, I overheard you and Francisco talking about table tennis later. Mind if I join? I could use a break from all the studying!"
+        ],
+        [
+          "Sam Moore",
+          "Of course, Maria! The more the merrier. We're meeting at 4:30 in the sports room, and Arthur might join too to share some sports science insights. It'll be fun!"
+        ],
+        [
+          "Maria Lopez",
+          "That sounds great! I'll bring my Hatsune Miku figure along for good luck\u2014maybe she'll bring us some extra energy for the game!"
+        ],
+        [
+          "Sam Moore",
+          "Haha, Hatsune Miku as our table tennis mascot? That's a first! Just make sure she doesn't distract us too much\u2014Francisco gets competitive when he's losing!"
+        ],
+        [
+          "Maria Lopez",
+          "Don't worry, Miku will be our secret weapon\u2014Francisco won't know what hit him! I'll see you at 4:30 then!"
+        ]
+      ]
+    },
+    "Jacky Ma": {
+      "movement": [
+        123,
+        29
+      ],
+      "pronunciatio": "\ud83d\udcdd\ud83d\udd0d",
+      "description": "reviewing the notes taken earlier   @ the School:classroom building:library room:library table",
+      "chat": null
+    },
+    "Latoya Williams": {
+      "movement": [
+        6,
+        40
+      ],
+      "pronunciatio": "\ud83d\udcdd\ud83d\uddc2\ufe0f",
+      "description": "organizing her notes for the afternoon class @ the School:Latoya Williams's office and dormitory:office:computer desk",
+      "chat": null
+    },
+    "Valerie Florentini": {
+      "movement": [
+        92,
+        29
+      ],
+      "pronunciatio": "\ud83d\udcdd\ud83d\udd0d",
+      "description": "reviewing her notes @ the School:student dormitory 2:common room:desk",
+      "chat": null
+    }
+  },
+  "meta": {
+    "curr_time": "February 13, 2023, 09:50:00"
+  }
+}

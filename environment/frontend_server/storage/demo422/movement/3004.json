@@ -1,0 +1,298 @@
+{
+  "persona": {
+    "Rajiv Patel": {
+      "movement": [
+        29,
+        31
+      ],
+      "pronunciatio": "\ud83c\udf5e\ud83d\udcf0",
+      "description": "eating breakfast while reading the morning newspaper @ the School:headmasters' office and dormitory:living room:toaster",
+      "chat": null
+    },
+    "Ryan Park": {
+      "movement": [
+        61,
+        79
+      ],
+      "pronunciatio": "\ud83d\ude34",
+      "description": "sleeping @ the School:student dormitory 2:common room:bed",
+      "chat": null
+    },
+    "Wolfgang Schulz": {
+      "movement": [
+        108,
+        20
+      ],
+      "pronunciatio": "\ud83d\udcac",
+      "description": "conversing about Arthur Burton and Wolfgang Schulz discussed their interest in chemistry and biology, particularly photosynthesis and cellular respiration, and agreed to meet after school tomorrow in the library to study together for an upcoming competition. @ <persona> Arthur Burton",
+      "chat": [
+        [
+          "Arthur Burton",
+          "Hey Wolfgang, how's the chemistry lecture going for you so far? I find this topic really interesting!"
+        ],
+        [
+          "Wolfgang Schulz",
+          "It's going well! I'm actually really enjoying the connection between chemistry and biology, especially how it relates to cellular respiration. What part are you finding most interesting?"
+        ],
+        [
+          "Arthur Burton",
+          "I'm really fascinated by the chemical reactions involved in photosynthesis! It's amazing how plants convert sunlight into energy. Do you think we'll cover more about that in the competition next month?"
+        ],
+        [
+          "Wolfgang Schulz",
+          "Definitely! Photosynthesis is such a crucial process, and I bet it'll be a big part of the competition. I've been studying how it connects to cellular respiration too\u2014it's like a perfect cycle of energy conversion!"
+        ],
+        [
+          "Arthur Burton",
+          "That's so true! The cycle between photosynthesis and cellular respiration is really fascinating. Maybe we could study together for the competition sometime? I think we could learn a lot from each other!"
+        ],
+        [
+          "Wolfgang Schulz",
+          "That sounds like a great idea! How about we meet after school tomorrow? We can go over both photosynthesis and cellular respiration in detail."
+        ],
+        [
+          "Arthur Burton",
+          "That works for me! Let's meet in the library after school tomorrow. I'll bring some notes and practice questions on both topics."
+        ],
+        [
+          "Wolfgang Schulz",
+          "Perfect! I'll bring my biology notes and we can compare what we've learned. Looking forward to it!"
+        ]
+      ]
+    },
+    "Tom Moreno": {
+      "movement": [
+        108,
+        19
+      ],
+      "pronunciatio": "\ud83d\udcdd\u270d\ufe0f",
+      "description": "taking notes on the lecture material   @ the School:classroom building:classroom 1:blackboard",
+      "chat": null
+    },
+    "Tamara Taylor": {
+      "movement": [
+        94,
+        75
+      ],
+      "pronunciatio": "\ud83d\udc54\ud83c\udf92",
+      "description": "getting dressed for school   @ the School:student dormitory 5:bathroom:bathroom sink",
+      "chat": null
+    },
+    "Yuriko Yamamoto": {
+      "movement": [
+        88,
+        71
+      ],
+      "pronunciatio": "\ud83d\udeb6\u200d\u2642",
+      "description": "walking to the bus stop @ the School:playground:playground:running track",
+      "chat": null
+    },
+    "Isabella Rodriguez": {
+      "movement": [
+        119,
+        29
+      ],
+      "pronunciatio": "\ud83d\udcd6\ud83d\udd0d",
+      "description": "reviewing the previous lesson's key concepts   @ the School:classroom building:library room:library table",
+      "chat": null
+    },
+    "Maria Lopez": {
+      "movement": [
+        72,
+        75
+      ],
+      "pronunciatio": "\ud83e\uddfc\ud83e\uddd6\u200d",
+      "description": "washing her face   @ the School:student dormitory 3:bathroom:bathroom sink",
+      "chat": null
+    },
+    "Klaus Mueller": {
+      "movement": [
+        107,
+        16
+      ],
+      "pronunciatio": "\ud83d\udcdd\u270d\ufe0f",
+      "description": "taking notes on the lecture material   @ the School:classroom building:classroom 1:blackboard",
+      "chat": null
+    },
+    "Adam Smith": {
+      "movement": [
+        106,
+        16
+      ],
+      "pronunciatio": "\ud83d\udcdd\u270d\ufe0f",
+      "description": "taking notes on the lecture @ the School:classroom building:classroom 1:blackboard",
+      "chat": null
+    },
+    "Abigail Chen": {
+      "movement": [
+        83,
+        76
+      ],
+      "pronunciatio": "\ud83d\udecf\ufe0f\ud83e\uddf9",
+      "description": "making her bed @ the School:student dormitory 4:common room:bed",
+      "chat": null
+    },
+    "Arthur Burton": {
+      "movement": [
+        108,
+        20
+      ],
+      "pronunciatio": "\ud83d\udcac",
+      "description": "conversing about Arthur Burton and Wolfgang Schulz discussed their interest in chemistry and biology, particularly photosynthesis and cellular respiration, and agreed to meet after school tomorrow in the library to study together for an upcoming competition. @ <persona> Wolfgang Schulz",
+      "chat": [
+        [
+          "Arthur Burton",
+          "Hey Wolfgang, how's the chemistry lecture going for you so far? I find this topic really interesting!"
+        ],
+        [
+          "Wolfgang Schulz",
+          "It's going well! I'm actually really enjoying the connection between chemistry and biology, especially how it relates to cellular respiration. What part are you finding most interesting?"
+        ],
+        [
+          "Arthur Burton",
+          "I'm really fascinated by the chemical reactions involved in photosynthesis! It's amazing how plants convert sunlight into energy. Do you think we'll cover more about that in the competition next month?"
+        ],
+        [
+          "Wolfgang Schulz",
+          "Definitely! Photosynthesis is such a crucial process, and I bet it'll be a big part of the competition. I've been studying how it connects to cellular respiration too\u2014it's like a perfect cycle of energy conversion!"
+        ],
+        [
+          "Arthur Burton",
+          "That's so true! The cycle between photosynthesis and cellular respiration is really fascinating. Maybe we could study together for the competition sometime? I think we could learn a lot from each other!"
+        ],
+        [
+          "Wolfgang Schulz",
+          "That sounds like a great idea! How about we meet after school tomorrow? We can go over both photosynthesis and cellular respiration in detail."
+        ],
+        [
+          "Arthur Burton",
+          "That works for me! Let's meet in the library after school tomorrow. I'll bring some notes and practice questions on both topics."
+        ],
+        [
+          "Wolfgang Schulz",
+          "Perfect! I'll bring my biology notes and we can compare what we've learned. Looking forward to it!"
+        ]
+      ]
+    },
+    "Ayesha Khan": {
+      "movement": [
+        17,
+        11
+      ],
+      "pronunciatio": "\ud83c\udf73\u2615",
+      "description": "eating breakfast @ the School:Ayesha Khan's office and dormitory:living room:toaster",
+      "chat": null
+    },
+    "Carlos Gomez": {
+      "movement": [
+        77,
+        78
+      ],
+      "pronunciatio": "\ud83d\udcf1\ud83c\udf73",
+      "description": "scrolling through his phone while finishing breakfast   @ the School:student dormitory 4:common room:desk",
+      "chat": null
+    },
+    "Carmen Ortiz": {
+      "movement": [
+        67,
+        72
+      ],
+      "pronunciatio": "\ud83d\udeb6\u200d\u2642",
+      "description": "walking to the bus stop   @ the School:playground:playground:running track",
+      "chat": null
+    },
+    "Eddy Lin": {
+      "movement": [
+        107,
+        23
+      ],
+      "pronunciatio": "\u231b",
+      "description": "waiting to start taking notes on the lesson  @ <waiting> 107 23",
+      "chat": null
+    },
+    "Francisco Lopez": {
+      "movement": [
+        108,
+        19
+      ],
+      "pronunciatio": "\ud83d\udc42\ud83d\udcda",
+      "description": "listening to the teacher's lecture   @ the School:classroom building:classroom 1:blackboard",
+      "chat": null
+    },
+    "Giorgio Rossi": {
+      "movement": [
+        121,
+        23
+      ],
+      "pronunciatio": "\ud83d\udcd6\u270f\ufe0f",
+      "description": "solving practice problems from the textbook   @ the School:classroom building:library room:library table",
+      "chat": null
+    },
+    "Hailey Johnson": {
+      "movement": [
+        50,
+        81
+      ],
+      "pronunciatio": "\ud83d\ude34",
+      "description": "sleeping @ the School:student dormitory 1:common room:bed",
+      "chat": null
+    },
+    "Jane Moreno": {
+      "movement": [
+        105,
+        29
+      ],
+      "pronunciatio": "\ud83d\udc4b\ud83c\udfeb",
+      "description": "greeting students as they enter   @ the School:classroom building:corridor:vending machine",
+      "chat": null
+    },
+    "Jennifer Moore": {
+      "movement": [
+        50,
+        29
+      ],
+      "pronunciatio": "\ud83d\udcd6\ud83e\uddd0",
+      "description": "reading the assigned literature passage   @ the School:student dormitory 1:common room:desk",
+      "chat": null
+    },
+    "Sam Moore": {
+      "movement": [
+        108,
+        18
+      ],
+      "pronunciatio": "\u231b",
+      "description": "waiting to start taking notes on the lesso @ <waiting> 108 18",
+      "chat": null
+    },
+    "Jacky Ma": {
+      "movement": [
+        56,
+        58
+      ],
+      "pronunciatio": "\ud83d\udeb6\u200d\u2642",
+      "description": "walking to the bus stop   @ the School:playground:playground:running track",
+      "chat": null
+    },
+    "Latoya Williams": {
+      "movement": [
+        6,
+        40
+      ],
+      "pronunciatio": "\u270f\ufe0f\ud83c\udf0d",
+      "description": "sketching a new composition based on her travel photos @ the School:Latoya Williams's office and dormitory:office:computer desk",
+      "chat": null
+    },
+    "Valerie Florentini": {
+      "movement": [
+        73,
+        37
+      ],
+      "pronunciatio": "\ud83d\udc42\ud83d\udcda",
+      "description": "listening to the teacher\u2019s lecture @ the School:classroom building:classroom 1:blackboard",
+      "chat": null
+    }
+  },
+  "meta": {
+    "curr_time": "February 13, 2023, 08:20:40"
+  }
+}

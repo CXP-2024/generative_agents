@@ -71,4 +71,4 @@ def compress(sim_code):
   shutil.copytree(persona_folder, f"{compressed_storage}/personas/")
 
 if __name__ == '__main__':
-  compress("demo")
+  compress("demo422")

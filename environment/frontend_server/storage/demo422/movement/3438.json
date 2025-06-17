@@ -1,0 +1,406 @@
+{
+  "persona": {
+    "Rajiv Patel": {
+      "movement": [
+        30,
+        40
+      ],
+      "pronunciatio": "\ud83d\udcdd\u2709\ufe0f",
+      "description": "drafting responses to urgent emails @ the School:headmasters' office and dormitory:office:computer desk",
+      "chat": null
+    },
+    "Ryan Park": {
+      "movement": [
+        61,
+        79
+      ],
+      "pronunciatio": "\ud83d\ude34",
+      "description": "sleeping @ the School:student dormitory 2:common room:bed",
+      "chat": null
+    },
+    "Wolfgang Schulz": {
+      "movement": [
+        108,
+        22
+      ],
+      "pronunciatio": "\ud83d\uddc2\ufe0f\ud83d\udcdd",
+      "description": "organizing his notes by topic   @ the School:classroom building:library room:library table",
+      "chat": null
+    },
+    "Tom Moreno": {
+      "movement": [
+        106,
+        19
+      ],
+      "pronunciatio": "\u231b",
+      "description": "waiting to start working on a group activity  @ <waiting> 106 19",
+      "chat": null
+    },
+    "Tamara Taylor": {
+      "movement": [
+        107,
+        17
+      ],
+      "pronunciatio": "\u231b",
+      "description": "waiting to start participating in a class discussion  @ <waiting> 107 17",
+      "chat": null
+    },
+    "Yuriko Yamamoto": {
+      "movement": [
+        108,
+        26
+      ],
+      "pronunciatio": "\ud83d\udde3\ufe0f\ud83d\udcda",
+      "description": "participating in a class discussion @ the School:classroom building:classroom 1:blackboard",
+      "chat": null
+    },
+    "Isabella Rodriguez": {
+      "movement": [
+        108,
+        22
+      ],
+      "pronunciatio": "\ud83d\udc69\u200d\ud83c\udfeb",
+      "description": "still guiding students through solving the problems   @ the School:classroom building:classroom 1:blackboard",
+      "chat": null
+    },
+    "Maria Lopez": {
+      "movement": [
+        108,
+        18
+      ],
+      "pronunciatio": "\u231b",
+      "description": "waiting to start still taking notes on the lecture  @ <waiting> 108 18",
+      "chat": null
+    },
+    "Klaus Mueller": {
+      "movement": [
+        107,
+        16
+      ],
+      "pronunciatio": "\ud83d\udcac",
+      "description": "conversing about Klaus Mueller and Giorgio Rossi discussed parallels between mathematical structures like fractals and social hierarchies, particularly in labor conditions from the Industrial Revolution to the modern gig economy, and agreed to meet with Isabella in the library after school tomorrow to collaborate on incorporating fractal models and chaos theory into Klaus's project. @ <persona> Giorgio Rossi",
+      "chat": [
+        [
+          "Klaus Mueller",
+          "Hey Giorgio, I couldn't help but notice you discussing algebraic structures. That's pretty interesting! Do you think there are any parallels between mathematical structures and social structures we're studying in AP Social Studies?"
+        ],
+        [
+          "Giorgio Rossi",
+          "That's a fascinating question, Klaus! Actually, I've been exploring how mathematical patterns like fractals appear in nature and even social systems. For example, hierarchical structures in organizations can sometimes resemble tree-like fractal patterns. Do you see specific connections you're curious about?"
+        ],
+        [
+          "Klaus Mueller",
+          "That's really insightful, Giorgio! I'm actually working on a project comparing labor conditions during the Industrial Revolution to the modern gig economy. I wonder if mathematical patterns could help model how these labor structures evolve over time - like how worker networks might form fractal-like patterns of collaboration and hierarchy. What do you think?"
+        ],
+        [
+          "Giorgio Rossi",
+          "Absolutely, Klaus! The evolution of labor structures could indeed be modeled using fractal concepts\u2014like how smaller worker networks replicate larger hierarchical patterns. The Industrial Revolution's centralized factories versus the decentralized gig economy could be analyzed through branching fractal models. I'd love to collaborate on this\u2014maybe even incorporate chaos theory to predict future labor trends?"
+        ],
+        [
+          "Klaus Mueller",
+          "That sounds amazing, Giorgio! I'd be thrilled to collaborate - your mathematical perspective could really strengthen my project's analysis. Maybe we could meet in the library after school tomorrow? I'll be there working with Isabella on structuring the project, and we could discuss how to incorporate your fractal models."
+        ],
+        [
+          "Giorgio Rossi",
+          "That works perfectly for me! I'll bring some materials on fractal modeling and chaos theory applications. It would be great to brainstorm with you and Isabella\u2014perhaps we can even explore how these mathematical concepts could provide predictive insights about labor dynamics. See you tomorrow in the library!"
+        ],
+        [
+          "Klaus Mueller",
+          "Awesome! Looking forward to it, Giorgio. This interdisciplinary approach could really make our project stand out. See you tomorrow then!"
+        ]
+      ]
+    },
+    "Adam Smith": {
+      "movement": [
+        106,
+        22
+      ],
+      "pronunciatio": "\ud83d\udde3\ufe0f\ud83d\udc69",
+      "description": "engaging in a brief discussion with the teacher   @ the School:classroom building:classroom 1:classroom podium",
+      "chat": null
+    },
+    "Abigail Chen": {
+      "movement": [
+        82,
+        75
+      ],
+      "pronunciatio": "\ud83d\udc5a\ud83d\udc56",
+      "description": "changing into school clothes @ the School:student dormitory 4:bathroom:shower",
+      "chat": null
+    },
+    "Arthur Burton": {
+      "movement": [
+        108,
+        21
+      ],
+      "pronunciatio": "\ud83d\udcac",
+      "description": "conversing about Arthur Burton and Carmen Ortiz agreed to meet with Wolfgang in the library after school tomorrow to study for the biology competition, discussing topics like photosynthesis and cellular respiration, with Carmen also bringing her notes to connect the material with her solo concert prep. @ <persona> Carmen Ortiz",
+      "chat": [
+        [
+          "Arthur Burton",
+          "Hey Carmen, I noticed you were about to ask a question. What's on your mind?"
+        ],
+        [
+          "Carmen Ortiz",
+          "Hey Arthur! I was just going to ask about the biology assignment. I heard you and Wolfgang are meeting tomorrow to study for the competition\u2014mind if I join? I could use some help comparing photosynthesis and cellular respiration too!"
+        ],
+        [
+          "Arthur Burton",
+          "Of course you can join us, Carmen! The more the merrier. Wolfgang is bringing some great biology notes and diagrams, and I think your perspective would really add to our discussion. We're meeting in the library after school tomorrow\u2014does that work for you?"
+        ],
+        [
+          "Carmen Ortiz",
+          "That sounds perfect, Arthur! I'll bring my notes too\u2014I've been reviewing the material for my solo concert prep, so it\u2019ll be great to connect it with biology. Thanks for including me!"
+        ],
+        [
+          "Arthur Burton",
+          "Awesome! It's great to combine different perspectives\u2014I'm sure we'll all learn a lot. See you tomorrow in the library then!"
+        ]
+      ]
+    },
+    "Ayesha Khan": {
+      "movement": [
+        18,
+        20
+      ],
+      "pronunciatio": "\ud83d\udcd6\ud83d\udd0d",
+      "description": "selecting passages for the next lesson @ the School:Ayesha Khan's office and dormitory:office:computer desk",
+      "chat": null
+    },
+    "Carlos Gomez": {
+      "movement": [
+        77,
+        78
+      ],
+      "pronunciatio": "\u270d\ufe0f\ud83d\udcdc",
+      "description": "refining the first stanza of the poem @ the School:student dormitory 4:common room:desk",
+      "chat": null
+    },
+    "Carmen Ortiz": {
+      "movement": [
+        107,
+        19
+      ],
+      "pronunciatio": "\ud83d\udcac",
+      "description": "conversing about Arthur Burton and Carmen Ortiz agreed to meet with Wolfgang in the library after school tomorrow to study for the biology competition, discussing topics like photosynthesis and cellular respiration, with Carmen also bringing her notes to connect the material with her solo concert prep. @ <persona> Arthur Burton",
+      "chat": [
+        [
+          "Arthur Burton",
+          "Hey Carmen, I noticed you were about to ask a question. What's on your mind?"
+        ],
+        [
+          "Carmen Ortiz",
+          "Hey Arthur! I was just going to ask about the biology assignment. I heard you and Wolfgang are meeting tomorrow to study for the competition\u2014mind if I join? I could use some help comparing photosynthesis and cellular respiration too!"
+        ],
+        [
+          "Arthur Burton",
+          "Of course you can join us, Carmen! The more the merrier. Wolfgang is bringing some great biology notes and diagrams, and I think your perspective would really add to our discussion. We're meeting in the library after school tomorrow\u2014does that work for you?"
+        ],
+        [
+          "Carmen Ortiz",
+          "That sounds perfect, Arthur! I'll bring my notes too\u2014I've been reviewing the material for my solo concert prep, so it\u2019ll be great to connect it with biology. Thanks for including me!"
+        ],
+        [
+          "Arthur Burton",
+          "Awesome! It's great to combine different perspectives\u2014I'm sure we'll all learn a lot. See you tomorrow in the library then!"
+        ]
+      ]
+    },
+    "Eddy Lin": {
+      "movement": [
+        108,
+        22
+      ],
+      "pronunciatio": "\ud83d\udcdd\ud83e\udd2b",
+      "description": "reviewing his notes quietly   @ the School:student dormitory 3:common room:desk",
+      "chat": null
+    },
+    "Francisco Lopez": {
+      "movement": [
+        107,
+        16
+      ],
+      "pronunciatio": "\ud83d\udcac",
+      "description": "conversing about Francisco Lopez and Sam Moore discussed their class exercises, excitement for their table tennis match at 4:30pm in the sports room, and plans to invite Arthur to watch and share insights on sports science. @ <persona> Sam Moore",
+      "chat": [
+        [
+          "Francisco Lopez",
+          "Hey Sam! How's the class exercise going? Ready for our table tennis match later?"
+        ],
+        [
+          "Sam Moore",
+          "Hey Francisco! The exercise is going well, just brushing up on some concepts. Definitely looking forward to our table tennis match later\u2014I\u2019ve been thinking about those sports science angles we discussed with Arthur. How\u2019s your assignment coming along?"
+        ],
+        [
+          "Francisco Lopez",
+          "It's going pretty smoothly, thanks! And yeah, I'm really excited about our match too. Arthur mentioned some interesting points about cellular respiration and performance during lunch\u2014maybe we can try applying some of that today!"
+        ],
+        [
+          "Sam Moore",
+          "That sounds like a great idea! Maybe we can also compare how different warm-up routines affect our game based on what we've learned. By the way, how\u2019s Arthur\u2019s chemistry competition prep going?"
+        ],
+        [
+          "Francisco Lopez",
+          "Arthur seems pretty focused on his competition prep\u2014he\u2019s been studying non-stop! He even mentioned a study session with Wolfgang tomorrow. But he\u2019s still making time to chat about sports science, which is cool. Do you think we should invite him to watch our match later?"
+        ],
+        [
+          "Sam Moore",
+          "Absolutely, inviting Arthur sounds like a great plan! He might even have some extra insights to share after watching us play. Plus, it\u2019ll be fun to have him there. What time were you thinking for the match?"
+        ],
+        [
+          "Francisco Lopez",
+          "How about right after classes, around 4:30pm at the sports room? That should give us enough time to warm up properly before playing."
+        ],
+        [
+          "Sam Moore",
+          "4:30pm works perfectly for me! I'll make sure to finish up my classwork and meet you there. I\u2019ll also text Arthur to invite him\u2014I\u2019m sure he\u2019d love to join. Let\u2019s make it a fun and insightful session!"
+        ],
+        [
+          "Francisco Lopez",
+          "Great! It's settled then. I'll see you and Arthur at 4:30pm in the sports room. Let's make sure to bring our A-game!"
+        ]
+      ]
+    },
+    "Giorgio Rossi": {
+      "movement": [
+        107,
+        16
+      ],
+      "pronunciatio": "\ud83d\udcac",
+      "description": "conversing about Klaus Mueller and Giorgio Rossi discussed parallels between mathematical structures like fractals and social hierarchies, particularly in labor conditions from the Industrial Revolution to the modern gig economy, and agreed to meet with Isabella in the library after school tomorrow to collaborate on incorporating fractal models and chaos theory into Klaus's project. @ <persona> Klaus Mueller",
+      "chat": [
+        [
+          "Klaus Mueller",
+          "Hey Giorgio, I couldn't help but notice you discussing algebraic structures. That's pretty interesting! Do you think there are any parallels between mathematical structures and social structures we're studying in AP Social Studies?"
+        ],
+        [
+          "Giorgio Rossi",
+          "That's a fascinating question, Klaus! Actually, I've been exploring how mathematical patterns like fractals appear in nature and even social systems. For example, hierarchical structures in organizations can sometimes resemble tree-like fractal patterns. Do you see specific connections you're curious about?"
+        ],
+        [
+          "Klaus Mueller",
+          "That's really insightful, Giorgio! I'm actually working on a project comparing labor conditions during the Industrial Revolution to the modern gig economy. I wonder if mathematical patterns could help model how these labor structures evolve over time - like how worker networks might form fractal-like patterns of collaboration and hierarchy. What do you think?"
+        ],
+        [
+          "Giorgio Rossi",
+          "Absolutely, Klaus! The evolution of labor structures could indeed be modeled using fractal concepts\u2014like how smaller worker networks replicate larger hierarchical patterns. The Industrial Revolution's centralized factories versus the decentralized gig economy could be analyzed through branching fractal models. I'd love to collaborate on this\u2014maybe even incorporate chaos theory to predict future labor trends?"
+        ],
+        [
+          "Klaus Mueller",
+          "That sounds amazing, Giorgio! I'd be thrilled to collaborate - your mathematical perspective could really strengthen my project's analysis. Maybe we could meet in the library after school tomorrow? I'll be there working with Isabella on structuring the project, and we could discuss how to incorporate your fractal models."
+        ],
+        [
+          "Giorgio Rossi",
+          "That works perfectly for me! I'll bring some materials on fractal modeling and chaos theory applications. It would be great to brainstorm with you and Isabella\u2014perhaps we can even explore how these mathematical concepts could provide predictive insights about labor dynamics. See you tomorrow in the library!"
+        ],
+        [
+          "Klaus Mueller",
+          "Awesome! Looking forward to it, Giorgio. This interdisciplinary approach could really make our project stand out. See you tomorrow then!"
+        ]
+      ]
+    },
+    "Hailey Johnson": {
+      "movement": [
+        50,
+        81
+      ],
+      "pronunciatio": "\ud83d\ude34",
+      "description": "sleeping @ the School:student dormitory 1:common room:bed",
+      "chat": null
+    },
+    "Jane Moreno": {
+      "movement": [
+        107,
+        16
+      ],
+      "pronunciatio": "\ud83d\udcdd\ud83c\udf93",
+      "description": "explaining the first concept with examples   @ the School:classroom building:classroom 1:blackboard",
+      "chat": null
+    },
+    "Jennifer Moore": {
+      "movement": [
+        76,
+        29
+      ],
+      "pronunciatio": "\ud83d\udcac\ud83d\udc65",
+      "description": "actively participating in the discussion @ the School:classroom building:classroom 1:classroom podium",
+      "chat": null
+    },
+    "Sam Moore": {
+      "movement": [
+        107,
+        16
+      ],
+      "pronunciatio": "\ud83d\udcac",
+      "description": "conversing about Francisco Lopez and Sam Moore discussed their class exercises, excitement for their table tennis match at 4:30pm in the sports room, and plans to invite Arthur to watch and share insights on sports science. @ <persona> Francisco Lopez",
+      "chat": [
+        [
+          "Francisco Lopez",
+          "Hey Sam! How's the class exercise going? Ready for our table tennis match later?"
+        ],
+        [
+          "Sam Moore",
+          "Hey Francisco! The exercise is going well, just brushing up on some concepts. Definitely looking forward to our table tennis match later\u2014I\u2019ve been thinking about those sports science angles we discussed with Arthur. How\u2019s your assignment coming along?"
+        ],
+        [
+          "Francisco Lopez",
+          "It's going pretty smoothly, thanks! And yeah, I'm really excited about our match too. Arthur mentioned some interesting points about cellular respiration and performance during lunch\u2014maybe we can try applying some of that today!"
+        ],
+        [
+          "Sam Moore",
+          "That sounds like a great idea! Maybe we can also compare how different warm-up routines affect our game based on what we've learned. By the way, how\u2019s Arthur\u2019s chemistry competition prep going?"
+        ],
+        [
+          "Francisco Lopez",
+          "Arthur seems pretty focused on his competition prep\u2014he\u2019s been studying non-stop! He even mentioned a study session with Wolfgang tomorrow. But he\u2019s still making time to chat about sports science, which is cool. Do you think we should invite him to watch our match later?"
+        ],
+        [
+          "Sam Moore",
+          "Absolutely, inviting Arthur sounds like a great plan! He might even have some extra insights to share after watching us play. Plus, it\u2019ll be fun to have him there. What time were you thinking for the match?"
+        ],
+        [
+          "Francisco Lopez",
+          "How about right after classes, around 4:30pm at the sports room? That should give us enough time to warm up properly before playing."
+        ],
+        [
+          "Sam Moore",
+          "4:30pm works perfectly for me! I'll make sure to finish up my classwork and meet you there. I\u2019ll also text Arthur to invite him\u2014I\u2019m sure he\u2019d love to join. Let\u2019s make it a fun and insightful session!"
+        ],
+        [
+          "Francisco Lopez",
+          "Great! It's settled then. I'll see you and Arthur at 4:30pm in the sports room. Let's make sure to bring our A-game!"
+        ]
+      ]
+    },
+    "Jacky Ma": {
+      "movement": [
+        107,
+        16
+      ],
+      "pronunciatio": "\ud83d\udcdd\u270d\ufe0f",
+      "description": "taking notes on the lesson   @ the School:classroom building:classroom 1:blackboard",
+      "chat": null
+    },
+    "Latoya Williams": {
+      "movement": [
+        6,
+        40
+      ],
+      "pronunciatio": "\ud83d\udcdd\u270d\ufe0f",
+      "description": "drafting example problems @ the School:Latoya Williams's office and dormitory:office:computer desk",
+      "chat": null
+    },
+    "Valerie Florentini": {
+      "movement": [
+        106,
+        16
+      ],
+      "pronunciatio": "\ud83d\udcdd\u270d\ufe0f",
+      "description": "working on an in-class assignment   @ the School:classroom building:classroom 1:blackboard",
+      "chat": null
+    }
+  },
+  "meta": {
+    "curr_time": "February 13, 2023, 09:33:00"
+  }
+}

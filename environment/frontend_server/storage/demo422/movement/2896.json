@@ -1,0 +1,306 @@
+{
+  "persona": {
+    "Rajiv Patel": {
+      "movement": [
+        30,
+        33
+      ],
+      "pronunciatio": "\ud83c\udf5e\u2615",
+      "description": "preparing a simple breakfast of toast and tea @ the School:headmasters' office and dormitory:living room:toaster",
+      "chat": null
+    },
+    "Ryan Park": {
+      "movement": [
+        61,
+        79
+      ],
+      "pronunciatio": "\ud83d\ude34",
+      "description": "sleeping @ the School:student dormitory 2:common room:bed",
+      "chat": null
+    },
+    "Wolfgang Schulz": {
+      "movement": [
+        94,
+        62
+      ],
+      "pronunciatio": "\ud83d\udc42\ud83d\udcda",
+      "description": "listening to the teacher's lecture   @ the School:classroom building:classroom 1:blackboard",
+      "chat": null
+    },
+    "Tom Moreno": {
+      "movement": [
+        98,
+        43
+      ],
+      "pronunciatio": "\ud83d\udc42\ud83d\udcda",
+      "description": "listening to the teacher's lecture @ the School:classroom building:classroom 1:blackboard",
+      "chat": null
+    },
+    "Tamara Taylor": {
+      "movement": [
+        94,
+        77
+      ],
+      "pronunciatio": "\u23f0\ud83d\udecf\ufe0f",
+      "description": "waking up and getting out of bed   @ the School:student dormitory 5:common room:bed",
+      "chat": null
+    },
+    "Yuriko Yamamoto": {
+      "movement": [
+        88,
+        78
+      ],
+      "pronunciatio": "\ud83c\udf92\ud83d\udcda",
+      "description": "packing her school bag with necessary books and supplies @ the School:student dormitory 5:common room:desk",
+      "chat": null
+    },
+    "Isabella Rodriguez": {
+      "movement": [
+        88,
+        23
+      ],
+      "pronunciatio": "\ud83d\udc4b\ud83c\udfeb",
+      "description": "greeting students as they enter the classroom   @ the School:classroom building:classroom 1:classroom student seating",
+      "chat": null
+    },
+    "Maria Lopez": {
+      "movement": [
+        71,
+        76
+      ],
+      "pronunciatio": "\ud83d\udcac",
+      "description": "conversing about Maria Lopez and Carmen Ortiz discussed Carmen's upcoming solo cello concert, her plans to meet Eddy for lunch at 12 and study music theory at the library with possible attendance from Klaus, and agreed that Maria would attend a practice session later in the week, possibly with her Hatsune Miku figure for inspiration. @ <persona> Carmen Ortiz",
+      "chat": [
+        [
+          "Maria Lopez",
+          "Hey Carmen! You're up early packing your bag. Got a big day ahead?"
+        ],
+        [
+          "Carmen Ortiz",
+          "Good morning Maria! Yeah, I have a pretty exciting day planned. I'm meeting Eddy for lunch at 12, then we're going to the library to study music theory together. Klaus might join us too!"
+        ],
+        [
+          "Maria Lopez",
+          "That sounds fun! Music theory is interesting. Are you preparing for something specific, or just exploring?"
+        ],
+        [
+          "Carmen Ortiz",
+          "Actually, I'm preparing for a small solo cello concert! Eddy offered to help me with some theory concepts, and I'm really excited to get his input. Klaus might bring some fresh perspectives too since he's not a musician but loves analyzing patterns in general."
+        ],
+        [
+          "Maria Lopez",
+          "A solo cello concert? That's amazing, Carmen! You'll do great. Let me know if you need an audience for practice\u2014I'd love to hear you play!"
+        ],
+        [
+          "Carmen Ortiz",
+          "Thanks Maria, that means a lot! I\u2019d love to have you listen sometime\u2014maybe before the concert? Your feedback would be really helpful!"
+        ],
+        [
+          "Maria Lopez",
+          "That sounds perfect! Just let me know when you'd like me to come by\u2014I'll make sure to clear my schedule. And hey, maybe I can even bring my Hatsune Miku figure for some musical inspiration!"
+        ],
+        [
+          "Carmen Ortiz",
+          "Haha, Hatsune Miku would definitely add some fun energy! I\u2019ll let you know once I have a practice session scheduled\u2014maybe later this week? Thanks again for the support, Maria!"
+        ],
+        [
+          "Maria Lopez",
+          "Sounds like a plan! I'll keep an eye out for your message. Good luck with your preparations today\u2014I'm sure Eddy and Klaus will be great help!"
+        ]
+      ]
+    },
+    "Klaus Mueller": {
+      "movement": [
+        67,
+        62
+      ],
+      "pronunciatio": "\ud83d\udc42\ud83d\udcda",
+      "description": "listening to the teacher's lecture   @ the School:classroom building:classroom 1:blackboard",
+      "chat": null
+    },
+    "Adam Smith": {
+      "movement": [
+        106,
+        29
+      ],
+      "pronunciatio": "\ud83d\udc42\ud83d\udcda",
+      "description": "listening to the teacher's lecture @ the School:classroom building:classroom 1:blackboard",
+      "chat": null
+    },
+    "Abigail Chen": {
+      "movement": [
+        83,
+        82
+      ],
+      "pronunciatio": "\ud83d\udecc\ud83d\udca4",
+      "description": "waking up and stretching in bed @ the School:student dormitory 4:common room:bed",
+      "chat": null
+    },
+    "Arthur Burton": {
+      "movement": [
+        77,
+        63
+      ],
+      "pronunciatio": "\ud83d\udc42\ud83d\udcda",
+      "description": "listening to the teacher's lecture   @ the School:classroom building:classroom 1:blackboard",
+      "chat": null
+    },
+    "Ayesha Khan": {
+      "movement": [
+        17,
+        11
+      ],
+      "pronunciatio": "\ud83c\udf73\u2615",
+      "description": "preparing breakfast @ the School:Ayesha Khan's office and dormitory:living room:toaster",
+      "chat": null
+    },
+    "Carlos Gomez": {
+      "movement": [
+        77,
+        76
+      ],
+      "pronunciatio": "\ud83c\udf73\u2615",
+      "description": "eating breakfast at the kitchen table   @ the School:student dormitory 4:common room:desk",
+      "chat": null
+    },
+    "Carmen Ortiz": {
+      "movement": [
+        72,
+        76
+      ],
+      "pronunciatio": "\ud83d\udcac",
+      "description": "conversing about Maria Lopez and Carmen Ortiz discussed Carmen's upcoming solo cello concert, her plans to meet Eddy for lunch at 12 and study music theory at the library with possible attendance from Klaus, and agreed that Maria would attend a practice session later in the week, possibly with her Hatsune Miku figure for inspiration. @ <persona> Maria Lopez",
+      "chat": [
+        [
+          "Maria Lopez",
+          "Hey Carmen! You're up early packing your bag. Got a big day ahead?"
+        ],
+        [
+          "Carmen Ortiz",
+          "Good morning Maria! Yeah, I have a pretty exciting day planned. I'm meeting Eddy for lunch at 12, then we're going to the library to study music theory together. Klaus might join us too!"
+        ],
+        [
+          "Maria Lopez",
+          "That sounds fun! Music theory is interesting. Are you preparing for something specific, or just exploring?"
+        ],
+        [
+          "Carmen Ortiz",
+          "Actually, I'm preparing for a small solo cello concert! Eddy offered to help me with some theory concepts, and I'm really excited to get his input. Klaus might bring some fresh perspectives too since he's not a musician but loves analyzing patterns in general."
+        ],
+        [
+          "Maria Lopez",
+          "A solo cello concert? That's amazing, Carmen! You'll do great. Let me know if you need an audience for practice\u2014I'd love to hear you play!"
+        ],
+        [
+          "Carmen Ortiz",
+          "Thanks Maria, that means a lot! I\u2019d love to have you listen sometime\u2014maybe before the concert? Your feedback would be really helpful!"
+        ],
+        [
+          "Maria Lopez",
+          "That sounds perfect! Just let me know when you'd like me to come by\u2014I'll make sure to clear my schedule. And hey, maybe I can even bring my Hatsune Miku figure for some musical inspiration!"
+        ],
+        [
+          "Carmen Ortiz",
+          "Haha, Hatsune Miku would definitely add some fun energy! I\u2019ll let you know once I have a practice session scheduled\u2014maybe later this week? Thanks again for the support, Maria!"
+        ],
+        [
+          "Maria Lopez",
+          "Sounds like a plan! I'll keep an eye out for your message. Good luck with your preparations today\u2014I'm sure Eddy and Klaus will be great help!"
+        ]
+      ]
+    },
+    "Eddy Lin": {
+      "movement": [
+        66,
+        63
+      ],
+      "pronunciatio": "\ud83d\udc42\ud83d\udcda",
+      "description": "listening to the teacher's lecture   @ the School:classroom building:classroom 1:blackboard",
+      "chat": null
+    },
+    "Francisco Lopez": {
+      "movement": [
+        44,
+        63
+      ],
+      "pronunciatio": "\ud83d\udeb6\u200d\u2642",
+      "description": "walking to classroom 1   @ the School:classroom building:classroom 1:classroom student seating",
+      "chat": null
+    },
+    "Giorgio Rossi": {
+      "movement": [
+        61,
+        29
+      ],
+      "pronunciatio": "\ud83d\udcd6\u270f\ufe0f",
+      "description": "reviewing the previous day's algebra notes   @ the School:classroom building:library room:library table",
+      "chat": null
+    },
+    "Hailey Johnson": {
+      "movement": [
+        50,
+        81
+      ],
+      "pronunciatio": "\ud83d\ude34",
+      "description": "sleeping @ the School:student dormitory 1:common room:bed",
+      "chat": null
+    },
+    "Jane Moreno": {
+      "movement": [
+        37,
+        22
+      ],
+      "pronunciatio": "\ud83d\udcda\u270f\ufe0f",
+      "description": "setting up the classroom materials @ the School:classroom building:classroom 1:blackboard",
+      "chat": null
+    },
+    "Jennifer Moore": {
+      "movement": [
+        44,
+        61
+      ],
+      "pronunciatio": "\ud83c\udfeb\ud83e\uddd1\u200d",
+      "description": "arriving at the classroom and settling in   @ the School:classroom building:classroom 1:classroom student seating",
+      "chat": null
+    },
+    "Sam Moore": {
+      "movement": [
+        58,
+        62
+      ],
+      "pronunciatio": "\ud83d\udc42\ud83d\udcda",
+      "description": "listening to the teacher's lecture @ the School:classroom building:classroom 1:blackboard",
+      "chat": null
+    },
+    "Jacky Ma": {
+      "movement": [
+        55,
+        78
+      ],
+      "pronunciatio": "\ud83c\udf92\ud83d\udcda",
+      "description": "packing his school bag with necessary books and materials   @ the School:student dormitory 2:common room:desk",
+      "chat": null
+    },
+    "Latoya Williams": {
+      "movement": [
+        6,
+        40
+      ],
+      "pronunciatio": "\ud83c\udfa8\ud83d\udcbb",
+      "description": "opening her digital art software @ the School:Latoya Williams's office and dormitory:office:computer desk",
+      "chat": null
+    },
+    "Valerie Florentini": {
+      "movement": [
+        72,
+        24
+      ],
+      "pronunciatio": "\ud83d\udeb6\u200d\u2642",
+      "description": "walking to classroom 2 @ the School:classroom building:corridor:vending machine",
+      "chat": null
+    }
+  },
+  "meta": {
+    "curr_time": "February 13, 2023, 08:02:40"
+  }
+}

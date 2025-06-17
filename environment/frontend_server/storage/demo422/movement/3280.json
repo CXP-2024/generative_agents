@@ -1,0 +1,454 @@
+{
+  "persona": {
+    "Rajiv Patel": {
+      "movement": [
+        32,
+        32
+      ],
+      "pronunciatio": "\ud83d\udcbb\ud83d\udce7",
+      "description": "logging into his computer and opening his email @ the School:headmasters' office and dormitory:living room:refrigerator",
+      "chat": null
+    },
+    "Ryan Park": {
+      "movement": [
+        61,
+        79
+      ],
+      "pronunciatio": "\ud83d\ude34",
+      "description": "sleeping @ the School:student dormitory 2:common room:bed",
+      "chat": null
+    },
+    "Wolfgang Schulz": {
+      "movement": [
+        108,
+        18
+      ],
+      "pronunciatio": "\u231b",
+      "description": "waiting to start listening to the teacher's lecture  @ <waiting> 108 18",
+      "chat": null
+    },
+    "Tom Moreno": {
+      "movement": [
+        110,
+        22
+      ],
+      "pronunciatio": "\u23f3\ud83d\udde3\ufe0f",
+      "description": "still participating in a class discussion   (waiting to start still participating in a class discussion ) @ the School:classroom building:classroom 1:classroom student seating",
+      "chat": null
+    },
+    "Tamara Taylor": {
+      "movement": [
+        98,
+        47
+      ],
+      "pronunciatio": "\ud83d\udc42\ud83d\udcda",
+      "description": "listening to the teacher's lecture @ the School:classroom building:classroom 1:blackboard",
+      "chat": null
+    },
+    "Yuriko Yamamoto": {
+      "movement": [
+        107,
+        16
+      ],
+      "pronunciatio": "\ud83d\udc42\ud83d\udcd6",
+      "description": "listening to the teacher's lecture @ the School:classroom building:classroom 1:blackboard",
+      "chat": null
+    },
+    "Isabella Rodriguez": {
+      "movement": [
+        108,
+        19
+      ],
+      "pronunciatio": "\ud83d\udcac",
+      "description": "conversing about Isabella Rodriguez and Klaus Mueller discussed Klaus's AP project on the Industrial Revolution's parallels to modern society, particularly labor conditions and the gig economy, and agreed to meet in the library after school to work on structuring the project after attending Carmen and Eddy's music theory session. @ <persona> Klaus Mueller",
+      "chat": [
+        [
+          "Isabella Rodriguez",
+          "Hey Klaus, how's the assignment going? Do you need any help with it?"
+        ],
+        [
+          "Klaus Mueller",
+          "Hey Isabella, thanks for asking! I'm almost done with the assignment, just wrapping up the last part. I was actually thinking about the Industrial Revolution's impact on modern society for my AP project\u2014did you know how much it parallels today's issues?"
+        ],
+        [
+          "Isabella Rodriguez",
+          "That's a fascinating topic, Klaus! The Industrial Revolution does have many parallels to today's technological advancements and societal changes. Would you like to discuss some specific aspects you're considering for your project? I'd be happy to brainstorm with you."
+        ],
+        [
+          "Klaus Mueller",
+          "That would be great, Isabella! I'm particularly interested in how the labor conditions during the Industrial Revolution compare to modern gig economy jobs. Also, I was thinking about attending Carmen and Eddy's music theory session later to see if I can find any unique cultural perspectives to incorporate. What do you think about that approach?"
+        ],
+        [
+          "Isabella Rodriguez",
+          "That's a brilliant approach, Klaus! Comparing labor conditions across different eras could provide deep insights, and incorporating cultural perspectives from music theory would add a unique dimension to your project. I think attending Carmen and Eddy's session is a great idea\u2014it might inspire some creative connections. Would you like me to help you outline how to structure these comparisons in your project?"
+        ],
+        [
+          "Klaus Mueller",
+          "That would be incredibly helpful, Isabella! I'd love to get your input on how to structure these comparisons. Maybe we could meet in the library after school to work on it? I'll be there for Carmen and Eddy's session anyway, so it could be a productive overlap."
+        ],
+        [
+          "Isabella Rodriguez",
+          "That sounds perfect, Klaus! Let's meet in the library after school\u2014I'll bring some resources on labor history and modern economic trends that might help with your comparisons. We can work on structuring your project after their session. Does that work for you?"
+        ],
+        [
+          "Klaus Mueller",
+          "That works perfectly, Isabella! Thanks so much for your help\u2014I really appreciate it. I'll see you in the library after school then. Looking forward to it!"
+        ]
+      ]
+    },
+    "Maria Lopez": {
+      "movement": [
+        70,
+        41
+      ],
+      "pronunciatio": "\ud83d\udc42\ud83d\udcd6",
+      "description": "still listening to the teacher's introduction to the day's lesson   @ the School:classroom building:classroom 1:blackboard",
+      "chat": null
+    },
+    "Klaus Mueller": {
+      "movement": [
+        108,
+        20
+      ],
+      "pronunciatio": "\ud83d\udcac",
+      "description": "conversing about Isabella Rodriguez and Klaus Mueller discussed Klaus's AP project on the Industrial Revolution's parallels to modern society, particularly labor conditions and the gig economy, and agreed to meet in the library after school to work on structuring the project after attending Carmen and Eddy's music theory session. @ <persona> Isabella Rodriguez",
+      "chat": [
+        [
+          "Isabella Rodriguez",
+          "Hey Klaus, how's the assignment going? Do you need any help with it?"
+        ],
+        [
+          "Klaus Mueller",
+          "Hey Isabella, thanks for asking! I'm almost done with the assignment, just wrapping up the last part. I was actually thinking about the Industrial Revolution's impact on modern society for my AP project\u2014did you know how much it parallels today's issues?"
+        ],
+        [
+          "Isabella Rodriguez",
+          "That's a fascinating topic, Klaus! The Industrial Revolution does have many parallels to today's technological advancements and societal changes. Would you like to discuss some specific aspects you're considering for your project? I'd be happy to brainstorm with you."
+        ],
+        [
+          "Klaus Mueller",
+          "That would be great, Isabella! I'm particularly interested in how the labor conditions during the Industrial Revolution compare to modern gig economy jobs. Also, I was thinking about attending Carmen and Eddy's music theory session later to see if I can find any unique cultural perspectives to incorporate. What do you think about that approach?"
+        ],
+        [
+          "Isabella Rodriguez",
+          "That's a brilliant approach, Klaus! Comparing labor conditions across different eras could provide deep insights, and incorporating cultural perspectives from music theory would add a unique dimension to your project. I think attending Carmen and Eddy's session is a great idea\u2014it might inspire some creative connections. Would you like me to help you outline how to structure these comparisons in your project?"
+        ],
+        [
+          "Klaus Mueller",
+          "That would be incredibly helpful, Isabella! I'd love to get your input on how to structure these comparisons. Maybe we could meet in the library after school to work on it? I'll be there for Carmen and Eddy's session anyway, so it could be a productive overlap."
+        ],
+        [
+          "Isabella Rodriguez",
+          "That sounds perfect, Klaus! Let's meet in the library after school\u2014I'll bring some resources on labor history and modern economic trends that might help with your comparisons. We can work on structuring your project after their session. Does that work for you?"
+        ],
+        [
+          "Klaus Mueller",
+          "That works perfectly, Isabella! Thanks so much for your help\u2014I really appreciate it. I'll see you in the library after school then. Looking forward to it!"
+        ]
+      ]
+    },
+    "Adam Smith": {
+      "movement": [
+        107,
+        24
+      ],
+      "pronunciatio": "\ud83d\udcac",
+      "description": "conversing about Arthur Burton and Adam Smith discussed their interest in chemistry, particularly photosynthesis and cellular respiration, and agreed to meet with Wolfgang Schulz in the library near the biology section at 4pm tomorrow to further explore these topics. @ <persona> Arthur Burton",
+      "chat": [
+        [
+          "Arthur Burton",
+          "Hey Adam, I noticed you're really focused on the lecture. Do you find this topic interesting too?"
+        ],
+        [
+          "Adam Smith",
+          "Actually, I was just thinking about how the teacher's point on chemical reactions could be challenged. Do you think there's more to it than what was presented?"
+        ],
+        [
+          "Arthur Burton",
+          "That's an interesting thought! Chemical reactions can be pretty complex. I'm actually really into chemistry, especially photosynthesis and cellular respiration. Are you interested in those topics too? Maybe we could discuss it more after class."
+        ],
+        [
+          "Adam Smith",
+          "Photosynthesis and cellular respiration are fascinating! I've been focusing more on creativity in my essays, but I'd love to hear your perspective. Maybe we can meet in the library after school tomorrow?"
+        ],
+        [
+          "Arthur Burton",
+          "That sounds great! I'm actually meeting Wolfgang Schulz in the library tomorrow to study for the chemistry competition, so we could all discuss it together. Would you like to join us?"
+        ],
+        [
+          "Adam Smith",
+          "That sounds perfect! I'd love to join you and Wolfgang. It'll be a great opportunity to explore these topics further and maybe even challenge some ideas together."
+        ],
+        [
+          "Arthur Burton",
+          "Awesome! I'll let Wolfgang know you're joining us. We usually sit near the biology section, so meet us there around 4pm?"
+        ],
+        [
+          "Adam Smith",
+          "Sounds like a plan! I'll see you and Wolfgang near the biology section at 4pm tomorrow. Looking forward to it!"
+        ]
+      ]
+    },
+    "Abigail Chen": {
+      "movement": [
+        74,
+        38
+      ],
+      "pronunciatio": "\ud83c\udf73\u2615",
+      "description": "eating breakfast @ the School:canteen:student canteen:student restaurant table",
+      "chat": null
+    },
+    "Arthur Burton": {
+      "movement": [
+        107,
+        24
+      ],
+      "pronunciatio": "\ud83d\udcac",
+      "description": "conversing about Arthur Burton and Adam Smith discussed their interest in chemistry, particularly photosynthesis and cellular respiration, and agreed to meet with Wolfgang Schulz in the library near the biology section at 4pm tomorrow to further explore these topics. @ <persona> Adam Smith",
+      "chat": [
+        [
+          "Arthur Burton",
+          "Hey Adam, I noticed you're really focused on the lecture. Do you find this topic interesting too?"
+        ],
+        [
+          "Adam Smith",
+          "Actually, I was just thinking about how the teacher's point on chemical reactions could be challenged. Do you think there's more to it than what was presented?"
+        ],
+        [
+          "Arthur Burton",
+          "That's an interesting thought! Chemical reactions can be pretty complex. I'm actually really into chemistry, especially photosynthesis and cellular respiration. Are you interested in those topics too? Maybe we could discuss it more after class."
+        ],
+        [
+          "Adam Smith",
+          "Photosynthesis and cellular respiration are fascinating! I've been focusing more on creativity in my essays, but I'd love to hear your perspective. Maybe we can meet in the library after school tomorrow?"
+        ],
+        [
+          "Arthur Burton",
+          "That sounds great! I'm actually meeting Wolfgang Schulz in the library tomorrow to study for the chemistry competition, so we could all discuss it together. Would you like to join us?"
+        ],
+        [
+          "Adam Smith",
+          "That sounds perfect! I'd love to join you and Wolfgang. It'll be a great opportunity to explore these topics further and maybe even challenge some ideas together."
+        ],
+        [
+          "Arthur Burton",
+          "Awesome! I'll let Wolfgang know you're joining us. We usually sit near the biology section, so meet us there around 4pm?"
+        ],
+        [
+          "Adam Smith",
+          "Sounds like a plan! I'll see you and Wolfgang near the biology section at 4pm tomorrow. Looking forward to it!"
+        ]
+      ]
+    },
+    "Ayesha Khan": {
+      "movement": [
+        19,
+        18
+      ],
+      "pronunciatio": "\ud83d\udcda\ud83d\udd0d",
+      "description": "reviewing the literature syllabus @ the School:Ayesha Khan's office and dormitory:office:bookshelf",
+      "chat": null
+    },
+    "Carlos Gomez": {
+      "movement": [
+        76,
+        75
+      ],
+      "pronunciatio": "\ud83d\udcd6\ud83d\udca1",
+      "description": "flipping through previous poems for inspiration @ the School:student dormitory 4:common room:bookshelf",
+      "chat": null
+    },
+    "Carmen Ortiz": {
+      "movement": [
+        107,
+        16
+      ],
+      "pronunciatio": "\ud83d\udc42\ud83d\udcda",
+      "description": "listening to the teacher's lecture   @ the School:classroom building:classroom 1:blackboard",
+      "chat": null
+    },
+    "Eddy Lin": {
+      "movement": [
+        108,
+        20
+      ],
+      "pronunciatio": "\u231b",
+      "description": "waiting to start listening to the teacher's lecture  @ <waiting> 108 20",
+      "chat": null
+    },
+    "Francisco Lopez": {
+      "movement": [
+        107,
+        16
+      ],
+      "pronunciatio": "\ud83d\udcac",
+      "description": "conversing about Francisco Lopez and Jane Moreno discussed the influence of historical events like the Industrial Revolution on modern social structures, particularly the gig economy, and agreed to meet during lunch the next day to prepare a class project proposal with Klaus's input on comparing historical labor movements to modern gig economy challenges. @ <persona> Jane Moreno",
+      "chat": [
+        [
+          "Francisco Lopez",
+          "Hi Ms. Moreno, I really enjoyed the discussion today. Do you have a moment to clarify something about the topic we were covering?"
+        ],
+        [
+          "Jane Moreno",
+          "Of course, Francisco! I'm happy to help. What specifically would you like me to clarify about today's topic?"
+        ],
+        [
+          "Francisco Lopez",
+          "I was particularly intrigued by the part about how historical events influence modern social structures. Could you give an example of how that plays out in our current society?"
+        ],
+        [
+          "Jane Moreno",
+          "Great question, Francisco! One clear example is how the Industrial Revolution's shift from agrarian to urban societies created the modern workforce structure. Today, we still see remnants of this in our 9-to-5 work culture and the division between white-collar and blue-collar jobs. Would you like me to elaborate on any specific aspect of this connection?"
+        ],
+        [
+          "Francisco Lopez",
+          "That makes a lot of sense! I was actually wondering how this connects to the gig economy we see today\u2014like how platforms like Uber or DoorDash seem to be creating a new kind of workforce structure. Do you think this is a modern evolution of those Industrial Revolution patterns?"
+        ],
+        [
+          "Jane Moreno",
+          "Absolutely, Francisco! The gig economy is a fascinating modern parallel. Just as the Industrial Revolution fragmented traditional work into specialized factory roles, today's gig economy breaks jobs into even smaller, on-demand tasks. Both created more flexibility but also less job security\u2014factory workers faced unpredictable layoffs, just as gig workers lack benefits today. Would you like to explore how we might apply historical labor movement strategies to modern gig worker rights?"
+        ],
+        [
+          "Francisco Lopez",
+          "That's a really interesting perspective! I'd love to hear more about how historical labor movements could inform solutions for gig workers today. Maybe we could even explore this as a class project?"
+        ],
+        [
+          "Jane Moreno",
+          "That's an excellent idea, Francisco! I'd be happy to help you develop this into a class project. We could even invite Klaus to share his AP project research on this very topic\u2014he's been exploring similar connections between Industrial Revolution labor conditions and modern gig economy challenges. Would you like to work together to propose this project to the class tomorrow?"
+        ],
+        [
+          "Francisco Lopez",
+          "That sounds perfect, Ms. Moreno! I'd really appreciate Klaus's input\u2014his research sounds directly relevant. Should we prepare some discussion points or materials for tomorrow's proposal?"
+        ],
+        [
+          "Jane Moreno",
+          "Yes, let's prepare some discussion points together! We can outline key parallels between historical labor movements and gig economy challenges, and perhaps create a comparison chart. I'll also reach out to Klaus to coordinate his presentation with our project proposal. How about we meet during lunch tomorrow to finalize our plan?"
+        ],
+        [
+          "Francisco Lopez",
+          "That sounds like a great plan, Ms. Moreno! I'll bring some initial ideas to our lunch meeting tomorrow. Looking forward to working on this with you and Klaus!"
+        ]
+      ]
+    },
+    "Giorgio Rossi": {
+      "movement": [
+        113,
+        18
+      ],
+      "pronunciatio": "\ud83c\udf92\ud83d\udcda",
+      "description": "packing his bag with necessary materials   @ the School:classroom building:classroom 1:classroom student seating",
+      "chat": null
+    },
+    "Hailey Johnson": {
+      "movement": [
+        50,
+        81
+      ],
+      "pronunciatio": "\ud83d\ude34",
+      "description": "sleeping @ the School:student dormitory 1:common room:bed",
+      "chat": null
+    },
+    "Jane Moreno": {
+      "movement": [
+        107,
+        17
+      ],
+      "pronunciatio": "\ud83d\udcac",
+      "description": "conversing about Francisco Lopez and Jane Moreno discussed the influence of historical events like the Industrial Revolution on modern social structures, particularly the gig economy, and agreed to meet during lunch the next day to prepare a class project proposal with Klaus's input on comparing historical labor movements to modern gig economy challenges. @ <persona> Francisco Lopez",
+      "chat": [
+        [
+          "Francisco Lopez",
+          "Hi Ms. Moreno, I really enjoyed the discussion today. Do you have a moment to clarify something about the topic we were covering?"
+        ],
+        [
+          "Jane Moreno",
+          "Of course, Francisco! I'm happy to help. What specifically would you like me to clarify about today's topic?"
+        ],
+        [
+          "Francisco Lopez",
+          "I was particularly intrigued by the part about how historical events influence modern social structures. Could you give an example of how that plays out in our current society?"
+        ],
+        [
+          "Jane Moreno",
+          "Great question, Francisco! One clear example is how the Industrial Revolution's shift from agrarian to urban societies created the modern workforce structure. Today, we still see remnants of this in our 9-to-5 work culture and the division between white-collar and blue-collar jobs. Would you like me to elaborate on any specific aspect of this connection?"
+        ],
+        [
+          "Francisco Lopez",
+          "That makes a lot of sense! I was actually wondering how this connects to the gig economy we see today\u2014like how platforms like Uber or DoorDash seem to be creating a new kind of workforce structure. Do you think this is a modern evolution of those Industrial Revolution patterns?"
+        ],
+        [
+          "Jane Moreno",
+          "Absolutely, Francisco! The gig economy is a fascinating modern parallel. Just as the Industrial Revolution fragmented traditional work into specialized factory roles, today's gig economy breaks jobs into even smaller, on-demand tasks. Both created more flexibility but also less job security\u2014factory workers faced unpredictable layoffs, just as gig workers lack benefits today. Would you like to explore how we might apply historical labor movement strategies to modern gig worker rights?"
+        ],
+        [
+          "Francisco Lopez",
+          "That's a really interesting perspective! I'd love to hear more about how historical labor movements could inform solutions for gig workers today. Maybe we could even explore this as a class project?"
+        ],
+        [
+          "Jane Moreno",
+          "That's an excellent idea, Francisco! I'd be happy to help you develop this into a class project. We could even invite Klaus to share his AP project research on this very topic\u2014he's been exploring similar connections between Industrial Revolution labor conditions and modern gig economy challenges. Would you like to work together to propose this project to the class tomorrow?"
+        ],
+        [
+          "Francisco Lopez",
+          "That sounds perfect, Ms. Moreno! I'd really appreciate Klaus's input\u2014his research sounds directly relevant. Should we prepare some discussion points or materials for tomorrow's proposal?"
+        ],
+        [
+          "Jane Moreno",
+          "Yes, let's prepare some discussion points together! We can outline key parallels between historical labor movements and gig economy challenges, and perhaps create a comparison chart. I'll also reach out to Klaus to coordinate his presentation with our project proposal. How about we meet during lunch tomorrow to finalize our plan?"
+        ],
+        [
+          "Francisco Lopez",
+          "That sounds like a great plan, Ms. Moreno! I'll bring some initial ideas to our lunch meeting tomorrow. Looking forward to working on this with you and Klaus!"
+        ]
+      ]
+    },
+    "Jennifer Moore": {
+      "movement": [
+        44,
+        37
+      ],
+      "pronunciatio": "\ud83d\udc42\ud83d\udc69\u200d",
+      "description": "listening to the teacher's introduction @ the School:classroom building:classroom 1:blackboard",
+      "chat": null
+    },
+    "Sam Moore": {
+      "movement": [
+        108,
+        19
+      ],
+      "pronunciatio": "\u231b",
+      "description": "waiting to start listening to the teacher's lecture  @ <waiting> 108 19",
+      "chat": null
+    },
+    "Jacky Ma": {
+      "movement": [
+        107,
+        29
+      ],
+      "pronunciatio": "\ud83d\udc42\ud83d\udcdd",
+      "description": "listening to the teacher's lecture   @ the School:classroom building:classroom 1:blackboard",
+      "chat": null
+    },
+    "Latoya Williams": {
+      "movement": [
+        6,
+        40
+      ],
+      "pronunciatio": "\ud83d\udcda\u270f\ufe0f",
+      "description": "reviewing the math curriculum standards @ the School:Latoya Williams's office and dormitory:office:computer desk",
+      "chat": null
+    },
+    "Valerie Florentini": {
+      "movement": [
+        106,
+        16
+      ],
+      "pronunciatio": "\ud83d\udcac\ud83d\udc65",
+      "description": "participating in a class discussion   @ the School:classroom building:classroom 1:blackboard",
+      "chat": null
+    }
+  },
+  "meta": {
+    "curr_time": "February 13, 2023, 09:06:40"
+  }
+}

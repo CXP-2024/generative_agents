@@ -1,0 +1,232 @@
+{
+  "persona": {
+    "Rajiv Patel": {
+      "movement": [
+        34,
+        38
+      ],
+      "pronunciatio": "\ud83d\udd11\ud83d\udcf1",
+      "description": "grabbing his keys and phone @ the School:headmasters' office and dormitory:bedroom:closet",
+      "chat": null
+    },
+    "Ryan Park": {
+      "movement": [
+        61,
+        79
+      ],
+      "pronunciatio": "\ud83d\ude34",
+      "description": "sleeping @ the School:student dormitory 2:common room:bed",
+      "chat": null
+    },
+    "Wolfgang Schulz": {
+      "movement": [
+        87,
+        62
+      ],
+      "pronunciatio": "\ud83d\udc5f\ud83e\udde5",
+      "description": "putting on his shoes and jacket   @ the School:student dormitory 5:common room:desk",
+      "chat": null
+    },
+    "Tom Moreno": {
+      "movement": [
+        88,
+        75
+      ],
+      "pronunciatio": "\ud83d\udcda\u2705",
+      "description": "double-checking his class schedule @ the School:classroom building:library room:library table",
+      "chat": null
+    },
+    "Tamara Taylor": {
+      "movement": [
+        90,
+        76
+      ],
+      "pronunciatio": "\ud83c\udf92\ud83d\udcda",
+      "description": "packing school bag with needed materials   @ the School:student dormitory 5:common room:desk",
+      "chat": null
+    },
+    "Yuriko Yamamoto": {
+      "movement": [
+        88,
+        80
+      ],
+      "pronunciatio": "\ud83c\udf92\ud83d\udcda",
+      "description": "packing her school bag with books and notes @ the School:student dormitory 5:common room:desk",
+      "chat": null
+    },
+    "Isabella Rodriguez": {
+      "movement": [
+        96,
+        23
+      ],
+      "pronunciatio": "\ud83d\udcda\ud83d\udc5c",
+      "description": "organizing materials in her teaching bag   @ the School:Isabella Rodriguez's office and dormitory:office:bookshelf",
+      "chat": null
+    },
+    "Maria Lopez": {
+      "movement": [
+        72,
+        81
+      ],
+      "pronunciatio": "\ud83d\ude34",
+      "description": "sleeping @ the School:student dormitory 3:common room:bed",
+      "chat": null
+    },
+    "Klaus Mueller": {
+      "movement": [
+        66,
+        78
+      ],
+      "pronunciatio": "\ud83c\udf73\ud83c\udfc3\u200d",
+      "description": "still grabbing a quick breakfast from the dorm kitchen   @ the School:student dormitory 3:common room:desk",
+      "chat": null
+    },
+    "Adam Smith": {
+      "movement": [
+        107,
+        22
+      ],
+      "pronunciatio": "\u2615\ud83d\udecb\ufe0f",
+      "description": "taking a short break between lessons @ the School:student dormitory 4:common room:bed",
+      "chat": null
+    },
+    "Abigail Chen": {
+      "movement": [
+        83,
+        81
+      ],
+      "pronunciatio": "\ud83d\ude34",
+      "description": "sleeping @ the School:student dormitory 4:common room:bed",
+      "chat": null
+    },
+    "Arthur Burton": {
+      "movement": [
+        77,
+        80
+      ],
+      "pronunciatio": "\ud83d\udc5e\ud83d\udd11",
+      "description": "putting on his shoes and grabbing his keys   @ the School:student dormitory 4:common room:desk",
+      "chat": null
+    },
+    "Ayesha Khan": {
+      "movement": [
+        20,
+        21
+      ],
+      "pronunciatio": "\ud83c\udfa8\ud83d\udd8c\ufe0f",
+      "description": "adding final details to her painting @ the School:Ayesha Khan's office and dormitory:office:blackboard",
+      "chat": null
+    },
+    "Carlos Gomez": {
+      "movement": [
+        83,
+        77
+      ],
+      "pronunciatio": "\ud83d\udcf1\ud83d\udc40",
+      "description": "scrolling through his phone briefly   @ the School:student dormitory 4:common room:bed",
+      "chat": null
+    },
+    "Carmen Ortiz": {
+      "movement": [
+        66,
+        77
+      ],
+      "pronunciatio": "\u231b",
+      "description": "waiting to start packing her school bag with necessary books and materials  @ <waiting> 66 77",
+      "chat": null
+    },
+    "Eddy Lin": {
+      "movement": [
+        66,
+        80
+      ],
+      "pronunciatio": "\ud83e\uddfd\ud83c\udf92",
+      "description": "washing dishes and packing his school bag   @ the School:student dormitory 3:common room:desk",
+      "chat": null
+    },
+    "Francisco Lopez": {
+      "movement": [
+        44,
+        80
+      ],
+      "pronunciatio": "\ud83c\udf92",
+      "description": "packing his school bag   @ the School:student dormitory 1:common room:desk",
+      "chat": null
+    },
+    "Giorgio Rossi": {
+      "movement": [
+        59,
+        19
+      ],
+      "pronunciatio": "\ud83c\udf92",
+      "description": "packing his school bag   @ the School:student dormitory 1:common room:desk",
+      "chat": null
+    },
+    "Hailey Johnson": {
+      "movement": [
+        50,
+        81
+      ],
+      "pronunciatio": "\ud83d\ude34",
+      "description": "sleeping @ the School:student dormitory 1:common room:bed",
+      "chat": null
+    },
+    "Jane Moreno": {
+      "movement": [
+        32,
+        18
+      ],
+      "pronunciatio": "\ud83d\udc5f\ud83e\udde5",
+      "description": "putting on her shoes and coat by the door @ the School:Jane Moreno's office and dormitory:living room:closet",
+      "chat": null
+    },
+    "Jennifer Moore": {
+      "movement": [
+        44,
+        78
+      ],
+      "pronunciatio": "\ud83d\ude8c\ud83d\udc4b",
+      "description": "exiting the bus   @ the School:student dormitory 1:common room:desk",
+      "chat": null
+    },
+    "Sam Moore": {
+      "movement": [
+        51,
+        62
+      ],
+      "pronunciatio": "\ud83c\udf73\u2615",
+      "description": "preparing and eating breakfast @ the School:student dormitory 2:common room:desk",
+      "chat": null
+    },
+    "Jacky Ma": {
+      "movement": [
+        48,
+        61
+      ],
+      "pronunciatio": "\ud83d\ude8c\ud83c\udfeb",
+      "description": "boarding the bus to school   @ the School:student dormitory 2:common room:desk",
+      "chat": null
+    },
+    "Latoya Williams": {
+      "movement": [
+        5,
+        38
+      ],
+      "pronunciatio": "\ud83c\udf92\ud83d\udcda",
+      "description": "packing her teaching bag @ the School:Latoya Williams's office and dormitory:office:bookshelf",
+      "chat": null
+    },
+    "Valerie Florentini": {
+      "movement": [
+        58,
+        21
+      ],
+      "pronunciatio": "\ud83c\udf73\u2615",
+      "description": "eating breakfast @ the School:canteen:student canteen:student restaurant table",
+      "chat": null
+    }
+  },
+  "meta": {
+    "curr_time": "February 13, 2023, 07:55:40"
+  }
+}

@@ -1,0 +1,557 @@
+{
+  "vision_r": 8,
+  "att_bandwidth": 8,
+  "retention": 8,
+  "curr_time": "February 13, 2023, 09:59:50",
+  "curr_tile": [
+    88,
+    62
+  ],
+  "daily_plan_req": "Abigail Chen often goes to the art room to practice painting. Everyday in 3am she attends a drawing class at classroom 1.",
+  "name": "Abigail Chen",
+  "first_name": "Abigail",
+  "last_name": "Chen",
+  "age": 17,
+  "innate": "open-minded, curious, determined",
+  "learned": "Abigail Chen is a high school student at grade 11. She's interested in drawing. She lives in a student dormitory.",
+  "currently": "Abigail Chen is preparing for an art college.",
+  "lifestyle": "Abigail Chen goes to bed around midnight, awakes up around 8am, eats dinner around 6pm.",
+  "living_area": "the School:student dormitory 4:common room",
+  "concept_forget": 100,
+  "daily_reflection_time": 180,
+  "daily_reflection_size": 5,
+  "overlap_reflect_th": 4,
+  "kw_strg_event_reflect_th": 10,
+  "kw_strg_thought_reflect_th": 9,
+  "recency_w": 1,
+  "relevance_w": 1,
+  "importance_w": 1,
+  "recency_decay": 0.995,
+  "importance_trigger_max": 250,
+  "importance_trigger_curr": 153,
+  "importance_ele_n": 68,
+  "thought_count": 5,
+  "commitments": {},
+  "daily_req": [
+    "wake up and complete the morning routine at 8:00 am",
+    "wake up and complete the morning routine at 8:00 am",
+    "have breakfast from 8:30 am to 9:00 am",
+    "attend morning classes from 9:30 am to 12:00 pm",
+    "have lunch from 12:00 pm to 12:30 pm",
+    "independent study session from 1:00 pm to 3:00 pm",
+    "visit the art room to practice painting from 3:30 pm to 5:30 pm",
+    "have dinner at 6:00 pm",
+    "attend an online drawing session from 7:00 pm to 9:00 pm",
+    "study for college entrance exams from 9:30 pm to 11:30 pm",
+    "wind down and prepare for bed from 11:30 pm to 12:00 am",
+    "sleep at 12:00 am"
+  ],
+  "f_daily_schedule": [
+    [
+      "sleeping",
+      480
+    ],
+    [
+      "waking up and stretching in bed",
+      5
+    ],
+    [
+      "brushing her teeth",
+      5
+    ],
+    [
+      "combing her hair",
+      5
+    ],
+    [
+      "changing into fresh clothes",
+      5
+    ],
+    [
+      "making her bed",
+      5
+    ],
+    [
+      "preparing breakfast (toast and tea)",
+      5
+    ],
+    [
+      "eating breakfast",
+      15
+    ],
+    [
+      "cleaning up breakfast dishes",
+      15
+    ],
+    [
+      "eating breakfast",
+      15
+    ],
+    [
+      "cleaning up her breakfast dishes",
+      5
+    ],
+    [
+      "brushing her teeth",
+      5
+    ],
+    [
+      "washing her face",
+      5
+    ],
+    [
+      "changing into school clothes",
+      10
+    ],
+    [
+      "packing her art supplies",
+      10
+    ],
+    [
+      "checking her class schedule",
+      5
+    ],
+    [
+      "leaving her dorm for morning classes",
+      5
+    ],
+    [
+      "listening to the teacher's lecture",
+      15
+    ],
+    [
+      "taking notes on the lesson",
+      10
+    ],
+    [
+      "reviewing the notes briefly",
+      5
+    ],
+    [
+      "participating in a class discussion",
+      10
+    ],
+    [
+      "stretching during the short break",
+      5
+    ],
+    [
+      "returning to her seat and refocusing",
+      5
+    ],
+    [
+      "working on an in-class exercise",
+      10
+    ],
+    [
+      "attending morning classes, and at around 11:30, will start packing up her materials for lunch break",
+      60
+    ],
+    [
+      "having lunch in the school cafeteria, and at around 12:20, will chat with friends",
+      60
+    ],
+    [
+      "having an independent study session in the library, and at around 01:45, will take a short break to get some water",
+      60
+    ],
+    [
+      "continuing her independent study session in the library, and at around 02:15, will take a short break to organize her notes",
+      60
+    ],
+    [
+      "visiting the art room to practice painting, and at around 03:45, will take a short break to clean her brushes",
+      60
+    ],
+    [
+      "practicing painting in the art room, and at around 04:30, will take a short break to stretch and get some fresh air",
+      60
+    ],
+    [
+      "practicing painting in the art room, and at around 05:15, will start cleaning up her workspace",
+      60
+    ],
+    [
+      "having dinner in the school cafeteria, and at around 06:30, will chat with friends about their day",
+      60
+    ],
+    [
+      "attending an online drawing session, and at around 07:45, will take a short break to stretch",
+      60
+    ],
+    [
+      "attending an online drawing session, and at around 08:45, will take a short break to review her progress",
+      60
+    ],
+    [
+      "attending an online drawing session, and at around 09:15, will take a short break to stretch",
+      60
+    ],
+    [
+      "studying for college entrance exams, and at around 10:45, will take a short break to stretch",
+      60
+    ],
+    [
+      "studying for college entrance exams, and at around 11:15, will start winding down and preparing for bed",
+      60
+    ]
+  ],
+  "f_daily_schedule_hourly_org": [
+    [
+      "sleeping",
+      480
+    ],
+    [
+      "waking up and completing her morning routine, and at around 08:30, will have breakfast",
+      60
+    ],
+    [
+      "having breakfast, and at around 09:15, will prepare for morning classes",
+      60
+    ],
+    [
+      "attending morning classes, and at around 10:45, will take a short break to stretch",
+      60
+    ],
+    [
+      "attending morning classes, and at around 11:30, will start packing up her materials for lunch break",
+      60
+    ],
+    [
+      "having lunch in the school cafeteria, and at around 12:20, will chat with friends",
+      60
+    ],
+    [
+      "having an independent study session in the library, and at around 01:45, will take a short break to get some water",
+      60
+    ],
+    [
+      "continuing her independent study session in the library, and at around 02:15, will take a short break to organize her notes",
+      60
+    ],
+    [
+      "visiting the art room to practice painting, and at around 03:45, will take a short break to clean her brushes",
+      60
+    ],
+    [
+      "practicing painting in the art room, and at around 04:30, will take a short break to stretch and get some fresh air",
+      60
+    ],
+    [
+      "practicing painting in the art room, and at around 05:15, will start cleaning up her workspace",
+      60
+    ],
+    [
+      "having dinner in the school cafeteria, and at around 06:30, will chat with friends about their day",
+      60
+    ],
+    [
+      "attending an online drawing session, and at around 07:45, will take a short break to stretch",
+      60
+    ],
+    [
+      "attending an online drawing session, and at around 08:45, will take a short break to review her progress",
+      60
+    ],
+    [
+      "attending an online drawing session, and at around 09:15, will take a short break to stretch",
+      60
+    ],
+    [
+      "studying for college entrance exams, and at around 10:45, will take a short break to stretch",
+      60
+    ],
+    [
+      "studying for college entrance exams, and at around 11:15, will start winding down and preparing for bed",
+      60
+    ]
+  ],
+  "act_address": "the School:classroom building:classroom 1:blackboard",
+  "act_start_time": "February 13, 2023, 09:55:00",
+  "act_duration": 5,
+  "act_description": "leaving her dorm for morning classes",
+  "act_pronunciatio": "\ud83c\udfeb\u2615",
+  "act_event": [
+    "Abigail Chen",
+    "leave",
+    "dorm"
+  ],
+  "act_obj_description": "unused",
+  "act_obj_pronunciatio": "\ud83d\uddd1\ufe0f",
+  "act_obj_event": [
+    "blackboard",
+    "is",
+    "unused"
+  ],
+  "chatting_with": null,
+  "chat": null,
+  "chatting_with_buffer": {},
+  "chatting_end_time": null,
+  "act_path_set": true,
+  "planned_path": [
+    [
+      90,
+      62
+    ],
+    [
+      91,
+      62
+    ],
+    [
+      92,
+      62
+    ],
+    [
+      93,
+      62
+    ],
+    [
+      94,
+      62
+    ],
+    [
+      95,
+      62
+    ],
+    [
+      96,
+      62
+    ],
+    [
+      97,
+      62
+    ],
+    [
+      98,
+      62
+    ],
+    [
+      98,
+      61
+    ],
+    [
+      98,
+      60
+    ],
+    [
+      98,
+      59
+    ],
+    [
+      98,
+      58
+    ],
+    [
+      98,
+      57
+    ],
+    [
+      98,
+      56
+    ],
+    [
+      98,
+      55
+    ],
+    [
+      98,
+      54
+    ],
+    [
+      98,
+      53
+    ],
+    [
+      98,
+      52
+    ],
+    [
+      98,
+      51
+    ],
+    [
+      98,
+      50
+    ],
+    [
+      98,
+      49
+    ],
+    [
+      98,
+      48
+    ],
+    [
+      98,
+      47
+    ],
+    [
+      98,
+      46
+    ],
+    [
+      98,
+      45
+    ],
+    [
+      98,
+      44
+    ],
+    [
+      98,
+      43
+    ],
+    [
+      98,
+      42
+    ],
+    [
+      98,
+      41
+    ],
+    [
+      98,
+      40
+    ],
+    [
+      98,
+      39
+    ],
+    [
+      98,
+      38
+    ],
+    [
+      98,
+      37
+    ],
+    [
+      98,
+      36
+    ],
+    [
+      98,
+      35
+    ],
+    [
+      98,
+      34
+    ],
+    [
+      98,
+      33
+    ],
+    [
+      98,
+      32
+    ],
+    [
+      98,
+      31
+    ],
+    [
+      98,
+      30
+    ],
+    [
+      98,
+      29
+    ],
+    [
+      99,
+      29
+    ],
+    [
+      100,
+      29
+    ],
+    [
+      101,
+      29
+    ],
+    [
+      102,
+      29
+    ],
+    [
+      103,
+      29
+    ],
+    [
+      104,
+      29
+    ],
+    [
+      105,
+      29
+    ],
+    [
+      106,
+      29
+    ],
+    [
+      107,
+      29
+    ],
+    [
+      107,
+      28
+    ],
+    [
+      107,
+      27
+    ],
+    [
+      107,
+      26
+    ],
+    [
+      107,
+      25
+    ],
+    [
+      107,
+      24
+    ],
+    [
+      107,
+      23
+    ],
+    [
+      107,
+      22
+    ],
+    [
+      108,
+      22
+    ],
+    [
+      108,
+      21
+    ],
+    [
+      108,
+      20
+    ],
+    [
+      108,
+      19
+    ],
+    [
+      108,
+      18
+    ],
+    [
+      108,
+      17
+    ],
+    [
+      107,
+      17
+    ],
+    [
+      107,
+      16
+    ]
+  ]
+}

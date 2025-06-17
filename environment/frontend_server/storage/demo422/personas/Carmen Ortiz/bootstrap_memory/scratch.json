@@ -1,0 +1,440 @@
+{
+  "vision_r": 8,
+  "att_bandwidth": 8,
+  "retention": 8,
+  "curr_time": "February 13, 2023, 09:59:50",
+  "curr_tile": [
+    110,
+    23
+  ],
+  "daily_plan_req": "Carmen goes to the classroom at 8am. She takes the lunch break from 12am to 1:30pm. Then she returns to the classroom and study until 4:30pm. She attends class in classroom 1.",
+  "name": "Carmen Ortiz",
+  "first_name": "Carmen",
+  "last_name": "Ortiz",
+  "age": 18,
+  "innate": "friendly, outgoing, helpful",
+  "learned": "Carmen Ortiz is a Grade 12 high school student. She loves to help people. She also loves the cello and practices it in her spare time at the music room.",
+  "currently": "Carmen Ortiz is preparing for a small solo concert.",
+  "lifestyle": "Carmen Ortiz goes to bed around 11pm, awakes up around 7am, eats dinner around 8pm.",
+  "living_area": "the School:student dormitory 3:common room",
+  "concept_forget": 100,
+  "daily_reflection_time": 180,
+  "daily_reflection_size": 5,
+  "overlap_reflect_th": 4,
+  "kw_strg_event_reflect_th": 10,
+  "kw_strg_thought_reflect_th": 9,
+  "recency_w": 1,
+  "relevance_w": 1,
+  "importance_w": 1,
+  "recency_decay": 0.995,
+  "importance_trigger_max": 250,
+  "importance_trigger_curr": 189,
+  "importance_ele_n": 20,
+  "thought_count": 5,
+  "commitments": {
+    "2023-02-13": [
+      {
+        "time": "12:00",
+        "duration": 30,
+        "description": "Meet Eddy Lin at the cafeteria for lunch",
+        "with": "",
+        "location": ""
+      },
+      {
+        "time": "12:30",
+        "duration": 90,
+        "description": "Go to the library with Eddy Lin to study music theory and work on projects",
+        "with": "",
+        "location": "Library"
+      },
+      {
+        "time": "12:30",
+        "duration": 60,
+        "description": "Music theory session with Eddy at the library, possibly joined by Klaus Mueller to discuss their work",
+        "with": "Klaus",
+        "location": "Library"
+      },
+      {
+        "time": "12:00",
+        "duration": 60,
+        "description": "Lunch meeting with Eddy at 12:00",
+        "with": "",
+        "location": ""
+      },
+      {
+        "time": "9:00",
+        "duration": 15,
+        "description": "Ask Mrs. Johnson about her availability for scheduling the leadership discussion event (in person or via phone/email)",
+        "with": "Johnson",
+        "location": ""
+      },
+      {
+        "time": "12:00",
+        "duration": 60,
+        "description": "Meet Eddy Lin at the cafeteria for lunch and a music theory session, and discuss tricky sections of Carmen's music project",
+        "with": "",
+        "location": ""
+      },
+      {
+        "time": "10:00",
+        "duration": 15,
+        "description": "Check with Mrs. Johnson about scheduling the event space",
+        "with": "Johnson",
+        "location": ""
+      }
+    ]
+  },
+  "daily_req": [
+    "wake up and complete the morning routine at 7:00 am",
+    "wake up and complete the morning routine at 7:00 am",
+    "eat breakfast from 7:30 am to 7:50 am",
+    "go to classroom 1 at 8:00 am",
+    "attend classes from 8:15 am to 12:00 pm",
+    "take lunch break from 12:00 pm to 1:30 pm",
+    "return to classroom 1 and study from 1:30 pm to 4:30 pm",
+    "practice cello in the music room from 4:45 pm to 6:30 pm",
+    "eat dinner at 8:00 pm",
+    "relax and prepare for the next day from 8:30 pm to 10:45 pm",
+    "go to bed at 11:00 pm"
+  ],
+  "f_daily_schedule": [
+    [
+      "sleeping",
+      420
+    ],
+    [
+      "waking up and stretching in bed (conversing about Carmen Ortiz and Eddy Lin agreed to meet at the cafeteria at 12:00pm for lunch and then go to the library together at 12:30pm to study music theory and help each other with their respective music projects.)",
+      6
+    ],
+    [
+      "brushing her teeth  ",
+      4
+    ],
+    [
+      "taking a quick shower  ",
+      15
+    ],
+    [
+      "drying off and applying skincare  ",
+      5
+    ],
+    [
+      "getting dressed in her school uniform  ",
+      5
+    ],
+    [
+      "combing her hair and styling it  ",
+      5
+    ],
+    [
+      "packing her school bag with books and sheet music  ",
+      5
+    ],
+    [
+      "eating a quick breakfast   (conversing about Klaus Mueller and Carmen Ortiz discussed their plans for the day, with Carmen excited about her music theory session with Eddy at the library around 12:30pm, and Klaus planning to join them there after his classes to hear about their session and possibly offer fresh perspectives.)",
+      6
+    ],
+    [
+      "putting on her shoes and grabbing her cello case  ",
+      4
+    ],
+    [
+      "packing her school bag with necessary books and materials   (waiting to start packing her school bag with necessary books and materials )",
+      5
+    ],
+    [
+      "still packing her school bag with necessary books and materials   (conversing about Maria Lopez and Carmen Ortiz discussed Carmen's upcoming solo cello concert, her plans to meet Eddy for lunch at 12 and study music theory at the library with possible attendance from Klaus, and agreed that Maria would attend a practice session later in the week, possibly with her Hatsune Miku figure for inspiration.)",
+      7
+    ],
+    [
+      "grabbing a quick breakfast  ",
+      3
+    ],
+    [
+      "brushing her teeth and freshening up  ",
+      5
+    ],
+    [
+      "putting on her shoes and jacket  ",
+      5
+    ],
+    [
+      "walking to the bus stop  ",
+      3
+    ],
+    [
+      "walking to the bus stop   (conversing about Carmen Ortiz and Jacky Ma discussed their day, with Jacky preparing for an idol agency recruitment audition involving singing and dancing, and Carmen having a lunch meeting with Eddy followed by a music theory study session, possibly joined by Klaus; they agreed to meet in the music room after school the next day to share their performance pieces\u2014Jacky's audition piece and Carmen's solo cello concert preparation.)",
+      8
+    ],
+    [
+      "waiting for and boarding the bus  ",
+      4
+    ],
+    [
+      "riding the bus to school  ",
+      10
+    ],
+    [
+      "walking from the bus stop to classroom 1  ",
+      1
+    ],
+    [
+      "walking from the bus stop to classroom 1   (conversing about Carmen Ortiz and Adam Smith discussed the upcoming class minister election, with Carmen mentioning Maria Lopez's potential candidacy and agreeing to ask around about other candidates; they also planned to organize a leadership qualities discussion tied to music projects, with Carmen checking Mrs. Johnson's availability and creating a sign-up sheet and event plan to review with Mr. Smith the next day.)",
+      13
+    ],
+    [
+      "still walking from the bus stop to classroom 1  ",
+      1
+    ],
+    [
+      "listening to the teacher's lecture  ",
+      15
+    ],
+    [
+      "taking notes on the lesson  ",
+      10
+    ],
+    [
+      "taking notes on the lesson   (conversing about Carmen Ortiz and Eddy Lin discussed their upcoming lunch at 12 at the cafeteria and a subsequent music theory session, where they plan to review Carmen's music project with possible input from Klaus.)",
+      6
+    ],
+    [
+      "raising her hand to ask a question  ",
+      2
+    ],
+    [
+      "raising her hand to ask a question   (conversing about Arthur Burton and Carmen Ortiz agreed to meet with Wolfgang in the library after school tomorrow to study for the biology competition, discussing topics like photosynthesis and cellular respiration, with Carmen also bringing her notes to connect the material with her solo concert prep.)",
+      6
+    ],
+    [
+      "chatting with classmates during the break   (conversing about Carmen Ortiz and Jennifer Moore discussed combining leadership qualities with music and visual arts for an upcoming event, planning a live mural session with music performances by Eddy and Maria, and agreed to meet tomorrow after school in the music room to coordinate details, including mural sketches and art supplies.)",
+      9
+    ],
+    [
+      "reviewing her notes before the lesson resumes  ",
+      2
+    ],
+    [
+      "preparing her materials for the next part of the lesson   (conversing about Carmen Ortiz and Adam Smith discussed their assignment progress, plans for Maria Lopez's candidacy for class minister, scheduling a discussion with Mrs. Johnson for Thursday after school, drafting a sign-up sheet, coordinating musical talents from Maria, Jacky, and Eddy, integrating a live mural session with music performances by Jennifer, Eddy, and Maria, brainstorming connections between leadership styles and musical genres, seeking insights from Arthur and Wolfgang on leadership from a science perspective, and aiming to finalize all plans by Wednesday.)",
+      12
+    ],
+    [
+      "listening to the teacher's lecture  ",
+      13
+    ],
+    [
+      "taking notes on the lesson  ",
+      10
+    ],
+    [
+      "participating in a class discussion  ",
+      10
+    ],
+    [
+      "stretching and getting some water  ",
+      5
+    ],
+    [
+      "reviewing her notes  ",
+      10
+    ],
+    [
+      "working on a short in-class assignment",
+      10
+    ],
+    [
+      "attending classes in classroom 1, and at around 11:30, will start packing up for lunch break",
+      60
+    ],
+    [
+      "taking her lunch break, meeting Eddy Lin at the cafeteria for lunch and a music theory session, and discussing tricky sections of Carmen's music project for 60 minutes, and at around 12:15, will ask Eddy and Maria about their interest in performing during the live mural session, and at around 12:45, will take a short walk outside before returning to class",
+      60
+    ],
+    [
+      "studying music theory and working on projects with Eddy Lin and Klaus Mueller in the library, and at around 01:30, will finish the session, then return to classroom 1 and study, and at around 01:45, will take a short break to stretch and get some water",
+      60
+    ],
+    [
+      "continuing studying music theory and working on projects with Eddy Lin and Klaus Mueller in the library, and at around 02:30, will take a short break to chat with classmates",
+      60
+    ],
+    [
+      "finishing studying music theory and working on projects with Eddy Lin and Klaus Mueller in the library, then resume studying in classroom 1, and at around 03:30, will take a short break to organize her notes before continuing",
+      60
+    ],
+    [
+      "studying in classroom 1, and at around 04:15, will start packing up to head to the music room",
+      60
+    ],
+    [
+      "practicing cello in the music room, and at around 05:30, will take a short break to review her sheet music",
+      60
+    ],
+    [
+      "practicing cello in the music room, and at around 06:15, will take a short break to stretch before continuing her practice session",
+      60
+    ],
+    [
+      "practicing cello in the music room, and at around 07:15, will take a short break to review her concert pieces",
+      60
+    ],
+    [
+      "eating dinner with her family, and at around 08:30, will help clean up the table before relaxing",
+      60
+    ],
+    [
+      "relaxing at home, reviewing her concert pieces, and at around 09:30, will take a short break to chat with her family",
+      60
+    ],
+    [
+      "relaxing at home, reviewing her concert pieces, and at around 10:30, will start getting ready for bed",
+      60
+    ],
+    [
+      "going to bed and falling asleep",
+      60
+    ]
+  ],
+  "f_daily_schedule_hourly_org": [
+    [
+      "sleeping",
+      420
+    ],
+    [
+      "waking up and completing her morning routine",
+      60
+    ],
+    [
+      "going to classroom 1",
+      60
+    ],
+    [
+      "attending classes in classroom 1, and at around 09:15, will ask Mrs. Johnson about her availability for scheduling the leadership discussion event (in person or via phone/email), and at around 09:45, will take a short break to chat with classmates",
+      60
+    ],
+    [
+      "attending classes in classroom 1, and at around 10:30, will take a short break to stretch and get some water, and also check with Mrs. Johnson about scheduling the event space",
+      60
+    ],
+    [
+      "attending classes in classroom 1, and at around 11:30, will start packing up for lunch break",
+      60
+    ],
+    [
+      "taking her lunch break, meeting Eddy Lin at the cafeteria for lunch and a music theory session, and discussing tricky sections of Carmen's music project for 60 minutes, and at around 12:15, will ask Eddy and Maria about their interest in performing during the live mural session, and at around 12:45, will take a short walk outside before returning to class",
+      60
+    ],
+    [
+      "studying music theory and working on projects with Eddy Lin and Klaus Mueller in the library, and at around 01:30, will finish the session, then return to classroom 1 and study, and at around 01:45, will take a short break to stretch and get some water",
+      60
+    ],
+    [
+      "continuing studying music theory and working on projects with Eddy Lin and Klaus Mueller in the library, and at around 02:30, will take a short break to chat with classmates",
+      60
+    ],
+    [
+      "finishing studying music theory and working on projects with Eddy Lin and Klaus Mueller in the library, then resume studying in classroom 1, and at around 03:30, will take a short break to organize her notes before continuing",
+      60
+    ],
+    [
+      "studying in classroom 1, and at around 04:15, will start packing up to head to the music room",
+      60
+    ],
+    [
+      "practicing cello in the music room, and at around 05:30, will take a short break to review her sheet music",
+      60
+    ],
+    [
+      "practicing cello in the music room, and at around 06:15, will take a short break to stretch before continuing her practice session",
+      60
+    ],
+    [
+      "practicing cello in the music room, and at around 07:15, will take a short break to review her concert pieces",
+      60
+    ],
+    [
+      "eating dinner with her family, and at around 08:30, will help clean up the table before relaxing",
+      60
+    ],
+    [
+      "relaxing at home, reviewing her concert pieces, and at around 09:30, will take a short break to chat with her family",
+      60
+    ],
+    [
+      "relaxing at home, reviewing her concert pieces, and at around 10:30, will start getting ready for bed",
+      60
+    ],
+    [
+      "going to bed and falling asleep",
+      60
+    ]
+  ],
+  "act_address": "<persona> Adam Smith",
+  "act_start_time": "February 13, 2023, 09:50:40",
+  "act_duration": 12,
+  "act_description": "conversing about Carmen Ortiz and Adam Smith discussed their assignment progress, plans for Maria Lopez's candidacy for class minister, scheduling a discussion with Mrs. Johnson for Thursday after school, drafting a sign-up sheet, coordinating musical talents from Maria, Jacky, and Eddy, integrating a live mural session with music performances by Jennifer, Eddy, and Maria, brainstorming connections between leadership styles and musical genres, seeking insights from Arthur and Wolfgang on leadership from a science perspective, and aiming to finalize all plans by Wednesday.",
+  "act_pronunciatio": "\ud83d\udcac",
+  "act_event": [
+    "Carmen Ortiz",
+    "chat with",
+    "Adam Smith"
+  ],
+  "act_obj_description": null,
+  "act_obj_pronunciatio": null,
+  "act_obj_event": [
+    null,
+    null,
+    null
+  ],
+  "chatting_with": "Adam Smith",
+  "chat": [
+    [
+      "Carmen Ortiz",
+      "Hey Adam, how's the assignment going? I was just thinking about our earlier conversation\u2014did you get a chance to look into any other potential candidates for class minister?"
+    ],
+    [
+      "Adam Smith",
+      "Hey Carmen! The assignment's going well\u2014just wrapping up. Yeah, I thought more about Maria Lopez's candidacy and how we can tie leadership qualities into our music project idea. Did you manage to check Mrs. Johnson's availability for the discussion?"
+    ],
+    [
+      "Carmen Ortiz",
+      "I did! Mrs. Johnson said she's free this Thursday after school, so that could work perfectly. And I've started drafting a sign-up sheet\u2014I'll finalize it tonight so we can review it tomorrow. Oh, and during lunch I'm planning to ask Maria, Jacky, and Eddy about contributing musical talents for the event too!"
+    ],
+    [
+      "Adam Smith",
+      "That sounds great! I'll start preparing some discussion points on leadership styles and creativity tonight\u2014maybe we can connect them to different musical genres to make it more engaging. Should we also reach out to Jennifer about integrating the mural session with our music performances?"
+    ],
+    [
+      "Carmen Ortiz",
+      "Yes, that's a fantastic idea! Jennifer and I actually discussed something similar earlier\u2014we're planning a live mural session with music performances by Eddy and Maria. Maybe we can combine both events into one cohesive experience? I'll reach out to Jennifer to coordinate and see how we can align everything."
+    ],
+    [
+      "Adam Smith",
+      "That sounds like a solid plan! Let's make sure the leadership discussion and the mural-music event complement each other. Maybe we can highlight how creativity in both arts and leadership can shape our school community. I'll brainstorm some connections tonight and share my ideas with you tomorrow."
+    ],
+    [
+      "Carmen Ortiz",
+      "That sounds perfect! I'll also work on merging the event plans tonight so we have a clear outline to discuss tomorrow. Let's aim to finalize everything by Wednesday to give everyone enough time to prepare. And yes, highlighting the connection between creativity in arts and leadership is a great angle\u2014it really ties everything together!"
+    ],
+    [
+      "Adam Smith",
+      "Sounds like we're on the same page! I'll also check with Arthur and Wolfgang during our study session later to see if they have any insights about leadership from a science perspective that we could incorporate. Maybe we can create a multidisciplinary approach to this event."
+    ],
+    [
+      "Carmen Ortiz",
+      "That's a great idea to get insights from Arthur and Wolfgang! A multidisciplinary approach would make the event even more unique and engaging. I'll make sure to incorporate that into our merged plans. Let's touch base again tomorrow after we've both had time to develop our ideas further."
+    ]
+  ],
+  "chatting_with_buffer": {
+    "Eddy Lin": 0,
+    "Klaus Mueller": 0,
+    "Maria Lopez": 0,
+    "Jacky Ma": 0,
+    "Adam Smith": 800,
+    "Arthur Burton": 0,
+    "Jennifer Moore": 338
+  },
+  "chatting_end_time": "February 13, 2023, 10:03:00",
+  "act_path_set": true,
+  "planned_path": []
+}

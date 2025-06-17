@@ -1,0 +1,480 @@
+{
+  "vision_r": 8,
+  "att_bandwidth": 8,
+  "retention": 8,
+  "curr_time": "February 13, 2023, 09:59:50",
+  "curr_tile": [
+    94,
+    29
+  ],
+  "daily_plan_req": "Everyday at 6:30am, Isabella Rodriguez goes jogging on the playground for half an hour. Then she takes breakfast. At 7:30 she goes to classroom 1 to teach her 5 students. She has lunch at 12am and take a nap at dormitory until 2pm. She's free in the afternoon, when she usually does exercises. ",
+  "name": "Isabella Rodriguez",
+  "first_name": "Isabella",
+  "last_name": "Rodriguez",
+  "age": 34,
+  "innate": "patient, kind, encouraging",
+  "learned": "Isabella Rodriguez is a high school math and science teacher who is passionate about helping her students learn and grow. She believes in creating a supportive and engaging classroom environment where every student feels valued and empowered. She does exercises at dormitory or in sports room, and she likes hatsune miku.",
+  "currently": "Isabella Rodriguez is planning an outdoor class on the islands in the pond at school on February 14th, 2023, from 9am to 11am. She is preparing the lesson plan and gathering materials for a nature study and creative writing session.",
+  "lifestyle": "Isabella Rodriguez goes to bed around 11pm and wakes up around 6am to prepare for her classes.",
+  "living_area": "the School:Isabella Rodriguez's office and dormitory:living room",
+  "concept_forget": 100,
+  "daily_reflection_time": 180,
+  "daily_reflection_size": 5,
+  "overlap_reflect_th": 4,
+  "kw_strg_event_reflect_th": 10,
+  "kw_strg_thought_reflect_th": 9,
+  "recency_w": 1,
+  "relevance_w": 1,
+  "importance_w": 1,
+  "recency_decay": 0.995,
+  "importance_trigger_max": 150,
+  "importance_trigger_curr": 19,
+  "importance_ele_n": 37,
+  "thought_count": 5,
+  "commitments": {
+    "2023-02-13": [
+      {
+        "time": "10:00",
+        "duration": 20,
+        "description": "Gather resources on labor history and modern economic trends for the meeting with Klaus Mueller",
+        "with": "Klaus",
+        "location": ""
+      },
+      {
+        "time": "14:00",
+        "duration": 10,
+        "description": "Bring gathered resources to the library after school for the meeting with Klaus Mueller",
+        "with": "Klaus",
+        "location": "School"
+      },
+      {
+        "time": "10:00",
+        "duration": 30,
+        "description": "Prepare a data collection template for Wolfgang's pea plant observations",
+        "with": "",
+        "location": ""
+      }
+    ]
+  },
+  "daily_req": [
+    "wake up and complete the morning routine at 6:00 am",
+    "Wake up and complete the morning routine from 6:00 am to 6:30 am",
+    "Go jogging on the playground from 6:30 am to 7:00 am",
+    "Have breakfast from 7:00 am to 7:30 am",
+    "Teach her students in classroom 1 from 7:30 am to 12:00 pm",
+    "Have lunch from 12:00 pm to 1:00 pm",
+    "Take a nap at the dormitory from 1:00 pm to 2:00 pm",
+    "Prepare lesson materials for the outdoor class on February 14th from 2:00 pm to 4:00 pm",
+    "Do exercises (either at the dormitory or sports room",
+    "Listen to Hatsune Miku music and relax from 5:00 pm to 6:00 pm",
+    "Have dinner from 6:00 pm to 7:00 pm",
+    "Review and finalize the outdoor class plan from 7:00 pm to 9:00 pm",
+    "Wind down and read a book or watch a show from 9:00 pm to 11:00 pm",
+    "Go to bed at 11:00 pm"
+  ],
+  "f_daily_schedule": [
+    [
+      "sleeping",
+      360
+    ],
+    [
+      "waking up and stretching in bed",
+      5
+    ],
+    [
+      "washing her face",
+      5
+    ],
+    [
+      "brushing her teeth",
+      5
+    ],
+    [
+      "applying skincare products",
+      5
+    ],
+    [
+      "choosing her outfit for the day",
+      5
+    ],
+    [
+      "getting dressed",
+      10
+    ],
+    [
+      "fixing her hair",
+      5
+    ],
+    [
+      "putting on her shoes",
+      5
+    ],
+    [
+      "packing her jogging essentials (water bottle, towel)",
+      5
+    ],
+    [
+      "heading out to the playground for jogging",
+      10
+    ],
+    [
+      "walking to the school cafeteria",
+      5
+    ],
+    [
+      "selecting breakfast items from the cafeteria line",
+      5
+    ],
+    [
+      "sitting down and eating breakfast",
+      5
+    ],
+    [
+      "sitting down and eating breakfast (conversing about Isabella Rodriguez and Wolfgang Schulz discussed their morning routines and upcoming biology class topics, particularly cellular respiration and genetics, and agreed to meet after Wolfgang's last class in Isabella's classroom to brainstorm genetics project ideas.)",
+      9
+    ],
+    [
+      "still sitting down and eating breakfast  ",
+      6
+    ],
+    [
+      "reviewing her lesson notes while finishing breakfast  ",
+      10
+    ],
+    [
+      "cleaning up her tray and returning it   (conversing about Isabella Rodriguez and Jacky Ma exchanged morning greetings, with Jacky mentioning his dance practice for an idol agency recruitment and Isabella sharing her plans for an outdoor class tomorrow, both wishing each other well in their endeavors.)",
+      6
+    ],
+    [
+      "walking back to her classroom  ",
+      4
+    ],
+    [
+      "gathering math worksheets and science handouts  ",
+      5
+    ],
+    [
+      "organizing materials in her teaching bag  ",
+      5
+    ],
+    [
+      "greeting students as they enter the classroom  ",
+      4
+    ],
+    [
+      "greeting students as they enter the classroom   (conversing about Isabella Rodriguez and Tom Moreno discussed a math lesson focusing on geometry, specifically solving trigonometry problem 5 using the sine rule, where Tom successfully calculated side a as approximately 5.94 units, and then moved on to problem 6 to apply the cosine rule with given values a = 7 units, b = 9 units, and angle C = 50 degrees.)",
+      12
+    ],
+    [
+      "reviewing the previous lesson's key concepts  ",
+      5
+    ],
+    [
+      "reviewing the previous lesson's key concepts   (conversing about Isabella Rodriguez helped Giorgio Rossi with quadratic equations, explaining both factoring and the quadratic formula, and they practiced applying the quadratic formula to 2x\u00b2 + 4x - 6 = 0, verifying the solutions together.)",
+      16
+    ],
+    [
+      "still reviewing the previous lesson's key concepts  ",
+      3
+    ],
+    [
+      "writing example problems on the board   (conversing about Isabella Rodriguez explained to Eddy Lin how quadratic equations apply to music theory, specifically string length and pitch calculations for his composition project, demonstrated a sample calculation, and they agreed to meet again on Wednesday at 3pm to discuss quadratic equations in chord progressions.)",
+      15
+    ],
+    [
+      "still writing example problems on the board  ",
+      4
+    ],
+    [
+      "still writing example problems on the board   (conversing about Isabella Rodriguez and Klaus Mueller discussed Klaus's AP project on the Industrial Revolution's parallels to modern society, particularly labor conditions and the gig economy, and agreed to meet in the library after school to work on structuring the project after attending Carmen and Eddy's music theory session.)",
+      10
+    ],
+    [
+      "still writing example problems on the board  ",
+      1
+    ],
+    [
+      "guiding students through solving the problems   (conversing about Arthur Burton asked Isabella Rodriguez for help understanding the connection between the Krebs cycle and the electron transport chain in cellular respiration, particularly focusing on ATP synthase and proton gradient formation, and they planned to compare this process to photosynthesis using colored diagrams, with Arthur preparing for a chemistry competition next month.)",
+      23
+    ],
+    [
+      "still guiding students through solving the problems  ",
+      1
+    ],
+    [
+      "still guiding students through solving the problems   (waiting to start still guiding students through solving the problems )",
+      1
+    ],
+    [
+      "explaining key concepts with visual aids  ",
+      1
+    ],
+    [
+      "explaining key concepts with visual aids   (conversing about Isabella Rodriguez and Wolfgang Schulz discussed their excitement for a genetics project, exploring connections between Mendel's pea plant experiments and modern genetic engineering, including plans to analyze pea plant traits in their school garden and present findings in a mini-symposium, and agreed to meet after Wolfgang's last class to prepare a data collection template and discuss the presentation structure.)",
+      10
+    ],
+    [
+      "still explaining key concepts with visual aids  ",
+      4
+    ],
+    [
+      "setting up the experiment materials   (conversing about Isabella Rodriguez and Valerie Florentini discussed Valerie's color-coded history notes connected to harp practice, planned to organize materials for tomorrow's outdoor class on the islands by historical periods with color-coded labels and harp symbols, decided to include Renaissance harp recordings in the creative writing activity, specifically 'La Spagna' by Francesco Spinacino, and brainstormed writing prompts about scientific discoveries inspired by the music.)",
+      21
+    ],
+    [
+      "demonstrating the experiment step-by-step  ",
+      9
+    ],
+    [
+      "reviewing the previous lesson's key points with students  ",
+      10
+    ],
+    [
+      "introducing the new science topic for the day  ",
+      5
+    ],
+    [
+      "leading a class discussion on the topic  ",
+      5
+    ],
+    [
+      "taking a short break to prepare for the next lesson  ",
+      5
+    ],
+    [
+      "gathering resources on labor history for the meeting with Klaus Mueller  ",
+      10
+    ],
+    [
+      "gathering resources on modern economic trends for the meeting with Klaus Mueller",
+      5
+    ],
+    [
+      "teaching her morning science class, and at around 11:30, will wrap up the lesson and prepare for lunch",
+      60
+    ],
+    [
+      "having lunch in the school cafeteria, and at around 12:30, will chat with fellow teachers about the upcoming outdoor class",
+      60
+    ],
+    [
+      "taking a nap at the dormitory, and at around 01:30, will briefly wake up to drink some water before continuing her nap",
+      60
+    ],
+    [
+      "preparing lesson materials for the outdoor class on February 14th, and at around 02:45, will take a short break to organize her notes, then plan a discussion about structuring Wolfgang's mini-symposium presentation",
+      60
+    ],
+    [
+      "preparing lesson materials for the outdoor class on February 14th, and at around 03:30, will take a short break to stretch and have some tea, and will bring gathered resources to the library after school for the meeting with Klaus Mueller",
+      60
+    ],
+    [
+      "preparing lesson materials for the outdoor class on February 14th, and at around 04:30, will take a short break to gather additional resources from the school library",
+      60
+    ],
+    [
+      "doing exercises in the sports room, and at around 05:30, will take a short break to hydrate and stretch",
+      60
+    ],
+    [
+      "listening to Hatsune Miku music and relaxing in her dormitory, and at around 06:30, will start preparing for dinner",
+      60
+    ],
+    [
+      "having dinner in the school cafeteria, and at around 07:30, will chat with colleagues about the upcoming outdoor class",
+      60
+    ],
+    [
+      "reviewing and finalizing the outdoor class plan, and at around 08:30, will take a short break to organize her notes",
+      60
+    ],
+    [
+      "winding down by reading a book in her dormitory, and at around 09:30, will take a short break to make some tea",
+      60
+    ],
+    [
+      "winding down by reading a book in her dormitory, and at around 10:30, will prepare for bed",
+      60
+    ],
+    [
+      "sleeping",
+      60
+    ]
+  ],
+  "f_daily_schedule_hourly_org": [
+    [
+      "sleeping",
+      360
+    ],
+    [
+      "waking up and starting her morning routine, and at around 06:15, will brush her teeth and get dressed",
+      60
+    ],
+    [
+      "having breakfast in the school cafeteria, and at around 07:20, will gather her teaching materials for the morning classes",
+      60
+    ],
+    [
+      "teaching her morning math class, and at around 08:45, will take a short break to answer student questions",
+      60
+    ],
+    [
+      "teaching her morning science class, and at around 09:45, will take a short break to demonstrate an experiment",
+      60
+    ],
+    [
+      "teaching her morning science class, and at around 10:30, will take a short break to prepare for the next lesson, and will also gather resources on labor history and modern economic trends for the meeting with Klaus Mueller, then prepare a data collection template for Wolfgang's pea plant observations",
+      60
+    ],
+    [
+      "teaching her morning science class, and at around 11:30, will wrap up the lesson and prepare for lunch",
+      60
+    ],
+    [
+      "having lunch in the school cafeteria, and at around 12:30, will chat with fellow teachers about the upcoming outdoor class",
+      60
+    ],
+    [
+      "taking a nap at the dormitory, and at around 01:30, will briefly wake up to drink some water before continuing her nap",
+      60
+    ],
+    [
+      "preparing lesson materials for the outdoor class on February 14th, and at around 02:45, will take a short break to organize her notes, then plan a discussion about structuring Wolfgang's mini-symposium presentation",
+      60
+    ],
+    [
+      "preparing lesson materials for the outdoor class on February 14th, and at around 03:30, will take a short break to stretch and have some tea, and will bring gathered resources to the library after school for the meeting with Klaus Mueller",
+      60
+    ],
+    [
+      "preparing lesson materials for the outdoor class on February 14th, and at around 04:30, will take a short break to gather additional resources from the school library",
+      60
+    ],
+    [
+      "doing exercises in the sports room, and at around 05:30, will take a short break to hydrate and stretch",
+      60
+    ],
+    [
+      "listening to Hatsune Miku music and relaxing in her dormitory, and at around 06:30, will start preparing for dinner",
+      60
+    ],
+    [
+      "having dinner in the school cafeteria, and at around 07:30, will chat with colleagues about the upcoming outdoor class",
+      60
+    ],
+    [
+      "reviewing and finalizing the outdoor class plan, and at around 08:30, will take a short break to organize her notes",
+      60
+    ],
+    [
+      "winding down by reading a book in her dormitory, and at around 09:30, will take a short break to make some tea",
+      60
+    ],
+    [
+      "winding down by reading a book in her dormitory, and at around 10:30, will prepare for bed",
+      60
+    ],
+    [
+      "sleeping",
+      60
+    ]
+  ],
+  "act_address": "<persona> Valerie Florentini",
+  "act_start_time": "February 13, 2023, 09:50:10",
+  "act_duration": 21,
+  "act_description": "conversing about Isabella Rodriguez and Valerie Florentini discussed Valerie's color-coded history notes connected to harp practice, planned to organize materials for tomorrow's outdoor class on the islands by historical periods with color-coded labels and harp symbols, decided to include Renaissance harp recordings in the creative writing activity, specifically 'La Spagna' by Francesco Spinacino, and brainstormed writing prompts about scientific discoveries inspired by the music.",
+  "act_pronunciatio": "\ud83d\udcac",
+  "act_event": [
+    "Isabella Rodriguez",
+    "chat with",
+    "Valerie Florentini"
+  ],
+  "act_obj_description": null,
+  "act_obj_pronunciatio": null,
+  "act_obj_event": [
+    null,
+    null,
+    null
+  ],
+  "chatting_with": "Valerie Florentini",
+  "chat": [
+    [
+      "Isabella Rodriguez",
+      "Hi Valerie! How's your review going? Anything particularly interesting you're working on?"
+    ],
+    [
+      "Valerie Florentini",
+      "Hi Isabella! It's going well. I was just practicing my color-coding technique for my history notes. It helps me connect historical music periods to my harp practice. How about you? Need any help with setting up the experiment?"
+    ],
+    [
+      "Isabella Rodriguez",
+      "That sounds fascinating, Valerie! I'd love to hear more about how you make those connections between history and music. And thank you for offering to help - I could actually use an extra hand organizing these materials for tomorrow's outdoor class on the islands. Would you like to join me?"
+    ],
+    [
+      "Valerie Florentini",
+      "I'd love to help! Connecting music and history has really made studying more engaging for me. Maybe while we organize the materials, I can share how I link certain historical periods to the pieces I play on the harp?"
+    ],
+    [
+      "Isabella Rodriguez",
+      "That sounds perfect, Valerie! I think your approach could be really inspiring for other students too. Let's work on these materials together - maybe we can even brainstorm how to incorporate some of your music-history connections into tomorrow's creative writing activity on the islands?"
+    ],
+    [
+      "Valerie Florentini",
+      "That sounds like a wonderful idea, Isabella! I'd be happy to share how music from different eras can inspire creative writing. Maybe we can categorize the experiment materials by historical periods too, to make the connections clearer for everyone?"
+    ],
+    [
+      "Isabella Rodriguez",
+      "That's a brilliant suggestion, Valerie! Organizing the materials by historical periods would make the connections more tangible. Let's start with grouping items from the Renaissance era - perhaps we can find parallels between the scientific discoveries of that time and the musical innovations. What do you think would be the best way to represent these connections visually for tomorrow's class?"
+    ],
+    [
+      "Valerie Florentini",
+      "That sounds great! Maybe we could use color-coded labels - blue for Renaissance to match my note-taking system, and include small harp symbols on the labels to represent the musical connections. I can even bring some short recordings of Renaissance harp pieces to play during the activity if that would help inspire the creative writing!"
+    ],
+    [
+      "Isabella Rodriguez",
+      "Your color-coded labels and harp symbols idea is absolutely perfect, Valerie! And bringing recordings would be fantastic - it'll really help immerse the students in the historical context. Let's start with the Renaissance materials first, and maybe you can tell me more about the specific connections you see between that era's science and music as we work?"
+    ],
+    [
+      "Valerie Florentini",
+      "I'd love to! For example, the Renaissance was a time of both scientific discovery and musical innovation. Just as they were exploring perspective in art and anatomy, musicians were developing new polyphonic techniques. When I play pieces from that era, I imagine the same curiosity and precision that went into da Vinci's studies! Should we start by labeling these astronomy tools with blue tags and small harp icons?"
+    ],
+    [
+      "Isabella Rodriguez",
+      "That's a wonderful analogy, Valerie! The parallel between polyphonic music and scientific exploration is exactly the kind of interdisciplinary thinking we want to encourage. Yes, let's start with the astronomy tools - while we label them, would you like to share what Renaissance harp piece you think best captures that spirit of discovery?"
+    ],
+    [
+      "Valerie Florentini",
+      "I think 'La Spagna' by Francesco Spinacino would be perfect for that! It's a Renaissance piece that showcases the era's innovative techniques while maintaining beautiful structure - much like the scientific diagrams we're labeling. Would you like me to play a short excerpt now as we work on these astronomy tools?"
+    ],
+    [
+      "Isabella Rodriguez",
+      "That would be lovely, Valerie! Hearing 'La Spagna' while we work would really help set the tone for tomorrow's class. Let's listen as we finish labeling these astronomy tools - and maybe afterwards we can discuss how to incorporate this musical element into the creative writing prompts?"
+    ],
+    [
+      "Valerie Florentini",
+      "Yes, I'd be happy to play a short excerpt now! After we listen, we could brainstorm writing prompts that ask students to imagine they're Renaissance scientists discovering something new while this music plays in the background. What do you think?"
+    ],
+    [
+      "Isabella Rodriguez",
+      "That's a wonderful idea, Valerie! Let's have them write about experiencing a scientific breakthrough while hearing this music - perhaps imagining how the harmonies might inspire their discoveries. After you play, we can refine the prompt together."
+    ],
+    [
+      "Valerie Florentini",
+      "That sounds perfect, Isabella! *begins playing a gentle excerpt of 'La Spagna' on her harp* As the music plays, let's think about how we could phrase the prompt... maybe something like 'Imagine you're a Renaissance astronomer hearing this music as you make a groundbreaking discovery - describe the moment and how the music influences your thoughts.' How does that sound?"
+    ]
+  ],
+  "chatting_with_buffer": {
+    "Wolfgang Schulz": 195,
+    "Jacky Ma": 0,
+    "Tom Moreno": 0,
+    "Giorgio Rossi": 0,
+    "Eddy Lin": 0,
+    "Klaus Mueller": 0,
+    "Arthur Burton": 0,
+    "Valerie Florentini": 800
+  },
+  "chatting_end_time": "February 13, 2023, 10:12:00",
+  "act_path_set": true,
+  "planned_path": []
+}

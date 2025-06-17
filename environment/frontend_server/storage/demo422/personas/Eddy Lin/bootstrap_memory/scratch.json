@@ -1,0 +1,407 @@
+{
+  "vision_r": 8,
+  "att_bandwidth": 8,
+  "retention": 8,
+  "curr_time": "February 13, 2023, 09:59:50",
+  "curr_tile": [
+    107,
+    29
+  ],
+  "daily_plan_req": "Eddy Lin goes to classroom 1 to take ordinary classes at 8am. In the afternoon and at night, he plays piano at the music room or learns music theory in the library room.",
+  "name": "Eddy Lin",
+  "first_name": "Eddy",
+  "last_name": "Lin",
+  "age": 18,
+  "innate": "curious, analytical, musical",
+  "learned": "Eddy Lin is a high school student at grade 12. He likes music theory and composition, amd he's a piano genius.",
+  "currently": "Eddy Lin is working on a amateur composition project and preparing for a music college.",
+  "lifestyle": "Eddy Lin goes to bed around 12pm, awakes up around 7am, eats dinner around 5pm.",
+  "living_area": "the School:student dormitory 3:common room",
+  "concept_forget": 100,
+  "daily_reflection_time": 180,
+  "daily_reflection_size": 5,
+  "overlap_reflect_th": 4,
+  "kw_strg_event_reflect_th": 10,
+  "kw_strg_thought_reflect_th": 9,
+  "recency_w": 1,
+  "relevance_w": 1,
+  "importance_w": 1,
+  "recency_decay": 0.995,
+  "importance_trigger_max": 250,
+  "importance_trigger_curr": 190,
+  "importance_ele_n": 23,
+  "thought_count": 5,
+  "commitments": {
+    "2023-02-13": [
+      {
+        "time": "12:00",
+        "duration": 30,
+        "description": "Meet Carmen Ortiz at the cafeteria for lunch",
+        "with": "",
+        "location": ""
+      },
+      {
+        "time": "12:30",
+        "duration": 90,
+        "description": "Go to the library with Carmen Ortiz to study music theory",
+        "with": "",
+        "location": "Library"
+      },
+      {
+        "time": "12:00 (assuming standard lunchtime, needs confirmation)",
+        "duration": 60,
+        "description": "Meet Carmen for lunch at a specified location (location not mentioned, needs confirmation)",
+        "with": "",
+        "location": ""
+      },
+      {
+        "time": "9:00",
+        "duration": 5,
+        "description": "Bring composition notes for the Wednesday 3pm session with Isabella Rodriguez",
+        "with": "Isabella",
+        "location": ""
+      },
+      {
+        "time": "14:00",
+        "duration": 30,
+        "description": "Prepare specific questions about harmonic structures for the Wednesday 3pm session with Isabella Rodriguez",
+        "with": "Isabella",
+        "location": ""
+      },
+      {
+        "time": "12:00",
+        "duration": 60,
+        "description": "Meet Carmen Ortiz for lunch in the cafeteria",
+        "with": "",
+        "location": ""
+      }
+    ]
+  },
+  "daily_req": [
+    "wake up and complete the morning routine at 7:00 am",
+    "wake up and complete the morning routine from 7:00 am to 7:30 am",
+    "have breakfast from 7:30 am to 8:00 am",
+    "attend ordinary classes in classroom 1 from 8:00 am to 12:00 pm",
+    "have lunch from 12:00 pm to 12:30 pm",
+    "study music theory in the library room from 12:30 pm to 3:00 pm",
+    "practice piano in the music room from 3:00 pm to 5:00 pm",
+    "have dinner from 5:00 pm to 5:30 pm",
+    "work on amateur composition project in the music room from 5:30 pm to 9:00 pm",
+    "review music theory notes in the library room from 9:00 pm to 11:00 pm",
+    "wind down and prepare for bed from 11:00 pm to 12:00 am",
+    "sleep at 12:00 am"
+  ],
+  "f_daily_schedule": [
+    [
+      "sleeping",
+      420
+    ],
+    [
+      "waking up and stretching in bed (conversing about Carmen Ortiz and Eddy Lin agreed to meet at the cafeteria at 12:00pm for lunch and then go to the library together at 12:30pm to study music theory and help each other with their respective music projects.)",
+      6
+    ],
+    [
+      "getting out of bed and putting on slippers  ",
+      4
+    ],
+    [
+      "walking to the bathroom to wash his face  ",
+      5
+    ],
+    [
+      "brushing his teeth  ",
+      5
+    ],
+    [
+      "combing his hair  ",
+      5
+    ],
+    [
+      "changing into school clothes  ",
+      5
+    ],
+    [
+      "walking to the kitchen to prepare breakfast  ",
+      5
+    ],
+    [
+      "making toast and boiling water for tea   (conversing about Klaus Mueller and Eddy Lin greeted each other in the morning while making breakfast, with Eddy mentioning his lunch plans with Carmen followed by studying music theory together, while Klaus shared his plan to work on his AP Social Studies research project at the library, and both expressed the possibility of meeting there later in the afternoon.)",
+      6
+    ],
+    [
+      "still making toast and boiling water for tea  ",
+      4
+    ],
+    [
+      "eating breakfast while reviewing music theory notes  ",
+      5
+    ],
+    [
+      "still eating breakfast while reviewing music theory notes  ",
+      5
+    ],
+    [
+      "washing dishes and packing his school bag  ",
+      5
+    ],
+    [
+      "listening to the teacher's lecture  ",
+      15
+    ],
+    [
+      "taking notes on the lesson  ",
+      1
+    ],
+    [
+      "taking notes on the lesson   (waiting to start taking notes on the lesson )",
+      9
+    ],
+    [
+      "solving a practice problem  ",
+      10
+    ],
+    [
+      "reviewing his notes  ",
+      5
+    ],
+    [
+      "asking the teacher a question   (conversing about Isabella Rodriguez explained to Eddy Lin how quadratic equations apply to music theory, specifically string length and pitch calculations for his composition project, demonstrated a sample calculation, and they agreed to meet again on Wednesday at 3pm to discuss quadratic equations in chord progressions.)",
+      15
+    ],
+    [
+      "packing his materials for the next class  ",
+      5
+    ],
+    [
+      "listening to the teacher's lecture   (waiting to start listening to the teacher's lecture )",
+      15
+    ],
+    [
+      "taking notes on the lesson   (waiting to start taking notes on the lesson )",
+      10
+    ],
+    [
+      "still solving a problem assigned by the teacher   (conversing about Carmen Ortiz and Eddy Lin discussed their upcoming lunch at 12 at the cafeteria and a subsequent music theory session, where they plan to review Carmen's music project with possible input from Klaus.)",
+      6
+    ],
+    [
+      "reviewing his notes quietly  ",
+      4
+    ],
+    [
+      "chatting with classmates during the break  ",
+      5
+    ],
+    [
+      "returning to his seat and preparing for the next part of the lesson  ",
+      10
+    ],
+    [
+      "listening to the teacher's next explanation  ",
+      5
+    ],
+    [
+      "listening to the teacher's lecture  ",
+      3
+    ],
+    [
+      "listening to the teacher's lecture   (conversing about Tamara Taylor asked Eddy Lin if she could join him and Carmen for a music theory session, to which Eddy agreed and mentioned they would meet at the cafeteria at 12 for lunch and head to the library around 12:30 for the session, possibly with Klaus joining, and Tamara agreed to bring her music theory exercises for feedback.)",
+      6
+    ],
+    [
+      "still listening to the teacher's lecture  ",
+      11
+    ],
+    [
+      "participating in a class discussion  ",
+      10
+    ],
+    [
+      "reviewing some music theory notes during the short break  ",
+      10
+    ],
+    [
+      "returning focus to the lecture  ",
+      10
+    ],
+    [
+      "jotting down a quick idea for his composition  ",
+      10
+    ],
+    [
+      "still jotting down a quick idea for his composition",
+      5
+    ],
+    [
+      "attending ordinary classes in classroom 1, and at around 11:30, will start packing up for lunch break",
+      60
+    ],
+    [
+      "having lunch in the school cafeteria, and at around 12:00, will meet Carmen Ortiz for lunch for 60 minutes, then at around 12:20, will chat with friends about their day",
+      60
+    ],
+    [
+      "studying music theory in the library room with Carmen Ortiz for the music theory session, and at around 01:45, will take a short break to stretch and get some water, and will also prepare specific questions about harmonic structures for the Wednesday 3pm session with Isabella Rodriguez",
+      60
+    ],
+    [
+      "continuing studying music theory in the library room with Carmen Ortiz for the music theory session, and at around 02:30, will take a short break to walk around and clear his mind",
+      60
+    ],
+    [
+      "finishing studying music theory in the library room with Carmen Ortiz for the music theory session, then at around 03:00, will begin discussing Carmen's music project with her and potentially Klaus for additional input, and at around 03:45, will take a short break to review his composition notes",
+      60
+    ],
+    [
+      "continuing discussing Carmen's music project with her and potentially Klaus for additional input, and at around 04:30, will take a short break to stretch and review his composition notes",
+      60
+    ],
+    [
+      "finishing discussing Carmen's music project with her and potentially Klaus for additional input, then at around 05:20, will have dinner in the school cafeteria and chat with friends about their day",
+      60
+    ],
+    [
+      "working on his amateur composition project in the music room, and at around 06:30, will take a short break to stretch and review some notes",
+      60
+    ],
+    [
+      "working on his amateur composition project in the music room, and at around 07:30, will take a short break to stretch and review some notes",
+      60
+    ],
+    [
+      "working on his amateur composition project in the music room, and at around 08:30, will take a short break to stretch and review some notes",
+      60
+    ],
+    [
+      "reviewing music theory notes in the library room, and at around 09:30, will take a short break to stretch and get some water",
+      60
+    ],
+    [
+      "reviewing music theory notes in the library room, and at around 10:30, will take a short break to stretch and get some water",
+      60
+    ],
+    [
+      "winding down and preparing for bed, and at around 11:30, will turn off the lights to sleep",
+      60
+    ]
+  ],
+  "f_daily_schedule_hourly_org": [
+    [
+      "sleeping",
+      420
+    ],
+    [
+      "waking up and completing his morning routine, and at around 07:30, will start preparing breakfast",
+      60
+    ],
+    [
+      "attending ordinary classes in classroom 1, and at around 10:00, will take a short break to stretch",
+      60
+    ],
+    [
+      "attending ordinary classes in classroom 1, and at around 09:45, will take a short break to chat with classmates, and will also bring composition notes for the Wednesday 3pm session with Isabella Rodriguez",
+      60
+    ],
+    [
+      "attending ordinary classes in classroom 1, and at around 10:30, will take a short break to review some music theory notes",
+      60
+    ],
+    [
+      "attending ordinary classes in classroom 1, and at around 11:30, will start packing up for lunch break",
+      60
+    ],
+    [
+      "having lunch in the school cafeteria, and at around 12:00, will meet Carmen Ortiz for lunch for 60 minutes, then at around 12:20, will chat with friends about their day",
+      60
+    ],
+    [
+      "studying music theory in the library room with Carmen Ortiz for the music theory session, and at around 01:45, will take a short break to stretch and get some water, and will also prepare specific questions about harmonic structures for the Wednesday 3pm session with Isabella Rodriguez",
+      60
+    ],
+    [
+      "continuing studying music theory in the library room with Carmen Ortiz for the music theory session, and at around 02:30, will take a short break to walk around and clear his mind",
+      60
+    ],
+    [
+      "finishing studying music theory in the library room with Carmen Ortiz for the music theory session, then at around 03:00, will begin discussing Carmen's music project with her and potentially Klaus for additional input, and at around 03:45, will take a short break to review his composition notes",
+      60
+    ],
+    [
+      "continuing discussing Carmen's music project with her and potentially Klaus for additional input, and at around 04:30, will take a short break to stretch and review his composition notes",
+      60
+    ],
+    [
+      "finishing discussing Carmen's music project with her and potentially Klaus for additional input, then at around 05:20, will have dinner in the school cafeteria and chat with friends about their day",
+      60
+    ],
+    [
+      "working on his amateur composition project in the music room, and at around 06:30, will take a short break to stretch and review some notes",
+      60
+    ],
+    [
+      "working on his amateur composition project in the music room, and at around 07:30, will take a short break to stretch and review some notes",
+      60
+    ],
+    [
+      "working on his amateur composition project in the music room, and at around 08:30, will take a short break to stretch and review some notes",
+      60
+    ],
+    [
+      "reviewing music theory notes in the library room, and at around 09:30, will take a short break to stretch and get some water",
+      60
+    ],
+    [
+      "reviewing music theory notes in the library room, and at around 10:30, will take a short break to stretch and get some water",
+      60
+    ],
+    [
+      "winding down and preparing for bed, and at around 11:30, will turn off the lights to sleep",
+      60
+    ]
+  ],
+  "act_address": "<persona> Tamara Taylor",
+  "act_start_time": "February 13, 2023, 09:58:50",
+  "act_duration": 6,
+  "act_description": "conversing about Tamara Taylor asked Eddy Lin if she could join him and Carmen for a music theory session, to which Eddy agreed and mentioned they would meet at the cafeteria at 12 for lunch and head to the library around 12:30 for the session, possibly with Klaus joining, and Tamara agreed to bring her music theory exercises for feedback.",
+  "act_pronunciatio": "\ud83d\udcac",
+  "act_event": [
+    "Eddy Lin",
+    "chat with",
+    "Tamara Taylor"
+  ],
+  "act_obj_description": null,
+  "act_obj_pronunciatio": null,
+  "act_obj_event": [
+    null,
+    null,
+    null
+  ],
+  "chatting_with": "Tamara Taylor",
+  "chat": [
+    [
+      "Tamara Taylor",
+      "Hey Eddy, I heard you're helping Carmen with her music project later. Do you think I could join you guys? I'm really trying to improve my music theory."
+    ],
+    [
+      "Eddy Lin",
+      "Sure, Tamara! We're meeting Carmen at the cafeteria at 12 for lunch, then heading to the library around 12:30 for the music theory session. Klaus might join us too - the more perspectives the better!"
+    ],
+    [
+      "Tamara Taylor",
+      "That sounds great! I'll meet you at the cafeteria at 12 then. I've been working on some music theory exercises and would love to get your feedback on them."
+    ],
+    [
+      "Eddy Lin",
+      "Awesome! Bring your exercises along\u2014I'd be happy to take a look. Carmen and I have been exploring some connections between math and music theory too, so it'll be interesting to see how your work fits in. See you at 12!"
+    ]
+  ],
+  "chatting_with_buffer": {
+    "Carmen Ortiz": 289,
+    "Klaus Mueller": 0,
+    "Isabella Rodriguez": 0,
+    "Tamara Taylor": 800
+  },
+  "chatting_end_time": "February 13, 2023, 10:05:00",
+  "act_path_set": true,
+  "planned_path": []
+}

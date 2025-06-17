@@ -1,0 +1,364 @@
+{
+  "persona": {
+    "Rajiv Patel": {
+      "movement": [
+        35,
+        39
+      ],
+      "pronunciatio": "\ud83c\udf1e\ud83e\uddd8\u200d",
+      "description": "waking up and stretching @ the School:headmasters' office and dormitory:bedroom:bed",
+      "chat": null
+    },
+    "Ryan Park": {
+      "movement": [
+        61,
+        79
+      ],
+      "pronunciatio": "\ud83d\ude34",
+      "description": "sleeping @ the School:student dormitory 2:common room:bed",
+      "chat": null
+    },
+    "Wolfgang Schulz": {
+      "movement": [
+        85,
+        70
+      ],
+      "pronunciatio": "\ud83c\udf73\u2615",
+      "description": "eating breakfast @ the School:canteen:student canteen:student restaurant table",
+      "chat": null
+    },
+    "Tom Moreno": {
+      "movement": [
+        88,
+        76
+      ],
+      "pronunciatio": "\ud83d\udcd6\u270d\ufe0f",
+      "description": "reviewing his notes from yesterday's classes @ the School:student dormitory 5:common room:desk",
+      "chat": null
+    },
+    "Tamara Taylor": {
+      "movement": [
+        94,
+        78
+      ],
+      "pronunciatio": "\u231b",
+      "description": "waiting to start waking up and stretching in be @ <waiting> 94 78",
+      "chat": null
+    },
+    "Yuriko Yamamoto": {
+      "movement": [
+        94,
+        82
+      ],
+      "pronunciatio": "\ud83d\udecc\ud83d\udca4",
+      "description": "waking up and stretching in bed @ the School:student dormitory 5:common room:bed",
+      "chat": null
+    },
+    "Isabella Rodriguez": {
+      "movement": [
+        48,
+        29
+      ],
+      "pronunciatio": "\ud83d\udeb6\u200d\u2642",
+      "description": "walking to the school cafeteria @ the School:canteen:student canteen:restaurant sink",
+      "chat": null
+    },
+    "Maria Lopez": {
+      "movement": [
+        72,
+        81
+      ],
+      "pronunciatio": "\ud83d\ude34",
+      "description": "sleeping @ the School:student dormitory 3:common room:bed",
+      "chat": null
+    },
+    "Klaus Mueller": {
+      "movement": [
+        72,
+        77
+      ],
+      "pronunciatio": "\ud83d\udecc\ud83d\udca4",
+      "description": "waking up and stretching in bed @ the School:student dormitory 3:common room:bed",
+      "chat": null
+    },
+    "Adam Smith": {
+      "movement": [
+        79,
+        30
+      ],
+      "pronunciatio": "\ud83d\udc42\ud83d\udcda",
+      "description": "listening to the teacher's lecture @ the School:classroom building:classroom 1:blackboard",
+      "chat": null
+    },
+    "Abigail Chen": {
+      "movement": [
+        83,
+        81
+      ],
+      "pronunciatio": "\ud83d\ude34",
+      "description": "sleeping @ the School:student dormitory 4:common room:bed",
+      "chat": null
+    },
+    "Arthur Burton": {
+      "movement": [
+        83,
+        80
+      ],
+      "pronunciatio": "\ud83d\udcac",
+      "description": "conversing about Arthur Burton tried to cheer up Carlos Gomez about Monday and chemistry class while inviting him to share poetry at lunch, but Carlos remained dismissive and rude throughout the conversation. @ <persona> Carlos Gomez",
+      "chat": [
+        [
+          "Arthur Burton",
+          "Hey Carlos! Good morning! Ready for another busy Monday?"
+        ],
+        [
+          "Carlos Gomez",
+          "Ugh, morning? More like mourning another stupid Monday. What's so good about it?"
+        ],
+        [
+          "Arthur Burton",
+          "Haha, come on Carlos! Mondays aren't that bad. We've got chemistry class first - you know that's my favorite! And we get to hang out at lunch later."
+        ],
+        [
+          "Carlos Gomez",
+          "Chemistry? Seriously? That's just mixing random crap together. And lunch with you? Wow, what a thrill... not. Maybe I'll just skip and write some actual meaningful poetry instead."
+        ],
+        [
+          "Arthur Burton",
+          "Hey, poetry sounds cool too! Maybe you could share some with me during lunch? I'd love to hear what you've been working on."
+        ],
+        [
+          "Carlos Gomez",
+          "Pfft, like you'd even get my poetry. It's not some basic nursery rhyme for simple minds like yours."
+        ],
+        [
+          "Arthur Burton",
+          "Hey, I might not be a poetry expert, but I'm always open to learning new things. Maybe you could teach me a bit about what makes your poetry special?"
+        ],
+        [
+          "Carlos Gomez",
+          "Teach you? Yeah right, like I have time to waste on clueless wannabes. Stick to your lame chemistry experiments, nerd."
+        ],
+        [
+          "Arthur Burton",
+          "Alright, Carlos, I get that you're not in the mood right now. I'll catch you later if you're up for it. Hope your poetry writing goes well!"
+        ]
+      ]
+    },
+    "Ayesha Khan": {
+      "movement": [
+        20,
+        21
+      ],
+      "pronunciatio": "\ud83c\udfa8\ud83d\udd8c\ufe0f",
+      "description": "setting up her painting supplies @ the School:Ayesha Khan's office and dormitory:office:blackboard",
+      "chat": null
+    },
+    "Carlos Gomez": {
+      "movement": [
+        83,
+        80
+      ],
+      "pronunciatio": "\ud83d\udcac",
+      "description": "conversing about Arthur Burton tried to cheer up Carlos Gomez about Monday and chemistry class while inviting him to share poetry at lunch, but Carlos remained dismissive and rude throughout the conversation. @ <persona> Arthur Burton",
+      "chat": [
+        [
+          "Arthur Burton",
+          "Hey Carlos! Good morning! Ready for another busy Monday?"
+        ],
+        [
+          "Carlos Gomez",
+          "Ugh, morning? More like mourning another stupid Monday. What's so good about it?"
+        ],
+        [
+          "Arthur Burton",
+          "Haha, come on Carlos! Mondays aren't that bad. We've got chemistry class first - you know that's my favorite! And we get to hang out at lunch later."
+        ],
+        [
+          "Carlos Gomez",
+          "Chemistry? Seriously? That's just mixing random crap together. And lunch with you? Wow, what a thrill... not. Maybe I'll just skip and write some actual meaningful poetry instead."
+        ],
+        [
+          "Arthur Burton",
+          "Hey, poetry sounds cool too! Maybe you could share some with me during lunch? I'd love to hear what you've been working on."
+        ],
+        [
+          "Carlos Gomez",
+          "Pfft, like you'd even get my poetry. It's not some basic nursery rhyme for simple minds like yours."
+        ],
+        [
+          "Arthur Burton",
+          "Hey, I might not be a poetry expert, but I'm always open to learning new things. Maybe you could teach me a bit about what makes your poetry special?"
+        ],
+        [
+          "Carlos Gomez",
+          "Teach you? Yeah right, like I have time to waste on clueless wannabes. Stick to your lame chemistry experiments, nerd."
+        ],
+        [
+          "Arthur Burton",
+          "Alright, Carlos, I get that you're not in the mood right now. I'll catch you later if you're up for it. Hope your poetry writing goes well!"
+        ]
+      ]
+    },
+    "Carmen Ortiz": {
+      "movement": [
+        72,
+        81
+      ],
+      "pronunciatio": "\ud83d\udcac",
+      "description": "conversing about Carmen Ortiz and Eddy Lin agreed to meet at the cafeteria at 12:00pm for lunch and then go to the library together at 12:30pm to study music theory and help each other with their respective music projects. @ <persona> Eddy Lin",
+      "chat": [
+        [
+          "Carmen Ortiz",
+          "Good morning, Eddy! Did you sleep well? Ready for another Monday?"
+        ],
+        [
+          "Eddy Lin",
+          "Morning, Carmen! Yeah, I slept okay. Just thinking about my composition project and the music theory test coming up. How about you?"
+        ],
+        [
+          "Carmen Ortiz",
+          "Oh, I totally get that! I've been practicing my cello a lot for my solo concert too. Maybe we can help each other out with music theory sometime?"
+        ],
+        [
+          "Eddy Lin",
+          "That sounds great! I'd love to study together. Maybe we can meet in the library after classes today? I'll be there around 12:30pm working on music theory anyway."
+        ],
+        [
+          "Carmen Ortiz",
+          "Perfect! I'll see you in the library at 12:30pm then. We can grab lunch together first if you'd like?"
+        ],
+        [
+          "Eddy Lin",
+          "That works for me! Let's meet at the cafeteria at 12:00pm for lunch before heading to the library together."
+        ],
+        [
+          "Carmen Ortiz",
+          "Great! It's a plan then - cafeteria at 12:00pm and library after. I'm really looking forward to it!"
+        ]
+      ]
+    },
+    "Eddy Lin": {
+      "movement": [
+        72,
+        80
+      ],
+      "pronunciatio": "\ud83d\udcac",
+      "description": "conversing about Carmen Ortiz and Eddy Lin agreed to meet at the cafeteria at 12:00pm for lunch and then go to the library together at 12:30pm to study music theory and help each other with their respective music projects. @ <persona> Carmen Ortiz",
+      "chat": [
+        [
+          "Carmen Ortiz",
+          "Good morning, Eddy! Did you sleep well? Ready for another Monday?"
+        ],
+        [
+          "Eddy Lin",
+          "Morning, Carmen! Yeah, I slept okay. Just thinking about my composition project and the music theory test coming up. How about you?"
+        ],
+        [
+          "Carmen Ortiz",
+          "Oh, I totally get that! I've been practicing my cello a lot for my solo concert too. Maybe we can help each other out with music theory sometime?"
+        ],
+        [
+          "Eddy Lin",
+          "That sounds great! I'd love to study together. Maybe we can meet in the library after classes today? I'll be there around 12:30pm working on music theory anyway."
+        ],
+        [
+          "Carmen Ortiz",
+          "Perfect! I'll see you in the library at 12:30pm then. We can grab lunch together first if you'd like?"
+        ],
+        [
+          "Eddy Lin",
+          "That works for me! Let's meet at the cafeteria at 12:00pm for lunch before heading to the library together."
+        ],
+        [
+          "Carmen Ortiz",
+          "Great! It's a plan then - cafeteria at 12:00pm and library after. I'm really looking forward to it!"
+        ]
+      ]
+    },
+    "Francisco Lopez": {
+      "movement": [
+        50,
+        82
+      ],
+      "pronunciatio": "\ud83d\udecc\ud83d\udca4",
+      "description": "waking up and stretching in bed @ the School:student dormitory 1:common room:bed",
+      "chat": null
+    },
+    "Giorgio Rossi": {
+      "movement": [
+        50,
+        78
+      ],
+      "pronunciatio": "\u231b",
+      "description": "waiting to start waking up and stretchin @ <waiting> 50 78",
+      "chat": null
+    },
+    "Hailey Johnson": {
+      "movement": [
+        50,
+        81
+      ],
+      "pronunciatio": "\ud83d\ude34",
+      "description": "sleeping @ the School:student dormitory 1:common room:bed",
+      "chat": null
+    },
+    "Jane Moreno": {
+      "movement": [
+        29,
+        11
+      ],
+      "pronunciatio": "\ud83c\udf73\u2615",
+      "description": "eating breakfast at the dining table @ the School:Jane Moreno's office and dormitory:living room:coffee machine",
+      "chat": null
+    },
+    "Jennifer Moore": {
+      "movement": [
+        44,
+        62
+      ],
+      "pronunciatio": "\ud83d\udeb6\u200d\u2642",
+      "description": "walking to the bus stop @ the School:playground:playground:running track",
+      "chat": null
+    },
+    "Sam Moore": {
+      "movement": [
+        70,
+        60
+      ],
+      "pronunciatio": "\ud83d\udc5f\ud83d\udc55",
+      "description": "taking off his running clothes @ the School:student dormitory 2:bathroom:shower",
+      "chat": null
+    },
+    "Jacky Ma": {
+      "movement": [
+        40,
+        57
+      ],
+      "pronunciatio": "\ud83e\uddfc\ud83e\udea5",
+      "description": "washing his face and brushing his teeth @ the School:student dormitory 2:bathroom:bathroom sink",
+      "chat": null
+    },
+    "Latoya Williams": {
+      "movement": [
+        5,
+        31
+      ],
+      "pronunciatio": "\ud83c\udf73\u2615",
+      "description": "preparing breakfast @ the School:Latoya Williams's office and dormitory:living room:toaster",
+      "chat": null
+    },
+    "Valerie Florentini": {
+      "movement": [
+        61,
+        82
+      ],
+      "pronunciatio": "\ud83d\udecc\ud83d\udca4",
+      "description": "waking up and stretching in bed @ the School:student dormitory 2:common room:bed",
+      "chat": null
+    }
+  },
+  "meta": {
+    "curr_time": "February 13, 2023, 07:02:30"
+  }
+}

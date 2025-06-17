@@ -1,0 +1,362 @@
+{
+  "persona": {
+    "Rajiv Patel": {
+      "movement": [
+        29,
+        31
+      ],
+      "pronunciatio": "\ud83c\udf5e\ud83d\udcf0",
+      "description": "eating breakfast while reading the morning newspaper @ the School:headmasters' office and dormitory:living room:toaster",
+      "chat": null
+    },
+    "Ryan Park": {
+      "movement": [
+        61,
+        79
+      ],
+      "pronunciatio": "\ud83d\ude34",
+      "description": "sleeping @ the School:student dormitory 2:common room:bed",
+      "chat": null
+    },
+    "Wolfgang Schulz": {
+      "movement": [
+        107,
+        24
+      ],
+      "pronunciatio": "\ud83d\udc42\ud83d\udcda",
+      "description": "listening to the teacher's lecture   @ the School:classroom building:classroom 1:blackboard",
+      "chat": null
+    },
+    "Tom Moreno": {
+      "movement": [
+        98,
+        26
+      ],
+      "pronunciatio": "\ud83d\udcac",
+      "description": "conversing about Isabella Rodriguez and Tom Moreno discussed a math lesson focusing on geometry, specifically solving trigonometry problem 5 using the sine rule, where Tom successfully calculated side a as approximately 5.94 units, and then moved on to problem 6 to apply the cosine rule with given values a = 7 units, b = 9 units, and angle C = 50 degrees. @ <persona> Isabella Rodriguez",
+      "chat": [
+        [
+          "Isabella Rodriguez",
+          "Good morning, Tom! How are you doing today? Ready for our math lesson?"
+        ],
+        [
+          "Tom Moreno",
+          "Good morning, Isabella. I'm doing well, thanks. Just reviewing some notes before the math lesson. How about you?"
+        ],
+        [
+          "Isabella Rodriguez",
+          "I'm doing great, thank you! I'm excited about today's lesson\u2014we'll be exploring some interesting geometry concepts. Did you have any questions about the material we covered last week?"
+        ],
+        [
+          "Tom Moreno",
+          "Actually, I had a question about the trigonometry problems from last week. Could you help me understand the solution to problem 5?"
+        ],
+        [
+          "Isabella Rodriguez",
+          "Of course, Tom! Problem 5 was about applying the sine rule. Let's walk through it together\u2014first, remember we need to identify the known angles and sides in the triangle. Would you like me to draw it out on the board to visualize it better?"
+        ],
+        [
+          "Tom Moreno",
+          "Yes, that would be really helpful. I think seeing it visually will make it clearer for me."
+        ],
+        [
+          "Isabella Rodriguez",
+          "Great! Let me draw the triangle on the board. Here, we have angle A at 40 degrees, side b is 8 units, and we're trying to find side a. Remember, the sine rule states that a/sinA = b/sinB. Does this setup make sense so far?"
+        ],
+        [
+          "Tom Moreno",
+          "Yes, that makes sense. So if we know angle A and side b, and we're given angle B as 60 degrees, we can plug those into the sine rule to find side a, right?"
+        ],
+        [
+          "Isabella Rodriguez",
+          "Exactly right, Tom! You've got the concept. Now let's plug in the numbers: a/sin(40\u00b0) = 8/sin(60\u00b0). First, we'll calculate sin(40\u00b0) and sin(60\u00b0), then we can solve for a. Would you like to try calculating those sine values?"
+        ],
+        [
+          "Tom Moreno",
+          "Yes, let me try. So sin(40\u00b0) is approximately 0.6428 and sin(60\u00b0) is about 0.8660. Then we can set up the equation as a/0.6428 = 8/0.8660. Is that correct?"
+        ],
+        [
+          "Isabella Rodriguez",
+          "That's perfect, Tom! You're doing great. Now, to solve for 'a', we'll cross-multiply: a = (8 * 0.6428) / 0.8660. Would you like to try calculating that final step?"
+        ],
+        [
+          "Tom Moreno",
+          "Yes, let me calculate that. So (8 * 0.6428) is 5.1424, then divided by 0.8660 gives approximately 5.94. So side a is about 5.94 units?"
+        ],
+        [
+          "Isabella Rodriguez",
+          "That's absolutely correct, Tom! You've solved it perfectly. I'm really impressed with how quickly you grasped the concept. Would you like to try another similar problem to reinforce your understanding?"
+        ],
+        [
+          "Tom Moreno",
+          "Yes, that would be great. Maybe we can try problem 6 next? I think it's similar but with cosine rule instead."
+        ],
+        [
+          "Isabella Rodriguez",
+          "Absolutely! Problem 6 is a great choice to practice the cosine rule. Let's look at it together. First, remember the cosine rule formula: c\u00b2 = a\u00b2 + b\u00b2 - 2ab cos(C). Would you like to identify the given values in this problem first?"
+        ],
+        [
+          "Tom Moreno",
+          "Yes, let's do that. In problem 6, we have sides a = 7 units, b = 9 units, and angle C = 50 degrees. So we'd plug these into the cosine rule to find side c, right?"
+        ]
+      ]
+    },
+    "Tamara Taylor": {
+      "movement": [
+        94,
+        75
+      ],
+      "pronunciatio": "\ud83e\udea5\ud83e\uddfc",
+      "description": "brushing teeth and washing face   @ the School:student dormitory 5:bathroom:bathroom sink",
+      "chat": null
+    },
+    "Yuriko Yamamoto": {
+      "movement": [
+        94,
+        76
+      ],
+      "pronunciatio": "\ud83d\udc5f\ud83e\udde5",
+      "description": "putting on her shoes and jacket @ the School:student dormitory 5:common room:bed",
+      "chat": null
+    },
+    "Isabella Rodriguez": {
+      "movement": [
+        98,
+        27
+      ],
+      "pronunciatio": "\ud83d\udcac",
+      "description": "conversing about Isabella Rodriguez and Tom Moreno discussed a math lesson focusing on geometry, specifically solving trigonometry problem 5 using the sine rule, where Tom successfully calculated side a as approximately 5.94 units, and then moved on to problem 6 to apply the cosine rule with given values a = 7 units, b = 9 units, and angle C = 50 degrees. @ <persona> Tom Moreno",
+      "chat": [
+        [
+          "Isabella Rodriguez",
+          "Good morning, Tom! How are you doing today? Ready for our math lesson?"
+        ],
+        [
+          "Tom Moreno",
+          "Good morning, Isabella. I'm doing well, thanks. Just reviewing some notes before the math lesson. How about you?"
+        ],
+        [
+          "Isabella Rodriguez",
+          "I'm doing great, thank you! I'm excited about today's lesson\u2014we'll be exploring some interesting geometry concepts. Did you have any questions about the material we covered last week?"
+        ],
+        [
+          "Tom Moreno",
+          "Actually, I had a question about the trigonometry problems from last week. Could you help me understand the solution to problem 5?"
+        ],
+        [
+          "Isabella Rodriguez",
+          "Of course, Tom! Problem 5 was about applying the sine rule. Let's walk through it together\u2014first, remember we need to identify the known angles and sides in the triangle. Would you like me to draw it out on the board to visualize it better?"
+        ],
+        [
+          "Tom Moreno",
+          "Yes, that would be really helpful. I think seeing it visually will make it clearer for me."
+        ],
+        [
+          "Isabella Rodriguez",
+          "Great! Let me draw the triangle on the board. Here, we have angle A at 40 degrees, side b is 8 units, and we're trying to find side a. Remember, the sine rule states that a/sinA = b/sinB. Does this setup make sense so far?"
+        ],
+        [
+          "Tom Moreno",
+          "Yes, that makes sense. So if we know angle A and side b, and we're given angle B as 60 degrees, we can plug those into the sine rule to find side a, right?"
+        ],
+        [
+          "Isabella Rodriguez",
+          "Exactly right, Tom! You've got the concept. Now let's plug in the numbers: a/sin(40\u00b0) = 8/sin(60\u00b0). First, we'll calculate sin(40\u00b0) and sin(60\u00b0), then we can solve for a. Would you like to try calculating those sine values?"
+        ],
+        [
+          "Tom Moreno",
+          "Yes, let me try. So sin(40\u00b0) is approximately 0.6428 and sin(60\u00b0) is about 0.8660. Then we can set up the equation as a/0.6428 = 8/0.8660. Is that correct?"
+        ],
+        [
+          "Isabella Rodriguez",
+          "That's perfect, Tom! You're doing great. Now, to solve for 'a', we'll cross-multiply: a = (8 * 0.6428) / 0.8660. Would you like to try calculating that final step?"
+        ],
+        [
+          "Tom Moreno",
+          "Yes, let me calculate that. So (8 * 0.6428) is 5.1424, then divided by 0.8660 gives approximately 5.94. So side a is about 5.94 units?"
+        ],
+        [
+          "Isabella Rodriguez",
+          "That's absolutely correct, Tom! You've solved it perfectly. I'm really impressed with how quickly you grasped the concept. Would you like to try another similar problem to reinforce your understanding?"
+        ],
+        [
+          "Tom Moreno",
+          "Yes, that would be great. Maybe we can try problem 6 next? I think it's similar but with cosine rule instead."
+        ],
+        [
+          "Isabella Rodriguez",
+          "Absolutely! Problem 6 is a great choice to practice the cosine rule. Let's look at it together. First, remember the cosine rule formula: c\u00b2 = a\u00b2 + b\u00b2 - 2ab cos(C). Would you like to identify the given values in this problem first?"
+        ],
+        [
+          "Tom Moreno",
+          "Yes, let's do that. In problem 6, we have sides a = 7 units, b = 9 units, and angle C = 50 degrees. So we'd plug these into the cosine rule to find side c, right?"
+        ]
+      ]
+    },
+    "Maria Lopez": {
+      "movement": [
+        72,
+        79
+      ],
+      "pronunciatio": "\ud83d\udecf\ufe0f\ud83d\udc5f",
+      "description": "getting out of bed and putting on slippers   @ the School:student dormitory 3:common room:bed",
+      "chat": null
+    },
+    "Klaus Mueller": {
+      "movement": [
+        85,
+        29
+      ],
+      "pronunciatio": "\ud83d\udc42\ud83d\udcda",
+      "description": "listening to the teacher's lecture   @ the School:classroom building:classroom 1:blackboard",
+      "chat": null
+    },
+    "Adam Smith": {
+      "movement": [
+        107,
+        16
+      ],
+      "pronunciatio": "\ud83d\udc42\ud83d\udcda",
+      "description": "listening to the teacher's lecture @ the School:classroom building:classroom 1:blackboard",
+      "chat": null
+    },
+    "Abigail Chen": {
+      "movement": [
+        83,
+        75
+      ],
+      "pronunciatio": "\ud83d\udc87\u200d\u2640",
+      "description": "combing her hair @ the School:student dormitory 4:bathroom:bathroom sink",
+      "chat": null
+    },
+    "Arthur Burton": {
+      "movement": [
+        98,
+        33
+      ],
+      "pronunciatio": "\ud83d\udc42\ud83d\udcda",
+      "description": "listening to the teacher's lecture   @ the School:classroom building:classroom 1:blackboard",
+      "chat": null
+    },
+    "Ayesha Khan": {
+      "movement": [
+        17,
+        11
+      ],
+      "pronunciatio": "\ud83c\udf73\u2615",
+      "description": "eating breakfast @ the School:Ayesha Khan's office and dormitory:living room:toaster",
+      "chat": null
+    },
+    "Carlos Gomez": {
+      "movement": [
+        77,
+        76
+      ],
+      "pronunciatio": "\ud83c\udf73\u2615",
+      "description": "eating breakfast at the kitchen table   @ the School:student dormitory 4:common room:desk",
+      "chat": null
+    },
+    "Carmen Ortiz": {
+      "movement": [
+        69,
+        75
+      ],
+      "pronunciatio": "\ud83e\udea5\ud83e\uddf4",
+      "description": "brushing her teeth and freshening up   @ the School:student dormitory 3:bathroom:bathroom sink",
+      "chat": null
+    },
+    "Eddy Lin": {
+      "movement": [
+        83,
+        29
+      ],
+      "pronunciatio": "\ud83d\udc42\ud83d\udcda",
+      "description": "listening to the teacher's lecture   @ the School:classroom building:classroom 1:blackboard",
+      "chat": null
+    },
+    "Francisco Lopez": {
+      "movement": [
+        61,
+        29
+      ],
+      "pronunciatio": "\ud83d\udc42\ud83d\udcda",
+      "description": "listening to the teacher's lecture   @ the School:classroom building:classroom 1:blackboard",
+      "chat": null
+    },
+    "Giorgio Rossi": {
+      "movement": [
+        112,
+        29
+      ],
+      "pronunciatio": "\ud83d\udcd6\u270f\ufe0f",
+      "description": "solving practice problems from the textbook   @ the School:classroom building:library room:library table",
+      "chat": null
+    },
+    "Hailey Johnson": {
+      "movement": [
+        50,
+        81
+      ],
+      "pronunciatio": "\ud83d\ude34",
+      "description": "sleeping @ the School:student dormitory 1:common room:bed",
+      "chat": null
+    },
+    "Jane Moreno": {
+      "movement": [
+        71,
+        28
+      ],
+      "pronunciatio": "\u231b",
+      "description": "waiting to start setting up the classroom material @ <waiting> 71 28",
+      "chat": null
+    },
+    "Jennifer Moore": {
+      "movement": [
+        63,
+        29
+      ],
+      "pronunciatio": "\ud83d\udc42\ud83d\udcda",
+      "description": "listening to the teacher's introduction of the lesson   @ the School:classroom building:classroom 1:blackboard",
+      "chat": null
+    },
+    "Sam Moore": {
+      "movement": [
+        79,
+        32
+      ],
+      "pronunciatio": "\ud83d\udc42\ud83d\udcda",
+      "description": "listening to the teacher's lecture @ the School:classroom building:classroom 1:blackboard",
+      "chat": null
+    },
+    "Jacky Ma": {
+      "movement": [
+        55,
+        76
+      ],
+      "pronunciatio": "\ud83d\udc5e\ud83e\udde5",
+      "description": "putting on his shoes and jacket   @ the School:student dormitory 2:common room:desk",
+      "chat": null
+    },
+    "Latoya Williams": {
+      "movement": [
+        6,
+        38
+      ],
+      "pronunciatio": "\ud83c\udfa8\ud83d\udc40",
+      "description": "reviewing her previous artwork for inspiration @ the School:Latoya Williams's office and dormitory:office:bookshelf",
+      "chat": null
+    },
+    "Valerie Florentini": {
+      "movement": [
+        70,
+        47
+      ],
+      "pronunciatio": "\ud83d\udcda\u270f\ufe0f",
+      "description": "organizing her notebooks and supplies @ the School:student dormitory 2:common room:desk",
+      "chat": null
+    }
+  },
+  "meta": {
+    "curr_time": "February 13, 2023, 08:11:10"
+  }
+}

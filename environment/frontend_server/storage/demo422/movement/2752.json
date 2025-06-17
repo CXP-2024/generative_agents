@@ -1,0 +1,274 @@
+{
+  "persona": {
+    "Rajiv Patel": {
+      "movement": [
+        38,
+        34
+      ],
+      "pronunciatio": "\ud83d\udebf\ud83d\udc5a",
+      "description": "drying off and getting dressed @ the School:headmasters' office and dormitory:bathroom:washing machine",
+      "chat": null
+    },
+    "Ryan Park": {
+      "movement": [
+        61,
+        79
+      ],
+      "pronunciatio": "\ud83d\ude34",
+      "description": "sleeping @ the School:student dormitory 2:common room:bed",
+      "chat": null
+    },
+    "Wolfgang Schulz": {
+      "movement": [
+        74,
+        47
+      ],
+      "pronunciatio": "\ud83c\udf73\u2615",
+      "description": "finishing breakfast   @ the School:canteen:student canteen:student restaurant table",
+      "chat": null
+    },
+    "Tom Moreno": {
+      "movement": [
+        88,
+        80
+      ],
+      "pronunciatio": "\ud83d\udcd6\u2705",
+      "description": "checking his answers against the textbook solutions @ the School:student dormitory 5:common room:desk",
+      "chat": null
+    },
+    "Tamara Taylor": {
+      "movement": [
+        94,
+        75
+      ],
+      "pronunciatio": "\ud83e\uddf4\ud83d\udc86\u200d",
+      "description": "drying off and applying skincare   @ the School:student dormitory 5:bathroom:bathroom sink",
+      "chat": null
+    },
+    "Yuriko Yamamoto": {
+      "movement": [
+        88,
+        76
+      ],
+      "pronunciatio": "\ud83c\udf73\u2615",
+      "description": "preparing breakfast in the kitchen @ the School:student dormitory 5:common room:desk",
+      "chat": null
+    },
+    "Isabella Rodriguez": {
+      "movement": [
+        63,
+        18
+      ],
+      "pronunciatio": "\ud83d\udcdd\u2615",
+      "description": "reviewing her lesson notes while finishing breakfast   @ the School:canteen:student canteen:student restaurant table",
+      "chat": null
+    },
+    "Maria Lopez": {
+      "movement": [
+        72,
+        81
+      ],
+      "pronunciatio": "\ud83d\ude34",
+      "description": "sleeping @ the School:student dormitory 3:common room:bed",
+      "chat": null
+    },
+    "Klaus Mueller": {
+      "movement": [
+        66,
+        77
+      ],
+      "pronunciatio": "\ud83d\udcac",
+      "description": "conversing about Klaus Mueller and Eddy Lin greeted each other in the morning while making breakfast, with Eddy mentioning his lunch plans with Carmen followed by studying music theory together, while Klaus shared his plan to work on his AP Social Studies research project at the library, and both expressed the possibility of meeting there later in the afternoon. @ <persona> Eddy Lin",
+      "chat": [
+        [
+          "Klaus Mueller",
+          "Hey Eddy, good morning! I see you're making breakfast too. Are you excited about meeting Carmen for lunch later?"
+        ],
+        [
+          "Eddy Lin",
+          "Good morning, Klaus! Yeah, I'm really looking forward to it. Carmen and I are going to study music theory together after lunch, which should be fun. How about you? Any plans for the day?"
+        ],
+        [
+          "Klaus Mueller",
+          "Sounds like a great plan! I'll be working on my AP Social Studies research project at the library later too. Maybe we'll bump into each other there!"
+        ],
+        [
+          "Eddy Lin",
+          "That would be nice! I'll be in the library most of the afternoon, so feel free to say hi if you see me. Good luck with your research project!"
+        ],
+        [
+          "Klaus Mueller",
+          "Thanks, Eddy! I'll definitely say hi if I see you. Good luck with your music theory study too!"
+        ]
+      ]
+    },
+    "Adam Smith": {
+      "movement": [
+        106,
+        21
+      ],
+      "pronunciatio": "\ud83e\udd14\u2753",
+      "description": "raising a question to challenge the teacher's idea @ the School:classroom building:classroom 1:classroom podium",
+      "chat": null
+    },
+    "Abigail Chen": {
+      "movement": [
+        83,
+        81
+      ],
+      "pronunciatio": "\ud83d\ude34",
+      "description": "sleeping @ the School:student dormitory 4:common room:bed",
+      "chat": null
+    },
+    "Arthur Burton": {
+      "movement": [
+        77,
+        78
+      ],
+      "pronunciatio": "\ud83c\udf92\ud83d\udcda",
+      "description": "packing his school bag   @ the School:student dormitory 4:common room:desk",
+      "chat": null
+    },
+    "Ayesha Khan": {
+      "movement": [
+        20,
+        19
+      ],
+      "pronunciatio": "\ud83c\udfa8\ud83d\udd8c\ufe0f",
+      "description": "applying the base layers of paint @ the School:Ayesha Khan's office and dormitory:office:blackboard",
+      "chat": null
+    },
+    "Carlos Gomez": {
+      "movement": [
+        83,
+        77
+      ],
+      "pronunciatio": "\ud83d\udcf1\ud83d\udc40",
+      "description": "scrolling through his phone briefly   @ the School:student dormitory 4:common room:bed",
+      "chat": null
+    },
+    "Carmen Ortiz": {
+      "movement": [
+        72,
+        75
+      ],
+      "pronunciatio": "\ud83d\udc87\u200d\u2640",
+      "description": "combing her hair and styling it   @ the School:student dormitory 3:bathroom:bathroom sink",
+      "chat": null
+    },
+    "Eddy Lin": {
+      "movement": [
+        66,
+        77
+      ],
+      "pronunciatio": "\ud83d\udcac",
+      "description": "conversing about Klaus Mueller and Eddy Lin greeted each other in the morning while making breakfast, with Eddy mentioning his lunch plans with Carmen followed by studying music theory together, while Klaus shared his plan to work on his AP Social Studies research project at the library, and both expressed the possibility of meeting there later in the afternoon. @ <persona> Klaus Mueller",
+      "chat": [
+        [
+          "Klaus Mueller",
+          "Hey Eddy, good morning! I see you're making breakfast too. Are you excited about meeting Carmen for lunch later?"
+        ],
+        [
+          "Eddy Lin",
+          "Good morning, Klaus! Yeah, I'm really looking forward to it. Carmen and I are going to study music theory together after lunch, which should be fun. How about you? Any plans for the day?"
+        ],
+        [
+          "Klaus Mueller",
+          "Sounds like a great plan! I'll be working on my AP Social Studies research project at the library later too. Maybe we'll bump into each other there!"
+        ],
+        [
+          "Eddy Lin",
+          "That would be nice! I'll be in the library most of the afternoon, so feel free to say hi if you see me. Good luck with your research project!"
+        ],
+        [
+          "Klaus Mueller",
+          "Thanks, Eddy! I'll definitely say hi if I see you. Good luck with your music theory study too!"
+        ]
+      ]
+    },
+    "Francisco Lopez": {
+      "movement": [
+        44,
+        77
+      ],
+      "pronunciatio": "\ud83c\udf73\u2615",
+      "description": "eating breakfast   @ the School:student dormitory 1:common room:desk",
+      "chat": null
+    },
+    "Giorgio Rossi": {
+      "movement": [
+        44,
+        78
+      ],
+      "pronunciatio": "\ud83c\udf73\u2615",
+      "description": "still preparing breakfast   @ the School:student dormitory 1:common room:desk",
+      "chat": null
+    },
+    "Hailey Johnson": {
+      "movement": [
+        50,
+        81
+      ],
+      "pronunciatio": "\ud83d\ude34",
+      "description": "sleeping @ the School:student dormitory 1:common room:bed",
+      "chat": null
+    },
+    "Jane Moreno": {
+      "movement": [
+        37,
+        18
+      ],
+      "pronunciatio": "\ud83d\udc54\ud83d\udecf\ufe0f",
+      "description": "changing into work clothes in the bedroom @ the School:Jane Moreno's office and dormitory:bedroom:closet",
+      "chat": null
+    },
+    "Jennifer Moore": {
+      "movement": [
+        44,
+        76
+      ],
+      "pronunciatio": "\ud83c\udfa7",
+      "description": "still listening to music   @ the School:student dormitory 1:common room:desk",
+      "chat": null
+    },
+    "Sam Moore": {
+      "movement": [
+        61,
+        73
+      ],
+      "pronunciatio": "\ud83d\udc55\ud83d\udc56",
+      "description": "putting on fresh clothes @ the School:student dormitory 2:bathroom:toilet",
+      "chat": null
+    },
+    "Jacky Ma": {
+      "movement": [
+        56,
+        23
+      ],
+      "pronunciatio": "\ud83c\udf7d\ufe0f\ud83e\uddfd",
+      "description": "cleaning up the breakfast dishes   @ the School:canteen:student canteen:restaurant sink",
+      "chat": null
+    },
+    "Latoya Williams": {
+      "movement": [
+        6,
+        40
+      ],
+      "pronunciatio": "\ud83d\udcd6\ud83d\udd0d",
+      "description": "reviewing today's lesson objectives @ the School:Latoya Williams's office and dormitory:office:computer desk",
+      "chat": null
+    },
+    "Valerie Florentini": {
+      "movement": [
+        47,
+        61
+      ],
+      "pronunciatio": "\ud83c\udf73\u2615",
+      "description": "eating breakfast @ the School:canteen:student canteen:student restaurant table",
+      "chat": null
+    }
+  },
+  "meta": {
+    "curr_time": "February 13, 2023, 07:38:40"
+  }
+}
