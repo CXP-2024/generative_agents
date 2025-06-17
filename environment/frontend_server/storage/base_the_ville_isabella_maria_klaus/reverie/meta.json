@@ -5,7 +5,13 @@
   "sec_per_step": 10,
   "maze_name": "the_ville",
   "persona_names": [
-    "Isabella Rodriguez", 
+    "Rajiv Patel",
+    "Ryan Park",
+    "Wolfgang Schulz",
+    "Tom Moreno",
+    "Tamara Taylor",
+    "Yuriko Yamamoto",
+    "Isabella Rodriguez",
     "Maria Lopez",
     "Klaus Mueller",
     "Adam Smith",
@@ -20,7 +26,10 @@
     "Hailey Johnson",
     "Jane Moreno",
     "Jennifer Moore",
-    "Sam Moore"
+    "Sam Moore",
+    "Jacky Ma",
+    "Latoya Williams",
+    "Valerie Florentini"
   ],
   "step": 0
 }
