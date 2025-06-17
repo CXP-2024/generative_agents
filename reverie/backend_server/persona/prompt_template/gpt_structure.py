@@ -14,17 +14,29 @@ from utils import *
 openai.api_key = openai_api_key
 openai.api_base = openai_base_url
 
-def temp_sleep(seconds=0.1):
+def temp_sleep(seconds=0.03):
   time.sleep(seconds)
+
 
 def ChatGPT_single_request(prompt): 
   temp_sleep()
 
-  completion = openai.ChatCompletion.create(
-    model="deepseek-v3", 
-    messages=[{"role": "user", "content": prompt}]
-  )
-  return completion["choices"][0]["message"]["content"]
+  while(True):
+    try: 
+      print("\033[1;32mIn gpt_single_request with prompt:\033[0m")
+      print(prompt)
+      completion = openai.ChatCompletion.create(
+				model="deepseek-v3", 
+				messages=[{"role": "user", "content": prompt}]
+			)
+      print("\033[1;32mIn gpt_single_request and output:\033[0m")
+      print("\033[1;32m", completion["choices"][0]["message"]["content"], "\033[0m")
+      return completion["choices"][0]["message"]["content"]
+    except Exception as e:
+      print("deepseek-v3 ERROR:", e)
+      time.sleep(3.0)
+      print("\033[1;31mWaiting 3 seconds. Trying again...\033[0m")
+
 
 
 # ============================================================================
@@ -70,19 +82,21 @@ def ChatGPT_request(prompt):
     a str of GPT-3's response. here we use deepseek-v3
   """
   # temp_sleep()
-  try: 
-    completion = openai.ChatCompletion.create(
-    model="deepseek-v3", 
-    messages=[{"role": "system", "content": """If you are asked to output a json, your json form should not begin with ``` json { } ```, you should just directly output a json begin with {"output": sth... }. if necessery, start a new line for each item for better view."""}, {"role": "user", "content": prompt+"""
+  while True:
+    try: 
+      completion = openai.ChatCompletion.create(
+      model="deepseek-v3", 
+      messages=[{"role": "system", "content": """If you are asked to output a json, your json form should not begin with ``` json { } ```, you should just directly output a json begin with {"output": sth... }. if necessery, start a new line for each item for better view."""}, {"role": "user", "content": prompt+"""
 If you are asked to output a json, your json form should not begin with ``` json { } ```, you should just directly output a string begin with {"output": sth... }. """}]
-    )
-    return completion["choices"][0]["message"]["content"]
+      )
+      return completion["choices"][0]["message"]["content"]
   
-  except Exception as e:  
-    print ("deepseek-v3 ERROR:", e)
-    return "deepseek-v3 ERROR"
+    except Exception as e:  
+      print ("deepseek-v3 ERROR:", e)
+      time.sleep(3.0)
+      print("\033[1;31mWaiting 3 seconds. Trying again...\033[0m")
 
-
+# no use anymore for this function
 def GPT4_safe_generate_response(prompt, 
                                    example_output,
                                    special_instruction,
@@ -133,22 +147,23 @@ def ChatGPT_safe_generate_response(prompt,
   # prompt = 'GPT-3 Prompt:\n"""\n' + prompt + '\n"""\n'
   prompt = '"""\n' + prompt + '\n"""\n'
   prompt += f"Output the response to the prompt above in json. {special_instruction}\n"
+  prompt += "Your response must be valid JSON without markdown formatting or code blocks. Do not wrap the JSON in ```json or ``` tags.\n"
   prompt += "Example output json:\n"
   prompt += '{"output": "' + str(example_output) + '"}'
 
-  #print("\033[0;31mprompt!\033[0m")
-  if verbose: 
-    print ("CHAT GPT PROMPT")
-    print (prompt)
+  #print("\033[0;31mprompt!\033[0m") 
+  print("\033[1;32mtrying ChatGPT_request to get json\033[0m")
+  #if verbose: 
+  print ("CHAT GPT PROMPT")
+  print (prompt)
 
   for i in range(repeat+3): 
 
-    try: 
-      #print("\033[0;31mtrying ChatGPT_request\033[0m")
+    try:
       curr_gpt_response = ChatGPT_request(prompt).strip()
-      #print("\033[0;31mtried ChatGPT_request\033[0m")
-      #print("\033[0;31mcurr_gpt_response\033[0m")
-      #print(curr_gpt_response)
+      print("\033[1;32m---curr_gpt_response in repeat ", i, " /total:", repeat+3, "\033[0m")
+      print("\033[1;32m", curr_gpt_response, "\033[0m")
+      print ("\033[1;32m~~~~\033[0m")
       end_index = curr_gpt_response.rfind('}') + 1
       #print("\033[0;31mend_index\033[0m")
       #print(end_index)
@@ -159,23 +174,37 @@ def ChatGPT_safe_generate_response(prompt,
       # make sure the response is a valid JSON string
       
       # Parse the string as JSON before accessing the output key
-      curr_gpt_response = json.loads(curr_gpt_response)["output"]
+      try:
+        curr_gpt_response = json.loads(curr_gpt_response)["output"]
+      except Exception as e:
+        print(f"\033[1;31mJSON parsing error: {e}\033[0m")
+        continue
 
       # print ("---ashdfaf")
       # print (curr_gpt_response)
       # print ("000asdfhia")
       
       if func_validate(curr_gpt_response, prompt=prompt): 
-        return func_clean_up(curr_gpt_response, prompt=prompt)
+        print("\033[1;32msucceed get curr_gpt_reponse and validate in safe_generate_response and get json\033[0m")
+        cleaned_response = func_clean_up(curr_gpt_response, prompt=prompt)
+        print("\033[1;32mafter cleanup: ", cleaned_response, "\033[0m")
+        return cleaned_response
+      else:
+        print("\033[1;31mfailed the validate in GPT request to get json in repeat ", i, "\033[0m")
+        print("\033[1;31mcurrent response type: ", type(curr_gpt_response), "\033[0m")
+        print("\033[1;31mcurrent response: ", curr_gpt_response, "\033[0m")
+        print("\033[1;31m~~~~\033[0m")
+        
       
       if verbose: 
         print ("---- repeat count: \n", i, curr_gpt_response)
         print (curr_gpt_response)
         print ("~~~~")
 
-    except: 
+    except Exception as e: 
+      print(f"\033[1;31mError occurred: {e}\033[0m")
       pass
-
+  print("\033[1;31mwarning! failed safe_generate_response and return false\033[0m")
   return False
 
 
@@ -185,23 +214,35 @@ def ChatGPT_safe_generate_response_OLD(prompt,
                                    func_validate=None,
                                    func_clean_up=None,
                                    verbose=False): 
-  if verbose: 
-    print ("CHAT GPT PROMPT")
-    print (prompt)
+  # if verbose: 
+  #   print ("CHAT GPT PROMPT")
+  #   print (prompt)
+    
+  print("\033[1;32mtrying GPT_request in safe_generate_response_OLD\033[0m")
+  print("\033[1;32mprompt:\n\033[0m", prompt)
 
   for i in range(repeat): 
     try: 
       curr_gpt_response = ChatGPT_request(prompt).strip()
+      print("\033[1;32m----- repeat in ", i, " /total: ", repeat, "and output:\033[0m")
+      print("\033[1;32m", curr_gpt_response, "\033[0m")
+      print("\033[1;32m~~~~\033[0m")
       if func_validate(curr_gpt_response, prompt=prompt): 
-        return func_clean_up(curr_gpt_response, prompt=prompt)
+        print("\033[1;32msucceed get curr_gpt_reponse and validate in safe_generate_response_OLD\033[0m")
+        cleaned_response = func_clean_up(curr_gpt_response, prompt=prompt)
+        print("\033[1;32mafter cleanup:", cleaned_response, "\033[0m")
+        return cleaned_response
       if verbose: 
         print (f"---- repeat count: {i}")
         print (curr_gpt_response)
         print ("~~~~")
+      print("\033[1;31mfailed safe_generate_response_OLD in repeat ", i, "\033[0m")
 
-    except: 
+    except Exception as e: 
+      print(f"\033[1;31mError occurred: {e}\033[0m")
       pass
   print ("FAIL SAFE TRIGGERED") 
+  print("\033[1;31mwarning! failed safe_generate_response_OLD and return a default response: \n", fail_safe_response, " \033[0m")
   return fail_safe_response
 
 
@@ -222,8 +263,9 @@ def GPT_request(prompt, gpt_parameter):
     a str of GPT-3's response. 
   """
   temp_sleep()
-  try: 
-    response = openai.ChatCompletion.create(
+  while True:
+    try: 
+      response = openai.ChatCompletion.create(
                 model="deepseek-v3",
                 messages=[
                   {"role": "system", "content": "If you see daily scedules, you will be an assistant that fills in daily schedules based on character information. And in that case, you should only respond with finishing schedule entries, nothing else."},
@@ -236,10 +278,11 @@ def GPT_request(prompt, gpt_parameter):
                 presence_penalty=gpt_parameter["presence_penalty"],
                 stream=gpt_parameter["stream"],
                 stop=gpt_parameter["stop"],)
-    return response.choices[0].message.content
-  except Exception as e: 
-    print(f"TOKEN LIMIT EXCEEDED: {e}")
-    return "TOKEN LIMIT EXCEEDED"
+      return response.choices[0].message.content
+    except Exception as e: 
+      print(f"\033[1;31mTOKEN LIMIT EXCEEDED: {e}\033[0m")
+      time.sleep(3)
+      print("\033[1;31mWaiting 3 seconds. Trying again...\033[0m")
 
 
 def generate_prompt(curr_input, prompt_lib_file): 
@@ -272,47 +315,65 @@ def generate_prompt(curr_input, prompt_lib_file):
 
 def safe_generate_response(prompt, 
                            gpt_parameter,
-                           repeat=5,
+                           repeat=8,
                            fail_safe_response="error",
                            func_validate=None,
                            func_clean_up=None,
                            verbose=False): 
-  if verbose: 
-    print (prompt)
-
-  for i in range(repeat): 
-    #print("\033[0;31mtrying GPT_request in safe gen res\033[0m")
+  #if verbose: 
+  #  print (prompt)
+ 
+  print("\033[1;32mtrying GPT_request in safe_generate_response\033[0m")
+  print(prompt)
+  
+  for i in range(repeat):
     curr_gpt_response = GPT_request(prompt, gpt_parameter)
-    #print ("---- repeat count: ", i, curr_gpt_response)
-    #print (curr_gpt_response)
-    #print ("~~~~")
+    print("\033[1;32m----- repeat in ", i, " /total: ", repeat, " and output:\033[0m")
+    print("\033[1;32m", curr_gpt_response, "\033[0m")
+    print("\033[1;32m~~~~\033[0m")
     if func_validate(curr_gpt_response, prompt=prompt): 
-      return func_clean_up(curr_gpt_response, prompt=prompt)
+      print("\033[1;32msucceed get curr_gpt_reponse and validate in safe_generate_response\033[0m")
+      cleaned_response = func_clean_up(curr_gpt_response, prompt=prompt)
+      print("\033[1;32mafter cleanup:", cleaned_response, "\033[0m")
+      return cleaned_response
       #return curr_gpt_response
+    print("\033[1;31mfailed safe gen res in repeat ", i, "\033[0m")
     if verbose: 
       print ("---- repeat count: ", i, curr_gpt_response)
       print (curr_gpt_response)
       print ("~~~~")
+  print("\033[1;31mwarning! failed safe_generate_response and return a default failed value: ", fail_safe_response, "\033[0m")
   return fail_safe_response
 
 
-def get_embedding(text, model="bge-m3"): # original is text-embedding-ada-002, here we use deepseek-v3
+def get_embedding(text, model="bge-m3", max_retries=100): # original is text-embedding-ada-002, here we use deepseek-v3
+  import time
+  import numpy as np
+  
   text = text.replace("\n", " ")
   if not text: 
     text = "this is blank"
-  try:
-    # First try with the specified model
-    return openai.Embedding.create(
-            input=[text], model=model)['data'][0]['embedding']
-  except Exception as e:
-    # If that fails, use a simpler fallback approach
-    import numpy as np
-    print(f"Warning: Could not get embedding from API. Using fallback method. Error: {e}")
-    # Create a simple deterministic hash-based embedding as fallback
-    hash_val = hash(text)
-    np.random.seed(hash_val)
-    # Create a 1536-dimensional embedding (same as Ada)
-    return list(np.random.uniform(-1, 1, 1536))
+  
+  # Retry mechanism with exponential backoff
+  for attempt in range(max_retries):
+    try:
+      # Try with the specified model
+      return openai.Embedding.create(
+              input=[text], model=model)['data'][0]['embedding']
+    except Exception as e:
+      print(f"Attempt {attempt + 1}/{max_retries} failed. Error: {e}")
+      if attempt < max_retries - 1:  # Don't wait after the last attempt
+        wait_time = 3  # Wait 3 seconds before retry
+        print(f"Waiting {wait_time} seconds before retry...")
+        time.sleep(wait_time)
+      else:
+        # If all retries failed, use fallback approach
+        print(f"Warning: All {max_retries} attempts failed. Using fallback method.")
+        # Create a simple deterministic hash-based embedding as fallback
+        hash_val = hash(text)
+        np.random.seed(hash_val)
+        # Create a 1536-dimensional embedding (same as Ada)
+        return list(np.random.uniform(-1, 1, 1536))
 
 
 if __name__ == '__main__':

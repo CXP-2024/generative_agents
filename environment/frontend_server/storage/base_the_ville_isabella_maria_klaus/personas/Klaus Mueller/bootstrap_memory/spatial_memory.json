@@ -1,85 +1,124 @@
 {
-  "the Ville": {
-    "Oak Hill College": {
-      "hallway": [],
-      "library": [
+  "the School": {
+    "classroom building": {
+      "classroom 1": [
+        "blackboard",
+        "classroom student seating",
+        "classroom podium",
+        "potted plant"
+      ],
+      "library room": [
         "library sofa",
         "library table",
-        "bookshelf"
+        "bookshelf",
+        "potted plant"
       ],
-      "classroom": [
-        "blackboard",
-        "classroom podium",
-        "classroom student seating"
-      ]
-    },
-    "Dorm for Oak Hill College": {
-      "garden": [
-        "dorm garden"
-      ],
-      "Klaus Mueller's room": [
-        "bed",
-        "game console",
-        "closet",
-        "desk"
-      ],
-      "woman's bathroom": [
-        "toilet",
-        "shower",
-        "bathroom sink"
-      ],
-      "common room": [
-        "common room sofa",
-        "pool table",
-        "common room table"
-      ],
-      "man's bathroom": [
-        "shower",
-        "bathroom sink",
-        "toilet"
-      ]
-    },
-    "The Willows Market and Pharmacy": {
-      "store": [
-        "grocery store shelf",
-        "behind the grocery counter",
-        "grocery store counter",
-        "pharmacy store shelf",
-        "pharmacy store counter",
-        "behind the pharmacy counter"
-      ]
-    },
-    "Harvey Oak Supply Store": {
-      "supply store": [
-        "supply store product shelf",
-        "behind the supply store counter",
-        "supply store counter"
-      ]
-    },
-    "Johnson Park": {
-      "park": [
-        "park garden"
-      ]
-    },
-    "The Rose and Crown Pub": {
-      "pub": [
-        "shelf",
-        "refrigerator",
-        "bar customer seating",
-        "behind the bar counter",
-        "kitchen sink",
-        "cooking area",
+      "music room": [
+        "piano",
+        "hand drum",
+        "guitar",
+        "bass drum",
+        "snare drum",
+        "drum kit",
+        "cello",
+        "speaker",
+        "harp",
         "microphone"
+      ],
+      "art room": [
+        "easel"
+      ],
+      "sports room": [
+        "ping pong table",
+        "vault base",
+        "kettlebell",
+        "dumbbell rack",
+        "bench press station",
+        "pool table"
+      ],
+      "corridor": [
+        "vending machine",
+        "coffee vending machine"
       ]
     },
-    "Hobbs Cafe": {
-      "cafe": [
-        "refrigerator",
-        "cafe customer seating",
-        "cooking area",
-        "kitchen sink",
-        "behind the cafe counter",
-        "piano"
+    "canteen": {
+      "student canteen": [
+        "student restaurant table",
+        "buffet table",
+        "tray rack",
+        "restaurant sink",
+        "coffee machine"
+      ]
+    },
+    "headmasters' office and dormitory": {
+      "office": [
+        "computer desk",
+        "bookshelf",
+        "blackboard"
+      ]
+    },
+    "Latoya Williams's office and dormitory": {
+      "office": [
+        "computer desk",
+        "bookshelf",
+        "blackboard"
+      ]
+    },
+    "Jane Moreno's office and dormitory": {
+      "office": [
+        "computer desk",
+        "bookshelf",
+        "blackboard"
+      ]
+    },
+    "Isabella Rodriguez's office and dormitory": {
+      "office": [
+        "computer desk",
+        "bookshelf",
+        "blackboard"
+      ]
+    },
+    "Ayesha Khan's office and dormitory": {
+      "office": [
+        "computer desk",
+        "bookshelf",
+        "blackboard"
+      ]
+    },
+    "pond": {
+      "island 1": [],
+      "island 2": []
+    },
+    "playground": {
+      "playground": [
+        "soccer field",
+        "running track",
+        "long jump pit"
+      ]
+    },
+    "laundry room": {
+      "laundry room 1": [
+        "washing machine"
+      ],
+      "laundry room 2": [
+        "washing machine"
+      ]
+    },
+    "student dormitory 3": {
+      "common room": [
+        "bookshelf",
+        "bed",
+        "desk",
+        "hatsune miku figure"
+      ],
+      "bathroom": [
+        "toilet",
+        "bathroom sink",
+        "shower"
+      ],
+      "balcony": [
+        "closet",
+        "potted plant"
       ]
     }
   }

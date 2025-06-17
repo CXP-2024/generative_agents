@@ -180,6 +180,20 @@ class Persona:
       None
     """
     reflect(self)
+    
+  def show_perceived_list(self, perceived):
+    """
+		This function takes the perceived list and prints it out in a readable
+		format.
+		INPUT: 
+			perceived: a list of <ConceptNode> that are perceived and new.
+		OUTPUT:
+			None
+	  """
+    print(f"\033[0;35m---in persona move--- {self.name} perceived: \033[0m")
+    for i in perceived:
+      print(f"\033[0;35m{i.description}\033[0m")
+
 
 
   def move(self, maze, personas, curr_tile, curr_time):
@@ -217,10 +231,16 @@ class Persona:
     self.scratch.curr_time = curr_time
 
     # Main cognitive sequence begins here. 
+    print(f"\033[1;3;35m---in persona move--- {self.name} start perceive, retrieve, plan and reflect. Perceive maze first.....\033[0m")
     perceived = self.perceive(maze)
+    self.show_perceived_list(perceived) # SHOW PERCEIVED LIST
+    print(f"\033[1;3;35m---in persona move--- {self.name} finished perceiving and start retrieving --\033[0m")
     retrieved = self.retrieve(perceived)
+    print(f"\033[1;3;35m---in persona move--- {self.name} finished retrieving and start planning --\033[0m")
     plan = self.plan(maze, personas, new_day, retrieved)
+    print(f"\033[1;3;35m---in persona move--- {self.name} finished planning and start reflecting --\033[0m")
     self.reflect()
+    print(f"\033[1;3;35m---in persona move--- {self.name} finished reflecting and start executing --\033[0m")
 
     # <execution> is a triple set that contains the following components: 
     # <next_tile> is a x,y coordinate. e.g., (58, 9)

@@ -43,7 +43,7 @@ def execute(persona, maze, personas, plan):
     target_tiles = None
 
     print ('aldhfoaf/????')
-    print (plan)
+    print ("current plan:", plan)
 
     if "<persona>" in plan: 
       # Executing persona-persona interaction.
@@ -89,7 +89,7 @@ def execute(persona, maze, personas, plan):
       # string form. <maze.address_tiles> takes this and returns candidate 
       # coordinates. 
       if plan not in maze.address_tiles: 
-        maze.address_tiles["Johnson Park:park:park garden"] #ERRORRRRRRR
+        maze.address_tiles["classroom building:library room:potted plant"] #ERRORRRRRRR
       else: 
         target_tiles = maze.address_tiles[plan]
 
@@ -148,6 +148,7 @@ def execute(persona, maze, personas, plan):
   # Setting up the next immediate step. We stay at our curr_tile if there is
   # no <planned_path> left, but otherwise, we go to the next tile in the path.
   ret = persona.scratch.curr_tile
+  ###################################### IMPORTANT #############################################
   if persona.scratch.planned_path: 
     ret = persona.scratch.planned_path[0]
     persona.scratch.planned_path = persona.scratch.planned_path[1:]
@@ -156,19 +157,5 @@ def execute(persona, maze, personas, plan):
   description += f" @ {persona.scratch.act_address}"
 
   execution = ret, persona.scratch.act_pronunciatio, description
+  print("\033[1;3;35m", persona.name, "finished executing this plan:", description, "and decide move to", ret, "\033[0m")
   return execution
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

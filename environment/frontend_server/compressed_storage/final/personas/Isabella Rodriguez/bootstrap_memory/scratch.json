@@ -1,0 +1,386 @@
+{
+  "vision_r": 8,
+  "att_bandwidth": 8,
+  "retention": 8,
+  "curr_time": "February 16, 2023, 08:45:00",
+  "curr_tile": [
+    6,
+    20
+  ],
+  "daily_plan_req": "Here\u2019s Isabella Rodriguez\u2019s broad-stroke plan for **Thursday, February 16, 2023**:    1. **Wake up and complete the morning routine at 6:00 AM** (indoor exercises at the dormitory due to weather, breakfast by 7:00 AM).   2. **Teach interactive indoor class from 9:00 AM to 11:00 AM** (adapted creative writing prompts focused on nature themes).   3. **Follow up with Sofia Chen at 12:15 PM** to refine her presentation and offer encouragement.   4. **Grade assignments and plan next week\u2019s curriculum from 2:00 PM to 5:30 PM**, ensuring engaging student-centered activities.    *\"Adaptation is just another form of preparation,\"* she reminded herself, *\"and every student\u2019s growth matters.\"*",
+  "name": "Isabella Rodriguez",
+  "first_name": "Isabella",
+  "last_name": "Rodriguez",
+  "age": 34,
+  "innate": "patient, kind, encouraging",
+  "learned": "Isabella Rodriguez is a high school teacher who is passionate about helping her students learn and grow. She believes in creating a supportive and engaging classroom environment where every student feels valued and empowered. She does exercises at dormitory, and she likes hatsune miku.",
+  "currently": "**Status:** On **Thursday, February 16, 2023**, Isabella Rodriguez awoke at **6:00 AM**, maintaining her unwavering commitment to discipline and routine. True to her reflections the night before, she began her day with the same purposeful energy, ensuring her personal and professional standards remained intact. By **7:30 AM**, she arrived at school, where she once again reviewed her lesson plans\u2014meticulously refined the prior afternoon\u2014confirming every detail aligned with her expectations for clarity and student engagement.  \n\nHer morning class, held **indoors due to weather constraints**, ran from **9:00 AM to 11:00 AM**. Demonstrating her adaptability, she seamlessly shifted her planned outdoor activities to an interactive lecture format, ensuring the same lively participation she valued. She incorporated creative writing prompts tied to nature, bridging the gap between her original plan and the day\u2019s practical adjustments.  \n\nAt **12:15 PM**, Isabella followed up with a student, this time offering guidance to Sofia Chen on her upcoming presentation, reinforcing her dedication to individualized support. The afternoon was spent grading assignments and refining next week\u2019s curriculum, her meticulous notes reflecting her pride in delivering structured yet dynamic lessons.  \n\nDespite the minor change in environment, Isabella\u2019s passion for teaching remained undimmed. Her ability to pivot without compromising engagement underscored her philosophy: preparation and flexibility go hand in hand.  \n\n*\"Discipline lays the foundation,\"* she reflected, *\"but adaptability breathes life into it.\"*  \n\n\u2014 **Isabella Rodriguez**  \n\n**Key Themes Reflected:**  \n- **Consistency & Discipline:** Unbroken 6:00 AM routine and structured workflow.  \n- **Adaptability:** Seamless adjustment to indoor teaching without losing student focus.  \n- **Student-Centered Support:** Continued personalized feedback, as with Sofia Chen.  \n- **Pride in Preparation:** Meticulous planning ensured a smooth transition.",
+  "lifestyle": "Isabella Rodriguez goes to bed around 11pm and wakes up around 6am to prepare for her classes.",
+  "living_area": "the School:Isabella Rodriguez's office and dormitory:living room",
+  "concept_forget": 100,
+  "daily_reflection_time": 180,
+  "daily_reflection_size": 5,
+  "overlap_reflect_th": 4,
+  "kw_strg_event_reflect_th": 10,
+  "kw_strg_thought_reflect_th": 9,
+  "recency_w": 1,
+  "relevance_w": 1,
+  "importance_w": 1,
+  "recency_decay": 0.995,
+  "importance_trigger_max": 150,
+  "importance_trigger_curr": 139,
+  "importance_ele_n": 5,
+  "thought_count": 5,
+  "daily_req": [
+    "wake up and complete the morning routine at 6:00 am"
+  ],
+  "f_daily_schedule": [
+    [
+      "sleeping",
+      360
+    ],
+    [
+      "waking up and beginning her morning routine with indoor exercises at the dormitory (1) Isabella is stretching to wake up her muscles)",
+      5
+    ],
+    [
+      "waking up and beginning her morning routine with indoor exercises at the dormitory (doing light cardio (jumping jacks or jogging in place))",
+      10
+    ],
+    [
+      "waking up and beginning her morning routine with indoor exercises at the dormitory (performing bodyweight exercises (push-ups, squats))",
+      15
+    ],
+    [
+      "waking up and beginning her morning routine with indoor exercises at the dormitory (doing yoga poses for flexibility)",
+      10
+    ],
+    [
+      "waking up and beginning her morning routine with indoor exercises at the dormitory (hydrating and taking a short breather)",
+      5
+    ],
+    [
+      "waking up and beginning her morning routine with indoor exercises at the dormitory (meditating to clear her mind)",
+      10
+    ],
+    [
+      "waking up and beginning her morning routine with indoor exercises at the dormitory (tidying up her workout space)",
+      5
+    ],
+    [
+      "eating breakfast and preparing for her day (1) Isabella is stretching and doing light indoor exercises)",
+      15
+    ],
+    [
+      "eating breakfast and preparing for her day (showering and getting dressed)",
+      15
+    ],
+    [
+      "eating breakfast and preparing for her day (preparing breakfast (toast, fruit, and tea))",
+      10
+    ],
+    [
+      "eating breakfast and preparing for her day (eating breakfast while reviewing her schedule)",
+      15
+    ],
+    [
+      "eating breakfast and preparing for her day (packing her bag with teaching materials)",
+      5
+    ],
+    [
+      "[(ID:P1sX37) Thursday February 16 -- 08:00 AM] Activity: Isabella is commuting to school and reviewing her lesson plans (1) Isabella is gathering her teaching materials and putting them in her bag)",
+      10
+    ],
+    [
+      "[(ID:P1sX37) Thursday February 16 -- 08:00 AM] Activity: Isabella is commuting to school and reviewing her lesson plans (walking to the bus stop)",
+      5
+    ],
+    [
+      "[(ID:P1sX37) Thursday February 16 -- 08:00 AM] Activity: Isabella is commuting to school and reviewing her lesson plans (boarding the bus and finding a seat)",
+      5
+    ],
+    [
+      "[(ID:P1sX37) Thursday February 16 -- 08:00 AM] Activity: Isabella is commuting to school and reviewing her lesson plans (reviewing the first part of her lesson plan (introduction and objectives))",
+      10
+    ],
+    [
+      "[(ID:P1sX37) Thursday February 16 -- 08:00 AM] Activity: Isabella is commuting to school and reviewing her lesson plans (checking student engagement strategies for the lesson)",
+      10
+    ],
+    [
+      "[(ID:P1sX37) Thursday February 16 -- 08:00 AM] Activity: Isabella is commuting to school and reviewing her lesson plans (reviewing the creative writing prompts and adjusting wording for clarity)",
+      10
+    ],
+    [
+      "[(ID:P1sX37) Thursday February 16 -- 08:00 AM] Activity: Isabella is commuting to school and reviewing her lesson plans (making quick notes for student follow-ups)",
+      5
+    ],
+    [
+      "[(ID:P1sX37) Thursday February 16 -- 08:00 AM] Activity: Isabella is commuting to school and reviewing her lesson plans (exiting the bus and walking to the school entrance)",
+      5
+    ],
+    [
+      "teaching her interactive indoor class with adapted creative writing prompts focused on nature themes (welcoming students and briefly reviewing the day\u2019s indoor activity)",
+      5
+    ],
+    [
+      "teaching her interactive indoor class with adapted creative writing prompts focused on nature themes (introducing the nature-themed creative writing prompt)",
+      10
+    ],
+    [
+      "teaching her interactive indoor class with adapted creative writing prompts focused on nature themes (facilitating a short discussion on nature imagery)",
+      10
+    ],
+    [
+      "teaching her interactive indoor class with adapted creative writing prompts focused on nature themes (guiding students through brainstorming ideas)",
+      10
+    ],
+    [
+      "teaching her interactive indoor class with adapted creative writing prompts focused on nature themes (walking around to assist students individually)",
+      15
+    ],
+    [
+      "teaching her interactive indoor class with adapted creative writing prompts focused on nature themes (encouraging students to share their work aloud)",
+      5
+    ],
+    [
+      "teaching her interactive indoor class with adapted creative writing prompts focused on nature themes (summarizing key takeaways and assigning follow-up reflection)",
+      5
+    ],
+    [
+      "continuing her interactive indoor class with creative writing prompts",
+      60
+    ],
+    [
+      "[(ID:iERg5S) Thursday February 16 -- 11:00 AM] Activity: Isabella is finishing her interactive indoor class and preparing for lunch",
+      60
+    ],
+    [
+      "[(ID:LRcItf) Thursday February 16 -- 12:00 PM] Activity: Isabella is having lunch and preparing for her follow-up meeting with Sofia Chen",
+      60
+    ],
+    [
+      "[(ID:Ilcz7A) Thursday February 16 -- 01:00 PM] Activity: Isabella is meeting with Sofia Chen to refine her presentation and offer encouragement",
+      60
+    ],
+    [
+      "[(ID:D7OUOW) Thursday February 16 -- 02:00 PM] Activity: Isabella is grading assignments and planning next week\u2019s curriculum",
+      60
+    ],
+    [
+      "[(ID:yBmduu) Thursday February 16 -- 03:00 PM] Activity: Isabella is continuing to grade assignments and refine next week's curriculum with student-centered activities",
+      60
+    ],
+    [
+      "[(ID:KnAniT) Thursday February 16 -- 04:00 PM] Activity: Isabella is continuing to grade assignments and refine next week's curriculum with student-centered activities",
+      60
+    ],
+    [
+      "[(ID:n4CnGK) Thursday February 16 -- 05:00 PM] Activity: Isabella is finishing grading assignments and finalizing next week's curriculum plans",
+      60
+    ],
+    [
+      "[(ID:VOkRgb) Thursday February 16 -- 06:00 PM] Activity: Isabella is commuting home from school",
+      60
+    ],
+    [
+      "[(ID:mqAcLk) Thursday February 16 -- 07:00 PM] Activity: Isabella is having dinner at home while listening to Hatsune Miku music",
+      60
+    ],
+    [
+      "[(ID:rm432j) Thursday February 16 -- 08:00 PM] Activity: Isabella is relaxing at home, possibly reviewing some student work or enjoying Hatsune Miku videos",
+      60
+    ],
+    [
+      "[(ID:fky2Nl) Thursday February 16 -- 09:00 PM] Activity: Isabella is winding down for the evening, possibly reading or watching Hatsune Miku content before bed",
+      60
+    ],
+    [
+      "[(ID:tUcEnS) Thursday February 16 -- 10:00 PM] Activity: Isabella is getting ready for bed, preparing for tomorrow's classes",
+      60
+    ],
+    [
+      "[(ID:Rb3Gkk) Thursday February 16 -- 11:00 PM] Activity: Isabella is sleeping",
+      60
+    ],
+    [
+      "sleeping",
+      0
+    ],
+    [
+      "sleeping",
+      0
+    ],
+    [
+      "sleeping",
+      0
+    ],
+    [
+      "sleeping",
+      0
+    ],
+    [
+      "sleeping",
+      0
+    ],
+    [
+      "sleeping",
+      0
+    ],
+    [
+      "sleeping",
+      0
+    ],
+    [
+      "sleeping",
+      0
+    ],
+    [
+      "sleeping",
+      0
+    ],
+    [
+      "sleeping",
+      0
+    ],
+    [
+      "sleeping",
+      0
+    ],
+    [
+      "sleeping",
+      0
+    ],
+    [
+      "sleeping",
+      0
+    ],
+    [
+      "sleeping",
+      0
+    ],
+    [
+      "sleeping",
+      0
+    ],
+    [
+      "sleeping",
+      0
+    ],
+    [
+      "sleeping",
+      0
+    ],
+    [
+      "sleeping",
+      0
+    ],
+    [
+      "sleeping",
+      0
+    ]
+  ],
+  "f_daily_schedule_hourly_org": [
+    [
+      "sleeping",
+      360
+    ],
+    [
+      "waking up and beginning her morning routine with indoor exercises at the dormitory",
+      60
+    ],
+    [
+      "eating breakfast and preparing for her day",
+      60
+    ],
+    [
+      "[(ID:P1sX37) Thursday February 16 -- 08:00 AM] Activity: Isabella is commuting to school and reviewing her lesson plans",
+      60
+    ],
+    [
+      "teaching her interactive indoor class with adapted creative writing prompts focused on nature themes",
+      60
+    ],
+    [
+      "continuing her interactive indoor class with creative writing prompts",
+      60
+    ],
+    [
+      "[(ID:iERg5S) Thursday February 16 -- 11:00 AM] Activity: Isabella is finishing her interactive indoor class and preparing for lunch",
+      60
+    ],
+    [
+      "[(ID:LRcItf) Thursday February 16 -- 12:00 PM] Activity: Isabella is having lunch and preparing for her follow-up meeting with Sofia Chen",
+      60
+    ],
+    [
+      "[(ID:Ilcz7A) Thursday February 16 -- 01:00 PM] Activity: Isabella is meeting with Sofia Chen to refine her presentation and offer encouragement",
+      60
+    ],
+    [
+      "[(ID:D7OUOW) Thursday February 16 -- 02:00 PM] Activity: Isabella is grading assignments and planning next week\u2019s curriculum",
+      60
+    ],
+    [
+      "[(ID:yBmduu) Thursday February 16 -- 03:00 PM] Activity: Isabella is continuing to grade assignments and refine next week's curriculum with student-centered activities",
+      60
+    ],
+    [
+      "[(ID:KnAniT) Thursday February 16 -- 04:00 PM] Activity: Isabella is continuing to grade assignments and refine next week's curriculum with student-centered activities",
+      60
+    ],
+    [
+      "[(ID:n4CnGK) Thursday February 16 -- 05:00 PM] Activity: Isabella is finishing grading assignments and finalizing next week's curriculum plans",
+      60
+    ],
+    [
+      "[(ID:VOkRgb) Thursday February 16 -- 06:00 PM] Activity: Isabella is commuting home from school",
+      60
+    ],
+    [
+      "[(ID:mqAcLk) Thursday February 16 -- 07:00 PM] Activity: Isabella is having dinner at home while listening to Hatsune Miku music",
+      60
+    ],
+    [
+      "[(ID:rm432j) Thursday February 16 -- 08:00 PM] Activity: Isabella is relaxing at home, possibly reviewing some student work or enjoying Hatsune Miku videos",
+      60
+    ],
+    [
+      "[(ID:fky2Nl) Thursday February 16 -- 09:00 PM] Activity: Isabella is winding down for the evening, possibly reading or watching Hatsune Miku content before bed",
+      60
+    ],
+    [
+      "[(ID:tUcEnS) Thursday February 16 -- 10:00 PM] Activity: Isabella is getting ready for bed, preparing for tomorrow's classes",
+      60
+    ],
+    [
+      "[(ID:Rb3Gkk) Thursday February 16 -- 11:00 PM] Activity: Isabella is sleeping",
+      60
+    ]
+  ],
+  "act_address": "the School:Isabella Rodriguez's office and dormitory:office:computer desk",
+  "act_start_time": "February 16, 2023, 08:40:00",
+  "act_duration": 10,
+  "act_description": "[(ID:P1sX37) Thursday February 16 -- 08:00 AM] Activity: Isabella is commuting to school and reviewing her lesson plans (reviewing the creative writing prompts and adjusting wording for clarity)",
+  "act_pronunciatio": "\ud83d\udcdd\u270f\ufe0f",
+  "act_event": [
+    "Isabella Rodriguez",
+    "review and adjust",
+    "creative writing prompts"
+  ],
+  "act_obj_description": "not in use",
+  "act_obj_pronunciatio": "\ud83d\udeab\ud83d\udd04",
+  "act_obj_event": [
+    "computer desk",
+    "is",
+    "unused"
+  ],
+  "chatting_with": null,
+  "chat": null,
+  "chatting_with_buffer": {
+    "Klaus Mueller": -25
+  },
+  "chatting_end_time": null,
+  "act_path_set": true,
+  "planned_path": []
+}

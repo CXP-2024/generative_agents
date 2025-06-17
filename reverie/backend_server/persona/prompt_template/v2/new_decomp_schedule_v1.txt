@@ -16,9 +16,73 @@ Variables:
 
 
 <commentblockmarker>###</commentblockmarker>
+
+Task: revise the schedule
+
+Example:
+Here was Maria Helon's originally plans from 00:00 AM to 03:00 AM. 
+00:00 ~ 00:10 -- warming up with light stretches
+00:10 ~ 00:20 -- jogging around the track to get her heart rate up
+00:20 ~ 00:35 -- practicing short approach jumps with Arthur
+00:35 ~ 00:45 -- adjusting her technique based on Arthur's feedback
+00:45 ~ 00:55 -- attempting full approach jumps
+00:55 ~ 01:00 -- cooling down with a slow walk and hydration
+01:00 ~ 01:10 -- warming up with light stretches
+01:10 ~ 01:25 -- practicing her run-up technique
+01:25 ~ 01:45 -- working on her takeoff form with Arthur's feedback
+01:45 ~ 02:10 -- attempting full long jumps while Arthur records
+02:10 ~ 02:25 -- reviewing the recorded jumps with Arthur
+02:25 ~ 02:45 -- adjusting her technique based on feedback
+02:45 ~ 02:55 -- doing a final set of jumps
+02:55 ~ 03:00 -- cooling down with light stretches
+
+However, Maria Helon unexpectedly spent 13 minutes attempting full approach jumps (conversing about Maria Helon asked Sam for tips on improving her full approach jumps, and Sam demonstrated her technique, emphasizing knee drive and arm control, leading to Maria practicing with her guidance and showing improvement, with Isabella offering to train together again in the future.). Based on this unexpected event, please revise Maria Helon's schedule from 00:00 AM to 03:00 AM (ensuring it finishes by 03:00 AM).
+
+Only modify the schedule between 00:00 AM and 03:00 AM. Any activities before 00:00 AM or after 03:00 AM should remain unchanged so you need't to include them in the output.
+
+The result schedule:
+00:00 ~ 00:10 -- warming up with light stretches
+00:10 ~ 00:20 -- jogging around the track to get her heart rate up
+00:20 ~ 00:35 -- practicing short approach jumps with Arthur
+00:35 ~ 00:45 -- adjusting her technique based on Arthur's feedback
+00:45 ~ 00:50 -- attempting full approach jumps
+00:50 ~ 01:03 -- attempting full approach jumps (conversing about Maria Helon asked Sam for tips on improving her full approach jumps, and Sam demonstrated his technique, emphasizing knee drive and arm control, leading to Maria practicing with his guidance and showing improvement, with Arthur offering to train together again in the future.)
+01:03 ~ 01:10 -- cooling down with a slow walk and hydration
+01:10 ~ 01:25 -- practicing her run-up technique
+01:25 ~ 01:45 -- working on her takeoff form with Arthur's feedback
+01:45 ~ 02:00 -- attempting full long jumps while Arthur records
+02:00 ~ 02:10 -- STILL attempting full long jumps while Arthur records
+02:10 ~ 02:25 -- reviewing the recorded jumps with Arthur
+02:25 ~ 02:45 -- adjusting her technique based on feedback
+02:45 ~ 02:55 -- doing a final set of jumps
+02:55 ~ 03:00 -- cooling down with light stretches
+
+
+
+YOUR TASK:
 Here was !<INPUT 0>!'s originally planned schedule from !<INPUT 1>! to !<INPUT 2>!. 
 !<INPUT 3>!
 
-But !<INPUT 4>! unexpectedly ended up !<INPUT 5>! for !<INPUT 6>! minutes. Revise !<INPUT 7>!'s schedule from !<INPUT 8>! to !<INPUT 9>! accordingly (it has to end by !<INPUT 10>!). 
+
+However, !<INPUT 4>! unexpectedly spent !<INPUT 6>! minutes !<INPUT 5>!. Based on this unexpected event, please revise !<INPUT 7>!'s schedule from !<INPUT 8>! to !<INPUT 9>! (ensuring it finishes by !<INPUT 10>!).
+
+Only modify the schedule between !<INPUT 8>! and !<INPUT 9>!. Any activities before !<INPUT 8>! or after !<INPUT 9>! should remain unchanged so you need't to include them in the output.
+
+IMPORTANT FORMATTING INSTRUCTIONS:
+- Format each time block as "START_TIME ~ END_TIME" (e.g., "08:00 ~ 09:30")
+- Your first time block must start exactly at the specified start time
+- Your last time block must end exactly at the specified end time
+- Break activities that cross hour boundaries into separate entries
+- Ensure time increments are continuous and preferably in 5-minute intervals like "08:00 ~ 08:05", "08:05 ~ 08:10" instead of "08:03 ~ 08:08", "9:12 ~ 9:17"
+- When an activity spans from one hour to the next, split it at the hour boundary and prefix the continuation with "still"
+- For example, if an activity runs from "09:45 ~ 10:15", split it into:
+	"09:45 ~ 10:00 -- [activity name]"
+	"10:00 ~ 10:15 -- still [activity name]"
+- This rule applies to ALL activities that span across hour boundaries (e.g., XX:55 to YY:08)
+- Another example: For "16:55 ~ 17:08 -- walking in the park", output:
+	"16:55 ~ 17:00 -- walking in the park"
+	"17:00 ~ 17:08 -- still walking in the park"
+- DO NOT CHANGE THE SLEEP SCHEDULE!!!!! The sleep time schedule should remain unchanged, so just keep it the EXACTLY SAME as the original schedule.
+
 The revised schedule:
 !<INPUT 11>!

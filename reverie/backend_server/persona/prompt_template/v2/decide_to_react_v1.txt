@@ -28,6 +28,12 @@ Since Sam and Sarah need to use different areas, their actions do not conflict.
 So, since Sam and Sarah are going to be in different areas, Sam mcan continue on to eating his lunch now.
 Answer: Option 2
 ---
+
+IMPORTANT: You should output the answer in the following format:
+Reasoning: <Reasoning things>
+Answer: Option <number of the option>
+
+
 Context: !<INPUT 0>!
 Right now, it is !<INPUT 1>!. 
 !<INPUT 2>! 

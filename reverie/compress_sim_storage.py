@@ -28,9 +28,21 @@ def compress(sim_code):
   master_move = dict()  
   for i in range(max_move_count+1): 
     master_move[i] = dict()
-    with open(f"{move_folder}/{str(i)}.json") as json_file:  
-      i_move_dict = json.load(json_file)["persona"]
-      for p in persona_names: 
+    try:
+      with open(f"{move_folder}/{str(i)}.json") as json_file:  
+        content = json_file.read().strip()
+        if not content:
+          print(f"Warning: {move_folder}/{str(i)}.json is empty, skipping...")
+          continue
+        i_move_dict = json.loads(content)["persona"]
+    except (json.JSONDecodeError, KeyError) as e:
+      print(f"Warning: Error reading {move_folder}/{str(i)}.json: {e}, skipping...")
+      continue
+    except FileNotFoundError:
+      print(f"Warning: {move_folder}/{str(i)}.json not found, skipping...")
+      continue
+      
+    for p in persona_names: 
         move = False
         if i == 0: 
           move = True
@@ -58,27 +70,5 @@ def compress(sim_code):
   shutil.copyfile(meta_file, f"{compressed_storage}/meta.json")
   shutil.copytree(persona_folder, f"{compressed_storage}/personas/")
 
-
 if __name__ == '__main__':
-  compress("demo3")
-
-
-
-
-
-
-
-
-
-  
-
-
-
-
-
-
-
-
-
-
-
+  compress("exp")

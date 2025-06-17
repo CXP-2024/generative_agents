@@ -7,15 +7,22 @@ import string
 import random
 import json
 from os import listdir
-import os
-
+import datetime
+import sys
+import io
+from contextlib import redirect_stdout, redirect_stderr
+from django.views.decorators.csrf import csrf_exempt
 import datetime
 from django.shortcuts import render, redirect, HttpResponseRedirect
 from django.http import HttpResponse, JsonResponse
+
+sys.path.append(os.path.join(os.path.dirname(__file__), '..'))
 from global_methods import *
 
 from django.contrib.staticfiles.templatetags.staticfiles import static
 from .models import *
+sys.path.append(os.path.join(os.path.dirname(__file__), '../../../reverie/backend_server'))
+from reverie import ReverieServer
 
 def landing(request): 
   context = {}
@@ -27,8 +34,18 @@ def demo(request, sim_code, step, play_speed="2"):
   move_file = f"compressed_storage/{sim_code}/master_movement.json"
   meta_file = f"compressed_storage/{sim_code}/meta.json"
   step = int(step)
-  play_speed_opt = {"1": 1, "2": 2, "3": 4,
-                    "4": 8, "5": 16, "6": 32}
+  play_speed_opt = {
+      "1": 0.1,   # 非常慢
+      "2": 0.2,   # 慢
+      "3": 0.5,     # 正常速度
+      "4": 1,     # 稍快
+      "5": 2,     # 中速
+      "6": 4,     # 较快
+      "7": 10,    # 快
+      "8": 18,    # 很快
+      "9": 24,    # 非常快
+      "10": 32    # 最快
+  }
   if play_speed not in play_speed_opt: play_speed = 2
   else: play_speed = play_speed_opt[play_speed]
 
@@ -103,84 +120,102 @@ def UIST_Demo(request):
 
 
 def home(request):
-  f_curr_sim_code = "temp_storage/curr_sim_code.json"
-  f_curr_step = "temp_storage/curr_step.json"
+    f_curr_sim_code = "temp_storage/curr_sim_code.json"
+    f_curr_step = "temp_storage/curr_step.json"
 
-  if not check_if_file_exists(f_curr_step): 
-    context = {}
-    template = "home/error_start_backend.html"
+    if not check_if_file_exists(f_curr_step): 
+        context = {}
+        template = "home/error_start_backend.html"
+        return render(request, template, context)
+
+    with open(f_curr_sim_code) as json_file:  
+        sim_code = json.load(json_file)["sim_code"]
+    
+    with open(f_curr_step) as json_file:  
+        step = json.load(json_file)["step"]
+
+    os.remove(f_curr_step)
+
+    # 修改这部分 - 创建包含所需属性的对象列表
+    persona_names = []
+    persona_names_set = set()
+    for i in find_filenames(f"storage/{sim_code}/personas", ""): 
+        x = i.split("/")[-1].strip()
+        if x[0] != ".": 
+            # 创建包含demo版本所需属性的对象
+            persona_obj = type('PersonaInfo', (), {
+                'original': x,
+                'underscore': x.replace(" ", "_"),
+                'full_name': x,
+                'initial': "".join([word[0] for word in x.split()])
+            })()
+            persona_names.append(persona_obj)
+            persona_names_set.add(x)
+
+    persona_init_pos = []
+    file_count = []
+    for i in find_filenames(f"storage/{sim_code}/environment", ".json"):
+        x = i.split("/")[-1].strip()
+        if x[0] != ".": 
+            file_count += [int(x.split(".")[0])]
+    
+    curr_json = f'storage/{sim_code}/environment/{str(max(file_count))}.json'
+    with open(curr_json) as json_file:  
+        persona_init_pos_dict = json.load(json_file)
+        for key, val in persona_init_pos_dict.items(): 
+            if key in persona_names_set: 
+                persona_init_pos += [[key, val["x"], val["y"]]]
+
+    context = {"sim_code": sim_code,
+               "step": step, 
+               "persona_names": persona_names,
+               "persona_init_pos": persona_init_pos,
+               "mode": "simulate"}
+    template = "home/home.html"
     return render(request, template, context)
-
-  with open(f_curr_sim_code) as json_file:  
-    sim_code = json.load(json_file)["sim_code"]
-  
-  with open(f_curr_step) as json_file:  
-    step = json.load(json_file)["step"]
-
-  os.remove(f_curr_step)
-
-  persona_names = []
-  persona_names_set = set()
-  for i in find_filenames(f"storage/{sim_code}/personas", ""): 
-    x = i.split("/")[-1].strip()
-    if x[0] != ".": 
-      persona_names += [[x, x.replace(" ", "_")]]
-      persona_names_set.add(x)
-
-  persona_init_pos = []
-  file_count = []
-  for i in find_filenames(f"storage/{sim_code}/environment", ".json"):
-    x = i.split("/")[-1].strip()
-    if x[0] != ".": 
-      file_count += [int(x.split(".")[0])]
-  curr_json = f'storage/{sim_code}/environment/{str(max(file_count))}.json'
-  with open(curr_json) as json_file:  
-    persona_init_pos_dict = json.load(json_file)
-    for key, val in persona_init_pos_dict.items(): 
-      if key in persona_names_set: 
-        persona_init_pos += [[key, val["x"], val["y"]]]
-
-  context = {"sim_code": sim_code,
-             "step": step, 
-             "persona_names": persona_names,
-             "persona_init_pos": persona_init_pos,
-             "mode": "simulate"}
-  template = "home/home.html"
-  return render(request, template, context)
 
 
 def replay(request, sim_code, step): 
-  sim_code = sim_code
-  step = int(step)
+    sim_code = sim_code
+    step = int(step)
 
-  persona_names = []
-  persona_names_set = set()
-  for i in find_filenames(f"storage/{sim_code}/personas", ""): 
-    x = i.split("/")[-1].strip()
-    if x[0] != ".": 
-      persona_names += [[x, x.replace(" ", "_")]]
-      persona_names_set.add(x)
+    # 修改这部分 - 创建包含所需属性的对象列表
+    persona_names = []
+    persona_names_set = set()
+    for i in find_filenames(f"storage/{sim_code}/personas", ""): 
+        x = i.split("/")[-1].strip()
+        if x[0] != ".": 
+            # 创建包含demo版本所需属性的对象
+            persona_obj = type('PersonaInfo', (), {
+                'original': x,
+                'underscore': x.replace(" ", "_"),
+                'full_name': x,
+                'initial': "".join([word[0] for word in x.split()])
+            })()
+            persona_names.append(persona_obj)
+            persona_names_set.add(x)
 
-  persona_init_pos = []
-  file_count = []
-  for i in find_filenames(f"storage/{sim_code}/environment", ".json"):
-    x = i.split("/")[-1].strip()
-    if x[0] != ".": 
-      file_count += [int(x.split(".")[0])]
-  curr_json = f'storage/{sim_code}/environment/{str(max(file_count))}.json'
-  with open(curr_json) as json_file:  
-    persona_init_pos_dict = json.load(json_file)
-    for key, val in persona_init_pos_dict.items(): 
-      if key in persona_names_set: 
-        persona_init_pos += [[key, val["x"], val["y"]]]
+    persona_init_pos = []
+    file_count = []
+    for i in find_filenames(f"storage/{sim_code}/environment", ".json"):
+        x = i.split("/")[-1].strip()
+        if x[0] != ".": 
+            file_count += [int(x.split(".")[0])]
+    
+    curr_json = f'storage/{sim_code}/environment/{str(max(file_count))}.json'
+    with open(curr_json) as json_file:  
+        persona_init_pos_dict = json.load(json_file)
+        for key, val in persona_init_pos_dict.items(): 
+            if key in persona_names_set: 
+                persona_init_pos += [[key, val["x"], val["y"]]]
 
-  context = {"sim_code": sim_code,
-             "step": step,
-             "persona_names": persona_names,
-             "persona_init_pos": persona_init_pos, 
-             "mode": "replay"}
-  template = "home/home.html"
-  return render(request, template, context)
+    context = {"sim_code": sim_code,
+               "step": step,
+               "persona_names": persona_names,
+               "persona_init_pos": persona_init_pos, 
+               "mode": "replay"}
+    template = "home/home.html"
+    return render(request, template, context)
 
 
 def replay_persona_state(request, sim_code, step, persona_name): 
@@ -313,11 +348,425 @@ def path_tester_update(request):
 
   return HttpResponse("received")
 
+def wait_and_read_command_output(command, sim_code, timeout=30):
+    """等待并读取命令执行结果"""
+    import time
+    
+    temp_storage = "temp_storage"
+    output_file = f"{temp_storage}/command_output.json"
+    
+    start_time = time.time()
+    while time.time() - start_time < timeout:
+        if os.path.exists(output_file):
+            try:
+                with open(output_file, 'r') as f:
+                    output_data = json.load(f)
+                
+                os.remove(output_file)
+                
+                if output_data.get('command') == command:
+                    return {
+                        'success': output_data.get('success', True),
+                        'output': output_data.get('output', ''),
+                        'command_type': 'general'
+                    }
+                
+            except Exception as e:
+                continue
+        
+        time.sleep(0.5)
+    
+    return {
+        'success': False,
+        'error': f'Command timeout after {timeout} seconds. Reverie backend may not be running.'
+    }
 
+@csrf_exempt
+def execute_console_command(request):
+    """执行控制台命令 - 支持对话交互"""
+    print(f"📨 收到控制台命令请求: {request.method}")
+    
+    if request.method == 'POST':
+        try:
+            data = json.loads(request.body)
+            command = data.get('command', '').strip()
+            sim_code = data.get('sim_code')
+            
+            print(f"📋 命令: {command}")
+            print(f"📋 模拟代码: {sim_code}")
+            
+            if not command:
+                return JsonResponse({
+                    'success': False,
+                    'error': 'No command provided'
+                })
+            
+            # 特殊处理：help命令
+            if command.lower() == 'help':
+                return JsonResponse({
+                    'success': True,
+                    'output': get_console_help_text(),
+                    'command_type': 'help'
+                })
+            
+            # 特殊处理：status命令
+            if command.lower() in ['info', 'status']:
+                status_output = get_status_from_files(sim_code)
+                return JsonResponse({
+                    'success': True,
+                    'output': status_output,
+                    'command_type': 'status'
+                })
+            
+            # 检查命令类型
+            conversation_commands = ['converse as', 'converse with', 'say ', 'end_conversation']
+            long_running_commands = ['run', 'debug run']
+            is_conversation = any(command.lower().startswith(cmd) for cmd in conversation_commands)
+            is_long_running = any(command.lower().startswith(cmd) for cmd in long_running_commands)
+            
+            # 写入命令到文件
+            command_result = write_command_to_file(command, sim_code)
+            if not command_result['success']:
+                return JsonResponse(command_result)
+            
+            # 根据命令类型调整等待时间
+            if is_conversation:
+                timeout = 60  # 对话命令等待1分钟
+            elif is_long_running:
+                timeout = 600  # 长时间命令等待10分钟
+            else:
+                timeout = 30  # 普通命令等待30秒
+            
+            # 等待结果
+            output_result = wait_and_read_command_output(command, sim_code, timeout)
+            
+            # 如果是对话命令，添加特殊标记
+            if is_conversation:
+                output_result['command_type'] = 'conversation'
+            
+            return JsonResponse(output_result)
+            
+        except Exception as e:
+            import traceback
+            error_trace = traceback.format_exc()
+            print(f"❌ 控制台命令执行错误: {e}")
+            return JsonResponse({
+                'success': False,
+                'error': f'Error: {str(e)}',
+                'traceback': error_trace
+            })
+    
+    return JsonResponse({
+        'success': False,
+        'error': 'Invalid request method'
+    })
 
+def write_command_to_file(command, sim_code):
+    """将命令写入文件，供reverie后端读取"""
+    try:
+        # 确保temp_storage目录存在
+        temp_storage = "temp_storage"
+        if not os.path.exists(temp_storage):
+            os.makedirs(temp_storage)
+        
+        # 创建命令文件
+        command_data = {
+            "command": command,
+            "sim_code": sim_code,
+            "timestamp": datetime.datetime.now().isoformat(),
+            "status": "pending"
+        }
+        
+        command_file = f"{temp_storage}/frontend_command.json"
+        with open(command_file, "w") as outfile:
+            outfile.write(json.dumps(command_data, indent=2))
+        
+        # 创建一个信号文件，告诉后端有新命令
+        signal_file = f"{temp_storage}/command_ready.signal"
+        with open(signal_file, "w") as outfile:
+            outfile.write("ready")
+        
+        print(f"✅ 命令已写入文件: {command}")
+        return {'success': True}
+        
+    except Exception as e:
+        print(f"❌ 写入命令文件失败: {e}")
+        return {
+            'success': False,
+            'error': f'Failed to write command: {str(e)}'
+        }
 
+def get_status_from_files(sim_code):
+    """从文件系统读取模拟状态"""
+    try:
+        sim_folder = f"storage/{sim_code}"
+        if not os.path.exists(sim_folder):
+            return f"❌ Simulation folder not found: {sim_code}\n💡 请确保您已经通过reverie.py创建了这个模拟"
+        
+        # 读取meta信息
+        meta_file = f"{sim_folder}/reverie/meta.json"
+        if os.path.exists(meta_file):
+            with open(meta_file) as f:
+                meta_data = json.load(f)
+            
+            # 检查当前步数文件
+            temp_storage = "temp_storage"
+            current_step = meta_data.get('step', 0)
+            
+            # 尝试读取当前步数
+            curr_step_file = f"{temp_storage}/curr_step.json"
+            if os.path.exists(curr_step_file):
+                try:
+                    with open(curr_step_file) as f:
+                        step_data = json.load(f)
+                    current_step = step_data.get('step', current_step)
+                except:
+                    pass
+            
+            # 检查reverie是否正在运行
+            reverie_running = "❌ Not running"
+            command_file = f"{temp_storage}/frontend_command.json"
+            if os.path.exists(command_file):
+                reverie_running = "🟡 May be running (command file exists)"
+            
+            status_info = f"""
+🎮 Simulation Status (File-based):
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+🗂️ Simulation Code: {sim_code}
+📊 Current Step: {current_step}
+📅 Start Date: {meta_data.get('start_date', 'Unknown')}
+👥 Personas: {len(meta_data.get('persona_names', []))}
+🔧 Reverie Backend: {reverie_running}
 
+📋 Available personas:
+{chr(10).join([f"  • {name}" for name in meta_data.get('persona_names', [])])}
 
+💡 To interact with simulation, make sure reverie.py is running
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+"""
+            return status_info
+        else:
+            return f"❌ Meta file not found for simulation: {sim_code}"
+            
+    except Exception as e:
+        return f"❌ Error reading simulation info: {str(e)}"
 
+def get_console_help_text():
+    """返回控制台帮助文本"""
+    return """
+🎮 Reverie Console Commands (File-based Communication):
 
+📊 Simulation Control:
+  • status / info                 - Show simulation status from files
+  • save                          - Save simulation progress
+  • run <steps>                   - Run simulation for specified steps
+  • debug run <steps>             - Run simulation in debug mode
+  • print current time            - Show current simulation time
 
+👥 Persona Management:
+  • print all persona schedule    - Show all personas' schedules
+  • print persona schedule <name> - Show specific persona's schedule
+  • print persona associative memory (event) <name>   - Show event memory
+  • print persona associative memory (thought) <name> - Show thought memory
+  • print persona associative memory (chat) <name>    - Show chat memory
+
+💬 Interaction:
+  • converse with <persona>       - Start conversation with persona
+
+Examples:
+  status                                        # Check simulation status
+  run 10                                       # Run 10 steps
+  print persona schedule Isabella Rodriguez    # Check persona schedule
+  save                                         # Save simulation
+
+💡 Note: Commands are sent to reverie.py via files. Make sure reverie.py is running!
+"""
+
+import json
+import os
+from django.http import JsonResponse
+from django.views.decorators.csrf import csrf_exempt
+from django.views.decorators.http import require_http_methods
+
+@csrf_exempt
+@require_http_methods(["POST"])
+def create_pause_file(request):
+    """直接创建暂停文件，不通过命令队列"""
+    try:
+        # 获取temp_storage路径
+        current_dir = os.path.dirname(os.path.abspath(__file__))
+        project_root = os.path.dirname(os.path.dirname(os.path.dirname(current_dir)))
+        temp_storage = os.path.join(project_root, "environment", "frontend_server", "temp_storage")
+        
+        # 确保目录存在
+        os.makedirs(temp_storage, exist_ok=True)
+        
+        # 创建暂停文件
+        pause_file = os.path.join(temp_storage, "simulation_pause.flag")
+        
+        with open(pause_file, 'w') as f:
+            f.write('0')  # 写入暂停信号
+        
+        # 验证文件创建
+        if os.path.exists(pause_file):
+            print(f"✅ Pause file created successfully: {pause_file}")
+            return JsonResponse({
+                'success': True,
+                'message': 'Pause file created successfully',
+                'file_path': pause_file
+            })
+        else:
+            print(f"❌ Failed to create pause file: {pause_file}")
+            return JsonResponse({
+                'success': False,
+                'error': 'Failed to create pause file'
+            })
+            
+    except Exception as e:
+        print(f"❌ Error creating pause file: {e}")
+        return JsonResponse({
+            'success': False,
+            'error': str(e)
+        })
+
+@csrf_exempt
+@require_http_methods(["POST"])
+def check_pause_status(request):
+    """检查暂停状态，不通过命令队列"""
+    try:
+        # 获取temp_storage路径
+        current_dir = os.path.dirname(os.path.abspath(__file__))
+        project_root = os.path.dirname(os.path.dirname(os.path.dirname(current_dir)))
+        temp_storage = os.path.join(project_root, "environment", "frontend_server", "temp_storage")
+        
+        pause_file = os.path.join(temp_storage, "simulation_pause.flag")
+        running_file = os.path.join(temp_storage, "simulation_running.flag")
+        result_file = os.path.join(temp_storage, "frontend_result.json")
+        
+        # 尝试读取结果文件获取详细信息
+        execution_info = None
+        if os.path.exists(result_file):
+            try:
+                with open(result_file, 'r') as f:
+                    execution_info = json.load(f)
+            except Exception as e:
+                print(f"❌ 读取结果文件失败: {e}")
+        
+        if not os.path.exists(pause_file) and not os.path.exists(running_file):
+            status = "Pause file not found - simulation stopped"
+        elif os.path.exists(pause_file):
+            status = "Pause file exists - waiting for simulation to stop"
+        elif os.path.exists(running_file):
+            status = "Simulation is still running"
+        else:
+            status = "Unknown state"
+            
+        return JsonResponse({
+            'success': True,
+            'status': status,
+            'pause_file_exists': os.path.exists(pause_file),
+            'running_file_exists': os.path.exists(running_file),
+            'execution_info': execution_info  # 添加执行信息
+        })
+        
+    except Exception as e:
+        return JsonResponse({
+            'success': False,
+            'error': str(e)
+        })
+
+@csrf_exempt
+@require_http_methods(["POST"])
+def check_simulation_result(request):
+    """检查模拟执行结果"""
+    try:
+        # 获取temp_storage路径
+        current_dir = os.path.dirname(os.path.abspath(__file__))
+        project_root = os.path.dirname(os.path.dirname(os.path.dirname(current_dir)))
+        temp_storage = os.path.join(project_root, "environment", "frontend_server", "temp_storage")
+        
+        result_file = os.path.join(temp_storage, "frontend_result.json")
+        
+        if os.path.exists(result_file):
+            with open(result_file, 'r') as f:
+                result_data = json.load(f)
+            
+            return JsonResponse({
+                'success': True,
+                'result': result_data,
+                'file_exists': True
+            })
+        else:
+            return JsonResponse({
+                'success': True,
+                'result': None,
+                'file_exists': False,
+                'message': 'Result file not found - simulation may still be running'
+            })
+            
+    except Exception as e:
+        return JsonResponse({
+            'success': False,
+            'error': str(e)
+        })
+
+@csrf_exempt
+def get_available_roles(request):
+    """获取可用的预设角色列表"""
+    try:
+        # 尝试从不同路径导入角色管理模块
+        roles_data = {}
+        try:
+            # 直接读取 roles_data.json 文件
+            roles_file_path = os.path.join(os.path.dirname(__file__), '../../../reverie/backend_server/roles_data.json')
+            if os.path.exists(roles_file_path):
+                with open(roles_file_path, 'r', encoding='utf-8') as f:
+                    roles_json = json.load(f)
+                    roles_data = roles_json.get('predefined_roles', {})
+                    metadata = roles_json.get('metadata', {})
+            else:
+                # 如果文件不存在，返回空数据
+                roles_data = {}
+                metadata = {"error": "roles_data.json not found"}
+        except Exception as file_error:
+            print(f"⚠️ 无法读取角色文件: {file_error}")
+            # 尝试通过模块导入
+            try:
+                sys.path.append(os.path.join(os.path.dirname(__file__), '../../../reverie/backend_server'))
+                from roles_config import roles_manager
+                roles_data = roles_manager.get_all_roles()
+                metadata = roles_manager.get_metadata()
+            except Exception as import_error:
+                print(f"⚠️ 无法导入角色模块: {import_error}")
+                # 使用默认数据
+                roles_data = {
+                    "Wei Xu": "a new campus singer who just arrived and is passionate about music",
+                    "GMY": "a fashion designer who creates sustainable clothing and runs a small boutique",
+                    "Ge Jie": "a famous Bilibili actor who stars in the popular '介个不要' series",
+                    "Paimon": "a cute and helpful companion who assists travelers in the continent of Teyvat",
+                    "Kun": "a chicken who is a member of the 'chicken family' and has gift of playing basketball",
+                    "杰哥": "不要",
+                    "Ab": "A friedly man"
+                }
+                metadata = {"source": "fallback", "note": "Using default roles due to import error"}
+        
+        return JsonResponse({
+            'success': True,
+            'roles': roles_data,
+            'metadata': metadata,
+            'total_roles': len(roles_data),
+            'source': 'backend_api'
+        })
+        
+    except Exception as e:
+        import traceback
+        print(f"❌ Error getting roles: {e}")
+        traceback.print_exc()
+        
+        return JsonResponse({
+            'success': False,
+            'error': str(e),
+            'roles': {},
+            'metadata': {},
+            'source': 'error'
+        })

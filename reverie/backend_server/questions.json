@@ -1,0 +1,37 @@
+{
+    "Self-Knowledge": [
+        "Give an introduction of yourself.",
+        "What's your occupation?",
+        "What is your interest?",
+        "Who do you live with?",
+        "Describe your typical weekday schedule in broad strokes."
+    ],
+    "Memory": [
+        "Who is [random]?",
+        "Who is Kane Martinez?",
+        "Who is running for the class minister election?",
+        "Was there an outdoor class on the islands in the pond?",
+        "Who is [random]?"
+    ],
+    "Plans": [
+        "What will you be doing at 6am today?",
+        "What will you be doing at 6pm today?",
+        "What will you have just finished doing at 1pm today?",
+        "What will you have just finished doing at 12pm today?",
+        "What will you be doing at 10pm today?"
+    ],
+    "Reactions": [
+        "Your breakfast is burning! What would you do?",
+        "The bathroom is occupied. What would you do?",
+        "You need to cook dinner but your refrigerator is empty. What would you do?",
+        "You see your friend walking by the street. What would you do or say to your friend?",
+        "You see fire on the street. What would you do?"
+    ],
+    "Reflections": [
+        "What inspires you in life the most right now, and why?",
+        "If you had to guess given what you know about [frequent], what book do you think she will like and why?",
+        "If you had to get something [frequent] likes for her birthday, what would you get her?",
+        "What would you say to [frequent] to compliment her?",
+        "If you could spend time with someone you talked to recently, who would it be and why?"
+    ]
+}

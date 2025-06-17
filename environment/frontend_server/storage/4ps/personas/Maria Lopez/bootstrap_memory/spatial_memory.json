@@ -1,0 +1,75 @@
+{
+  "the Ville": {
+    "Oak Hill College": {
+      "hallway": [],
+      "library": [
+        "library sofa",
+        "library table",
+        "bookshelf"
+      ],
+      "classroom": [
+        "blackboard",
+        "classroom podium",
+        "classroom student seating"
+      ]
+    },
+    "The playground": {
+      "playground": [
+        "long jump pit"
+      ]
+    },
+    "Dorm for Oak Hill College": {
+      "garden": [
+        "dorm garden"
+      ],
+      "Maria Lopez's room": [
+        "closet",
+        "desk",
+        "bed",
+        "computer",
+        "blackboard"
+      ],
+      "woman's bathroom": [
+        "toilet",
+        "shower",
+        "bathroom sink"
+      ],
+      "common room": [
+        "common room sofa",
+        "pool table",
+        "common room table"
+      ],
+      "man's bathroom": [
+        "shower",
+        "bathroom sink",
+        "toilet"
+      ]
+    },
+    "Johnson Park": {
+      "park": [
+        "park garden"
+      ]
+    },
+    "The Rose and Crown Pub": {
+      "pub": [
+        "shelf",
+        "refrigerator",
+        "bar customer seating",
+        "behind the bar counter",
+        "kitchen sink",
+        "cooking area",
+        "microphone"
+      ]
+    },
+    "Hobbs Cafe": {
+      "cafe": [
+        "refrigerator",
+        "cafe customer seating",
+        "cooking area",
+        "kitchen sink",
+        "behind the cafe counter",
+        "piano"
+      ]
+    }
+  }
+}

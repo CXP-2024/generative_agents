@@ -103,6 +103,13 @@ class Scratch:
     #        ['working on her painting', 240], ... ['going to bed', 60]]
     self.f_daily_schedule_hourly_org = []
     
+		# # New structure for commitments
+    self.commitments = {
+        # Format: "YYYY-MM-DD": [{"time": "HH:MM", "duration": minutes, 
+        #                        "description": "activity description", 
+        #                        "with": "persona name", "location": "place"}]
+    }
+    
     # CURR ACTION 
     # <address> is literally the string address of where the action is taking 
     # place.  It comes in the form of 
@@ -211,6 +218,7 @@ class Scratch:
                                               "%B %d, %Y, %H:%M:%S")
       else: 
         self.curr_time = None
+      self.commitments = scratch_load["commitments"]
       self.act_duration = scratch_load["act_duration"]
       self.act_description = scratch_load["act_description"]
       self.act_pronunciatio = scratch_load["act_pronunciatio"]
@@ -278,6 +286,7 @@ class Scratch:
     scratch["importance_ele_n"] = self.importance_ele_n
     scratch["thought_count"] = self.thought_count
 
+    scratch["commitments"] = self.commitments
     scratch["daily_req"] = self.daily_req
     scratch["f_daily_schedule"] = self.f_daily_schedule
     scratch["f_daily_schedule_hourly_org"] = self.f_daily_schedule_hourly_org
@@ -344,7 +353,7 @@ class Scratch:
     curr_index = 0
     elapsed = 0
     for task, duration in self.f_daily_schedule: 
-      elapsed += duration
+      elapsed += duration # if duration = 0 , it will not work
       if elapsed > today_min_elapsed: 
         return curr_index
       curr_index += 1
@@ -450,7 +459,7 @@ class Scratch:
     return self.daily_plan_req
 
 
-  def get_str_curr_date_str(self): 
+  def get_str_curr_date_str(self):
     return self.curr_time.strftime("%A %B %d")
 
 
@@ -479,6 +488,36 @@ class Scratch:
               self.act_obj_event[1], 
               self.act_obj_event[2],
               self.act_obj_description)
+    
+  def calculate_activity_start_time(self):
+    """
+    Calculates the actual start time of the current activity based on the daily schedule
+    and the current time.
+    
+    Returns:
+        datetime: The actual start time of the current activity
+    """
+    # Create a copy of current time to use as our reference point
+    reference_time = datetime.datetime.strptime(
+        self.curr_time.strftime("%B %d, %Y, 00:00:00"), 
+        "%B %d, %Y, %H:%M:%S"
+    )
+    
+    total_minutes = 0
+    current_minutes = self.curr_time.hour * 60 + self.curr_time.minute
+    
+    # Iterate through the daily schedule to find the activity that should be happening now
+    for i, (activity, duration) in enumerate(self.f_daily_schedule):
+        if total_minutes + duration > current_minutes:
+            # This is the current activity
+            activity_start_time = reference_time + datetime.timedelta(minutes=total_minutes)
+            return activity_start_time
+        
+        total_minutes += duration
+    
+    # If we've gone through all activities without finding a match,
+    # use the last activity's start time
+    return reference_time + datetime.timedelta(minutes=max(0, total_minutes - duration))
 
 
   def add_new_action(self, 
@@ -510,8 +549,11 @@ class Scratch:
     self.act_obj_description = act_obj_description
     self.act_obj_pronunciatio = act_obj_pronunciatio
     self.act_obj_event = act_obj_event
-    
-    self.act_start_time = self.curr_time
+
+    self.act_start_time = self.calculate_activity_start_time() if not act_start_time else act_start_time
+    if chatting_with:
+      self.act_start_time = self.curr_time
+    print("\033[0;33m-----in add_new_action------", self.name, " save the action now. Event:", action_event, " Current time:", self.curr_time, "This act start time: ", self.act_start_time, "-----\033[0m")
     
     self.act_path_set = False
 
@@ -553,8 +595,14 @@ class Scratch:
         x = (x + datetime.timedelta(minutes=1))
       end_time = (x + datetime.timedelta(minutes=self.act_duration))
 
-    if end_time.strftime("%H:%M:%S") == self.curr_time.strftime("%H:%M:%S"): 
+    print("\033[0;33m ", self.name, " current time: ", self.curr_time.strftime("%H:%M:%S"),"end time: ", end_time.strftime("%H:%M:%S"), "\033[0m")
+    if end_time.strftime("%H:%M:%S") <= self.curr_time.strftime("%H:%M:%S"):
+      if end_time.strftime("%H:%M:%S") == "00:00:00" and self.curr_time.strftime("%H:%M:%S") >= "15:00:00": # suppose the last one event won't lay before the 15:00 P.M.
+        print(f"Action not finished: {self.name} is still doing {self.act_description}")
+        return False
+      print(f"Action finished: {self.name} is done with {self.act_description}")
       return True
+    print(f"Action not finished: {self.name} is still doing {self.act_description}")
     return False
 
 

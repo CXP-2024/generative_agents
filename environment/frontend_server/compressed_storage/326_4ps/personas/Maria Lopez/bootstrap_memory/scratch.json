@@ -1,0 +1,237 @@
+{
+  "vision_r": 8,
+  "att_bandwidth": 8,
+  "retention": 8,
+  "curr_time": "February 14, 2023, 03:05:00",
+  "curr_tile": [
+    123,
+    57
+  ],
+  "daily_plan_req": "Here\u2019s Maria Lopez\u2019s plan for **Tuesday, February 14**, balancing her priorities and routines:    1. **Wake up and complete the morning routine at 9:00 AM** \u2013 Catching up on rest after the late-night long jump practice, then a quick breakfast and review of her schedule.   2. **Physics study session at Oak Hill College (11:00 AM\u20132:00 PM)** \u2013 Focusing on coursework before the afternoon\u2019s events.   3. **Quick stop at Hobbs Caf\u00e9 (3:00 PM\u20135:00 PM)** \u2013 Grabs coffee, confirms the Valentine\u2019s party details with Arthur, and preps stream ideas if time allows.   4. **Arthur\u2019s long jump competition (time permitting) / Stream prep (flexible, ~1 hour)** \u2013 Cheering for Arthur if his event is today, otherwise refining stream content.   5. **Valentine\u2019s Day Party at Hobbs Caf\u00e9 (evening, ~7:00 PM onward)** \u2013 Celebrating with friends and supporting Arthur after his big day.   6. **Long jump practice with Arthur at the playground (12:30 AM\u20132:30 AM, February 15)** \u2013 Winding down the day with training before sleeping by **3:00 AM**.    Maria squeezes in gaming/streaming where possible to meet her 3-hour goal, likely late-night if not earlier in the day.",
+  "name": "Maria Lopez",
+  "first_name": "Maria",
+  "last_name": "Lopez",
+  "age": 21,
+  "innate": "energetic, enthusiastic, inquisitive",
+  "learned": "Maria Lopez is a student at Oak Hill College studying physics and a part time Twitch game streamer who loves to connect with people and explore new ideas.",
+  "currently": "**Status:** On **Tuesday, February 14**, Maria Lopez is balancing her packed schedule with determination and enthusiasm. After staying up late for her **long jump practice session with Arthur Burton at the playground (12:30 AM\u20132:30 AM)**, she managed to wind down and sleep by **3:00 AM**. Despite the short rest, she\u2019s focused on her priorities for the day:  \n\n1. **Valentine\u2019s Day Party at Hobbs Caf\u00e9 (evening, exact time TBD)**: Maria plans to attend the party to support Arthur, especially after his long jump competition and his bold move to ask Isabella out. She\u2019ll confirm the details with Arthur or the caf\u00e9 later in the day.  \n\n2. **Arthur\u2019s Long Jump Competition (time/location TBD)**: Maria wants to cheer him on if his competition is today but needs to check the specifics.  \n\n3. **Streaming Prep**: Though no stream is scheduled, she may carve out time to refine her ideas for future content, as noted on **Monday (February 13, 10:05 PM)**.  \n\n4. **Sleep Recovery**: With her late-night training, Maria is mindful of avoiding oversleeping while ensuring she has enough energy for the day.  \n\nMaria\u2019s day reflects her commitment to her passions\u2014physics, streaming, friendship, and athletics\u2014even if it means pushing her limits. She\u2019s excited for the Valentine\u2019s party and Arthur\u2019s big moments, but also aware of the need to stay organized amid the chaos.",
+  "lifestyle": "Maria Lopez goes to bed around 3am, awakes up around 9am, eats dinner around 6pm. She likes to hang out at Hobbs Cafe if it's before 6pm.",
+  "living_area": "the Ville:Dorm for Oak Hill College:Maria Lopez's room",
+  "concept_forget": 100,
+  "daily_reflection_time": 180,
+  "daily_reflection_size": 5,
+  "overlap_reflect_th": 4,
+  "kw_strg_event_reflect_th": 10,
+  "kw_strg_thought_reflect_th": 9,
+  "recency_w": 1,
+  "relevance_w": 1,
+  "importance_w": 1,
+  "recency_decay": 0.99,
+  "importance_trigger_max": 150,
+  "importance_trigger_curr": 46,
+  "importance_ele_n": 34,
+  "thought_count": 5,
+  "daily_req": [
+    "wake up and complete the morning routine at 9:00 am",
+    "Wake up and complete the morning routine at 9:00 am",
+    "Have breakfast and review physics notes at 9:30 am",
+    "Stream games on Twitch from 10:00 am to 1:00 pm",
+    "Study physics at Hobbs Cafe from 1:30 pm to 4:30 pm",
+    "Grab a snack and chat with friends at Hobbs Cafe from 4:30 pm to 5:00 pm",
+    "Have dinner at 6:00 pm",
+    "Relax and watch gaming content or brainstorm new stream ideas from 7:00 pm to 8:00 pm",
+    "Stream games on Twitch from 8:00 pm to 10:00 pm",
+    "Meet Arthur Burton and go long jumping at the playground from 0:30 am to 2:30 am (Tuesday February 14",
+    "Wind down and go to bed by 3:00 am (Tuesday February 14"
+  ],
+  "f_daily_schedule": [
+    [
+      "warming up with light stretches",
+      15
+    ],
+    [
+      "jogging around the playground to get her heart rate up",
+      10
+    ],
+    [
+      "practicing short run-ups to the jump line",
+      20
+    ],
+    [
+      "working on her takeoff technique with Arthur\u2019s feedback",
+      25
+    ],
+    [
+      "taking a short water break",
+      5
+    ],
+    [
+      "doing full long jump attempts, measuring distance",
+      30
+    ],
+    [
+      "reviewing jump recordings with Arthur to analyze form",
+      20
+    ],
+    [
+      "adjusting her approach based on feedback",
+      25
+    ],
+    [
+      "cooling down with light stretches",
+      15
+    ],
+    [
+      "packing up her gear and heading home",
+      15
+    ],
+    [
+      "sleeping",
+      360
+    ],
+    [
+      "waking up and completing her morning routine",
+      60
+    ],
+    [
+      "streaming games on Twitch",
+      180
+    ],
+    [
+      "studying physics at Hobbs Cafe",
+      240
+    ],
+    [
+      "grabbing a snack and chatting with friends at Hobbs Cafe",
+      60
+    ],
+    [
+      "having dinner at home",
+      60
+    ],
+    [
+      "relaxing and watching gaming content or brainstorming new stream ideas",
+      60
+    ],
+    [
+      "streaming games on Twitch",
+      180
+    ],
+    [
+      "winding down and preparing for bed",
+      60
+    ],
+    [
+      "sleeping",
+      0
+    ],
+    [
+      "sleeping",
+      0
+    ],
+    [
+      "sleeping",
+      0
+    ],
+    [
+      "sleeping",
+      0
+    ],
+    [
+      "sleeping",
+      0
+    ],
+    [
+      "sleeping",
+      0
+    ],
+    [
+      "sleeping",
+      0
+    ],
+    [
+      "sleeping",
+      0
+    ],
+    [
+      "sleeping",
+      0
+    ],
+    [
+      "sleeping",
+      0
+    ],
+    [
+      "sleeping",
+      0
+    ]
+  ],
+  "f_daily_schedule_hourly_org": [
+    [
+      "practicing long jump with Arthur Burton at the playground",
+      180
+    ],
+    [
+      "sleeping",
+      360
+    ],
+    [
+      "waking up and completing her morning routine",
+      60
+    ],
+    [
+      "streaming games on Twitch",
+      180
+    ],
+    [
+      "studying physics at Hobbs Cafe",
+      240
+    ],
+    [
+      "grabbing a snack and chatting with friends at Hobbs Cafe",
+      60
+    ],
+    [
+      "having dinner at home",
+      60
+    ],
+    [
+      "relaxing and watching gaming content or brainstorming new stream ideas",
+      60
+    ],
+    [
+      "streaming games on Twitch",
+      180
+    ],
+    [
+      "winding down and preparing for bed",
+      60
+    ]
+  ],
+  "act_address": "the Ville:Dorm for Oak Hill College:Maria Lopez's room:bed",
+  "act_start_time": "February 14, 2023, 03:00:00",
+  "act_duration": 360,
+  "act_description": "sleeping",
+  "act_pronunciatio": "\ud83d\ude34",
+  "act_event": [
+    "Maria Lopez",
+    "is",
+    "sleep"
+  ],
+  "act_obj_description": "being slept on",
+  "act_obj_pronunciatio": "\ud83d\udca4\ud83d\udecc",
+  "act_obj_event": [
+    "bed",
+    "is",
+    "unused"
+  ],
+  "chatting_with": null,
+  "chat": null,
+  "chatting_with_buffer": {
+    "Arthur Burton": 633,
+    "Klaus Mueller": 640
+  },
+  "chatting_end_time": null,
+  "act_path_set": true,
+  "planned_path": []
+}

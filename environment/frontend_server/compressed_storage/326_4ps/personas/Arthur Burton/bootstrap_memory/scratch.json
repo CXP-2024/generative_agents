@@ -1,0 +1,307 @@
+{
+  "vision_r": 8,
+  "att_bandwidth": 8,
+  "retention": 8,
+  "curr_time": "February 14, 2023, 03:05:00",
+  "curr_tile": [
+    56,
+    42
+  ],
+  "daily_plan_req": "Here\u2019s Arthur Burton\u2019s broad-strokes plan for **Tuesday, February 14** (Valentine\u2019s Day), incorporating his lifestyle and current priorities:    1. **Wake up and morning run (7:00 AM - 8:00 AM)**: Arthur springs awake at 7:00 AM, fueled by nervous excitement. He jogs around the playground, mentally rehearsing the day\u2019s plans with Isabella.   2. **Breakfast and caf\u00e9 prep at Hobbs Caf\u00e9 (8:00 AM - 4:00 PM)**: He heads to Hobbs Caf\u00e9 for breakfast, lingering to chat with Isabella (if she\u2019s there early) and offering to help decorate for the Valentine\u2019s party. He stays most of the day, savoring meals and stealing glances at her.   3. **Valentine\u2019s Party at Hobbs Caf\u00e9 (evening, exact time TBD)**: Once the party starts, Arthur sticks close to Isabella, sharing pastries and laughter. He seizes a quiet moment to confirm their post-party dessert plans (or surprise her with a handwritten note).   4. **Midnight long jump practice (12:00 AM - 2:30 AM, Feb 15)**: Though exhausted, Arthur channels his emotions into training\u2014jumping with extra vigor, imagining a future where he wins *for her*. Returns to the playground by 3:00 AM, replaying the day\u2019s highlights as he falls asleep.    *Note:* If the party runs late, he may adjust training. His top priority is maximizing time with Isabella.",
+  "name": "Arthur Burton",
+  "first_name": "Arthur",
+  "last_name": "Burton",
+  "age": 42,
+  "innate": "friendly, outgoing, generous",
+  "learned": "Arthur Burton is a tramp who loves running and jumping. He is very good at long jump, and he always says that he is the best long jumper in the Ville. But he is very poor, and he has to sleep on the playground.",
+  "currently": "**Status:** *Tuesday, February 14, 2023*  \nArthur Burton wakes up with a mix of excitement and nervous energy, his mind still replaying the success of yesterday\u2019s long jump competition and Isabella Rodriguez\u2019s enthusiastic support. Today is Valentine\u2019s Day\u2014a day he\u2019s been both anticipating and meticulously planning for.  \n\n1. **Valentine\u2019s Party at Hobbs Caf\u00e9**: Isabella is decorating the caf\u00e9 for the event, and Arthur is determined to arrive on time (exact timing still to be confirmed with her) to enjoy the pastries she promised him. He\u2019s eager to see her again and soak in the festive atmosphere.  \n2. **Follow-up on Yesterday\u2019s Date Plans**: After successfully asking Isabella out after the competition (*around 6:00 PM on the 13th*), they tentatively discussed getting dessert at a nearby caf\u00e9 (*mentioned at 8:50 PM*). Today, Arthur wants to finalize those plans or perhaps surprise her with a romantic gesture.  \n3. **Future Conversations**: Last night (*9:45 PM*), they talked about future aspirations, and Arthur plans to revisit those topics today, hoping to deepen their connection.  \n4. **Rest and Preparation**: Aware of his late-night training session (*until 2:30 AM*), Arthur reminds himself to stay sharp for the day ahead. He wants to be fully present for Isabella, whether at the party or during their time together.  \n\n**Key Timing Notes for February 14**:  \n- **Valentine\u2019s Party at Hobbs Caf\u00e9** (evening, exact time TBD\u2014Arthur needs to confirm with Isabella).  \n- **Potential follow-up date activities** (if not solidified yesterday).  \n\n*Emotionally, Arthur is riding high from yesterday\u2019s victories\u2014both in the competition and with Isabella. While he\u2019s slightly anxious about making today perfect, his predominant feeling is unwavering determination to show Isabella how much she means to him. Every glance, every word between them fuels his hope for something lasting. Today isn\u2019t just Valentine\u2019s Day\u2014it\u2019s another chance to prove he\u2019s all in.*",
+  "lifestyle": "Arthur Burton sleeps around 3am, awakes up around 7am",
+  "living_area": "the Ville:The playground:playground",
+  "concept_forget": 100,
+  "daily_reflection_time": 180,
+  "daily_reflection_size": 5,
+  "overlap_reflect_th": 4,
+  "kw_strg_event_reflect_th": 10,
+  "kw_strg_thought_reflect_th": 9,
+  "recency_w": 1,
+  "relevance_w": 1,
+  "importance_w": 1,
+  "recency_decay": 0.995,
+  "importance_trigger_max": 250,
+  "importance_trigger_curr": 140,
+  "importance_ele_n": 26,
+  "thought_count": 5,
+  "daily_req": [
+    "wake up and complete the morning routine at 7:00 am",
+    "Wake up and complete morning routine at 7:00 am",
+    "Run on the playground from 7:10 am to 8:00 am",
+    "Go to Hobbs Cafe for breakfast at 8:00 am",
+    "Stay at Hobbs Cafe (hoping to see Isabella Rodriguez",
+    "Have lunch at Hobbs Cafe at 12:00 pm",
+    "Continue staying at Hobbs Cafe (waiting for Isabella",
+    "Have dinner at Hobbs Cafe at 4:00 pm",
+    "Attend long jump competition with Isabella Rodriguez at 5:00 pm",
+    "Ask Isabella Rodriguez out on a date after the competition (around 6:00 pm",
+    "Practice long jump at the jumping pit from 12:00 am to 2:30 am",
+    "Return to the playground to sleep by 3:00 am"
+  ],
+  "f_daily_schedule": [
+    [
+      "warming up with light stretches",
+      15
+    ],
+    [
+      "jogging around the jumping pit to get his blood flowing",
+      10
+    ],
+    [
+      "practicing his run-up technique",
+      20
+    ],
+    [
+      "performing long jumps, focusing on form",
+      30
+    ],
+    [
+      "taking a short water break",
+      5
+    ],
+    [
+      "analyzing his jumps and adjusting his approach",
+      15
+    ],
+    [
+      "practicing explosive take-offs",
+      20
+    ],
+    [
+      "visualizing successful jumps",
+      10
+    ],
+    [
+      "performing another set of long jumps",
+      25
+    ],
+    [
+      "cooling down with light stretches",
+      15
+    ],
+    [
+      "packing up his gear",
+      10
+    ],
+    [
+      "walking back to the playground",
+      5
+    ],
+    [
+      "sleeping",
+      240
+    ],
+    [
+      "waking up and completing his morning routine, and at around 07:10, will start running on the playground",
+      60
+    ],
+    [
+      "going to Hobbs Caf\u00e9 for breakfast, hoping to see Isabella Rodriguez",
+      60
+    ],
+    [
+      "staying at Hobbs Caf\u00e9, chatting with staff and hoping to see Isabella Rodriguez",
+      60
+    ],
+    [
+      "staying at Hobbs Caf\u00e9, helping with decorations and waiting for Isabella Rodriguez",
+      60
+    ],
+    [
+      "staying at Hobbs Caf\u00e9, chatting with staff and waiting for Isabella Rodriguez",
+      60
+    ],
+    [
+      "having lunch at Hobbs Caf\u00e9, still hoping to see Isabella Rodriguez",
+      60
+    ],
+    [
+      "staying at Hobbs Caf\u00e9, chatting with staff and waiting for Isabella Rodriguez",
+      180
+    ],
+    [
+      "having dinner at Hobbs Caf\u00e9, still waiting for Isabella Rodriguez",
+      60
+    ],
+    [
+      "attending the long jump competition with Isabella Rodriguez",
+      60
+    ],
+    [
+      "asking Isabella Rodriguez out on a date after the competition",
+      60
+    ],
+    [
+      "having dessert at a nearby caf\u00e9 with Isabella Rodriguez, enjoying their time together and deepening their connection",
+      60
+    ],
+    [
+      "having a romantic conversation with Isabella Rodriguez at the caf\u00e9, discussing future aspirations and plans together",
+      60
+    ],
+    [
+      "returning to the playground, replaying the day's highlights with Isabella Rodriguez in his mind",
+      60
+    ],
+    [
+      "practicing long jump at the jumping pit, and at around 10:45, will start winding down for the night",
+      60
+    ],
+    [
+      "practicing long jump at the jumping pit, and at around 11:45, will start winding down for the night",
+      60
+    ],
+    [
+      "sleeping",
+      0
+    ],
+    [
+      "sleeping",
+      0
+    ],
+    [
+      "sleeping",
+      0
+    ],
+    [
+      "sleeping",
+      0
+    ],
+    [
+      "sleeping",
+      0
+    ],
+    [
+      "sleeping",
+      0
+    ],
+    [
+      "sleeping",
+      0
+    ],
+    [
+      "sleeping",
+      0
+    ],
+    [
+      "sleeping",
+      0
+    ],
+    [
+      "sleeping",
+      0
+    ],
+    [
+      "sleeping",
+      0
+    ],
+    [
+      "sleeping",
+      0
+    ]
+  ],
+  "f_daily_schedule_hourly_org": [
+    [
+      "practicing long jump at the jumping pit",
+      180
+    ],
+    [
+      "sleeping",
+      240
+    ],
+    [
+      "waking up and completing his morning routine, and at around 07:10, will start running on the playground",
+      60
+    ],
+    [
+      "going to Hobbs Caf\u00e9 for breakfast, hoping to see Isabella Rodriguez",
+      60
+    ],
+    [
+      "staying at Hobbs Caf\u00e9, chatting with staff and hoping to see Isabella Rodriguez",
+      60
+    ],
+    [
+      "staying at Hobbs Caf\u00e9, helping with decorations and waiting for Isabella Rodriguez",
+      60
+    ],
+    [
+      "staying at Hobbs Caf\u00e9, chatting with staff and waiting for Isabella Rodriguez",
+      60
+    ],
+    [
+      "having lunch at Hobbs Caf\u00e9, still hoping to see Isabella Rodriguez",
+      60
+    ],
+    [
+      "staying at Hobbs Caf\u00e9, chatting with staff and waiting for Isabella Rodriguez",
+      180
+    ],
+    [
+      "having dinner at Hobbs Caf\u00e9, still waiting for Isabella Rodriguez",
+      60
+    ],
+    [
+      "attending the long jump competition with Isabella Rodriguez",
+      60
+    ],
+    [
+      "asking Isabella Rodriguez out on a date after the competition",
+      60
+    ],
+    [
+      "having dessert at a nearby caf\u00e9 with Isabella Rodriguez, enjoying their time together and deepening their connection",
+      60
+    ],
+    [
+      "having a romantic conversation with Isabella Rodriguez at the caf\u00e9, discussing future aspirations and plans together",
+      60
+    ],
+    [
+      "returning to the playground, replaying the day's highlights with Isabella Rodriguez in his mind",
+      60
+    ],
+    [
+      "practicing long jump at the jumping pit, and at around 10:45, will start winding down for the night",
+      60
+    ],
+    [
+      "practicing long jump at the jumping pit, and at around 11:45, will start winding down for the night",
+      60
+    ]
+  ],
+  "act_address": "the Ville:The playground:playground:long jump pit",
+  "act_start_time": "February 14, 2023, 03:00:00",
+  "act_duration": 240,
+  "act_description": "sleeping",
+  "act_pronunciatio": "\ud83d\ude34",
+  "act_event": [
+    "Arthur Burton",
+    "is",
+    "sleep"
+  ],
+  "act_obj_description": "being used for practice",
+  "act_obj_pronunciatio": "\ud83c\udfaf\ud83d\udcda",
+  "act_obj_event": [
+    "long jump pit",
+    "is",
+    "used for practice"
+  ],
+  "chatting_with": null,
+  "chat": null,
+  "chatting_with_buffer": {
+    "Isabella Rodriguez": 583,
+    "Klaus Mueller": 624,
+    "Maria Lopez": 631
+  },
+  "chatting_end_time": null,
+  "act_path_set": true,
+  "planned_path": []
+}

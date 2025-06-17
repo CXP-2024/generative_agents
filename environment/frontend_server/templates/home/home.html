@@ -5,75 +5,3640 @@
 <br>
 <br>
 <div>
-	<div id="game-container" style="text-align: center"></div>
+    <div id="game-container" style="text-align: center"></div>
 
-	<div style="width:55%; margin: 0 auto; margin-top:4.5em">
-		<h3 style="margin-bottom:-0.5em; font-size:1.5em">Current Time:</h3>
-		<div class="row">
-			<div class="col-md-8" id="game-time" style="">
-				<h2><span id="game-time-content"></span></h2> 
-			</div>
-			<div class="col-md-4">
-				
-				<h2 style="text-align: right; {% if mode == 'simulate' %} display: none {% endif %}">
-					<button id="play_button" type="button" class="btn btn-default">
-				    <strong style=" font-size:1.2em"><i class="glyphicon glyphicon-play"></i> &nbsp;Play</strong>
-				  </button>
-				  
-				  <button id="pause_button" type="button" class="btn btn-default">
-				    <strong style=" font-size:1.2em"><i class="glyphicon glyphicon-pause"></i> &nbsp;Pause</strong>
-				  </button>
+    <div style="width:100%; max-width: 1200px; margin: 0 auto; margin-top:4.5em; padding: 0 15px;">
+        <!-- 时间显示模块 - GitHub风格面板 -->
+        <div class="row" style="margin-bottom: 25px;">
+            <div class="col-md-10 col-md-offset-1 col-sm-12 col-xs-12">
+                <div class="panel panel-default control-panel">
+                    <div class="panel-heading control-panel-header" style="padding: 15px 20px;">
+                        <h4 class="panel-title" style="color: white; margin: 0;">
+                            <i class="glyphicon glyphicon-time" style="margin-right: 8px;"></i>
+                            Current Time
+                        </h4>
+                    </div>
+                    
+                    <div class="panel-body" style="padding: 25px;">
+                        <div class="row">
+                            <div class="col-md-8" id="game-time" style="">
+                                <h2 style="margin: 0; color: #24292f; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans', Helvetica, Arial, sans-serif;">
+                                    <span id="game-time-content"></span>
+                                </h2> 
+                            </div>
+                            <div class="col-md-4">
+                                <div style="text-align: right; {% if mode == 'simulate' %} display: none {% endif %}">
+                                    <button id="play_button" type="button" class="github-btn github-btn-primary" style="margin-right: 8px;">
+                                        <i class="glyphicon glyphicon-play"></i>
+                                        Play
+                                    </button>
+                                    
+                                    <button id="pause_button" type="button" class="github-btn github-btn-secondary">
+                                        <i class="glyphicon glyphicon-pause"></i>
+                                        Pause
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- 优化后的控制面板 -->
+        <div class="row" style="margin-bottom: 25px;">
+            <div class="col-md-12">
+                <div class="panel panel-default control-panel">
+                    <div class="panel-heading control-panel-header" style="padding: 15px 20px;">
+                        <h4 class="panel-title" style="color: white; margin: 0;">
+                            <i class="glyphicon glyphicon-dashboard" style="margin-right: 8px;"></i>
+                            Simulation Control Center
+                        </h4>
+                    </div>
+                    
+                    <div class="panel-body control-panel-body" style="padding: 25px;">
+                        <!-- 第一行：状态显示区居中 -->
+                        <div class="row" style="margin-bottom: 20px;">
+                            <div class="col-md-12">
+                                <div style="text-align: center;">
+                                    <div id="command-status" class="status-display" style="display: inline-block; margin: 0;">
+                                        Ready to execute commands
+                                    </div>
+                                    <div id="simulation-status" class="simulation-status-display" style="display: none; margin-top: 6px;">
+                                        <span id="status-icon">⏸️</span> <span id="status-text">Ready</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- 第二行：Steps输入框和操作按钮 - 居中显示 -->
+                        <div class="row" style="margin-bottom: 20px;">
+                            <div class="col-md-12">
+                                <div class="steps-controls-container">
+                                    <div class="steps-input-wrapper">
+                                        <div class="steps-input-group">
+                                            <label for="step-input" class="steps-label">Steps</label>
+                                            <input type="number" id="step-input" class="form-control steps-input" value="5" min="1" max="100">
+                                        </div>
+                                    </div>
+                                    <div class="github-buttons-container">
+                                        <button class="github-btn github-btn-primary" onclick="runSimulation()" id="run-btn">
+                                            <i class="glyphicon glyphicon-play"></i>
+                                            Run
+                                        </button>
+                                        <button class="github-btn github-btn-secondary" onclick="pauseSimulation()" id="pause-btn" disabled>
+                                            <i class="glyphicon glyphicon-pause"></i>
+                                            Pause
+                                        </button>
+                                        <button class="github-btn github-btn-tertiary" onclick="saveSimulation()">
+                                            <i class="glyphicon glyphicon-floppy-disk"></i>
+                                            Save
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
 
-				</h2>
-				
-			</div>
-		</div>
+                        <hr style="border-color: #e9ecef; margin: 20px 0;">
 
-		<br>
-		<hr style="border-color:#999999">
-		<br>
+                        <!-- 对话控制区 - 居中显示 -->
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="roleplay-controls-container">
+                                    <div class="roleplay-controls-wrapper">
+                                        <!-- Persona选择 -->
+                                        <div class="roleplay-control-item">
+                                            <label for="persona-select" class="roleplay-label">
+                                                <i class="glyphicon glyphicon-user"></i>Persona
+                                            </label>
+                                            <select id="persona-select" class="form-control github-select roleplay-select">
+                                                <option value="">Choose persona...</option>
+                                                {% for p in persona_names %}
+                                                <option value="{{p.original}}">{{p.original}}</option>
+                                                {% endfor %}
+                                            </select>
+                                        </div>
+                                        
+                                        <!-- Your Role输入 -->
+                                        <div class="roleplay-control-item">
+                                            <label for="role-input" class="roleplay-label">
+                                                <i class="glyphicon glyphicon-tag"></i>Your Role
+                                                <small style="color: #666; font-weight: normal; margin-left: 8px;">
+                                                    <a href="#" onclick="showAvailableRoles(); return false;" style="color: #0366d6; text-decoration: none;">
+                                                        💡 Show available roles
+                                                    </a>
+                                                </small>
+                                            </label>
+                                            <div class="role-input-wrapper">
+                                                <input type="text" id="role-input" class="form-control github-input roleplay-input" placeholder="Wei Xu" value="Wei Xu">
+                                                <div id="role-suggestions" class="role-suggestions" style="display: none;"></div>
+                                            </div>
+                                        </div>
+                                        
+                                        <!-- 按钮组 -->
+                                        <div class="roleplay-control-item roleplay-buttons">
+                                            <div class="conversation-buttons-container">
+                                                <button class="github-btn github-btn-success" onclick="startConversationAs()">
+                                                    <i class="glyphicon glyphicon-user"></i> Converse As
+                                                </button>
+                                                <button class="github-btn github-btn-primary" onclick="startConversationWith()">
+                                                    <i class="glyphicon glyphicon-comment"></i> New Role
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
 
-		{% for p_name, p_name_os in persona_names %}
-			<div class="media" style="background-color:#EEEEEE; padding:1em; padding-left:3.5em; padding-right:2em; border-radius:10px">
-			  <div class="media-left media-middle">
-			    <a href="#">
-			      <img class="media-object" src="{% static 'img/atlas.png' %}" style="width:5em">
-			    </a>
-			  </div>
-			  <div class="media-body" style='padding-left:3em; padding-top:0.5em; padding-bottom:1em'>
-			  	<div class="row">
-			    	<h2 class="col-md-8" id="name__{{ p_name_os }}" style="margin-bottom:0.8em; font-size:1.85em; ">
-			    		{{p_name}} &nbsp;&nbsp;
-			    		<a href="{% url 'replay_persona_state' sim_code step p_name_os %}" style="font-size:0.6em">State Details</a>
-			    	</h2>
-			    </div>
-			    <div style="">
-					  <p style="font-size:1.2em"><strong>Current Action:</strong> <br><span id="current_action__{{ p_name_os }}"></span></p>
-					  <p style="font-size:1.2em"><strong>Location:</strong> <br><span id="target_address__{{ p_name_os }}"></span></p>
-					  <p style="font-size:1.2em"><strong>Current Conversation:</strong> <br><span id="chat__{{ p_name_os }}"></span></p>
-					</div>
-			  </div>
-			</div>	
-			<br>
-		{% endfor %}
+        <!-- 角色显示区域 - GitHub风格面板 -->
+        <div class="row" style="margin-bottom: 25px;">
+            <div class="col-md-10 col-md-offset-1 col-sm-12 col-xs-12">
+                <div class="panel panel-default control-panel">
+                    <div class="panel-heading control-panel-header" style="padding: 15px 20px;">
+                        <h4 class="panel-title" style="color: white; margin: 0;">
+                            <i class="glyphicon glyphicon-user" style="margin-right: 8px;"></i>
+                            Agent Status Overview
+                        </h4>
+                    </div>
+                    
+                    <div class="panel-body" style="padding: 25px;">
+                            <div class="agents-grid">
+                            {% for p in persona_names %}
+                            <div class="agent-card" id="on_screen_det_trigger-{{p.underscore}}">
+                                <div class="agent-avatar-section">
+                                    {% with 'assets/characters/profile/'|add:p.underscore|add:'.png' as image_static %}
+                                    <img src="{% static image_static %}" class="agent-avatar" alt="{{p.original}}">
+                                    {% endwith %}
+                                    <div class="agent-name">{{ p.initial }}</div>
+                                </div>
+                                <div class="agent-status-section">
+                                    <div class="agent-emoji" id="quick_emoji-{{p.underscore}}">🤔</div>
+                                    <div class="agent-status-text">Ready</div>
+                                </div>
+                            </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
 
+        <!-- Agent详情显示区域 - GitHub风格 -->
+        <div class="row" style="margin-bottom: 25px;">
+            <div class="col-md-10 col-md-offset-1 col-sm-12 col-xs-12">
+                <div class="panel panel-default control-panel">
+                    <div class="panel-heading control-panel-header" style="padding: 15px 20px;">
+                        <h4 class="panel-title" style="color: white; margin: 0;">
+                            <i class="glyphicon glyphicon-info-circle" style="margin-right: 8px;"></i>
+                            Agent Details
+                        </h4>
+                    </div>
+                    
+                    <div class="panel-body" style="padding: 25px;">
+                        <!-- 初始提示信息 -->
+                        <div id="on_screen_det_content-init">
+                            <div class="agent-detail-placeholder">
+                                <i class="glyphicon glyphicon-info-sign" style="font-size: 24px; color: #656d76; margin-bottom: 12px;"></i>
+                                <p style="color: #656d76; font-style: italic; margin: 0;">
+                                    Click on one of the character sprites above to see its current state in detail.
+                                </p>
+                            </div>
+                        </div>
 
+                        <!-- 各个Agent的详情面板 -->
+                        {% for p in persona_names %}
+                        <div id="on_screen_det_content-{{p.underscore}}" style="display: none;">
+                            <div class="agent-detail-header">
+                                <div class="agent-detail-avatar">
+                                    {% with 'assets/characters/profile/'|add:p.underscore|add:'.png' as image_static %}
+                                    <img src="{% static image_static %}" alt="{{p.original}}">
+                                    {% endwith %}
+                                </div>
+                                <div class="agent-detail-info">
+                                    <h3 class="agent-detail-name" id="name__{{ p.underscore }}">
+                                        {{p.original}}
+                                        <a href="{% url 'replay_persona_state' sim_code step p.underscore %}" class="agent-detail-link">
+                                            <i class="glyphicon glyphicon-new-window"></i> State Details
+                                        </a>
+                                    </h3>
+                                </div>
+                            </div>
+                            
+                            <div class="agent-detail-content">
+                                <div class="agent-detail-item">
+                                    <div class="agent-detail-label">
+                                        <i class="glyphicon glyphicon-play-circle"></i>
+                                        Current Action
+                                    </div>
+                                    <div class="agent-detail-value" id="current_action__{{ p.underscore }}">
+                                        Loading...
+                                    </div>
+                                </div>
+                                
+                                <div class="agent-detail-item">
+                                    <div class="agent-detail-label">
+                                        <i class="glyphicon glyphicon-map-marker"></i>
+                                        Location
+                                    </div>
+                                    <div class="agent-detail-value" id="target_address__{{ p.underscore }}">
+                                        Loading...
+                                    </div>
+                                </div>
+                                
+                                <div class="agent-detail-item">
+                                    <div class="agent-detail-label">
+                                        <i class="glyphicon glyphicon-comment"></i>
+                                        Current Conversation
+                                    </div>
+                                    <div class="agent-detail-value" id="chat__{{ p.underscore }}">
+                                        Loading...
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </div>
 
-
-		
-
-	</div>
+        <!-- 对话控制台 - GitHub风格面板 -->
+        <div class="row" style="margin-bottom: 25px;">
+            <div class="col-md-10 col-md-offset-1 col-sm-12 col-xs-12">
+                <div class="panel panel-default control-panel">
+                    <div class="panel-heading control-panel-header" style="padding: 15px 20px;">
+                        <h4 class="panel-title" style="color: white; margin: 0;">
+                            <i class="glyphicon glyphicon-comment" style="margin-right: 8px;"></i>
+                            <span id="conversation-title">Conversation</span>
+                        </h4>
+                    </div>
+                    
+                    <div class="panel-body" style="padding: 25px;">
+                        <div id="conversation-panel" style="display: none;">
+                            <!-- 对话历史显示区域 -->
+                            <div id="conversation-history" class="github-conversation-history">
+                                <div class="conversation-message system-message">
+                                    💬 Conversation will appear here...
+                                </div>
+                                <!-- 回到底部按钮 -->
+                                <div id="scroll-to-bottom" class="scroll-to-bottom-btn" style="display: none;">
+                                    <i class="glyphicon glyphicon-chevron-down"></i>
+                                </div>
+                            </div>
+                            
+                            <!-- 消息输入区域 -->
+                            <div class="github-message-input-container">
+                                <div class="github-message-input-wrapper">
+                                    <span class="github-user-label">
+                                        <span id="user-role-display">You</span>:
+                                    </span>
+                                    <input type="text" id="message-input" class="github-message-input" 
+                                           placeholder="Type your message here..." disabled>
+                                    <button class="github-btn github-btn-primary github-send-btn" type="button" onclick="sendMessage()" id="send-message-btn" disabled>
+                                        <i class="glyphicon glyphicon-send"></i> Send
+                                    </button>
+                                    <button class="github-btn github-btn-danger github-end-btn" type="button" onclick="endConversation()" disabled id="end-conversation-btn">
+                                        <i class="glyphicon glyphicon-stop"></i> End
+                                    </button>
+                                </div>
+                            </div>
+                            
+                            <!-- 对话状态提示 -->
+                            <div id="conversation-status" class="github-conversation-status">
+                                Start a conversation to begin chatting
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
 
-  
-
-
+<!-- 加载动画遮罩层 - 现在隐藏，使用状态栏加载 -->
+<div id="loading-overlay" class="loading-overlay" style="display: none !important;">
+    <div class="loading-content">
+        <div class="loading-spinner"></div>
+        <div class="loading-text" id="loading-text">Processing...</div>
+    </div>
+</div>
 
 <div style="padding-bottom:15em"> </div>
+<div style="display: none" id="temp_focus"></div>
 
-
-<!-- partial -->
-<script src='https://cdn.jsdelivr.net/npm/phaser@3.55.2/dist/phaser.js'></script>
-{% include 'home/main_script.html' %}
 {% endblock content %}
 
+{% block js_content %}
+<style>
+/* GitHub风格按钮样式 */
+.github-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 6px 16px;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 20px;
+    white-space: nowrap;
+    vertical-align: middle;
+    cursor: pointer;
+    user-select: none;
+    background-repeat: no-repeat;
+    background-position: right 8px center;
+    background-size: 16px;
+    border: 1px solid;
+    border-radius: 6px;
+    appearance: none;
+    transition: all 0.15s cubic-bezier(0.4, 0, 0.2, 1);
+    text-decoration: none;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans", Helvetica, Arial, sans-serif;
+    position: relative;
+}
+
+.github-btn:focus {
+    outline: none;
+}
+
+.github-btn:disabled {
+    color: #8c959f;
+    background-color: #f6f8fa;
+    border-color: #d1d9e0;
+    cursor: not-allowed;
+}
+
+.github-btn:not(:disabled):hover {
+    transform: translateY(-1px);
+}
+
+.github-btn:not(:disabled):active {
+    transform: translateY(0);
+    filter: brightness(0.9);
+}
+
+.github-btn i {
+    margin-right: 6px;
+    font-size: 12px;
+}
+
+/* 主要按钮 - 绿色 */
+.github-btn-primary {
+    color: #ffffff;
+    background-color: #1f883d;
+    border-color: #1f883d;
+}
+
+.github-btn-primary:not(:disabled):hover {
+    background-color: #1a7f37;
+    border-color: #1a7f37;
+}
+
+/* 次要按钮 - 灰色 */
+.github-btn-secondary {
+    color: #24292f;
+    background-color: #f6f8fa;
+    border-color: #d1d9e0;
+}
+
+.github-btn-secondary:not(:disabled):hover {
+    background-color: #f3f4f6;
+    border-color: #d1d9e0;
+}
+
+/* 第三按钮 - 蓝色 */
+.github-btn-tertiary {
+    color: #ffffff;
+    background-color: #0969da;
+    border-color: #0969da;
+}
+
+.github-btn-tertiary:not(:disabled):hover {
+    background-color: #0860ca;
+    border-color: #0860ca;
+}
+
+/* 成功按钮 - 绿色（对话控制） */
+.github-btn-success {
+    color: #ffffff;
+    background-color: #1f883d;
+    border-color: #1f883d;
+}
+
+.github-btn-success:not(:disabled):hover {
+    background-color: #1a7f37;
+    border-color: #1a7f37;
+}
+
+/* 危险按钮 - 红色 */
+.github-btn-danger {
+    color: #ffffff;
+    background-color: #da3633;
+    border-color: #da3633;
+}
+
+.github-btn-danger:not(:disabled):hover {
+    background-color: #b62825;
+    border-color: #b62825;
+}
+
+/* 按钮容器 */
+.github-buttons-container {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+/* Steps控制区域居中布局 */
+.steps-controls-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    width: 100%;
+    padding: 0 20px;
+}
+
+.steps-input-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.steps-input-group {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.steps-label {
+    font-weight: 600;
+    color: #24292f;
+    font-size: 14px;
+    margin: 0;
+    white-space: nowrap;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans", Helvetica, Arial, sans-serif;
+}
+
+/* 对话按钮容器 - 支持换行 */
+.conversation-buttons-container {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+/* Roleplay控制区居中布局 */
+.roleplay-controls-container {
+    display: flex;
+    justify-content: center;
+    padding: 0 20px;
+}
+
+.roleplay-controls-wrapper {
+    display: flex;
+    align-items: flex-end;
+    gap: 24px;
+    width: 100%;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.roleplay-control-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-width: 160px;
+}
+
+.roleplay-control-item.roleplay-buttons {
+    min-width: 280px;
+}
+
+.roleplay-label {
+    font-weight: 600;
+    color: #24292f;
+    margin-bottom: 8px;
+    display: block;
+    text-align: center;
+    white-space: nowrap;
+}
+
+.roleplay-label i {
+    margin-right: 5px;
+}
+
+.roleplay-select,
+.roleplay-input {
+    width: 100%;
+    text-align: center;
+}
+
+/* Role suggestions dropdown */
+.role-input-wrapper {
+    position: relative;
+}
+
+.role-suggestions {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: white;
+    border: 1px solid #d0d7de;
+    border-radius: 6px;
+    box-shadow: 0 8px 24px rgba(140, 149, 159, 0.2);
+    z-index: 1000;
+    max-height: 200px;
+    overflow-y: auto;
+}
+
+.role-suggestion-item {
+    padding: 8px 12px;
+    cursor: pointer;
+    border-bottom: 1px solid #f6f8fa;
+    font-size: 14px;
+}
+
+.role-suggestion-item:hover {
+    background-color: #f6f8fa;
+}
+
+.role-suggestion-item:last-child {
+    border-bottom: none;
+}
+
+.role-suggestion-name {
+    font-weight: 500;
+    color: #24292f;
+}
+
+.role-suggestion-desc {
+    font-size: 12px;
+    color: #656d76;
+    margin-top: 2px;
+}
+
+.roleplay-buttons .conversation-buttons-container {
+    justify-content: center;
+    margin-top: 8px;
+}
+
+@media (max-width: 768px) {
+    .github-buttons-container {
+        flex-direction: column;
+        gap: 6px;
+    }
+    
+    .github-btn {
+        width: 100%;
+        justify-content: center;
+    }
+    
+    .steps-controls-container {
+        flex-direction: column;
+        gap: 16px;
+        padding: 0 10px;
+    }
+    
+    .conversation-buttons-container {
+        flex-direction: column;
+        gap: 6px;
+    }
+    
+    .conversation-buttons-container .github-btn {
+        width: 100%;
+    }
+    
+    /* Roleplay控制区移动端适配 */
+    .roleplay-controls-container {
+        padding: 0 10px;
+    }
+    
+    .roleplay-controls-wrapper {
+        flex-direction: column;
+        gap: 16px;
+        align-items: stretch;
+    }
+    
+    .roleplay-control-item {
+        min-width: auto;
+        width: 100%;
+    }
+    
+    .roleplay-control-item.roleplay-buttons {
+        min-width: auto;
+    }
+    
+    .roleplay-select,
+    .roleplay-input {
+        text-align: left;
+    }
+    
+    /* Agent状态网格移动端适配 */
+    .agents-grid {
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+    
+    .agent-card {
+        padding: 12px;
+        gap: 10px;
+    }
+    
+    .agent-avatar {
+        width: 40px;
+        height: 40px;
+    }
+    
+    .agent-emoji {
+        font-size: 20px;
+    }
+    
+    /* Agent详情面板移动端适配 */
+    #on_screen_det_content-init,
+    [id^="on_screen_det_content-"] {
+        padding: 16px;
+    }
+    
+    .agent-detail-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+        text-align: center;
+    }
+    
+    .agent-detail-avatar img {
+        width: 56px;
+        height: 56px;
+    }
+    
+    .agent-detail-name {
+        font-size: 18px;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+    }
+    
+    .agent-detail-content {
+        gap: 12px;
+    }
+    
+    .agent-detail-item {
+        padding: 10px 12px;
+    }
+}
+
+/* 输入框样式 */
+.steps-input {
+    border: 1px solid #d1d9e0 !important;
+    border-radius: 6px !important;
+    padding: 6px 12px !important;
+    font-size: 14px !important;
+    line-height: 20px !important;
+    color: #24292f !important;
+    background-color: #ffffff !important;
+    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out !important;
+    width: 70px !important;
+    height: 32px !important;
+    text-align: center !important;
+}
+
+.steps-input:focus {
+    border-color: #0969da !important;
+    outline: none !important;
+    box-shadow: 0 0 0 3px rgba(9, 105, 218, 0.1) !important;
+}
+
+/* 状态显示样式 - 按钮风格但不可点击 */
+.status-display {
+    padding: 12px 20px;
+    border-radius: 6px;
+    background-color: #f6f8fa;
+    color: #24292f;
+    font-size: 14px;
+    font-weight: 500;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans", Helvetica, Arial, sans-serif;
+    min-width: 260px;
+    text-align: center;
+    border: 1px solid #d1d9e0;
+    box-shadow: 0 1px 3px rgba(16, 22, 26, 0.1);
+    cursor: default;
+    user-select: none;
+    transition: all 0.15s ease-in-out;
+    position: relative;
+    overflow: hidden;
+}
+
+/* 状态显示加载动画 */
+.status-display.loading {
+    background: linear-gradient(90deg, #f6f8fa 25%, #e1e7ee 50%, #f6f8fa 75%);
+    background-size: 200% 100%;
+    animation: shimmer 1.5s infinite;
+}
+
+.status-display.loading::before {
+    content: '';
+    position: absolute;
+    left: -20px;
+    top: 0;
+    width: 20px;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.6), transparent);
+    animation: loading-sweep 1.5s infinite;
+}
+
+@keyframes shimmer {
+    0% { background-position: -200% 0; }
+    100% { background-position: 200% 0; }
+}
+
+@keyframes loading-sweep {
+    0% { left: -20px; }
+    100% { left: 100%; }
+}
+
+.simulation-status-display {
+    padding: 10px 18px;
+    border-radius: 8px;
+    background-color: #ffffff;
+    color: #24292f;
+    font-size: 14px;
+    font-weight: 500;
+    text-align: center;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans", Helvetica, Arial, sans-serif;
+    min-width: 180px;
+    border: 1px solid #d1d9e0;
+    box-shadow: 0 1px 3px rgba(16, 22, 26, 0.1);
+}
+
+/* 标签样式 */
+label {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans", Helvetica, Arial, sans-serif;
+    font-weight: 600;
+    color: #24292f;
+    font-size: 14px;
+    margin-bottom: 8px;
+}
+
+/* 控制面板样式 */
+.control-panel {
+    border: 1px solid #d1d9e0 !important;
+    border-radius: 12px !important;
+    background-color: #ffffff !important;
+    box-shadow: 0 1px 3px rgba(16, 22, 26, 0.1) !important;
+}
+
+.control-panel-header {
+    background: linear-gradient(135deg, #24292f 0%, #32383f 100%) !important;
+    border: none !important;
+    border-radius: 12px 12px 0 0 !important;
+    padding: 16px 20px !important;
+}
+
+.control-panel-body {
+    background-color: #ffffff !important;
+    border-radius: 0 0 12px 12px !important;
+    padding: 20px !important;
+}
+
+.panel-title {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans", Helvetica, Arial, sans-serif;
+    font-weight: 600;
+    color: #ffffff !important;
+    font-size: 16px;
+    margin: 0 !important;
+}
+
+/* 状态指示器 - 纯色填充 */
+.status-indicator {
+    transition: all 0.2s ease-in-out;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans", Helvetica, Arial, sans-serif;
+    font-weight: 500;
+    border-radius: 6px;
+    border: none;
+    color: #ffffff;
+}
+
+.status-success {
+    background-color: #d1f2eb !important;
+    color: #0f5132 !important;
+}
+
+.status-error {
+    background-color: #f8d7da !important;
+    color: #842029 !important;
+}
+
+.status-warning {
+    background-color: #fff3cd !important;
+    color: #664d03 !important;
+}
+
+.status-progress {
+    background-color: #cfe2ff !important;
+    color: #084298 !important;
+}
+
+.status-info {
+    background-color: #ffffff !important;
+    color: #24292f !important;
+}
+
+.status-running {
+    background-color: #d1f2eb !important;
+    color: #0f5132 !important;
+}
+
+.status-pausing {
+    background-color: #fff3cd !important;
+    color: #664d03 !important;
+}
+
+/* GitHub风格对话框样式 */
+#conversation-panel {
+    border: 1px solid #d1d9e0;
+    border-radius: 8px;
+    background-color: #ffffff;
+    box-shadow: 0 1px 3px rgba(16, 22, 26, 0.1);
+}
+
+.github-conversation-header {
+    background: linear-gradient(135deg, #24292f 0%, #32383f 100%);
+    border-radius: 12px 12px 0 0;
+    padding: 16px 20px;
+    border-bottom: 1px solid #d1d9e0;
+}
+
+.github-conversation-title {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans", Helvetica, Arial, sans-serif;
+    font-weight: 600;
+    color: #ffffff;
+    font-size: 16px;
+    margin: 0;
+}
+
+.github-conversation-title i {
+    margin-right: 8px;
+}
+
+.github-conversation-body {
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 0 0 12px 12px;
+}
+
+.github-conversation-history {
+    background-color: #f6f8fa;
+    border: 1px solid #d1d9e0;
+    border-radius: 8px;
+    height: 480px;
+    min-height: 300px;
+    max-height: 800px;
+    overflow-y: auto;
+    padding: 16px;
+    margin-bottom: 16px;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans", Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    line-height: 1.5;
+    resize: vertical;
+    position: relative;
+    scroll-behavior: smooth;
+}
+
+/* 美化滚动条样式 */
+.github-conversation-history::-webkit-scrollbar {
+    width: 8px;
+}
+
+.github-conversation-history::-webkit-scrollbar-track {
+    background: #f1f3f4;
+    border-radius: 4px;
+}
+
+.github-conversation-history::-webkit-scrollbar-thumb {
+    background: linear-gradient(135deg, #d1d9e0, #8c959f);
+    border-radius: 4px;
+    transition: background 0.3s ease;
+}
+
+.github-conversation-history::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(135deg, #8c959f, #656d76);
+}
+
+.github-conversation-history::-webkit-resizer {
+    background: linear-gradient(135deg, #d1d9e0, #8c959f);
+    border-radius: 2px;
+}
+
+/* 拖拽手柄样式 */
+.conversation-resize-handle {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 20px;
+    height: 20px;
+    background: linear-gradient(135deg, transparent 45%, #d1d9e0 45%, #d1d9e0 50%, transparent 50%, transparent 95%, #8c959f 95%);
+    cursor: nw-resize;
+    z-index: 10;
+}
+
+.github-message-input-container {
+    margin-bottom: 12px;
+}
+
+.github-message-input-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px;
+    border: 1px solid #d1d9e0;
+    border-radius: 8px;
+    background-color: #ffffff;
+    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+.github-message-input-wrapper:focus-within {
+    border-color: #0969da;
+    box-shadow: 0 0 0 3px rgba(9, 105, 218, 0.1);
+}
+
+.github-user-label {
+    font-weight: 600;
+    color: #24292f;
+    font-size: 14px;
+    white-space: nowrap;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans", Helvetica, Arial, sans-serif;
+}
+
+.github-message-input {
+    flex: 1;
+    border: none;
+    outline: none;
+    padding: 8px 12px;
+    font-size: 14px;
+    color: #24292f;
+    background-color: transparent;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans", Helvetica, Arial, sans-serif;
+}
+
+.github-message-input::placeholder {
+    color: #656d76;
+}
+
+.github-send-btn {
+    margin: 0;
+    white-space: nowrap;
+}
+
+.github-end-btn {
+    margin: 0;
+    margin-left: 8px;
+    white-space: nowrap;
+}
+
+.github-conversation-status {
+    padding: 10px 16px;
+    border-radius: 6px;
+    background-color: #f6f8fa;
+    border: 1px solid #d1d9e0;
+    color: #656d76;
+    text-align: center;
+    font-size: 13px;
+    font-weight: 500;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans", Helvetica, Arial, sans-serif;
+}
+
+/* 对话消息样式 - 改进的气泡风格，头像在左侧 */
+.conversation-message {
+    margin-bottom: 16px;
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    animation: messageSlideIn 0.3s ease-out;
+    align-items: flex-start;
+    gap: 12px;
+    transition: all 0.2s ease;
+}
+
+.conversation-message:hover {
+    transform: translateY(-1px);
+}
+
+.conversation-message:hover .message-timestamp {
+    opacity: 0.8;
+}
+
+/* 全局禁用所有消息相关的::before和::after伪元素，彻底解决黑色小方格问题 */
+.conversation-message *::before,
+.conversation-message *::after,
+.message-bubble::before,
+.message-bubble::after {
+    display: none !important;
+    content: none !important;
+}
+
+@keyframes messageSlideIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.message-avatar-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-shrink: 0;
+    width: 48px;
+}
+
+.message-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    font-weight: 700;
+    color: white;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    margin-bottom: 4px;
+    border: 2px solid white;
+}
+
+.message-sender {
+    font-size: 11px;
+    font-weight: 600;
+    text-align: center;
+    opacity: 0.8;
+    line-height: 1.2;
+    max-width: 48px;
+    word-wrap: break-word;
+}
+
+.message-content-container {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+}
+
+.message-bubble {
+    max-width: 100%;
+    padding: 12px 16px;
+    border-radius: 18px;
+    font-size: 14px;
+    line-height: 1.4;
+    word-wrap: break-word;
+    position: relative;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans", Helvetica, Arial, sans-serif;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08), 0 1px 3px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+.message-bubble:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12), 0 2px 6px rgba(0, 0, 0, 0.15);
+    transform: translateY(-1px);
+}
+
+.message-bubble::before {
+    display: none !important;
+}
+
+.message-timestamp {
+    font-size: 10px;
+    opacity: 0.4;
+    margin-top: 4px;
+    padding-left: 16px;
+    color: #656d76;
+    font-weight: 500;
+    transition: opacity 0.2s ease;
+}
+
+/* 用户消息（右对齐，蓝色） */
+.user-message {
+    flex-direction: row-reverse;
+    justify-content: flex-start;
+    margin-left: 15%;
+}
+
+.user-message .message-avatar-container {
+    align-items: center;
+}
+
+.user-message .message-bubble {
+    background: linear-gradient(135deg, #0969da, #0860ca);
+    color: white;
+}
+
+.user-message .message-bubble::before {
+    display: none !important;
+}
+
+.user-message .message-avatar {
+    background: linear-gradient(135deg, #0969da, #0860ca);
+}
+
+.user-message .message-sender {
+    color: #0969da;
+}
+
+.user-message .message-timestamp {
+    text-align: right;
+    padding-left: 0;
+    padding-right: 16px;
+}
+
+/* Persona消息（左对齐，绿色） */
+.persona-message {
+    flex-direction: row;
+    justify-content: flex-start;
+    margin-right: 15%;
+}
+
+.persona-message .message-bubble {
+    background: linear-gradient(135deg, #1f883d, #1a7f37);
+    color: white;
+}
+
+.persona-message .message-bubble::before {
+    display: none !important;
+}
+
+.persona-message .message-avatar {
+    background: linear-gradient(135deg, #1f883d, #1a7f37);
+}
+
+.persona-message .message-sender {
+    color: #1f883d;
+}
+
+/* 系统消息（居中，灰色，无头像） */
+.system-message {
+    justify-content: center;
+    margin: 20px 0;
+}
+
+.system-message .message-avatar-container {
+    display: none;
+}
+
+.system-message .message-content-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.system-message .message-bubble {
+    background-color: #f6f8fa;
+    color: #656d76;
+    border: 1px solid #d1d9e0;
+    font-style: italic;
+    text-align: center;
+    border-radius: 12px;
+    max-width: 80%;
+}
+
+.system-message .message-bubble::before {
+    display: none;
+}
+
+/* 反思消息（左对齐，紫色） */
+.reflection-message {
+    flex-direction: row;
+    justify-content: flex-start;
+    margin-right: 15%;
+    position: relative;
+}
+
+.reflection-message .message-bubble {
+    background: linear-gradient(135deg, #8250df, #7c3aed);
+    color: white;
+    font-style: italic;
+    border: 2px solid rgba(130, 80, 223, 0.3);
+    box-shadow: 0 4px 16px rgba(130, 80, 223, 0.2), 0 2px 8px rgba(130, 80, 223, 0.1);
+    animation: reflectionFadeIn 0.6s ease-out;
+}
+
+.reflection-message .message-bubble::before {
+    display: none !important;
+}
+
+.reflection-message .message-bubble::after {
+    content: '💭';
+    position: absolute;
+    top: -8px;
+    right: -8px;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 50%;
+    width: 24px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.reflection-message .message-avatar {
+    background: linear-gradient(135deg, #8250df, #7c3aed);
+    box-shadow: 0 2px 8px rgba(130, 80, 223, 0.3);
+}
+
+.reflection-message .message-sender {
+    color: #8250df;
+    font-weight: 700;
+}
+
+.reflection-message .message-sender::after {
+    content: ' (思考中)';
+    font-size: 9px;
+    opacity: 0.8;
+    font-weight: 400;
+}
+
+@keyframes reflectionFadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(10px) scale(0.95);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+/* 打字动画效果 */
+.typing-indicator {
+    display: flex;
+    align-items: center;
+    padding: 8px 16px;
+    margin: 8px 0;
+}
+
+.typing-indicator .message-bubble {
+    background-color: #f0f0f0;
+    color: #999;
+    padding: 12px 16px;
+    border-radius: 18px;
+    align-self: flex-start;
+}
+
+.typing-dots {
+    display: flex;
+    gap: 4px;
+}
+
+.typing-dot {
+    width: 8px;
+    height: 8px;
+    background-color: #999;
+    border-radius: 50%;
+    animation: typingDot 1.4s infinite ease-in-out both;
+}
+
+.typing-dot:nth-child(1) { animation-delay: -0.32s; }
+.typing-dot:nth-child(2) { animation-delay: -0.16s; }
+.typing-dot:nth-child(3) { animation-delay: 0s; }
+
+@keyframes typingDot {
+    0%, 80%, 100% {
+        transform: scale(0.8);
+        opacity: 0.5;
+    }
+    40% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+/* 回到底部按钮 */
+.scroll-to-bottom-btn {
+    position: absolute;
+    bottom: 16px;
+    right: 16px;
+    width: 40px;
+    height: 40px;
+    background: linear-gradient(135deg, #0969da, #0860ca);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    cursor: pointer;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    transition: all 0.2s ease;
+    z-index: 100;
+    font-size: 16px;
+}
+
+.scroll-to-bottom-btn:hover {
+    background: linear-gradient(135deg, #0860ca, #0756b3);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.scroll-to-bottom-btn:active {
+    transform: translateY(0);
+}
+
+/* 逐字显示动画 - 移除光标闪烁 */
+.typewriter-text {
+    overflow: hidden;
+}
+
+/* 加载动画样式 */
+.loading-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(3px);
+    z-index: 9999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.loading-content {
+    text-align: center;
+    padding: 30px;
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    border: 1px solid #d1d9e0;
+}
+
+.loading-spinner {
+    width: 40px;
+    height: 40px;
+    border: 3px solid #f3f3f3;
+    border-top: 3px solid #0969da;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin: 0 auto 15px auto;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.loading-text {
+    color: #24292f;
+    font-size: 14px;
+    font-weight: 500;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans", Helvetica, Arial, sans-serif;
+}
+
+/* 加载动画变体 */
+.loading-spinner.pausing {
+    border-top-color: #ffc107;
+}
+
+.loading-spinner.running {
+    border-top-color: #198754;
+}
+
+.loading-spinner.ending {
+    border-top-color: #dc3545;
+}
+
+/* 大屏幕优化 */
+@media (min-width: 1200px) {
+    .github-conversation-history {
+        height: 550px;
+        max-height: 900px;
+    }
+    
+    /* 超大屏幕进一步增加高度 */
+    @media (min-width: 1600px) {
+        .github-conversation-history {
+            height: 650px;
+            max-height: 1000px;
+        }
+    }
+}
+
+/* 平板设备优化 */
+@media (min-width: 769px) and (max-width: 1199px) {
+    .github-conversation-history {
+        height: 420px;
+        max-height: 700px;
+    }
+    
+    /* 平板设备roleplay控制区适配 */
+    .roleplay-controls-wrapper {
+        gap: 20px;
+    }
+    
+    .roleplay-control-item {
+        min-width: 140px;
+    }
+    
+    .roleplay-control-item.roleplay-buttons {
+        min-width: 260px;
+    }
+    
+    /* 平板设备Agent状态适配 */
+    .agents-grid {
+        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+        gap: 14px;
+    }
+    
+    .agent-card {
+        padding: 14px;
+    }
+    
+    .agent-detail-header {
+        gap: 14px;
+    }
+    
+    .agent-detail-content {
+        gap: 14px;
+    }
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+    .github-buttons-container {
+        flex-direction: column;
+        gap: 6px;
+    }
+    
+    .github-btn {
+        width: 100%;
+        justify-content: center;
+    }
+    
+    .status-display,
+    .simulation-status-display {
+        margin-top: 12px;
+    }
+    
+    /* 对话控制区响应式 */
+    .col-md-4 {
+        margin-bottom: 15px;
+    }
+    
+    .col-md-4 > div[style*="margin-top: 28px"] {
+        margin-top: 10px !important;
+    }
+    
+    .col-md-4 .github-btn {
+        display: block;
+        width: 100%;
+        margin-bottom: 6px;
+        margin-right: 0 !important;
+    }
+    
+    /* 对话框响应式 */
+    #conversation-panel {
+        margin: 10px;
+    }
+    
+    .github-conversation-header {
+        padding: 12px 16px;
+    }
+    
+    .github-conversation-body {
+        padding: 16px;
+    }
+    
+    .github-conversation-history {
+        height: 360px;
+        padding: 12px;
+    }
+    
+    .github-message-input-wrapper {
+        flex-direction: column;
+        gap: 8px;
+        align-items: stretch;
+    }
+    
+    /* 反思消息移动端优化 */
+    .reflection-message {
+        margin-right: 5%;
+    }
+    
+    .reflection-message .message-bubble::after {
+        top: -6px;
+        right: -6px;
+        width: 20px;
+        height: 20px;
+        font-size: 10px;
+    }
+    
+    .reflection-message .message-sender::after {
+        content: ' (思考)';
+        font-size: 8px;
+    }
+    
+    .github-send-btn,
+    .github-end-btn {
+        width: auto;
+        min-width: 80px;
+        margin: 4px 2px !important;
+        flex: 0 0 auto;
+    }
+    
+    /* 移动端消息布局调整 */
+    .user-message {
+        margin-left: 5%;
+    }
+    
+    .persona-message,
+    .reflection-message {
+        margin-right: 5%;
+    }
+}
+    
+    .github-user-label {
+        text-align: center;
+    }
+    
+    .github-send-btn {
+        width: auto;
+        min-width: 80px;
+    }
+}
+
+/* 对话控制按钮样式优化 */
+.control-panel-btn {
+    transition: all 0.2s ease-in-out;
+    transform: translateY(0);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans", Helvetica, Arial, sans-serif;
+    font-weight: 500;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    white-space: nowrap;
+    border-radius: 20px;
+    padding: 8px 16px;
+}
+
+.control-panel-btn:hover {
+    transform: translateY(-1px);
+    filter: brightness(1.05);
+}
+
+.control-panel-btn:active {
+    transform: translateY(0);
+    filter: brightness(0.95);
+}
+
+.control-panel-btn:disabled {
+    opacity: 0.6;
+    transform: none !important;
+    filter: none !important;
+    cursor: not-allowed;
+}
+
+.control-panel-btn i {
+    margin-right: 6px;
+    font-size: 12px;
+}
+
+/* 表单控件样式 */
+.form-control {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans", Helvetica, Arial, sans-serif;
+    font-weight: 400;
+    transition: all 0.2s ease-in-out;
+    border: 1px solid #d1d9e0;
+    border-radius: 6px;
+    padding: 8px 12px;
+    font-size: 14px;
+    color: #24292f;
+}
+
+.form-control:focus {
+    border-color: #0969da !important;
+    box-shadow: 0 0 0 3px rgba(9, 105, 218, 0.1) !important;
+    outline: none !important;
+}
+
+.github-input {
+    border: 1px solid #d1d9e0 !important;
+    border-radius: 6px !important;
+    padding: 8px 12px !important;
+    font-size: 14px !important;
+    color: #24292f !important;
+    background-color: #ffffff !important;
+    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out !important;
+}
+
+.github-input:focus {
+    border-color: #0969da !important;
+    outline: none !important;
+    box-shadow: 0 0 0 3px rgba(9, 105, 218, 0.1) !important;
+}
+
+.github-select {
+    border: 1px solid #d1d9e0 !important;
+    border-radius: 6px !important;
+    padding: 8px 12px !important;
+    font-size: 14px !important;
+    color: #24292f !important;
+    background-color: #ffffff !important;
+    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out !important;
+}
+
+.github-select:focus {
+    border-color: #0969da !important;
+    outline: none !important;
+    box-shadow: 0 0 0 3px rgba(9, 105, 218, 0.1) !important;
+}
+
+#persona-select:focus,
+#role-input:focus {
+    border-color: #0969da !important;
+    box-shadow: 0 0 0 3px rgba(9, 105, 218, 0.1) !important;
+}
+
+/* Agent状态卡片样式 */
+.agents-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 16px;
+    margin-top: 8px;
+}
+
+.agent-card {
+    background: white;
+    border: 1px solid #d1d9e0;
+    border-radius: 8px;
+    padding: 16px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.agent-card:hover {
+    border-color: #0969da;
+    box-shadow: 0 2px 8px rgba(9, 105, 218, 0.1);
+    transform: translateY(-1px);
+}
+
+.agent-avatar-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+}
+
+.agent-avatar {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    border: 2px solid #e1e4e8;
+    transition: border-color 0.2s ease;
+}
+
+.agent-card:hover .agent-avatar {
+    border-color: #0969da;
+}
+
+.agent-name {
+    font-size: 12px;
+    font-weight: 600;
+    color: #24292f;
+    text-align: center;
+}
+
+.agent-status-section {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+}
+
+.agent-emoji {
+    font-size: 24px;
+    line-height: 1;
+}
+
+.agent-status-text {
+    font-size: 12px;
+    color: #656d76;
+    font-weight: 500;
+}
+
+/* Agent详情面板样式 */
+#on_screen_det_content-init,
+[id^="on_screen_det_content-"] {
+    background: white;
+    border: 1px solid #d1d9e0;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.agent-detail-placeholder {
+    text-align: center;
+    padding: 40px 20px;
+}
+
+.agent-detail-header {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 20px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid #e1e4e8;
+}
+
+.agent-detail-avatar img {
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    border: 2px solid #e1e4e8;
+}
+
+.agent-detail-info {
+    flex: 1;
+}
+
+.agent-detail-name {
+    font-size: 20px;
+    font-weight: 600;
+    color: #24292f;
+    margin: 0 0 8px 0;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.agent-detail-link {
+    font-size: 14px;
+    color: #0969da;
+    text-decoration: none;
+    font-weight: 400;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.agent-detail-link:hover {
+    text-decoration: underline;
+}
+
+.agent-detail-content {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.agent-detail-item {
+    background: #f6f8fa;
+    border: 1px solid #e1e4e8;
+    border-radius: 6px;
+    padding: 12px 16px;
+}
+
+.agent-detail-label {
+    font-size: 14px;
+    font-weight: 600;
+    color: #24292f;
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.agent-detail-label i {
+    color: #656d76;
+    font-size: 12px;
+}
+
+.agent-detail-value {
+    font-size: 14px;
+    color: #656d76;
+    line-height: 1.5;
+    word-wrap: break-word;
+}
+</style>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src='https://cdn.jsdelivr.net/npm/phaser@3.55.2/dist/phaser.js'></script>
+{% include 'home/main_script.html' %}
+
+<script>
+// 等待jQuery和DOM完全加载后再执行
+$(document).ready(function() {
+    console.log('jQuery loaded, version:', $.fn.jquery);
+    
+    // 全局状态变量
+    let conversationActive = false;
+    let currentPersona = null;
+    let currentRole = null;
+    let commandInProgress = false;
+    let simulationRunning = false;
+    let currentSimulationType = null; // 'run' 或 'debug'
+    let pauseCheckInterval = null; // 暂停检查定时器
+
+    // 获取当前模拟代码
+    function getCurrentSimCode() {
+        return typeof window.sim_code !== 'undefined' ? window.sim_code : 'default_sim';
+    }
+
+    // 获取当前步骤
+    function getCurrentStep() {
+        return typeof window.step !== 'undefined' ? window.step : 0;
+    }
+
+    // 加载动画控制函数 - 在状态栏显示
+    function showLoadingInStatus(type = 'default', text = 'Processing...') {
+        const statusDiv = document.getElementById('command-status');
+        const simulationStatusDiv = document.getElementById('simulation-status');
+        
+        // 根据类型设置样式和文本
+        switch(type) {
+            case 'running':
+                statusDiv.textContent = text || 'Starting simulation...';
+                statusDiv.className = 'status-display loading status-progress';
+                if (simulationStatusDiv) {
+                    simulationStatusDiv.style.display = 'block';
+                    updateSimulationStatus('running', 'Normal');
+                }
+                break;
+            case 'pausing':
+                statusDiv.textContent = text || 'Pausing simulation...';
+                statusDiv.className = 'status-display loading status-warning';
+                if (simulationStatusDiv) {
+                    updateSimulationStatus('pausing');
+                }
+                break;
+            case 'endingchat':
+                statusDiv.textContent = text || 'Ending conversation...';
+                statusDiv.className = 'status-display loading status-error';
+                break;
+            case 'saving':
+                statusDiv.textContent = text || 'Saving simulation...';
+                statusDiv.className = 'status-display loading status-info';
+                break;
+            default:
+                statusDiv.textContent = text || 'Processing...';
+                statusDiv.className = 'status-display loading status-info';
+        }
+        
+        console.log(`🔄 状态栏显示加载: ${type} - ${statusDiv.textContent}`);
+    }
+
+    function hideLoadingInStatus() {
+        const statusDiv = document.getElementById('command-status');
+        
+        // 移除加载类，恢复正常状态
+        statusDiv.className = 'status-display status-info';
+        statusDiv.textContent = 'Ready to execute commands';
+        
+        console.log('✅ 状态栏加载完成');
+    }
+
+    // 保持原有的全屏加载动画函数以备不时之需
+    function showLoadingOverlay(type = 'default', text = 'Processing...') {
+        // 现在默认使用状态栏加载
+        showLoadingInStatus(type, text);
+    }
+
+    function hideLoadingOverlay() {
+        // 现在默认使用状态栏加载
+        hideLoadingInStatus();
+    }
+
+    // CSRF Token获取函数
+    function getCookie(name) {
+        let cookieValue = null;
+        if (document.cookie && document.cookie !== '') {
+            const cookies = document.cookie.split(';');
+            for (let i = 0; i < cookies.length; i++) {
+                const cookie = cookies[i].trim();
+                if (cookie.substring(0, name.length + 1) === (name + '=')) {
+                    cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+                    break;
+                }
+            }
+        }
+        return cookieValue;
+    }
+
+    // 简化的状态更新函数 - 检查是否正在加载中
+    function updateCommandStatus(message, type = 'info') {
+        const statusDiv = document.getElementById('command-status');
+        
+        // 如果当前是加载状态，不要覆盖加载动画
+        if (statusDiv.classList.contains('loading') && simulationRunning) {
+            console.log('⚠️ 状态栏正在加载中，跳过状态更新:', message);
+            return;
+        }
+        
+        statusDiv.textContent = message;
+        
+        // 移除所有状态类
+        statusDiv.className = statusDiv.className.replace(/status-\w+/g, '');
+        statusDiv.classList.remove('loading');
+        
+        // 添加新的状态类
+        statusDiv.classList.add('status-display', `status-${type}`);
+    }
+
+    // 优化的模拟状态更新函数
+    function updateSimulationStatus(status, type = 'normal') {
+        const statusDiv = document.getElementById('simulation-status');
+        const statusIcon = document.getElementById('status-icon');
+        const statusText = document.getElementById('status-text');
+        
+        statusDiv.style.display = 'block';
+        
+        // 移除所有状态类
+        statusDiv.className = statusDiv.className.replace(/status-\w+/g, '');
+        
+        const statusConfig = {
+            running: { 
+                icon: '▶️', 
+                text: `Running (${type})`, 
+                class: 'status-running'
+            },
+            pausing: { 
+                icon: '⏳', 
+                text: 'Pausing...', 
+                class: 'status-pausing'
+            },
+            paused: { 
+                icon: '⏸️', 
+                text: 'Paused', 
+                class: 'status-error'
+            },
+            ready: { 
+                icon: '✅', 
+                text: 'Ready', 
+                class: 'status-info'
+            }
+        };
+        
+        const config = statusConfig[status];
+        if (config) {
+            statusIcon.textContent = config.icon;
+            statusText.textContent = config.text;
+            statusDiv.classList.add('status-indicator', config.class);
+            
+            // 为运行状态添加特殊类
+            if (status === 'running') {
+                statusDiv.classList.add('running');
+            }
+        }
+    }
+
+    // 增强的按钮状态更新函数 - 支持完整的按钮控制逻辑
+    function updateButtonStates(running = false, conversationActive = false, endingConversation = false) {
+        // 控制模拟相关按钮
+        const simulationButtons = ['run-btn', 'pause-btn'];
+        simulationButtons.forEach(id => {
+            const btn = document.getElementById(id);
+            if (btn) {
+                if (id === 'run-btn') {
+                    btn.disabled = running || conversationActive || endingConversation;
+                } else if (id === 'pause-btn') {
+                    btn.disabled = !running || conversationActive || endingConversation;
+                }
+            }
+        });
+        
+        // 控制保存按钮
+        const saveBtn = document.querySelector('button[onclick="saveSimulation()"]');
+        if (saveBtn) {
+            saveBtn.disabled = running || conversationActive || endingConversation;
+        }
+        
+        // 控制步数输入框
+        const stepInput = document.getElementById('step-input');
+        if (stepInput) {
+            stepInput.disabled = running || conversationActive || endingConversation;
+        }
+        
+        // 控制对话相关按钮
+        const conversationButtons = [
+            { selector: 'button[onclick="startConversationAs()"]', allowWhenRunning: false },
+            { selector: 'button[onclick="startConversationWith()"]', allowWhenRunning: false },
+            { selector: '#end-conversation-btn', allowWhenRunning: true }
+        ];
+        
+        conversationButtons.forEach(({ selector, allowWhenRunning }) => {
+            const btn = document.querySelector(selector);
+            if (btn) {
+                if (selector === '#end-conversation-btn') {
+                    // End按钮：只有在对话激活时可用，其他情况都禁用
+                    btn.disabled = !conversationActive || endingConversation || running;
+                } else {
+                    // Converse As/With按钮：运行时或对话中都禁用
+                    btn.disabled = running || conversationActive || endingConversation;
+                }
+            }
+        });
+        
+        // 控制Persona选择和Role输入
+        const personaSelect = document.getElementById('persona-select');
+        const roleInput = document.getElementById('role-input');
+        
+        if (personaSelect) {
+            personaSelect.disabled = running || conversationActive || endingConversation;
+        }
+        if (roleInput) {
+            roleInput.disabled = running || conversationActive || endingConversation;
+        }
+    }
+
+    // 执行通用命令
+    function executeSimulationCommand(command, successMessage = '命令执行成功') {
+        const requestData = {
+            command: command,
+            sim_code: getCurrentSimCode(),
+            step: getCurrentStep()
+        };
+
+        $.ajax({
+            url: '/execute_console_command/',
+            type: 'POST',
+            contentType: 'application/json',
+            headers: {
+                'X-CSRFToken': getCookie('csrftoken')
+            },
+            data: JSON.stringify(requestData),
+            success: function(response) {
+                if (response.success) {
+                    // 只有当 successMessage 不为 null 时才显示消息
+                    if (successMessage) {
+                        updateCommandStatus(successMessage, 'success');
+                    }
+                    console.log('Command output:', response.output);
+                    // 对于运行命令，启动状态监控
+                    if (command.startsWith('run ') || command.startsWith('debug run ')) {
+                        startPauseStatusCheck(); // 复用现有的检查函数
+                    } else {
+                        resetSimulationState();
+                    }
+                } else {
+                    updateCommandStatus(`Error: ${response.error || 'Unknown error'}`, 'error');
+                    resetSimulationState();
+                }
+            },
+            error: function(xhr, status, error) {
+                updateCommandStatus(`Network error: ${error}`, 'error');
+                resetSimulationState();
+            }
+        });
+    }
+
+    // 模拟控制函数
+    window.runSimulation = function() {
+        const steps = document.getElementById('step-input').value;
+        if (!steps || steps < 1) {
+            updateCommandStatus('Please enter a valid number of steps', 'warning');
+            return;
+        }
+        
+        // 在状态栏显示加载 - 持续显示直到完成
+        showLoadingInStatus('running', `Running ${steps} step simulation...`);
+        
+        simulationRunning = true;
+        currentSimulationType = 'normal';
+        updateButtonStates(true, conversationActive, false);
+        updateSimulationStatus('running', 'Normal');
+        
+        // 发送命令
+        executeSimulationCommand(`run ${steps}`, null);
+        
+        // 不再设置超时隐藏加载动画，让它持续显示直到模拟完成
+    };
+
+    // 新增：暂停模拟函数
+    window.pauseSimulation = function() {
+        if (!simulationRunning) {
+            updateCommandStatus('No simulation running', 'warning');
+            return;
+        }
+        
+        // 在状态栏显示暂停加载
+        showLoadingInStatus('pausing', 'Sending pause signal...');
+        
+        updateSimulationStatus('pausing');
+        
+        console.log('🔍 发送暂停命令...');
+        
+        // 直接创建暂停文件，不通过命令队列
+        $.ajax({
+            url: '/create_pause_file/',  // 新的专用端点
+            type: 'POST',
+            contentType: 'application/json',
+            headers: {
+                'X-CSRFToken': getCookie('csrftoken')
+            },
+            data: JSON.stringify({
+                sim_code: getCurrentSimCode(),
+                step: getCurrentStep()
+            }),
+            success: function(response) {
+                console.log('🔍 暂停文件创建响应:', response);
+                
+                if (response.success) {
+                    updateCommandStatus('Pause file created, waiting for simulation to stop...', 'warning');
+                    updateSimulationStatus('pausing');
+                    
+                    // 开始检查暂停状态
+                    startPauseStatusCheck();
+                } else {
+                    updateCommandStatus(`Failed to create pause file: ${response.error}`, 'error');
+                    resetSimulationState();
+                }
+            },
+            error: function(xhr, status, error) {
+                console.error('🔍 暂停文件创建错误:', {xhr, status, error});
+                updateCommandStatus(`Network error: ${error}`, 'error');
+                resetSimulationState();
+            }
+        });
+    };
+
+    // 修改状态检查函数 - 使用新的专用端点
+    function startPauseStatusCheck() {
+        if (pauseCheckInterval) {
+            clearInterval(pauseCheckInterval);
+        }
+        
+        console.log('🔄 开始检查暂停状态...');
+        
+        let checkCount = 0;
+        pauseCheckInterval = setInterval(() => {
+            checkCount++;
+            console.log(`🔍 第${checkCount}次检查暂停状态...`);
+            
+            // 🐱 直接检查结果文件而不是暂停文件状态
+            $.ajax({
+                url: '/check_simulation_result/',  // 使用结果检查端点
+                type: 'POST',
+                contentType: 'application/json',
+                headers: {
+                    'X-CSRFToken': getCookie('csrftoken')
+                },
+                data: JSON.stringify({
+                    sim_code: getCurrentSimCode(),
+                    step: getCurrentStep()
+                }),
+                success: function(response) {
+                    console.log(`🔍 结果检查响应 #${checkCount}:`, response);
+                    
+                    if (response.success && response.result) {
+                        const result = response.result;
+                        
+                        if (result.status === 'paused') {
+                            console.log('✅ 检测到暂停完成');
+                            clearInterval(pauseCheckInterval);
+                            pauseCheckInterval = null;
+                            
+                            simulationRunning = false;
+                            updateButtonStates(false, conversationActive, false);
+                            updateSimulationStatus('paused');
+                            
+                            // 隐藏加载动画并显示暂停完成状态
+                            hideLoadingInStatus();
+                            const executedSteps = result.executed_steps;
+                            const totalSteps = result.total_planned_steps;
+                            updateCommandStatus(`Paused at step ${executedSteps}/${totalSteps}. Progress saved.`, 'success');
+                            
+                        } else if (result.status === 'completed') {
+                            console.log('✅ 检测到模拟完成');
+                            clearInterval(pauseCheckInterval);
+                            pauseCheckInterval = null;
+                            
+                            simulationRunning = false;
+                            updateButtonStates(false);
+                            updateSimulationStatus('ready');
+                            
+                            // 隐藏加载动画并显示完成状态
+                            hideLoadingInStatus();
+                            const executedSteps = result.executed_steps;
+                            updateCommandStatus(`Completed ${executedSteps} steps successfully`, 'success');
+                        } else {
+                            // 继续等待，但保持加载动画显示
+                            if (currentSimulationType === 'normal') {
+                                showLoadingInStatus('running', `Running simulation... (${checkCount * 2}s)`);
+                            }
+                        }
+                    } else {
+                        // 结果文件不存在，可能还在运行，保持加载动画
+                        if (simulationRunning && currentSimulationType === 'normal') {
+                            showLoadingInStatus('running', `Running simulation... (${checkCount * 2}s)`);
+                        }
+                    }
+                },
+                error: function(xhr, status, error) {
+                    console.error(`❌ 结果检查错误 #${checkCount}:`, error);
+                    updateCommandStatus(`Result check error (retrying...)`, 'warning');
+                }
+            });
+        }, 2000);
+        
+        // 30秒后停止检查
+        setTimeout(() => {
+            if (pauseCheckInterval) {
+                clearInterval(pauseCheckInterval);
+                pauseCheckInterval = null;
+                updateCommandStatus('Pause completed or timed out', 'info');
+                resetSimulationState();
+            }
+        }, 30000);
+    }
+
+    // 重置模拟状态
+    function resetSimulationState() {
+        simulationRunning = false;
+        currentSimulationType = null;
+        updateButtonStates(false, conversationActive, false);
+        updateSimulationStatus('ready');
+        
+        // 隐藏加载动画
+        hideLoadingInStatus();
+        
+        if (pauseCheckInterval) {
+            clearInterval(pauseCheckInterval);
+            pauseCheckInterval = null;
+        }
+    }
+
+    // 对话相关函数 - 支持气泡样式和逐句显示，移除动画效果
+    function addConversationMessage(speaker, message, type = 'normal', animated = false) {
+        const historyDiv = document.getElementById('conversation-history');
+        
+        // 如果是system消息且包含多行，则逐个冒泡显示
+        if (type === 'system' && message.includes('\n')) {
+            const lines = message.split('\n').filter(line => line.trim());
+            lines.forEach((line, index) => {
+                setTimeout(() => {
+                    addSingleConversationMessage(speaker, line.trim(), type, false);
+                }, index * 400); // 从600ms减少到400ms，更快显示
+            });
+            return;
+        }
+        
+        return addSingleConversationMessage(speaker, message, type, animated);
+    }
+
+    // 添加单个对话消息 - 使用新的布局结构，移除打字效果
+    function addSingleConversationMessage(speaker, message, type = 'normal', animated = false) {
+        const historyDiv = document.getElementById('conversation-history');
+        const messageDiv = document.createElement('div');
+        messageDiv.className = `conversation-message ${type}`;
+        
+        // 获取头像字符、渐变色和时间戳
+        const avatarChar = getAvatarChar(speaker, type);
+        const avatarGradient = getAvatarGradient(speaker, type);
+        const timestamp = new Date().toLocaleTimeString('zh-CN', { hour: '2-digit', minute: '2-digit' });
+        
+        // 创建消息结构 - 新的横向布局
+        let messageHTML = '';
+        
+        if (type === 'system') {
+            messageHTML = `
+                <div class="message-content-container">
+                    <div class="message-bubble">
+                        <div class="message-content">${message}</div>
+                    </div>
+                    <div class="message-timestamp">${timestamp}</div>
+                </div>
+            `;
+        } else {
+            messageHTML = `
+                <div class="message-avatar-container">
+                    <div class="message-avatar" style="background: ${avatarGradient};">${avatarChar}</div>
+                    <div class="message-sender">${speaker}</div>
+                </div>
+                <div class="message-content-container">
+                    <div class="message-bubble">
+                        <div class="message-content">${message}</div>
+                    </div>
+                    <div class="message-timestamp">${timestamp}</div>
+                </div>
+            `;
+        }
+        
+        messageDiv.innerHTML = messageHTML;
+        historyDiv.appendChild(messageDiv);
+        
+        // 直接滚动到底部，无需等待动画
+        historyDiv.scrollTop = historyDiv.scrollHeight;
+        updateScrollButton();
+        
+        return messageDiv;
+    }
+
+    // 更新滚动按钮显示状态
+    function updateScrollButton() {
+        const historyDiv = document.getElementById('conversation-history');
+        const scrollBtn = document.getElementById('scroll-to-bottom');
+        
+        if (historyDiv && scrollBtn) {
+            const isNearBottom = historyDiv.scrollTop >= historyDiv.scrollHeight - historyDiv.clientHeight - 50;
+            scrollBtn.style.display = isNearBottom ? 'none' : 'flex';
+        }
+    }
+
+    // 滚动到底部函数
+    function scrollToBottom() {
+        const historyDiv = document.getElementById('conversation-history');
+        if (historyDiv) {
+            historyDiv.scrollTo({
+                top: historyDiv.scrollHeight,
+                behavior: 'smooth'
+            });
+        }
+    }
+
+    // System消息加载动画
+    let systemLoadingInterval = null;
+    let currentLoadingMessage = null;
+
+    function startSystemLoadingAnimation(messageElement) {
+        if (systemLoadingInterval) {
+            clearInterval(systemLoadingInterval);
+        }
+        
+        currentLoadingMessage = messageElement;
+        const contentElement = messageElement.querySelector('.message-content');
+        const baseText = '正在结束对话';
+        let dotCount = 0;
+        
+        systemLoadingInterval = setInterval(() => {
+            dotCount = (dotCount + 1) % 4;
+            const dots = '.'.repeat(dotCount);
+            contentElement.textContent = baseText + dots;
+        }, 500);
+    }
+
+    function stopSystemLoadingAnimation() {
+        if (systemLoadingInterval) {
+            clearInterval(systemLoadingInterval);
+            systemLoadingInterval = null;
+        }
+        
+        if (currentLoadingMessage) {
+            // 移除加载消息，因为会显示新的成功/失败消息
+            currentLoadingMessage.remove();
+            currentLoadingMessage = null;
+        }
+    }
+
+    // 增强的反思内容显示函数
+    function displayReflectionWithDelay(personaName, content, delay) {
+        setTimeout(() => {
+            // 先显示一个提示消息
+            addConversationMessage('System', '💭 Agent正在反思...', 'system', false);
+            
+            // 稍后显示实际的反思内容
+            setTimeout(() => {
+                addConversationMessage(personaName, content, 'reflection', false);
+                
+                // 滚动到底部确保用户能看到反思内容
+                setTimeout(() => {
+                    scrollToBottom();
+                }, 100);
+            }, 800);
+        }, delay);
+    }
+
+    // 获取头像字符
+
+    function getAvatarChar(speaker, type) {
+        switch(type) {
+            case 'user':
+                return '👤';
+            case 'persona':
+                return speaker.charAt(0).toUpperCase();
+            case 'reflection':
+                return '💭';
+            case 'system':
+                return '🔔';
+            default:
+                return speaker.charAt(0).toUpperCase();
+        }
+    }
+
+    // 获取基于名字的头像渐变色
+    function getAvatarGradient(speaker, type) {
+        const gradients = [
+            'linear-gradient(135deg, #667eea, #764ba2)',
+            'linear-gradient(135deg, #f093fb, #f5576c)',
+            'linear-gradient(135deg, #4facfe, #00f2fe)',
+            'linear-gradient(135deg, #43e97b, #38f9d7)',
+            'linear-gradient(135deg, #fa709a, #fee140)',
+            'linear-gradient(135deg, #a8edea, #fed6e3)',
+            'linear-gradient(135deg, #ffecd2, #fcb69f)',
+            'linear-gradient(135deg, #ff8a80, #ff5722)',
+            'linear-gradient(135deg, #81c784, #4caf50)',
+            'linear-gradient(135deg, #64b5f6, #2196f3)',
+        ];
+        
+        if (type === 'user') return 'linear-gradient(135deg, #0969da, #0860ca)';
+        if (type === 'reflection') return 'linear-gradient(135deg, #8250df, #7c3aed)';
+        if (type === 'system') return 'linear-gradient(135deg, #6c757d, #495057)';
+        
+        // 基于名字生成稳定的颜色
+        let hash = 0;
+        for (let i = 0; i < speaker.length; i++) {
+            hash = speaker.charCodeAt(i) + ((hash << 5) - hash);
+        }
+        return gradients[Math.abs(hash) % gradients.length];
+    }
+
+    // 打字机效果 - 大幅优化速度
+    function typeWriterEffect(element, text, speed = 3) {
+        element.innerHTML = '';
+        element.classList.add('typewriter-text');
+        
+        let i = 0;
+        function type() {
+            if (i < text.length) {
+                element.innerHTML += text.charAt(i);
+                i++;
+                setTimeout(type, speed); // 再次加快到3ms，极速显示
+            } else {
+                element.classList.remove('typewriter-text');
+            }
+        }
+        type();
+    }
+
+    // 显示打字指示器 - 使用新的布局结构
+    function showTypingIndicator(speaker) {
+        const historyDiv = document.getElementById('conversation-history');
+        const typingDiv = document.createElement('div');
+        typingDiv.className = 'conversation-message persona-message typing-indicator';
+        typingDiv.id = 'typing-indicator';
+        
+        const avatarChar = getAvatarChar(speaker, 'persona');
+        const avatarGradient = getAvatarGradient(speaker, 'persona');
+        
+        typingDiv.innerHTML = `
+            <div class="message-avatar-container">
+                <div class="message-avatar" style="background: ${avatarGradient};">${avatarChar}</div>
+                <div class="message-sender">${speaker}</div>
+            </div>
+            <div class="message-content-container">
+                <div class="message-bubble">
+                    <div class="typing-dots">
+                        <div class="typing-dot"></div>
+                        <div class="typing-dot"></div>
+                        <div class="typing-dot"></div>
+                    </div>
+                </div>
+            </div>
+        `;
+        
+        historyDiv.appendChild(typingDiv);
+        historyDiv.scrollTop = historyDiv.scrollHeight;
+        
+        return typingDiv;
+    }
+
+    // 隐藏打字指示器
+    function hideTypingIndicator() {
+        const typingDiv = document.getElementById('typing-indicator');
+        if (typingDiv) {
+            typingDiv.remove();
+        }
+    }
+
+    // 增强的添加消息函数 - 支持延迟，移除动画效果
+    function addConversationMessageWithDelay(speaker, message, type = 'normal', delay = 0, animated = false) {
+        setTimeout(() => {
+            // 根据消息类型调整延迟
+            let adjustedDelay = delay;
+            if (type === 'persona' || type === 'normal') {
+                adjustedDelay = Math.max(delay, 200); // 从300ms减少到200ms，更快显示
+            } else if (type === 'reply') {
+                adjustedDelay = Math.max(delay, 100); // 从200ms减少到100ms，更快显示
+            }
+            
+            setTimeout(() => {
+                addConversationMessage(speaker, message, type, animated);
+            }, adjustedDelay);
+        }, 0);
+    }
+
+    function updateConversationStatus(message, type = 'info') {
+        const statusDiv = document.getElementById('conversation-status');
+        statusDiv.textContent = message;
+        
+        switch(type) {
+            case 'active':
+                statusDiv.style.backgroundColor = '#d4edda';
+                statusDiv.style.color = '#155724';
+                break;
+            case 'waiting':
+                statusDiv.style.backgroundColor = '#fff3cd';
+                statusDiv.style.color = '#856404';
+                break;
+            case 'error':
+                statusDiv.style.backgroundColor = '#f8d7da';
+                statusDiv.style.color = '#721c24';
+                break;
+            default:
+                statusDiv.style.backgroundColor = '#d9edf7';
+                statusDiv.style.color = '#31708f';
+        }
+    }
+
+    window.startConversationAs = function () {
+        const persona = document.getElementById('persona-select').value;
+        const role = document.getElementById('role-input').value.trim();
+
+        console.log('🎭 startConversationAs called:', { persona, role }); // 调试信息
+
+        if (!persona) {
+            updateCommandStatus('Please select a persona', 'warning');
+            return;
+        }
+        if (!role) {
+            updateCommandStatus('Please enter your role', 'warning');
+            return;
+        }
+
+        const command = `converse as ${role} with ${persona}`;
+
+        updateCommandStatus(`Starting conversation as ${role} with ${persona}`, 'progress');
+
+        $.ajax({
+            url: '/execute_console_command/',
+            type: 'POST',
+            contentType: 'application/json',
+            headers: {
+                'X-CSRFToken': getCookie('csrftoken')
+            },
+            data: JSON.stringify({
+                command: command,
+                sim_code: getCurrentSimCode(),
+                step: getCurrentStep()
+            }),
+            success: function (response) {
+                console.log('🎭 Backend response:', response); // 调试信息
+
+                if (response.success) {
+                    try {
+                        // 设置全局状态变量
+                        conversationActive = true;
+                        currentPersona = persona;
+                        currentRole = role;
+
+                        console.log('🎭 Setting conversation state:', { conversationActive, currentPersona, currentRole });
+
+                        // 检查DOM元素是否存在
+                        const conversationPanel = document.getElementById('conversation-panel');
+                        const conversationTitle = document.getElementById('conversation-title');
+                        const userRoleDisplay = document.getElementById('user-role-display');
+                        const messageInput = document.getElementById('message-input');
+                        const sendBtn = document.getElementById('send-message-btn');
+                        const endBtn = document.getElementById('end-conversation-btn');
+                        const conversationHistory = document.getElementById('conversation-history');
+
+                        if (!conversationPanel) {
+                            console.error('❌ conversation-panel element not found!');
+                            updateCommandStatus('UI Error: conversation panel not found', 'error');
+                            return;
+                        }
+
+                        // 显示对话面板
+                        conversationPanel.style.display = 'block';
+
+                        if (conversationTitle) {
+                            conversationTitle.textContent = `${role} talking with ${persona}`;
+                        }
+
+                        if (userRoleDisplay) {
+                            userRoleDisplay.textContent = role;
+                        }
+
+                        // 启用输入控件
+                        if (messageInput) messageInput.disabled = false;
+                        if (sendBtn) sendBtn.disabled = false;
+                        if (endBtn) endBtn.disabled = false;
+
+                        // 清空对话历史
+                        if (conversationHistory) {
+                            conversationHistory.innerHTML = '';
+                        }
+
+                        // 解析后端返回的角色信息并显示
+                        if (response.output && (response.output.includes('Role Setup:') || response.output.includes('Description:'))) {
+                            // 解析后端返回的完整角色信息
+                            const outputLines = response.output.split('\n');
+                            let roleInfo = {
+                                role: role,
+                                persona: persona,
+                                description: ''
+                            };
+                            
+                            // 更健壮的解析逻辑 - 查找描述信息
+                            for (let i = 0; i < outputLines.length; i++) {
+                                const line = outputLines[i].trim();
+                                // 匹配各种可能的描述格式
+                                if (line.includes('Description:')) {
+                                    // 提取描述内容，去掉前缀符号和空格
+                                    roleInfo.description = line.replace(/.*Description:\s*/, '').trim();
+                                    break;
+                                } else if (line.includes('• ') && !line.includes('You are playing:') && !line.includes('Talking with:')) {
+                                    // 如果没有明确的Description标签，尝试提取其他有用信息
+                                    const content = line.replace(/.*• /, '').trim();
+                                    if (content && content.length > 10) { // 只保留有意义的长描述
+                                        roleInfo.description = content;
+                                    }
+                                }
+                            }
+                            
+                            // 添加欢迎消息
+                            addConversationMessage('System', `🎭 Welcome to the conversation!`, 'system');
+                            
+                            // 显示角色设定信息
+                            addConversationMessage('System', `👤 You are playing as: ${roleInfo.role}`, 'system');
+                            
+                            if (roleInfo.description && roleInfo.description.trim()) {
+                                addConversationMessage('System', `📝 Character Description: ${roleInfo.description}`, 'system');
+                            } else {
+                                addConversationMessage('System', `� No specific character description available`, 'system');
+                            }
+                            
+                            addConversationMessage('System', `💬 Talking with: ${roleInfo.persona}`, 'system');
+                            addConversationMessage('System', `✨ ${roleInfo.persona} now knows they're talking with ${roleInfo.role}. Ready to start!`, 'system');
+                        } else {
+                            // 备用显示方式
+                            addConversationMessage('System', `🎭 Conversation started between ${role} and ${persona}`, 'system');
+                            addConversationMessage('System', `📝 No character description available for ${role}`, 'system');
+                        }
+
+                        updateCommandStatus(`Conversation with ${persona} started`, 'success');
+                        updateConversationStatus(`Active conversation with ${persona}`, 'active');
+
+                        // 更新按钮状态 - 进入对话模式
+                        updateButtonStates(simulationRunning, true, false);
+
+                        // 聚焦到输入框
+                        if (messageInput) {
+                            messageInput.focus();
+                        }
+
+                        console.log('✅ Conversation UI setup completed');
+
+                    } catch (error) {
+                        console.error('❌ Error setting up conversation UI:', error);
+                        updateCommandStatus(`UI Error: ${error.message}`, 'error');
+                    }
+                } else {
+                    console.error('❌ Backend error:', response.error);
+                    updateCommandStatus(`Error: ${response.error || 'Failed to start conversation'}`, 'error');
+                }
+            },
+            error: function (xhr, status, error) {
+                console.error('❌ Network error:', { xhr, status, error });
+                updateCommandStatus(`Network error: ${error}`, 'error');
+            }
+        });
+    };
+
+    window.startConversationWith = function() {
+        const persona = document.getElementById('persona-select').value;
+        
+        if (!persona) {
+            updateCommandStatus('Please select a persona', 'warning');
+            return;
+        }
+
+        // 第一步：询问是否要自定义角色
+        const useCustomRole = confirm(
+            `Do you want to play as a custom character when talking with ${persona}?\n\n` +
+            `• Click "OK" to define a custom character (recommended)\n` +
+            `• Click "Cancel" to use default "User" role`
+        );
+
+        let command;
+        let userRole;
+        let userDescription = "";
+
+        if (useCustomRole) {
+            // 第二步：输入角色名称
+            userRole = prompt(
+                `Please enter your character name:\n\n` +
+                `Examples:\n` +
+                `• Wei Xu\n` +
+                `• Dr. Sarah Chen\n` +
+                `• Maria the Artist\n\n` +
+                `Character name:`,
+                ""
+            );
+
+            if (userRole === null) {
+                return; // 用户取消
+            }
+
+            userRole = userRole.trim();
+            if (!userRole) {
+                updateCommandStatus('Character name cannot be empty', 'warning');
+                return;
+            }
+
+            // 第三步：输入角色描述
+            userDescription = prompt(
+                `Please describe your character "${userRole}":\n\n` +
+                `This helps ${persona} understand who they're talking to.\n\n` +
+                `Examples:\n` +
+                `• A curious student studying social dynamics\n` +
+                `• A friendly neighbor who just moved to the area\n` +
+                `• An artist interested in community life\n\n` +
+                `Character description:`,
+                ""
+            );
+
+            if (userDescription === null) {
+                return; // 用户取消
+            }
+
+            userDescription = userDescription.trim();
+            
+            // 构建命令 - 使用新的格式
+            if (userDescription) {
+                command = `converse with ${persona} as ${userRole} : ${userDescription}`;
+            } else {
+                command = `converse with ${persona} as ${userRole}`;
+            }
+        } else {
+            // 使用默认 User 角色
+            userRole = "User";
+            command = `converse with ${persona}`;
+        }
+        
+        updateCommandStatus(`Starting conversation as ${userRole} with ${persona}`, 'progress');
+
+        $.ajax({
+            url: '/execute_console_command/',
+            type: 'POST',
+            contentType: 'application/json',
+            headers: {
+                'X-CSRFToken': getCookie('csrftoken')
+            },
+            data: JSON.stringify({
+                command: command,
+                sim_code: getCurrentSimCode(),
+                step: getCurrentStep()
+            }),
+            success: function(response) {
+                if (response.success) {
+                    // 启动对话界面
+                    conversationActive = true;
+                    currentPersona = persona;
+                    currentRole = userRole;
+                    
+                    // 显示对话面板
+                    document.getElementById('conversation-panel').style.display = 'block';
+                    document.getElementById('conversation-title').textContent = `${userRole} talking with ${persona}`;
+                    document.getElementById('user-role-display').textContent = userRole;
+                    
+                    // 启用输入控件
+                    document.getElementById('message-input').disabled = false;
+                    document.getElementById('send-message-btn').disabled = false;
+                    document.getElementById('end-conversation-btn').disabled = false;
+                    
+                    // 清空对话历史
+                    document.getElementById('conversation-history').innerHTML = '';
+                    
+                    // 解析并显示角色信息 - 统一处理逻辑
+                    if (response.output && (response.output.includes('Role Setup:') || response.output.includes('Description:'))) {
+                        // 解析后端返回的完整角色信息 (与startConversationAs保持一致)
+                        const outputLines = response.output.split('\n');
+                        let roleInfo = {
+                            role: userRole,
+                            persona: persona,
+                            description: userDescription || ''
+                        };
+                        
+                        // 更健壮的解析逻辑 - 查找描述信息
+                        for (let i = 0; i < outputLines.length; i++) {
+                            const line = outputLines[i].trim();
+                            // 匹配各种可能的描述格式
+                            if (line.includes('Description:')) {
+                                // 提取描述内容，去掉前缀符号和空格
+                                const backendDescription = line.replace(/.*Description:\s*/, '').trim();
+                                if (backendDescription && backendDescription !== 'No specific description') {
+                                    roleInfo.description = backendDescription;
+                                }
+                                break;
+                            } else if (line.includes('• ') && !line.includes('You are playing:') && !line.includes('Talking with:')) {
+                                // 如果没有明确的Description标签，尝试提取其他有用信息
+                                const content = line.replace(/.*• /, '').trim();
+                                if (content && content.length > 10 && !roleInfo.description) { 
+                                    roleInfo.description = content;
+                                }
+                            }
+                        }
+                        
+                        // 添加欢迎消息
+                        addConversationMessage('System', `🎭 Welcome to the conversation!`, 'system');
+                        
+                        // 显示角色设定信息
+                        addConversationMessage('System', `👤 You are playing as: ${roleInfo.role}`, 'system');
+                        
+                        if (roleInfo.description && roleInfo.description.trim()) {
+                            addConversationMessage('System', `📝 Character Description: ${roleInfo.description}`, 'system');
+                        } else {
+                            addConversationMessage('System', `� No specific character description available`, 'system');
+                        }
+                        
+                        addConversationMessage('System', `💬 Talking with: ${roleInfo.persona}`, 'system');
+                        addConversationMessage('System', `✨ ${roleInfo.persona} now knows they're talking with ${roleInfo.role}. Ready to start!`, 'system');
+                    } else {
+                        // 备用显示方式 - 向后兼容
+                        addConversationMessage('System', `🎭 Conversation started between ${userRole} and ${persona}`, 'system');
+                        
+                        if (userDescription) {
+                            addConversationMessage('System', `📝 Your role characteristics: ${userDescription}`, 'system');
+                        } else {
+                            addConversationMessage('System', `📝 No character description available for ${userRole}`, 'system');
+                        }
+                    }
+                    
+                    updateCommandStatus(`Conversation with ${persona} started`, 'success');
+                    updateConversationStatus(`Active conversation with ${persona}`, 'active');
+                    
+                    // 更新按钮状态 - 进入对话模式
+                    updateButtonStates(simulationRunning, true, false);
+                    
+                    // 聚焦到输入框
+                    document.getElementById('message-input').focus();
+                    
+                } else {
+                    updateCommandStatus(`Error: ${response.error || 'Failed to start conversation'}`, 'error');
+                }
+            },
+            error: function(xhr, status, error) {
+                updateCommandStatus(`Network error: ${error}`, 'error');
+            }
+        });
+    };
+
+    window.sendMessage = function() {
+        if (!conversationActive) {
+            updateConversationStatus('No active conversation', 'error');
+            return;
+        }
+
+        const messageInput = document.getElementById('message-input');
+        const message = messageInput.value.trim();
+        
+        if (!message) {
+            return;
+        }
+
+        // 显示用户消息（立即显示，无动画）
+        addConversationMessage(currentRole, message, 'user', false);
+        
+        // 清空输入框并禁用
+        messageInput.value = '';
+        messageInput.disabled = true;
+        document.getElementById('send-message-btn').disabled = true;
+        
+        // 显示打字指示器
+        const typingIndicator = showTypingIndicator(currentPersona);
+        updateConversationStatus('Waiting for response...', 'waiting');
+
+        // 发送 say 命令到后端
+        const command = `say ${message}`;
+        
+        $.ajax({
+            url: '/execute_console_command/',
+            type: 'POST',
+            contentType: 'application/json',
+            headers: {
+                'X-CSRFToken': getCookie('csrftoken')
+            },
+            data: JSON.stringify({
+                command: command,
+                sim_code: getCurrentSimCode(),
+                step: getCurrentStep()
+            }),
+            success: function(response) {
+                // 隐藏打字指示器
+                hideTypingIndicator();
+                
+                // 重新启用输入
+                messageInput.disabled = false;
+                document.getElementById('send-message-btn').disabled = false;
+                messageInput.focus();
+                
+                if (response.success) {
+                    // 解析响应，提取persona的回复 - 优化显示速度
+                    const output = response.output;
+                    const lines = output.split('\n');
+                    let delay = 200; // 减少初始延迟
+                    
+                    for (const line of lines) {
+                        if (line.includes(':') && !line.startsWith('💡') && !line.startsWith('━')) {
+                            const parts = line.split(':');
+                            if (parts.length >= 2) {
+                                const speaker = parts[0].trim();
+                                const content = parts.slice(1).join(':').trim();
+                                
+                                if (speaker === currentPersona) {
+                                    // Persona消息直接显示，无动画
+                                    addConversationMessageWithDelay(speaker, content, 'persona', delay, false);
+                                    delay += 100; // 大幅减少延迟时间
+                                } else if (line.includes('reflection') || line.includes('🤔')) {
+                                    // 反思消息直接显示，无动画
+                                    addConversationMessageWithDelay('Reflection', content, 'reflection', delay, false);
+                                    delay += 100;
+                                }
+                            }
+                        } else if (line.trim() && !line.startsWith('💡') && !line.startsWith('━') && !line.includes('继续对话')) {
+                            // 系统消息立即显示
+                            addConversationMessage('System', line.trim(), 'system', false);
+                        }
+                    }
+                    
+                    updateConversationStatus(`Active conversation with ${currentPersona}`, 'active');
+                } else {
+                    addConversationMessage('System', `Error: ${response.error || 'Failed to send message'}`, 'system', false);
+                    updateConversationStatus('Error occurred', 'error');
+                }
+            },
+            error: function(xhr, status, error) {
+                // 隐藏打字指示器
+                hideTypingIndicator();
+                
+                messageInput.disabled = false;
+                document.getElementById('send-message-btn').disabled = false;
+                addConversationMessage('System', `Network error: ${error}`, 'system', false);
+                updateConversationStatus('Network error', 'error');
+            }
+        });
+    };
+
+    window.endConversation = function() {
+        if (!conversationActive) {
+            return;
+        }
+
+        // 在对话框中显示结束对话加载动画
+        const loadingMessage = addConversationMessage('System', '正在结束对话...', 'system', false);
+        startSystemLoadingAnimation(loadingMessage);
+
+        // 在状态栏显示结束对话加载
+        showLoadingInStatus('endingchat', 'Ending conversation...');
+
+        // 设置结束对话状态，禁用所有按钮
+        updateButtonStates(simulationRunning, true, true);
+
+        updateConversationStatus('Ending conversation...', 'waiting');
+
+        $.ajax({
+            url: '/execute_console_command/',
+            type: 'POST',
+            contentType: 'application/json',
+            headers: {
+                'X-CSRFToken': getCookie('csrftoken')
+            },
+            data: JSON.stringify({
+                command: 'end_conversation',
+                sim_code: getCurrentSimCode(),
+                step: getCurrentStep()
+            }),
+            success: function(response) {
+                // 恢复状态栏正常显示
+                hideLoadingInStatus();
+                
+                // 停止system加载动画
+                stopSystemLoadingAnimation();
+                
+                if (response.success) {
+                    // 显示结束信息
+                    addConversationMessage('System', '✅ 对话已结束', 'system');
+                    
+                    // 解析并显示agent的反思内容 - 只显示最后一段真正的反思
+                    if (response.output) {
+                        console.log('Response output:', response.output); // 调试输出
+                        const lines = response.output.split('\n');
+                        let delay = 1000; // 开始延迟1秒
+                        const personaName = currentPersona || 'Agent'; // 保存当前persona名字
+                        let lastReflectionContent = null;
+                        
+                        // 优化的反思内容识别函数
+                        function isDialogLine(line) {
+                            return line.includes('"') || line.includes('"') || line.includes('"') ||
+                                   line.match(/^(Wei Xu|User|用户|Agent|代理|Isabella|Maria|Klaus)[:：]/) ||
+                                   line.includes('说：') || line.includes('said:') || 
+                                   line.includes('replied:') || line.includes('回复：') ||
+                                   line.includes('答道：') || line.includes('responded:') ||
+                                   line.match(/^[A-Z][a-z]+ [A-Z][a-z]+[:：]/) || // 匹配 "First Last:" 格式
+                                   line.match(/^\w+[:：]\s*[""]/) || // 匹配 "Name: "content"" 格式
+                                   line.includes('conversation') || line.includes('对话') ||
+                                   line.includes('dialogue') || line.includes('chat');
+                        }
+                        
+                        function isValidReflectionContent(content) {
+                            if (!content || content.length < 10) return false; // 太短的内容可能不是反思
+                            if (isDialogLine(content)) return false; // 排除对话内容
+                            if (content.match(/^[\s\W]*$/)) return false; // 排除只有标点和空格的内容
+                            return true;
+                        }
+                        
+                        // 从后往前查找最后一个有效的反思内容
+                        for (let i = lines.length - 1; i >= 0; i--) {
+                            const line = lines[i].trim();
+                            if (!line) continue;
+                            
+                            console.log(`Processing line ${i} (reverse):`, line);
+                            
+                            // 检查是否是反思标识行 - 必须是独立的反思标识行
+                            const reflectionMarkerMatch = line.match(/^.*?[反思|Reflection|reflection|思考|💭|🤔].*?[:：]\s*$/i);
+                            
+                            if (reflectionMarkerMatch && !isDialogLine(line)) {
+                                console.log('Found reflection marker at line', i, ':', line);
+                                
+                                // 收集后续的反思内容（向后查找）
+                                let j = i + 1;
+                                let reflectionText = '';
+                                let contentLines = [];
+                                
+                                while (j < lines.length) {
+                                    const nextLine = lines[j].trim();
+                                    if (!nextLine) {
+                                        // 遇到空行，检查是否还有更多内容
+                                        if (j + 1 < lines.length && lines[j + 1].trim()) {
+                                            j++;
+                                            continue;
+                                        } else {
+                                            break; // 确实是内容结束
+                                        }
+                                    }
+                                    
+                                    // 如果遇到新的标识行或对话内容，停止
+                                    if (nextLine.match(/^.*?[反思|Reflection|reflection|思考|💭|🤔].*?[:：]/i) || 
+                                        isDialogLine(nextLine) ||
+                                        nextLine.match(/^(Step|阶段|Phase|Part)\s*\d+/i)) {
+                                        console.log('Stopping at line', j, 'due to new section:', nextLine);
+                                        break;
+                                    }
+                                    
+                                    contentLines.push(nextLine);
+                                    j++;
+                                }
+                                
+                                reflectionText = contentLines.join(' ').trim();
+                                
+                                if (isValidReflectionContent(reflectionText)) {
+                                    lastReflectionContent = reflectionText;
+                                    console.log('Found valid last reflection (multi-line):', reflectionText);
+                                    break; // 找到最后一个有效反思后立即停止
+                                } else {
+                                    console.log('Skipping invalid reflection content:', reflectionText);
+                                }
+                            }
+                            // 检查单行反思（冒号后直接有内容）
+                            else {
+                                const singleLineMatch = line.match(/^.*?[反思|Reflection|reflection|思考|💭|🤔].*?[:：]\s*(.+)/i);
+                                if (singleLineMatch && !isDialogLine(line)) {
+                                    const cleanContent = singleLineMatch[1].trim();
+                                    console.log('Found single-line reflection candidate at line', i, ':', cleanContent);
+                                    
+                                    if (isValidReflectionContent(cleanContent)) {
+                                        lastReflectionContent = cleanContent;
+                                        console.log('Found valid last reflection (single-line):', cleanContent);
+                                        break; // 找到最后一个有效反思后立即停止
+                                    } else {
+                                        console.log('Skipping invalid single-line reflection:', cleanContent);
+                                    }
+                                }
+                            }
+                        }
+                        
+                        // 显示最后一个有效的反思内容
+                        if (lastReflectionContent) {
+                            console.log('Final reflection to display:', lastReflectionContent);
+                            
+                            // 使用增强的反思显示函数
+                            displayReflectionWithDelay(personaName, lastReflectionContent, delay);
+                        } else {
+                            console.log('No valid reflection content found to display');
+                        }
+                    }
+                    
+                    updateConversationStatus('Conversation ended', 'info');
+                    updateCommandStatus('Conversation ended successfully', 'success');
+                } else {
+                    addConversationMessage('System', `❌ 结束对话失败: ${response.error}`, 'system');
+                    updateConversationStatus('Error ending conversation', 'error');
+                    updateCommandStatus(`Error ending conversation: ${response.error}`, 'error');
+                }
+                
+                // 重置状态（在显示完反思内容后）
+                setTimeout(() => {
+                    conversationActive = false;
+                    currentPersona = null;
+                    currentRole = null;
+                }, 3000); // 给足够时间显示反思内容
+                
+                // 禁用输入控件
+                document.getElementById('message-input').disabled = true;
+                document.getElementById('send-message-btn').disabled = true;
+                document.getElementById('end-conversation-btn').disabled = true;
+                
+                // 恢复按钮状态 - 退出对话模式
+                updateButtonStates(simulationRunning, false, false);
+            },
+            error: function(xhr, status, error) {
+                // 恢复状态栏正常显示
+                hideLoadingInStatus();
+                
+                // 停止system加载动画
+                stopSystemLoadingAnimation();
+                
+                updateCommandStatus(`Network error: ${error}`, 'error');
+                
+                addConversationMessage('System', `❌ 网络错误: ${error}`, 'system');
+                updateConversationStatus('Network error', 'error');
+                
+                // 即使出错也要重置状态
+                conversationActive = false;
+                currentPersona = null;
+                currentRole = null;
+                updateButtonStates(simulationRunning, false, false);
+            }
+        });
+    };
+
+    // 保存模拟状态
+    window.saveSimulation = function () {
+        // 在状态栏显示保存加载
+        showLoadingInStatus('saving', 'Saving simulation...');
+        
+        // 延迟执行保存命令，让用户看到加载效果
+        setTimeout(() => {
+            executeSimulationCommand('save', 'Simulation saved successfully');
+            hideLoadingInStatus();
+        }, 1000);
+    };
+
+    // 测试状态栏加载动画的函数（可选，用于调试）
+    window.testStatusLoading = function() {
+        console.log('🔄 测试状态栏加载动画...');
+        
+        // 测试运行动画
+        showLoadingInStatus('running', 'Testing running animation...');
+        setTimeout(() => {
+            // 测试暂停动画
+            showLoadingInStatus('pausing', 'Testing pausing animation...');
+            setTimeout(() => {
+                // 测试结束对话动画
+                showLoadingInStatus('endingchat', 'Testing ending conversation...');
+                setTimeout(() => {
+                    // 测试保存动画
+                    showLoadingInStatus('saving', 'Testing saving...');
+                    setTimeout(() => {
+                        hideLoadingInStatus();
+                        console.log('✅ 状态栏加载动画测试完成');
+                    }, 2000);
+                }, 2000);
+            }, 2000);
+        }, 2000);
+    };
+
+    // 测试运行流程的函数
+    window.testRunningFlow = function() {
+        console.log('🔄 测试完整运行流程...');
+        
+        // 模拟运行开始
+        simulationRunning = true;
+        currentSimulationType = 'normal';
+        showLoadingInStatus('running', 'Testing full running flow...');
+        
+        setTimeout(() => {
+            // 模拟运行完成
+            simulationRunning = false;
+            hideLoadingInStatus();
+            updateCommandStatus('Test completed successfully', 'success');
+            console.log('✅ 运行流程测试完成');
+        }, 5000);
+    };
+
+    // 测试对话气泡UI的函数
+    window.testConversationUI = function() {
+        console.log('💬 测试对话气泡UI...');
+        
+        // 显示对话面板
+        document.getElementById('conversation-panel').style.display = 'block';
+        document.getElementById('conversation-history').innerHTML = '';
+        
+        // 测试不同类型的消息
+        addConversationMessage('System', 'Welcome to the conversation test!', 'system', false);
+        
+        setTimeout(() => {
+            addConversationMessage('Wei Xu', 'Hello! How are you doing today?', 'user', false);
+        }, 1000);
+        
+        setTimeout(() => {
+            const typingIndicator = showTypingIndicator('Isabella');
+            setTimeout(() => {
+                hideTypingIndicator();
+                addConversationMessage('Isabella', 'Hi Wei! I\'m doing great, thank you for asking. How about you?', 'persona', false);
+            }, 2000);
+        }, 2000);
+        
+        setTimeout(() => {
+            addConversationMessage('Reflection', 'Isabella seems friendly and responsive to social interactions.', 'reflection', false);
+        }, 6000);
+        
+        setTimeout(() => {
+            addConversationMessage('Wei Xu', 'I\'m doing well too! What have you been up to lately?', 'user', false);
+        }, 8000);
+        
+        setTimeout(() => {
+            const typingIndicator = showTypingIndicator('Isabella');
+            setTimeout(() => {
+                hideTypingIndicator();
+                addConversationMessage('Isabella', 'I\'ve been working on some art projects and enjoying the nice weather. It\'s been really inspiring!', 'persona', false);
+            }, 1500);
+        }, 9000);
+        
+        console.log('✅ 对话UI测试启动完成，请观察动画效果');
+    };
+
+    // 页面卸载时清理定时器
+    $(window).on('beforeunload', function() {
+        if (pauseCheckInterval) {
+            clearInterval(pauseCheckInterval);
+        }
+    });
+
+    // 添加人物点击事件
+    {% for p in persona_names %}
+    $('#on_screen_det_trigger-{{p.underscore}}').click(function () {
+        console.log('🎭 点击了角色: {{p.underscore}}');
+        $('#persona-select').val('{{p.original}}');
+        
+        // 隐藏初始提示
+        $('#on_screen_det_content-init').css({'display': 'none'});
+        
+     // 隐藏所有其他人物的详情并重置样式
+        {% for p_i in persona_names %}
+        $('#on_screen_det_content-{{p_i.underscore}}').css({'display': 'none'});
+        $('#on_screen_det_trigger-{{p_i.underscore}}').css({'font-weight': '500'});
+        $('#on_screen_det_trigger_container-{{p_i.underscore}}').css({
+            'background-color': 'white',
+            'border-radius': '10px'
+        });
+        {% endfor %}
+
+        // 高亮当前选中的人物
+        $('#on_screen_det_trigger-{{p.underscore}}').css({'font-weight': '900'});
+        $('#on_screen_det_trigger_container-{{p.underscore}}').css({
+            'background-color': '#ABFF84',
+            'border-radius': '10px'
+        });
+        
+        // 显示当前人物的详情
+        $('#on_screen_det_content-{{p.underscore}}').css({'display': 'block'});
+
+        // 设置聚焦目标
+        document.getElementById("temp_focus").innerHTML = "{{p.underscore}}";
+    });
+    {% endfor %}
+    
+    // 初始化界面样式和功能
+    function initializeControlPanel() {
+        // 为所有按钮添加hover效果类
+        $('.control-panel-btn').hover(
+            function() { $(this).addClass('btn-hover'); },
+            function() { $(this).removeClass('btn-hover'); }
+        );
+        
+        // 初始化状态显示
+        updateCommandStatus('Ready to execute commands', 'info');
+        updateSimulationStatus('ready');
+        
+        console.log('✅ Control panel initialized with enhanced styling');
+    }
+    
+    // 调用初始化函数
+    initializeControlPanel();
+    console.log('✅ DOM ready, 所有功能已初始化');
+    
+    // 开发者工具中可用的测试函数
+    window.debugUI = {
+        testLoadingAnimation: function() {
+            console.log('🧪 UI测试开始...');
+            
+            // 测试运行动画
+            showLoadingOverlay('running', 'Testing running animation...');
+            setTimeout(() => {
+                // 测试暂停动画
+                showLoadingOverlay('pausing', 'Testing pausing animation...');
+                setTimeout(() => {
+                    // 测试结束对话动画
+                    showLoadingOverlay('endingchat', 'Testing ending conversation...');
+                    setTimeout(() => {
+                        hideLoadingOverlay();
+                        console.log('✅ 加载动画测试完成');
+                    }, 2000);
+                }, 2000);
+            }, 2000);
+        },
+        
+        testButtonStates: function() {
+            console.log('🧪 按钮状态测试...');
+            updateButtonStates(true, false, false);
+            setTimeout(() => {
+                updateButtonStates(false, true, false);
+                setTimeout(() => {
+                    updateButtonStates(false, false, false);
+                    console.log('✅ 按钮状态测试完成');
+                }, 2000);
+            }, 2000);
+        },
+        
+        testStatusDisplay: function() {
+            console.log('🧪 状态显示测试...');
+            updateCommandStatus('Testing success', 'success');
+            setTimeout(() => {
+                updateCommandStatus('Testing error', 'error');
+                setTimeout(() => {
+                    updateCommandStatus('Testing warning', 'warning');
+                    setTimeout(() => {
+                        updateCommandStatus('Ready to execute commands', 'info');
+                        console.log('✅ 状态显示测试完成');
+                    }, 2000);
+                }, 2000);
+            }, 2000);
+        },
+        
+        showAllTests: function() {
+            console.log('🚀 所有UI功能测试:');
+            console.log('- debugUI.testLoadingAnimation() - 测试加载动画');
+            console.log('- debugUI.testButtonStates() - 测试按钮状态');
+            console.log('- debugUI.testStatusDisplay() - 测试状态显示');
+        }
+    };
+    
+    // 自动显示测试提示
+    console.log('🚀 UI已完全加载! 在控制台输入 debugUI.showAllTests() 查看可用测试');
+
+    // 确保空格键在输入框中正常工作
+    $('#message-input').on('keydown', function(e) {
+        if (e.keyCode === 32) { // 空格键
+            e.stopPropagation(); // 阻止事件冒泡到其他监听器
+            console.log('✅ 空格键在输入框中正常工作');
+        }
+    });
+
+    // 专门处理消息输入框的键盘事件
+    $('#message-input').on('keydown keypress keyup', function(e) {
+        // 阻止所有键盘事件冒泡到游戏
+        e.stopPropagation();
+        
+        if (e.type === 'keypress' && e.which === 13) {
+            // 回车键发送消息
+            e.preventDefault();
+            sendMessage();
+        }
+        
+        if (e.type === 'keydown') {
+            console.log(`🔤 输入框按键: ${e.key} (${e.keyCode})`);
+        }
+    });
+
+    // 确保输入框可以正常接收所有字符
+    $('#message-input').on('input', function(e) {
+        console.log(`📝 输入框内容: "${$(this).val()}"`);
+    });
+
+    // 确保role-input输入框中空格键正常工作
+    $('#role-input').on('keydown keypress keyup', function(e) {
+        // 阻止所有键盘事件冒泡到游戏引擎
+        e.stopPropagation();
+        
+        if (e.type === 'keydown' && e.keyCode === 32) {
+            console.log('✅ role-input中空格键正常工作');
+        }
+        
+        if (e.type === 'keydown') {
+            console.log(`🔤 role-input按键: ${e.key} (${e.keyCode})`);
+        }
+    });
+
+    // 确保role-input输入框可以正常接收所有字符
+    $('#role-input').on('input', function(e) {
+        console.log(`📝 role-input内容: "${$(this).val()}"`);
+    });
+
+    // role-input焦点处理
+    $('#role-input').on('focus', function() {
+        console.log('🔍 role-input获得焦点');
+        $(this).data('has-focus', true);
+    });
+
+    $('#role-input').on('blur', function() {
+        console.log('🔍 role-input失去焦点');
+        $(this).data('has-focus', false);
+    });
+
+    // 额外处理：确保输入框获得焦点时阻止游戏键盘事件
+    $('#message-input').on('focus', function() {
+        console.log('🔍 消息输入框获得焦点');
+        $(this).data('has-focus', true);
+    });
+
+    $('#message-input').on('blur', function() {
+        console.log('🔍 消息输入框失去焦点');
+        $(this).data('has-focus', false);
+    });
+
+    // 对话历史区滚动事件监听
+    $('#conversation-history').on('scroll', function() {
+        updateScrollButton();
+    });
+
+    // 回到底部按钮点击事件
+    $('#scroll-to-bottom').on('click', function() {
+        scrollToBottom();
+    });
+
+    // 初始化滚动按钮状态
+    updateScrollButton();
+
+    // 角色相关辅助功能
+    let cachedRoles = null; // 缓存角色数据
+    let lastRoleFetchTime = 0; // 上次获取角色数据的时间
+    const ROLE_CACHE_DURATION = 30000; // 缓存30秒
+
+    // 从后端获取角色数据
+    function fetchAvailableRoles() {
+        return new Promise((resolve, reject) => {
+            // 如果有缓存且未过期，直接使用缓存
+            const now = Date.now();
+            if (cachedRoles && (now - lastRoleFetchTime) < ROLE_CACHE_DURATION) {
+                resolve(cachedRoles);
+                return;
+            }
+
+            $.ajax({
+                url: '/get_available_roles/',
+                type: 'GET',
+                success: function(response) {
+                    if (response.success) {
+                        cachedRoles = response.roles;
+                        lastRoleFetchTime = now;
+                        console.log(`✅ 获取到 ${response.total_roles} 个预设角色`);
+                        resolve(cachedRoles);
+                    } else {
+                        console.error('❌ 获取角色失败:', response.error);
+                        // 使用备用的硬编码数据
+                        const fallbackRoles = {
+                            "Wei Xu": "a new campus singer who just arrived and is passionate about music",
+                            "GMY": "a fashion designer who creates sustainable clothing and runs a small boutique",
+                            "Ge Jie": "a famous Bilibili actor who stars in the popular '介个不要' series",
+                            "Paimon": "a cute and helpful companion who assists travelers in the continent of Teyvat",
+                            "Kun": "a chicken who is a member of the 'chicken family' and has gift of playing basketball",
+                            "杰哥": "不要",
+                            "Ab": "A friedly man"
+                        };
+                        cachedRoles = fallbackRoles;
+                        resolve(fallbackRoles);
+                    }
+                },
+                error: function(xhr, status, error) {
+                    console.error('❌ 网络错误获取角色:', error);
+                    // 使用备用的硬编码数据
+                    const fallbackRoles = {
+                        "Wei Xu": "a new campus singer who just arrived and is passionate about music",
+                        "GMY": "a fashion designer who creates sustainable clothing and runs a small boutique",
+                        "Ge Jie": "a famous Bilibili actor who stars in the popular '介个不要' series",
+                        "Paimon": "a cute and helpful companion who assists travelers in the continent of Teyvat",
+                        "Kun": "a chicken who is a member of the 'chicken family' and has gift of playing basketball",
+                        "杰哥": "不要",
+                        "Ab": "A friedly man"
+                    };
+                    cachedRoles = fallbackRoles;
+                    resolve(fallbackRoles);
+                }
+            });
+        });
+    }
+
+    window.showAvailableRoles = function() {
+        // 显示可用角色的弹窗，从后端实时获取
+        fetchAvailableRoles().then(availableRoles => {
+            let rolesList = "Available predefined roles (from backend):\n\n";
+            const roleCount = Object.keys(availableRoles).length;
+            
+            for (const [name, description] of Object.entries(availableRoles)) {
+                rolesList += `• ${name}: ${description}\n`;
+            }
+            
+            rolesList += `\nTotal: ${roleCount} predefined roles`;
+            rolesList += "\nClick on a role name to select it, or type your own custom role.";
+            rolesList += "\n\nNote: Data is fetched from backend roles_data.json and cached for 30 seconds.";
+            
+            alert(rolesList);
+        }).catch(error => {
+            console.error('Error showing roles:', error);
+            alert('Failed to load role data from backend. Please try again.');
+        });
+    };
+
+    // 点击外部隐藏角色建议
+    $(document).on('click', function(e) {
+        if (!$(e.target).closest('.role-input-wrapper').length) {
+            $('#role-suggestions').hide();
+        }
+    });
+
+    // 角色输入框的键盘事件处理
+    $('#role-input').on('input', function() {
+        const query = $(this).val().toLowerCase().trim();
+        const suggestions = $('#role-suggestions');
+        
+        if (query.length === 0) {
+            suggestions.hide();
+            return;
+        }
+
+        // 从后端获取角色数据进行匹配
+        fetchAvailableRoles().then(availableRoles => {
+            const matches = [];
+            for (const [name, description] of Object.entries(availableRoles)) {
+                if (name.toLowerCase().includes(query) || description.toLowerCase().includes(query)) {
+                    matches.push({ name, description });
+                }
+            }
+
+            if (matches.length > 0) {
+                let html = '';
+                matches.forEach(role => {
+                    html += `
+                        <div class="role-suggestion-item" onclick="selectRole('${role.name}')">
+                            <div class="role-suggestion-name">${role.name}</div>
+                            <div class="role-suggestion-desc">${role.description}</div>
+                        </div>
+                    `;
+                });
+                suggestions.html(html).show();
+            } else {
+                suggestions.hide();
+            }
+        }).catch(error => {
+            console.error('Error fetching roles for suggestions:', error);
+            suggestions.hide();
+        });
+    });
+
+    window.selectRole = function(roleName) {
+        document.getElementById('role-input').value = roleName;
+        $('#role-suggestions').hide();
+        console.log(`✅ Selected role: ${roleName}`);
+        
+        // 显示选中角色的描述
+        fetchAvailableRoles().then(availableRoles => {
+            const description = availableRoles[roleName];
+            if (description) {
+                console.log(`📝 Role description: ${description}`);
+                // 可以选择性地显示一个短暂的提示
+                updateCommandStatus(`Selected role: ${roleName}`, 'success');
+            }
+        });
+    };
+
+    // 页面加载时预加载角色数据
+    fetchAvailableRoles().then(roles => {
+        console.log(`🎭 预加载了 ${Object.keys(roles).length} 个角色`);
+    }).catch(error => {
+        console.warn('⚠️ 预加载角色数据失败，将在需要时重试');
+    });
+});
+</script>
+
+{% endblock js_content %}

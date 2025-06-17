@@ -10,6 +10,6 @@ Variables:
 [Conversation]
 !<INPUT 0>!
 
-Write down if there is anything from the conversation that !<INPUT 1>! need to remember for her planning, from !<INPUT 2>!'s perspective, in a full sentence.
+From !<INPUT 2>!’s perspective, write a concise summary of what !<INPUT 1>! needs to remember from the conversation to plan effectively. Include any relevant time or place details (e.g., “this morning at the cafe,” “2 PM in the conference room”). If there are multiple plans or ideas, add a second sentence summarizing them.
 
 "!<INPUT 3>!

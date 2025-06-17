@@ -1,0 +1,150 @@
+Today is February 13, 2023. From 08:00AM ~ 09:00AM, Isabella Rodriguez is planning on opening Hobbs Cafe and preparing for the day, 09:00AM ~ 20:00PM, Isabella Rodriguez is planning on serving customers and managing the cafe, 20:00PM ~ 21:00PM, Isabella Rodriguez is planning on [(ID:Zp2sNh) Monday February 13 -- 08:00 PM] Activity: Isabella is closing Hobbs Cafe and cleaning up for the day.
+In 5 min increments, list the subtasks Isabella does when Isabella is serving customers and managing the cafe from 09:00AM ~ 20:00PM (total duration in minutes 660): 
+1) Isabella is
+----- repeat in  0  /total:  5  and output:
+ greeting customers as they enter. (duration in minutes: 5, minutes left: 655)  
+2) Isabella is taking customer orders. (duration in minutes: 10, minutes left: 645)  
+3) Isabella is preparing coffee and beverages. (duration in minutes: 15, minutes left: 630)  
+4) Isabella is serving food and drinks to customers. (duration in minutes: 10, minutes left: 620)  
+5) Isabella is checking on customers to ensure satisfaction. (duration in minutes: 5, minutes left: 615)  
+6) Isabella is restocking supplies behind the counter. (duration in minutes: 10, minutes left: 605)  
+7) Isabella is processing payments at the register. (duration in minutes: 5, minutes left: 600)  
+8) Isabella is wiping down tables and cleaning the seating area. (duration in minutes: 10, minutes left: 590)  
+9) Isabella is refilling condiments and napkin dispensers. (duration in minutes: 5, minutes left: 585)  
+10) Isabella is taking a short break to hydrate. (duration in minutes: 5, minutes left: 580)  
+11) Isabella is checking inventory levels. (duration in minutes: 10, minutes left: 570)  
+12) Isabella is updating the cafe’s specials board. (duration in minutes: 5, minutes left: 565)  
+13) Isabella is engaging in friendly conversation with regulars. (duration in minutes: 10, minutes left: 555)  
+14) Isabella is answering phone calls for reservations or inquiries. (duration in minutes: 5, minutes left: 550)  
+15) Isabella is organizing the display case with fresh pastries. (duration in minutes: 10, minutes left: 540)  
+16) Isabella is restocking to-go containers and utensils. (duration in minutes: 5, minutes left: 535)  
+17) Isabella is sanitizing high-touch surfaces. (duration in minutes: 5, minutes left: 530)  
+18) Isabella is assisting a new employee with tasks. (duration in minutes: 10, minutes left: 520)  
+19) Isabella is taking another short break. (duration in minutes: 5, minutes left: 515)  
+20) Isabella is reviewing the Valentine’s Day party checklist. (duration in minutes: 10, minutes left: 505)  
+21) Isabella is decorating the cafe for the party. (duration in minutes: 20, minutes left: 485)  
+22) Isabella is confirming party supplies are ready. (duration in minutes: 10, minutes left: 475)  
+23) Isabella is reminding customers about the party tomorrow. (duration in minutes: 5, minutes left: 470)  
+24) Isabella is handling a minor customer complaint. (duration in minutes: 10, minutes left: 460)  
+25) Isabella is restocking the beverage station. (duration in minutes: 5, minutes left: 455)  
+26) Isabella is checking the cafe’s social media messages. (duration in minutes: 5, minutes left: 450)  
+27) Isabella is posting a reminder about the Valentine’s Day party. (duration in minutes: 5, minutes left: 445)  
+28) Isabella is adjusting seating arrangements for peak hours. (duration in minutes: 10, minutes left: 435)  
+29) Isabella is replenishing the pastry selection. (duration in minutes: 10, minutes left: 425)  
+30) Isabella is taking a quick restroom break. (duration in minutes: 5, minutes left: 420)  
+31) Isabella is assisting with a large group order. (duration in minutes: 15, minutes left: 405)  
+32) Isabella is coordinating with the kitchen staff. (duration in minutes: 5, minutes left: 400)  
+33) Isabella is checking the temperature of the cafe. (duration in minutes: 5, minutes left: 395)  
+34) Isabella is adjusting the music volume. (duration in minutes: 5, minutes left: 390)  
+35) Isabella is sweeping the floor near the entrance. (duration in minutes: 5, minutes left: 385)  
+36) Isabella is restocking loyalty cards. (duration in minutes: 5, minutes left: 380)  
+37) Isabella is counting the cash drawer for accuracy. (duration in minutes: 10, minutes left: 370)  
+38) Isabella is preparing for the afternoon rush. (duration in minutes: 10, minutes left: 360)  
+39) Isabella is serving the next wave of customers. (duration in minutes:  
+~~~~
+TOODOOOOOO
+greeting customers as they enter. (duration in minutes: 5, minutes left: 655)  
+2) Isabella is taking customer orders. (duration in minutes: 10, minutes left: 645)  
+3) Isabella is preparing coffee and beverages. (duration in minutes: 15, minutes left: 630)  
+4) Isabella is serving food and drinks to customers. (duration in minutes: 10, minutes left: 620)  
+5) Isabella is checking on customers to ensure satisfaction. (duration in minutes: 5, minutes left: 615)  
+6) Isabella is restocking supplies behind the counter. (duration in minutes: 10, minutes left: 605)  
+7) Isabella is processing payments at the register. (duration in minutes: 5, minutes left: 600)  
+8) Isabella is wiping down tables and cleaning the seating area. (duration in minutes: 10, minutes left: 590)  
+9) Isabella is refilling condiments and napkin dispensers. (duration in minutes: 5, minutes left: 585)  
+10) Isabella is taking a short break to hydrate. (duration in minutes: 5, minutes left: 580)  
+11) Isabella is checking inventory levels. (duration in minutes: 10, minutes left: 570)  
+12) Isabella is updating the cafe’s specials board. (duration in minutes: 5, minutes left: 565)  
+13) Isabella is engaging in friendly conversation with regulars. (duration in minutes: 10, minutes left: 555)  
+14) Isabella is answering phone calls for reservations or inquiries. (duration in minutes: 5, minutes left: 550)  
+15) Isabella is organizing the display case with fresh pastries. (duration in minutes: 10, minutes left: 540)  
+16) Isabella is restocking to-go containers and utensils. (duration in minutes: 5, minutes left: 535)  
+17) Isabella is sanitizing high-touch surfaces. (duration in minutes: 5, minutes left: 530)  
+18) Isabella is assisting a new employee with tasks. (duration in minutes: 10, minutes left: 520)  
+19) Isabella is taking another short break. (duration in minutes: 5, minutes left: 515)  
+20) Isabella is reviewing the Valentine’s Day party checklist. (duration in minutes: 10, minutes left: 505)  
+21) Isabella is decorating the cafe for the party. (duration in minutes: 20, minutes left: 485)  
+22) Isabella is confirming party supplies are ready. (duration in minutes: 10, minutes left: 475)  
+23) Isabella is reminding customers about the party tomorrow. (duration in minutes: 5, minutes left: 470)  
+24) Isabella is handling a minor customer complaint. (duration in minutes: 10, minutes left: 460)  
+25) Isabella is restocking the beverage station. (duration in minutes: 5, minutes left: 455)  
+26) Isabella is checking the cafe’s social media messages. (duration in minutes: 5, minutes left: 450)  
+27) Isabella is posting a reminder about the Valentine’s Day party. (duration in minutes: 5, minutes left: 445)  
+28) Isabella is adjusting seating arrangements for peak hours. (duration in minutes: 10, minutes left: 435)  
+29) Isabella is replenishing the pastry selection. (duration in minutes: 10, minutes left: 425)  
+30) Isabella is taking a quick restroom break. (duration in minutes: 5, minutes left: 420)  
+31) Isabella is assisting with a large group order. (duration in minutes: 15, minutes left: 405)  
+32) Isabella is coordinating with the kitchen staff. (duration in minutes: 5, minutes left: 400)  
+33) Isabella is checking the temperature of the cafe. (duration in minutes: 5, minutes left: 395)  
+34) Isabella is adjusting the music volume. (duration in minutes: 5, minutes left: 390)  
+35) Isabella is sweeping the floor near the entrance. (duration in minutes: 5, minutes left: 385)  
+36) Isabella is restocking loyalty cards. (duration in minutes: 5, minutes left: 380)  
+37) Isabella is counting the cash drawer for accuracy. (duration in minutes: 10, minutes left: 370)  
+38) Isabella is preparing for the afternoon rush. (duration in minutes: 10, minutes left: 360)  
+39) Isabella is serving the next wave of customers. (duration in minutes: 
+-==- -==- -==- 
+succeed get curr_gpt_reponse and validate in safe_generate_response
+TOODOOOOOO
+greeting customers as they enter. (duration in minutes: 5, minutes left: 655)  
+2) Isabella is taking customer orders. (duration in minutes: 10, minutes left: 645)  
+3) Isabella is preparing coffee and beverages. (duration in minutes: 15, minutes left: 630)  
+4) Isabella is serving food and drinks to customers. (duration in minutes: 10, minutes left: 620)  
+5) Isabella is checking on customers to ensure satisfaction. (duration in minutes: 5, minutes left: 615)  
+6) Isabella is restocking supplies behind the counter. (duration in minutes: 10, minutes left: 605)  
+7) Isabella is processing payments at the register. (duration in minutes: 5, minutes left: 600)  
+8) Isabella is wiping down tables and cleaning the seating area. (duration in minutes: 10, minutes left: 590)  
+9) Isabella is refilling condiments and napkin dispensers. (duration in minutes: 5, minutes left: 585)  
+10) Isabella is taking a short break to hydrate. (duration in minutes: 5, minutes left: 580)  
+11) Isabella is checking inventory levels. (duration in minutes: 10, minutes left: 570)  
+12) Isabella is updating the cafe’s specials board. (duration in minutes: 5, minutes left: 565)  
+13) Isabella is engaging in friendly conversation with regulars. (duration in minutes: 10, minutes left: 555)  
+14) Isabella is answering phone calls for reservations or inquiries. (duration in minutes: 5, minutes left: 550)  
+15) Isabella is organizing the display case with fresh pastries. (duration in minutes: 10, minutes left: 540)  
+16) Isabella is restocking to-go containers and utensils. (duration in minutes: 5, minutes left: 535)  
+17) Isabella is sanitizing high-touch surfaces. (duration in minutes: 5, minutes left: 530)  
+18) Isabella is assisting a new employee with tasks. (duration in minutes: 10, minutes left: 520)  
+19) Isabella is taking another short break. (duration in minutes: 5, minutes left: 515)  
+20) Isabella is reviewing the Valentine’s Day party checklist. (duration in minutes: 10, minutes left: 505)  
+21) Isabella is decorating the cafe for the party. (duration in minutes: 20, minutes left: 485)  
+22) Isabella is confirming party supplies are ready. (duration in minutes: 10, minutes left: 475)  
+23) Isabella is reminding customers about the party tomorrow. (duration in minutes: 5, minutes left: 470)  
+24) Isabella is handling a minor customer complaint. (duration in minutes: 10, minutes left: 460)  
+25) Isabella is restocking the beverage station. (duration in minutes: 5, minutes left: 455)  
+26) Isabella is checking the cafe’s social media messages. (duration in minutes: 5, minutes left: 450)  
+27) Isabella is posting a reminder about the Valentine’s Day party. (duration in minutes: 5, minutes left: 445)  
+28) Isabella is adjusting seating arrangements for peak hours. (duration in minutes: 10, minutes left: 435)  
+29) Isabella is replenishing the pastry selection. (duration in minutes: 10, minutes left: 425)  
+30) Isabella is taking a quick restroom break. (duration in minutes: 5, minutes left: 420)  
+31) Isabella is assisting with a large group order. (duration in minutes: 15, minutes left: 405)  
+32) Isabella is coordinating with the kitchen staff. (duration in minutes: 5, minutes left: 400)  
+33) Isabella is checking the temperature of the cafe. (duration in minutes: 5, minutes left: 395)  
+34) Isabella is adjusting the music volume. (duration in minutes: 5, minutes left: 390)  
+35) Isabella is sweeping the floor near the entrance. (duration in minutes: 5, minutes left: 385)  
+36) Isabella is restocking loyalty cards. (duration in minutes: 5, minutes left: 380)  
+37) Isabella is counting the cash drawer for accuracy. (duration in minutes: 10, minutes left: 370)  
+38) Isabella is preparing for the afternoon rush. (duration in minutes: 10, minutes left: 360)  
+39) Isabella is serving the next wave of customers. (duration in minutes: 
+-==- -==- -==- 
+Traceback (most recent call last):
+  File "/home/gzhcharlie/generative_agents/reverie/backend_server/reverie.py", line 472, in open_server
+    rs.start_server(int_count)
+  File "/home/gzhcharlie/generative_agents/reverie/backend_server/reverie.py", line 379, in start_server
+    next_tile, pronunciatio, description = persona.move(
+  File "/home/gzhcharlie/generative_agents/reverie/backend_server/persona/persona.py", line 222, in move
+    plan = self.plan(maze, personas, new_day, retrieved)
+  File "/home/gzhcharlie/generative_agents/reverie/backend_server/persona/persona.py", line 148, in plan
+    return plan(self, maze, personas, new_day, retrieved)
+  File "/home/gzhcharlie/generative_agents/reverie/backend_server/persona/cognitive_modules/plan.py", line 964, in plan
+    _determine_action(persona, maze)
+  File "/home/gzhcharlie/generative_agents/reverie/backend_server/persona/cognitive_modules/plan.py", line 595, in _determine_action
+    generate_task_decomp(persona, act_desp, act_dura))
+  File "/home/gzhcharlie/generative_agents/reverie/backend_server/persona/cognitive_modules/plan.py", line 164, in generate_task_decomp
+    return run_gpt_prompt_task_decomp(persona, task, duration)[0]
+  File "/home/gzhcharlie/generative_agents/reverie/backend_server/persona/prompt_template/run_gpt_prompt.py", line 445, in run_gpt_prompt_task_decomp
+    output = safe_generate_response(prompt, gpt_param, 5, get_fail_safe(),
+  File "/home/gzhcharlie/generative_agents/reverie/backend_server/persona/prompt_template/gpt_structure.py", line 307, in safe_generate_response
+    return func_clean_up(curr_gpt_response, prompt=prompt)
+  File "/home/gzhcharlie/generative_agents/reverie/backend_server/persona/prompt_template/run_gpt_prompt.py", line 384, in __func_clean_up
+    duration = int(k[1].split(",")[0].strip())
+ValueError: invalid literal for int() with base 10: ''
+Error.

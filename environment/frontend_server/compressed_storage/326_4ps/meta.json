@@ -1,0 +1,14 @@
+{
+  "fork_sim_code": "300_4ps",
+  "start_date": "February 13, 2023",
+  "curr_time": "February 14, 2023, 03:10:00",
+  "sec_per_step": 300,
+  "maze_name": "the_ville",
+  "persona_names": [
+    "Arthur Burton",
+    "Isabella Rodriguez",
+    "Maria Lopez",
+    "Klaus Mueller"
+  ],
+  "step": 326
+}

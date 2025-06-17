@@ -1,0 +1,268 @@
+{
+  "vision_r": 8,
+  "att_bandwidth": 8,
+  "retention": 8,
+  "curr_time": "February 14, 2023, 03:05:00",
+  "curr_tile": [
+    73,
+    14
+  ],
+  "daily_plan_req": "Here's Isabella Rodriguez's broad-stroke daily plan for **Tuesday, February 14, 2023**:    1. **Wake up and complete morning routine at 6:00 AM**, including getting ready for the day.   2. **Go long jumping at the playground from 7:00 AM to 8:00 AM** as part of her usual routine.   3. **Open Hobbs Caf\u00e9 at 8:00 AM**, managing regular operations while finalizing **Valentine\u2019s Day party preparations** (decorations, playlist, special menu).   4. **Check in with Arthur around midday** to confirm his competition timing and send encouragement before his long jump event.   5. **Host Valentine\u2019s Day party from 5:00 PM to 7:00 PM**, ensuring guests enjoy the festivities.   6. **Close the caf\u00e9 at 8:00 PM** (after cleanup) and rest, reflecting on the successful event.    (Note: The plan skips lunch/dinner mentions since her caf\u00e9 work likely includes meals on-site, and the party takes priority over a strict personal schedule.)",
+  "name": "Isabella Rodriguez",
+  "first_name": "Isabella",
+  "last_name": "Rodriguez",
+  "age": 34,
+  "innate": "friendly, outgoing, hospitable",
+  "learned": "Isabella Rodriguez is a cafe owner of Hobbs Cafe who loves to make people feel welcome. She is always looking for ways to make the cafe a place where people can come to relax and enjoy themselves.",
+  "currently": "**Status:** Isabella Rodriguez is buzzing with excitement as she prepares for her Valentine\u2019s Day party at Hobbs Caf\u00e9 tonight from 5:00 PM to 7:00 PM on Tuesday, February 14, 2023. She arrived at the caf\u00e9 early this morning, opening at 8:00 AM as usual, and has been juggling regular operations with final party preparations.  \n\n- **Party Preparations:** She\u2019s ensuring all decorations are perfect, the playlist is finalized, and the special Valentine\u2019s Day offerings are highlighted on the updated specials board.  \n- **Arthur\u2019s Pastries:** As promised during their Monday conversation, she has set aside his favorite pastries for his arrival after his long jump competition (time still unconfirmed but she plans to check in with him).  \n- **Food & Drink Orders:** She double-checked confirmed delivery timings (last reviewed Monday at 9:30 PM) to guarantee everything arrives smoothly before the party.  \n- **Personal Commitment:** Isabella is keeping an eye on Arthur\u2019s competition, hoping to send him encouragement before he arrives at the caf\u00e9.  \n\nDespite yesterday\u2019s exhaustion, she\u2019s energized by the anticipation of tonight\u2019s celebration. The caf\u00e9 is her pride and joy, and she can\u2019t wait to share this special evening with her customers. After the party, she plans to handle cleanup swiftly and finally rest\u2014but for now, she\u2019s fully immersed in making this Valentine\u2019s Day unforgettable!",
+  "lifestyle": "Isabella Rodriguez goes to bed around 11pm, awakes up around 6am.",
+  "living_area": "the Ville:Isabella Rodriguez's apartment:main room",
+  "concept_forget": 100,
+  "daily_reflection_time": 180,
+  "daily_reflection_size": 5,
+  "overlap_reflect_th": 4,
+  "kw_strg_event_reflect_th": 10,
+  "kw_strg_thought_reflect_th": 9,
+  "recency_w": 1,
+  "relevance_w": 1,
+  "importance_w": 1,
+  "recency_decay": 0.995,
+  "importance_trigger_max": 150,
+  "importance_trigger_curr": 133,
+  "importance_ele_n": 17,
+  "thought_count": 5,
+  "daily_req": [
+    "wake up and complete the morning routine at 6:00 am",
+    "Wake up and complete morning routine from 6:00 am to 6:30 am",
+    "Go long jumping on the playground from 7:00 am to 8:00 am",
+    "Open Hobbs Cafe at 8:00 am",
+    "Work at the counter from 8:00 am to 12:00 pm",
+    "Take a lunch break from 12:00 pm to 12:30 pm",
+    "Work at the counter from 12:30 pm to 3:00 pm",
+    "Plan and organize Valentine's Day party details from 3:00 pm to 4:00 pm",
+    "Decorate Hobbs Cafe for the Valentine's Day party from 4:00 pm to 5:00 pm",
+    "Work at the counter from 5:00 pm to 8:00 pm",
+    "Close Hobbs Cafe at 8:00 pm",
+    "Purchase last-minute party supplies from 8:15 pm to 9:00 pm",
+    "Relax and review party checklist from 9:00 pm to 10:00 pm",
+    "Get ready for bed from 10:00 pm to 11:00 pm",
+    "Sleep at 11:00 pm"
+  ],
+  "f_daily_schedule": [
+    [
+      "sleeping",
+      360
+    ],
+    [
+      "waking up and stretching in bed",
+      5
+    ],
+    [
+      "getting out of bed and heading to the bathroom",
+      5
+    ],
+    [
+      "washing her face and brushing her teeth",
+      10
+    ],
+    [
+      "applying light makeup for the day",
+      10
+    ],
+    [
+      "styling her hair",
+      10
+    ],
+    [
+      "getting dressed in her workout clothes for long jumping",
+      5
+    ],
+    [
+      "making a quick cup of coffee",
+      5
+    ],
+    [
+      "checking her phone for messages and updates",
+      5
+    ],
+    [
+      "grabbing her gym bag and heading out the door",
+      5
+    ],
+    [
+      "going long jumping at the playground",
+      60
+    ],
+    [
+      "opening Hobbs Caf\u00e9 and working at the counter",
+      60
+    ],
+    [
+      "working at the counter of Hobbs Caf\u00e9, greeting customers and preparing orders",
+      60
+    ],
+    [
+      "working at the counter of Hobbs Caf\u00e9, serving customers and preparing specialty drinks",
+      60
+    ],
+    [
+      "working at the counter of Hobbs Caf\u00e9, serving customers and checking party preparations between orders",
+      60
+    ],
+    [
+      "taking a lunch break at Hobbs Caf\u00e9, enjoying a quick meal while checking messages from Arthur about his competition",
+      60
+    ],
+    [
+      "working at the counter of Hobbs Caf\u00e9, serving customers and checking on party preparations between orders",
+      60
+    ],
+    [
+      "working at the counter of Hobbs Caf\u00e9, serving customers and finalizing Valentine's Day party details between orders",
+      60
+    ],
+    [
+      "planning and organizing Valentine's Day party details at Hobbs Caf\u00e9",
+      60
+    ],
+    [
+      "decorating Hobbs Caf\u00e9 for the Valentine's Day party",
+      60
+    ],
+    [
+      "hosting the Valentine's Day party at Hobbs Caf\u00e9, ensuring guests enjoy the festivities and special menu offerings",
+      60
+    ],
+    [
+      "hosting the Valentine's Day party at Hobbs Caf\u00e9, mingling with guests and ensuring everything runs smoothly",
+      60
+    ],
+    [
+      "hosting the Valentine's Day party at Hobbs Caf\u00e9, ensuring guests enjoy the festivities and special menu offerings",
+      60
+    ],
+    [
+      "closing Hobbs Caf\u00e9 after cleanup from the Valentine's Day party",
+      60
+    ],
+    [
+      "relaxing and reviewing the party checklist at home after purchasing last-minute supplies",
+      60
+    ],
+    [
+      "getting ready for bed, preparing for a good night's rest after a busy Valentine's Day",
+      60
+    ],
+    [
+      "sleeping",
+      60
+    ],
+    [
+      "sleeping",
+      0
+    ]
+  ],
+  "f_daily_schedule_hourly_org": [
+    [
+      "sleeping",
+      360
+    ],
+    [
+      "waking up and completing her morning routine, including getting ready for the day",
+      60
+    ],
+    [
+      "going long jumping at the playground",
+      60
+    ],
+    [
+      "opening Hobbs Caf\u00e9 and working at the counter",
+      60
+    ],
+    [
+      "working at the counter of Hobbs Caf\u00e9, greeting customers and preparing orders",
+      60
+    ],
+    [
+      "working at the counter of Hobbs Caf\u00e9, serving customers and preparing specialty drinks",
+      60
+    ],
+    [
+      "working at the counter of Hobbs Caf\u00e9, serving customers and checking party preparations between orders",
+      60
+    ],
+    [
+      "taking a lunch break at Hobbs Caf\u00e9, enjoying a quick meal while checking messages from Arthur about his competition",
+      60
+    ],
+    [
+      "working at the counter of Hobbs Caf\u00e9, serving customers and checking on party preparations between orders",
+      60
+    ],
+    [
+      "working at the counter of Hobbs Caf\u00e9, serving customers and finalizing Valentine's Day party details between orders",
+      60
+    ],
+    [
+      "planning and organizing Valentine's Day party details at Hobbs Caf\u00e9",
+      60
+    ],
+    [
+      "decorating Hobbs Caf\u00e9 for the Valentine's Day party",
+      60
+    ],
+    [
+      "hosting the Valentine's Day party at Hobbs Caf\u00e9, ensuring guests enjoy the festivities and special menu offerings",
+      60
+    ],
+    [
+      "hosting the Valentine's Day party at Hobbs Caf\u00e9, mingling with guests and ensuring everything runs smoothly",
+      60
+    ],
+    [
+      "hosting the Valentine's Day party at Hobbs Caf\u00e9, ensuring guests enjoy the festivities and special menu offerings",
+      60
+    ],
+    [
+      "closing Hobbs Caf\u00e9 after cleanup from the Valentine's Day party",
+      60
+    ],
+    [
+      "relaxing and reviewing the party checklist at home after purchasing last-minute supplies",
+      60
+    ],
+    [
+      "getting ready for bed, preparing for a good night's rest after a busy Valentine's Day",
+      60
+    ],
+    [
+      "sleeping",
+      60
+    ]
+  ],
+  "act_address": "the Ville:Isabella Rodriguez's apartment:main room:bed",
+  "act_start_time": "February 14, 2023, 00:55:00",
+  "act_duration": 360,
+  "act_description": "sleeping",
+  "act_pronunciatio": "\ud83d\ude34",
+  "act_event": [
+    "Isabella Rodriguez",
+    "is",
+    "sleep"
+  ],
+  "act_obj_description": "being slept in",
+  "act_obj_pronunciatio": "\ud83d\ude34\ud83d\udecf\ufe0f",
+  "act_obj_event": [
+    "bed",
+    "is",
+    "unused"
+  ],
+  "chatting_with": null,
+  "chat": null,
+  "chatting_with_buffer": {
+    "Arthur Burton": 583
+  },
+  "chatting_end_time": null,
+  "act_path_set": true,
+  "planned_path": []
+}

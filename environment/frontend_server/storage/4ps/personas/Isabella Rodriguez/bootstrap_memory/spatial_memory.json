@@ -1,0 +1,54 @@
+{
+  "the Ville": {
+    "Hobbs Cafe": {
+      "cafe": [
+        "refrigerator",
+        "cafe customer seating",
+        "cooking area",
+        "kitchen sink",
+        "behind the cafe counter",
+        "piano"
+      ]
+    },
+    "Isabella Rodriguez's apartment": {
+      "main room": [
+        "bed",
+        "desk",
+        "refrigerator",
+        "closet",
+        "shelf"
+      ]
+    },
+    "The Rose and Crown Pub": {
+      "pub": [
+        "shelf",
+        "refrigerator",
+        "bar customer seating",
+        "behind the bar counter",
+        "kitchen sink",
+        "cooking area",
+        "microphone"
+      ]
+    },
+    "The playground": {
+      "playground": [
+        "long jump pit"
+      ]
+    },
+    "Dorm for Oak Hill College": {
+      "garden": [
+        "dorm garden"
+      ],
+      "common room": [
+        "common room sofa",
+        "pool table",
+        "common room table"
+      ]
+    },
+    "Johnson Park": {
+      "park": [
+        "park garden"
+      ]
+    }
+  }
+}
