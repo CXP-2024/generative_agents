@@ -339,15 +339,23 @@ class ReverieServer:
             #    print(f"\n{persona.scratch.name} is a computational agent, and as such, it may be inappropriate to attribute human agency to the agent in your communication.")
             #    continue
             
-            # Retrieve relevant memories
-            retrieved = new_retrieve(persona, [line], 50)[line]
+            # Extract conversation context for better retrieval
+            retrieval_context = self.extract_conversation_context_for_retrieval(persona, curr_convo, line, enhanced_interlocutor_desc)
+            
+            # Retrieve relevant memories using extracted context
+            retrieved = new_retrieve(persona, retrieval_context, 30)
+            # Combine all retrieved memories
+            combined_retrieved = []
+            for context_item in retrieval_context:
+                if context_item in retrieved:
+                    combined_retrieved.extend(retrieved[context_item])
             
             # Enhanced summarization with role context
             if user_role != "User":
                 contextualized_line = f"{enhanced_interlocutor_desc} says: {line}"
-                summarized_idea = generate_summarize_ideas(persona, retrieved, contextualized_line)
+                summarized_idea = generate_summarize_ideas(persona, combined_retrieved, contextualized_line)
             else:
-                summarized_idea = generate_summarize_ideas(persona, retrieved, line)
+                summarized_idea = generate_summarize_ideas(persona, combined_retrieved, line)
             
             # Add user input to conversation
             curr_convo.append([interlocutor_desc, line])
@@ -518,11 +526,11 @@ class ReverieServer:
             if hasattr(persona.a_mem, 'add_chat'):
                 persona.a_mem.add_chat(created, expiration, s, p, o,
                                      chat_summary, keywords, chat_poignancy,
-                                     chat_embedding_pair, convo_str)
+                                     chat_embedding_pair, formatted_conversation)
             else:
                 persona.a_mem.add_thought(created, expiration, s, p, o,
                                         chat_summary, keywords, chat_poignancy,
-                                        chat_embedding_pair, convo_str)
+                                        chat_embedding_pair, formatted_conversation)
             
             print(f"\033[0;32m✓ Chat summary saved: {chat_summary}\033[0m")
         except Exception as e:
@@ -539,7 +547,7 @@ class ReverieServer:
             
             persona.a_mem.add_thought(created, expiration, s_thought, p_thought, o_thought,
                                     reflection_content, keywords_thought, thought_poignancy,
-                                    thought_embedding_pair, None)
+                                    thought_embedding_pair, [])
             
             print(f"\033[0;32m✓ Reflection saved: {reflection_content}\033[0m")
         except Exception as e:
@@ -911,8 +919,6 @@ class ReverieServer:
                 captured_output = f"❌ Simulation error: {str(e)}"
                 success = False
         elif sim_command.lower().startswith("converse as"):
-            output_buffer = io.StringIO()
-            
             # 解析命令
             command_parts = sim_command[len("converse as"):].strip().split(" with ")
             if len(command_parts) == 2:
@@ -920,18 +926,18 @@ class ReverieServer:
                 persona_name = command_parts[1].strip()
                 
                 if persona_name not in self.personas:
-                    with redirect_stdout(output_buffer):
-                        print(f"Persona '{persona_name}' not found.")
-                        print("Available personas:")
-                        for name in self.personas.keys():
-                            print(f"  - {name}")
-                    captured_output = output_buffer.getvalue()
+                    captured_output = f"""❌ Persona '{persona_name}' not found.
+
+Available personas:"""
+                    for name in self.personas.keys():
+                        captured_output += f"\n  - {name}"
                 else:
-                    # 预定义角色描述
-                    user_description = get_role_description(user_role)
-                    
-                    #if not user_description and user_role.lower() in role_descriptions:
-                        #user_description = role_descriptions[user_role.lower()]
+                    try:
+                        # 预定义角色描述（加上异常处理）
+                        user_description = get_role_description(user_role)
+                    except Exception as e:
+                        print(f"⚠️ Warning: Failed to get role description for '{user_role}': {e}")
+                        user_description = ""
                     
                     # 创建前端对话会话
                     session_data = {
@@ -959,7 +965,33 @@ Ready to start the conversation!"""
                 captured_output = "❌ Usage: converse as [role name] with [persona name]\nExample: converse as Wei Xu with Isabella Rodriguez"
 
         elif sim_command.lower().startswith("converse with"):
-            persona_name = sim_command[len("converse with"):].strip()
+            # 支持两种格式:
+            # 1. "converse with [persona_name]" - 使用默认User角色
+            # 2. "converse with [persona_name] as [role_name] : [description]" - 自定义角色
+            
+            command_content = sim_command[len("converse with"):].strip()
+            
+            # 检查是否包含角色定义
+            if " as " in command_content:
+                # 解析: "Isabella Rodriguez as Wei Xu : A curious student"
+                parts = command_content.split(" as ", 1)
+                persona_name = parts[0].strip()
+                role_part = parts[1].strip()
+                
+                if " : " in role_part:
+                    # 包含角色描述
+                    role_name, role_description = role_part.split(" : ", 1)
+                    role_name = role_name.strip()
+                    role_description = role_description.strip()
+                else:
+                    # 只有角色名，无描述
+                    role_name = role_part.strip()
+                    role_description = ""
+            else:
+                # 默认模式: "converse with Isabella Rodriguez"
+                persona_name = command_content
+                role_name = "User"
+                role_description = ""
             
             if persona_name not in self.personas:
                 captured_output = f"""❌ Persona '{persona_name}' not found.
@@ -968,11 +1000,16 @@ Available personas:"""
                 for name in self.personas.keys():
                     captured_output += f"\n  - {name}"
             else:
-                # 直接使用默认的 User 角色，不需要额外输入
+                # 如果定义了非User角色，保存到roles_data.json
+                if role_name != "User" and role_description:
+                    add_role(role_name, role_description)
+                    print(f"🎭 [Backend] 保存新角色: {role_name} - {role_description}")
+                
+                # 创建对话会话
                 session_data = {
                     "persona_name": persona_name,
-                    "user_role": "User",
-                    "user_description": "",
+                    "user_role": role_name,
+                    "user_description": role_description,
                     "conversation": [],
                     "status": "active"
                 }
@@ -980,7 +1017,8 @@ Available personas:"""
                 with open(f"{fs_temp_storage}/conversation_session.json", 'w') as f:
                     json.dump(session_data, f, indent=2)
                 
-                captured_output = f"""💬 Conversation session started!
+                if role_name == "User":
+                    captured_output = f"""💬 Conversation session started!
 
 👤 Role Setup:
   • You are playing: User (default role)
@@ -988,6 +1026,17 @@ Available personas:"""
   • Description: Default user role
 
 🎭 {persona_name} is ready to talk with you.
+Ready to start the conversation!"""
+                else:
+                    captured_output = f"""💬 Conversation session started!
+
+👤 Role Setup:
+  • You are playing: {role_name}
+  • Talking with: {persona_name}
+  • Description: {role_description if role_description else "No specific description"}
+  • Role saved: {"✅ Yes" if role_description else "❌ No (needs description to save)"}
+
+🎭 {persona_name} now knows they're talking with {role_name}.
 Ready to start the conversation!"""
 
         else:
@@ -1248,7 +1297,7 @@ Ready to start the conversation!"""
                 user_description = ""
                 if user_role != "User":
                     user_description = input(f"Brief description of {user_role} (optional): ").strip()
-                    add_role(user_role, user_description)  # Ensure role is added in non-user mode
+                    add_role(user_role, user_description)  # Ensure role is added in non-user mode, saved to roles_data.json
                 print(f"\n🎭 You are now playing as: {user_role}")
                 
                 self.start_interactive_conversation(persona_name, user_role, user_description)
@@ -1427,14 +1476,21 @@ Ready to start the conversation!"""
             enhanced_interlocutor_desc = user_role
         
         # 检索相关记忆
-        retrieved = new_retrieve(persona, [user_input], 50)[user_input]
+        retrieval_context = self.extract_conversation_context_for_retrieval(persona, conversation, user_input, enhanced_interlocutor_desc)
+        
+        retrieved = new_retrieve(persona, retrieval_context, 50)
+        # Combine all retrieved memories
+        combined_retrieved = []
+        for context_item in retrieval_context:
+            if context_item in retrieved:
+                combined_retrieved.extend(retrieved[context_item])
         
         # 生成总结想法
         if user_role != "User":
             contextualized_line = f"{enhanced_interlocutor_desc} says: {user_input}"
-            summarized_idea = generate_summarize_ideas(persona, retrieved, contextualized_line)
+            summarized_idea = generate_summarize_ideas(persona, combined_retrieved, contextualized_line)
         else:
-            summarized_idea = generate_summarize_ideas(persona, retrieved, user_input)
+            summarized_idea = generate_summarize_ideas(persona, combined_retrieved, user_input)
         
         # 添加用户输入到对话
         conversation.append([user_role, user_input])
@@ -1541,7 +1597,118 @@ Ready to start the conversation!"""
             'output': f'❌ 结束对话时出错: {str(e)}\n{traceback.format_exc()}'
         }
 
+  def extract_conversation_context_for_retrieval(self, persona, conversation_history, current_input, interlocutor_desc):
+    """
+    Extract key information from conversation history for better memory retrieval.
+    
+    INPUT:
+      persona: The persona object
+      conversation_history: List of [speaker, utterance] pairs
+      current_input: The user's current input
+      interlocutor_desc: Description of who the user is (role/character)
+    
+    OUTPUT:
+      List of strings (keywords, phrases, or sentences) for retrieval
+    """
+    from persona.prompt_template.gpt_structure import ChatGPT_safe_generate_response
+    
+    # If no conversation history, just use current input
+    if not conversation_history:
+        return [current_input]
+    
+    # Format conversation history for analysis
+    convo_text = ""
+    for speaker, utterance in conversation_history:
+        convo_text += f"{speaker}: {utterance}\n"
+    
+    # Create analysis prompt - format for JSON output
+    analysis_prompt = f"""
+    {persona.scratch.name} is having a conversation with {interlocutor_desc}. Here is the conversation so far:
 
+    {convo_text}
+
+    The user just said: "{current_input}"
+
+    Based on this conversation, extract the most important information that {persona.scratch.name} should retrieve from their memory to respond appropriately. Consider:
+
+    1. Key topics, themes, or subjects discussed
+    2. Important people, places, or events mentioned
+    3. Emotional context and relationship dynamics
+    4. Unresolved questions or ongoing discussions
+    5. Background information about {interlocutor_desc} that might be relevant
+    6. Any connections to {persona.scratch.name}'s past experiences or knowledge
+
+    Return at most 3 retrieval queries. Each query can be a keyword, phrase, or complete sentence that would help find relevant memories. Output your response as a single comma-separated string.
+    """
+    
+    def __func_validate(gpt_response, prompt=""):
+        if not gpt_response or len(gpt_response.strip()) < 10:
+            return False
+        # Check if it contains at least one comma (indicating multiple items)
+        if ',' not in gpt_response:
+            return False
+        items = [item.strip() for item in gpt_response.split(',') if item.strip()]
+        if len(items) < 2:
+            return False
+        return True
+    
+    def __func_clean_up(gpt_response, prompt=""):
+        # Split by comma and clean each item
+        items = [item.strip() for item in gpt_response.split(',') if item.strip()]
+        cleaned_items = []
+        for item in items:
+            # Remove common prefixes and suffixes
+            item = item.strip('123456789.-• "\'')
+            if item and len(item) > 3:
+                cleaned_items.append(item)
+        return cleaned_items[:3]  # Limit to 3 items
+
+    example_output = f"music and singing, creative careers and artistic pursuits, {interlocutor_desc} background and interests, college and future plans, artistic passion and dedication"
+    
+    special_instruction = f"Generate specific retrieval queries that will help {persona.scratch.name} find relevant memories to respond to {interlocutor_desc} appropriately."
+    
+    try:
+        response = ChatGPT_safe_generate_response(
+            analysis_prompt,
+            example_output,
+            special_instruction,
+            repeat=3,
+            fail_safe_response=[current_input, f"conversation with {interlocutor_desc}", "recent interactions"],
+            func_validate=__func_validate,
+            func_clean_up=__func_clean_up,
+            verbose=False
+        )
+        
+        # Ensure we have a valid list of strings
+        if isinstance(response, list):
+            retrieval_queries = response
+        else:
+            retrieval_queries = [str(response)]
+        
+        # Always include the current input as a fallback
+        if current_input not in retrieval_queries:
+            retrieval_queries.append(current_input)
+        
+        # Debug output
+        print(f"\033[0;33m[Retrieval Context] Generated {len(retrieval_queries)} queries for {persona.scratch.name}:\033[0m")
+        for i, query in enumerate(retrieval_queries, 1):
+            print(f"\033[0;33m  {i}. {query}\033[0m")
+        
+        return retrieval_queries
+        
+    except Exception as e:
+        print(f"\033[0;31m[Warning] Failed to extract conversation context: {e}\033[0m")
+        # Fallback to simple approach
+        fallback_queries = [current_input]
+        if conversation_history:
+            # Add the last few utterances as backup
+            recent_topics = []
+            for speaker, utterance in conversation_history[-3:]:
+                if len(utterance.split()) > 2:  # Skip very short responses
+                    recent_topics.append(utterance)
+            fallback_queries.extend(recent_topics[:2])
+        
+        return fallback_queries
 
 if __name__ == '__main__':
   # rs = ReverieServer("base_the_ville_isabella_maria_klaus", 

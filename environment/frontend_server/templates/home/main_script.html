@@ -185,8 +185,20 @@
 	  // Joon: Technically, I think this guy had the best tutorial for atlas: 
 	  //       https://www.youtube.com/watch?v=fdXcD9X4NrQ&ab_channel=MorganPage
 	  this.load.atlas("atlas", 
-	                  "https://mikewesthad.github.io/phaser-3-tilemap-blog-posts/post-1/assets/atlas/atlas.png", 
-	                  "https://mikewesthad.github.io/phaser-3-tilemap-blog-posts/post-1/assets/atlas/atlas.json");
+	                  "{% static 'assets/characters/Yuriko_Yamamoto.png' %}", 
+	                  "{% static 'assets/characters/atlas.json' %}");
+
+	  // Load individual character atlases for each persona
+	  for (var persona_name in persona_names) {
+		  // Convert persona name to file name format (spaces to underscores)
+		  let file_name = persona_name.replace(/ /g, '_');
+		  this.load.atlas(persona_name, 
+		  								"{% static 'assets/characters/' %}" + file_name + ".png", 
+		  								"{% static 'assets/characters/atlas.json' %}");
+	  }
+	  
+	  // Load speech bubble image for future use
+	  this.load.image('speech_bubble', "{% static 'assets/speech_bubble/v3.png' %}");
 	}
 
 	function create() {  
@@ -297,6 +309,28 @@
 
 		cursors = this.input.keyboard.createCursorKeys();
 
+		// 禁用Phaser键盘输入当HTML输入框获得焦点时
+		this.input.keyboard.enabled = true;
+		
+		// 添加全局键盘事件处理来禁用/启用Phaser键盘输入
+		document.addEventListener('focusin', function(e) {
+			if (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA') {
+				// 当输入框获得焦点时，禁用Phaser键盘输入
+				if (game.input && game.input.keyboard) {
+					game.input.keyboard.enabled = false;
+				}
+			}
+		});
+		
+		document.addEventListener('focusout', function(e) {
+			if (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA') {
+				// 当输入框失去焦点时，重新启用Phaser键盘输入
+				if (game.input && game.input.keyboard) {
+					game.input.keyboard.enabled = true;
+				}
+			}
+		});
+
 		// 添加鼠标拖动控制相机功能
 		let isDragging = false;
 		let lastPointerPosition = { x: 0, y: 0 };
@@ -336,7 +370,7 @@
 	    let start_pos = [spawn_tile_loc[persona_name][0] * tile_width + tile_width / 2, 
 	                     spawn_tile_loc[persona_name][1] * tile_width + tile_width];
 	    let new_sprite = this.physics.add
-	                         .sprite(start_pos[0], start_pos[1], "atlas", "misa-front")
+	                         .sprite(start_pos[0], start_pos[1], persona_name, "down")
 	                         .setSize(30, 40)
 	                         .setOffset(0, 32); // DEBUG 1 --- I added 32 offset on Dec 29. 
 	    // Here, we are creating the persona and its pronunciatio sprites.
@@ -356,29 +390,38 @@
 	  // Create the player's walking animations from the texture atlas. These are
 	  // stored in the global animation manager so any sprite can access them.
 	  const anims = this.anims;
-	  anims.create({
-	    key: "misa-left-walk",
-	    frames: anims.generateFrameNames("atlas", { prefix: "misa-left-walk.", start: 0, end: 3, zeroPad: 3 }),
-	    frameRate: 4,
-	    repeat: -1 });
+	  
+	  // Create animations for each persona
+	  for (var persona_name in persona_names) {
+		  let left_walk_name = persona_name + "-left-walk";
+		  let right_walk_name = persona_name + "-right-walk";
+		  let down_walk_name = persona_name + "-down-walk";
+		  let up_walk_name = persona_name + "-up-walk";
 
-	  anims.create({
-	    key: "misa-right-walk",
-	    frames: anims.generateFrameNames("atlas", { prefix: "misa-right-walk.", start: 0, end: 3, zeroPad: 3 }),
-	    frameRate: 4,
-	    repeat: -1 });
+		  anims.create({
+		    key: left_walk_name,
+		    frames: anims.generateFrameNames(persona_name, { prefix: "left-walk.", start: 0, end: 3, zeroPad: 3 }),
+		    frameRate: 4,
+		    repeat: -1 });
 
-	  anims.create({
-	    key: "misa-front-walk",
-	    frames: anims.generateFrameNames("atlas", { prefix: "misa-front-walk.", start: 0, end: 3, zeroPad: 3 }),
-	    frameRate: 4,
-	    repeat: -1 });
+		  anims.create({
+		    key: right_walk_name,
+		    frames: anims.generateFrameNames(persona_name, { prefix: "right-walk.", start: 0, end: 3, zeroPad: 3 }),
+		    frameRate: 4,
+		    repeat: -1 });
 
-	  anims.create({
-	    key: "misa-back-walk",
-	    frames: anims.generateFrameNames("atlas", { prefix: "misa-back-walk.", start: 0, end: 3, zeroPad: 3 }),
-	    frameRate: 4,
-	    repeat: -1 });
+		  anims.create({
+		    key: down_walk_name,
+		    frames: anims.generateFrameNames(persona_name, { prefix: "down-walk.", start: 0, end: 3, zeroPad: 3 }),
+		    frameRate: 4,
+		    repeat: -1 });
+
+		  anims.create({
+		    key: up_walk_name,
+		    frames: anims.generateFrameNames(persona_name, { prefix: "up-walk.", start: 0, end: 3, zeroPad: 3 }),
+		    frameRate: 4,
+		    repeat: -1 });
+	  }
 	}
 
 	let persona_status_data = {}; 
@@ -447,29 +490,32 @@
     // Stop any previous movement from the last frame
     player.body.setVelocity(0);
     
-    // 只保留方向键移动功能，删除WASD
-    if (cursors.left.isDown) {
-        player.body.setVelocityX(-camera_speed);
+    // 只有当Phaser键盘输入启用时才处理键盘事件
+    if (this.input.keyboard.enabled) {
+        // 只保留方向键移动功能，删除WASD
+        if (cursors.left.isDown) {
+            player.body.setVelocityX(-camera_speed);
+        }
+        if (cursors.right.isDown) {
+            player.body.setVelocityX(camera_speed);
+        }
+        if (cursors.up.isDown) {
+            player.body.setVelocityY(-camera_speed);
+        }
+        if (cursors.down.isDown) {
+            player.body.setVelocityY(camera_speed);
+        }
+        // 将空格改为Tab键缩放，删除Shift功能
+        const camera = this.cameras.main;
+        if (this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.TAB).isDown) {
+            // Tab键放大
+            camera.zoom = Math.min(2.0, camera.zoom + 0.01);
+        }
+        if (cursors.shift.isDown) {
+            // Shift键缩小
+            camera.zoom = Math.max(0.75, camera.zoom - 0.01);
+        }
     }
-    if (cursors.right.isDown) {
-        player.body.setVelocityX(camera_speed);
-    }
-    if (cursors.up.isDown) {
-        player.body.setVelocityY(-camera_speed);
-    }
-    if (cursors.down.isDown) {
-        player.body.setVelocityY(camera_speed);
-    }
-    // 将空格改为Tab键缩放，删除Shift功能
-    const camera = this.cameras.main;
-    if (this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.TAB).isDown) {
-        // Tab键放大
-        camera.zoom = Math.min(2.0, camera.zoom + 0.01);
-    }
-	if (cursors.shift.isDown) {
-		// Shift键缩小
-		camera.zoom = Math.max(0.75, camera.zoom - 0.01);
-	}
 
 	  // console.log("phase: " + phase + ", step: " + step);
 	  // *** MOVE PERSONAS ***
@@ -590,21 +636,21 @@
           curr_pronunciatio.y = curr_persona.body.y - 42 - 32; // DEBUG 1 --- I added 32 offset on Dec 29. 
 
           if (anims_direction == "l") {
-			      curr_persona.anims.play("misa-left-walk", true);
+			      curr_persona.anims.play(curr_persona_name + "-left-walk", true);
 			    } else if (anims_direction == "r") {
-			      curr_persona.anims.play("misa-right-walk", true);
+			      curr_persona.anims.play(curr_persona_name + "-right-walk", true);
 			    } else if (anims_direction == "u") {
-			      curr_persona.anims.play("misa-back-walk", true);
+			      curr_persona.anims.play(curr_persona_name + "-up-walk", true);
 			    } else if (anims_direction == "d") {
-			      curr_persona.anims.play("misa-front-walk", true);
+			      curr_persona.anims.play(curr_persona_name + "-down-walk", true);
 			    } else {
 			      curr_persona.anims.stop();
 
 			      // If we were moving, pick an idle frame to use
-			      if (pre_anims_direction_dict[curr_persona_name] == "l") curr_persona.setTexture("atlas", "misa-left");else
-			      if (pre_anims_direction_dict[curr_persona_name] == "r") curr_persona.setTexture("atlas", "misa-right");else
-			      if (pre_anims_direction_dict[curr_persona_name] == "u") curr_persona.setTexture("atlas", "misa-back");else
-			      if (pre_anims_direction_dict[curr_persona_name] == "d") curr_persona.setTexture("atlas", "misa-front");
+			      if (pre_anims_direction_dict[curr_persona_name] == "l") curr_persona.setTexture(curr_persona_name, "left");else
+			      if (pre_anims_direction_dict[curr_persona_name] == "r") curr_persona.setTexture(curr_persona_name, "right");else
+			      if (pre_anims_direction_dict[curr_persona_name] == "u") curr_persona.setTexture(curr_persona_name, "up");else
+			      if (pre_anims_direction_dict[curr_persona_name] == "d") curr_persona.setTexture(curr_persona_name, "down");
 			    };
 
 	      } 
